@@ -1,5 +1,6 @@
 #KanyeLTOR
-###co-written by alejandro and Sam
+####Watch Kanye West do calculations...and interrupt you with how great he is. 
+###co-written by Alejandro and Sam
 
 create a scientific calculator in java with unit tests
 
@@ -67,7 +68,7 @@ method will set options to allow kanye to interrupt you or not
 
 ##feature plan
 
-####April29
+####April29 -First Sprint
 * UML
 * operations
 
@@ -83,16 +84,15 @@ method will set options to allow kanye to interrupt you or not
 * inputTwo ✓
 
 ###Verbs
-* add
-* subtract
-* multiply
-* divide
-* square
-* squareroot
-* exponent
+* add ✓
+* subtract ✓
+* multiply ✓
+* divide ✓
+* square ✓
+* squareroot ✓
+* exponent ✓
 * inverse
 * switch sign
-* display
 
 
 
@@ -105,11 +105,11 @@ UML Diagram will be posted in the repository
 
 **Float:**  `3.14159265`
 
-our initial choice to use the primitive type`Float` rather than Double for our field so that we calculate between 6 and 9 decimal places to capitalize on speed and that 17 decimal places is usually unnessecary in the scope of a simple scientific calculator...Also Kanye Doesn't want to mess with all that precision.
+our initial choice to use the primitive type`Float` rather than `double` for our field so that we calculate between 6 and 9 decimal places to capitalize on speed and that 17 decimal places is usually unnessecary in the scope of a simple scientific calculator...Also Kanye Doesn't want to mess with all that precision.
 
-uppon furter instruction of the double primitive format, it could be possible to return a very large number with only a small level of precision (maybe the hundreds place) so it seemed our initial presumptions were wrong...
+upon furter instruction of the`double` primitive format, it could be possible to return a very large number with only a small level of precision (maybe the hundreds place) so it seemed our initial presumptions were wrong...
 
-**the final decision was to use **`float`
+**the final decision was to use **`Double`
 
 
 
