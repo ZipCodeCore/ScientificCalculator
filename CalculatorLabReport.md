@@ -12,13 +12,13 @@ create a scientific calculator in java with unit tests
 	|-->Display Err
 	
 |-->operations
-	|-->add
-	|-->subtract
-	|-->multiply
-	|-->divide
-	|-->square
-	|-->squareroot
-	|-->exponent
+	|-->add ✓
+	|-->subtract ✓
+	|-->multiply ✓
+	|-->divide ✓
+	|-->square ✓
+	|-->squareroot ✓
+	|-->exponent ✓
 	|-->inverse
 	|-->positive or negative
 
@@ -101,11 +101,15 @@ UML Diagram will be posted in the repository
 
 
 #Design Choices for primitives
-**Double:** 3.1415926535897932
+**Double:** `3.1415926535897932`
 
-**Float:**  3.14159265
+**Float:**  `3.14159265`
 
-our initial choice to use the primitive type Float rather than Double for our field so that we calculate between 6 and 9 decimal places to capitalize on speed and that 17 decimal places is usually unnessecary in the scope of a simple scientific calculator...Also Kanye Doesn't want to mess with all that precision.
+our initial choice to use the primitive type`Float` rather than Double for our field so that we calculate between 6 and 9 decimal places to capitalize on speed and that 17 decimal places is usually unnessecary in the scope of a simple scientific calculator...Also Kanye Doesn't want to mess with all that precision.
+
+uppon furter instruction of the double primitive format, it could be possible to return a very large number with only a small level of precision (maybe the hundreds place) so it seemed our initial presumptions were wrong...
+
+**the final decision was to use **`float`
 
 
 
@@ -114,4 +118,12 @@ Because we are dealing with doubles, there is an issue with using assertEquals()
 
 ##Refactoring
 originally we had `inputOne` and `inputTwo` variables two do operations with, however in the process of writing the methods, it was clear that there was no reason to store the `inputTwo` to a field when all we needed to do was to pass the parameter of each operator method to the expression (rvalue) in that aspect we were able to remove the inputTwo field entirely. 
+
+another ommission is the input from `sqrt()` there is no need for a parameter to carry out the method, it returns a `double` but does not take one. 
+
+
+
+
+
+
 
