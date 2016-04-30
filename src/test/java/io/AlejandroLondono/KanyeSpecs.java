@@ -32,7 +32,7 @@ public class KanyeSpecs {
 
     @Test
     public void startEqTest(){
-        Kanye kanye = new Kanye();
+//        Kanye kanye = new Kanye();
         double expectedValue = inputOneTestValue;
         kanye.startEq(expectedValue);
         double actualValue = kanye.inputOne;
@@ -92,6 +92,71 @@ public class KanyeSpecs {
         double expectedValue =7.0710678118654755;
         double actualValue = kanye.sqrt();
         assertEquals("the square root should be "+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void switchSignTestPos(){
+        double expectedValue = 50.0;
+        kanye.startEq(-50);
+        double actualValue = kanye.switchSign();
+
+        assertEquals("- to +:the sign should be positive rather than positive like this: "+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void switchSignTestNeg(){
+        double expectedValue = -50.0;
+        double actualValue = kanye.switchSign();
+        assertEquals("+ to -: the sign should be negative rather than positive like this: "+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void inverseTest(){
+        double expectedValue = 0.02;
+        double actualValue= kanye.inverse();
+        assertEquals("the inverse of "+ inputOneTestValue+" should be: "+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void binaryModeTest(){
+
+        String expectedBinaryString = "110010";
+        String actualBinaryString = kanye.binaryMode();
+        assertEquals("the binary string returned should be "+ expectedBinaryString +" converted from "+inputOneTestValue, expectedBinaryString, actualBinaryString);
+
+    }
+
+    @Test
+    public void hexModeTest(){
+
+        String expectedHexString = "32";
+        String actualHexString = kanye.hexMode();
+        assertEquals("The Hex String returned should be "+expectedHexString+" converted from "+inputOneTestValue, expectedHexString,actualHexString);
+    }
+
+
+    @Test
+    public void octalModeTest(){
+
+        String expectedOctalString = "62";
+        String actualOctalString = kanye.octalMode();
+        assertEquals("the Octal String returned should be "+expectedOctalString+" converted from "+inputOneTestValue,expectedOctalString,actualOctalString);
+    }
+
+    @Test
+    public void SwitchDisplayModeTest(){
+        Kanye.Mode expectedMode = Kanye.Mode.BINARY;
+        kanye.switchDisplayMode();
+        Kanye.Mode actualMode = kanye.currentMode;
+        assertEquals("the mode should have cycled from "+ Kanye.Mode.DECIMAL+" to "+ Kanye.Mode.BINARY, expectedMode,actualMode);
+    }
+
+    @Test
+    public void convertDisplayModeTest(){
+        Kanye.Mode expectedMode =Kanye.Mode.HEX;
+        kanye.convertDisplayMode(expectedMode);
+        Kanye.Mode actualMode = kanye.currentMode;
+        assertEquals("The mode should have been set as "+expectedMode, expectedMode, actualMode);
     }
 
 }

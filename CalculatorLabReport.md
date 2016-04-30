@@ -1,4 +1,4 @@
-#KanyeLTOR
+#KanyeL8TOR
 ####Watch Kanye West do calculations...and interrupt you with how great he is. 
 ###co-written by Alejandro and Sam
 
@@ -20,17 +20,17 @@ create a scientific calculator in java with unit tests
 	|-->square ✓
 	|-->squareroot ✓
 	|-->exponent ✓
-	|-->inverse
-	|-->positive or negative
+	|-->inverse ✓
+	|-->switch sign ✓
 
 |-->scientific features
 	|-->display mode
-		|->binary
-		|-->octal
-		|-->decimal
-		|-->hex
-		|-->switchdisplaymode()		
-		|-->switchdisplaymode(string mode);
+		|->binary ✓
+		|-->octal ✓
+		|-->decimal ✓
+		|-->hex ✓
+		|-->switchdisplaymode()	 ✓
+		|-->switchdisplaymode(string mode) ✓
 		
 |-->memory
 	|--> add from memory
@@ -62,35 +62,53 @@ create a scientific calculator in java with unit tests
 
 method will print random kanye west quote and not return the result that you wanted
 
-###custom Method 2: mute kanye
+kanye will also sometimes guess because he is tired of doing all this math by hand. 
+
+###custom Method 2: mute kanye and KANYE REST
 
 method will set options to allow kanye to interrupt you or not
+you can also tell kanye to relax and exit the program by saying kanye rest
 
-##feature plan
+
+#feature plan
 
 ####April29 -First Sprint
-* UML
-* operations
+* UML ✓
+* operations ✓
 
+##April30 -Second Sprint
+* Scientific features ✓
+* Trig functions
+* memory
+* log function
+* factorial function
+ 
+##April31 -Third sprint
+* Immaletyoufinish feature
+	* Kanye Guesses feature 
+* shutup kanye feature
+ * you cant shut kanye up, I am the voice of a generation"
+* display CLI
+* error handling
 
 
 ##Breaking it down
 
 ###Nouns
-* kanye ✓
-* display ✓
-* memory ✓
-* inputOne ✓
-* inputTwo ✓
+* kanye (calculator)
+* display 
+* memory 
+* inputOne 
+* inputTwo 
 
 ###Verbs
-* add ✓
-* subtract ✓
-* multiply ✓
-* divide ✓
-* square ✓
-* squareroot ✓
-* exponent ✓
+* add 
+* subtract 
+* multiply 
+* divide 
+* square 
+* squareroot 
+* exponent 
 * inverse
 * switch sign
 
@@ -119,9 +137,22 @@ Because we are dealing with doubles, there is an issue with using assertEquals()
 ##Refactoring
 originally we had `inputOne` and `inputTwo` variables two do operations with, however in the process of writing the methods, it was clear that there was no reason to store the `inputTwo` to a field when all we needed to do was to pass the parameter of each operator method to the expression (rvalue) in that aspect we were able to remove the inputTwo field entirely. 
 
-another ommission is the input from `sqrt()` there is no need for a parameter to carry out the method, it returns a `double` but does not take one. 
+another ommission is the input from `sqrt()` there is no need for a parameter to carry out the method, it returns a `double` but does not take one. other methods that exentually were adjusted to not take parameters for the same reson were switch sign and inverse;
 
+##Method design choices
 
+for the switch sign method, there are several ways that you could acheive the result. in this situation where there is no right answer we have decided to set the contraint that computationally, the fasted method and the the operation with the minimum logical number of steps is also most viable. 
+
+switch sign could be exected with a series of addition and subtraction steps, however this would involve another method or logic to differentiate the sign of the input. 
+
+the logical conclusion is to multiply by -1 which bypasses the need to recognize sign
+
+addition of positive and negative numbers to seems less taxing to compile than  multiplication, however, this does not matter in this case because everything is computed inline, and there is no computational benifit. 
+
+###future notes for refactoring
+it may be useful to store not only the `double` of the `inputOne` but also the `int' be more dry. I would not have to create a variable every time I want to change the mode
+
+##Unit Testing with Junit
 
 
 
