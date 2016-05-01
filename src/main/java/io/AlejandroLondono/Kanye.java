@@ -11,9 +11,12 @@ public class Kanye {
     public double inputOne = 0;
     public Mode currentMode = Mode.DECIMAL;
     public enum Mode {
-            DECIMAL, BINARY, HEX, OCTAL
+        DECIMAL, BINARY, HEX, OCTAL
     };
-
+    public TrigUnit currentTrigUnit =TrigUnit.RADIANS;
+    public enum TrigUnit {
+        RADIANS, DEGREES
+    }
 
     public void startEq(double input){
         this.inputOne = input;
@@ -72,13 +75,15 @@ public class Kanye {
         int inputInt = (int) inputOne;
         return Integer.toOctalString(inputInt);
     }
-
+//if you keep incrementing, you will eventually increment out of the range
     public void switchDisplayMode(){
         int i = Mode.valueOf(currentMode.toString()).ordinal();
         i++;
+
         convertDisplayMode(Mode.values()[i]);
     }
 
+//    THIS IS NOT FULLY OPERATIONAL. IT NEEDS TO TAKE A STRING AND COMPARE A MODE BEFORE????
     public void convertDisplayMode(Mode mode){
         this.currentMode = mode;
 
@@ -100,6 +105,40 @@ public class Kanye {
 //        return to display variable
     }
 
+    public double sine(){
+        return Math.sin(inputOne);
+    }
+
+    public double cosine(){
+        return Math.cos(inputOne);
+    }
+
+    public double tangent(){
+        return Math.tan(inputOne);
+    }
+
+    public double arcSine(){
+        double modOne = inputOne%1;
+        return Math.asin(modOne);
+    }
+
+    public double arcCosine(){
+        double modOne = inputOne%1;
+        return Math.acos(modOne);
+    }
+
+    public double arcTangent(){
+        double modOne = inputOne%1;
+        return Math.atan(modOne);
+    }
+
+    public void switchUnitsMode(){
+
+    }
+
+    public void switchUnitsMode(TrigUnit unit){
+
+    }
 
 
 }

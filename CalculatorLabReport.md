@@ -45,6 +45,7 @@ create a scientific calculator in java with unit tests
 	|-->cos-1()
 	|-->sin-1()
 	|-->tan-1()
+	|->units() (radians and degrees)
 	
 |-->log func
 
@@ -118,7 +119,7 @@ you can also tell kanye to relax and exit the program by saying kanye rest
 UML Diagram will be posted in the repository
 
 
-#Design Choices for primitives
+#Design Choices 
 **Double:** `3.1415926535897932`
 
 **Float:**  `3.14159265`
@@ -129,7 +130,9 @@ upon furter instruction of the`double` primitive format, it could be possible to
 
 **the final decision was to use **`Double`
 
-
+### methods like  Math.asin() and inputs with limited domain
+alot of the arc trigonometric functions are a challenge to implement due to the fact that they only can compute a limited domain and can only print out radians between 0 and pi. 
+this will involve error handling or possibly even the use of modulus to create a kind of pac-man effect for the domain. as soon as you input a value outside of the range, it runs based on the remainder. 
 
 ##Testing
 Because we are dealing with doubles, there is an issue with using assertEquals() in testing. with each operation there is a problem with the rounding with each operation. in order to avoid the loss of accuracy we chose to set a margin of error in which all tests had to be within that was avaiable to all tests, rather than resorting to error specific testing

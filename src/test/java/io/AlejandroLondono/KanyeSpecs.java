@@ -159,4 +159,58 @@ public class KanyeSpecs {
         assertEquals("The mode should have been set as "+expectedMode, expectedMode, actualMode);
     }
 
+    @Test
+    public void sineTest(){
+        double expectedValue = -0.26237485370392877;
+        double actualValue = kanye.sine();
+        assertEquals("the value returned by the trig sine function should be "+expectedValue,expectedValue,actualValue,  error);
+    }
+
+    @Test
+    public void CosineTest(){
+        double expectedValue =  0.9649660284921133;
+        double actualValue = kanye.cosine();
+        assertEquals("the value returned by the trig cosine function should be"+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void tangentTest(){
+        double expectedValue = -0.27190061199763077;
+        double actualValue = kanye.tangent();
+        assertEquals("the value returned by the trig tangent function should be "+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void arcSineTest(){
+        kanye.startEq(0.5);
+        double expectedValue = 0.5235987755982989;
+        double actualValue = kanye.arcSine();
+        assertEquals("the value returned by the trig function arcsine should be "+expectedValue, expectedValue, actualValue, error);
+    }
+
+    @Test
+    public void arcCosineTest(){
+        kanye.startEq(0.5);
+        double expectedValue  = 1.0471975511965979;
+        double actualValue = kanye.arcCosine();
+        assertEquals("the value returned by the trig function arc cosin should be "+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void arcTangentTest(){
+        kanye.startEq(0.5);
+        double expectedValue = 0.4636476090008061;
+        double actualValue = kanye.arcTangent();
+        assertEquals("the vaule returned by the trig function arc tan should be: "+expectedValue,expectedValue,actualValue,error);
+    }
+
+    @Test
+    public void switchUnitsModeTest(){
+        Kanye.TrigUnit expectedTrigUnits = Kanye.TrigUnit.DEGREES;
+        kanye.switchUnitsMode();
+        Kanye.TrigUnit actualTrigUnits = kanye.currentTrigUnit;
+        assertEquals("the trigonometric units should have switched from radians to degrees",expectedTrigUnits, actualTrigUnits);
+    }
+
 }
+
