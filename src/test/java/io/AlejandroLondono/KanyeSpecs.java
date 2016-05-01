@@ -243,8 +243,8 @@ public class KanyeSpecs {
     @Test
     public void displayTest(){
         String expectedString = Double.toString(inputOneTestValue); ;
-        kanye.display();
-        String actualString = kanye.display();
+
+        String actualString = kanye.display(inputOneTestValue);
         assertEquals("the display should read "+expectedString,expectedString,actualString);
     }
 
@@ -253,7 +253,15 @@ public class KanyeSpecs {
         kanye.willKanyeGuess=20;
         double answer = kanye.add(inputTwoTestValue);
         boolean actualString = kanye.kanyeGuess(answer) !=null;
-        assertTrue("the answer should be a string", actualString);
+        assertTrue("the answer should be a Kanye guessing", actualString);
+    }
+
+    @Test
+    public void KanyeTest(){
+        kanye.willKanyeQuoteHimself = 12;
+        double answer = kanye.add(inputTwoTestValue);
+        boolean actualString = kanye.immaLetYouFinish(answer) !=null;
+        assertTrue("the answer should be a quote", actualString);
     }
 }
 

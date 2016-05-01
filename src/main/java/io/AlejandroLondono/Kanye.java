@@ -202,18 +202,36 @@ public class Kanye {
         this.display = memString;
     }
 
-    public String display(){
-        this.display = Double.toString(inputOne);
+    public String display(Double input){
+        this.display = Double.toString(input);
         System.out.println(this.display);
-        return display;
+        return this.display;
+    }
+
+    public String display(String input){
+        this.display = input;
+        System.out.println(this.display);
+        return this.display;
     }
 
     public String kanyeGuess(double answer){
+
         if(willKanyeGuess <=20){
             double wrongAnswer = answer + random.nextInt(30);
-            String kanyeAnswerString = "Bruh its probably like "+ wrongAnswer +" or something.";
+            String kanyeAnswerString= "Bruh, its probably like "+ wrongAnswer +" or something.";
+            display(kanyeAnswerString);
             return kanyeAnswerString;
+
+        }else {
+            String ans = Double.toString(answer);
+            display(ans);
+            return ans;
         }
+
+    }
+
+    public String immaLetYouFinish(double answer){
+        return null;
     }
 
 }
