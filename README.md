@@ -122,7 +122,7 @@ you can also tell kanye to relax and exit the program by saying kanye rest
 
 ##UML 
 UML Diagram will be posted in the repository
-
+but is by no means finished. I had to add on to it as i continued.
 
 #Design Choices 
 **Double:** `3.1415926535897932`
