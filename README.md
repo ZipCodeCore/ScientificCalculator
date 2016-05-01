@@ -1,5 +1,5 @@
 #KanyeL8TOR
-####Watch Yeezy makes math easy...as he interrupts you with how great he is. 
+####Watch Yeezy make math easy...as he interrupts you with how great he is. 
 ###co-written by Alejandro and Sam
 
 create a scientific calculator in java with unit tests
@@ -159,8 +159,6 @@ addition of positive and negative numbers to seems less taxing to compile than  
 
 ###future notes for refactoring
 it may be useful to store not only the `double` of the `inputOne` but also the `int' be more dry. I would not have to create a variable every time I want to change the mode
-
-##Unit Testing with Junit
 
 
 
