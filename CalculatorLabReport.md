@@ -1,5 +1,5 @@
 #KanyeL8TOR
-####Watch Kanye West do calculations...and interrupt you with how great he is. 
+####Watch Yeezy makes math easy...as he interrupts you with how great he is. 
 ###co-written by Alejandro and Sam
 
 create a scientific calculator in java with unit tests
@@ -33,23 +33,23 @@ create a scientific calculator in java with unit tests
 		|-->switchdisplaymode(string mode) ✓
 		
 |-->memory
-	|--> add from memory
-	|--> reset memory
-	|--> recall mem to display
+	|--> add from memory ✓
+	|--> reset memory ✓
+	|--> recall mem to display ✓
 	
 |-->Trig functions
-	|-->sine()
-	|-->cosin()
-	|-->Tan()
+	|-->sine() ✓
+	|-->cosin() ✓
+	|-->Tan() ✓
 	|
-	|-->cos-1()
-	|-->sin-1()
-	|-->tan-1()
-	|->units() (radians and degrees)
+	|-->cos-1() ✓
+	|-->sin-1() ✓
+	|-->tan-1() ✓
+	|->units() (radians and degrees) ✓
 	
-|-->log func
+|-->log func (skipped)
 
-|-->factorial func
+|-->factorial func (skipped)
 
 2 custom functions
 |-->confidence booser (kanye west quote)
@@ -61,9 +61,14 @@ create a scientific calculator in java with unit tests
 
 ###custom function 1: Imma let you finish
 
-method will print random kanye west quote and not return the result that you wanted
+method will sometimes print random kanye west quote and not return the result that you wanted 
 
 kanye will also sometimes guess because he is tired of doing all this math by hand. 
+
+the methods involved with this feature are as follows
+
+ImmaLetYouFinish()
+
 
 ###custom Method 2: mute kanye and KANYE REST
 
@@ -75,7 +80,7 @@ you can also tell kanye to relax and exit the program by saying kanye rest
 
 ####April29 -First Sprint
 * UML ✓
-* operations ✓
+* basic arithmetic operations ✓
 
 ##April30 -Second Sprint
 * Scientific features ✓

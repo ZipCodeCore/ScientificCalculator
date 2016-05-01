@@ -240,5 +240,20 @@ public class KanyeSpecs {
         assertEquals("memory should have sent "+inputOneTestValue+" to the display",expectedDisplay, actualDisplay);
     }
 
+    @Test
+    public void displayTest(){
+        String expectedString = Double.toString(inputOneTestValue); ;
+        kanye.display();
+        String actualString = kanye.display();
+        assertEquals("the display should read "+expectedString,expectedString,actualString);
+    }
+
+    @Test
+    public void kanyeGuessTest(){
+        kanye.willKanyeGuess=20;
+        double answer = kanye.add(inputTwoTestValue);
+        boolean actualString = kanye.kanyeGuess(answer) !=null;
+        assertTrue("the answer should be a string", actualString);
+    }
 }
 
