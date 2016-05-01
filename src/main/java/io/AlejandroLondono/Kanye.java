@@ -18,7 +18,7 @@ public class Kanye {
         RADIANS, DEGREES
     }
 
-    public void startEq(double input){
+    public void equation(double input){
         this.inputOne = input;
     }
 
@@ -133,11 +133,22 @@ public class Kanye {
     }
 
     public void switchUnitsMode(){
-
+        if(currentTrigUnit == TrigUnit.DEGREES){
+            currentTrigUnit = TrigUnit.RADIANS;
+        }else currentTrigUnit = TrigUnit.DEGREES;
     }
 
-    public void switchUnitsMode(TrigUnit unit){
+    public void storeToMemory(double answer){
+        this.memory = answer;
+    }
 
+    public void resetMemory(){
+        this.memory = 0;
+    }
+
+    public void recallMemory(){
+        String memString = Double.toString(memory);
+        this.display = memString;
     }
 
 

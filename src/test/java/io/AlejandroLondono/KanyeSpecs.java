@@ -24,17 +24,17 @@ public class KanyeSpecs {
         error = .01;
         kanye = new Kanye();
         inputOneTestValue = 50.0;
-        kanye.startEq(inputOneTestValue);
+        kanye.equation(inputOneTestValue);
         inputTwoTestValue = 24.0;
         inputExp = 3.0;
         theExp = 3.0;
     }
 
     @Test
-    public void startEqTest(){
+    public void EquationTest(){
 //        Kanye kanye = new Kanye();
         double expectedValue = inputOneTestValue;
-        kanye.startEq(expectedValue);
+        kanye.equation(expectedValue);
         double actualValue = kanye.inputOne;
         assertEquals("Expected value should be " + expectedValue, expectedValue, actualValue, error);
     }
@@ -67,7 +67,7 @@ public class KanyeSpecs {
 //        inputExp
 
         double expectedValue = 27.0;
-        kanye.startEq(inputExp);
+        kanye.equation(inputExp);
         double actualValue = kanye.exp(theExp);
         assertEquals("The power should be "+expectedValue, expectedValue, actualValue, error);
     }
@@ -75,7 +75,7 @@ public class KanyeSpecs {
     @Test
     public void SquareTest(){
         double expectedValue = 9.0;
-        kanye.startEq(inputExp);
+        kanye.equation(inputExp);
         double actualValue = kanye.exp();
         assertEquals("The square should be "+expectedValue, expectedValue, actualValue, error);
     }
@@ -97,7 +97,7 @@ public class KanyeSpecs {
     @Test
     public void switchSignTestPos(){
         double expectedValue = 50.0;
-        kanye.startEq(-50);
+        kanye.equation(-50);
         double actualValue = kanye.switchSign();
 
         assertEquals("- to +:the sign should be positive rather than positive like this: "+expectedValue,expectedValue,actualValue,error);
@@ -182,7 +182,7 @@ public class KanyeSpecs {
 
     @Test
     public void arcSineTest(){
-        kanye.startEq(0.5);
+        kanye.equation(0.5);
         double expectedValue = 0.5235987755982989;
         double actualValue = kanye.arcSine();
         assertEquals("the value returned by the trig function arcsine should be "+expectedValue, expectedValue, actualValue, error);
@@ -190,7 +190,7 @@ public class KanyeSpecs {
 
     @Test
     public void arcCosineTest(){
-        kanye.startEq(0.5);
+        kanye.equation(0.5);
         double expectedValue  = 1.0471975511965979;
         double actualValue = kanye.arcCosine();
         assertEquals("the value returned by the trig function arc cosin should be "+expectedValue,expectedValue,actualValue,error);
@@ -198,7 +198,7 @@ public class KanyeSpecs {
 
     @Test
     public void arcTangentTest(){
-        kanye.startEq(0.5);
+        kanye.equation(0.5);
         double expectedValue = 0.4636476090008061;
         double actualValue = kanye.arcTangent();
         assertEquals("the vaule returned by the trig function arc tan should be: "+expectedValue,expectedValue,actualValue,error);
@@ -210,6 +210,34 @@ public class KanyeSpecs {
         kanye.switchUnitsMode();
         Kanye.TrigUnit actualTrigUnits = kanye.currentTrigUnit;
         assertEquals("the trigonometric units should have switched from radians to degrees",expectedTrigUnits, actualTrigUnits);
+    }
+
+    @Test
+    public void storeToMemoryTest(){
+//        input1 --> 5
+        double expectedMemoryAnswer = 50;
+        kanye.storeToMemory(inputOneTestValue);
+        double actualMemoryAnswer = kanye.memory;
+        assertEquals("the memory should have stored "+expectedMemoryAnswer,expectedMemoryAnswer,actualMemoryAnswer,error);
+    }
+
+    @Test
+    public void resetMemory(){
+        double expectedMemory = 0;
+        kanye.memory = 5;
+        kanye.storeToMemory(inputTwoTestValue);
+        kanye.resetMemory();
+        double actualMemory = kanye.memory;
+        assertEquals("changed memory to "+inputTwoTestValue+"if it was reset it should be "+expectedMemory,expectedMemory,actualMemory,error);
+    }
+
+    @Test
+    public void recallMemory(){
+        String expectedDisplay = Double.toString(inputOneTestValue);
+        kanye.storeToMemory(inputOneTestValue);
+        kanye.recallMemory();
+        String actualDisplay = kanye.display;
+        assertEquals("memory should have sent "+inputOneTestValue+" to the display",expectedDisplay, actualDisplay);
     }
 
 }

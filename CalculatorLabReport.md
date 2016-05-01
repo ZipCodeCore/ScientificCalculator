@@ -79,10 +79,10 @@ you can also tell kanye to relax and exit the program by saying kanye rest
 
 ##April30 -Second Sprint
 * Scientific features ✓
-* Trig functions
-* memory
-* log function
-* factorial function
+* Trig functions ✓
+* memory ✓
+* log function (skipped)
+* factorial function (skipped)
  
 ##April31 -Third sprint
 * Immaletyoufinish feature
