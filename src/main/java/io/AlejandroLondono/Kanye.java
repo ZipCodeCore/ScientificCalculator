@@ -18,7 +18,7 @@ public class Kanye {
     public double inputOne = 0;
     public Mode currentMode = Mode.DECIMAL;
     public boolean rest = false;
-
+    public Scanner scanner = new Scanner(System.in);
     public Random random= new Random();
     public int willKanyeQuoteHimself = random.nextInt(100);
     public int willKanyeGuess = random.nextInt(100);
@@ -71,7 +71,7 @@ public class Kanye {
     }
 
     public enum Command {
-        ADD, SUBTRACT, DIVIDE, EXP, SQUARE, MULTIPLY, SQRT, INVERSE, SIGN, BINARY, HEX, OCTAL, SWITCH_MODE, SINE, COSINE, TANGENT, ARC_SINE, ARC_COSINE, ARC_TANGENT, TRIG_UNITS, SAVE, RESET, RECALL, KANYE_REST, LIST
+        ADD, SUBTRACT, DIVIDE, EXP, SQUARE, MULTIPLY, SQRT, INVERSE, SIGN, BINARY, HEX, OCTAL, SWITCH_MODE, SINE, COSINE, TANGENT, ARC_SINE, ARC_COSINE, ARC_TANGENT, TRIG_UNITS, SAVE, RESET, RECALL, KANYEREST, LIST
     }
 
     /**
@@ -222,38 +222,37 @@ public class Kanye {
         System.out.println(this.display);
         return this.display;
     }
+
     public void numGenerator(){
         this.willKanyeGuess = this.random.nextInt(100);
         this.willKanyeQuoteHimself = this.random.nextInt(100);
         this.whichQuote = this.random.nextInt(32);
     }
 
-    public String kanyeGuess(double answer){
+    public void kanyeGuess(){
 
-        if(willKanyeGuess <=20){
-            double wrongAnswer = answer + random.nextInt(30);
+        if(willKanyeGuess <=30){
+            double wrongAnswer =random.nextInt(30);
             String kanyeAnswerString= "Bruh, its probably like "+ wrongAnswer +" or something.";
-            display(kanyeAnswerString);
-            return kanyeAnswerString;
+            System.out.printf("kanye Guesses:");
+            System.out.println(kanyeAnswerString.toUpperCase());
 
-        }else {
-            String ans = Double.toString(answer);
-            display(ans);
-            return ans;
         }
 
     }
 
-    public String immaLetYouFinish(double answer){
+    public void immaLetYouFinish(){
 
-        if(willKanyeQuoteHimself <=40){
+        if(willKanyeQuoteHimself <=50){
             String quote = this.kanyeQuotes[whichQuote];
-            String kanyeResponse = quote+"\n"+answer;
-            return kanyeResponse;
-        }else return null;
+            String kanyeResponse = quote+"\n";
+            System.out.printf("Kanye is feeling a little self consious of is math skills\n\nkanye shouted: ");
+            System.out.println(kanyeResponse.toUpperCase());
+        }
     }
 
     public void kanyeRest(){
+        System.out.println("kanye says: \nKANYE IS GONNA TAKE A LITTLE KANYE REST");
         this.rest = true;
     }
 
@@ -264,45 +263,104 @@ public class Kanye {
         int i = Command.valueOf(command).ordinal();
         Command comm=Command.values()[i];
         double answer = 0;
-        switch(comm){
+        switch(comm) {
             case ADD:
                 answer = this.add(input);
-                immaLetYouFinish(answer);
-                kanyeGuess(answer);
                 break;
             case SUBTRACT:
                 answer = this.subtract(input);
-                immaLetYouFinish(answer);
-                kanyeGuess(answer);
                 break;
             case DIVIDE:
                 answer = this.divide(input);
-                immaLetYouFinish(answer);
-                kanyeGuess(answer);
                 break;
             case EXP:
                 answer = this.exp(input);
-                immaLetYouFinish(answer);
-                kanyeGuess(answer);
+                break;
             case MULTIPLY:
                 answer = this.multiply(input);
-                immaLetYouFinish(answer);
-                kanyeGuess(answer);
+
                 break;
             case SAVE:
                 break;
         }
-//        call
+        immaLetYouFinish();
+        kanyeGuess();
+        display(answer);
+    }
+
+    public void CLI(String command){
+        int i = Command.valueOf(command).ordinal();
+        Command comm=Command.values()[i];
+        double answer = 0;
+        switch(comm){
+            case ADD:
+                break;
+            case SUBTRACT:
+                break;
+            case DIVIDE:
+                break;
+            case EXP:
+                break;
+            case SQUARE:
+                break;
+            case MULTIPLY:
+                break;
+            case SQRT:
+                break;
+            case INVERSE:
+                break;
+            case SIGN:
+                break;
+            case BINARY:
+                break;
+            case HEX:
+                break;
+            case OCTAL:
+                break;
+            case SWITCH_MODE:
+                break;
+            case SINE:
+                break;
+            case COSINE:
+                break;
+            case TANGENT:
+                break;
+            case ARC_SINE:
+                break;
+            case ARC_COSINE:
+                break;
+            case ARC_TANGENT:
+                break;
+            case TRIG_UNITS:
+                break;
+            case SAVE:
+                break;
+            case RESET:
+                break;
+            case RECALL:
+                break;
+            case KANYEREST:
+                kanyeRest();
+                break;
+            case LIST:
+                break;
+            default:
+                System.out.println(java.util.Arrays.asList(Command.values()));
+                System.out.println("you only have these commands available");
+                scanner.nextLine ();
+                break;
+        }
+
     }
 
     public void runnit(){
         System.out.println("welcome to KanyeL8tor\n the Yeezy that makes math easy");
-        Scanner scanner = new Scanner(System.in);
+
 
         while(!this.rest){
 
             String command;
-
+            double second;
             System.out.println("please enter a number\n");
             double first = scanner.nextDouble();
             this.equation(first);
@@ -312,10 +370,13 @@ public class Kanye {
             command = scanner.nextLine().toUpperCase();
             System.out.println("you entered "+command);
             System.out.println("enter the second number");
-            Double second = scanner.nextDouble();
-            this.CLI(command, second);
+            second = scanner.nextDouble();
+            this.numGenerator();
+            if(second){
+                this.CLI(command, second);
+            }else this.CLI(command);
 
-            this.rest = true;
+
         }
     }
 

@@ -248,21 +248,21 @@ public class KanyeSpecs {
         assertEquals("the display should read "+expectedString,expectedString,actualString);
     }
 
-    @Test
-    public void kanyeGuessTest(){
-        kanye.willKanyeGuess=20;
-        double answer = kanye.add(inputTwoTestValue);
-        boolean actualString = kanye.kanyeGuess(answer) !=null;
-        assertTrue("the answer should be a Kanye guessing", actualString);
-    }
-
-    @Test
-    public void kanyeTest(){
-        kanye.willKanyeQuoteHimself = 12;
-        double answer = kanye.add(inputTwoTestValue);
-        boolean actualString = kanye.immaLetYouFinish(answer) !=null;
-        assertTrue("the answer should be a quote", actualString);
-    }
+//    @Test
+//    public void kanyeGuessTest(){
+//        kanye.willKanyeGuess=20;
+//        double answer = kanye.add(inputTwoTestValue);
+//
+//        assertTrue("the answer should be a Kanye guessing", actualString);
+//    }
+//
+//    @Test
+//    public void kanyeTest(){
+//        kanye.willKanyeQuoteHimself = 12;
+//        double answer = kanye.add(inputTwoTestValue);
+//        boolean actualString = kanye.immaLetYouFinish() !=null;
+//        assertTrue("the answer should be a quote", actualString);
+//    }
 
     @Test
     public void numGeneratorGuess(){
