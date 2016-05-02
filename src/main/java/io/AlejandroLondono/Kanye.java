@@ -71,7 +71,7 @@ public class Kanye {
     }
 
     public enum Command {
-        ADD, SUBTRACT, DIVIDE, EXP, SQUARE, MULTIPLY, SQRT, INVERSE, SIGN, BINARY, HEX, OCTAL, SWITCH_MODE, SINE, COSINE, TANGENT, ARC_SINE, ARC_COSINE, ARC_TANGENT, TRIG_UNITS, SAVE, RESET, RECALL, KANYEREST, LIST
+        ADD, SUBTRACT, DIVIDE, EXP, SQUARE, MULTIPLY, SQRT, INVERSE, SIGN, BINARY, HEX, OCTAL, SWITCH_MODE, SINE, COSINE, TANGENT, ARC_SINE, ARC_COSINE, ARC_TANGENT, TRIG_UNITS, RESET, RECALL, KANYEREST,LIST
     }
 
     /**
@@ -233,8 +233,8 @@ public class Kanye {
 
         if(willKanyeGuess <=30){
             double wrongAnswer =random.nextInt(30);
-            String kanyeAnswerString= "Bruh, its probably like "+ wrongAnswer +" or something.";
-            System.out.printf("kanye Guesses:");
+            String kanyeAnswerString= "Bruh, its probably like "+ wrongAnswer +" or something.\n";
+            System.out.printf("\n\nkanye Guesses:");
             System.out.println(kanyeAnswerString.toUpperCase());
 
         }
@@ -246,7 +246,7 @@ public class Kanye {
         if(willKanyeQuoteHimself <=50){
             String quote = this.kanyeQuotes[whichQuote];
             String kanyeResponse = quote+"\n";
-            System.out.printf("Kanye is feeling a little self consious of is math skills\n\nkanye shouted: ");
+            System.out.printf("\n\nKanye is feeling a little self consious of is math skills\n\nkanye shouted: ");
             System.out.println(kanyeResponse.toUpperCase());
         }
     }
@@ -260,9 +260,15 @@ public class Kanye {
      * CLI Method calls all other methods in the runnit while loop
      */
     public void CLI(String command, double input){
-        int i = Command.valueOf(command).ordinal();
-        Command comm=Command.values()[i];
-        double answer = 0;
+        Command comm=Command.LIST;
+        try {
+            int i = Command.valueOf(command).ordinal();
+            comm = Command.values()[i];
+        }catch(Exception e){
+            System.out.println("KANYE DOESNT KNOW WHAT THAT MEANS BRUH\n\ncan you run that back again?\n\n");
+        }
+            double answer = 0;
+
         switch(comm) {
             case ADD:
                 answer = this.add(input);
@@ -278,82 +284,67 @@ public class Kanye {
                 break;
             case MULTIPLY:
                 answer = this.multiply(input);
-
+                break;
+            case SQRT:
+                answer =this.sqrt();
+                break;
+            case INVERSE:
+                answer =this.inverse();
+                break;
+            case SIGN:
+                answer =this.switchSign();
+                break;
+            case BINARY:
+                this.binaryMode();
+                break;
+            case HEX:
+                this.hexMode();
+                break;
+            case OCTAL:
+                this.octalMode();
+                break;
+            case SWITCH_MODE:
+                this.switchDisplayMode();
+                break;
+            case SINE:
+                this.sine();
+                break;
+            case COSINE:
+                this.cosine();
+                break;
+            case TANGENT:
+                this.tangent();
+                break;
+            case ARC_SINE:
+                this.arcSine();
+                break;
+            case ARC_COSINE:
+                this.arcCosine();
+                break;
+            case ARC_TANGENT:
+                this.arcTangent();
+                break;
+            case TRIG_UNITS:
+                this.switchUnitsMode();
+                break;
+            case RESET:
+                this.memory = 0;
+                break;
+            case RECALL:
+                this.recallMemory();
                 break;
             case KANYEREST:
                 kanyeRest();
                 break;
-            case SAVE:
+            default:
+
+                System.out.println("you only have these commands available");
+                scanner.nextLine ();
                 break;
         }
         immaLetYouFinish();
         kanyeGuess();
         display(answer);
-    }
-
-    public void CLI(String command){
-        int i = Command.valueOf(command).ordinal();
-        Command comm=Command.values()[i];
-        double answer = 0;
-        switch(comm){
-            case ADD:
-                break;
-            case SUBTRACT:
-                break;
-            case DIVIDE:
-                break;
-            case EXP:
-                break;
-            case SQUARE:
-                break;
-            case MULTIPLY:
-                break;
-            case SQRT:
-                break;
-            case INVERSE:
-                break;
-            case SIGN:
-                break;
-            case BINARY:
-                break;
-            case HEX:
-                break;
-            case OCTAL:
-                break;
-            case SWITCH_MODE:
-                break;
-            case SINE:
-                break;
-            case COSINE:
-                break;
-            case TANGENT:
-                break;
-            case ARC_SINE:
-                break;
-            case ARC_COSINE:
-                break;
-            case ARC_TANGENT:
-                break;
-            case TRIG_UNITS:
-                break;
-            case SAVE:
-                break;
-            case RESET:
-                break;
-            case RECALL:
-                break;
-            case KANYEREST:
-                kanyeRest();
-                break;
-            case LIST:
-                break;
-            default:
-                System.out.println(java.util.Arrays.asList(Command.values()));
-                System.out.println("you only have these commands available");
-                scanner.nextLine ();
-                break;
-        }
-
     }
 
     public void runnit() {
