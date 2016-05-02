@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * Created by minlee on 4/29/16.
  */
-public class scientificCalculatorTest {
+public class ScientificCalculatorTest {
 
     ScientificCalculator calc;
     double delta = 1e-15; //Variable to compare two doubles are close enough

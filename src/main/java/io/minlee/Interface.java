@@ -46,9 +46,6 @@ public class Interface {
                                               "30:  Print out Menu Again",
                                               "0:   Close calculator"};
 
-    private static String[] userHistory = new String[10];
-    private static int userCommandCounter = 0;
-
     public void displayUserOptions(){
         for(int i = 0; i < userOptions.length; i++){
             System.out.println(userOptions[i]);

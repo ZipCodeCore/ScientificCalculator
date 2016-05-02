@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class DisplayTest {
 
-    Display binary, octal, decimal, hexadecimal;
+    Display binary, octal, decimal, hexadecimal, usd;
 
     @Before
     public void initialize() {
@@ -15,6 +15,7 @@ public class DisplayTest {
         this.octal = new Display(Display.DisplayType.OCTAL);
         this.decimal = new Display(Display.DisplayType.DECIMAL);
         this.hexadecimal = new Display(Display.DisplayType.HEXADECIMAL);
+        this.usd = new Display(Display.DisplayType.USD);
     }
 
     @Test
@@ -31,6 +32,9 @@ public class DisplayTest {
         String expectedHexadecimalValue = "3e8";
         String actualHexadecimalValue = hexadecimal.getCorrectDisplay(1000);
         Assert.assertEquals("Expected value should be "+expectedHexadecimalValue,expectedHexadecimalValue,actualHexadecimalValue);
+        String expectedUSDValue = "$102,100.00";
+        String actualUSDValue = usd.getCorrectDisplay(102100);
+        Assert.assertEquals("Expected value should be "+expectedUSDValue,expectedUSDValue,actualUSDValue);
     }
     @Test
     public void switchDisplayModeTest(){
@@ -50,6 +54,10 @@ public class DisplayTest {
         hexadecimal.switchDisplayMode();
         actualValue = hexadecimal.getDisplayMode();
         Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue);
+        expectedValue = "DECIMAL";
+        usd.switchDisplayMode();
+        actualValue = usd.getDisplayMode();
+        Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue);
     }
     @Test
     public void switchDisplayModeWithInputTest(){
@@ -68,6 +76,10 @@ public class DisplayTest {
         expectedValue = "BINARY";
         hexadecimal.switchDisplayMode("BINARY");
         actualValue = hexadecimal.getDisplayMode();
+        Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue);
+        expectedValue = "USD";
+        usd.switchDisplayMode("USD");
+        actualValue = usd.getDisplayMode();
         Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue);
     }
 }
