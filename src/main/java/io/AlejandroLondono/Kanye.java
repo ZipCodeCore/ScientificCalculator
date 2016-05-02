@@ -246,9 +246,17 @@ public class Kanye {
 
         if(willKanyeQuoteHimself <=50){
             String quote = this.kanyeQuotes[whichQuote];
-            String kanyeResponse = quote+"\n";
+            String[] quoteArr = quote.split(" ");
             System.out.printf("\n\nKanye is feeling a little self consious of is math skills\n\nkanye shouted: ");
-            System.out.println(kanyeResponse.toUpperCase());
+            String kanyeResponse = "";
+            for(int i = 0; i<quoteArr.length;i++){
+                if(i%5 == 0) kanyeResponse +="\n";
+                kanyeResponse += quoteArr[i]+" ";
+
+            }
+            System.out.println(kanyeResponse);
+
+
         }
     }
 

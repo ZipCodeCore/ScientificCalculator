@@ -89,14 +89,19 @@ you can also tell kanye to relax and exit the program by saying kanye rest
 * log function (skipped)
 * factorial function (skipped)
  
-##April31 -Third sprint
+##May 1 -Third sprint
 * Immaletyoufinish feature ✓
 	* Kanye Guesses feature ✓
-* shutup kanye feature
- * you cant shut kanye up, I am the voice of a generation"
+ of a generation"
 * display CLI
-* error handling
-* sqrt(kanye)???
+
+##May 2 -4th sprint
+* errorhandling 
+ 
+* runnit method
+	* I want to write the runnit function to take any type of input
+* shutup kanye feature
+ * you cant shut kanye up, I am the voice
 
 
 ##Breaking it down
