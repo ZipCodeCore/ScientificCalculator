@@ -257,11 +257,38 @@ public class KanyeSpecs {
     }
 
     @Test
-    public void KanyeTest(){
+    public void kanyeTest(){
         kanye.willKanyeQuoteHimself = 12;
         double answer = kanye.add(inputTwoTestValue);
         boolean actualString = kanye.immaLetYouFinish(answer) !=null;
         assertTrue("the answer should be a quote", actualString);
+    }
+
+    @Test
+    public void numGeneratorGuess(){
+        int previousValue = kanye.willKanyeGuess;
+        kanye.numGenerator();
+        int newValue = kanye.willKanyeGuess;
+        boolean hasitChanged = previousValue == newValue;
+        assertFalse("the probability value should have changed", hasitChanged);
+    }
+
+    @Test
+    public void numGeneratorKanyeQuote(){
+        int previousValue = kanye.willKanyeQuoteHimself;
+        kanye.numGenerator();
+        int newValue = kanye.willKanyeQuoteHimself;
+        boolean hasitChanged = previousValue == newValue;
+        assertFalse("the probability value should have changed", hasitChanged);
+    }
+
+    @Test
+    public void numGeneratorQuote(){
+        int previousValue = kanye.whichQuote;
+        kanye.numGenerator();
+        int newValue = kanye.whichQuote;
+        boolean hasitChanged = previousValue == newValue;
+        assertFalse("the probability value should have changed", hasitChanged);
     }
 }
 

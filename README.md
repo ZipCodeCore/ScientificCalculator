@@ -90,12 +90,13 @@ you can also tell kanye to relax and exit the program by saying kanye rest
 * factorial function (skipped)
  
 ##April31 -Third sprint
-* Immaletyoufinish feature
-	* Kanye Guesses feature 
+* Immaletyoufinish feature ✓
+	* Kanye Guesses feature ✓
 * shutup kanye feature
  * you cant shut kanye up, I am the voice of a generation"
 * display CLI
 * error handling
+* sqrt(kanye)???
 
 
 ##Breaking it down

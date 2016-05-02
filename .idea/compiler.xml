@@ -26,7 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="project-1-calculator" target="1.5" />
+      <module name="project-1-calculator" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

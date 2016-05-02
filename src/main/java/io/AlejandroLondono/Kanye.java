@@ -1,23 +1,28 @@
 package io.AlejandroLondono;
 
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Created by alejandrolondono on 4/29/16.
  */
+
+
 public class Kanye {
 
     public String display = "";
     public double memory = 0;
     public double inputOne = 0;
     public Mode currentMode = Mode.DECIMAL;
+    public boolean rest = false;
 
-    private Random random= new Random();
+    public Random random= new Random();
     public int willKanyeQuoteHimself = random.nextInt(100);
     public int willKanyeGuess = random.nextInt(100);
-    public int whichQuote = random.nextInt(100);
+    public int whichQuote = random.nextInt(32);
     public String[] kanyeQuotes = {"Jay is Kweli's favorite rapper, 50 is Eminem's favorite rapper, and I'm my favorite rapper.",
             "I'm like a vessel, and God has chosen me to be the voice and the connector.",
             "My music isn't just music -- it's medicine.",
@@ -59,10 +64,14 @@ public class Kanye {
 
     public enum Mode {
         DECIMAL, BINARY, HEX, OCTAL
-    };
+    }
     public TrigUnit currentTrigUnit =TrigUnit.RADIANS;
     public enum TrigUnit {
         RADIANS, DEGREES
+    }
+
+    public enum Command {
+        ADD, SUBTRACT, DIVIDE, EXP, SQUARE, MULTIPLY, SQRT, INVERSE, SIGN, BINARY, HEX, OCTAL, SWITCH_MODE, SINE, COSINE, TANGENT, ARC_SINE, ARC_COSINE, ARC_TANGENT, TRIG_UNITS, SAVE, RESET, RECALL, KANYE_REST, LIST
     }
 
     /**
@@ -213,6 +222,11 @@ public class Kanye {
         System.out.println(this.display);
         return this.display;
     }
+    public void numGenerator(){
+        this.willKanyeGuess = this.random.nextInt(100);
+        this.willKanyeQuoteHimself = this.random.nextInt(100);
+        this.whichQuote = this.random.nextInt(32);
+    }
 
     public String kanyeGuess(double answer){
 
@@ -231,7 +245,86 @@ public class Kanye {
     }
 
     public String immaLetYouFinish(double answer){
-        return null;
+
+        if(willKanyeQuoteHimself <=40){
+            String quote = this.kanyeQuotes[whichQuote];
+            String kanyeResponse = quote+"\n"+answer;
+            return kanyeResponse;
+        }else return null;
     }
+
+    public void kanyeRest(){
+        this.rest = true;
+    }
+
+    /**
+     * CLI Method calls all other methods in the runnit while loop
+     */
+    public void CLI(String command, double input){
+        int i = Command.valueOf(command).ordinal();
+        Command comm=Command.values()[i];
+        double answer = 0;
+        switch(comm){
+            case ADD:
+                answer = this.add(input);
+                immaLetYouFinish(answer);
+                kanyeGuess(answer);
+                break;
+            case SUBTRACT:
+                answer = this.subtract(input);
+                immaLetYouFinish(answer);
+                kanyeGuess(answer);
+                break;
+            case DIVIDE:
+                answer = this.divide(input);
+                immaLetYouFinish(answer);
+                kanyeGuess(answer);
+                break;
+            case EXP:
+                answer = this.exp(input);
+                immaLetYouFinish(answer);
+                kanyeGuess(answer);
+            case MULTIPLY:
+                answer = this.multiply(input);
+                immaLetYouFinish(answer);
+                kanyeGuess(answer);
+                break;
+            case SAVE:
+                break;
+        }
+//        call
+    }
+
+    public void runnit(){
+        System.out.println("welcome to KanyeL8tor\n the Yeezy that makes math easy");
+        Scanner scanner = new Scanner(System.in);
+
+        while(!this.rest){
+
+            String command;
+
+            System.out.println("please enter a number\n");
+            double first = scanner.nextDouble();
+            this.equation(first);
+            System.out.println(java.util.Arrays.asList(Command.values()));
+            scanner.nextLine();
+            System.out.println("type the operation you want to use");
+            command = scanner.nextLine().toUpperCase();
+            System.out.println("you entered "+command);
+            System.out.println("enter the second number");
+            Double second = scanner.nextDouble();
+            this.CLI(command, second);
+
+            this.rest = true;
+        }
+    }
+
+    public static void main(String[] args) {
+        Kanye kanye = new Kanye();
+        kanye.runnit();
+
+    }
+
+
 
 }
