@@ -280,6 +280,9 @@ public class Kanye {
                 answer = this.multiply(input);
 
                 break;
+            case KANYEREST:
+                kanyeRest();
+                break;
             case SAVE:
                 break;
         }
@@ -353,11 +356,11 @@ public class Kanye {
 
     }
 
-    public void runnit(){
+    public void runnit() {
         System.out.println("welcome to KanyeL8tor\n the Yeezy that makes math easy");
 
 
-        while(!this.rest){
+        while (!this.rest) {
 
             String command;
             double second;
@@ -369,15 +372,11 @@ public class Kanye {
             scanner.nextLine();
             System.out.println("type the operation you want to use");
             command = scanner.nextLine().toUpperCase();
-            System.out.println("you entered "+command);
+            System.out.println("you entered " + command);
             System.out.println("enter the second number");
             second = scanner.nextDouble();
             this.numGenerator();
-            if(second){
-                this.CLI(command, second);
-            }else this.CLI(command);
-
-
+            this.CLI(command, second);
         }
     }
 
