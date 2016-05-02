@@ -65,7 +65,7 @@ public class Kanye {
     public enum Mode {
         DECIMAL, BINARY, HEX, OCTAL
     }
-    public TrigUnit currentTrigUnit =TrigUnit.RADIANS;
+    public TrigUnit currentTrigUnit = TrigUnit.RADIANS;
     public enum TrigUnit {
         RADIANS, DEGREES
     }
@@ -143,7 +143,7 @@ public class Kanye {
         convertDisplayMode(Mode.values()[i]);
     }
 
-//    THIS IS NOT FULLY OPERATIONAL. IT NEEDS TO TAKE A STRING AND COMPARE A MODE BEFORE????
+
     public void convertDisplayMode(Mode mode){
         this.currentMode = mode;
 
@@ -211,8 +211,9 @@ public class Kanye {
         this.display = memString;
     }
 
-    public String display(Double input){
+    public String display(double input){
         this.display = Double.toString(input);
+        this.memory = input;
         System.out.println(this.display);
         return this.display;
     }
@@ -307,22 +308,23 @@ public class Kanye {
                 this.switchDisplayMode();
                 break;
             case SINE:
-                this.sine();
+                answer = this.sine();
+
                 break;
             case COSINE:
-                this.cosine();
+                answer = this.cosine();
                 break;
             case TANGENT:
-                this.tangent();
+                answer = this.tangent();
                 break;
             case ARC_SINE:
-                this.arcSine();
+                answer = this.arcSine();
                 break;
             case ARC_COSINE:
-                this.arcCosine();
+                answer = this.arcCosine();
                 break;
             case ARC_TANGENT:
-                this.arcTangent();
+                answer = this.arcTangent();
                 break;
             case TRIG_UNITS:
                 this.switchUnitsMode();
