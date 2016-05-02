@@ -365,6 +365,7 @@ public class Kanye {
             double first = scanner.nextDouble();
             this.equation(first);
             System.out.println(java.util.Arrays.asList(Command.values()));
+
             scanner.nextLine();
             System.out.println("type the operation you want to use");
             command = scanner.nextLine().toUpperCase();
