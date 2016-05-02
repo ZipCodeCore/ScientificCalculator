@@ -111,7 +111,8 @@ public class Display {
         String afterDecimalBinary = Integer.toBinaryString(afterDecimal);
 
         parsedValue = parsedValue.concat(beforeDecimalBinary);
-        parsedValue = parsedValue.concat(" 00101110 ");
+        //parsedValue = parsedValue.concat(" 00101110 ");
+        parsedValue = parsedValue.concat(".");
         parsedValue = parsedValue.concat(afterDecimalBinary);
 
         return parsedValue;
