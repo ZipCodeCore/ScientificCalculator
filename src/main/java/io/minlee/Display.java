@@ -1,5 +1,11 @@
 package io.minlee;
 
+import java.text.DecimalFormat;
+import java.text.FieldPosition;
+import java.text.NumberFormat;
+import java.text.ParsePosition;
+import java.util.Locale;
+
 /**
  * Created by minlee on 4/30/16.
  */
@@ -7,7 +13,7 @@ public class Display {
 
 
     public enum DisplayType {
-        BINARY, OCTAL, DECIMAL, HEXADECIMAL
+        BINARY, OCTAL, DECIMAL, HEXADECIMAL, USD
     }
 
     DisplayType displayType;
@@ -15,7 +21,6 @@ public class Display {
     public Display(DisplayType displayType) {
         this.displayType = displayType;
     }
-
     public void switchDisplayMode(){
         switch (displayType) {
             case BINARY:
@@ -29,6 +34,9 @@ public class Display {
                 break;
             case HEXADECIMAL:
                 displayType = DisplayType.BINARY;
+                break;
+            case USD:
+                displayType = DisplayType.DECIMAL;
                 break;
         }
     }
@@ -45,6 +53,9 @@ public class Display {
         else if(newDisplayType.equals("HEXADECIMAL")){
             displayType = DisplayType.HEXADECIMAL;
         }
+        else if(newDisplayType.equals("USD")){
+            displayType = DisplayType.USD;
+        }
         else{
             System.out.println("Did not enter a correct type, staying with current mode");
         }
@@ -52,10 +63,6 @@ public class Display {
     public String getDisplayMode(){
         return displayType.toString();
     }
-
-
-
-
     public String getCorrectDisplay(double displayValue) {
         String displayString = "";
         int intDisplayValue;
@@ -74,6 +81,11 @@ public class Display {
                 break;
             case HEXADECIMAL:
                 displayString = converter.toHexString(intDisplayValue);
+                break;
+            case USD:
+                DecimalFormat usdFormat = new DecimalFormat("#,###.00");
+                displayString += "$";
+                displayString += usdFormat.format(displayValue);
                 break;
         }
         return displayString;

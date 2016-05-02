@@ -71,7 +71,6 @@ public class scientificCalculatorTest {
         Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue,delta);
     }
 
-
     @Test
     public void calculateInvertTest(){
         double expectedValue = .25;
@@ -175,5 +174,10 @@ public class scientificCalculatorTest {
         double actualValue = calc.convertRadiansToDegrees(Math.PI);
         Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue,delta);
     }
-
+    @Test
+    public void calculateCompoundInterestTest(){
+        double expectedValue = 12762.82;
+        double actualValue = calc.calculateCompoundInterest(10000,5,5);
+        Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue,delta);
+    }
 }

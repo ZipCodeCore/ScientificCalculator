@@ -1,6 +1,9 @@
 package io.minlee;
 
 import org.apache.commons.math3.special.Gamma;
+
+import java.text.DecimalFormat;
+
 /**
  * Created by minlee on 4/29/16.
  */
@@ -133,10 +136,9 @@ public class ScientificCalculator {
         return Math.toDegrees(displayValue);
     }
 
-    public double calculateCompoundInterest(double displayValue, int interestRate, int numOfYears){
-
-        double total = displayValue * Math.pow(1.0 + (interestRate/100), numOfYears);
-        return total;
+    public double calculateCompoundInterest(double displayValue, double interestRate, int numOfYears){
+        double total =  displayValue * Math.pow((1.0 + (interestRate/100)), numOfYears);
+        DecimalFormat cashValue = new DecimalFormat("###.##");
+        return Double.valueOf(cashValue.format(total));
     }
-
 }

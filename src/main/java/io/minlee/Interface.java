@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Interface {
 
     private static double displayValue;
+    private static int numOfDecimalPlace = 10;
     private static String memoryMode = "";
     private static double memoryValue;
     ScientificCalculator calc = new ScientificCalculator();
@@ -40,8 +41,9 @@ public class Interface {
                                               "25:  Access Memory Options",
                                               "26:  Toggle Degrees or Radians",
                                               "27:  Enter Choose Angle (DEGREES or RADIANS)",
-                                              "28:  Calculate Compound Interest",
-                                              "29:  Print out Menu Again",
+                                              "28:  Calculate Compound Interest rounded to $Value",
+                                              "29:  Set all values to USD",
+                                              "30:  Print out Menu Again",
                                               "0:   Close calculator"};
 
     private static String[] userHistory = new String[10];
@@ -147,17 +149,19 @@ public class Interface {
                 switchUnitsMode(angleOption);
                 break;
             case 28://Calculate Compound Interest
-                int interest;
-
+                double interestRate = readUserInterestRate();
+                int numofYears = readUserNumOfYears();
+                displayValue = calc.calculateCompoundInterest(displayValue, interestRate, numofYears);
                 break;
-            case 29://Print out User History
-                printUserHistory();
+            case 29://Manually select Number of Decimal Places
+                displayMode.switchDisplayMode("USD");
+                break;
+            case 30://Print out user history
+                displayUserOptions();
                 break;
         }
     }
-    public void printUserHistory(){
 
-    }
     public void switchUnitsMode(){
         boolean isInRadians = calc.getIsInRadians();
         if(isInRadians){
@@ -216,10 +220,12 @@ public class Interface {
     public void setMemoryValue(double reset){
         memoryValue = reset;
     }
-
+    public double getMemoryValue(){
+        return memoryValue;
+    }
     public void chooseDisplayMode(){
-        String newDisplaytype = readUserString();
-        displayMode.switchDisplayMode(newDisplaytype);
+        String newDisplayType = readUserString();
+        displayMode.switchDisplayMode(newDisplayType);
     }
 
     public void runCalculator(){
@@ -246,9 +252,23 @@ public class Interface {
         return userString;
     }
 
+    public double readUserInterestRate(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter an interest rate (1 - 100%):");
+        double userInterestRate = input.nextDouble();
+        return userInterestRate;
+    }
+
+    public int readUserNumOfYears(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter number of years:");
+        int numOfYears = input.nextInt();
+        return numOfYears;
+    }
+
     public int readUserCommand(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a Command:");
+        System.out.println("Enter an Command:");
         int userCommand = input.nextInt();
         return userCommand;
     }
