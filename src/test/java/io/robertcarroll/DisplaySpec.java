@@ -57,4 +57,29 @@ public class DisplaySpec {
         String actualValue = display.getShownNumber();
         assertTrue("The expected value is 0", expectedValue.equals(actualValue));
     }
+
+    @Test
+    public void switchModeToBinaryTest(){
+        display.switchMode(1);
+        assertTrue(display.getDisplayMode() == ViewModes.BINARY);
+    }
+
+    @Test
+    public void switchModeToOctalTest(){
+        display.switchMode(2);
+        assertTrue(display.getDisplayMode() == ViewModes.OCTAL);
+    }
+
+    @Test
+    public void switchModeToDecimalTest(){
+        display.switchMode(1);
+        display.switchMode(3);
+        assertTrue(display.getDisplayMode() == ViewModes.DECIMAL);
+    }
+
+    @Test
+    public void switchModeToHexadecimalTest(){
+        display.switchMode(4);
+        assertTrue(display.getDisplayMode() == ViewModes.HEXADECIMAL);
+    }
 }

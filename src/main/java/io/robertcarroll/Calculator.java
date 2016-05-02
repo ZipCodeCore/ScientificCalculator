@@ -3,9 +3,9 @@ package io.robertcarroll;
 public class Calculator {
     private double value;
     private double previousValue;
-    private String commandKey;
     private boolean powerOn;
     private boolean displayInUse = false;
+    private String commandKey;
     private Units units = Units.DEGREES;
 
     /**
@@ -307,7 +307,7 @@ public class Calculator {
                 display.setShownNumber(result);
                 break;
             case "25":
-                int mode = user.inputMode();
+                int mode = user.inputDisplayMode();
                 if(mode == 0){
                     display.switchMode();
                 }else{

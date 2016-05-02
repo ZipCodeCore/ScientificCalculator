@@ -5,6 +5,10 @@ public class Display {
     private double storedDecimalNumber;
     private ViewModes displayMode = ViewModes.DECIMAL;
 
+    public ViewModes getDisplayMode() {
+        return displayMode;
+    }
+
     public double getStoredDecimalNumber() {
         return storedDecimalNumber;
     }
