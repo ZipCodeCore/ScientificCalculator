@@ -67,11 +67,4 @@ public class InterfaceTest {
         actualValue = userInterface.getDisplayValue();
         Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue,delta);
     }
-    @Test
-    public void setDisplayValueTest(){
-        double expectedValue = 0;
-        userInterface.setDisplayValue(0);
-        double actualValue = userInterface.getDisplayValue();
-        Assert.assertEquals("Expected value should be "+expectedValue,expectedValue,actualValue,delta);
-    }
 }
