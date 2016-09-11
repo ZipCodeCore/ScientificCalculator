@@ -26,19 +26,9 @@ public class MathFunctions {
         return a * b;
     }
 
-    public double divide (double a, double b) {
+    public double divide (double a, double b) throws ArithmeticException {
 
-        double divide = 0;
-
-        try {
-
-            divide = a / b;
-
-        } catch (ArithmeticException e) {
-
-        }
-
-        return divide;
+        return a / b;
     }
 
     public double square (double a) {
@@ -57,16 +47,8 @@ public class MathFunctions {
     }
 
     public double inverse (double a) {
-        try {
 
-            a = 1 / a;
-
-        } catch (ArithmeticException e) {
-
-            System.out.println("Err");
-        }
-
-        return a;
+        return divide (1, a);
     }
 
     public double switchSign (double a) {
