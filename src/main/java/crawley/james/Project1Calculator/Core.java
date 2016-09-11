@@ -26,6 +26,7 @@ public class Core {
     public double getNumberInput () {
 
         System.out.println("Input a number: ");
+
         return scanner.nextDouble();
     }
 
@@ -36,7 +37,7 @@ public class Core {
 
     public void executeCommand (String command) {
 
-        double result;
+        double currentDisplayState = settings.getState();
 
         clearError(command);
 
@@ -44,59 +45,194 @@ public class Core {
             case "add":
                 updateDisplay(mathFunc.add(settings.getState(), getNumberInput()));
                 break;
+
             case "subtract":
                 updateDisplay(mathFunc.subtract(settings.getState(), getNumberInput()));
                 break;
+
             case "multiply":
                 updateDisplay(mathFunc.multiply(settings.getState(), getNumberInput()));
                 break;
+
             case "divide":
 
-                result = mathFunc.divide(settings.getState(), getNumberInput());
-                result = generateError(result);
+                currentDisplayState = mathFunc.divide(settings.getState(), getNumberInput());
+                currentDisplayState = generateError(currentDisplayState);
 
-                updateDisplay(result);
-
-                break;
-            case "inverse":
-
-                result = mathFunc.inverse(settings.getState());
-                result = generateError(result);
-
-                updateDisplay(result);
+                updateDisplay(currentDisplayState);
 
                 break;
+
+            case "square":
+                updateDisplay(mathFunc.square(settings.getState()));
+                break;
+
             case "square_root":
 
-                result = mathFunc.squareRoot(settings.getState());
-                result = generateError(result);
+                currentDisplayState = mathFunc.squareRoot(settings.getState());
+                currentDisplayState = generateError(currentDisplayState);
 
-                updateDisplay(result);
+                updateDisplay(currentDisplayState);
+                break;
+
+            case "cube":
+                updateDisplay(mathFunc.cube(settings.getState()));
+                break;
+
+            case "cube_root":
+                updateDisplay(mathFunc.cubeRoot(settings.getState()));
+                break;
+
+            case "exponent":
+                updateDisplay(mathFunc.exponent(settings.getState(), getNumberInput()));
+                break;
+
+            case "inverse":
+
+                currentDisplayState = mathFunc.inverse(settings.getState());
+                currentDisplayState = generateError(currentDisplayState);
+
+                updateDisplay(currentDisplayState);
+
+                break;
+
+            case "switch_sign":
+                updateDisplay(mathFunc.switchSign(settings.getState()));
+                break;
+
+            case "sine":
+
+                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(settings.getState());
+                }
+                updateDisplay(mathFunc.sine(currentDisplayState));
+                break;
+
+            case "cosine":
+
+                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(settings.getState());
+                }
+                updateDisplay(mathFunc.cosine(currentDisplayState));
+                break;
+
+            case "tangent":
+
+
+                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(settings.getState());
+                }
+
+                currentDisplayState = mathFunc.tangent(currentDisplayState);
+                currentDisplayState = generateError(currentDisplayState);
+                updateDisplay(currentDisplayState);
+                break;
+
+            case "inverse_sine":
+
+                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(settings.getState());
+                }
+
+                currentDisplayState = mathFunc.inverseSine(currentDisplayState);
+                currentDisplayState = generateError(currentDisplayState);
+                updateDisplay(currentDisplayState);
+                break;
+
+
+            case "inverse_cosine":
+
+                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(settings.getState());
+                }
+
+                currentDisplayState = mathFunc.inverseCosine(currentDisplayState);
+                currentDisplayState = generateError(currentDisplayState);
+                updateDisplay(currentDisplayState);
+                break;
+
+            case "inverse_tangent":
+
+                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(settings.getState());
+                }
+
+                currentDisplayState = mathFunc.inverseTangent(currentDisplayState);
+                currentDisplayState = generateError(currentDisplayState);
+                updateDisplay(currentDisplayState);
+                break;
+
+
+            case "factorial":
+                updateDisplay(mathFunc.factorial((int)settings.getState()));
+                break;
+
+            case "logarithm":
+                break;
+
+            case "natural_logarithm":
+                break;
+
+            case "inverse_logarithm":
+                break;
+
+            case "inverse_natural_logarithm":
                 break;
 
             case "binary":
                 settings.setCountingBase(CountingBase.BINARY);
                 break;
+
             case "octal":
                 settings.setCountingBase(CountingBase.OCTAL);
                 break;
+
             case "decimal":
                 settings.setCountingBase(CountingBase.DECIMAL);
                 break;
+
             case "hexadecimal":
                 settings.setCountingBase(CountingBase.HEXADECIMAL);
                 break;
+
             case "change_base":
                 settings.setCountingBase();
                 break;
+
+            case "radians":
+                settings.setTrigUnits(TrigUnits.RADIANS);
+                break;
+
+            case "degrees":
+                settings.setTrigUnits(TrigUnits.DEGREES);
+                break;
+
+            case "change_units":
+                settings.setTrigUnits();
+                break;
+
             case "quit":
                 System.out.println("Turning off.");
                 isOn = false;
                 break;
+
             case "clear":
                 isErr = false;
                 updateDisplay(0);
                 break;
+
+            case "store":
+                settings.setMemory(settings.getState());
+                break;
+
+            case "recall":
+                updateDisplay(settings.getMemory());
+                break;
+
+            case "clear_memory":
+                settings.setMemory(0);
+                break;
+
             default:
                 System.out.println("Please input a valid command.");
         }

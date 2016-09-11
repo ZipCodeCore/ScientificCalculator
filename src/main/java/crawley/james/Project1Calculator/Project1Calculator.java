@@ -11,6 +11,8 @@ public class Project1Calculator {
 
         System.out.println("This is a calculator.");
 
+        //System.out.println(Math.tan(Math.PI));
+
         while (calculator.isRunning()) {
             calculator.receiveCommand();
         }

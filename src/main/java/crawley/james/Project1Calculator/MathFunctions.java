@@ -26,7 +26,7 @@ public class MathFunctions {
         return a * b;
     }
 
-    public double divide (double a, double b) throws ArithmeticException {
+    public double divide (double a, double b) {
 
         return a / b;
     }
@@ -39,6 +39,16 @@ public class MathFunctions {
     public double squareRoot (double a) {
 
         return Math.sqrt(a);
+    }
+
+    public double cube (double a) {
+
+        return a * a * a;
+    }
+
+    public double cubeRoot (double a) {
+
+        return Math.cbrt(a);
     }
 
     public double exponent (double a, double b) {
@@ -88,13 +98,19 @@ public class MathFunctions {
 
     public int factorial (int a) {
 
+        int sign = 1;
         int factorial = 1;
+
+        if (a < 0) {
+            sign = -1;
+            a *= sign;
+        }
 
         for (int i = 2; i <= a; i++) {
             factorial *= i;
         }
 
-        return factorial;
+        return factorial * sign;
     }
 
     public double logarithm (double a) {
