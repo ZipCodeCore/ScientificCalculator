@@ -1,7 +1,4 @@
 package kamsheh.adam.project1calculator;
-
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 import java.util.Scanner;
 
 /**
@@ -13,8 +10,9 @@ public class Calculator {
     private double state;
     private Scanner scanner = new Scanner(System.in);
     private boolean bool = true;
-    private String trigMode = "degree"; // <-- use this to switch between radians or degrees
+    private String trigUnits = "degree"; // <-- use this to switch between radians or degrees
     private double memory = 0;
+    private Display display = new Display();
     //////////////////////////////////////
 
     //Constructor ///////////////////////
@@ -29,39 +27,17 @@ public class Calculator {
 
     //This method controls the flow of execution for the calculator
     public void runCalculator() {
-        this.prompt();
+        this.display.prompt();
         while(bool) {
-            System.out.println("--------------------");
-            System.out.println("State:\t" + this.state);
-            System.out.println("--------------------");
-            System.out.println("\n");
             this.mainMenu();
         }
     }
 
-    //Prompt
-    public void prompt() {
-        System.out.println("###################################");
-        System.out.print("# You have entered The Calculator #\n");
-        System.out.println("###################################");
-    }
-
-    // Main Menu //////////////////////////
-    public void printMenuOptions() {
-        System.out.println("Please type an the number corresponding to the option below:");
-        System.out.println("-----------------");
-        System.out.println("1: Operations");
-        System.out.println("2: Clear Display");
-        System.out.println("3: Change State");
-        System.out.println("4: Change mode (no functionality yet)");
-        System.out.println("0: Exit Calculator\n");
-        System.out.print("Enter number: ");
-    }
-
     //Main menu with options for what calculation you want performed
     public void mainMenu() {
-        this.printMenuOptions();
-        int input = scanner.nextInt();
+        this.display.printMainMenuOptions();
+        //int input = scanner.nextInt();
+        int input = this.display.getUserOption();
         System.out.println("\n--------------\n");
         switch (input) {
             case 1:
@@ -100,21 +76,16 @@ public class Calculator {
     public double getMemory() {
         return this.memory;
     }
+
+    public void setStateToMemory() {
+        this.state = this.getMemory();
+    }
     ////////////////////////////////
 
     // Operations menu ///////////////////
-    public void printOperationsMenu() {
-        System.out.println("Please type a number corresponding to the option below:");
-        System.out.println("1: Basic operations");
-        System.out.println("2: Trigonometric functions");
-        System.out.println("3: Logarithmic functions");
-        System.out.println("0: Exit Calculator");
-    }
-
     public void operationsMenu() {
-        this.printOperationsMenu();
-        System.out.print("Enter number corresponding to option: ");
-        int input = scanner.nextInt();
+        this.display.printOperationsMenu();
+        int input = this.display.getUserOption();
         System.out.println("\n--------------\n");
         switch (input) {
             case 1:
@@ -127,7 +98,7 @@ public class Calculator {
                 this.trigMenu();
                 break;
             case 0:
-                this.logMenu();
+                bool = false;
                 break;
             default:
                 System.out.println("You broke something...");
@@ -153,60 +124,45 @@ public class Calculator {
         return "Err";
     }
 
-    public void printBasicOperations() {
-        System.out.println("Please choose a basic operation: ");
-        System.out.println("1: Add");
-        System.out.println("2: Subtract");
-        System.out.println("3: Multiply");
-        System.out.println("4: Divide");
-        System.out.println("5: Square");
-        System.out.println("6: Square Root");
-        System.out.println("7: Exponentiation");
-        System.out.println("8: Inverse");
-        System.out.println("9: Change sign");
-        System.out.println("10: Factorial");
-        System.out.println("0: Back to main menu");
-    }
-
     public void basicOperations() {
-        this.printBasicOperations();
-        System.out.print("\nChoose basic operation: ");
-        int input = scanner.nextInt();
+        this.display.printBasicOperationsMenu();
+        int input = this.display.getUserOption();
         System.out.print("Choose value: ");
-        double value = scanner.nextDouble();
+        double value = this.display.getUserValue();
         System.out.println();
         switch (input) {
             case 1:
-                System.out.println(this.state + " + " + value + " = " + this.add(value));
+                this.display.printBasicOperation(this.state, value, '+', this.add(value));
                 break;
             case 2:
-                System.out.println(this.state + " - " + value + " = " + this.subtract(value));
+                this.display.printBasicOperation(this.state, value, '-', this.subtract(value));
                 break;
             case 3:
-                System.out.println(this.state + " * " + value + " = " + this.multiply(value));
+                this.display.printBasicOperation(this.state, value, '*', this.multiply(value));
                 break;
             case 4:
-                System.out.println(this.state + " / " + value + " = " + this.divide(value));
+                this.display.printBasicOperation(this.state, value, '/', this.divide(value));
                 break;
             case 5:
-                System.out.println(this.state + "square(" + this.state + ") = " + this.square());
+                System.out.printf("square(%.2f) = %.2f", this.state, this.square());
                 break;
             case 6:
-                System.out.println(this.state + "sqrt(" + this.state + ") = " + this.squareRoot());
+                System.out.printf("sqrt(%.2f) = %.2f", this.state, this.squareRoot());
                 break;
             case 7:
-                System.out.println(this.state + "(" + this.state + ")^" + value + " = " + this.toThePower(value));
+                System.out.printf("(%.2f)^%.2f = %.2f", this.state, value, this.toThePower(value));
                 break;
             case 8:
-                System.out.println(this.state + "inverse(" + this.state + ") = " + this.inverse());
+                System.out.printf("inverse(%.2f) = %.2f", this.state, this.inverse());
                 break;
             case 9:
                 System.out.println(this.changeSign());
                 break;
             case 10:
-                System.out.println(this.state + "! = " + this.factorial());
+                System.out.printf("%.2f! = %.2f", this.state, this.factorial());
             case 0:
                 System.out.println("Exiting...");
+                bool = false;
                 break;
             default:
                 System.out.println("You broke something. Enter a proper value.");
@@ -264,42 +220,35 @@ public class Calculator {
     }
     //////////////////////////////////////////
 
-    public void printTrigFunctions() {
-        System.out.println("Please choose a basic operation: ");
-        System.out.println("1: Sine");
-        System.out.println("2: Cosine");
-        System.out.println("3: Tangent");
-        System.out.println("4: Inverse Sine");
-        System.out.println("5: Inverse Cosine");
-        System.out.println("6: Inverse Tangent");
-    }
-
     public void trigMenu() {
-        this.printTrigFunctions();
-        System.out.print("\nChoose Trig function: ");
-        int input = scanner.nextInt();
+        this.display.printTrigFunctionsMenu();
+        int input = this.display.getUserOption();
         System.out.println();
         switch (input) {
             case 1:
-                System.out.println("sine(" + this.state + ") = " + this.sine());
+                System.out.printf("sine(%.2f) = %.2f", this.state, this.sine());
                 break;
             case 2:
-                System.out.println("cosine(" + this.state + ") = " + this.cosine());
+                System.out.printf("cosine(%.2f) = %.2f", this.state, this.cosine());
                 break;
             case 3:
-                System.out.println("tangent(" + this.state + ") = " + this.tangent());
+                System.out.printf("tangent(%.2f) = %.2f", this.state, this.tangent());
                 break;
             case 4:
-                System.out.println("InverseSine(" + this.state + ") = " + this.inverseSine());
+                System.out.printf("inv_sine(%.2f) = %.2f", this.state, this.inverseSine());
                 break;
             case 5:
-                System.out.println("InverseCosine(" + this.state + ") = " + this.inverseCosine());
+                System.out.printf("inv_cosine(%.2f) = %.2f", this.state, this.inverseCosine());
                 break;
             case 6:
-                System.out.println("InverseTangent(" + this.state + ") = " + this.inverseTangent());
+                System.out.printf("inv_tangent(%.2f) = %.2f", this.state, this.inverseTangent());
+                break;
+            case 7:
+                this.switchTrigUnits();
                 break;
             case 0:
                 System.out.println("Exiting...");
+                bool = false;
                 break;
             default:
                 System.out.println("You broke something. Enter a proper value.");
@@ -307,49 +256,69 @@ public class Calculator {
     }
 
     // Trig Functions ///////////////////////
+    public void switchTrigUnits() {
+        if(this.trigUnits.equals("degree")) {
+            this.trigUnits = "radian";
+        } else if(this.trigUnits.equals("radian")) {
+            this.trigUnits = "degree";
+        }
+    }
+
+    public double convertTrigUnits() {
+        if(this.getTrigUnits().equals("degree")) {
+            return Math.toDegrees(this.state);
+        }
+        return Math.toRadians(this.state);
+    }
+
+    public void switchTrigUnits(String unit) {
+        this.trigUnits = unit;
+    }
+
+    public String getTrigUnits() {
+        return this.trigUnits;
+    }
+
     public double sine() {
+        this.state = this.convertTrigUnits();
         this.state = Math.sin(this.state);
         return this.state;
     }
 
     public double cosine() {
+        this.state = this.convertTrigUnits();
         this.state = Math.cos(this.state);
         return this.state;
     }
 
     public double tangent() {
+        this.state = this.convertTrigUnits();
         this.state = Math.tan(this.state);
         return this.state;
     }
 
     public double inverseSine() {
+        this.state = this.convertTrigUnits();
         this.state = Math.asin(this.state);
         return this.state;
     }
 
     public double inverseCosine() {
+        this.state = this.convertTrigUnits();
         this.state = Math.acos(this.state);
         return this.state;
     }
 
     public double inverseTangent() {
+        this.state = this.convertTrigUnits();
         this.state = Math.atan(this.state);
         return this.state;
     }
     /////////////////////////////////////////
 
-    public void printLogFunctions() {
-        System.out.println("Please choose a basic operation: ");
-        System.out.println("1: Logarithm");
-        System.out.println("2: Inverse Logarithm");
-        System.out.println("3: Natural Log");
-        System.out.println("4: Inverse Natural Log");
-    }
-
     public void logMenu() {
-        this.printLogFunctions();
-        System.out.print("\nChoose Trig function: ");
-        int input = scanner.nextInt();
+        this.display.printLogFunctionsMenu();
+        int input = this.display.getUserOption();
         System.out.println();
         switch (input) {
             case 1:
@@ -364,6 +333,9 @@ public class Calculator {
             case 4:
                 System.out.println("Invln(" + this.state + ") = " + this.inverseNaturalLog());
                 break;
+            case 0:
+                System.out.println("Exiting...");
+                bool = false;
             default:
                 System.out.println("You broke something. Enter a proper value.");
         }
@@ -399,4 +371,3 @@ public class Calculator {
         return this.state;
     }
 }
-

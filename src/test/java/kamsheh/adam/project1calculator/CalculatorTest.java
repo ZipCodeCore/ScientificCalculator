@@ -17,6 +17,14 @@ public class CalculatorTest {
     }
 
     @Test
+    public void CalculatorTest() {
+        double exptectedValue = 10.0;
+        double actualValue = calc.getState();
+
+        Assert.assertEquals("Check constructor.", exptectedValue, actualValue, 0);
+    }
+
+    @Test
     public void getStateTest() {
         calc.changeState(10);
         double expectedValue = 10;
@@ -62,6 +70,19 @@ public class CalculatorTest {
     public void getMemoryTest() {
         //already tested above.
     }
+
+    @Test
+    public void setStateToMemory() {
+        calc.changeState(55);
+        calc.addToMemory();
+        calc.changeState(1000);
+        calc.setStateToMemory();
+        double expectedValue = 55;
+        double actualValue = calc.getMemory();
+
+        Assert.assertEquals("Check that state is set to memory.", expectedValue, actualValue, 0);
+    }
+
 
     @Test
     public void addTest() {
@@ -139,6 +160,34 @@ public class CalculatorTest {
     @Test
     public void mainMenuTest() {
         //Need to finish this
+    }
+
+    @Test
+    public void switchTrigUnitsTest() {
+        calc.switchTrigUnits();
+        String expectedValue = "radian";
+        String actualValue = calc.getTrigUnits();
+
+        Assert.assertEquals("Check switch trig function.", expectedValue, actualValue);
+    }
+
+    @Test
+    public void switchTrigUnitsTest2() {
+        calc.switchTrigUnits();
+        String expectedValue2 = "degree";
+        calc.switchTrigUnits("degree");
+        String actualValue2 = calc.getTrigUnits();
+
+        Assert.assertEquals("Check switch trig function.", expectedValue2, actualValue2);
+    }
+
+    @Test
+    public void convertTrigUnitsTest() {
+        calc.changeState(Math.PI);
+        double expectedValue = 180;
+        double actualValue = calc.convertTrigUnits();
+
+        Assert.assertEquals("Make sure Trig value can be converted.", expectedValue, actualValue, .01);
     }
 
     @Test
