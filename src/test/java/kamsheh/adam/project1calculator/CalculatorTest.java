@@ -150,6 +150,24 @@ public class CalculatorTest {
     }
 
     @Test
+    public void cubedRootTest() {
+        calc.changeState(8);
+        double expectedValue = 2;
+        double actualValue = calc.cubedRoot();
+
+        Assert.assertEquals("Test should return cubed root.", expectedValue, actualValue, 0);
+    }
+
+    @Test
+    public void cubedTest() {
+        calc.changeState(2);
+        double expectedValue = 8;
+        double actualValue = calc.cubed();
+
+        Assert.assertEquals("Check cube function.", expectedValue, actualValue, 0);
+    }
+
+    @Test
     public void changeSignTest() {
         double expectedValue = -10.0;
         double actualValue = calc.changeSign();

@@ -162,6 +162,7 @@ public class Display {
         System.out.println("8: Inverse");
         System.out.println("9: Change sign");
         System.out.println("10: Factorial");
+        System.out.println("11: Cubed Root");
         System.out.println("0: Exit Calculator\n");
         System.out.print("Enter option: ");
     }

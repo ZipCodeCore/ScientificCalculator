@@ -143,8 +143,13 @@ public class Calculator {
     public void basicOperations() {
         this.display.printBasicOperationsMenu();
         int input = this.display.getUserOption();
-        System.out.print("Choose value: ");
-        double value = this.display.getUserValue();
+        double value = 0;
+        if(input > 4) {
+
+        } else {
+            System.out.print("Choose value: ");
+            value = this.display.getUserValue();
+        }
         System.out.println();
         switch (input) {
             case 1:
@@ -157,7 +162,11 @@ public class Calculator {
                 this.display.printBasicOperation(this.state, value, '*', this.multiply(value));
                 break;
             case 4:
-                this.display.printBasicOperation(this.state, value, '/', this.divide(value));
+                if(value==0) {
+                    System.out.println("Error. Cannot divide by 0.");
+                } else {
+                    this.display.printBasicOperation(this.state, value, '/', this.divide(value));
+                }
                 break;
             case 5:
                 System.out.printf("square(%.2f) = %.2f", this.state, this.square());
@@ -176,6 +185,12 @@ public class Calculator {
                 break;
             case 10:
                 System.out.printf("%.2f! = %.2f", this.state, this.factorial());
+                break;
+            case 11:
+                System.out.printf("cbrt(%.2f) = %.2f", this.state, this.cubedRoot());
+                break;
+            case 12:
+                System.out.printf("cubed(%.2f) = %.2f", this.state, this.cubed());
             case 0:
                 System.out.println("Exiting...");
                 bool = false;
@@ -202,10 +217,6 @@ public class Calculator {
     }
 
     public double divide(double value) {
-        if(value == 0.0) {
-            System.out.println("Cannot divide by 0.");
-            return -99;
-        }
         this.state /= value;
         return this.state;
     }
@@ -217,6 +228,16 @@ public class Calculator {
 
     public double squareRoot() {
         this.state = Math.sqrt(this.state);
+        return this.state;
+    }
+
+    public double cubedRoot() {
+        this.state = Math.cbrt(this.state);
+        return this.state;
+    }
+
+    public double cubed() {
+        this.state = Math.pow(this.state, 3);
         return this.state;
     }
 
@@ -234,6 +255,7 @@ public class Calculator {
         this.state *= -1;
         return this.state;
     }
+
     //////////////////////////////////////////
 
     public void trigMenu() {
