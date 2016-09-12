@@ -42,8 +42,8 @@
             <file leaf-file-name="DisplayTest.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/DisplayTest.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="255">
-                    <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <state relative-caret-position="690">
+                    <caret line="46" column="79" selection-start-line="46" selection-start-column="79" selection-end-line="46" selection-end-column="79" />
                     <folding>
                       <element signature="imports" expanded="true" />
                       <element signature="e#245#246#0" expanded="true" />
@@ -102,7 +102,7 @@
       <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="-195">
               <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -298,105 +298,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../InitializationLab2" />
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorTest">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="project1calculator" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorTest.switchTrigUnitsTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project1calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.CalculatorTest" />
-      <option name="METHOD_NAME" value="switchTrigUnitsTest2" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorTest.setStateToMemory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project1calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.CalculatorTest" />
-      <option name="METHOD_NAME" value="setStateToMemory" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorTest.convertTrigUnitsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project1calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.CalculatorTest" />
-      <option name="METHOD_NAME" value="convertTrigUnitsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.DisplayTest.displayNumericTest">
     <configuration default="false" name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -411,6 +313,110 @@
       <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.CalculatorTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DisplayTest.toBinaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project1calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.DisplayTest" />
+      <option name="METHOD_NAME" value="toBinaryTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DisplayTest.toOctalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project1calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.DisplayTest" />
+      <option name="METHOD_NAME" value="toOctalTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DisplayTest.toHexadecimalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project1calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.DisplayTest" />
+      <option name="METHOD_NAME" value="toHexadecimalTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DisplayTest.displayNumericTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project1calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.DisplayTest" />
+      <option name="METHOD_NAME" value="displayNumericTest" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -838,19 +844,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorTest.switchTrigUnitsTest2" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorTest.setStateToMemory" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorTest.convertTrigUnitsTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DisplayTest.toBinaryTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DisplayTest.toOctalTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DisplayTest.toHexadecimalTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DisplayTest.displayNumericTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorTest.convertTrigUnitsTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorTest.setStateToMemory" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorTest.switchTrigUnitsTest2" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DisplayTest.displayNumericTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DisplayTest.toHexadecimalTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DisplayTest.toOctalTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DisplayTest.toBinaryTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -865,7 +871,7 @@
       <option name="presentableId" value="Default" />
       <updated>1473601578879</updated>
       <workItem from="1473601581872" duration="594000" />
-      <workItem from="1473602183698" duration="31597000" />
+      <workItem from="1473602183698" duration="32345000" />
     </task>
     <servers />
   </component>
@@ -873,36 +879,36 @@
     <history-entry file="CalculatorTest - 2016.09.11 at 20h 19m 31s.xml">
       <configuration name="CalculatorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_convertTrigUnitsTest - 2016.09.11 at 18h 47m 01s.xml">
-      <configuration name="CalculatorTest.convertTrigUnitsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorTest_convertTrigUnitsTest - 2016.09.11 at 18h 47m 20s.xml">
-      <configuration name="CalculatorTest.convertTrigUnitsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CalculatorTest_convertTrigUnitsTest - 2016.09.11 at 18h 48m 24s.xml">
       <configuration name="CalculatorTest.convertTrigUnitsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_setStateToMemory - 2016.09.11 at 18h 23m 48s.xml">
-      <configuration name="CalculatorTest.setStateToMemory" configurationId="JUnit" />
+    <history-entry file="DisplayTest_displayNumericTest - 2016.09.11 at 20h 32m 47s.xml">
+      <configuration name="DisplayTest.displayNumericTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_setStateToMemory - 2016.09.11 at 18h 24m 00s.xml">
-      <configuration name="CalculatorTest.setStateToMemory" configurationId="JUnit" />
+    <history-entry file="DisplayTest_toBinaryTest - 2016.09.11 at 20h 24m 46s.xml">
+      <configuration name="DisplayTest.toBinaryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_setStateToMemory - 2016.09.11 at 18h 24m 45s.xml">
-      <configuration name="CalculatorTest.setStateToMemory" configurationId="JUnit" />
+    <history-entry file="DisplayTest_toBinaryTest - 2016.09.11 at 20h 25m 01s.xml">
+      <configuration name="DisplayTest.toBinaryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_switchTrigUnitsTest - 2016.09.11 at 18h 06m 19s.xml">
-      <configuration name="CalculatorTest.switchTrigUnitsTest" configurationId="JUnit" />
+    <history-entry file="DisplayTest_toBinaryTest - 2016.09.11 at 20h 25m 17s.xml">
+      <configuration name="DisplayTest.toBinaryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_switchTrigUnitsTest - 2016.09.11 at 18h 06m 32s.xml">
-      <configuration name="CalculatorTest.switchTrigUnitsTest" configurationId="JUnit" />
+    <history-entry file="DisplayTest_toHexadecimalTest - 2016.09.11 at 20h 27m 41s.xml">
+      <configuration name="DisplayTest.toHexadecimalTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_switchTrigUnitsTest2 - 2016.09.11 at 18h 19m 44s.xml">
-      <configuration name="CalculatorTest.switchTrigUnitsTest2" configurationId="JUnit" />
+    <history-entry file="DisplayTest_toHexadecimalTest - 2016.09.11 at 20h 27m 53s.xml">
+      <configuration name="DisplayTest.toHexadecimalTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DisplayTest_toOctalTest - 2016.09.11 at 20h 26m 12s.xml">
+      <configuration name="DisplayTest.toOctalTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DisplayTest_toOctalTest - 2016.09.11 at 20h 26m 22s.xml">
+      <configuration name="DisplayTest.toOctalTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32191000" />
+    <option name="totallyTimeSpent" value="32939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1278" y="24" width="1030" height="1038" extended-state="0" />
@@ -915,13 +921,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31991744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31991744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42100194" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20679611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20679611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1060,26 +1066,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/DisplayTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="-195">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#464#465#0" expanded="true" />
             <element signature="e#503#504#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/DisplayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="79" selection-start-line="46" selection-start-column="79" selection-end-line="46" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
           </folding>
         </state>
       </provider>

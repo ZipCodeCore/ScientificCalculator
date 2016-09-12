@@ -15,5 +15,35 @@ public class DisplayTest {
         display = new Display();
     }
 
+    @Test
+    public void toBinaryTest() {
+        String expectedValue = "1111101000";
+        String actualValue = display.toBinary(1000);
 
+        Assert.assertEquals("Decimal to binary.", expectedValue, actualValue);
+    }
+
+    @Test
+    public void toOctalTest() {
+        String expectedValue = "1750";
+        String actualValue = display.toOctal(1000);
+
+        Assert.assertEquals("Decimal to octal.", expectedValue, actualValue);
+    }
+
+    @Test
+    public void toHexadecimalTest() {
+        String expectedValue = "3e8";
+        String actualValue = display.toHexadecimal(1000);
+
+        Assert.assertEquals("Decimal to octal.", expectedValue, actualValue);
+    }
+
+    @Test
+    public void displayNumericTest() {
+        String expectedValue = "1000.0";
+        String actualValue = display.displayNumeric(1000);
+
+        Assert.assertEquals("Make sure function displays proper numerical type.", expectedValue, actualValue);
+    }
 }
