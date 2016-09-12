@@ -12,7 +12,7 @@ public class UserInterface {
     State state = new State();
     Scanner sc = new Scanner(System.in);
 
-    public void output(String msg){
+    private void output(String msg){
         System.out.println(msg);
     }
 
@@ -45,7 +45,7 @@ public class UserInterface {
         }
     }
 
-    public void mathMenu(){
+    private void mathMenu(){
         char mathMenuPrompt = drawMathMenu();
         double currentStateValue = state.getStateValue();
 
@@ -66,6 +66,14 @@ public class UserInterface {
                 output("division");
                 state.setStateValue(coreCalculator.division(state.getStateValue(), promptOperand()));
                 break;
+            case 'E':
+                output("square");
+                state.setStateValue(coreCalculator.square(state.getStateValue()));
+                break;
+            case 'F':
+                output("variable exponentiation");
+                //state.setStateValue(coreCalculator.variableExponentiation(state.getStateValue(), promptOperand()));
+                break;
             default:
                 output("Invalid selection");
                 mathMenu();
@@ -74,7 +82,7 @@ public class UserInterface {
         mainMenu();
     }
 
-    public void stateValueMenu(){
+    private void stateValueMenu(){
         char stateValuePrompt = drawStateValueMenu();
         switch (stateValuePrompt){
             case '1':
@@ -97,16 +105,16 @@ public class UserInterface {
         mainMenu();
     }
 
-    public void modeMenu(){
+    private void modeMenu(){
         char modeMenuPrompt = drawDisplayModeMenu();
     }
 
-    public void manageMemoryMenu(){
+    private void manageMemoryMenu(){
         char manageMemoryPrompt = drawManageMemoryMenu();
 
     }
 
-    public char drawMainMenu(){
+    private char drawMainMenu(){
         output("Main menu.");
         output("1. Do Math Stuff");
         output("2. State value options");
@@ -116,16 +124,18 @@ public class UserInterface {
         return sc.next().toUpperCase().charAt(0);
     }
 
-    public char drawMathMenu(){
+    private char drawMathMenu(){
         output("Math operators.");
         output("A = Addition");
         output("B = Subtraction");
         output("C = Multiplication");
         output("D = Division");
+        output("E = Square");
+        output("F = Variable exponentiation");
         return sc.next().toUpperCase().charAt(0);
     }
 
-    public char drawStateValueMenu(){
+    private char drawStateValueMenu(){
         output("State Value menu.");
         output("1. Get state value");
         output("2. Change State value");
@@ -133,7 +143,7 @@ public class UserInterface {
         return sc.next().toUpperCase().charAt(0);
     }
 
-    public char drawDisplayModeMenu(){
+    private char drawDisplayModeMenu(){
         output("Display Mode menu.");
         output("1. Binary");
         output("2. Octal");
@@ -142,7 +152,7 @@ public class UserInterface {
         return sc.next().toUpperCase().charAt(0);
     }
 
-    public char drawManageMemoryMenu(){
+    private char drawManageMemoryMenu(){
         output("Manage Memory menu.");
         output("1. Add current state to memory");
         output("2. Reset memory");
@@ -150,12 +160,12 @@ public class UserInterface {
         return sc.next().toUpperCase().charAt(0);
     }
 
-    public char exit(){
+    private char exit(){
         output("State value is " + state.getStateValue());
         return '0';
     }
 
-    public double promptOperand(){
+    private double promptOperand(){
         output("Enter operand: ");
         return sc.nextDouble();
     }
