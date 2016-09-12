@@ -31,7 +31,7 @@ public class Calculator {
     //This method controls the flow of execution for the calculator
     public void runCalculator() {
         this.display.prompt();
-        while (bool) {
+        while (this.bool) {
             this.printDisplay();
             this.mainMenu();
         }
