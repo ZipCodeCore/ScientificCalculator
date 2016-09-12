@@ -8,7 +8,68 @@ import java.util.Scanner;
  * Created by adam on 9/11/16.
  */
 public class Display {
-    Scanner scanner = new Scanner(System.in);
+
+    public enum DisplayMode {
+        BINARY, OCTAL, DECIMAL, HEXADECIMAL;
+    }
+
+    private Scanner scanner = new Scanner(System.in);
+    private DisplayMode displayMode = DisplayMode.DECIMAL;
+
+    public DisplayMode getDisplayMode() {
+        return this.displayMode;
+    }
+
+    public void switchDisplayMode() {
+        DisplayMode current = this.displayMode;
+        switch (current) {
+            case BINARY:
+                this.displayMode = DisplayMode.OCTAL;
+                break;
+            case OCTAL:
+                this.displayMode = DisplayMode.DECIMAL;
+                break;
+            case DECIMAL:
+                this.displayMode = DisplayMode.HEXADECIMAL;
+                break;
+            case HEXADECIMAL:
+                this.displayMode = DisplayMode.BINARY;
+                break;
+            default:
+        }
+    }
+
+    public String displayNumeric(double value) {
+        switch (this.displayMode) {
+            case BINARY:
+                return this.toBinary(value);
+            case OCTAL:
+                return this.toOctal(value);
+            case DECIMAL:
+                return "" + value;
+            case HEXADECIMAL:
+                return this.toHexadecimal(value);
+            default:
+        }
+        return "Error occurred converting number.";
+    }
+
+    // Numerical conversions ////////////////////
+    public String toBinary(double value) {
+        int intValue = (int) value;
+        return Integer.toBinaryString(intValue);
+    }
+
+    public String toOctal(double value) {
+        int intValue = (int) value;
+        return Integer.toOctalString(intValue);
+    }
+
+    public String toHexadecimal(double value) {
+        int intValue = (int) value;
+        return Integer.toHexString(intValue);
+    }
+    /////////////////////////////////////////////
 
     public void prompt() {
         System.out.println("###################################");

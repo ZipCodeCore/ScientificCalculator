@@ -14,4 +14,6 @@ public class DisplayTest {
     public void initialize() {
         display = new Display();
     }
+
+
 }

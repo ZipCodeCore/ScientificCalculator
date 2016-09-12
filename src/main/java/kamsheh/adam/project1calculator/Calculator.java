@@ -29,6 +29,10 @@ public class Calculator {
     public void runCalculator() {
         this.display.prompt();
         while(bool) {
+            System.out.println("\nNumeric Display: " + this.display.getDisplayMode());
+            System.out.println("#######################");
+            System.out.println("Display: " + this.display.displayNumeric(this.state));
+            System.out.println("#######################\n");
             this.mainMenu();
         }
     }
@@ -264,15 +268,15 @@ public class Calculator {
         }
     }
 
+    public void switchTrigUnits(String unit) {
+        this.trigUnits = unit;
+    }
+
     public double convertTrigUnits() {
         if(this.getTrigUnits().equals("degree")) {
             return Math.toDegrees(this.state);
         }
         return Math.toRadians(this.state);
-    }
-
-    public void switchTrigUnits(String unit) {
-        this.trigUnits = unit;
     }
 
     public String getTrigUnits() {
