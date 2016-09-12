@@ -14,4 +14,8 @@ public class Calculator {
 
     public Calculator() {}
 
+    // input
+    // update
+    // render
+
 }

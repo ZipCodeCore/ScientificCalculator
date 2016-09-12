@@ -6,6 +6,7 @@ package leczner.jon.Calculator;
 public class Display {
     private String state;
     private String mode;
+    private int significantDigits;
 
     public Display() {
 
@@ -23,7 +24,8 @@ public class Display {
         return;
     }
 
-    public void switchDisplayMode(String mode) {
-        return;
-    }
+    public void switchDisplayMode(String mode) { return; }
+
+    public void setSignificantDigits(int digits) { significantDigits = digits; }
+
 }

@@ -5,7 +5,6 @@ package leczner.jon.Calculator;
  */
 public class BasicMath {
     private String state;
-    private double total;
 
     public BasicMath() {
 
@@ -13,6 +12,10 @@ public class BasicMath {
 
     public String getState() {
         return null;
+    }
+
+    public void setState(double value) {
+        state = Double.toString(value);
     }
 
     public double add(double input) {
@@ -39,7 +42,7 @@ public class BasicMath {
         return 0;
     }
 
-    public double exponent() {
+    public double exponent(double power) {
         return 0;
     }
 
