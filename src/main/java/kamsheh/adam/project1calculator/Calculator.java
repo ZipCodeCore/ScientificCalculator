@@ -32,12 +32,16 @@ public class Calculator {
     public void runCalculator() {
         this.display.prompt();
         while (bool) {
-            System.out.println("\nNumeric Display: " + this.display.getDisplayMode());
-            System.out.println("#######################");
-            System.out.println("Display: " + this.display.displayNumeric(this.state));
-            System.out.println("#######################\n");
+            this.printDisplay();
             this.mainMenu();
         }
+    }
+
+    public void printDisplay() {
+        System.out.println("\nNumeric Display: " + this.display.getDisplayMode());
+        System.out.println("#######################");
+        System.out.println("Display: " + this.display.displayNumeric(this.state));
+        System.out.println("#######################\n");
     }
 
     //Main menu with options for what calculation you want performed
@@ -117,6 +121,7 @@ public class Calculator {
                 this.logMenu();
                 break;
             case 0:
+                System.out.println("Exiting...");
                 bool = false;
                 break;
             default:
@@ -166,6 +171,19 @@ public class Calculator {
             case 4:
                 if (value == 0) {
                     System.out.println("Error. Cannot divide by 0.");
+                    System.out.println("Enter '0' to clear display.");
+                    int input2 = -99;
+                    while(true) {
+                        input2 = scanner.nextInt();
+                        if(input2 != 0) {
+
+                        } else {
+                            break;
+                        }
+                    }
+                    this.changeState(0);
+                    this.printDisplay();
+                    this.mainMenu();
                 } else {
                     this.display.printBasicOperation(this.state, value, '/', BasicOperations.divide(this.state, value));
                     this.changeState(BasicOperations.divide(this.state, value));
