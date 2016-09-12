@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52ffc1b8-c3d3-4c0c-9f8a-587f7fce38e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java" afterPath="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Calculator.java" afterPath="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java" afterPath="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java" />
-    </list>
+    <list default="true" id="52ffc1b8-c3d3-4c0c-9f8a-587f7fce38e1" name="Default" comment="" />
     <ignored path="project1calculator.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,8 +30,8 @@
             <file leaf-file-name="CalculatorTest.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="844">
-                    <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+                  <state relative-caret-position="585">
+                    <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
                     <folding>
                       <element signature="imports" expanded="true" />
                     </folding>
@@ -132,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogOperations.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LogOperations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/LogOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="105">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
               <folding>
                 <element signature="e#153#154#0" expanded="true" />
                 <element signature="e#193#194#0" expanded="true" />
@@ -161,7 +156,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -225,10 +220,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-336" />
-    <option name="y" value="-1057" />
-    <option name="width" value="1027" />
-    <option name="height" value="1057" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="721" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -358,7 +352,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.All in project1calculator">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="LogOperationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -901,8 +895,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in project1calculator" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in project1calculator" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.LogOperationsTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.LogOperationsTest.naturalLogTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.LogOperationsTest.inverseLogTest" />
@@ -925,7 +919,7 @@
       <workItem from="1473601581872" duration="594000" />
       <workItem from="1473602183698" duration="39098000" />
       <workItem from="1473684926966" duration="697000" />
-      <workItem from="1473685711642" duration="10632000" />
+      <workItem from="1473685711642" duration="10934000" />
     </task>
     <servers />
   </component>
@@ -933,8 +927,8 @@
     <history-entry file="All_in_project1calculator - 2016.09.12 at 13h 32m 05s.xml">
       <configuration name="All in project1calculator" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LogOperationsTest - 2016.09.12 at 13h 14m 00s.xml">
-      <configuration name="LogOperationsTest" configurationId="JUnit" />
+    <history-entry file="All_in_project1calculator - 2016.09.12 at 13h 33m 55s.xml">
+      <configuration name="All in project1calculator" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LogOperationsTest - 2016.09.12 at 13h 19m 04s.xml">
       <configuration name="LogOperationsTest" configurationId="JUnit" />
@@ -962,11 +956,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51021000" />
+    <option name="totallyTimeSpent" value="51323000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-336" y="-1057" width="1027" height="1057" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="721" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -975,12 +969,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35323888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.91564417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2658228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21328124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1249,26 +1243,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
-          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+        <state relative-caret-position="585">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/LogOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="105">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="e#153#154#0" expanded="true" />
             <element signature="e#193#194#0" expanded="true" />
@@ -1279,6 +1265,14 @@
             <element signature="e#439#440#0" expanded="true" />
             <element signature="e#477#478#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
