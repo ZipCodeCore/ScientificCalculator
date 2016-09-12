@@ -13,6 +13,7 @@ public class Calculator {
     private String trigUnits = "degree"; // <-- use this to switch between radians or degrees
     private double memory = 0;
     private Display display = new Display();
+    private TrigOperations trig = new TrigOperations();
     //////////////////////////////////////
 
     //Constructor ///////////////////////
@@ -206,89 +207,37 @@ public class Calculator {
         }
     }
 
-    // Basic Operations ///////////////////////////
-/*    public double add(double value) {
-        this.state += value;
-        return this.state;
-    }*/
-
-   /* public double subtract(double value) {
-        this.state -= value;
-        return this.state;
-    }*/
-
-/*    public double multiply(double value) {
-        this.state *= value;
-        return this.state;
-    }*/
-
-/*    public double divide(double value) {
-        this.state /= value;
-        return this.state;
-    }*/
-
-/*    public double square() {
-        this.state = Math.pow(this.state, 2.0);
-        return this.state;
-    }*/
-
-/*    public double squareRoot() {
-        this.state = Math.sqrt(this.state);
-        return this.state;
-    }*/
-
-/*    public double cubedRoot() {
-        this.state = Math.cbrt(this.state);
-        return this.state;
-    }*/
-
-/*    public double cubed() {
-        this.state = Math.pow(this.state, 3);
-        return this.state;
-    }*/
-
-/*    public double toThePower(double value) {
-        this.state = Math.pow(this.state, value);
-        return this.state;
-    }*/
-
-/*    public double inverse() {
-        this.state = 1 / this.state;
-        return this.state;
-    }*/
-
-/*    public double changeSign() {
-        this.state *= -1;
-        return this.state;
-    }*/
-
-    //////////////////////////////////////////
-
     public void trigMenu() {
         this.display.printTrigFunctionsMenu();
         int input = this.display.getUserOption();
         System.out.println();
         switch (input) {
             case 1:
-                System.out.printf("sine(%.2f) = %.2f", this.state, this.sine());
+                System.out.printf("sine(%.2f) = %.2f", this.state, trig.sine(this.state));
+                this.changeState(trig.sine(this.state));
                 break;
             case 2:
-                System.out.printf("cosine(%.2f) = %.2f", this.state, this.cosine());
+                System.out.printf("cosine(%.2f) = %.2f", this.state, trig.cosine(this.state));
+                this.changeState(trig.cosine(this.state));
                 break;
             case 3:
-                System.out.printf("tangent(%.2f) = %.2f", this.state, this.tangent());
+                System.out.printf("tangent(%.2f) = %.2f", this.state, trig.tangent(this.state));
+                this.changeState(trig.tangent(this.state));
                 break;
             case 4:
-                System.out.printf("inv_sine(%.2f) = %.2f", this.state, this.inverseSine());
+                System.out.printf("inv_sine(%.2f) = %.2f", this.state, trig.inverseSine(this.state));
+                this.changeState(trig.inverseSine(this.state));
                 break;
             case 5:
-                System.out.printf("inv_cosine(%.2f) = %.2f", this.state, this.inverseCosine());
+                System.out.printf("inv_cosine(%.2f) = %.2f", this.state, trig.inverseCosine(this.state));
+                this.changeState(trig.inverseCosine(this.state));
                 break;
             case 6:
-                System.out.printf("inv_tangent(%.2f) = %.2f", this.state, this.inverseTangent());
+                System.out.printf("inv_tangent(%.2f) = %.2f", this.state, trig.inverseTangent(this.state));
+                this.changeState(trig.inverseTangent(this.state));
                 break;
             case 7:
-                this.switchTrigUnits();
+                trig.switchUnits();
                 break;
             case 0:
                 System.out.println("Exiting...");
@@ -298,67 +247,6 @@ public class Calculator {
                 System.out.println("You broke something. Enter a proper value.");
         }
     }
-
-    // Trig Functions ///////////////////////
-    public void switchTrigUnits() {
-        if(this.trigUnits.equals("degree")) {
-            this.trigUnits = "radian";
-        } else if(this.trigUnits.equals("radian")) {
-            this.trigUnits = "degree";
-        }
-    }
-
-    public void switchTrigUnits(String unit) {
-        this.trigUnits = unit;
-    }
-
-    public double convertTrigUnits() {
-        if(this.getTrigUnits().equals("degree")) {
-            return Math.toDegrees(this.state);
-        }
-        return Math.toRadians(this.state);
-    }
-
-    public String getTrigUnits() {
-        return this.trigUnits;
-    }
-
-    public double sine() {
-        this.state = this.convertTrigUnits();
-        this.state = Math.sin(this.state);
-        return this.state;
-    }
-
-    public double cosine() {
-        this.state = this.convertTrigUnits();
-        this.state = Math.cos(this.state);
-        return this.state;
-    }
-
-    public double tangent() {
-        this.state = this.convertTrigUnits();
-        this.state = Math.tan(this.state);
-        return this.state;
-    }
-
-    public double inverseSine() {
-        this.state = this.convertTrigUnits();
-        this.state = Math.asin(this.state);
-        return this.state;
-    }
-
-    public double inverseCosine() {
-        this.state = this.convertTrigUnits();
-        this.state = Math.acos(this.state);
-        return this.state;
-    }
-
-    public double inverseTangent() {
-        this.state = this.convertTrigUnits();
-        this.state = Math.atan(this.state);
-        return this.state;
-    }
-    /////////////////////////////////////////
 
     public void logMenu() {
         this.display.printLogFunctionsMenu();
