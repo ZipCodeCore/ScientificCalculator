@@ -20,6 +20,4 @@ public class CoreCalculator {
     public double division(double stateValue, double input){
         return stateValue / input;
     }
-
-
 }

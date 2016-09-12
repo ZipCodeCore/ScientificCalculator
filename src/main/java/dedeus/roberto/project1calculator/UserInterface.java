@@ -17,6 +17,10 @@ public class UserInterface {
     }
 
     public void mainMenu(){
+        System.out.println("-----");
+        System.out.println("Current state value: " + state.getStateValue());
+        System.out.println("-----");
+
         char mainMenuPrompt = drawMainMenu();
 
         switch (mainMenuPrompt){
@@ -24,12 +28,15 @@ public class UserInterface {
                 mathMenu();
                 break;
             case '2':
-                modeMenu();
+                stateValueMenu();
                 break;
             case '3':
-                manageMemoryMenu();
+                modeMenu();
                 break;
             case '4':
+                manageMemoryMenu();
+                break;
+            case '5':
                 exit();
                 break;
             default:
@@ -42,7 +49,7 @@ public class UserInterface {
         char mathMenuPrompt = drawMathMenu();
         double currentStateValue = state.getStateValue();
 
-        switch(mathMenuPrompt){
+        switch (mathMenuPrompt){
             case 'A':
                 output("addition");
                 state.setStateValue(coreCalculator.addition(state.getStateValue(), promptOperand()));
@@ -60,8 +67,31 @@ public class UserInterface {
                 state.setStateValue(coreCalculator.division(state.getStateValue(), promptOperand()));
                 break;
             default:
-                output("invalid selection");
+                output("Invalid selection");
                 mathMenu();
+                break;
+        }
+        mainMenu();
+    }
+
+    public void stateValueMenu(){
+        char stateValuePrompt = drawStateValueMenu();
+        switch (stateValuePrompt){
+            case '1':
+                output("Get the state value");
+                System.out.println(state.getStateValue());
+                break;
+            case '2':
+                output("Change state value");
+                state.setStateValue(promptOperand());
+                break;
+            case '3':
+                output("Clear state value");
+                state.setStateValue(0);
+                break;
+            default:
+                output("Invalid selection");
+                stateValueMenu();
                 break;
         }
         mainMenu();
@@ -79,9 +109,10 @@ public class UserInterface {
     public char drawMainMenu(){
         output("Main menu.");
         output("1. Do Math Stuff");
-        output("2. Change State Mode");
-        output("3. Manage Memory");
-        output("4. Exit ");
+        output("2. State value options");
+        output("3. Change State Mode");
+        output("4. Manage Memory");
+        output("5. Exit");
         return sc.next().toUpperCase().charAt(0);
     }
 
@@ -91,6 +122,14 @@ public class UserInterface {
         output("B = Subtraction");
         output("C = Multiplication");
         output("D = Division");
+        return sc.next().toUpperCase().charAt(0);
+    }
+
+    public char drawStateValueMenu(){
+        output("State Value menu.");
+        output("1. Get state value");
+        output("2. Change State value");
+        output("3. Clear the state value");
         return sc.next().toUpperCase().charAt(0);
     }
 
