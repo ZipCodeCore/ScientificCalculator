@@ -1,4 +1,6 @@
 package kamsheh.adam.project1calculator;
+import sun.rmi.runtime.Log;
+
 import java.util.Scanner;
 
 /**
@@ -10,7 +12,6 @@ public class Calculator {
     private double state;
     private Scanner scanner = new Scanner(System.in);
     private boolean bool = true;
-    private String trigUnits = "degree"; // <-- use this to switch between radians or degrees
     private double memory = 0;
     private Display display = new Display();
     private TrigOperations trig = new TrigOperations();
@@ -20,6 +21,7 @@ public class Calculator {
     public Calculator() {
         this.state = 0.0;
     }
+
     //Constructor
     public Calculator(double state) {
         this.state = state;
@@ -29,7 +31,7 @@ public class Calculator {
     //This method controls the flow of execution for the calculator
     public void runCalculator() {
         this.display.prompt();
-        while(bool) {
+        while (bool) {
             System.out.println("\nNumeric Display: " + this.display.getDisplayMode());
             System.out.println("#######################");
             System.out.println("Display: " + this.display.displayNumeric(this.state));
@@ -64,7 +66,7 @@ public class Calculator {
                 System.out.println("hexadecimal");
                 System.out.print("> ");
                 String input2 = scanner.nextLine();
-                if(input2.equals("")) {
+                if (input2.equals("")) {
                     this.display.switchDisplayMode();
                 } else {
                     this.display.switchDisplayMode(input2);
@@ -112,7 +114,7 @@ public class Calculator {
                 this.trigMenu();
                 break;
             case 3:
-                this.trigMenu();
+                this.logMenu();
                 break;
             case 0:
                 bool = false;
@@ -141,7 +143,7 @@ public class Calculator {
         this.display.printBasicOperationsMenu();
         int input = this.display.getUserOption();
         double value = 0;
-        if(input > 4) {
+        if (input > 4) {
 
         } else {
             System.out.print("Choose value: ");
@@ -162,11 +164,12 @@ public class Calculator {
                 this.changeState(BasicOperations.multiply(this.state, value));
                 break;
             case 4:
-                if(value==0) {
+                if (value == 0) {
                     System.out.println("Error. Cannot divide by 0.");
                 } else {
                     this.display.printBasicOperation(this.state, value, '/', BasicOperations.divide(this.state, value));
-                    this.changeState(BasicOperations.divide(this.state, value));                }
+                    this.changeState(BasicOperations.divide(this.state, value));
+                }
                 break;
             case 5:
                 System.out.printf("square(%.2f) = %.2f", this.state, BasicOperations.square(this.state));
@@ -189,7 +192,8 @@ public class Calculator {
                 this.changeState(BasicOperations.changeSign(this.state));
                 break;
             case 10:
-                System.out.printf("%.2f! = %.2f", this.state, this.factorial());
+                System.out.printf("%.2f! = %.2f", this.state, BasicOperations.factorial(this.state));
+                this.changeState(BasicOperations.factorial(this.state));
                 break;
             case 11:
                 System.out.printf("cbrt(%.2f) = %.2f", this.state, BasicOperations.cubedRoot(this.state));
@@ -254,16 +258,20 @@ public class Calculator {
         System.out.println();
         switch (input) {
             case 1:
-                System.out.println("log(" + this.state + ") = " + this.log());
+                System.out.println("log(" + this.state + ") = " + LogOperations.log(this.state));
+                this.changeState(LogOperations.log(this.state));
                 break;
             case 2:
-                System.out.println("InvLog(" + this.state + ") = " + this.inverseLog());
+                System.out.println("InvLog(" + this.state + ") = " + LogOperations.inverseLog(this.state));
+                this.changeState(LogOperations.inverseLog(this.state));
                 break;
             case 3:
-                System.out.println("ln(" + this.state + ") = " + this.naturalLog());
+                System.out.println("ln(" + this.state + ") = " + LogOperations.naturalLog(this.state));
+                this.changeState(LogOperations.naturalLog(this.state));
                 break;
             case 4:
-                System.out.println("Invln(" + this.state + ") = " + this.inverseNaturalLog());
+                System.out.println("Invln(" + this.state + ") = " + LogOperations.inverseLog(this.state));
+                this.changeState(LogOperations.inverseNaturalLog(this.state));
                 break;
             case 0:
                 System.out.println("Exiting...");
@@ -271,36 +279,5 @@ public class Calculator {
             default:
                 System.out.println("You broke something. Enter a proper value.");
         }
-    }
-
-    // Logarithmic Functions ///////////////
-    public double log() {
-        this.state = Math.log(this.state);
-        return this.state;
-    }
-
-    public double inverseLog() {
-        this.state = Math.pow(10, this.state);
-        return this.state;
-    }
-
-    public double naturalLog() {
-        this.state = Math.log1p(this.state);
-        return this.state;
-    }
-
-    public double inverseNaturalLog() {
-        this.state = Math.pow(Math.E, this.state);
-        return this.state;
-    }
-    ////////////////////////////////////////
-
-    public double factorial() {
-        double factorial = 1;
-        for(int i=1; i<=this.state; i++) {
-            factorial *= i;
-        }
-        this.state = factorial;
-        return this.state;
     }
 }

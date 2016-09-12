@@ -48,4 +48,12 @@ public class BasicOperations {
     public static double changeSign(double state) {
         return state *= -1;
     }
+
+    public static double factorial(double state) {
+        double factorial = 1;
+        for(int i=1; i<=state; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
 }
