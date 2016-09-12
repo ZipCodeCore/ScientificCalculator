@@ -39,6 +39,25 @@ public class Display {
         }
     }
 
+    public void switchDisplayMode(String mode) {
+        DisplayMode nMode = DisplayMode.valueOf(mode.toUpperCase());
+        switch (nMode) {
+            case BINARY:
+                this.displayMode = DisplayMode.BINARY;
+                break;
+            case OCTAL:
+                this.displayMode = DisplayMode.OCTAL;
+                break;
+            case DECIMAL:
+                this.displayMode = DisplayMode.DECIMAL;
+                break;
+            case HEXADECIMAL:
+                this.displayMode = DisplayMode.HEXADECIMAL;
+                break;
+            default:
+        }
+    }
+
     public String displayNumeric(double value) {
         switch (this.displayMode) {
             case BINARY:

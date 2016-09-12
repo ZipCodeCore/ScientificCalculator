@@ -56,7 +56,19 @@ public class Calculator {
                 this.changeState(newState);
                 break;
             case 4:
-                //this.changeMode(); <-- Doesn't exist yet
+                System.out.println("Enter the following or hit return to toggle display mode:");
+                System.out.println("binary");
+                System.out.println("octal");
+                System.out.println("decimal");
+                System.out.println("hexadecimal");
+                System.out.print("> ");
+                String input2 = scanner.nextLine();
+                if(input2.equals("")) {
+                    this.display.switchDisplayMode();
+                } else {
+                    this.display.switchDisplayMode(input2);
+                }
+
                 System.out.println("Change mode function not created yet");
                 break;
             case 0:
