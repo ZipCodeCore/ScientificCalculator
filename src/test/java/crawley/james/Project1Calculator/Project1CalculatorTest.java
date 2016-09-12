@@ -3,10 +3,6 @@ package crawley.james.Project1Calculator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.math.BigInteger;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by jamescrawley on 9/10/16.
  */
@@ -14,7 +10,7 @@ public class Project1CalculatorTest {
 
     MathFunctions mathFunc = new MathFunctions();
     CalculatorSettings settings = new CalculatorSettings();
-    Core core = new Core();
+    InputListener core = new InputListener();
 
     //Math function tests
 

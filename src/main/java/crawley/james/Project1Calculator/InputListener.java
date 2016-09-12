@@ -5,25 +5,27 @@ import java.util.Scanner;
 /**
  * Created by jamescrawley on 9/10/16.
  */
-public class Core {
+public class InputListener {
 
-    Scanner scanner = new Scanner(System.in);
-    MathFunctions mathFunc = new MathFunctions();
-    CalculatorSettings settings = new CalculatorSettings();
+    private Scanner scanner = new Scanner(System.in);
+    private MathFunctions mathFunc = new MathFunctions();
+    private CalculatorSettings settings;
     private boolean isOn = true;
     private boolean isErr = false;
 
-    public Core() {
+    public InputListener(int trigUnits, int countingBase) {
+
+        settings = new CalculatorSettings(trigUnits, countingBase);
 
     }
 
-    public void receiveCommand () {
+    private String getCommand () {
 
         System.out.println("Input a command: ");
-        executeCommand(scanner.next());
+        return scanner.next();
     }
 
-    public double getNumberInput () {
+    private double getNumberInput () {
 
         System.out.println("Input a number: ");
 
@@ -35,11 +37,13 @@ public class Core {
         return isOn;
     }
 
-    public void executeCommand (String command) {
+    public void executeCommand() {
+
+        String command = getCommand();
 
         double currentDisplayState = settings.getState();
 
-        clearError(command);
+        restrictCommands(command);
 
         switch (command) {
             case "add":
@@ -57,7 +61,7 @@ public class Core {
             case "divide":
 
                 currentDisplayState = mathFunc.divide(currentDisplayState, getNumberInput());
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
 
                 updateDisplay(currentDisplayState);
 
@@ -70,7 +74,7 @@ public class Core {
             case "square_root":
 
                 currentDisplayState = mathFunc.squareRoot(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
 
                 updateDisplay(currentDisplayState);
                 break;
@@ -90,7 +94,7 @@ public class Core {
             case "inverse":
 
                 currentDisplayState = mathFunc.inverse(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
 
                 updateDisplay(currentDisplayState);
 
@@ -124,7 +128,7 @@ public class Core {
                 }
 
                 currentDisplayState = mathFunc.tangent(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
                 updateDisplay(currentDisplayState);
                 break;
 
@@ -135,7 +139,7 @@ public class Core {
                 }
 
                 currentDisplayState = mathFunc.inverseSine(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
                 updateDisplay(currentDisplayState);
                 break;
 
@@ -147,7 +151,7 @@ public class Core {
                 }
 
                 currentDisplayState = mathFunc.inverseCosine(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
                 updateDisplay(currentDisplayState);
                 break;
 
@@ -158,25 +162,25 @@ public class Core {
                 }
 
                 currentDisplayState = mathFunc.inverseTangent(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
                 updateDisplay(currentDisplayState);
                 break;
 
 
             case "factorial":
-                currentDisplayState = overflow((long) currentDisplayState);
+                currentDisplayState = checkOverflow((long) currentDisplayState);
                 updateDisplay(currentDisplayState);
                 break;
 
             case "logarithm":
                 currentDisplayState = mathFunc.logarithm(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
                 updateDisplay(currentDisplayState);
                 break;
 
             case "natural_logarithm":
                 currentDisplayState = mathFunc.naturalLogarithm(currentDisplayState);
-                currentDisplayState = generateError(currentDisplayState);
+                currentDisplayState = checkError(currentDisplayState);
                 updateDisplay(currentDisplayState);
                 break;
 
@@ -248,7 +252,7 @@ public class Core {
     }
 
 
-    public void updateDisplay (double val) {
+    private void updateDisplay (double val) {
 
         if (isErr) {
 
@@ -263,7 +267,7 @@ public class Core {
 
                 case BINARY:
 
-                    System.out.println("The result is: " + Integer.toBinaryString((int) newState)); //from stack overflow
+                    System.out.println("The result is: " + Integer.toBinaryString((int) newState)); //from stack checkOverflow
                     break;
 
                 case OCTAL:
@@ -288,7 +292,7 @@ public class Core {
         }
     }
 
-    public void clearError (String command) {
+    private void restrictCommands(String command) {
 
         if (isErr) {
 
@@ -303,14 +307,14 @@ public class Core {
                 default:
                     System.out.println("Please clear the display.");
                     System.out.println("Err");
-                    receiveCommand();
+                    executeCommand();
 
             }
 
         }
     }
 
-    public double generateError (double result) {
+    private double checkError(double result) {
         if (result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY || Double.isNaN(result)) {
             //isNaN and Infinity constants from Stack Overflow
             isErr = true;
@@ -319,12 +323,12 @@ public class Core {
         return result;
     }
 
-    public long overflow (long result) {
+    private long checkOverflow(long result) {
         if (Math.abs(result) > 21) {
             isErr = true;
             result = 0;
         } else {
-            result = mathFunc.factorial((long)result);
+            result = mathFunc.factorial(result);
         }
 
         return result;

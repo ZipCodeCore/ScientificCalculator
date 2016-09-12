@@ -7,12 +7,12 @@ public class Project1Calculator {
 
     public static void main (String[] args) {
 
-        Core calculator = new Core();
+        InputListener calculator = new InputListener(0, 2);
 
         System.out.println("This is a calculator.");
 
         while (calculator.isRunning()) {
-            calculator.receiveCommand();
+            calculator.executeCommand();
         }
 
     }

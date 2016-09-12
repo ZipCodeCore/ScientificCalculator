@@ -10,11 +10,13 @@ public class CalculatorSettings {
     private TrigUnits[] unitOrder = {TrigUnits.DEGREES, TrigUnits.RADIANS};
     private CountingBase[] baseOrder = {CountingBase.BINARY, CountingBase.OCTAL,
             CountingBase.DECIMAL, CountingBase.HEXADECIMAL};
-    private int currentUnits = 0;
-    private int currentBase = 2;
+    private int currentUnits;
+    private int currentBase;
 
-    public CalculatorSettings () {
+    public CalculatorSettings (int currentUnits, int currentBase) {
 
+        this.currentUnits = currentUnits;
+        this.currentBase = currentBase;
     }
 
     public void setState (double state) {
