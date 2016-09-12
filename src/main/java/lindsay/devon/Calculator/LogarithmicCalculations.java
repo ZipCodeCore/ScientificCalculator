@@ -6,6 +6,7 @@ import java.lang.Math;
 public class LogarithmicCalculations {
 
 
+
     public double log(double newValue) {
         double result =  Math.log10(newValue);
         System.out.println(" log(" + newValue + ") = " + result);
@@ -14,7 +15,7 @@ public class LogarithmicCalculations {
     }
 
     public double log10x(double newValue) {
-        double result =  Math.pow(Math.E,(Math.log10(newValue)));
+       double result =  Math.pow(Math.E,(Math.log10(newValue)));
         System.out.println(" log10x(" + newValue + ") = " + result);
         return  result;
 

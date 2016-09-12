@@ -5,31 +5,33 @@ import java.lang.Math;
  */
 public class BasicCalculations {
 
-    double currentValue = 0;
+  // double currentValue = 0;
 
 
-    public double add(double newValue) {
+
+
+    public double add(double currentValue, double newValue) {
         double result =  currentValue + newValue;
         System.out.println(currentValue + " + " + newValue + " = " + result);
         return  result;
 
     }
 
-    public double subtract(double newValue) {
+    public double subtract(double currentValue, double newValue) {
         double result =  currentValue - newValue;
         System.out.println(currentValue + " - " + newValue + " = " + result);
         return  result;
 
     }
 
-    public double multiply(double newValue) {
+    public double multiply(double currentValue, double newValue) {
         double result =  currentValue * newValue;
         System.out.println(currentValue + " * " + newValue + " = " + result);
         return  result;
 
     }
 
-    public double divide(double newValue) {
+    public double divide(double currentValue, double newValue) {
         double result =  currentValue / newValue;
         System.out.println(currentValue + " / " + newValue + " = " + result);
         return  result;
@@ -50,8 +52,8 @@ public class BasicCalculations {
 
     }
 
-    public double exponent(double newValue) {
-        double result =  Math.pow(currentValue,newValue);
+    public double exponent(double currentValue, double newValue) {
+        double result =  Math.pow(0,newValue);
         System.out.println(currentValue + " to the power of " + newValue + " = " + result);
         return  result;
 

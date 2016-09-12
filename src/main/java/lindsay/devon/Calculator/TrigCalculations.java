@@ -5,8 +5,6 @@ package lindsay.devon.Calculator;
  */
 public class TrigCalculations {
 
-    double currentValue = 0
-            ;
 
     public double sine(double newValue) {
         double result =  Math.sin(newValue);

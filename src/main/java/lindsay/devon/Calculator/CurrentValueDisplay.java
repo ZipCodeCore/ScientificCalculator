@@ -8,12 +8,17 @@ public class CurrentValueDisplay {
     BasicCalculations basicMath = new BasicCalculations();
     TrigCalculations trig = new TrigCalculations();
     LogarithmicCalculations log = new LogarithmicCalculations();
+    double stateValue;
 
-   public void setDisplay() {
+    CurrentValueDisplay() {
+        this.stateValue = 0;
+    }
 
+   public void setCurrentValue(double input) {
+    this.stateValue = input;
    }
 
-   public void getDisplay() {
-
+   public double getCurrentValue() {
+        return this.stateValue;
    }
 }
