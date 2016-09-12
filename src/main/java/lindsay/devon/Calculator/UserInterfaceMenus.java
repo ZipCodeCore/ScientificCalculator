@@ -11,6 +11,7 @@ public class UserInterfaceMenus {
     TrigCalculations trig = new TrigCalculations();
     LogarithmicCalculations log = new LogarithmicCalculations();
     CurrentValueDisplay currentValue = new CurrentValueDisplay();
+    Memory memory = new Memory();
 
 
     public double getuserNum() {
@@ -30,7 +31,12 @@ public class UserInterfaceMenus {
     }
 
     public int welcomeMenu() {
-        System.out.println("Please choose a destination: [1] Math  [2] DisplayMode [3] Memory");
+
+        /// ERROR CHECK - ISNAN
+
+
+        System.out.println(currentValue.getCurrentValue());
+        System.out.println("Please choose a destination: [1] Math  [2] DisplayMode ");
         Scanner scanner1 = new Scanner(System.in);
         int menuChoice = scanner1.nextInt();
         welcomeMenuChoice(menuChoice);
@@ -43,14 +49,13 @@ public class UserInterfaceMenus {
                 break;
             case 2: displayModeMenu();
                 break;
-            case 3: memoryMenu();
-                break;
+
         }
     }
 
     public void mathMenu() {
         System.out.println("What would you like to do? ");
-        System.out.println("[1] Basic Math [2] Trig [3] Logs");
+        System.out.println("[1] Basic Math [2] Trig [3] Logs [4] Memory [5] Reset Current Value to 0 [6] Change current value");
         Scanner scanner2 = new Scanner(System.in);
         int mathMenuChoice = scanner2.nextInt();
         mathMenuChoice(mathMenuChoice);
@@ -65,6 +70,12 @@ public class UserInterfaceMenus {
             case 2: trigMenu();
                 break;
             case 3: logMenu();
+                break;
+            case 4: memoryMenu();
+                break;
+            case 5: currentValue.resetCurrentValue();
+                break;
+            case 6: currentValue.setCurrentValue(getuserNum());
                 break;
         }
     }

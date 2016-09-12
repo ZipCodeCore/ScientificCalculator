@@ -21,4 +21,9 @@ public class CurrentValueDisplay {
    public double getCurrentValue() {
         return this.stateValue;
    }
+
+   public void resetCurrentValue() {
+        this.stateValue = 0;
+
+   }
 }
