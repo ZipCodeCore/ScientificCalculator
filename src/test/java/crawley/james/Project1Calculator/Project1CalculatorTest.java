@@ -2,6 +2,9 @@ package crawley.james.Project1Calculator;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.math.BigInteger;
+
 import static org.junit.Assert.*;
 
 /**

@@ -2,6 +2,8 @@ package crawley.james.Project1Calculator;
 
 import sun.tools.tree.DivideExpression;
 
+import java.math.BigInteger;
+
 /**
  * Created by jamescrawley on 9/10/16.
  */
@@ -96,17 +98,17 @@ public class MathFunctions {
         return inverse(tangent(a));
     }
 
-    public int factorial (int a) {
+    public long factorial (long a) {
 
-        int sign = 1;
-        int factorial = 1;
+        long sign = 1;
+        long factorial = 1;
 
         if (a < 0) {
-            sign = -1;
+            sign = 1;
             a *= sign;
         }
 
-        for (int i = 2; i <= a; i++) {
+        for (long i = 2; i <= a; i++) {
             factorial *= i;
         }
 

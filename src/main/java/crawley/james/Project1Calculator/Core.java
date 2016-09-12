@@ -43,20 +43,20 @@ public class Core {
 
         switch (command) {
             case "add":
-                updateDisplay(mathFunc.add(settings.getState(), getNumberInput()));
+                updateDisplay(mathFunc.add(currentDisplayState, getNumberInput()));
                 break;
 
             case "subtract":
-                updateDisplay(mathFunc.subtract(settings.getState(), getNumberInput()));
+                updateDisplay(mathFunc.subtract(currentDisplayState, getNumberInput()));
                 break;
 
             case "multiply":
-                updateDisplay(mathFunc.multiply(settings.getState(), getNumberInput()));
+                updateDisplay(mathFunc.multiply(currentDisplayState, getNumberInput()));
                 break;
 
             case "divide":
 
-                currentDisplayState = mathFunc.divide(settings.getState(), getNumberInput());
+                currentDisplayState = mathFunc.divide(currentDisplayState, getNumberInput());
                 currentDisplayState = generateError(currentDisplayState);
 
                 updateDisplay(currentDisplayState);
@@ -64,32 +64,32 @@ public class Core {
                 break;
 
             case "square":
-                updateDisplay(mathFunc.square(settings.getState()));
+                updateDisplay(mathFunc.square(currentDisplayState));
                 break;
 
             case "square_root":
 
-                currentDisplayState = mathFunc.squareRoot(settings.getState());
+                currentDisplayState = mathFunc.squareRoot(currentDisplayState);
                 currentDisplayState = generateError(currentDisplayState);
 
                 updateDisplay(currentDisplayState);
                 break;
 
             case "cube":
-                updateDisplay(mathFunc.cube(settings.getState()));
+                updateDisplay(mathFunc.cube(currentDisplayState));
                 break;
 
             case "cube_root":
-                updateDisplay(mathFunc.cubeRoot(settings.getState()));
+                updateDisplay(mathFunc.cubeRoot(currentDisplayState));
                 break;
 
             case "exponent":
-                updateDisplay(mathFunc.exponent(settings.getState(), getNumberInput()));
+                updateDisplay(mathFunc.exponent(currentDisplayState, getNumberInput()));
                 break;
 
             case "inverse":
 
-                currentDisplayState = mathFunc.inverse(settings.getState());
+                currentDisplayState = mathFunc.inverse(currentDisplayState);
                 currentDisplayState = generateError(currentDisplayState);
 
                 updateDisplay(currentDisplayState);
@@ -97,7 +97,7 @@ public class Core {
                 break;
 
             case "switch_sign":
-                updateDisplay(mathFunc.switchSign(settings.getState()));
+                updateDisplay(mathFunc.switchSign(currentDisplayState));
                 break;
 
             case "sine":
@@ -164,19 +164,28 @@ public class Core {
 
 
             case "factorial":
-                updateDisplay(mathFunc.factorial((int)settings.getState()));
+                currentDisplayState = overflow((long) currentDisplayState);
+                updateDisplay(currentDisplayState);
                 break;
 
             case "logarithm":
+                currentDisplayState = mathFunc.logarithm(currentDisplayState);
+                currentDisplayState = generateError(currentDisplayState);
+                updateDisplay(currentDisplayState);
                 break;
 
             case "natural_logarithm":
+                currentDisplayState = mathFunc.naturalLogarithm(currentDisplayState);
+                currentDisplayState = generateError(currentDisplayState);
+                updateDisplay(currentDisplayState);
                 break;
 
             case "inverse_logarithm":
+                updateDisplay(mathFunc.inverseLogarithm(currentDisplayState));
                 break;
 
             case "inverse_natural_logarithm":
+                updateDisplay(mathFunc.inverseNaturalLogarithm(currentDisplayState));
                 break;
 
             case "binary":
@@ -309,4 +318,16 @@ public class Core {
         }
         return result;
     }
+
+    public long overflow (long result) {
+        if (Math.abs(result) > 21) {
+            isErr = true;
+            result = 0;
+        } else {
+            result = mathFunc.factorial((long)result);
+        }
+
+        return result;
+    }
+
 }
