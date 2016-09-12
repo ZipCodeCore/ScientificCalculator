@@ -1,5 +1,7 @@
 package kamsheh.adam.project1calculator;
 
+import sun.tools.jconsole.Plotter;
+
 /**
  * Created by adam on 9/12/16.
  */
@@ -25,7 +27,14 @@ public class TrigOperations {
     }
 
     public void switchUnits(String units) {
-        //need to add if time
+        Units unit = Units.valueOf(units.toUpperCase());
+        switch (unit) {
+            case DEGREE:
+                this.units = Units.DEGREE;
+                break;
+            case RADIAN:
+                this.units = Units.RADIAN;
+        }
     }
 
     public double convertUnits(double state) {

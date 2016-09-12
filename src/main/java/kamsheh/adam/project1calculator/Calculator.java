@@ -1,4 +1,5 @@
 package kamsheh.adam.project1calculator;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import sun.rmi.runtime.Log;
 
 import java.util.Scanner;
@@ -39,6 +40,7 @@ public class Calculator {
 
     public void printDisplay() {
         System.out.println("\nNumeric Display: " + this.display.getDisplayMode());
+        System.out.println("Trig Mode: " + this.trig.getUnits());
         System.out.println("#######################");
         System.out.println("Display: " + this.display.displayNumeric(this.state));
         System.out.println("#######################\n");
@@ -47,7 +49,6 @@ public class Calculator {
     //Main menu with options for what calculation you want performed
     public void mainMenu() {
         this.display.printMainMenuOptions();
-        //int input = scanner.nextInt();
         int input = this.display.getUserOption();
         System.out.println("\n--------------\n");
         switch (input) {
@@ -194,9 +195,26 @@ public class Calculator {
                 this.changeState(BasicOperations.square(this.state));
                 break;
             case 6:
-                System.out.printf("sqrt(%.2f) = %.2f", this.state, BasicOperations.squareRoot(this.state));
-                this.changeState(BasicOperations.squareRoot(this.state));
-                break;
+                if(this.state < 0) {
+                    System.out.println("Error. Cannot calculate square root of negative number.");
+                    System.out.println("Enter '0' to clear display.");
+                    int input2 = -99;
+                    while(true) {
+                        input2 = scanner.nextInt();
+                        if(input2 != 0) {
+
+                        } else {
+                            break;
+                        }
+                    }
+                    this.changeState(0);
+                    this.printDisplay();
+                    this.mainMenu();
+                } else {
+                    System.out.printf("sqrt(%.2f) = %.2f", this.state, BasicOperations.squareRoot(this.state));
+                    this.changeState(BasicOperations.squareRoot(this.state));
+                    break;
+                }
             case 7:
                 System.out.printf("(%.2f)^%.2f = %.2f", this.state, value, BasicOperations.toThePower(this.state, value));
                 this.changeState(BasicOperations.toThePower(this.state, value));
@@ -259,7 +277,14 @@ public class Calculator {
                 this.changeState(trig.inverseTangent(this.state));
                 break;
             case 7:
-                trig.switchUnits();
+                System.out.println("Enter unit [DEGREE or RADIAN] or hit return to toggle.");
+                String userInput = "";
+                userInput = scanner.nextLine();
+                if(userInput.equals("")) {
+                    trig.switchUnits();
+                } else {
+                    trig.switchUnits(userInput);
+                }
                 break;
             case 0:
                 System.out.println("Exiting...");
