@@ -1,5 +1,7 @@
 package dedeus.roberto.project1calculator;
 
+import static java.lang.Double.NaN;
+import static java.lang.Double.isInfinite;
 /**
  * Created by robertodedeus on 9/11/16.
  */
@@ -19,6 +21,7 @@ public class CoreCalculator {
     }
 
     public double division(double stateValue, double input){
+
         return stateValue / input;
     }
 
@@ -41,8 +44,6 @@ public class CoreCalculator {
     public double switchSign(double getStateValue){
         return getStateValue * -1;
     }
-
-
 
 
 }

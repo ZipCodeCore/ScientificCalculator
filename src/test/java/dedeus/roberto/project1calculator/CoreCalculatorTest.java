@@ -1,6 +1,8 @@
 package dedeus.roberto.project1calculator;
-import static org.junit.Assert.*;
+import static java.lang.Double.NaN;
+import static java.lang.Double.isInfinite;
 
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,11 +14,13 @@ public class CoreCalculatorTest {
 
     private CoreCalculator coreCalculator;
     private State state;
+    private UserInterface userInterface;
 
     @Before
     public void initialize(){
         coreCalculator = new CoreCalculator();
         state = new State();
+        userInterface = new UserInterface();
     }
 
     @Test
@@ -87,6 +91,13 @@ public class CoreCalculatorTest {
         double expectedValue = -10;
         double actualValue = coreCalculator.switchSign(10);
         assertEquals(expectedValue, actualValue, 1);
+    }
+
+    @Test
+    public void checkErrorTest(){
+        userInterface.state.setStateValue(NaN);
+        boolean actualValue = userInterface.checkError();
+        assertTrue(actualValue);
     }
 
 }

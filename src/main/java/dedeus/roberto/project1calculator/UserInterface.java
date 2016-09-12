@@ -2,6 +2,9 @@ package dedeus.roberto.project1calculator;
 
 import java.util.Scanner;
 
+import static java.lang.Double.NaN;
+import static java.lang.Double.isInfinite;
+
 /**
  * Created by robertodedeus on 9/11/16.
  */
@@ -12,11 +15,22 @@ public class UserInterface {
     State state = new State();
     Scanner sc = new Scanner(System.in);
 
+    public boolean checkError(){
+        return Double.isNaN(state.getStateValue()) || isInfinite(state.getStateValue());
+    }
+
     private void output(String msg){
         System.out.println(msg);
     }
 
     public void mainMenu(){
+
+        if(checkError()){
+            output("Error occurred. State value has been reset to zero.");
+            System.out.println(state.getStateValue());
+            state.setStateValue(0);
+        }
+
         System.out.println("-----");
         System.out.println("Current state value: " + state.getStateValue());
         System.out.println("-----");
@@ -47,7 +61,6 @@ public class UserInterface {
 
     private void mathMenu(){
         char mathMenuPrompt = drawMathMenu();
-        double currentStateValue = state.getStateValue();
 
         switch (mathMenuPrompt){
             case 'A':
