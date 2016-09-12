@@ -1,9 +1,5 @@
 package crawley.james.Project1Calculator;
 
-import sun.tools.tree.DivideExpression;
-
-import java.math.BigInteger;
-
 /**
  * Created by jamescrawley on 9/10/16.
  */
