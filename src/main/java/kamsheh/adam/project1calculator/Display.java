@@ -136,7 +136,7 @@ public class Display {
         System.out.println("1: Operations");
         System.out.println("2: Clear Display");
         System.out.println("3: Change State");
-        System.out.println("4: Change mode (no functionality yet)");
+        System.out.println("4: Change mode");
         System.out.println("0: Exit Calculator\n");
         System.out.print("Enter option: ");
     }
