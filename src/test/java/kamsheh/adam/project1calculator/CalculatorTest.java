@@ -291,10 +291,11 @@ public class CalculatorTest {
 
     @Test
     public void inverseNaturalLog() {
-        double expectedValue = 10;
+        calc.changeState(1);
+        double expectedValue = 2.718281828;
         double actualValue = calc.inverseNaturalLog();
 
-        Assert.assertEquals("Inverse natural log of number is just the number.", expectedValue, actualValue, 0);
+        Assert.assertEquals("Inverse natural log of number is just the number.", expectedValue, actualValue, .001);
     }
 
     @Test

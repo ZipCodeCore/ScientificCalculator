@@ -136,10 +136,6 @@ public class Calculator {
         this.state = newState;
     }
 
-    public String displayError() {
-        return "Err";
-    }
-
     public void basicOperations() {
         this.display.printBasicOperationsMenu();
         int input = this.display.getUserOption();
@@ -396,6 +392,7 @@ public class Calculator {
     }
 
     public double inverseNaturalLog() {
+        this.state = Math.pow(Math.E, this.state);
         return this.state;
     }
     ////////////////////////////////////////
