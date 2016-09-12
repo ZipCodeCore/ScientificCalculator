@@ -9,22 +9,41 @@ public class InputListener {
 
     private Scanner scanner = new Scanner(System.in);
     private MathFunctions mathFunc = new MathFunctions();
-    private CalculatorSettings settings;
+    private CalculatorMemory calculatorMemory;
     private boolean isOn = true;
     private boolean isErr = false;
 
+    /**
+     *
+     * Sets the default counting base and trig units
+     *
+     * @param trigUnits the index of the trig units 0: degrees 1: radians
+     * @param countingBase the index of the counting base 0: binary 1: octal 2: decimal 3: hexadecimal
+     */
     public InputListener(int trigUnits, int countingBase) {
 
-        settings = new CalculatorSettings(trigUnits, countingBase);
+        calculatorMemory = new CalculatorMemory(trigUnits, countingBase);
 
     }
 
+    /**
+     *
+     * Gets command from user
+     *
+     * @return command input by user
+     */
     private String getCommand () {
 
         System.out.println("Input a command: ");
         return scanner.next();
     }
 
+    /**
+     *
+     * Gets a number value from the user
+     *
+     * @return the value of the number input from the user
+     */
     private double getNumberInput () {
 
         System.out.println("Input a number: ");
@@ -32,16 +51,27 @@ public class InputListener {
         return scanner.nextDouble();
     }
 
+    /**
+     *
+     * Returns boolean representing if the calculator is running
+     *
+     * @return a boolean determing if the calculator is running
+     */
     public boolean isRunning () {
 
         return isOn;
     }
 
+    /**
+     *
+     * Uses user input to perform a calculation or change the calculator settings
+     *
+     */
     public void executeCommand() {
 
         String command = getCommand();
 
-        double currentDisplayState = settings.getState();
+        double currentDisplayState = calculatorMemory.getState();
 
         restrictCommands(command);
 
@@ -106,16 +136,16 @@ public class InputListener {
 
             case "sine":
 
-                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
-                    currentDisplayState = Math.toRadians(settings.getState());
+                if (calculatorMemory.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(calculatorMemory.getState());
                 }
                 updateDisplay(mathFunc.sine(currentDisplayState));
                 break;
 
             case "cosine":
 
-                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
-                    currentDisplayState = Math.toRadians(settings.getState());
+                if (calculatorMemory.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(calculatorMemory.getState());
                 }
                 updateDisplay(mathFunc.cosine(currentDisplayState));
                 break;
@@ -123,8 +153,8 @@ public class InputListener {
             case "tangent":
 
 
-                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
-                    currentDisplayState = Math.toRadians(settings.getState());
+                if (calculatorMemory.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(calculatorMemory.getState());
                 }
 
                 currentDisplayState = mathFunc.tangent(currentDisplayState);
@@ -134,8 +164,8 @@ public class InputListener {
 
             case "inverse_sine":
 
-                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
-                    currentDisplayState = Math.toRadians(settings.getState());
+                if (calculatorMemory.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(calculatorMemory.getState());
                 }
 
                 currentDisplayState = mathFunc.inverseSine(currentDisplayState);
@@ -146,8 +176,8 @@ public class InputListener {
 
             case "inverse_cosine":
 
-                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
-                    currentDisplayState = Math.toRadians(settings.getState());
+                if (calculatorMemory.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(calculatorMemory.getState());
                 }
 
                 currentDisplayState = mathFunc.inverseCosine(currentDisplayState);
@@ -157,8 +187,8 @@ public class InputListener {
 
             case "inverse_tangent":
 
-                if (settings.getTrigUnits().equals(TrigUnits.DEGREES)) {
-                    currentDisplayState = Math.toRadians(settings.getState());
+                if (calculatorMemory.getTrigUnits().equals(TrigUnits.DEGREES)) {
+                    currentDisplayState = Math.toRadians(calculatorMemory.getState());
                 }
 
                 currentDisplayState = mathFunc.inverseTangent(currentDisplayState);
@@ -193,35 +223,35 @@ public class InputListener {
                 break;
 
             case "binary":
-                settings.setCountingBase(CountingBase.BINARY);
+                calculatorMemory.setCountingBase(CountingBase.BINARY);
                 break;
 
             case "octal":
-                settings.setCountingBase(CountingBase.OCTAL);
+                calculatorMemory.setCountingBase(CountingBase.OCTAL);
                 break;
 
             case "decimal":
-                settings.setCountingBase(CountingBase.DECIMAL);
+                calculatorMemory.setCountingBase(CountingBase.DECIMAL);
                 break;
 
             case "hexadecimal":
-                settings.setCountingBase(CountingBase.HEXADECIMAL);
+                calculatorMemory.setCountingBase(CountingBase.HEXADECIMAL);
                 break;
 
             case "change_base":
-                settings.setCountingBase();
+                calculatorMemory.setCountingBase();
                 break;
 
             case "radians":
-                settings.setTrigUnits(TrigUnits.RADIANS);
+                calculatorMemory.setTrigUnits(TrigUnits.RADIANS);
                 break;
 
             case "degrees":
-                settings.setTrigUnits(TrigUnits.DEGREES);
+                calculatorMemory.setTrigUnits(TrigUnits.DEGREES);
                 break;
 
             case "change_units":
-                settings.setTrigUnits();
+                calculatorMemory.setTrigUnits();
                 break;
 
             case "quit":
@@ -235,15 +265,52 @@ public class InputListener {
                 break;
 
             case "store":
-                settings.setMemory(settings.getState());
+                calculatorMemory.setMemory(calculatorMemory.getState());
                 break;
 
             case "recall":
-                updateDisplay(settings.getMemory());
+                updateDisplay(calculatorMemory.getMemory());
                 break;
 
             case "clear_memory":
-                settings.setMemory(0);
+                calculatorMemory.setMemory(0);
+                break;
+
+            case "help":
+                System.out.println("Commands: ");
+                System.out.println("add");
+                System.out.println("subtract");
+                System.out.println("multiply");
+                System.out.println("divide");
+                System.out.println("square");
+                System.out.println("square_root");
+                System.out.println("cube_root");
+                System.out.println("exponent");
+                System.out.println("inverse");
+                System.out.println("switch_sign");
+                System.out.println("sine");
+                System.out.println("cosine");
+                System.out.println("tangent");
+                System.out.println("inverse_sine");
+                System.out.println("inverse_cosine");
+                System.out.println("inverse_tangent");
+                System.out.println("factorial");
+                System.out.println("logarithm");
+                System.out.println("inverse_logarithm");
+                System.out.println("natural_logarithm");
+                System.out.println("inverse_natural_logarithm");
+                System.out.println("binary");
+                System.out.println("octal");
+                System.out.println("decimal");
+                System.out.println("hexadecimal");
+                System.out.println("change_base");
+                System.out.println("degrees");
+                System.out.println("radians");
+                System.out.println("change_units");
+                System.out.println("clear");
+                System.out.println("store");
+                System.out.println("recall");
+                System.out.println("clear_memory");
                 break;
 
             default:
@@ -252,17 +319,23 @@ public class InputListener {
     }
 
 
-    private void updateDisplay (double val) {
+    /**
+     *
+     * Updates the display with the given value in the proper counting base. Prints Err if in error cycle.
+     *
+     * @param result the result of the executed command
+     */
+    private void updateDisplay (double result) {
 
         if (isErr) {
 
             System.out.println("Err");
 
         } else {
-            settings.setState(val);
-            double newState = settings.getState();
+            calculatorMemory.setState(result);
+            double newState = calculatorMemory.getState();
 
-            switch (settings.getCountingBase()) {
+            switch (calculatorMemory.getCountingBase()) {
 
 
                 case BINARY:
@@ -292,6 +365,12 @@ public class InputListener {
         }
     }
 
+    /**
+     *
+     * Prevents user from executing commands other than "clear" and "quit" if the screen displays "Err"
+     *
+     * @param command the command the user is trying to execute
+     */
     private void restrictCommands(String command) {
 
         if (isErr) {
@@ -314,24 +393,39 @@ public class InputListener {
         }
     }
 
+    /**
+     *
+     * Checks if the result of a calculation is an illegal value and produces an error if so
+     *
+     * @param result the result of the calculation
+     * @return
+     */
     private double checkError(double result) {
         if (result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY || Double.isNaN(result)) {
             //isNaN and Infinity constants from Stack Overflow
             isErr = true;
             result = 0;
         }
+
         return result;
     }
 
-    private long checkOverflow(long result) {
-        if (Math.abs(result) > 21) {
+    /**
+     *
+     * Produces an error if the factorial function overflows
+     *
+     * @param val the number on which factorial will be performed
+     * @return returns the value of the factorial if there are no errors
+     */
+    private long checkOverflow(long val) {
+        if (Math.abs(val) > 21) {
             isErr = true;
-            result = 0;
+            val = 0;
         } else {
-            result = mathFunc.factorial(result);
+            val = mathFunc.factorial(val);
         }
 
-        return result;
+        return val;
     }
 
 }

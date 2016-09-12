@@ -9,7 +9,7 @@ import org.junit.Test;
 public class Project1CalculatorTest {
 
     MathFunctions mathFunc = new MathFunctions();
-    CalculatorSettings settings = new CalculatorSettings(0, 2);
+    CalculatorMemory settings = new CalculatorMemory(0, 2);
 
     //Math function tests
 

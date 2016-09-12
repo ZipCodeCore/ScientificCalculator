@@ -8,10 +8,6 @@ package crawley.james.Project1Calculator;
  */
 public class MathFunctions {
 
-    public MathFunctions() {
-
-    }
-
     /**
      *
      * Adds two numbers together
