@@ -5,20 +5,20 @@ package dedeus.roberto.project1calculator;
  */
 
 public class CoreCalculator {
-    public double addition(double displayValue, double input){
-        return displayValue + input;
+    public double addition(double stateValue, double input){
+        return stateValue + input;
     }
 
-    public double subtraction(double displayValue, double input){
-        return displayValue - input;
+    public double subtraction(double stateValue, double input){
+        return stateValue - input;
     }
 
-    public double multiplication(double displayValue, double input){
-        return displayValue * input;
+    public double multiplication(double stateValue, double input){
+        return stateValue * input;
     }
 
-    public double division(double displayValue, double input){
-        return displayValue / input;
+    public double division(double stateValue, double input){
+        return stateValue / input;
     }
 
 

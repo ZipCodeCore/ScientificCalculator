@@ -5,7 +5,7 @@ package dedeus.roberto.project1calculator;
  */
 public class App {
     public static void main(String[] args) {
-        Engine engine = new Engine();
-        engine.logic();
+        UserInterface userInterface = new UserInterface();
+        userInterface.mainMenu();
     }
 }
