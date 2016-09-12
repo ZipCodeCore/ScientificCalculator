@@ -84,96 +84,96 @@ public class CalculatorTest {
     }
 
 
-    @Test
+ /*   @Test
     public void addTest() {
         double expectedValue = 20.0;
         double actualValue = calc.add(10);
 
         Assert.assertEquals("Make sure add() will add the state plus the argument", expectedValue, actualValue, .00001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void subtractTest() {
         double expectedValue = 0.0;
         double actualValue = calc.subtract(10);
 
         Assert.assertEquals("Does subtract() work properly?", expectedValue, actualValue, .000001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void multiplyTest() {
         double expectedValue = 20.0;
         double actualValue = calc.multiply(2.0);
 
         Assert.assertEquals("Does subtract() work properly?", expectedValue, actualValue, .000001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void divideTest() {
         double expectedValue = 5.0;
         double actualValue = calc.divide(2.0);
 
         Assert.assertEquals("Does subtract() work properly?", expectedValue, actualValue, .000001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void squareTest() {
         double expectedValue = 100.0;
         double actualValue = calc.square();
 
         Assert.assertEquals("Does subtract() work properly?", expectedValue, actualValue, .000001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void squareRootTest() {
         calc.changeState(100.0);
         double expectedValue = 10.0;
         double actualValue = calc.squareRoot();
 
         Assert.assertEquals("Does subtract() work properly?", expectedValue, actualValue, .000001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void toThePowerTest() {
         double expectedValue = 1000.0;
         double actualValue = calc.toThePower(3.0);
 
         Assert.assertEquals("Test to make sure it raises the state to the value.", expectedValue, actualValue, .000001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void inverseTest() {
         double expectedValue = 0.1;
         double actualValue = calc.inverse();
 
         Assert.assertEquals("Test to make sure it raises the state to the value.", expectedValue, actualValue, .000001);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void cubedRootTest() {
         calc.changeState(8);
         double expectedValue = 2;
         double actualValue = calc.cubedRoot();
 
         Assert.assertEquals("Test should return cubed root.", expectedValue, actualValue, 0);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void cubedTest() {
         calc.changeState(2);
         double expectedValue = 8;
         double actualValue = calc.cubed();
 
         Assert.assertEquals("Check cube function.", expectedValue, actualValue, 0);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void changeSignTest() {
         double expectedValue = -10.0;
         double actualValue = calc.changeSign();
 
         Assert.assertEquals("Does the state change sign?", expectedValue, actualValue, .00001);
-    }
+    }*/
 
     @Test
     public void mainMenuTest() {

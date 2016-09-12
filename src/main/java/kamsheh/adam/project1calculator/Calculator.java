@@ -149,44 +149,54 @@ public class Calculator {
         System.out.println();
         switch (input) {
             case 1:
-                this.display.printBasicOperation(this.state, value, '+', this.add(value));
+                this.display.printBasicOperation(this.state, value, '+', BasicOperations.add(this.state, value));
+                this.changeState(BasicOperations.add(this.state, value));
                 break;
             case 2:
-                this.display.printBasicOperation(this.state, value, '-', this.subtract(value));
+                this.display.printBasicOperation(this.state, value, '-', BasicOperations.subtract(this.state, value));
+                this.changeState(BasicOperations.subtract(this.state, value));
                 break;
             case 3:
-                this.display.printBasicOperation(this.state, value, '*', this.multiply(value));
+                this.display.printBasicOperation(this.state, value, '*', BasicOperations.multiply(this.state, value));
+                this.changeState(BasicOperations.multiply(this.state, value));
                 break;
             case 4:
                 if(value==0) {
                     System.out.println("Error. Cannot divide by 0.");
                 } else {
-                    this.display.printBasicOperation(this.state, value, '/', this.divide(value));
-                }
+                    this.display.printBasicOperation(this.state, value, '/', BasicOperations.divide(this.state, value));
+                    this.changeState(BasicOperations.divide(this.state, value));                }
                 break;
             case 5:
-                System.out.printf("square(%.2f) = %.2f", this.state, this.square());
+                System.out.printf("square(%.2f) = %.2f", this.state, BasicOperations.square(this.state));
+                this.changeState(BasicOperations.square(this.state));
                 break;
             case 6:
-                System.out.printf("sqrt(%.2f) = %.2f", this.state, this.squareRoot());
+                System.out.printf("sqrt(%.2f) = %.2f", this.state, BasicOperations.squareRoot(this.state));
+                this.changeState(BasicOperations.squareRoot(this.state));
                 break;
             case 7:
-                System.out.printf("(%.2f)^%.2f = %.2f", this.state, value, this.toThePower(value));
+                System.out.printf("(%.2f)^%.2f = %.2f", this.state, value, BasicOperations.toThePower(this.state, value));
+                this.changeState(BasicOperations.toThePower(this.state, value));
                 break;
             case 8:
-                System.out.printf("inverse(%.2f) = %.2f", this.state, this.inverse());
+                System.out.printf("inverse(%.2f) = %.2f", this.state, BasicOperations.inverse(this.state));
+                this.changeState(BasicOperations.inverse(this.state));
                 break;
             case 9:
-                System.out.println(this.changeSign());
+                System.out.println(BasicOperations.changeSign(this.state));
+                this.changeState(BasicOperations.changeSign(this.state));
                 break;
             case 10:
                 System.out.printf("%.2f! = %.2f", this.state, this.factorial());
                 break;
             case 11:
-                System.out.printf("cbrt(%.2f) = %.2f", this.state, this.cubedRoot());
+                System.out.printf("cbrt(%.2f) = %.2f", this.state, BasicOperations.cubedRoot(this.state));
+                this.changeState(BasicOperations.cubedRoot(this.state));
                 break;
             case 12:
-                System.out.printf("cubed(%.2f) = %.2f", this.state, this.cubed());
+                System.out.printf("cubed(%.2f) = %.2f", this.state, BasicOperations.cubed(this.state));
+                this.changeState(BasicOperations.cubed(this.state));
             case 0:
                 System.out.println("Exiting...");
                 bool = false;
@@ -197,60 +207,60 @@ public class Calculator {
     }
 
     // Basic Operations ///////////////////////////
-    public double add(double value) {
+/*    public double add(double value) {
         this.state += value;
         return this.state;
-    }
+    }*/
 
-    public double subtract(double value) {
+   /* public double subtract(double value) {
         this.state -= value;
         return this.state;
-    }
+    }*/
 
-    public double multiply(double value) {
+/*    public double multiply(double value) {
         this.state *= value;
         return this.state;
-    }
+    }*/
 
-    public double divide(double value) {
+/*    public double divide(double value) {
         this.state /= value;
         return this.state;
-    }
+    }*/
 
-    public double square() {
+/*    public double square() {
         this.state = Math.pow(this.state, 2.0);
         return this.state;
-    }
+    }*/
 
-    public double squareRoot() {
+/*    public double squareRoot() {
         this.state = Math.sqrt(this.state);
         return this.state;
-    }
+    }*/
 
-    public double cubedRoot() {
+/*    public double cubedRoot() {
         this.state = Math.cbrt(this.state);
         return this.state;
-    }
+    }*/
 
-    public double cubed() {
+/*    public double cubed() {
         this.state = Math.pow(this.state, 3);
         return this.state;
-    }
+    }*/
 
-    public double toThePower(double value) {
+/*    public double toThePower(double value) {
         this.state = Math.pow(this.state, value);
         return this.state;
-    }
+    }*/
 
-    public double inverse() {
+/*    public double inverse() {
         this.state = 1 / this.state;
         return this.state;
-    }
+    }*/
 
-    public double changeSign() {
+/*    public double changeSign() {
         this.state *= -1;
         return this.state;
-    }
+    }*/
 
     //////////////////////////////////////////
 
