@@ -7,20 +7,20 @@ public class LogarithmicCalculations {
 
 
     public double log(double newValue) {
-        double result =  Math.log(newValue);
+        double result =  Math.log10(newValue);
         System.out.println(" log(" + newValue + ") = " + result);
         return  result;
 
     }
 
     public double log10x(double newValue) {
-        double result =  Math.log10(newValue);
+        double result =  Math.pow(Math.E,(Math.log10(newValue)));
         System.out.println(" log10x(" + newValue + ") = " + result);
         return  result;
 
     }
-    public double logLN(double newValue) {
-        double result =  Math.log1p(newValue);
+    public double logln(double newValue) {
+        double result =  Math.log(newValue);
         System.out.println(" logln(" + newValue + ") = " + result);
         return  result;
 

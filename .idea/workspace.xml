@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48261e89-a7a0-49d9-8215-f28698011acf" name="Default" comment="" />
+    <list default="true" id="48261e89-a7a0-49d9-8215-f28698011acf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/App.java" afterPath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogarithmicCalculations.java" afterPath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogarithmicCalculations.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogicEngine.java" afterPath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogicEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/UserInterfaceMenus.java" afterPath="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/UserInterfaceMenus.java" />
+    </list>
     <ignored path="Project-1-Calculator.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,9 +41,12 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="135">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding>
+                <element signature="e#194#195#0" expanded="true" />
+                <element signature="e#235#236#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +54,8 @@
       <file leaf-file-name="LogicEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogicEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="165">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -56,9 +64,16 @@
       <file leaf-file-name="UserInterfaceMenus.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/UserInterfaceMenus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="347">
+              <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+              <folding>
+                <element signature="e#1399#1400#0" expanded="true" />
+                <element signature="e#1455#1456#0" expanded="true" />
+                <element signature="e#2593#2594#0" expanded="true" />
+                <element signature="e#2649#2650#0" expanded="true" />
+                <element signature="e#2678#2679#0" expanded="true" />
+                <element signature="e#2734#2735#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +81,8 @@
       <file leaf-file-name="CurrentValueDisplay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/CurrentValueDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+            <state relative-caret-position="165">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -99,8 +114,8 @@
       <file leaf-file-name="LogarithmicCalculations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogarithmicCalculations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="317">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,8 +124,8 @@
       <file leaf-file-name="TrigCalculations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/TrigCalculations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="347">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -139,9 +154,10 @@
         <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/BasicCalculations.java" />
         <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/TrigCalculations.java" />
         <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/Memory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/CurrentValueDisplay.java" />
         <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogarithmicCalculations.java" />
         <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/CurrentValueDisplay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogicEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/UserInterfaceMenus.java" />
       </list>
     </option>
@@ -165,7 +181,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="18" />
+    <option name="y" value="28" />
     <option name="width" value="1248" />
     <option name="height" value="708" />
   </component>
@@ -745,15 +762,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1473693650032</updated>
-      <workItem from="1473693655696" duration="7791000" />
+      <workItem from="1473693655696" duration="12336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7791000" />
+    <option name="totallyTimeSpent" value="12336000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1248" height="708" extended-state="0" />
+    <frame x="18" y="28" width="1248" height="708" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -819,38 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/CurrentValueDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogicEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogarithmicCalculations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -864,17 +849,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/TrigCalculations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="347">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogarithmicCalculations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/CurrentValueDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding>
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/LogicEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lindsay/devon/Calculator/UserInterfaceMenus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="347">
+          <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+          <folding>
+            <element signature="e#1399#1400#0" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="true" />
+            <element signature="e#2593#2594#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
+            <element signature="e#2734#2735#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
