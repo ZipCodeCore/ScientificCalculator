@@ -18,13 +18,12 @@ public class Display {
         System.out.println("For basic functions type: '1'");
         System.out.println("For advanced functions type: '2'");
         System.out.println("For trigonometric Functions type: '3'");
-        System.out.println("For logarithmic type: '4'");
-        System.out.println("To change modes type: '5'");
-        System.out.println("To access the memory type: '6'");
-        System.out.println("To clear most recent value type: '7'");
-        System.out.println("To invert the sign of the most recent value type: '8'");
-        System.out.println("For help type: '9'");
-        System.out.println("To end program type '0'");
+        System.out.println("To change modes type: '4'");
+        System.out.println("To access the memory type: '5'");
+        System.out.println("To clear most recent value type: '6'");
+        System.out.println("To invert the sign of the most recent value type: '7'");
+        System.out.println("For help type: '8'");
+        System.out.println("To end program type '9'");
         System.out.println("");
         System.out.println("Most recent value: " + ScientificCalculator.mostRecentValue);
         System.out.println("Value in memory: " + ScientificCalculator.valueInMemory);
@@ -47,20 +46,20 @@ public class Display {
         System.out.println("      (d)ivide");
     }
     public void advancedFunctions(){
-        System.out.println("(s)quare");
-        System.out.println("  (r)oot");
-        System.out.println("    (e)xponent");
-        System.out.println("      (i)nverse");
-        System.out.println("        (f)actorial");
+        System.out.println("1. square");
+        System.out.println("2. root");
+        System.out.println("3. exponent");
+        System.out.println("4. inverse");
+        System.out.println("5. factorial");
+        System.out.println("6. log");
+        System.out.println("7. inverse log");
+        System.out.println("8. natural log");
+        System.out.println("9. inverse natural log");
     }
     public void trigFunctions(){
         System.out.println("(s)ine ** inverse s(i)ne");
         System.out.println("(c)osine ** inverse c(o)sine");
         System.out.println("(t)angent ** inverse t(a)ngent");
-    }
-    public void logFunctions(){
-        System.out.println("(l)og ** inverse l(o)g");
-        System.out.println("(n)atural log ** inverse n(a)tural log");
     }
     public void modeMenu(){
         System.out.println("To change display mode type: '1'");

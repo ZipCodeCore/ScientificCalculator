@@ -9,13 +9,11 @@ public class ScientificCalculator {
     public static AdvancedFunctions advancedFunctions = new AdvancedFunctions();
     public static BasicFunctions basicFunctions = new BasicFunctions();
     public static TrigFunctions trigFunctions = new TrigFunctions();
-    public static LogFunctions logFunctions = new LogFunctions();
     public static Mode mode = new Mode();
     public static Memory memory = new Memory();
 
     public static boolean powerStatus = true;
     public static double mostRecentValue = 0;
-    public static double firstNumber;
     public static double secondNumber;
     public static double valueInMemory;
 
@@ -30,69 +28,49 @@ public class ScientificCalculator {
         }
     }
     public void homePrompt(){
-        String commandString = scanner.next();
-        if(commandString.equals("1")) {
-            display.basicFunctions();
-            basicFunctions.basicFunctions();
+        int command = scanner.nextInt();
+        switch(command){
+            case 1:
+                display.basicFunctions();
+                basicFunctions.basicFunctions();
+                break;
+            case 2:
+                display.advancedFunctions();
+                advancedFunctions.advancedFunctions();
+                break;
+            case 3:
+                display.trigFunctions();
+                trigFunctions.trigFunctions();
+                break;
+            case 4:
+                display.modeMenu();
+                mode.modeMenu();
+                break;
+            case 5:
+                display.memoryMenu();
+                memory.memoryMenu();
+                break;
+            case 6:
+                display.clearDisplay();
+                mostRecentValue = 0;
+                break;
+            case 7:
+                mostRecentValue = executor.invertSign(mostRecentValue);
+                break;
+            case 8:
+                display.help();
+                break;
+            case 9:
+                powerStatus = false;
+                break;
+            default:
+                System.out.println("*****************************");
+                System.out.println("Function name not recognized.");
+                System.out.println("*****************************");
         }
-        else if(commandString.equals("2")) {
-            display.advancedFunctions();
-            advancedFunctions.advancedFunctions();
-        }
-        else if(commandString.equals("3")){
-            display.trigFunctions();
-            trigFunctions.trigFunctions();
-        }
-        else if(commandString.equals("4")){
-            display.logFunctions();
-            logFunctions.logFunctions();
-        }
-        else if(commandString.equals("5")){
-            display.modeMenu();
-            mode.modeMenu();
-        }
-        else if(commandString.equals("6")){
-            display.memoryMenu();
-            memory.memoryMenu();
-        }
-        else if(commandString.equals("7")){
-            display.clearDisplay();
-            mostRecentValue = 0;
-        }
-        else if(commandString.equals(("8"))){
-            mostRecentValue = executor.invertSign(mostRecentValue);
-        }
-        else if(commandString.equals("9")) {
-            display.help();
-        }
-        else if(commandString.equals("0")){
-            powerStatus = false;
-        }
-        else{
-            System.out.println("*****************************");
-            System.out.println("Function name not recognized.");
-            System.out.println("*****************************");
-        }
-
     }
-    public static boolean useMostRecent(){
-        if(mostRecentValue !=0) {
-            System.out.println("Use most recent value?");
-            System.out.println("y/n");
-            if (scanner.next().equals("y")) {
-                return true;
-            }
-        }
-        return false;
-    }
-    public static void xValueIsMostRecent(){
-        System.out.println("Input the second value");
-        secondNumber = scanner.nextDouble();
-    }
-    public static void notUsingMostRecent(){
-        System.out.println("Input the first value");
-        firstNumber = scanner.nextDouble();
-        System.out.println("Input the second value");
+    public static void valueInput(){
+        System.out.println("Input a value");
         secondNumber = scanner.nextDouble();
     }
 }
