@@ -10,6 +10,7 @@ import static java.lang.Double.isInfinite;
 public class UserInterface {
 
     CoreCalculator coreCalculator = new CoreCalculator();
+    TrigCalculator trigCalculator = new TrigCalculator();
     State state = new State();
     Memory memory = new Memory();
     Scanner sc = new Scanner(System.in);
@@ -81,7 +82,31 @@ public class UserInterface {
                 break;
             case 'F':
                 output("variable exponentiation");
-                //state.setStateValue(coreCalculator.variableExponentiation(state.getStateValue(), promptOperand()));
+                state.setStateValue(coreCalculator.variableExponentiation(state.getStateValue(), promptOperand()));
+                break;
+            case 'G':
+                output("sine");
+                state.setStateValue(trigCalculator.sine(state.getStateValue()));
+                break;
+            case 'H':
+                output("inverse sine");
+                state.setStateValue(trigCalculator.inverveSine(state.getStateValue()));
+                break;
+            case 'I':
+                output("cosine");
+                state.setStateValue(trigCalculator.cosine(state.getStateValue()));
+                break;
+            case 'J':
+                output("inverse cosine");
+                state.setStateValue(trigCalculator.inverseCosine(state.getStateValue()));
+                break;
+            case 'K':
+                output("tangent");
+                state.setStateValue(trigCalculator.tangent(state.getStateValue()));
+                break;
+            case 'L':
+                output("inverse tangent");
+                state.setStateValue(trigCalculator.inverseTangent(state.getStateValue()));
                 break;
             default:
                 output("Invalid selection");
@@ -175,6 +200,12 @@ public class UserInterface {
         output("D = Division");
         output("E = Square");
         output("F = Variable exponentiation");
+        output("G = Sine");
+        output("H = Inverse Sine");
+        output("I = Cosine");
+        output("J = Inverse Cosine");
+        output("K = Tangent");
+        output("L = Inverse Tangent");
         return sc.next().toUpperCase().charAt(0);
     }
 

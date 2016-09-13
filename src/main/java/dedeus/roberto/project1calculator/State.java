@@ -11,7 +11,7 @@ public class State {
     private StateMode stateMode;
 
     State(){
-        this.stateValue = 0.0;
+        this.stateValue = 0.0d;
         this.stateMode = StateMode.DECIMAL;
     }
 
@@ -37,7 +37,7 @@ public class State {
             case HEXADECIMAL:
                 return Integer.toHexString((int)stateValue);
             case DECIMAL:
-                return Integer.toString((int)stateValue);
+                return Double.toString(stateValue);
             default:
                 return "Invalid selection";
         }

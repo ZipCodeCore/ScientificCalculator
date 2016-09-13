@@ -1,10 +1,8 @@
 package dedeus.roberto.project1calculator;
-import static java.lang.Double.NaN;
-import static java.lang.Double.isInfinite;
 
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Created by robertodedeus on 9/12/16.
@@ -93,11 +91,6 @@ public class CoreCalculatorTest {
         assertEquals(expectedValue, actualValue, 1);
     }
 
-    @Test
-    public void checkErrorTest(){
-        userInterface.state.setStateValue(NaN);
-        boolean actualValue = userInterface.checkError();
-        assertTrue(actualValue);
-    }
+
 
 }
