@@ -91,6 +91,11 @@ public class CoreCalculatorTest {
         assertEquals(expectedValue, actualValue, 1);
     }
 
-
+    @Test
+    public void factorialTest(){
+        double expectedValue = 6;
+        double actualValue = coreCalculator.factorial(3);
+        assertEquals(expectedValue, actualValue, 1);
+    }
 
 }

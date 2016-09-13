@@ -35,12 +35,21 @@ public class CoreCalculator {
         return Math.pow(stateValue, exponent);
     }
 
-    public double inverse(double getStateValue){
-        return 1 / getStateValue;
+    public double inverse(double stateValue){
+        return 1 / stateValue;
     }
 
-    public double switchSign(double getStateValue){
-        return getStateValue * -1;
+    public double switchSign(double stateValue){
+        return stateValue * -1;
+    }
+
+    public double factorial(double stateValue){
+        double subTotal = 0;
+        double currentValue = stateValue;
+        for(double i = stateValue; i > 0; i--, currentValue--) {
+            subTotal += currentValue;
+        }
+        return subTotal;
     }
 
 
