@@ -74,7 +74,7 @@ public class InputListener {
 
         if (isFirst) {
 
-            currentDisplayState =getNumberInput();
+            currentDisplayState = getNumberInput();
             isFirst = false;
 
         } else {
