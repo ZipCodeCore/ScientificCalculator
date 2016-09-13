@@ -38,20 +38,16 @@ public class State {
         this.stateMode = stateMode;
     }
 
-    void switchUnitsMode(TrigUnit trigUnit){
-        this.trigUnit = trigUnit;
+    void switchUnitsMode(){
+        if(this.trigUnit == TrigUnit.RADIANS){
+            this.trigUnit = TrigUnit.DEGREES;
+        } else {
+            this.trigUnit = TrigUnit.RADIANS;
+        }
     }
 
-    String outputTrigValue(double stateValue){
-        TrigUnit trigUnit = getTrigUnit();
-        switch(trigUnit){
-            case RADIANS:
-                return Double.toString(stateValue);
-            case DEGREES:
-                return Double.toString(Math.toDegrees(stateValue));
-            default:
-                return "error";
-        }
+    void switchUnitsMode(TrigUnit trigUnit){
+        this.trigUnit = trigUnit;
     }
 
     String outputStateValue(double stateValue){

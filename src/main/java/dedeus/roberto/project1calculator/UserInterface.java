@@ -104,39 +104,39 @@ public class UserInterface {
     }
 
     private void trigMenu(){
-        double normalizedRadian = trigCalculator.normalizeRadian(state.getTrigUnit(), state.getStateValue());
-        double normalizedDegree = trigCalculator.normalizeDegree(state.getTrigUnit(), state.getStateValue());
+        double stateValueDegree = trigCalculator.normalizeToDegree(state.getTrigUnit(), state.getStateValue());
+        double stateValueRadian = trigCalculator.normalizeToRadian(state.getTrigUnit(), state.getStateValue());
         char trigMenuPrompt = drawTrigMenu();
         switch (trigMenuPrompt){
             case 'G':
                 output("sine");
                 // takes radian
-                state.setStateValue(trigCalculator.sine(normalizedRadian));
+                state.setStateValue(trigCalculator.sine(stateValueRadian));
                 break;
             case 'H':
                 output("inverse sine");
                 // takes degrees
-                state.setStateValue(trigCalculator.inverseSine(normalizedDegree));
+                state.setStateValue(trigCalculator.inverseSine(stateValueDegree));
                 break;
             case 'I':
                 output("cosine");
                 // takes radian
-                state.setStateValue(trigCalculator.cosine(normalizedRadian));
+                state.setStateValue(trigCalculator.cosine(stateValueRadian));
                 break;
             case 'J':
                 output("inverse cosine");
                 // take degree
-                state.setStateValue(trigCalculator.inverseCosine(normalizedDegree));
+                state.setStateValue(trigCalculator.inverseCosine(stateValueDegree));
                 break;
             case 'K':
                 output("tangent");
                 // take radian
-                state.setStateValue(trigCalculator.tangent(normalizedRadian));
+                state.setStateValue(trigCalculator.tangent(stateValueRadian));
                 break;
             case 'L':
                 output("inverse tangent");
                 // takes degree
-                state.setStateValue(trigCalculator.inverseTangent(normalizedDegree));
+                state.setStateValue(trigCalculator.inverseTangent(stateValueDegree));
                 break;
             default:
                 output("Invalid selection");

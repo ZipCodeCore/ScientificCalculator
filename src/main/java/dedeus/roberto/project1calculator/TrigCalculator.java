@@ -6,17 +6,16 @@ package dedeus.roberto.project1calculator;
 
 public class TrigCalculator {
 
-
-    double normalizeRadian(State.TrigUnit trigUnit, double stateValue){
-        if(trigUnit == State.TrigUnit.DEGREES){
+    double normalizeToDegree(State.TrigUnit trigUnit, double stateValue){
+        if(trigUnit == State.TrigUnit.RADIANS){
             return Math.toDegrees(stateValue);
         } else {
             return stateValue;
         }
     }
 
-    double normalizeDegree(State.TrigUnit trigUnit, double stateValue){
-        if(trigUnit == State.TrigUnit.RADIANS){
+    double normalizeToRadian(State.TrigUnit trigUnit, double stateValue){
+        if(trigUnit == State.TrigUnit.DEGREES){
             return Math.toRadians(stateValue);
         } else {
             return stateValue;
