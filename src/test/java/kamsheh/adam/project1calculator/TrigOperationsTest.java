@@ -34,6 +34,14 @@ public class TrigOperationsTest {
     }
 
     @Test
+    public void convertUnitsTest() {
+        double expected = Math.PI;
+        double actual = trig.convertUnits(180);
+
+        Assert.assertEquals(expected, actual, 0);
+    }
+
+    @Test
     public void sineTest() {
         double expected = 1;
         double actual = trig.sine(90);

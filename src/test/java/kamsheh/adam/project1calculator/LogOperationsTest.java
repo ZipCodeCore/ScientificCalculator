@@ -25,6 +25,14 @@ public class LogOperationsTest {
     }
 
     @Test
+    public void naturalLogTest() {
+        double expected = 1;
+        double actual = LogOperations.naturalLog(Math.E);
+
+        Assert.assertEquals(expected, actual, 0);
+    }
+
+    @Test
     public void inverseNaturalLogTest() {
         double expected = 1;
         double actual = LogOperations.inverseNaturalLog(Math.log(1));

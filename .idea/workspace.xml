@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52ffc1b8-c3d3-4c0c-9f8a-587f7fce38e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kamsheh/adam/project1calculator/BasicOperations.class" afterPath="$PROJECT_DIR$/target/classes/kamsheh/adam/project1calculator/BasicOperations.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/BasicOperationsTest.class" afterPath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/BasicOperationsTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/CalculatorTest.class" afterPath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/CalculatorTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/LogOperationsTest.class" afterPath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/LogOperationsTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/TrigOperationsTest.class" afterPath="$PROJECT_DIR$/target/test-classes/kamsheh/adam/project1calculator/TrigOperationsTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperationsTest.java" afterPath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperationsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/LogOperationsTest.java" afterPath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/LogOperationsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/TrigOperationsTest.java" afterPath="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/TrigOperationsTest.java" />
     </list>
     <ignored path="project1calculator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,18 +36,26 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="6">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="CalculatorTest.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java">
+            <file leaf-file-name="BasicOperationsTest.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperationsTest.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1039">
-                    <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
+                  <state relative-caret-position="4">
+                    <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-1275">
+                    <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -58,8 +74,8 @@
       <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="307" column="61" selection-start-line="307" selection-start-column="61" selection-end-line="307" selection-end-column="61" />
+            <state relative-caret-position="555">
+              <caret line="228" column="20" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,83 +86,12 @@
       <file leaf-file-name="BasicOperations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-              <folding>
-                <element signature="e#270#271#0" expanded="false" />
-                <element signature="e#306#307#0" expanded="false" />
-                <element signature="e#371#372#0" expanded="false" />
-                <element signature="e#407#408#0" expanded="false" />
-                <element signature="e#471#472#0" expanded="false" />
-                <element signature="e#507#508#0" expanded="false" />
-                <element signature="e#556#557#0" expanded="false" />
-                <element signature="e#597#598#0" expanded="false" />
-                <element signature="e#742#743#0" expanded="false" />
-                <element signature="e#781#782#0" expanded="false" />
-                <element signature="e#829#830#0" expanded="false" />
-                <element signature="e#870#871#0" expanded="false" />
-                <element signature="e#937#938#0" expanded="false" />
-                <element signature="e#982#983#0" expanded="false" />
-                <element signature="e#1032#1033#0" expanded="false" />
-                <element signature="e#1064#1065#0" expanded="false" />
-                <element signature="e#1117#1118#0" expanded="false" />
-                <element signature="e#1151#1152#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrigOperations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/TrigOperations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-              <folding>
-                <element signature="e#279#280#0" expanded="false" />
-                <element signature="e#312#313#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogOperations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/LogOperations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-              <folding>
-                <element signature="e#153#154#0" expanded="false" />
-                <element signature="e#193#194#0" expanded="false" />
-                <element signature="e#246#247#0" expanded="false" />
-                <element signature="e#288#289#0" expanded="false" />
-                <element signature="e#341#342#0" expanded="false" />
-                <element signature="e#379#380#0" expanded="false" />
-                <element signature="e#439#440#0" expanded="false" />
-                <element signature="e#477#478#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <caret line="56" column="25" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
               <folding>
-                <element signature="e#464#465#0" expanded="false" />
-                <element signature="e#503#504#0" expanded="false" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#306#307#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -172,17 +117,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperationsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/TrigOperationsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/LogOperations.java" />
-        <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/LogOperationsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java" />
         <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/DisplayTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java" />
         <option value="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/TrigOperations.java" />
         <option value="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Calculator.java" />
         <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/TrigOperationsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/LogOperationsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java" />
+        <option value="$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperationsTest.java" />
       </list>
     </option>
   </component>
@@ -207,7 +152,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-336" />
     <option name="y" value="-1057" />
-    <option name="width" value="1048" />
+    <option name="width" value="1412" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -325,9 +270,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,49 +284,8 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.All in project1calculator">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="project1calculator" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="All in project1calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="project1calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DisplayTest.switchDisplayModeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BasicOperationsTest.factorialTest2">
+    <configuration default="false" name="BasicOperationsTest.cubedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
@@ -392,8 +296,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.DisplayTest" />
-      <option name="METHOD_NAME" value="switchDisplayModeTest" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.BasicOperationsTest" />
+      <option name="METHOD_NAME" value="cubedTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -407,7 +311,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DisplayTest.switchDisplayModeTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BasicOperationsTest.factorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
@@ -418,8 +322,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.DisplayTest" />
-      <option name="METHOD_NAME" value="switchDisplayModeTest2" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.BasicOperationsTest" />
+      <option name="METHOD_NAME" value="factorialTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -433,7 +337,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CalculatorTest.getMemoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="TrigOperationsTest.convertUnitsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
@@ -444,8 +348,60 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
-      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.CalculatorTest" />
-      <option name="METHOD_NAME" value="getMemoryTest" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.TrigOperationsTest" />
+      <option name="METHOD_NAME" value="convertUnitsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="LogOperationsTest.naturalLogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project1calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.LogOperationsTest" />
+      <option name="METHOD_NAME" value="naturalLogTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BasicOperationsTest.factorialTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="kamsheh.adam.project1calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project1calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="kamsheh.adam.project1calculator" />
+      <option name="MAIN_CLASS_NAME" value="kamsheh.adam.project1calculator.BasicOperationsTest" />
+      <option name="METHOD_NAME" value="factorialTest2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -874,19 +830,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.All in project1calculator" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DisplayTest.switchDisplayModeTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DisplayTest.switchDisplayModeTest2" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorTest.getMemoryTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BasicOperationsTest.cubedTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BasicOperationsTest.factorialTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TrigOperationsTest.convertUnitsTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.LogOperationsTest.naturalLogTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BasicOperationsTest.factorialTest2" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in project1calculator" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorTest.getMemoryTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DisplayTest.switchDisplayModeTest2" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DisplayTest.switchDisplayModeTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BasicOperationsTest.factorialTest2" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.LogOperationsTest.naturalLogTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TrigOperationsTest.convertUnitsTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BasicOperationsTest.factorialTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BasicOperationsTest.cubedTest" />
       </list>
     </recent_temporary>
   </component>
@@ -909,47 +865,48 @@
       <workItem from="1473685711642" duration="17579000" />
       <workItem from="1473712983332" duration="6316000" />
       <workItem from="1473727635173" duration="8000" />
-      <workItem from="1473771804483" duration="1952000" />
+      <workItem from="1473771804483" duration="2512000" />
+      <workItem from="1473785837991" duration="2249000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_project1calculator - 2016.09.12 at 18h 09m 27s.xml">
-      <configuration name="All in project1calculator" configurationId="JUnit" />
+    <history-entry file="BasicOperationsTest_cubedTest - 2016.09.13 at 13h 35m 48s.xml">
+      <configuration name="BasicOperationsTest.cubedTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_project1calculator - 2016.09.13 at 10h 15m 46s.xml">
-      <configuration name="All in project1calculator" configurationId="JUnit" />
+    <history-entry file="BasicOperationsTest_factorialTest - 2016.09.13 at 13h 36m 49s.xml">
+      <configuration name="BasicOperationsTest.factorialTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_getMemoryTest - 2016.09.13 at 10h 14m 42s.xml">
-      <configuration name="CalculatorTest.getMemoryTest" configurationId="JUnit" />
+    <history-entry file="BasicOperationsTest_factorialTest - 2016.09.13 at 13h 37m 21s.xml">
+      <configuration name="BasicOperationsTest.factorialTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_getMemoryTest - 2016.09.13 at 10h 14m 54s.xml">
-      <configuration name="CalculatorTest.getMemoryTest" configurationId="JUnit" />
+    <history-entry file="BasicOperationsTest_factorialTest2 - 2016.09.13 at 13h 50m 02s.xml">
+      <configuration name="BasicOperationsTest.factorialTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_getMemoryTest - 2016.09.13 at 10h 15m 38s.xml">
-      <configuration name="CalculatorTest.getMemoryTest" configurationId="JUnit" />
+    <history-entry file="BasicOperationsTest_factorialTest2 - 2016.09.13 at 13h 50m 21s.xml">
+      <configuration name="BasicOperationsTest.factorialTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DisplayTest_getDisplayModeTest - 2016.09.12 at 14h 04m 30s.xml">
-      <configuration name="DisplayTest.getDisplayModeTest" configurationId="JUnit" />
+    <history-entry file="BasicOperationsTest_factorialTest2 - 2016.09.13 at 13h 50m 53s.xml">
+      <configuration name="BasicOperationsTest.factorialTest2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DisplayTest_switchDisplayModeTest - 2016.09.12 at 14h 07m 14s.xml">
-      <configuration name="DisplayTest.switchDisplayModeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DisplayTest_switchDisplayModeTest2 - 2016.09.12 at 14h 07m 59s.xml">
-      <configuration name="DisplayTest.switchDisplayModeTest2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LogOperationsTest - 2016.09.12 at 13h 26m 14s.xml">
-      <configuration name="LogOperationsTest" configurationId="JUnit" />
+    <history-entry file="BasicOperationsTest_factorialTest2 - 2016.09.13 at 13h 51m 42s.xml">
+      <configuration name="BasicOperationsTest.factorialTest2" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LogOperationsTest - 2016.09.12 at 13h 26m 23s.xml">
       <configuration name="LogOperationsTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LogOperationsTest_naturalLogTest - 2016.09.13 at 13h 44m 35s.xml">
+      <configuration name="LogOperationsTest.naturalLogTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TrigOperationsTest_convertUnitsTest - 2016.09.13 at 13h 41m 37s.xml">
+      <configuration name="TrigOperationsTest.convertUnitsTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66244000" />
+    <option name="totallyTimeSpent" value="69053000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-336" y="-1057" width="1048" height="1057" extended-state="0" />
+    <frame x="-336" y="-1057" width="1412" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -964,7 +921,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29198474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21671388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1021,7 +978,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1030,49 +987,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
-            <element signature="e#270#271#0" expanded="false" />
-            <element signature="e#306#307#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#471#472#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#870#871#0" expanded="false" />
-            <element signature="e#937#938#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="false" />
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1064#1065#0" expanded="false" />
-            <element signature="e#1117#1118#0" expanded="false" />
-            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1081,10 +1002,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="e#279#280#0" expanded="false" />
-            <element signature="e#312#313#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,27 +1010,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="e#153#154#0" expanded="false" />
-            <element signature="e#193#194#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#288#289#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#379#380#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-            <element signature="e#477#478#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="810">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,24 +1055,8 @@
         <state relative-caret-position="120">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
-            <element signature="e#270#271#0" expanded="false" />
-            <element signature="e#306#307#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#471#472#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#870#871#0" expanded="false" />
-            <element signature="e#937#938#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="false" />
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1064#1065#0" expanded="false" />
-            <element signature="e#1117#1118#0" expanded="false" />
-            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1175,10 +1065,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="e#279#280#0" expanded="false" />
-            <element signature="e#312#313#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,16 +1073,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="e#153#154#0" expanded="false" />
-            <element signature="e#193#194#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#288#289#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#379#380#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-            <element signature="e#477#478#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1203,10 +1081,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
           <folding>
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding>
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/TrigOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/LogOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,24 +1171,8 @@
         <state relative-caret-position="465">
           <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
           <folding>
-            <element signature="e#270#271#0" expanded="false" />
-            <element signature="e#306#307#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#471#472#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#870#871#0" expanded="false" />
-            <element signature="e#937#938#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="false" />
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1064#1065#0" expanded="false" />
-            <element signature="e#1117#1118#0" expanded="false" />
-            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1259,10 +1181,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding>
-            <element signature="e#279#280#0" expanded="false" />
-            <element signature="e#312#313#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1270,16 +1189,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="e#153#154#0" expanded="false" />
-            <element signature="e#193#194#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#288#289#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#379#380#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-            <element signature="e#477#478#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,10 +1197,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1344,10 +1251,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2460">
           <caret line="164" column="45" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
-          <folding>
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,10 +1297,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2460">
           <caret line="164" column="45" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
-          <folding>
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1437,43 +1338,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperations.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/DisplayTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/TrigOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="486">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/TrigOperationsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/LogOperationsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperationsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,54 +1358,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="e#153#154#0" expanded="false" />
-            <element signature="e#193#194#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#288#289#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#379#380#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-            <element signature="e#477#478#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/TrigOperations.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/LogOperationsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="e#279#280#0" expanded="false" />
-            <element signature="e#312#313#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding>
-            <element signature="e#270#271#0" expanded="false" />
-            <element signature="e#306#307#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#471#472#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#870#871#0" expanded="false" />
-            <element signature="e#937#938#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="false" />
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1064#1065#0" expanded="false" />
-            <element signature="e#1117#1118#0" expanded="false" />
-            <element signature="e#1151#1152#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,20 +1378,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1039">
+        <state relative-caret-position="981">
           <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1561,10 +1388,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/DisplayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/BasicOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="56" column="25" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+          <folding>
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/kamsheh/adam/project1calculator/BasicOperationsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kamsheh/adam/project1calculator/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="307" column="61" selection-start-line="307" selection-start-column="61" selection-end-line="307" selection-end-column="61" />
+        <state relative-caret-position="555">
+          <caret line="228" column="20" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

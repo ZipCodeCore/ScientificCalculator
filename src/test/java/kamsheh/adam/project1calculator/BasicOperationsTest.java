@@ -65,6 +65,14 @@ public class BasicOperationsTest {
     }
 
     @Test
+    public void cubedTest() {
+        double expected = 8;
+        double actual = BasicOperations.cubed(2);
+
+        Assert.assertEquals(expected, actual, 0);
+    }
+
+    @Test
     public void toThePowerTest() {
         double expected = 100;
         double actual = BasicOperations.toThePower(10, 2);
@@ -84,6 +92,14 @@ public class BasicOperationsTest {
     public void changeSignTest() {
         double expected = -1;
         double actual = BasicOperations.changeSign(1);
+
+        Assert.assertEquals(expected, actual, 0);
+    }
+
+    @Test
+    public void factorialTest() {
+        double expected = 120;
+        double actual = BasicOperations.factorial(5);
 
         Assert.assertEquals(expected, actual, 0);
     }
