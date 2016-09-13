@@ -7,6 +7,7 @@ import java.util.Scanner;
  */
 public class Display {
     private String state;
+    private String trueState;
     private int significantDigits;
 
     public enum Mode {DECIMAL, HEX, BINARY, OCTAL}
@@ -76,8 +77,11 @@ public class Display {
         if (state.contains("-"))
             trueDigits--;
 
-        if (trueDigits > significantDigits)
+        if (trueDigits > significantDigits) {
             state = state.substring(0, significantDigits + 1); // trim to significantDigit total + "."
+            if (state.endsWith("."))
+                state = state.substring(0, state.length() - 1);
+        }
         else
             return;
     }

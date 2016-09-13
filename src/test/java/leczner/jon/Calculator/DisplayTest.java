@@ -11,19 +11,19 @@ public class DisplayTest {
 
     @Test
     public void clearTest() {
-        calc.basicMathUnit.divide(0);
-        assertEquals("Err", calc.basicMathUnit.getState());
+        calc.display.setState("Err");
+        assertEquals("Err", calc.display.getState());
         calc.display.clear();
         assertEquals("0", calc.basicMathUnit.getState());
         calc.display.clear();
         assertEquals("0", calc.basicMathUnit.getState());
     }
 
-    @Test
-    public void showStateTest() {
-        assertEquals("0", calc.basicMathUnit.getState());
-        calc.display.showState();
-    }
+//    @Test
+//    public void showStateTest() {
+//        assertEquals("0", calc.basicMathUnit.getState()); // just prints, not sure if can be tested
+//        calc.display.showState();
+//    }
 
     @Test
     public void selectSignificantDigitsTest() {
@@ -33,9 +33,11 @@ public class DisplayTest {
         calc.display.formatState();
         assertEquals("1.41421", calc.display.getState());
         calc.display.setSignificantDigits(1);
-        assertEquals("1.0", calc.basicMathUnit.getState());
+        calc.display.formatState();
+        assertEquals("1", calc.display.getState());
         calc.display.setSignificantDigits(2);
-        assertEquals("1.4", calc.basicMathUnit.getState());
+        calc.display.formatState();
+        assertEquals("1.4", calc.display.getState());
     }
 
     @Test
