@@ -1,8 +1,6 @@
 package dedeus.roberto.project1calculator;
 
 import java.util.Scanner;
-
-import static java.lang.Double.NaN;
 import static java.lang.Double.isInfinite;
 
 /**
@@ -19,10 +17,6 @@ public class UserInterface {
         return Double.isNaN(state.getStateValue()) || isInfinite(state.getStateValue());
     }
 
-    private void output(String msg){
-        System.out.println(msg);
-    }
-
     public void mainMenu(){
 
         if(checkError()){
@@ -31,9 +25,10 @@ public class UserInterface {
             state.setStateValue(0);
         }
 
-        System.out.println("-----");
-        System.out.println("Current state value: " + state.getStateValue());
-        System.out.println("-----");
+        output("-----");
+        output("Current state value: \t" + state.outputStateValue(state.getStateValue()));
+        output("Current display mode: \t" + state.getStateMode());
+        output("-----");
 
         char mainMenuPrompt = drawMainMenu();
 
@@ -120,11 +115,34 @@ public class UserInterface {
 
     private void modeMenu(){
         char modeMenuPrompt = drawDisplayModeMenu();
+        switch(modeMenuPrompt){
+            case '1':
+                state.switchDisplayMode(State.StateMode.BINARY);
+                break;
+            case '2':
+                state.switchDisplayMode(State.StateMode.OCTAL);
+                break;
+            case '3':
+                state.switchDisplayMode(State.StateMode.DECIMAL);
+                break;
+            case '4':
+                state.switchDisplayMode(State.StateMode.HEXADECIMAL);
+                break;
+            default:
+                output("Invalid selection");
+                modeMenu();
+                break;
+        }
+        mainMenu();
     }
 
     private void manageMemoryMenu(){
         char manageMemoryPrompt = drawManageMemoryMenu();
 
+    }
+
+    private void output(String msg){
+        System.out.println(msg);
     }
 
     private char drawMainMenu(){

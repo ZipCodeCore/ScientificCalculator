@@ -1,7 +1,5 @@
 package dedeus.roberto.project1calculator;
 
-import static java.lang.Double.NaN;
-import static java.lang.Double.isInfinite;
 /**
  * Created by robertodedeus on 9/11/16.
  */

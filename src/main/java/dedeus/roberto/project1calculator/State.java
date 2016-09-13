@@ -19,8 +19,28 @@ public class State {
         return this.stateValue;
     }
 
+    public StateMode getStateMode(){
+        return this.stateMode;
+    }
+
     public void setStateValue(double stateValue){
         this.stateValue = stateValue;
+    }
+
+    public String outputStateValue(double stateValue){
+        StateMode stateMode = getStateMode();
+        switch(stateMode){
+            case BINARY:
+                return Integer.toBinaryString((int)stateValue);
+            case OCTAL:
+                return Integer.toOctalString((int)stateValue);
+            case HEXADECIMAL:
+                return Integer.toHexString((int)stateValue);
+            case DECIMAL:
+                return Integer.toString((int)stateValue);
+            default:
+                return "Invalid selection";
+        }
     }
 
     public void clearDisplayValue(){
