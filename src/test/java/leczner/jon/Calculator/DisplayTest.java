@@ -45,7 +45,13 @@ public class DisplayTest {
         String displayState = String.valueOf(state);
         calc.display.setState(displayState);
         calc.display.formatState();
-        assertEquals("-7.8", calc.basicMathUnit.getState());
+        assertEquals("-7.8", calc.display.getState());
+        calc.display.setState("1.009999999999999948579283457");
+        calc.display.formatState();
+        assertEquals("1.001", calc.display.getState());
+        calc.display.setState("-6689502913449130307337256331784623395582254385965074044477506509003168717455670263453482004232257731880806570074163851721530028759557453823946324668047710881013169959586673277865168932426041094307840");
+        calc.display.formatState();
+        assertEquals("-668950", calc.basicMathUnit.getState());
     }
 
     @Test

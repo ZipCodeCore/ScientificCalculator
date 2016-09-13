@@ -70,7 +70,9 @@ public class Display {
     }
 
     public void formatState() {
-        int trueDigits = state.length() - 1;
+        int trueDigits = state.length();
+        if (state.contains("."))
+            trueDigits--;
         if (state.contains("-"))
             trueDigits--;
 

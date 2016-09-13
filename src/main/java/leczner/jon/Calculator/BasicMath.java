@@ -15,13 +15,16 @@ public class BasicMath {
     }
 
     public String getState() {
-        if (errorFlag) {
+        if (errorFlag) { // might have to fix this block...
             state = 0;
             errorFlag = !errorFlag;
             return "Err";
         } else {
-            BigDecimal stateProper = new BigDecimal(state);
-            return String.valueOf(stateProper);
+            String stringState = String.valueOf(state);
+            BigDecimal stateProper = new BigDecimal(stringState);
+//            stateProper.setScale(15, BigDecimal.ROUND_HALF_UP); // 15 is an arbitrary thing;
+            stateProper = stateProper.stripTrailingZeros();
+            return stateProper.toPlainString();
         }
     }
 
@@ -60,9 +63,9 @@ public class BasicMath {
         return state;
     }
 
-
-
     public double exponent(double power) {
+        if (state == 0 && power == 0)
+            errorFlag = !errorFlag;
         state = Math.pow(state, power);
         return state;
     }
