@@ -100,7 +100,7 @@ public class Calculator {
     }
 
     public void update() {
-        
+
     }
 
     // input

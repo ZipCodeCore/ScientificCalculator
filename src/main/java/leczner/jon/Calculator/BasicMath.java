@@ -4,57 +4,61 @@ package leczner.jon.Calculator;
  * Created by jonathanleczner on 9/12/16.
  */
 public class BasicMath {
-    private String state;
+    private double state;
 
     public BasicMath() {
-
+        state = 0;
     }
 
-    public String getState() {
-        return null;
-    }
-
-    public void setState(double value) {
-        state = Double.toString(value);
+    public double getState() {
+        return state;
     }
 
     public double add(double input) {
-        return 0;
+        state += input;
+        return state;
     }
 
     public double subtract(double input) {
-        return 0;
+        state -= input;
+        return state;
     }
 
     public double multiply(double input) {
-        return 0;
+        state *= input;
+        return state;
     }
 
     public double divide(double input) {
-        return 0;
+        state /= input;
+        return state;
     }
 
     public double square() {
-        return 0;
+        state *= state;
+        return state;
     }
 
     public double squareRoot() {
-        return 0;
+        return Math.sqrt(state);
     }
 
     public double exponent(double power) {
-        return 0;
+        return Math.pow(state, power);
     }
 
     public double inverse() {
-        return 0;
+        return 1/state;
     }
 
     public double switchSign() {
-        return 0;
+        return state * -1;
     }
 
     public double factorial() {
-        return 0;
+        for (int i = 1; i < state; i++) {
+            state *= i;
+        }
+        return state;
     }
 }
