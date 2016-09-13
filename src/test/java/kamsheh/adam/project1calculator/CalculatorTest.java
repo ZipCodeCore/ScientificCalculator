@@ -68,7 +68,12 @@ public class CalculatorTest {
 
     @Test
     public void getMemoryTest() {
-        //already tested above.
+        calc.changeState(10);
+        calc.addToMemory();
+        double expectedValue = 10;
+        double actualValue = calc.getMemory();
+
+        Assert.assertEquals("Check getMemory function", expectedValue, actualValue, 0);
     }
 
     @Test
