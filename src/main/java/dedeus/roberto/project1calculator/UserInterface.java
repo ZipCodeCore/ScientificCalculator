@@ -11,6 +11,7 @@ public class UserInterface {
 
     CoreCalculator coreCalculator = new CoreCalculator();
     State state = new State();
+    Memory memory = new Memory();
     Scanner sc = new Scanner(System.in);
 
     public boolean checkError(){
@@ -138,7 +139,18 @@ public class UserInterface {
 
     private void manageMemoryMenu(){
         char manageMemoryPrompt = drawManageMemoryMenu();
-
+        switch(manageMemoryPrompt){
+            case '1':
+                memory.setRecallValue(state.getStateValue());
+                break;
+            case '2':
+                memory.clearRecallValue();
+                break;
+            case '3':
+                state.setStateValue(memory.getRecallValue());
+                break;
+        }
+        mainMenu();
     }
 
     private void output(String msg){
@@ -185,7 +197,7 @@ public class UserInterface {
 
     private char drawManageMemoryMenu(){
         output("Manage Memory menu.");
-        output("1. Add current state to memory");
+        output("1. Add current state value to memory");
         output("2. Reset memory");
         output("3. Recall memory");
         return sc.next().toUpperCase().charAt(0);
