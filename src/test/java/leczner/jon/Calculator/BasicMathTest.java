@@ -10,7 +10,7 @@ public class BasicMathTest {
     Calculator calc = new Calculator();
 
     @Test
-    public void addTest() {
+    public void add0Test() {
         assertEquals("0", calc.basicMathUnit.getState());
         calc.basicMathUnit.add(50);
         assertEquals("50", calc.basicMathUnit.getState());

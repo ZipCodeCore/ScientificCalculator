@@ -1,10 +1,12 @@
 package leczner.jon.Calculator;
 
+import java.util.ArrayList;
+
 /**
  * Created by jonathanleczner on 9/12/16.
  */
 public class Memory {
-    private String[] states;
+    private ArrayList<String> states;
     private String currentState;
 
     public Memory() {

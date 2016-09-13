@@ -5,11 +5,12 @@ package leczner.jon.Calculator;
  */
 public class Display {
     private String state;
-    private String mode;
     private int significantDigits;
+    public enum Mode {DECIMAL, HEX, BINARY, OCTAL}
+    private Mode mode;
 
     public Display() {
-
+        mode = Mode.DECIMAL;
     }
 
     public void clear() {
@@ -21,10 +22,11 @@ public class Display {
     }
 
     public void switchDisplayMode() {
-        return;
+        if (mode == Mode.DECIMAL)
+            mode = Mode.HEX;
     }
 
-    public void switchDisplayMode(String mode) { return; }
+    public void switchDisplayMode(Mode mode) { return; }
 
     public void setSignificantDigits(int digits) { significantDigits = digits; }
 

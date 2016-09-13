@@ -9,7 +9,6 @@ public class Calculator {
     Memory memory;
 
     public static void main(String[] args) {
-
     }
 
     public Calculator() {}
