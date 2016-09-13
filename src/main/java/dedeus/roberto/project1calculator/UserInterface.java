@@ -24,8 +24,8 @@ public class UserInterface {
 
     public void mainMenu(){
         if(checkError()){
-            output("Error occurred. State value has been reset to zero.");
-            System.out.println(state.getStateValue());
+            state.error("Error occurred. State value has been reset to zero.");
+            output(Double.toString(state.getStateValue()));
             state.setStateValue(0);
         }
 
@@ -144,7 +144,6 @@ public class UserInterface {
                 trigMenu();
                 break;
         }
-
         mainMenu();
     }
 
@@ -205,7 +204,7 @@ public class UserInterface {
                 break;
             case '3':
                 output("Clear state value");
-                state.setStateValue(0);
+                state.clearStateValue();
                 break;
             case '4':
                 output("Set the state value to random");
@@ -324,13 +323,6 @@ public class UserInterface {
         return sc.next().toUpperCase().charAt(0);
     }
 
-    private char drawTrigUnitMenu(){
-        output("Display Mode menu.");
-        output("1. Degrees");
-        output("2. Radians");
-        return sc.next().toUpperCase().charAt(0);
-    }
-
     private char drawLogMenu(){
         output("Logarithmic operators.");
         output("M = Log");
@@ -362,6 +354,13 @@ public class UserInterface {
         output("2. Octal");
         output("3. Decimal");
         output("4. Hexadecimal");
+        return sc.next().toUpperCase().charAt(0);
+    }
+
+    private char drawTrigUnitMenu(){
+        output("Display Mode menu.");
+        output("1. Degrees");
+        output("2. Radians");
         return sc.next().toUpperCase().charAt(0);
     }
 

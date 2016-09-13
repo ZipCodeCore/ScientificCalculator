@@ -34,6 +34,10 @@ public class State {
         this.stateValue = stateValue;
     }
 
+    void clearStateValue(){
+        this.stateValue = 0;
+    }
+
     void switchDisplayMode(StateMode stateMode){
         this.stateMode = stateMode;
     }
@@ -64,10 +68,6 @@ public class State {
             default:
                 return "Invalid selection";
         }
-    }
-
-    void clearDisplayValue(){
-        this.stateValue = 0;
     }
 
     String error(String msg){
