@@ -12,6 +12,8 @@ public class UserInterface {
     CoreCalculator coreCalculator = new CoreCalculator();
     TrigCalculator trigCalculator = new TrigCalculator();
     LogCalculator logCalculator = new LogCalculator();
+    CustomCalculator customCalculator = new CustomCalculator();
+
     State state = new State();
     Memory memory = new Memory();
     Scanner sc = new Scanner(System.in);
@@ -45,8 +47,7 @@ public class UserInterface {
                 logMenu();
                 break;
             case '4':
-                //customFunctionsMenu();
-                output("Under construction");
+                customFunctionsMenu();
                 break;
             case '5':
                 stateValueMenu();
@@ -140,7 +141,7 @@ public class UserInterface {
                 break;
             default:
                 output("Invalid selection");
-                mathMenu();
+                trigMenu();
                 break;
         }
 
@@ -168,9 +169,26 @@ public class UserInterface {
                 break;
             default:
                 output("Invalid selection");
-                mathMenu();
+                logMenu();
                 break;
         }
+        mainMenu();
+    }
+
+    private void customFunctionsMenu(){
+        char customFunctionPrompt = drawCustomFunctions();
+        switch (customFunctionPrompt){
+            case '1':
+                output(customCalculator.getGreatestTribe());
+                break;
+            case '2':
+                state.setStateValue(customCalculator.createRandomNumber());
+                break;
+            default:
+                output("Invalid selection");
+                customFunctionsMenu();
+                break;
+            }
         mainMenu();
     }
 
@@ -188,6 +206,10 @@ public class UserInterface {
             case '3':
                 output("Clear state value");
                 state.setStateValue(0);
+                break;
+            case '4':
+                output("Set the state value to random");
+                state.setStateValue(customCalculator.createRandomNumber());
                 break;
             default:
                 output("Invalid selection");
@@ -318,11 +340,19 @@ public class UserInterface {
         return sc.next().toUpperCase().charAt(0);
     }
 
+    private char drawCustomFunctions(){
+        output("Custom functions");
+        output("1. Which tribe is the greatest tribe?");
+        output("2. Set state value to random number");
+        return sc.next().toUpperCase().charAt(0);
+    }
+
     private char drawStateValueMenu(){
         output("State Value menu.");
         output("1. Get state value");
         output("2. Change State value");
         output("3. Clear the state value");
+        output("4. Set state value to random number");
         return sc.next().toUpperCase().charAt(0);
     }
 
