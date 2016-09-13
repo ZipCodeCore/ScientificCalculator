@@ -5,29 +5,56 @@ package dedeus.roberto.project1calculator;
  */
 public class State {
 
-    public enum StateMode {BINARY, OCTAL, DECIMAL, HEXADECIMAL}
+    enum StateMode {BINARY, OCTAL, DECIMAL, HEXADECIMAL}
+
+    enum TrigUnit {DEGREES, RADIANS}
 
     private double stateValue;
     private StateMode stateMode;
+    private TrigUnit trigUnit = TrigUnit.RADIANS;
 
     State(){
         this.stateValue = 0.0d;
         this.stateMode = StateMode.DECIMAL;
     }
 
-    public double getStateValue(){
+    double getStateValue(){
         return this.stateValue;
     }
 
-    public StateMode getStateMode(){
+    StateMode getStateMode(){
         return this.stateMode;
     }
 
-    public void setStateValue(double stateValue){
+    TrigUnit getTrigUnit(){
+        return this.trigUnit;
+    }
+
+    void setStateValue(double stateValue){
         this.stateValue = stateValue;
     }
 
-    public String outputStateValue(double stateValue){
+    void switchDisplayMode(StateMode stateMode){
+        this.stateMode = stateMode;
+    }
+
+    void switchUnitsMode(TrigUnit trigUnit){
+        this.trigUnit = trigUnit;
+    }
+
+    String outputTrigValue(double stateValue){
+        TrigUnit trigUnit = getTrigUnit();
+        switch(trigUnit){
+            case RADIANS:
+                return Double.toString(stateValue);
+            case DEGREES:
+                return Double.toString(Math.toDegrees(stateValue));
+            default:
+                return "error";
+        }
+    }
+
+    String outputStateValue(double stateValue){
         StateMode stateMode = getStateMode();
         switch(stateMode){
             case BINARY:
@@ -43,15 +70,11 @@ public class State {
         }
     }
 
-    public void clearDisplayValue(){
+    void clearDisplayValue(){
         this.stateValue = 0;
     }
 
-    public void switchDisplayMode(StateMode stateMode){
-        this.stateMode = stateMode;
-    }
-
-    public String error(String msg){
+    String error(String msg){
         return msg;
     }
 

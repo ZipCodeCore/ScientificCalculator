@@ -21,7 +21,6 @@ public class UserInterface {
     }
 
     public void mainMenu(){
-
         if(checkError()){
             output("Error occurred. State value has been reset to zero.");
             System.out.println(state.getStateValue());
@@ -29,26 +28,38 @@ public class UserInterface {
         }
 
         output("-----");
+        // outputStateValue call necessary to display the proper state mode
         output("Current state value: \t" + state.outputStateValue(state.getStateValue()));
         output("Current display mode: \t" + state.getStateMode());
         output("-----");
 
         char mainMenuPrompt = drawMainMenu();
-
         switch (mainMenuPrompt){
             case '1':
                 mathMenu();
                 break;
             case '2':
-                stateValueMenu();
+                trigMenu();
                 break;
             case '3':
-                modeMenu();
+                logMenu();
                 break;
             case '4':
-                manageMemoryMenu();
+                //customFunctionsMenu();
+                output("Under construction");
                 break;
             case '5':
+                stateValueMenu();
+                break;
+            case '6':
+                modeMenu();
+                break;
+            case '7':
+                trigUnitMenu();
+            case '8':
+                manageMemoryMenu();
+                break;
+            case '9':
                 exit();
                 break;
             default:
@@ -59,7 +70,6 @@ public class UserInterface {
 
     private void mathMenu(){
         char mathMenuPrompt = drawMathMenu();
-
         switch (mathMenuPrompt){
             case 'A':
                 output("addition");
@@ -85,30 +95,61 @@ public class UserInterface {
                 output("variable exponentiation");
                 state.setStateValue(coreCalculator.variableExponentiation(state.getStateValue(), promptOperand()));
                 break;
+            default:
+                output("Invalid selection");
+                mathMenu();
+                break;
+        }
+        mainMenu();
+    }
+
+    private void trigMenu(){
+        double normalizedRadian = trigCalculator.normalizeRadian(state.getTrigUnit(), state.getStateValue());
+        double normalizedDegree = trigCalculator.normalizeDegree(state.getTrigUnit(), state.getStateValue());
+        char trigMenuPrompt = drawTrigMenu();
+        switch (trigMenuPrompt){
             case 'G':
                 output("sine");
-                state.setStateValue(trigCalculator.sine(state.getStateValue()));
+                // takes radian
+                state.setStateValue(trigCalculator.sine(normalizedRadian));
                 break;
             case 'H':
                 output("inverse sine");
-                state.setStateValue(trigCalculator.inverveSine(state.getStateValue()));
+                // takes degrees
+                state.setStateValue(trigCalculator.inverseSine(normalizedDegree));
                 break;
             case 'I':
                 output("cosine");
-                state.setStateValue(trigCalculator.cosine(state.getStateValue()));
+                // takes radian
+                state.setStateValue(trigCalculator.cosine(normalizedRadian));
                 break;
             case 'J':
                 output("inverse cosine");
-                state.setStateValue(trigCalculator.inverseCosine(state.getStateValue()));
+                // take degree
+                state.setStateValue(trigCalculator.inverseCosine(normalizedDegree));
                 break;
             case 'K':
                 output("tangent");
-                state.setStateValue(trigCalculator.tangent(state.getStateValue()));
+                // take radian
+                state.setStateValue(trigCalculator.tangent(normalizedRadian));
                 break;
             case 'L':
                 output("inverse tangent");
-                state.setStateValue(trigCalculator.inverseTangent(state.getStateValue()));
+                // takes degree
+                state.setStateValue(trigCalculator.inverseTangent(normalizedDegree));
                 break;
+            default:
+                output("Invalid selection");
+                mathMenu();
+                break;
+        }
+
+        mainMenu();
+    }
+
+    private void logMenu(){
+        char logMenuPrompt = drawLogMenu();
+        switch (logMenuPrompt){
             case 'M':
                 output("log");
                 state.setStateValue(logCalculator.log(state.getStateValue()));
@@ -179,6 +220,27 @@ public class UserInterface {
         mainMenu();
     }
 
+    private void trigUnitMenu(){
+        output("-----");
+        output("Current trig unit mode " + state.getTrigUnit());
+        output("-----");
+
+        char trigUnitPrompt = drawTrigUnitMenu();
+        switch(trigUnitPrompt){
+            case '1':
+                state.switchUnitsMode(State.TrigUnit.RADIANS);
+                break;
+            case '2':
+                state.switchUnitsMode(State.TrigUnit.DEGREES);
+                break;
+            default:
+                output("Invalid selection");
+                trigUnitMenu();
+                break;
+        }
+        mainMenu();
+    }
+
     private void manageMemoryMenu(){
         char manageMemoryPrompt = drawManageMemoryMenu();
         switch(manageMemoryPrompt){
@@ -195,34 +257,60 @@ public class UserInterface {
         mainMenu();
     }
 
+    private char exit(){
+        output("State value is " + state.getStateValue());
+        return '0';
+    }
+
     private void output(String msg){
         System.out.println(msg);
     }
 
     private char drawMainMenu(){
         output("Main menu.");
-        output("1. Do Math Stuff");
-        output("2. State value options");
-        output("3. Change State Mode");
-        output("4. Manage Memory");
-        output("5. Exit");
+        output("1. Basic math functions");
+        output("2. Trig functions");
+        output("3. Logarithmic functions");
+        output("4. Custom functions");
+        output("5. State value menu");
+        output("6. Change state mode");
+        output("7. Change trig unit");
+        output("8. Manage memory");
+        output("9. Exit");
         return sc.next().toUpperCase().charAt(0);
     }
 
     private char drawMathMenu(){
-        output("Math operators.");
+        output("Basic math operators.");
         output("A = Addition");
         output("B = Subtraction");
         output("C = Multiplication");
         output("D = Division");
         output("E = Square");
         output("F = Variable exponentiation");
+        return sc.next().toUpperCase().charAt(0);
+    }
+
+    private char drawTrigMenu(){
+        output("Trig operators.");
         output("G = Sine");
         output("H = Inverse Sine");
         output("I = Cosine");
         output("J = Inverse Cosine");
         output("K = Tangent");
         output("L = Inverse Tangent");
+        return sc.next().toUpperCase().charAt(0);
+    }
+
+    private char drawTrigUnitMenu(){
+        output("Display Mode menu.");
+        output("1. Degrees");
+        output("2. Radians");
+        return sc.next().toUpperCase().charAt(0);
+    }
+
+    private char drawLogMenu(){
+        output("Logarithmic operators.");
         output("M = Log");
         output("N = Inverse Log");
         output("O = Natural Log");
@@ -253,11 +341,6 @@ public class UserInterface {
         output("2. Reset memory");
         output("3. Recall memory");
         return sc.next().toUpperCase().charAt(0);
-    }
-
-    private char exit(){
-        output("State value is " + state.getStateValue());
-        return '0';
     }
 
     private double promptOperand(){
