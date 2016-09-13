@@ -70,6 +70,7 @@ public class Calculator {
                 System.out.println("decimal");
                 System.out.println("hexadecimal");
                 System.out.print("> ");
+                scanner.nextLine();
                 String input2 = scanner.nextLine();
                 if (input2.equals("")) {
                     this.display.switchDisplayMode();
