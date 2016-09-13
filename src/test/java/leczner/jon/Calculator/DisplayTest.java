@@ -23,7 +23,29 @@ public class DisplayTest {
     public void showStateTest() {
         assertEquals("0", calc.basicMathUnit.getState());
         calc.display.showState();
+    }
 
+    @Test
+    public void selectSignificantDigitsTest() {
+        calc.basicMathUnit.add(2);
+        calc.basicMathUnit.squareRoot();
+        calc.display.setState(calc.basicMathUnit.getState());
+        calc.display.formatState();
+        assertEquals("1.41421", calc.display.getState());
+        calc.display.setSignificantDigits(1);
+        assertEquals("1.0", calc.basicMathUnit.getState());
+        calc.display.setSignificantDigits(2);
+        assertEquals("1.4", calc.basicMathUnit.getState());
+    }
+
+    @Test
+    public void roundingTest() {
+        calc.basicMathUnit.add(19.5);
+        double state = calc.basicMathUnit.divide(-2.5);
+        String displayState = String.valueOf(state);
+        calc.display.setState(displayState);
+        calc.display.formatState();
+        assertEquals("-7.8", calc.basicMathUnit.getState());
     }
 
     @Test

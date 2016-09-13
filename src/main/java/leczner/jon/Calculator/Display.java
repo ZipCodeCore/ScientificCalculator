@@ -24,11 +24,20 @@ public class Display {
         return scanner;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public void clear() {
         state = "0";
     }
 
     public void showState() {
+        formatState();
         System.out.println(state);
     }
 
@@ -58,6 +67,17 @@ public class Display {
 
     public void setSignificantDigits(int digits) {
         significantDigits = digits;
+    }
+
+    public void formatState() {
+        int trueDigits = state.length() - 1;
+        if (state.contains("-"))
+            trueDigits--;
+
+        if (trueDigits > significantDigits)
+            state = state.substring(0, significantDigits + 1); // trim to significantDigit total + "."
+        else
+            return;
     }
 
 }

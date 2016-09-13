@@ -13,12 +13,12 @@ public class Calculator {
     public Calculator() {
         basicMathUnit = new BasicMath();
         display = new Display();
-        Memory = new Memory();
+        memory = new Memory();
     }
 
     public void run() {
         Scanner s = display.getScanner();
-        while (s.next() != "quit") {
+        while (!s.next().equals("quit")) {
             getInput();
             update();
             render();
@@ -81,8 +81,8 @@ public class Calculator {
                 display.switchDisplayMode(Display.Mode.OCTAL);
                 break;
             case "digits":
-                value = s.nextInt();
-                display.setSignificantDigits(value);
+                int digits = s.nextInt();
+                display.setSignificantDigits(digits);
                 break;
             case "store":
                 memory.store();
@@ -93,18 +93,22 @@ public class Calculator {
             case "recall":
                 memory.recall();
                 break;
+            case "quit":
+                return;
             default:
                 // do nothing
                 break;
         }
+        return;
     }
 
     public void update() {
-
+        // format input, prep render
+        return;
     }
 
-    // input
-    // update
-    // render
-
+    public void render() {
+        // show state
+        return;
+    }
 }

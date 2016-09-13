@@ -1,17 +1,28 @@
 package leczner.jon.Calculator;
 
+import java.math.BigDecimal;
+
 /**
  * Created by jonathanleczner on 9/12/16.
  */
 public class BasicMath {
     private double state;
+    private boolean errorFlag;
 
     public BasicMath() {
         state = 0;
+        errorFlag = false;
     }
 
-    public double getState() {
-        return state;
+    public String getState() {
+        if (errorFlag) {
+            state = 0;
+            errorFlag = !errorFlag;
+            return "Err";
+        } else {
+            BigDecimal stateProper = new BigDecimal(state);
+            return String.valueOf(stateProper);
+        }
     }
 
     public double add(double input) {
@@ -31,6 +42,8 @@ public class BasicMath {
 
     public double divide(double input) {
         state /= input;
+        if (Double.isNaN(state))
+            errorFlag = !errorFlag;
         return state;
     }
 
@@ -40,23 +53,36 @@ public class BasicMath {
     }
 
     public double squareRoot() {
-        return Math.sqrt(state);
+        if (state >= 0)
+            state = Math.sqrt(state);
+        else
+            errorFlag = !errorFlag;
+        return state;
     }
 
+
+
     public double exponent(double power) {
-        return Math.pow(state, power);
+        state = Math.pow(state, power);
+        return state;
     }
 
     public double inverse() {
-        return 1/state;
+        state = 1 / state;
+        if (Double.isInfinite(state))
+            errorFlag = !errorFlag;
+        return state;
     }
 
     public double switchSign() {
-        return state * -1;
+        if (state != 0)
+            state = state * -1;
+        return state;
     }
 
     public double factorial() {
-        for (int i = 1; i < state; i++) {
+        double startNum = Math.abs(state); // abs for negatives
+        for (int i = 1; i < startNum; i++) {
             state *= i;
         }
         return state;
