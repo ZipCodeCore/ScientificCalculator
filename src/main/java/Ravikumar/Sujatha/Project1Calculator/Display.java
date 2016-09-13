@@ -30,24 +30,14 @@ public class Display {
 
     }
 
-    /*public double getMemory(){
-        return memory;
-    }
-
-    public void showMemory(double num){
-        System.out.println("*******************");
-        System.out.println(num);
-        System.out.println("*******************");
-
-    }*/
 
     public void displayOperation2(){
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("Sum                  Difference            Product             Division");
         System.out.println("Clear Display        Exponentiation        Factorial           log");
         System.out.println("Square               Sqrt                  Inverse             Negate");
-        System.out.println("sin in radians       cos in radians        tan in radians");
-        System.out.println("sin in degrees       cos in degrees        tan in degrees");
+        System.out.println("Sin In Radians       Cosine In Radians     Tan In Radians");
+        System.out.println("Sin In Degrees       Cosine In Degrees     Tan In Degrees");
         System.out.println("Add Memory - M       Clear Memory - MC     Recall Memory - MRC");
         System.out.println("Switch To Hex        Switch To Binary      Switch To Octal");
         System.out.println("Exit");

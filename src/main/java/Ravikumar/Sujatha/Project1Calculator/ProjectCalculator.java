@@ -28,37 +28,37 @@ public class ProjectCalculator {
             System.out.println("Which operation do you want to perform?");
             String operation = input.getStringInput();
 
-            if (operation.equals("M") || (operation.equals("m"))){
-                mem = result;
-                display.displayNumber(result);
-            }
-            else if (operation.equals("MRC")|| (operation.equals("mrc"))){
-                display.displayNumber(mem);
-            }
-            else if (operation.equals("MC") || (operation.equals("mc"))){
-                mem = 0;
-                display.displayNumber(mem);
-            }
-            else if(operation.equals("exit") || (operation.equals("Exit"))){
-                flag = false;
-            }
-            else if (operation.equals("Switch To Hex") || operation.equals("switch to hex")){
-                hex_result = calculator.switchToHex(operand1);
-                display.displayExpression(hex_result);
-            }
-            else if (operation.equals("Switch To Binary") || operation.equals("switch to binary")){
-                binary_result = calculator.switchToBinary(operand1);
-                display.displayExpression(binary_result);
-            }
-            else if (operation.equals("Switch To Octal") || operation.equals("switch to octal")){
-                octal_result = calculator.switchToBinary(operand1);
-                display.displayExpression(octal_result);
-            }
-            else{
-                result = op.performOperation(operation);
-                operand1 = result;
-                display.displayNumber(result);
-
+            switch(operation){
+                case "M":
+                    mem = result;
+                    display.displayNumber(result);
+                    break;
+                case "MRC":
+                    display.displayNumber(mem);
+                    break;
+                case "MC":
+                    mem = 0;
+                    display.displayNumber(mem);
+                    break;
+                case "Exit":
+                    flag = false;
+                    break;
+                case "Switch To Hex":
+                    hex_result = calculator.switchToHex(operand1);
+                    display.displayExpression(hex_result);
+                    break;
+                case "Switch To Binary":
+                    binary_result = calculator.switchToBinary(operand1);
+                    display.displayExpression(binary_result);
+                    break;
+                case "Switch To Octal":
+                    octal_result = calculator.switchToOctal(operand1);
+                    display.displayExpression(octal_result);
+                    break;
+                default:
+                    result = op.performOperation(operation);
+                    operand1 = result;
+                    display.displayNumber(result);
             }
 
         }

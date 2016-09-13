@@ -51,7 +51,6 @@ public class Calculator {
 
     public double factorial (double number){
         number = Math.round(number);
-        //System.out.println(number);
         return number == 1 ? 1 : number * factorial(number-1);
     }
 
@@ -60,14 +59,6 @@ public class Calculator {
         return hex_String;
     }
 
-    /*public double switchTrigUnitsMode(double number){
-        double degrees = Math.toRadians(radians);
-        return degrees;
-    }*/
-
-    /*public double switchUnitsMode(double degrees){
-        double radians =
-    }*/
     public String switchToBinary(double number){
         String binary_String = Integer.toBinaryString((int)number);
         return binary_String;
