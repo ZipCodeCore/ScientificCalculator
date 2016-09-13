@@ -190,7 +190,7 @@ public class MathFunctions {
      */
     public double inverseSine (double a) {
 
-        return inverse(sine(a));
+        return Math.asin(a);
     }
 
     /**
@@ -202,7 +202,7 @@ public class MathFunctions {
      */
     public double inverseCosine (double a) {
 
-        return inverse(cosine(a));
+        return Math.acos(a);
     }
 
     /**
@@ -214,7 +214,7 @@ public class MathFunctions {
      */
     public double inverseTangent (double a) {
 
-        return inverse(tangent(a));
+        return Math.atan(a);
     }
 
     /**
@@ -227,18 +227,22 @@ public class MathFunctions {
     public long factorial (long a) {
 
         long sign = 1;
-        long factorial = 1;
+        long result = 1;
 
         if (a < 0) {
-            sign = 1;
+            sign = -1;
             a *= sign;
         }
 
         for (long i = 2; i <= a; i++) {
-            factorial *= i;
+            result *= i;
         }
 
-        return factorial * sign;
+        if (a % 2 == 0) {
+            sign *= -1;
+        }
+
+        return result * sign;
     }
 
     /**

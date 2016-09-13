@@ -16,46 +16,59 @@ public class Project1CalculatorTest {
     @Test
     public void addTest () {
 
-        Assert.assertEquals("The value should be 10.", 10, (int) mathFunc.add(6, 4));
+        Assert.assertEquals("The value should be 10.", 10, mathFunc.add(6, 4), 0);
     }
 
     @Test
     public void subtractTest () {
 
-        Assert.assertEquals("The value should be 2.", 2, (int) mathFunc.subtract(6, 4));
+        Assert.assertEquals("The value should be 2.", 2, mathFunc.subtract(6, 4), 0);
 
     }
 
     @Test
     public void multiplyTest () {
 
-        Assert.assertEquals("The value should be 24.", 24, (int) mathFunc.multiply(6, 4));
+        Assert.assertEquals("The value should be 24.", 24, mathFunc.multiply(6, 4), 0);
     }
 
     @Test
     public void divideTest () {
 
-        Assert.assertEquals("The value should be 2.", 2, (int) mathFunc.divide(6, 3));
+        Assert.assertEquals("The value should be 2.", 2, mathFunc.divide(6, 3), 0);
 
     }
 
     @Test
     public void squareTest () {
 
-        Assert.assertEquals("The value should be 16.", 16, (int) mathFunc.square(4));
+        Assert.assertEquals("The value should be 16.", 16, mathFunc.square(4), 0);
     }
 
     @Test
     public void squareRootTest () {
 
-        Assert.assertEquals("The value should be 6.", 6, (int) mathFunc.squareRoot(36));
+        Assert.assertEquals("The value should be 6.", 6, mathFunc.squareRoot(36), 0);
+
+    }
+
+    @Test
+    public void cubeTest () {
+
+        Assert.assertEquals("The value should be 64.", 64, mathFunc.square(4), 0);
+    }
+
+    @Test
+    public void vubeRootTest () {
+
+        Assert.assertEquals("The value should be 2.", 2, mathFunc.cubeRoot(8), 0);
 
     }
 
     @Test
     public void exponentTest () {
 
-        Assert.assertEquals("The value should be 8.", 8, (int) mathFunc.exponent(2, 3));
+        Assert.assertEquals("The value should be 8.", 8, mathFunc.exponent(2, 3), 0);
 
     }
 
@@ -68,7 +81,7 @@ public class Project1CalculatorTest {
     @Test
     public void switchSignTest () {
 
-        Assert.assertEquals("The value should be -10.", -10, (int) mathFunc.switchSign(10));
+        Assert.assertEquals("The value should be -10.", -10, mathFunc.switchSign(10), 0);
 
     }
 
@@ -79,7 +92,7 @@ public class Project1CalculatorTest {
 
     }
     @Test
-    public void CosineTest () {
+    public void cosineTest () {
 
         Assert.assertEquals("The value should be 0.5.", 0.5, mathFunc.cosine(Math.toRadians(60)), 0.5);
     }
@@ -93,19 +106,19 @@ public class Project1CalculatorTest {
     @Test
     public void inverseSineTest () {
 
-        Assert.assertEquals("The value should be 2.", 2, mathFunc.inverseSine(Math.toRadians(30)), 0.5);
+        Assert.assertEquals("The value should be π / 6.", Math.PI/6, mathFunc.inverseSine(0.5), 0.5);
 
     }
     @Test
     public void inverseCosineTest () {
 
-        Assert.assertEquals("The value should be 2.", 2, mathFunc.inverseCosine(Math.toRadians(60)), 0.5);
+        Assert.assertEquals("The value should be π / 3.", Math.PI/3, mathFunc.inverseCosine(0.5), 0.5);
 
     }
     @Test
     public void inverseTangentTest () {
 
-        Assert.assertEquals("The value should be 1.", 1, mathFunc.inverseTangent(Math.toRadians(45)), 0.5);
+        Assert.assertEquals("The value should be π / 4.", Math.PI/4, mathFunc.inverseTangent(1), 0.5);
 
     }
 

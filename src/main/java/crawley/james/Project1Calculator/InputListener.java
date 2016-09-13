@@ -12,6 +12,7 @@ public class InputListener {
     private CalculatorMemory calculatorMemory;
     private boolean isOn = true;
     private boolean isErr = false;
+    private boolean isFirst = true;
 
     /**
      *
@@ -69,9 +70,19 @@ public class InputListener {
      */
     public void executeCommand() {
 
-        String command = getCommand();
+       double currentDisplayState;
 
-        double currentDisplayState = calculatorMemory.getState();
+        if (isFirst) {
+
+            currentDisplayState =getNumberInput();
+            isFirst = false;
+
+        } else {
+            currentDisplayState = calculatorMemory.getState();
+        }
+
+        String command = getCommand().toLowerCase();
+
 
         restrictCommands(command);
 
@@ -261,6 +272,7 @@ public class InputListener {
 
             case "clear":
                 isErr = false;
+                isFirst = true;
                 updateDisplay(0);
                 break;
 
@@ -379,6 +391,7 @@ public class InputListener {
 
                 case "clear":
                     isErr = false;
+                    isFirst = true;
                     break;
                 case "quit" :
                     isErr = false;
