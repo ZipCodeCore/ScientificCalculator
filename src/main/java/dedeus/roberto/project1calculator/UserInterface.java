@@ -11,6 +11,7 @@ public class UserInterface {
 
     CoreCalculator coreCalculator = new CoreCalculator();
     TrigCalculator trigCalculator = new TrigCalculator();
+    LogCalculator logCalculator = new LogCalculator();
     State state = new State();
     Memory memory = new Memory();
     Scanner sc = new Scanner(System.in);
@@ -107,6 +108,22 @@ public class UserInterface {
             case 'L':
                 output("inverse tangent");
                 state.setStateValue(trigCalculator.inverseTangent(state.getStateValue()));
+                break;
+            case 'M':
+                output("log");
+                state.setStateValue(logCalculator.log(state.getStateValue()));
+                break;
+            case 'N':
+                output("inverse log");
+                state.setStateValue(logCalculator.inverseLog(state.getStateValue()));
+                break;
+            case 'O':
+                output("natural log");
+                state.setStateValue(logCalculator.naturalLog(state.getStateValue()));
+                break;
+            case 'P':
+                output("inverse natural log");
+                state.setStateValue(logCalculator.inverseNaturalLog(state.getStateValue()));
                 break;
             default:
                 output("Invalid selection");
@@ -206,6 +223,10 @@ public class UserInterface {
         output("J = Inverse Cosine");
         output("K = Tangent");
         output("L = Inverse Tangent");
+        output("M = Log");
+        output("N = Inverse Log");
+        output("O = Natural Log");
+        output("P = Inverse Natural Log");
         return sc.next().toUpperCase().charAt(0);
     }
 
