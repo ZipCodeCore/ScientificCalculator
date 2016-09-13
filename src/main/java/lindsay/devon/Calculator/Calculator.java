@@ -2,6 +2,8 @@ package lindsay.devon.Calculator;
 
 import java.util.Scanner;
 
+import static java.lang.Double.isInfinite;
+
 /**
  * Created by devonlindsay on 9/13/16.
  */
@@ -13,6 +15,7 @@ public class Calculator {
     Memory memory = new Memory();
 
 
+
     public double getuserNum() {
         System.out.println("Enter number:");
         Scanner scanner = new Scanner(System.in);
@@ -20,13 +23,20 @@ public class Calculator {
         return userNum;
     }
 
+    public boolean checkErrors() {
+        return Double.isNaN(currentValue.getCurrentValue()) || isInfinite(currentValue.getCurrentValue());
+    }
 
-    public CurrentValueDisplay basicMath(int input) {
 
+
+
+    public double basicMath(int input) {
+        System.out.println(currentValue.getCurrentValue());
         switch (input) {
             case 1:
                 currentValue.setCurrentValue(basic.add(currentValue.getCurrentValue(), getuserNum()));
-                break;
+                double addResult = (basic.add(currentValue.getCurrentValue(), getuserNum()));
+                return addResult;
             case 2:
                 currentValue.setCurrentValue(basic.subtract(currentValue.getCurrentValue(), getuserNum()));
                 break;
@@ -48,7 +58,6 @@ public class Calculator {
                 break;
             case 8:
                 currentValue.setCurrentValue(basic.inverse(currentValue.getCurrentValue()));
-
                 break;
             case 9:
                 currentValue.setCurrentValue(basic.switchSign(currentValue.getCurrentValue()));
@@ -58,11 +67,13 @@ public class Calculator {
             default:
                 currentValue.setCurrentValue(currentValue.getCurrentValue());
         }
-        return currentValue;
+        return currentValue.getCurrentValue();
     }
 
 
-    public CurrentValueDisplay trigInRadians(int input) {
+    public double trigInRadians(int input) {
+        currentValue.setCurrentValue(Math.toRadians(currentValue.getCurrentValue()));
+        System.out.println(currentValue.getCurrentValue());
         switch (input) {
             case 1:
                 currentValue.setCurrentValue(trig.sine(currentValue.getCurrentValue()));
@@ -82,17 +93,20 @@ public class Calculator {
             case 6:
                 currentValue.setCurrentValue(trig.inverseTangent(currentValue.getCurrentValue()));
                 break;
-            case 7: currentValue.setCurrentValue(Math.toRadians(getuserNum()));
+            case 7:
+                currentValue.setCurrentValue(Math.toRadians(getuserNum()));
                 break;
 
             default: currentValue.setCurrentValue(currentValue.getCurrentValue());
 
         }
-        return currentValue;
+        return currentValue.getCurrentValue();
     }
 
 
-    public CurrentValueDisplay trigInDegrees(int input) {
+    public double trigInDegrees(int input) {
+        currentValue.setCurrentValue(Math.toDegrees(currentValue.getCurrentValue()));
+        System.out.println("Your current value is: " + currentValue.getCurrentValue() + " degrees");
         switch (input) {
             case 1:
                 currentValue.setCurrentValue(trig.sine(Math.toDegrees(currentValue.getCurrentValue())));
@@ -118,10 +132,11 @@ public class Calculator {
             default:
                 currentValue.setCurrentValue(currentValue.getCurrentValue());
         }
-        return currentValue;
+        return currentValue.getCurrentValue();
     }
 
-    public CurrentValueDisplay memory(int input) {
+    public double memory(int input) {
+        System.out.println(currentValue.getCurrentValue());
         switch(input) {
             case 1:
                 currentValue.setCurrentValue(memory.storedValue);
@@ -130,10 +145,13 @@ public class Calculator {
             case 3:
                 currentValue.setCurrentValue(memory.getStoredValue());
         }
-        return currentValue;
+        return currentValue.getCurrentValue();
     }
 
-    public CurrentValueDisplay logs(int input) {
+
+
+    public double logs(int input) {
+        System.out.println(currentValue.getCurrentValue());
         switch (input) {
             case 1:
                 currentValue.setCurrentValue(log.log(currentValue.getCurrentValue()));
@@ -145,8 +163,21 @@ public class Calculator {
             case 4: currentValue.setCurrentValue(log.logEx(currentValue.getCurrentValue()));
             default: currentValue.setCurrentValue(currentValue.getCurrentValue());
         }
-        return currentValue;
+        return currentValue.getCurrentValue();
     }
 
+    public void modeDisplay(int input) {
+        Scanner scanner5 = new Scanner(System.in);
+        switch(input) {
+            case 1:
+                currentValue.cycleDisplayMode();
+                break;
+            case 2:
+                System.out.println(" Please type your choice of the following: -decimal -binary -octal -hexadecimal");
+                currentValue.changeDisplayMode(scanner5.next());
+                break;
+        }
+        // welcomeMenu();
+    }
 
 }

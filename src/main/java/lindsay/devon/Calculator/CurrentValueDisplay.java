@@ -75,16 +75,5 @@ public class CurrentValueDisplay {
 
 
 
-    public void date() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        System.out.println(dateFormat.format(date));
-    }
-
-    public void frustration() {
-        System.out.println("AHHHHHHHHHHHHHHHHHHHHHHHHHHHH!!!!!!!!!!");
-    }
-
-
    }
 

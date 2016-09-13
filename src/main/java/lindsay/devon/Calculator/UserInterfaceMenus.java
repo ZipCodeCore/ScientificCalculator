@@ -1,5 +1,8 @@
 package lindsay.devon.Calculator;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 import java.lang.Double;
 
@@ -9,13 +12,11 @@ import static java.lang.Double.*;
  * Created by devonlindsay on 9/12/16.
  */
 public class UserInterfaceMenus {
-  CurrentValueDisplay currentValue = new CurrentValueDisplay();
+ // A Separate Object than CurrentValueDisplay
+ // CurrentValueDisplay currentValue= new CurrentValueDisplay();
     Calculator calculator = new Calculator();
 
 
-    public boolean checkErrors() {
-        return Double.isNaN(currentValue.getCurrentValue()) || isInfinite(currentValue.getCurrentValue());
-    }
 
     public void welcome() {
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
@@ -24,21 +25,34 @@ public class UserInterfaceMenus {
         welcomeMenu();
     }
 
-    public int welcomeMenu() {
-        if (checkErrors()) {
-            System.out.println("ERR");
-            System.out.println("Please reset or change current value");
-        }
+    public void welcomeMenu() {
+       while (true){
 
-        System.out.println(currentValue.getCurrentValue());
-        System.out.println("Please choose a destination: [1] Math  [2] DisplayMode [3] Date [4] Express Frustration");
-        Scanner scanner1 = new Scanner(System.in);
-        int menuChoice = scanner1.nextInt();
-        welcomeMenuChoice(menuChoice);
-        return menuChoice;
+            if (calculator.checkErrors()) {
+                System.out.println("ERR");
+                System.out.println("Please reset or change current value");
+            }
+
+           // System.out.println(currentValue.getCurrentValue());
+            System.out.println("Please choose a destination: [1] Math  [2] DisplayMode [3] Date [4] Express Frustration [5] Exit");
+            Scanner scanner1 = new Scanner(System.in);
+            int menuChoice = scanner1.nextInt();
+                if (menuChoice == 3) {
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                    Date date = new Date();
+                    System.out.println(dateFormat.format(date));
+                }
+                else if (menuChoice == 4) {
+                    System.out.println("AHHHHHHHHHHHHHHHHHHHHHHHHHHHH!!!!!!!!!!");
+                }
+                else if (menuChoice == 5) { break; }
+                else {
+                    welcomeMenuChoice(menuChoice);}
+        }
     }
 
     public void welcomeMenuChoice(int input) {
+
         switch (input) {
             case 1:
                 mathMenu();
@@ -47,14 +61,10 @@ public class UserInterfaceMenus {
                 displayModeMenu();
                 break;
             case 3:
-                currentValue.date();
-                welcomeMenu();
                 break;
             case 4:
-                currentValue.frustration();
-                welcomeMenu();
-            }
-
+                break;
+        }
     }
 
     public void mathMenu() {
@@ -68,29 +78,31 @@ public class UserInterfaceMenus {
     }
 
     public void mathMenuChoice(int input) {
+
         switch (input) {
             case 1:
                 basicMathMenu();
                 break;
             case 2:
-                trigDisplayMenu();
+               trigDisplayMenu();
                 break;
             case 3:
-                logMenu();
+               logMenu();
                 break;
             case 4:
                 memoryMenu();
                 break;
             case 5:
-                currentValue.resetCurrentValue();
-                welcomeMenu();
+                //currentValue.resetCurrentValue();
+                System.out.println("under construction");
                 break;
             case 6:
-                currentValue.setCurrentValue(calculator.getuserNum());
-                welcomeMenu();
+                //currentValue.setCurrentValue(getuserNum());
+                System.out.println("under construction");
                 break;
         }
     }
+
 
     public void basicMathMenu() {
         System.out.println("What would you like to do? ");
@@ -98,27 +110,31 @@ public class UserInterfaceMenus {
         Scanner scanner2 = new Scanner(System.in);
         int basicMath = scanner2.nextInt();
         calculator.basicMath(basicMath);
-        welcomeMenu();
+        //welcomeMenu();
 
     }
 
 
     public void trigDisplayMenu() {
-        // currentValue.setCurrentValue(Math.toRadians(currentValue.getCurrentValue()));
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        System.out.println("Current Value Converted to Radians");
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        System.out.println("Your current value is: " + currentValue.getCurrentValue());
-        System.out.println("What would you like to do?");
-        System.out.println("[1] Trig in Radians [2] Trig in Degrees");
-        Scanner scanner6 = new Scanner(System.in);
-        int trigDisplay = scanner6.nextInt();
-        trigDisplay(trigDisplay);
+       while (true) {
+           System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+           System.out.println("Current Value Converted to Radians");
+           System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
+           System.out.println("What would you like to do?");
+           System.out.println("[1] Trig in Radians [2] Trig in Degrees [3] Exit");
+           Scanner scanner6 = new Scanner(System.in);
+           int trigDisplay = scanner6.nextInt();
+                if (trigDisplay == 3) {
+                    break;
+                } else {
+                    trigDisplay(trigDisplay);
+                }
+       }
     }
 
-
     public void trigDisplay(int input) {
+
         switch (input) {
             case 1:
                 trigRadianMenu();
@@ -129,24 +145,25 @@ public class UserInterfaceMenus {
     }
 
 
+
     public void trigRadianMenu() {
-        currentValue.setCurrentValue(Math.toRadians(currentValue.getCurrentValue()));
+        //currentValue.setCurrentValue(Math.toRadians(currentValue.getCurrentValue()));
         System.out.println("What would you like to do? ");
         System.out.println("[1] Sine [2] Cosine [3] Tangent [4] Inverse Sine [5] Inverse Cosine [6] Inverse Tangent [7] Convert From Radians to Degrees ");
         Scanner scanner2 = new Scanner(System.in);
         int trigonometry = scanner2.nextInt();
         calculator.trigInRadians(trigonometry);
-        trigDisplayMenu();
+        //trigDisplayMenu();
 
     }
 
 
     public void trigSwitchToDegrees() {
-        currentValue.setCurrentValue(Math.toDegrees(currentValue.getCurrentValue()));
+       // currentValue.setCurrentValue(Math.toDegrees(currentValue.getCurrentValue()));
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         System.out.println("Current Value is now in Degrees");
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        System.out.println("Your current value is: " + currentValue.getCurrentValue() + " degrees");
+        //System.out.println("Your current value is: " + currentValue.getCurrentValue() + " degrees");
         trigDegreesMenu();
     }
 
@@ -156,7 +173,8 @@ public class UserInterfaceMenus {
         Scanner scanner2 = new Scanner(System.in);
         int trigInDegrees = scanner2.nextInt();
         calculator.trigInDegrees(trigInDegrees);
-        trigDisplayMenu();
+        //trigDisplayMenu();
+
     }
 
 
@@ -169,7 +187,7 @@ public class UserInterfaceMenus {
         Scanner scanner2 = new Scanner(System.in);
         int logs = scanner2.nextInt();
         calculator.logs(logs);
-        welcomeMenu();
+        //welcomeMenu();
 
     }
 
@@ -180,24 +198,12 @@ public class UserInterfaceMenus {
         System.out.println("[1] Cycle through [2] Type my choice ");
         Scanner scanner3 = new Scanner(System.in);
         int modeDisplay = scanner3.nextInt();
-        modeDisplay(modeDisplay);
-        welcomeMenu();
+        calculator.modeDisplay(modeDisplay);
+        //welcomeMenu();
     }
 
 
-    public void modeDisplay(int input) {
-        Scanner scanner5 = new Scanner(System.in);
-        switch(input) {
-            case 1:
-                currentValue.cycleDisplayMode();
-                break;
-            case 2:
-                System.out.println(" Please type your choice of the following: -decimal -binary -octal -hexadecimal");
-                currentValue.changeDisplayMode(scanner5.next());
-                break;
-                    }
-            welcomeMenu();
-    }
+
 
     public void memoryMenu() {
         System.out.println("What do you want to do? ");
@@ -205,7 +211,7 @@ public class UserInterfaceMenus {
         Scanner scanner4 = new Scanner(System.in);
         int memory = scanner4.nextInt();
         calculator.memory(memory);
-        welcomeMenu();
+       // welcomeMenu();
     }
 
 
