@@ -76,8 +76,6 @@ public class Calculator {
                 } else {
                     this.display.switchDisplayMode(input2);
                 }
-
-                System.out.println("Change mode function not created yet");
                 break;
             case 0:
                 bool = false;
