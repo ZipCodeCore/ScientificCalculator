@@ -87,9 +87,4 @@ public class CalculatorTest {
 
         Assert.assertEquals("Check that state is set to memory.", expectedValue, actualValue, 0);
     }
-
-    @Test
-    public void mainMenuTest() {
-        //Need to finish this
-    }
 }
