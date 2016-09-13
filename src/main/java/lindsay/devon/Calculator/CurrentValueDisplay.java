@@ -3,6 +3,7 @@ package lindsay.devon.Calculator;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.lang.Math;
 
 /**
  * Created by devonlindsay on 9/12/16.
@@ -16,6 +17,7 @@ public class CurrentValueDisplay {
 
     String[] displayMode = { "decimal", "binary", "octal", "hexadecimal"};
     String currentDisplayMode = "decimal";
+
 
     CurrentValueDisplay() {
         this.stateValue = 0;
@@ -70,6 +72,8 @@ public class CurrentValueDisplay {
         }
 
     }
+
+
 
     public void date() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

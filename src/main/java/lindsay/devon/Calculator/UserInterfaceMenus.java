@@ -1,8 +1,5 @@
 package lindsay.devon.Calculator;
 
-import com.sun.tools.internal.ws.wsdl.document.soap.SOAPUse;
-import com.sun.tools.internal.xjc.model.SymbolSpace;
-
 import java.util.Scanner;
 import java.lang.Double;
 
@@ -12,19 +9,9 @@ import static java.lang.Double.*;
  * Created by devonlindsay on 9/12/16.
  */
 public class UserInterfaceMenus {
-    BasicCalculations basic = new BasicCalculations();
-    TrigCalculations trig = new TrigCalculations();
-    LogarithmicCalculations log = new LogarithmicCalculations();
-    CurrentValueDisplay currentValue = new CurrentValueDisplay();
-    Memory memory = new Memory();
+  CurrentValueDisplay currentValue = new CurrentValueDisplay();
+    Calculator calculator = new Calculator();
 
-
-    public double getuserNum() {
-        System.out.println("Enter number:");
-        Scanner scanner = new Scanner(System.in);
-        double userNum = scanner.nextDouble();
-        return userNum;
-    }
 
     public boolean checkErrors() {
         return Double.isNaN(currentValue.getCurrentValue()) || isInfinite(currentValue.getCurrentValue());
@@ -38,8 +25,6 @@ public class UserInterfaceMenus {
     }
 
     public int welcomeMenu() {
-
-        /// ERROR CHECK - ISNAN
         if (checkErrors()) {
             System.out.println("ERR");
             System.out.println("Please reset or change current value");
@@ -55,16 +40,20 @@ public class UserInterfaceMenus {
 
     public void welcomeMenuChoice(int input) {
         switch (input) {
-            case 1: mathMenu();
+            case 1:
+                mathMenu();
                 break;
-            case 2: displayModeMenu();
+            case 2:
+                displayModeMenu();
                 break;
-            case 3: currentValue.date();
+            case 3:
+                currentValue.date();
                 welcomeMenu();
                 break;
-            case 4: currentValue.frustration();
+            case 4:
+                currentValue.frustration();
                 welcomeMenu();
-        }
+            }
 
     }
 
@@ -80,18 +69,24 @@ public class UserInterfaceMenus {
 
     public void mathMenuChoice(int input) {
         switch (input) {
-            case 1: basicMathMenu();
+            case 1:
+                basicMathMenu();
                 break;
-            case 2: trigMenu();
+            case 2:
+                trigDisplayMenu();
                 break;
-            case 3: logMenu();
+            case 3:
+                logMenu();
                 break;
-            case 4: memoryMenu();
+            case 4:
+                memoryMenu();
                 break;
-            case 5: currentValue.resetCurrentValue();
+            case 5:
+                currentValue.resetCurrentValue();
                 welcomeMenu();
                 break;
-            case 6: currentValue.setCurrentValue(getuserNum());
+            case 6:
+                currentValue.setCurrentValue(calculator.getuserNum());
                 welcomeMenu();
                 break;
         }
@@ -102,104 +97,83 @@ public class UserInterfaceMenus {
         System.out.println("[1] Add [2] Subtract [3] Multiply [4] Divide [5] Square [6] Square Root [7] Exponent [8] Inverse Num [9] Switch +/- [10] Factorial");
         Scanner scanner2 = new Scanner(System.in);
         int basicMath = scanner2.nextInt();
-        basicMath(basicMath);
+        calculator.basicMath(basicMath);
+        welcomeMenu();
 
     }
 
-    public void basicMath(int input) {
 
+    public void trigDisplayMenu() {
+        // currentValue.setCurrentValue(Math.toRadians(currentValue.getCurrentValue()));
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println("Current Value Converted to Radians");
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println("Your current value is: " + currentValue.getCurrentValue());
+        System.out.println("What would you like to do?");
+        System.out.println("[1] Trig in Radians [2] Trig in Degrees");
+        Scanner scanner6 = new Scanner(System.in);
+        int trigDisplay = scanner6.nextInt();
+        trigDisplay(trigDisplay);
+
+    }
+
+
+    public void trigDisplay(int input) {
         switch (input) {
             case 1:
-                currentValue.setCurrentValue(basic.add(currentValue.getCurrentValue(), getuserNum()));
+                trigRadianMenu();
                 break;
             case 2:
-                currentValue.setCurrentValue(basic.subtract(currentValue.getCurrentValue(), getuserNum()));
-                break;
-            case 3:
-                currentValue.setCurrentValue(basic.multiply(currentValue.getCurrentValue(), getuserNum()));
-                break;
-            case 4:
-                currentValue.setCurrentValue(basic.divide(currentValue.getCurrentValue(), getuserNum()));
-                break;
-            case 5:
-                currentValue.setCurrentValue(basic.square(currentValue.getCurrentValue()));
-                break;
-            case 6:
-                currentValue.setCurrentValue(basic.squareRoot(getuserNum()));
-                break;
-            case 7:
-                currentValue.setCurrentValue(basic.exponent(currentValue.getCurrentValue(), getuserNum()));
-                break;
-            case 8:
-                currentValue.setCurrentValue(basic.inverse(currentValue.getCurrentValue()));
-                break;
-            case 9:
-                currentValue.setCurrentValue(basic.switchSign(currentValue.getCurrentValue()));
-            case 10:
-                currentValue.setCurrentValue(basic.factorial(currentValue.getCurrentValue()));
-                default: welcomeMenu();
+                trigSwitchToDegrees();
         }
-        welcomeMenu();
     }
 
-    public void trigMenu() {
+
+    public void trigRadianMenu() {
+        currentValue.setCurrentValue(Math.toRadians(currentValue.getCurrentValue()));
         System.out.println("What would you like to do? ");
-        System.out.println("[1] Sine [2] Cosine [3] Tangent [4] Inverse Sine [5] Inverse Cosine [6] Inverse Tangent");
+        System.out.println("[1] Sine [2] Cosine [3] Tangent [4] Inverse Sine [5] Inverse Cosine [6] Inverse Tangent [7] Convert From Radians to Degrees ");
         Scanner scanner2 = new Scanner(System.in);
         int trigonometry = scanner2.nextInt();
-        trigonometry(trigonometry);
+        calculator.trigInRadians(trigonometry);
+        trigDisplayMenu();
 
     }
 
-    public void trigonometry(int input) {
-        switch (input) {
-            case 1:
-                currentValue.setCurrentValue(trig.sine(currentValue.getCurrentValue()));
-                break;
-            case 2:
-                currentValue.setCurrentValue(trig.cosine(currentValue.getCurrentValue()));
-                break;
-            case 3:
-                currentValue.setCurrentValue(trig.tangent(currentValue.getCurrentValue()));
-                break;
-            case 4:
-                currentValue.setCurrentValue(trig.inverseSine(currentValue.getCurrentValue()));
-                break;
-            case 5:
-                currentValue.setCurrentValue(trig.inverseCosine(currentValue.getCurrentValue()));
-                break;
-            case 6:
-                currentValue.setCurrentValue(trig.inverseTangent(currentValue.getCurrentValue()));
-                break;
-            default: welcomeMenu();
 
-        }
-        welcomeMenu();
+    public void trigSwitchToDegrees() {
+        currentValue.setCurrentValue(Math.toDegrees(currentValue.getCurrentValue()));
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println("Current Value is now in Degrees");
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println("Your current value is: " + currentValue.getCurrentValue() + " degrees");
+        trigDegreesMenu();
     }
+
+    public void trigDegreesMenu() {
+        System.out.println("What would you like to do? ");
+        System.out.println("[1] Sine [2] Cosine [3] Tangent [4] Inverse Sine [5] Inverse Cosine [6] Inverse Tangent [7] Convert From Degrees to Radians ");
+        Scanner scanner2 = new Scanner(System.in);
+        int trigInDegrees = scanner2.nextInt();
+        calculator.trigInDegrees(trigInDegrees);
+        trigDisplayMenu();
+    }
+
+
+
+
 
     public void logMenu() {
         System.out.println("What would you like to do? ");
         System.out.println("[1] log [2] 10^x [3] Ln [4] e^x");
         Scanner scanner2 = new Scanner(System.in);
         int logs = scanner2.nextInt();
-        logs(logs);
-
-    }
-
-    public void logs(int input) {
-        switch (input) {
-            case 1:
-                currentValue.setCurrentValue(log.log(currentValue.getCurrentValue()));
-                break;
-            case 2: currentValue.setCurrentValue(log.log10x(currentValue.getCurrentValue()));
-                break;
-            case 3: currentValue.setCurrentValue(log.logln(currentValue.getCurrentValue()));
-                break;
-            case 4: currentValue.setCurrentValue(log.logEx(currentValue.getCurrentValue()));
-                default: welcomeMenu();
-        }
+        calculator.logs(logs);
         welcomeMenu();
+
     }
+
+
 
     public void displayModeMenu() {
         System.out.println("Do you want to cycle through or type your choice of Mode?");
@@ -207,12 +181,12 @@ public class UserInterfaceMenus {
         Scanner scanner3 = new Scanner(System.in);
         int modeDisplay = scanner3.nextInt();
         modeDisplay(modeDisplay);
+        welcomeMenu();
     }
 
 
     public void modeDisplay(int input) {
         Scanner scanner5 = new Scanner(System.in);
-
         switch(input) {
             case 1:
                 currentValue.cycleDisplayMode();
@@ -226,25 +200,15 @@ public class UserInterfaceMenus {
     }
 
     public void memoryMenu() {
-
         System.out.println("What do you want to do? ");
         System.out.println("[1] Store current value [2] Reset stored value to 0 [3] Recall stored value");
         Scanner scanner4 = new Scanner(System.in);
         int memory = scanner4.nextInt();
-        memory(memory);
-    }
-
-    public void memory(int input) {
-        switch(input) {
-            case 1:
-                currentValue.setCurrentValue(memory.storedValue);
-            case 2:
-                currentValue.setCurrentValue(memory.resetStoredValue());
-            case 3:
-                currentValue.setCurrentValue(memory.getStoredValue());
-        }
+        calculator.memory(memory);
         welcomeMenu();
     }
+
+
 }
 
 

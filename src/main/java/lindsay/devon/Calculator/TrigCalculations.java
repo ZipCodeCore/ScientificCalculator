@@ -5,13 +5,11 @@ package lindsay.devon.Calculator;
  */
 public class TrigCalculations {
 
-
     public double sine(double newValue) {
-        double result =  Math.sin(newValue);
-        System.out.println("The sine of " + newValue + " is: " + result);
-        return  result;
-
-    }
+            double result = Math.sin(newValue);
+            System.out.println("The sine of " + newValue + " is: " + result);
+            return result;
+        }
 
     public double cosine(double newValue) {
         double result =  Math.cos(newValue);
@@ -26,19 +24,19 @@ public class TrigCalculations {
 
     }
     public double inverseSine(double newValue) {
-        double result =  Math.sinh(newValue);
+        double result =  Math.asin(newValue);
         System.out.println("The inverse sine of " + newValue + " is: " + result);
         return  result;
 
     }
     public double inverseCosine(double newValue) {
-        double result =  Math.cosh(newValue);
+        double result =  Math.acos(newValue);
         System.out.println("The inverse cosine of " + newValue + " is: " + result);
         return  result;
 
     }
     public double inverseTangent(double newValue) {
-        double result =  Math.tanh(newValue);
+        double result =  Math.atan(newValue);
         System.out.println("The inverse tangent of " + newValue + " is: " + result);
         return  result;
 

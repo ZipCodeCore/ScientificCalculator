@@ -53,7 +53,7 @@ public class BasicCalculations {
     }
 
     public double exponent(double currentValue, double newValue) {
-        double result =  Math.pow(0,newValue);
+        double result =  Math.pow(currentValue,newValue);
         System.out.println(currentValue + " to the power of " + newValue + " = " + result);
         return  result;
 

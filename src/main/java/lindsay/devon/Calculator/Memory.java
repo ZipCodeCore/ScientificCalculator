@@ -24,5 +24,5 @@ public class Memory {
         return storedValue;
     }
 
-    public enum MemoryOptions { M, MC , MRC}
+
 }
