@@ -5,27 +5,27 @@ package dedeus.roberto.project1calculator;
  */
 public class TrigCalculator {
 
-    public double sine(double stateValue){
+    double sine(double stateValue){
         return Math.sin(stateValue);
     }
 
-    public double cosine(double stateValue){
+    double cosine(double stateValue){
         return Math.cos(stateValue);
     }
 
-    public double tangent(double stateValue){
+    double tangent(double stateValue){
         return Math.tan(stateValue);
     }
 
-    public double inverveSine(double stateValue){
+    double inverveSine(double stateValue){
         return Math.sinh(stateValue);
     }
 
-    public double inverseCosine(double stateValue){
+    double inverseCosine(double stateValue){
         return Math.cosh(stateValue);
     }
 
-    public double inverseTangent(double stateValue){
+    double inverseTangent(double stateValue){
         return Math.tanh(stateValue);
     }
 }

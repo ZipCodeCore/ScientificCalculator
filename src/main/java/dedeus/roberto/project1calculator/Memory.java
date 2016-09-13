@@ -11,15 +11,15 @@ public class Memory {
         this.recallValue = 0;
     }
 
-    public double getRecallValue(){
+    double getRecallValue(){
         return this.recallValue;
     }
 
-    public void clearRecallValue(){
+    void clearRecallValue(){
         this.recallValue = 0;
     }
 
-    public void setRecallValue(double newMemory){
+    void setRecallValue(double newMemory){
         this.recallValue = newMemory;
     }
 
