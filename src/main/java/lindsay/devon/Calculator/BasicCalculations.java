@@ -73,6 +73,14 @@ public class BasicCalculations {
 
     }
 
+    public double factorial(double newValue) {
+        int sum = 0;
+        for (int i = 1; i <= newValue; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
 
 
 

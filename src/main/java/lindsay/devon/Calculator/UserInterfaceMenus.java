@@ -1,8 +1,13 @@
 package lindsay.devon.Calculator;
 
 import com.sun.tools.internal.ws.wsdl.document.soap.SOAPUse;
+import com.sun.tools.internal.xjc.model.SymbolSpace;
 
 import java.util.Scanner;
+import java.lang.Double;
+
+import static java.lang.Double.*;
+
 /**
  * Created by devonlindsay on 9/12/16.
  */
@@ -21,7 +26,9 @@ public class UserInterfaceMenus {
         return userNum;
     }
 
-
+    public boolean checkErrors() {
+        return Double.isNaN(currentValue.getCurrentValue()) || isInfinite(currentValue.getCurrentValue());
+    }
 
     public void welcome() {
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
@@ -33,10 +40,13 @@ public class UserInterfaceMenus {
     public int welcomeMenu() {
 
         /// ERROR CHECK - ISNAN
-
+        if (checkErrors()) {
+            System.out.println("ERR");
+            System.out.println("Please reset or change current value");
+        }
 
         System.out.println(currentValue.getCurrentValue());
-        System.out.println("Please choose a destination: [1] Math  [2] DisplayMode ");
+        System.out.println("Please choose a destination: [1] Math  [2] DisplayMode [3] Date [4] Express Frustration");
         Scanner scanner1 = new Scanner(System.in);
         int menuChoice = scanner1.nextInt();
         welcomeMenuChoice(menuChoice);
@@ -49,8 +59,13 @@ public class UserInterfaceMenus {
                 break;
             case 2: displayModeMenu();
                 break;
-
+            case 3: currentValue.date();
+                welcomeMenu();
+                break;
+            case 4: currentValue.frustration();
+                welcomeMenu();
         }
+
     }
 
     public void mathMenu() {
@@ -74,15 +89,17 @@ public class UserInterfaceMenus {
             case 4: memoryMenu();
                 break;
             case 5: currentValue.resetCurrentValue();
+                welcomeMenu();
                 break;
             case 6: currentValue.setCurrentValue(getuserNum());
+                welcomeMenu();
                 break;
         }
     }
 
     public void basicMathMenu() {
         System.out.println("What would you like to do? ");
-        System.out.println("[1] Add [2] Subtract [3] Multiply [4] Divide [5] Square [6] Square Root [7] Exponent [8] Inverse Num [9] Switch +/-");
+        System.out.println("[1] Add [2] Subtract [3] Multiply [4] Divide [5] Square [6] Square Root [7] Exponent [8] Inverse Num [9] Switch +/- [10] Factorial");
         Scanner scanner2 = new Scanner(System.in);
         int basicMath = scanner2.nextInt();
         basicMath(basicMath);
@@ -94,41 +111,35 @@ public class UserInterfaceMenus {
         switch (input) {
             case 1:
                 currentValue.setCurrentValue(basic.add(currentValue.getCurrentValue(), getuserNum()));
-                mathMenu();
                 break;
             case 2:
                 currentValue.setCurrentValue(basic.subtract(currentValue.getCurrentValue(), getuserNum()));
-                mathMenu();
                 break;
             case 3:
                 currentValue.setCurrentValue(basic.multiply(currentValue.getCurrentValue(), getuserNum()));
-                mathMenu();
                 break;
             case 4:
                 currentValue.setCurrentValue(basic.divide(currentValue.getCurrentValue(), getuserNum()));
-                mathMenu();
                 break;
             case 5:
                 currentValue.setCurrentValue(basic.square(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 6:
                 currentValue.setCurrentValue(basic.squareRoot(getuserNum()));
-                mathMenu();
                 break;
             case 7:
                 currentValue.setCurrentValue(basic.exponent(currentValue.getCurrentValue(), getuserNum()));
-                mathMenu();
                 break;
             case 8:
                 currentValue.setCurrentValue(basic.inverse(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 9:
                 currentValue.setCurrentValue(basic.switchSign(currentValue.getCurrentValue()));
-                mathMenu();
-            default: mathMenu();
+            case 10:
+                currentValue.setCurrentValue(basic.factorial(currentValue.getCurrentValue()));
+                default: welcomeMenu();
         }
+        welcomeMenu();
     }
 
     public void trigMenu() {
@@ -144,32 +155,26 @@ public class UserInterfaceMenus {
         switch (input) {
             case 1:
                 currentValue.setCurrentValue(trig.sine(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 2:
                 currentValue.setCurrentValue(trig.cosine(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 3:
                 currentValue.setCurrentValue(trig.tangent(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 4:
                 currentValue.setCurrentValue(trig.inverseSine(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 5:
                 currentValue.setCurrentValue(trig.inverseCosine(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 6:
                 currentValue.setCurrentValue(trig.inverseTangent(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
-            default: mathMenu();
+            default: welcomeMenu();
 
         }
-
+        welcomeMenu();
     }
 
     public void logMenu() {
@@ -185,29 +190,53 @@ public class UserInterfaceMenus {
         switch (input) {
             case 1:
                 currentValue.setCurrentValue(log.log(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 2: currentValue.setCurrentValue(log.log10x(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 3: currentValue.setCurrentValue(log.logln(currentValue.getCurrentValue()));
-                mathMenu();
                 break;
             case 4: currentValue.setCurrentValue(log.logEx(currentValue.getCurrentValue()));
-                mathMenu();
-            default: mathMenu();
-
-
-
+                default: welcomeMenu();
         }
+        welcomeMenu();
     }
 
     public void displayModeMenu() {
-        System.out.println("under construction");
+        System.out.println("Do you want to cycle through or type your choice of Mode?");
+        System.out.println("[1] Cycle through [2] Type my choice ");
+        Scanner scanner3 = new Scanner(System.in);
+        int modeDisplay = scanner3.nextInt();
+        modeDisplay(modeDisplay);
+    }
+    public void modeDisplay(int input) {
+        switch(input) {
+            case 1:
+                currentValue.cycleDisplayMode(currentValue.currentDisplayMode);
+            case 2:
+                currentValue.changeDisplayMode(currentValue.currentDisplayMode);
+                    }
+            welcomeMenu();
     }
 
     public void memoryMenu() {
-        System.out.println("under construction");
+
+        System.out.println("What do you want to do? ");
+        System.out.println("[1] Store current value [2] Reset stored value to 0 [3] Recall stored value");
+        Scanner scanner4 = new Scanner(System.in);
+        int memory = scanner4.nextInt();
+        memory(memory);
+    }
+
+    public void memory(int input) {
+        switch(input) {
+            case 1:
+                currentValue.setCurrentValue(memory.storedValue);
+            case 2:
+                currentValue.setCurrentValue(memory.resetStoredValue());
+            case 3:
+                currentValue.setCurrentValue(memory.getStoredValue());
+        }
+        welcomeMenu();
     }
 }
 
