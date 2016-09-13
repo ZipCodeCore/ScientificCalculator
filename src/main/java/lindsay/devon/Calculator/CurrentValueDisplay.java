@@ -35,7 +35,7 @@ public class CurrentValueDisplay {
    }
 
 
-   public void cycleDisplayMode(String currentDisplayMode) {
+   public void cycleDisplayMode() {
        for(int i = 0; i < displayMode.length; i++) {
            if (displayMode[i].equals(currentDisplayMode)) {
                currentDisplayMode = displayMode[(i + 1)% 4];

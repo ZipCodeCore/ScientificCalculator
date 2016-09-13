@@ -208,12 +208,19 @@ public class UserInterfaceMenus {
         int modeDisplay = scanner3.nextInt();
         modeDisplay(modeDisplay);
     }
+
+
     public void modeDisplay(int input) {
+        Scanner scanner5 = new Scanner(System.in);
+
         switch(input) {
             case 1:
-                currentValue.cycleDisplayMode(currentValue.currentDisplayMode);
+                currentValue.cycleDisplayMode();
+                break;
             case 2:
-                currentValue.changeDisplayMode(currentValue.currentDisplayMode);
+                System.out.println(" Please type your choice of the following: -decimal -binary -octal -hexadecimal");
+                currentValue.changeDisplayMode(scanner5.next());
+                break;
                     }
             welcomeMenu();
     }
