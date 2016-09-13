@@ -22,34 +22,34 @@ You must produce UML diagrams for your program. All classes (excluding test clas
 
 All calculators should have the following features:
 
-- A state, representing the value currently displayed on the calculator (default 0) *
-- Get the current number on the display *
-- Clear the display *
-- Change the number on the display *
-- Add, subtract, multiply, and divide the value on the display by a given number
-- Calculate the square (x<sup>2</sup>) and square root (√x) of the number on the display *
+- A state, representing the stateValue currently displayed on the calculator (default 0) *
+- Get the current number on the state *
+- Clear the state *
+- Change the number on the state *
+- Add, subtract, multiply, and divide the stateValue on the state by a given number
+- Calculate the square (x<sup>2</sup>) and square root (√x) of the number on the state *
 - Calculate variable exponentiation (x<sup>y</sup>)
-- Calculate the inverse of the number on the display (1/x) *
-- Invert the sign of the number on the display (switch between positive and negative)
-- Update the display to `Err` if an error occurs (eg: Division by zero) *
+- Calculate the inverse of the number on the state (1/x) *
+- Invert the sign of the number on the state (switch between positive and negative)
+- Update the state to `Err` if an error occurs (eg: Division by zero) *
 - Errors must be cleared before any other operation can take place *
 
-Each operation should automatically update the display
+Each operation should automatically update the state
 
 
 ### Scientific Features
 
-- Switch display mode (binary, octal, decimal, hexadecimal)
+- Switch state mode (binary, octal, decimal, hexadecimal)
   - `switchDisplayMode()` should rotate through the options
-  - `switchDisplayMode(String mode)` should set the display to the mode given
-- Memory - Store up to one numeric value in memory for recall later (default to 0) *
-  - (`M+` key) Add the currently displayed value to the value in memory (store in memory and update display) *
+  - `switchDisplayMode(String mode)` should set the state to the mode given
+- Memory - Store up to one numeric stateValue in memory for recall later (default to 0) *
+  - (`M+` key) Add the currently displayed stateValue to the stateValue in memory (store in memory and update state) *
   - (`MC` key) Reset memory *
-  - (`MRC` key) Recall the current value from memory to the display *
+  - (`MRC` key) Recall the current stateValue from memory to the state *
 - Trig functions
-  - Sine - Calculate the sine of the displayed value and display it
-  - Cosine - Calculate the cosine of the displayed value and display it
-  - Tangent - Calculate the tangent of the displayed value and display it
+  - Sine - Calculate the sine of the displayed stateValue and state it
+  - Cosine - Calculate the cosine of the displayed stateValue and state it
+  - Tangent - Calculate the tangent of the displayed stateValue and state it
   - Inverse Sine
   - Inverse Cosine
   - Inverse Tangent
@@ -70,7 +70,7 @@ In addition to the Core and Scientific features, you are required to create at l
 
 ### Hints
 
-The following functions should take the displayed value (x) and updated it according to the given formula: (this may not be an exhaustive list)
+The following functions should take the displayed stateValue (x) and updated it according to the given formula: (this may not be an exhaustive list)
 
 - `square()`: x<sup>2</sup>
 - `squareRoot()`: √x
