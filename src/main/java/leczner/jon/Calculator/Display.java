@@ -1,6 +1,5 @@
 package leczner.jon.Calculator;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -8,7 +7,7 @@ import java.util.Scanner;
  */
 public class Display {
     private String state;
-    private String trueState;
+    private String displayState;
     private int significantDigits;
 
     public enum Mode {DECIMAL, HEX, BINARY, OCTAL}
@@ -17,6 +16,7 @@ public class Display {
 
     public Display() {
         state = "0";
+        displayState = state;
         significantDigits = 6;
         mode = Mode.DECIMAL;
         scanner = new Scanner(System.in);
@@ -30,6 +30,24 @@ public class Display {
         return state;
     }
 
+    public String getDisplayState() {
+        switch (mode) {
+            case DECIMAL:
+                displayState = state;
+                break;
+            case HEX:
+                displayState = Integer.toHexString(Integer.valueOf(state));
+                break;
+            case BINARY:
+                displayState = Integer.toBinaryString(Integer.valueOf(state));
+                break;
+            case OCTAL:
+                displayState = Integer.toOctalString(Integer.valueOf(state));
+                break;
+        }
+        return displayState;
+    }
+
     public void setState(String state) {
         this.state = state;
     }
@@ -40,36 +58,22 @@ public class Display {
 
     public void showState() {
 //        formatState();
-        System.out.println(state);
+        System.out.println(displayState);
     }
 
     public void switchDisplayMode() {
         switch (mode) {
             case DECIMAL:
                 mode = Mode.HEX;
-                state = new BigInteger(state, 16).toString(16);
                 break;
             case HEX:
                 mode = Mode.BINARY;
-                state = new BigInteger(state, 16).toString(2); // Mike Samuel on stackoverflow
                 break;
             case BINARY:
                 mode = Mode.OCTAL;
-                long binary = Long.parseLong(state, 2);
-                state = Long.toOctalString(binary);
                 break;
             case OCTAL:
                 mode = Mode.DECIMAL;
-                double newState = 0;
-                int i = 0;
-                double octal = Double.valueOf(state);
-                while(octal != 0)
-                {
-                    newState = newState + (octal%10) * (int) Math.pow(8, i);
-                    i++;
-                    octal = octal/10;
-                }
-                state = String.valueOf(newState);
                 break;
             default:
                 System.out.println("How did it come to this? (no mode available)");

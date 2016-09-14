@@ -40,37 +40,37 @@ public class DisplayTest {
 //        assertEquals("1.4", calc.display.getState());
 //    }
 
-    @Test
-    public void roundingTest() {
-        calc.basicMathUnit.add(19.5);
-        double state = calc.basicMathUnit.divide(-2.5);
-        String displayState = String.valueOf(state);
-        calc.display.setState(displayState);
-//        calc.display.formatState();
-        assertEquals("-7.8", calc.display.getState());
-        calc.display.setState("1.009999999999999948579283457");
-//        calc.display.formatState();
-        assertEquals("1.001", calc.display.getState());
-        calc.display.setState("-6689502913449130307337256331784623395582254385965074044477506509003168717455670263453482004232257731880806570074163851721530028759557453823946324668047710881013169959586673277865168932426041094307840");
-//        calc.display.formatState();
-        assertEquals("-668950", calc.basicMathUnit.getState());
-    }
+//    @Test
+//    public void roundingTest() {
+//        calc.basicMathUnit.add(19.5);
+//        double state = calc.basicMathUnit.divide(-2.5);
+//        String displayState = String.valueOf(state);
+//        calc.display.setState(displayState);
+////        calc.display.formatState();
+//        assertEquals("-7.8", calc.display.getState());
+//        calc.display.setState("1.009999999999999948579283457");
+////        calc.display.formatState();
+//        assertEquals("1.001", calc.display.getState());
+//        calc.display.setState("-6689502913449130307337256331784623395582254385965074044477506509003168717455670263453482004232257731880806570074163851721530028759557453823946324668047710881013169959586673277865168932426041094307840");
+////        calc.display.formatState();
+//        assertEquals("-668950", calc.basicMathUnit.getState());
+//    }
 
     @Test
     public void switchDisplayModeTest1() { // no input
         calc.display.setState("2");
         calc.display.switchDisplayMode();
-        assertEquals("0200", calc.display.getState());
+        assertEquals("2", calc.display.getDisplayState());
         calc.display.switchDisplayMode();
-        assertEquals("0010", calc.display.getState());
+        assertEquals("10", calc.display.getDisplayState());
         calc.display.switchDisplayMode();
-        assertEquals("2", calc.display.getState());
+        assertEquals("2", calc.display.getDisplayState());
     }
 
     @Test
     public void switchDisplayModeTest2() { // with input
-        calc.basicMathUnit.add(2);
+        calc.display.setState("2");
         calc.display.switchDisplayMode(Display.Mode.BINARY);
-        assertEquals("0010", calc.basicMathUnit.getState());
+        assertEquals("10", calc.display.getDisplayState());
     }
 }
