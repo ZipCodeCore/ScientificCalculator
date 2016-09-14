@@ -1,5 +1,6 @@
 package leczner.jon.Calculator;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -38,7 +39,7 @@ public class Display {
     }
 
     public void showState() {
-        formatState();
+//        formatState();
         System.out.println(state);
     }
 
@@ -46,15 +47,29 @@ public class Display {
         switch (mode) {
             case DECIMAL:
                 mode = Mode.HEX;
+                state = new BigInteger(state, 16).toString(16);
                 break;
             case HEX:
                 mode = Mode.BINARY;
+                state = new BigInteger(state, 16).toString(2); // Mike Samuel on stackoverflow
                 break;
             case BINARY:
                 mode = Mode.OCTAL;
+                long binary = Long.parseLong(state, 2);
+                state = Long.toOctalString(binary);
                 break;
             case OCTAL:
                 mode = Mode.DECIMAL;
+                double newState = 0;
+                int i = 0;
+                double octal = Double.valueOf(state);
+                while(octal != 0)
+                {
+                    newState = newState + (octal%10) * (int) Math.pow(8, i);
+                    i++;
+                    octal = octal/10;
+                }
+                state = String.valueOf(newState);
                 break;
             default:
                 System.out.println("How did it come to this? (no mode available)");
@@ -66,24 +81,25 @@ public class Display {
         this.mode = mode;
     }
 
-    public void setSignificantDigits(int digits) {
-        significantDigits = digits;
-    }
+//    public void setSignificantDigits(int digits) {
+//        significantDigits = digits;
+//    }
 
-    public void formatState() {
-        int trueDigits = state.length();
-        if (state.contains("."))
-            trueDigits--;
-        if (state.contains("-"))
-            trueDigits--;
-
-        if (trueDigits > significantDigits) {
-            state = state.substring(0, significantDigits + 1); // trim to significantDigit total + "."
-            if (state.endsWith("."))
-                state = state.substring(0, state.length() - 1);
-        }
-        else
-            return;
-    }
+//    public void formatState() {
+//        trueState = state;
+//        int trueDigits = state.length();
+//        if (state.contains("."))
+//            trueDigits--;
+//        if (state.contains("-"))
+//            trueDigits--;
+//
+//        if (trueDigits > significantDigits) {
+//            state = state.substring(0, significantDigits + 1); // trim to significantDigit total + "."
+//            if (state.endsWith("."))
+//                state = state.substring(0, state.length() - 1);
+//        }
+//        else
+//            return;
+//    }
 
 }

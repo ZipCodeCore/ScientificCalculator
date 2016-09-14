@@ -25,20 +25,20 @@ public class DisplayTest {
 //        calc.display.showState();
 //    }
 
-    @Test
-    public void selectSignificantDigitsTest() {
-        calc.basicMathUnit.add(2);
-        calc.basicMathUnit.squareRoot();
-        calc.display.setState(calc.basicMathUnit.getState());
-        calc.display.formatState();
-        assertEquals("1.41421", calc.display.getState());
-        calc.display.setSignificantDigits(1);
-        calc.display.formatState();
-        assertEquals("1", calc.display.getState());
-        calc.display.setSignificantDigits(2);
-        calc.display.formatState();
-        assertEquals("1.4", calc.display.getState());
-    }
+//    @Test
+//    public void selectSignificantDigitsTest() {
+//        calc.basicMathUnit.add(2);
+//        calc.basicMathUnit.squareRoot();
+//        calc.display.setState(calc.basicMathUnit.getState());
+//        calc.display.formatState();
+//        assertEquals("1.41421", calc.display.getState());
+//        calc.display.setSignificantDigits(1);
+//        calc.display.formatState();
+//        assertEquals("1", calc.display.getState());
+//        calc.display.setSignificantDigits(2);
+//        calc.display.formatState();
+//        assertEquals("1.4", calc.display.getState());
+//    }
 
     @Test
     public void roundingTest() {
@@ -46,25 +46,25 @@ public class DisplayTest {
         double state = calc.basicMathUnit.divide(-2.5);
         String displayState = String.valueOf(state);
         calc.display.setState(displayState);
-        calc.display.formatState();
+//        calc.display.formatState();
         assertEquals("-7.8", calc.display.getState());
         calc.display.setState("1.009999999999999948579283457");
-        calc.display.formatState();
+//        calc.display.formatState();
         assertEquals("1.001", calc.display.getState());
         calc.display.setState("-6689502913449130307337256331784623395582254385965074044477506509003168717455670263453482004232257731880806570074163851721530028759557453823946324668047710881013169959586673277865168932426041094307840");
-        calc.display.formatState();
+//        calc.display.formatState();
         assertEquals("-668950", calc.basicMathUnit.getState());
     }
 
     @Test
     public void switchDisplayModeTest1() { // no input
-        calc.basicMathUnit.add(2);
+        calc.display.setState("2");
         calc.display.switchDisplayMode();
-        assertEquals("0200", calc.basicMathUnit.getState());
+        assertEquals("0200", calc.display.getState());
         calc.display.switchDisplayMode();
-        assertEquals("0010", calc.basicMathUnit.getState());
+        assertEquals("0010", calc.display.getState());
         calc.display.switchDisplayMode();
-        assertEquals("2", calc.basicMathUnit.getState());
+        assertEquals("2", calc.display.getState());
     }
 
     @Test

@@ -80,10 +80,10 @@ public class Calculator {
             case "octal":
                 display.switchDisplayMode(Display.Mode.OCTAL);
                 break;
-            case "digits":
-                int digits = s.nextInt();
-                display.setSignificantDigits(digits);
-                break;
+//            case "digits":
+//                int digits = s.nextInt();
+//                display.setSignificantDigits(digits);
+//                break;
             case "store":
                 memory.store();
                 break;
