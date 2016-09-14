@@ -50,6 +50,7 @@ public class Display {
 
     public void setState(String state) {
         this.state = state;
+        displayState = state;
     }
 
     public void clear() {

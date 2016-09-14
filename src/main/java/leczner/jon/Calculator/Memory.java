@@ -24,6 +24,6 @@ public class Memory {
     }
 
     public void store() {
-        memoryValue = currentState;
+        memoryValue = state;
     }
 }

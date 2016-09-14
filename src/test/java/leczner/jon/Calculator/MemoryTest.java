@@ -11,9 +11,9 @@ public class MemoryTest {
 
     @Test
     public void recallTest() {
-        calc.basicMathUnit.add(1);
-
+        calc.memory.setCurrentState("1");
         calc.memory.store();
+        calc.memory.setCurrentState("2");
         assertEquals("1", calc.memory.recall());
     }
 
@@ -23,12 +23,5 @@ public class MemoryTest {
         calc.memory.store();
         calc.memory.reset();
         assertEquals(null, calc.memory.recall());
-    }
-
-    @Test
-    public void storeTest() {
-        calc.basicMathUnit.add(1);
-        calc.memory.store();
-        assertEquals("1", calc.memory.recall());
     }
 }

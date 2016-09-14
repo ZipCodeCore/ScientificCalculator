@@ -6,19 +6,22 @@ import java.util.Scanner;
  * Created by jonathanleczner on 9/12/16.
  */
 public class Calculator {
+    private boolean running;
+
     BasicMath basicMathUnit;
     Display display;
     Memory memory;
 
     public Calculator() {
+        running = true;
         basicMathUnit = new BasicMath();
         display = new Display();
         memory = new Memory();
     }
 
     public void run() {
-        Scanner s = display.getScanner();
-        while (!s.next().equals("quit")) {
+        System.out.println("0");
+        while (running) {
             getInput();
             update();
             render();
@@ -49,7 +52,7 @@ public class Calculator {
             case "square":
                 basicMathUnit.square();
                 break;
-            case "square root":
+            case "squareRoot":
                 basicMathUnit.squareRoot();
                 break;
             case "exponent":
@@ -94,7 +97,8 @@ public class Calculator {
                 memory.recall();
                 break;
             case "quit":
-                return;
+                running = false;
+                break;
             default:
                 // do nothing
                 break;
@@ -103,12 +107,13 @@ public class Calculator {
     }
 
     public void update() {
-        // format input, prep render
+        String state = basicMathUnit.getState();
+        display.setState(state);
         return;
     }
 
     public void render() {
-        // show state
+        display.showState();
         return;
     }
 }
