@@ -73,15 +73,19 @@ public class Calculator {
                 break;
             case "binary":
                 display.switchDisplayMode(Display.Mode.BINARY);
+                display.setState(display.getDisplayState());
                 break;
             case "hex":
                 display.switchDisplayMode(Display.Mode.HEX);
+                display.setState(display.getDisplayState());
                 break;
             case "decimal":
                 display.switchDisplayMode(Display.Mode.DECIMAL);
+                display.setState(display.getDisplayState());
                 break;
             case "octal":
                 display.switchDisplayMode(Display.Mode.OCTAL);
+                display.setState(display.getDisplayState());
                 break;
 //            case "digits":
 //                int digits = s.nextInt();
@@ -94,7 +98,10 @@ public class Calculator {
                 memory.reset();
                 break;
             case "recall":
-                memory.recall();
+                basicMathUnit.setState(memory.recall());
+                break;
+            case "clear":
+                basicMathUnit.setState("0");
                 break;
             case "quit":
                 running = false;
@@ -109,6 +116,7 @@ public class Calculator {
     public void update() {
         String state = basicMathUnit.getState();
         display.setState(state);
+        memory.setCurrentState(state);
         return;
     }
 

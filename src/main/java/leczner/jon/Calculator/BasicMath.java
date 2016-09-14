@@ -28,6 +28,10 @@ public class BasicMath {
         }
     }
 
+    public void setState(String state) {
+        this.state = Double.valueOf(state);
+    }
+
     public double add(double input) {
         state += input;
         return state;

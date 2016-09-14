@@ -20,7 +20,7 @@ public class Memory {
     }
 
     public void reset() {
-        memoryValue = null;
+        memoryValue = "0";
     }
 
     public void store() {

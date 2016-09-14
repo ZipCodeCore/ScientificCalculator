@@ -36,13 +36,13 @@ public class Display {
                 displayState = state;
                 break;
             case HEX:
-                displayState = Integer.toHexString(Integer.valueOf(state));
+                displayState = Integer.toString(Integer.valueOf(state), 16);
                 break;
             case BINARY:
-                displayState = Integer.toBinaryString(Integer.valueOf(state));
+                displayState = Integer.toString(Integer.valueOf(state), 2);
                 break;
             case OCTAL:
-                displayState = Integer.toOctalString(Integer.valueOf(state));
+                displayState = Integer.toString(Integer.valueOf(state), 8);
                 break;
         }
         return displayState;
@@ -59,7 +59,7 @@ public class Display {
 
     public void showState() {
 //        formatState();
-        System.out.println(displayState);
+        System.out.println(getDisplayState());
     }
 
     public void switchDisplayMode() {
