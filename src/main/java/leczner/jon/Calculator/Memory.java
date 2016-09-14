@@ -1,27 +1,29 @@
 package leczner.jon.Calculator;
 
-import java.util.ArrayList;
-
 /**
  * Created by jonathanleczner on 9/12/16.
  */
 public class Memory {
-    private ArrayList<String> states;
-    private String currentState;
+    private String memoryValue;
+    private String state;
 
     public Memory() {
+        memoryValue = "";
+    }
 
+    public void setCurrentState(String state) {
+        this.state = state;
     }
 
     public String recall() {
-        return null;
+        return memoryValue;
     }
 
     public void reset() {
-        return;
+        memoryValue = null;
     }
 
     public void store() {
-        return;
+        memoryValue = currentState;
     }
 }

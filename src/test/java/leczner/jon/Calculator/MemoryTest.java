@@ -12,7 +12,9 @@ public class MemoryTest {
     @Test
     public void recallTest() {
         calc.basicMathUnit.add(1);
-        assertEquals("0", calc.memory.recall());
+
+        calc.memory.store();
+        assertEquals("1", calc.memory.recall());
     }
 
     @Test
