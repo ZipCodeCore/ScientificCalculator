@@ -19,11 +19,13 @@ public class CalculatorController {
 
     public void runCalculator() {
 
-        String operation = "";
+        //boolean keepLooping = true; change loop condition
 
-        while ( !operation.equalsIgnoreCase("exit") ) {
+        while ( !firstUserArg.equalsIgnoreCase("exit") ) {
 
-            calculatorDisplay.displayCurrentState(calculatorModel.getCurrentValue());
+            double currentValue = calculatorModel.getCurrentValue();
+            calculatorDisplay.displayCurrentState(currentValue);
+
             calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
             calculatorDisplay.displayInputPrompt();
 
@@ -31,8 +33,12 @@ public class CalculatorController {
 
             String[] splitUserInput = calculatorParser.parseUserInput(userInput);
 
-            if ( !(splitUserInput.length == 0) ) {
-                operation = splitUserInput[0];
+            if ( (splitUserInput.length == 0)
+                    || (splitUserInput.length > 2)) {
+                // handle error case
+            }
+            else {
+                calculatorModel.updateState(splitUserInput);
             }
         }
     }

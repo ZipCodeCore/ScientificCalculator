@@ -25,5 +25,9 @@ public class CalculatorModel {
         return operations;
     }
 
+    public void updateState(String[] splitUserInput) {
+
+    }
+
 
 }
