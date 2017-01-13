@@ -8,11 +8,13 @@ public class CalculatorController {
     CalculatorInput calculatorInput;
     CalculatorDisplay calculatorDisplay;
     CalculatorModel calculatorModel;
+    CalculatorParser calculatorParser;
 
     public CalculatorController() {
         calculatorInput = new CalculatorInput();
         calculatorDisplay = new CalculatorDisplay();
         calculatorModel = new CalculatorModel();
+        calculatorParser = new CalculatorParser();
     }
 
     public void runCalculator() {
@@ -23,6 +25,10 @@ public class CalculatorController {
 
             calculatorDisplay.displayCurrentState(calculatorModel.getCurrentValue());
             calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
+            calculatorDisplay.displayInputPrompt();
+
+            String userInput = calculatorInput.getUserInput();
+
         }
     }
 }
