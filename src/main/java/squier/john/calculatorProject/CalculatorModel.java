@@ -6,9 +6,11 @@ package squier.john.calculatorProject;
 public class CalculatorModel {
 
     private double currentValue;
+    private Operations operations;
 
     public CalculatorModel() {
         currentValue = 0.0;
+        operations = new Operations();
     }
 
     public void setCurrentValue(double currentValue) {
@@ -17,6 +19,10 @@ public class CalculatorModel {
 
     public double getCurrentValue() {
         return currentValue;
+    }
+
+    public Operations getOperations() {
+        return operations;
     }
 
 

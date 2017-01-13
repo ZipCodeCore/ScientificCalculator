@@ -17,5 +17,12 @@ public class CalculatorController {
 
     public void runCalculator() {
 
+        String operation = "";
+
+        while ( !operation.equalsIgnoreCase("exit") ) {
+
+            calculatorDisplay.displayCurrentState(calculatorModel.getCurrentValue());
+            calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
+        }
     }
 }
