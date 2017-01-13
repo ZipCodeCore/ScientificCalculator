@@ -29,6 +29,11 @@ public class CalculatorController {
 
             String userInput = calculatorInput.getUserInput();
 
+            String[] splitUserInput = calculatorParser.parseUserInput(userInput);
+
+            if ( !(splitUserInput.length == 0) ) {
+                operation = splitUserInput[0];
+            }
         }
     }
 }

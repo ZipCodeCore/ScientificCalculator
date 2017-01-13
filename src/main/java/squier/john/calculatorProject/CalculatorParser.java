@@ -5,13 +5,7 @@ package squier.john.calculatorProject;
  */
 public class CalculatorParser {
 
-    public String parseOperationFromUserInput(String userInput) {
-        String[] splitInput = userInput.split(" ");
-        return splitInput[0];
-    }
-
-    public String parseNumberFromUserInput(String userInput) {
-        String[] splitInput = userInput.split(" ");
-        return splitInput[1];
+    public String[] parseUserInput(String userInput) {
+        return userInput.split(" ");
     }
 }
