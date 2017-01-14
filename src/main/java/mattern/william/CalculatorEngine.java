@@ -5,14 +5,20 @@ package mattern.william;
  */
 public class CalculatorEngine {
     Double currentValue;
+    char operatorCode;
+    Double outputValue;
 
 
     public void StartEngine(){
         Display display = new Display();
         currentValue = display.getCurrentValue();
+
         System.out.println("Display: " + currentValue);
-        currentValue = display.getCurrentValue();
-        System.out.println("Display: " + currentValue);
+        operatorCode = display.getOperatorCode();
+
+        OperationSelector operationSelector = new OperationSelector();
+        operationSelector.sendValueToOperation(currentValue,operatorCode);
+
 
     }
 
