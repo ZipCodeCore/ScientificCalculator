@@ -5,12 +5,16 @@ package squier.john.calculatorProject;
  */
 public class Operations {
 
-    public double performCalculation(String operation, double currentValue, double inputValue)
-    {
-        return 1.0;
+    public double performCalculation(String operation, double currentValue, double inputValue) {
+
+        switch( operation ) {
+            case "+":
+                return currentValue + inputValue;
+                break;
+        }
     }
 
     public String getAvailableOperations() {
-        return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /";
+        return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\nEXIT: exit";
     }
 }

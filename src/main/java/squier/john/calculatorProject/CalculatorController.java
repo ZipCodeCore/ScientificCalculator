@@ -20,8 +20,11 @@ public class CalculatorController {
     public void runCalculator() {
 
         //boolean keepLooping = true; change loop condition
+        String[] splitUserInput = new String[2];
+        splitUserInput[0] = "";
+        splitUserInput[1] = "";
 
-        while ( !firstUserArg.equalsIgnoreCase("exit") ) {
+        while ( !splitUserInput[0].equalsIgnoreCase("exit") ) {
 
             double currentValue = calculatorModel.getCurrentValue();
             calculatorDisplay.displayCurrentState(currentValue);
@@ -31,7 +34,7 @@ public class CalculatorController {
 
             String userInput = calculatorInput.getUserInput();
 
-            String[] splitUserInput = calculatorParser.parseUserInput(userInput);
+            splitUserInput = calculatorParser.parseUserInput(userInput);
 
             if ( (splitUserInput.length == 0)
                     || (splitUserInput.length > 2)) {
