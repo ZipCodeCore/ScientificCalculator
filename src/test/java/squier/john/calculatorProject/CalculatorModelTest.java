@@ -33,8 +33,6 @@ public class CalculatorModelTest {
         Assert.assertEquals(expected, actual, delta);
     }
 
-
-
     @Test
     public void getOperationsTest() {
         Operations expected = new Operations();
