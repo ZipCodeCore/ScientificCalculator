@@ -9,6 +9,7 @@ public class CalculatorModel {
 
     private double currentValue;
     private double inputValue;
+    private DisplayModes displayMode = DisplayModes.DECIMAL;
     private Operations operations;
 
     public CalculatorModel() {
@@ -26,6 +27,9 @@ public class CalculatorModel {
 
     public void setInputValue(double inputValue) { this. inputValue = inputValue; }
     public double getInputValue() { return inputValue; }
+
+    public void setDisplayMode(DisplayModes displayMode) { this.displayMode = displayMode; }
+    public DisplayModes getDisplayMode() { return displayMode; }
 
     public Operations getOperations() {
         return operations;

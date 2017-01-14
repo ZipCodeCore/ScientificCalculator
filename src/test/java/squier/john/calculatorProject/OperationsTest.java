@@ -232,6 +232,27 @@ public class OperationsTest {
     }
 
     @Test
+    public void testPerformCalculationNegatePositive() {
+        double expected = -1.0;
+        double actual = operations.performCalculation("neg", 1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationNegateNegative() {
+        double expected = 1.0;
+        double actual = operations.performCalculation("neg", -1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationNegateZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("neg", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
     public void testPerformCalculationClear() {
         double expected = 0.0;
         double actual = operations.performCalculation("clear", 10.0, 10.0);

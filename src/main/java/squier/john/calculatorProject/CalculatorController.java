@@ -36,7 +36,7 @@ public class CalculatorController {
                 currentValue = Double.toString(calculatorModel.getCurrentValue());
             }
 
-            calculatorDisplay.displayCurrentState(currentValue);
+            calculatorDisplay.displayCurrentState(currentValue, calculatorModel.getDisplayMode());
 
             calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
             calculatorDisplay.displayInputPrompt();
@@ -44,6 +44,10 @@ public class CalculatorController {
             String userInput = calculatorInput.getUserInput();
 
             splitUserInput = calculatorParser.parseUserInput(userInput);
+
+            if ( splitUserInput[0].equalsIgnoreCase("sdm") ) {
+                calculatorModel.setDisplayMode(calculatorModel.getDisplayMode().advanceDisplayMode());
+            }
 
             calculatorModel.updateState(splitUserInput);
         }

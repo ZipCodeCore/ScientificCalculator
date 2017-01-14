@@ -51,6 +51,21 @@ public class CalculatorModelTest {
     }
 
     @Test
+    public void getDisplayModeTest() {
+        DisplayModes expected = DisplayModes.DECIMAL;
+        DisplayModes actual = calculatorModel.getDisplayMode();
+        Assert.assertEquals("I expected actual to be DECIMAL", expected, actual);
+    }
+
+    @Test
+    public void setDisplayModeTest() {
+        DisplayModes expected = DisplayModes.BINARY;
+        calculatorModel.setDisplayMode(DisplayModes.BINARY);
+        DisplayModes actual = calculatorModel.getDisplayMode();
+        Assert.assertEquals("I expect actual to be BINARY", expected, actual);
+    }
+
+    @Test
     public void getOperationsTest() {
         Operations expected = new Operations();
         Operations actual = calculatorModel.getOperations();

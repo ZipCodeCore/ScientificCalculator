@@ -39,6 +39,8 @@ public class Operations {
                 }
             case "exp":
                 return Math.pow(currentValue, inputValue);
+            case "neg":
+                return -currentValue;
             case "clear":
                 return 0.0;
             default:
@@ -49,7 +51,7 @@ public class Operations {
     public String getAvailableOperations() {
         return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\n" +
                 "SQUARE: square    SQUARE ROOT: sqrt    INVERSE: inv\n" +
-                "EXP: exp" +
+                "EXP: exp    NEGATE: neg    SWITCH DISPLAY MODE: sdm\n" +
                 "EXIT: exit    CLEAR: clear\n";
     }
 }
