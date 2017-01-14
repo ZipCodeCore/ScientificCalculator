@@ -197,7 +197,7 @@ public class OperationsTest {
 
     @Test
     public void testPerformCalculationExponentiationBothArgsNegative() {
-        double expected = -0.25;
+        double expected = 0.25;
         double actual = operations.performCalculation("exp", -2.0, -2.0);
         Assert.assertEquals(expected, actual, delta);
 
@@ -205,7 +205,7 @@ public class OperationsTest {
 
     @Test
     public void testPerformCalculationExponentiationOneArgNegOneArgPos() {
-        double expected = -4.0;
+        double expected = 4.0;
         double actual  = operations.performCalculation("exp", -2.0, 2.0);
         Assert.assertEquals(expected, actual, delta);
     }

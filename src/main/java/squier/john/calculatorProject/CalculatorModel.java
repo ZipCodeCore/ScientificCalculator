@@ -20,10 +20,12 @@ public class CalculatorModel {
     public void setCurrentValue(double currentValue) {
         this.currentValue = currentValue;
     }
-
     public double getCurrentValue() {
         return currentValue;
     }
+
+    public void setInputValue(double inputValue) { this. inputValue = inputValue; }
+    public double getInputValue() { return inputValue; }
 
     public Operations getOperations() {
         return operations;

@@ -38,8 +38,7 @@ public class Operations {
                     return 1 / currentValue;
                 }
             case "exp":
-                // testing stub
-                return -1000.0;
+                return Math.pow(currentValue, inputValue);
             case "clear":
                 return 0.0;
             default:
@@ -50,6 +49,7 @@ public class Operations {
     public String getAvailableOperations() {
         return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\n" +
                 "SQUARE: square    SQUARE ROOT: sqrt    INVERSE: inv\n" +
+                "EXP: exp" +
                 "EXIT: exit    CLEAR: clear\n";
     }
 }

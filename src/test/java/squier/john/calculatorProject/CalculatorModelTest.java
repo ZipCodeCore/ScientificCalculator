@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.Double.NaN;
+
 /**
  * Created by johnsquier on 1/14/17.
  */
@@ -34,9 +36,76 @@ public class CalculatorModelTest {
     }
 
     @Test
+    public void getInputValueTest() {
+        double expected = 0.0;
+        double actual = calculatorModel.getInputValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void setInputValueTest() {
+        double expected = 100.0;
+        calculatorModel.setInputValue(100.0);
+        double actual = calculatorModel.getInputValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
     public void getOperationsTest() {
         Operations expected = new Operations();
         Operations actual = calculatorModel.getOperations();
         Assert.assertEquals(expected.getClass(), actual.getClass());
+    }
+
+    @Test
+    public void hasOneArgumentTestTrue() {
+        boolean actual = calculatorModel.hasOneArgument(new String[1]);
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void hasOneArgumentTestFalse() {
+        boolean actual = calculatorModel.hasOneArgument(new String[2]);
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void hasTwoArgumentsTestTrue() {
+        boolean actual = calculatorModel.hasTwoArguments(new String[2]);
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void hasTwoArgumentsTestFalse() {
+        boolean actual = calculatorModel.hasTwoArguments(new String[1]);
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void isArgDoubleTestTrue() {
+        boolean actual = calculatorModel.isArgDouble("2");
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void isArgDoubleTestFalse() {
+        boolean actual = calculatorModel.isArgDouble("+");
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void resetInputValueTest() {
+        double expected = 0.0;
+        calculatorModel.resetInputValue();
+        double actual = calculatorModel.getInputValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void setErrorStateTest() {
+        double expected = NaN;
+        calculatorModel.setErrorState();
+        double actual = calculatorModel.getCurrentValue();
+        Assert.assertEquals(expected, actual, delta);
     }
 }
