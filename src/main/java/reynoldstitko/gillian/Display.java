@@ -9,10 +9,12 @@ public class Display {
     private Double currentDisplayValue;
 
     public void setCurrentDisplayValue(Double currentDisplayValue) {
+
         this.currentDisplayValue = currentDisplayValue;
     }
 
     public Double getCurrentDisplayValue() {
+
         return currentDisplayValue;
     }
 
