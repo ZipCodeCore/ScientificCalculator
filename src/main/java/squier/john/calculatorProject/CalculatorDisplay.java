@@ -6,9 +6,9 @@ package squier.john.calculatorProject;
 public class CalculatorDisplay {
 
 
-    public void displayCurrentState(double currentValue) {
+    public void displayCurrentState(String currentValue) {
         System.out.printf("\n\n-----------------\n");
-        System.out.printf("CURRENT VALUE: %f\n", currentValue);
+        System.out.printf("CURRENT VALUE: %s\n", currentValue);
     }
 
     public void displayAvailableOperations(String availableOperations) {
@@ -19,6 +19,8 @@ public class CalculatorDisplay {
 
     public void displayInputPrompt() {
         System.out.printf("INPUT IN THE FORM:<operation> <number>\n");
+        System.out.printf("                  <operation>\n");
+        System.out.printf("                  <number>\n");
         System.out.printf(">>>> ");
     }
 }

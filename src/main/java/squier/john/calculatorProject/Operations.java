@@ -7,7 +7,7 @@ public class Operations {
 
     public double performCalculation(String operation, double currentValue, double inputValue) {
 
-        switch( operation ) {
+        switch( operation.toLowerCase() ) {
             case "+":
                 return currentValue + inputValue;
             case "-":
@@ -18,6 +18,10 @@ public class Operations {
             case "\\":
                 // check for zero
                 return currentValue / inputValue;
+            case "square":
+                return currentValue * currentValue;
+            case "squareroot":
+                return Math.sqrt(currentValue);
             case "clear":
                 return 0.0;
             default:
@@ -26,6 +30,8 @@ public class Operations {
     }
 
     public String getAvailableOperations() {
-        return " ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\nEXIT: exit    CLEAR: clear";
+        return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\n" +
+                "SQUARE: square    SQUARE ROOT: squareRoot\n" +
+                "EXIT: exit    CLEAR: clear\n";
     }
 }

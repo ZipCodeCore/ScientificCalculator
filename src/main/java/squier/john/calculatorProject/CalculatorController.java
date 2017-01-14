@@ -26,7 +26,7 @@ public class CalculatorController {
 
         while ( !splitUserInput[0].equalsIgnoreCase("exit") ) {
 
-            double currentValue = calculatorModel.getCurrentValue();
+            String currentValue = Double.toString(calculatorModel.getCurrentValue());
             calculatorDisplay.displayCurrentState(currentValue);
 
             calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
