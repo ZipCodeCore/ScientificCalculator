@@ -34,9 +34,12 @@ public class OperationSelector {
                 exitConditionMet = false;
                 return exitConditionMet;
 
-            case 'b':
+            case 'b': //break operation indicator
                 exitConditionMet = true;
                 return exitConditionMet;
+
+            case 'm':
+
 
             default:
                 exitConditionMet = true;

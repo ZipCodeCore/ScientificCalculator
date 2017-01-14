@@ -7,6 +7,7 @@ public class CalculatorEngine {
     Double currentValue;
     char operatorCode;
     Double outputValue;
+    Double memoryValue;
     Boolean exitConditionMet = false;
 
 
