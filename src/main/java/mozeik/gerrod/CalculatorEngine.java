@@ -6,23 +6,39 @@ package mozeik.gerrod;
  */
 public class CalculatorEngine {
 
-    Double currentValue;
-    Double previousValue;
-    Double memoryValue;
-    char operatorCode;
-    Double outputValue;
+    static double initialValue;
+    static double currentValue;
+    static double calculatedValue;
+    static String operatorCode;
 
     public void startEngine() {
-
         Display display = new Display();
-        currentValue = display.getCurrentValue();
+        display.getInitialValue();
+        System.out.println(initialValue);
 
-        System.out.println("Display: " + currentValue);
-        operatorCode = display.getOperatorCode();
+        display.getCurrentValue();
+        System.out.println(currentValue);
 
-        OperationSelector operationSelector = new OperationSelector();
-        outputValue = operationSelector.sendValueToOperation(currentValue, operatorCode);
-        display.showOutputValue(outputValue);
+        display.getOperatorCode();
+        System.out.println(operatorCode);
+
+        CalculatorBasicFunctions calculatorBasicFunctions = new CalculatorBasicFunctions();
+        switch (operatorCode) {
+            case "add":
+                calculatorBasicFunctions.calculateAddition(initialValue, currentValue);
+                break;
+            case "subtract":
+                calculatorBasicFunctions.calculateSubtraction(initialValue, currentValue);
+                break;
+            case "multiply":
+                calculatorBasicFunctions.calculateMultiplication(initialValue, currentValue);
+                break;
+            case "divide":
+                calculatorBasicFunctions.calculateDivision(initialValue, currentValue);
+                break;
+        }
+
+        display.showOutputValue(calculatedValue);
 
     }
 

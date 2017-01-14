@@ -6,10 +6,12 @@ import java.util.Scanner;
  * Created by gerrodmozeik on 1/13/17.
  */
 public class Display {
-
-    Double currentValue;
-    char operatorCode;
     Scanner scanner = new Scanner(System.in);
+
+    public void getInitialValue() {
+        System.out.println("Enter a number.");
+        CalculatorEngine.initialValue = scanner.nextDouble();
+    }
 
     public Display() {
         this.clearDisplay();
@@ -20,17 +22,17 @@ public class Display {
     }
 
     public Double getCurrentValue() {
-        currentValue = scanner.nextDouble();
-        return currentValue;
+        System.out.println("Enter another number.");
+        return CalculatorEngine.currentValue = scanner.nextDouble();
     }
 
     public void sendErrorMessage() {
         System.out.println("ERR");
     }
 
-    public char getOperatorCode() {
-        operatorCode = scanner.next().charAt(0);
-        return operatorCode;
+    public String getOperatorCode() {
+        System.out.println("add/subtract/divide/multiply?");
+        return CalculatorEngine.operatorCode = scanner.next();
     }
 
     public void showOutputValue(double outputValue) {

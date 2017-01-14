@@ -6,9 +6,7 @@ package mozeik.gerrod;
 public class CalculatorProject {
 
     public static void main(String[] ars) {
-
         CalculatorEngine calculatorEngine = new CalculatorEngine();
         calculatorEngine.startEngine();
-
     }
 }
