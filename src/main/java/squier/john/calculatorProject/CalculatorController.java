@@ -1,9 +1,5 @@
 package squier.john.calculatorProject;
 
-import javax.naming.NameNotFoundException;
-
-import static java.lang.Double.NaN;
-
 /**
  * Created by johnsquier on 1/13/17.
  */
