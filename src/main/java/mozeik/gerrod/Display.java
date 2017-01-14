@@ -10,7 +10,7 @@ public class Display {
 
     static public void getInitialValue() {
         System.out.println("Enter a number.");
-        CalculatorEngine.initialValue = scanner.nextDouble();
+        CalculatorBasicFunctions.initialValue = scanner.nextDouble();
         getOperatorCode();
         getCurrentValue();
     }
@@ -21,15 +21,14 @@ public class Display {
 
     static public void getCurrentValue() {
         System.out.println("Enter another number.");
-        CalculatorEngine.currentValue = scanner.nextDouble();
-        Choice.pickChoice(CalculatorEngine.operatorCode);
+        CalculatorBasicFunctions.currentValue = scanner.nextDouble();
+        Choice.pickChoice(CalculatorBasicFunctions.operatorCode);
     }
 
     static public void getOperatorCode() {
         System.out.println("add/subtract/divide/multiply/clear?");
-        CalculatorEngine.operatorCode = scanner.next();
-        if (CalculatorEngine.operatorCode.equals("clear")) {
-            System.out.println("Clear Message Received");
+        CalculatorBasicFunctions.operatorCode = scanner.next();
+        if (CalculatorBasicFunctions.operatorCode.equals("clear")) {
             getInitialValue();
         }
 
@@ -40,11 +39,11 @@ public class Display {
     }
 
     static public void displayAfterCalculating() {
-        CalculatorEngine.initialValue = CalculatorEngine.calculatedValue;
-        System.out.println(CalculatorEngine.calculatedValue);
+        CalculatorBasicFunctions.initialValue = CalculatorBasicFunctions.calculatedValue;
+        System.out.println(CalculatorBasicFunctions.calculatedValue);
         System.out.println("add/subtract/divide/multiply/clear?");
-        CalculatorEngine.operatorCode = scanner.next();
-        if (CalculatorEngine.operatorCode.equals("clear")) {
+        CalculatorBasicFunctions.operatorCode = scanner.next();
+        if (CalculatorBasicFunctions.operatorCode.equals("clear")) {
             getInitialValue();
         }
     }
