@@ -189,5 +189,9 @@ public class OperationsTest {
     }
 
     @Test
-    public void testPerformCalculationClear
+    public void testPerformCalculationClear() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("clear", 10.0, 10.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
 }
