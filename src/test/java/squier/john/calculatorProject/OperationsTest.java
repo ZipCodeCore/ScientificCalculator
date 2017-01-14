@@ -189,6 +189,49 @@ public class OperationsTest {
     }
 
     @Test
+    public void testPerformCalculationExponentiationPositive() {
+        double expected = 4.0;
+        double actual = operations.performCalculation("exp", 2.0, 2.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationExponentiationBothArgsNegative() {
+        double expected = -0.25;
+        double actual = operations.performCalculation("exp", -2.0, -2.0);
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testPerformCalculationExponentiationOneArgNegOneArgPos() {
+        double expected = -4.0;
+        double actual  = operations.performCalculation("exp", -2.0, 2.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationExponentiationOneArgPosOneArgNeg() {
+        double expected = 0.25;
+        double actual = operations.performCalculation("exp", 2.0, -2.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationExponentiationBaseZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("exp", 0.0, 2.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerforCalculationExponentiationMantissaZero() {
+        double expected = 1.0;
+        double actual = operations.performCalculation("exp", 2.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
     public void testPerformCalculationClear() {
         double expected = 0.0;
         double actual = operations.performCalculation("clear", 10.0, 10.0);

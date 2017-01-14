@@ -37,6 +37,9 @@ public class Operations {
                 else {
                     return 1 / currentValue;
                 }
+            case "exp":
+                // testing stub
+                return -1000.0;
             case "clear":
                 return 0.0;
             default:
