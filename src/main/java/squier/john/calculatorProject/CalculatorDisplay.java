@@ -7,11 +7,13 @@ public class CalculatorDisplay {
 
 
     public void displayCurrentState(double currentValue) {
+        System.out.printf("\n\n-----------------\n");
         System.out.printf("CURRENT VALUE: %f\n", currentValue);
     }
 
     public void displayAvailableOperations(String availableOperations) {
         System.out.printf("\nOPERATIONS AVAILABLE\n");
+        System.out.printf("--------------------\n");
         System.out.println(availableOperations);
     }
 
