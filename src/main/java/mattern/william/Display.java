@@ -26,7 +26,7 @@ public class Display {
     }
 
     public void getOperatorCode(){
-        System.out.println("Give me an operation - add - mulitply - subtract - divide");
+        System.out.println("Give me an operation - add - mulitply - subtract - divide  - exit");
         CalculatorEngine.operatorCode = scanner.next();
     }
 
