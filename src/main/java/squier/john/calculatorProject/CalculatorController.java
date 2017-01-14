@@ -9,10 +9,10 @@ import static java.lang.Double.NaN;
  */
 public class CalculatorController {
 
-    CalculatorInput calculatorInput;
-    CalculatorDisplay calculatorDisplay;
-    CalculatorModel calculatorModel;
-    CalculatorParser calculatorParser;
+    private CalculatorInput calculatorInput;
+    private CalculatorDisplay calculatorDisplay;
+    private CalculatorModel calculatorModel;
+    private CalculatorParser calculatorParser;
 
     public CalculatorController() {
         calculatorInput = new CalculatorInput();
@@ -23,15 +23,17 @@ public class CalculatorController {
 
     public void runCalculator() {
 
-        //boolean keepLooping = true; change loop condition
-        String[] splitUserInput = new String[2];
+        //boolean keepLooping = true; change loop condition to something more elegant
+        String[] splitUserInput = new String[3];
         splitUserInput[0] = "";
         splitUserInput[1] = "";
+        splitUserInput[2] = "";
 
-        while ( !splitUserInput[0].equalsIgnoreCase("exit") ) {
+        while (!splitUserInput[0].equalsIgnoreCase("exit")) {
 
             String currentValue;
-            if ( Double.isNaN(calculatorModel.getCurrentValue()) ) {
+
+            if (Double.isNaN(calculatorModel.getCurrentValue())) {
                 currentValue = "Err";
             }
             else {
@@ -47,13 +49,7 @@ public class CalculatorController {
 
             splitUserInput = calculatorParser.parseUserInput(userInput);
 
-            if ( (splitUserInput.length == 0)
-                    || (splitUserInput.length > 2)) {
-                // handle error case
-            }
-            else {
-                calculatorModel.updateState(splitUserInput);
-            }
+            calculatorModel.updateState(splitUserInput);
         }
     }
 }

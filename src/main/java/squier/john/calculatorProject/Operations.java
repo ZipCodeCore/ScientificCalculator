@@ -25,6 +25,7 @@ public class Operations {
                     return currentValue / inputValue;
                 }
             case "square":
+                System.out.println("Squareing");
                 return currentValue * currentValue;
             case "sqrt":
             case "squareroot":
@@ -40,7 +41,7 @@ public class Operations {
             case "clear":
                 return 0.0;
             default:
-                return currentValue;
+                return NaN;
         }
     }
 
