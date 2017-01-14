@@ -7,19 +7,22 @@ public class CalculatorEngine {
     Double currentValue;
     char operatorCode;
     Double outputValue;
+    Boolean exitConditionMet = false;
 
 
     public void StartEngine(){
-        Display display = new Display();
-        currentValue = display.getCurrentValue();
 
-        System.out.println("Display: " + currentValue);
-        operatorCode = display.getOperatorCode();
+        while(!exitConditionMet) {
+            Display display = new Display();
+            currentValue = display.getCurrentValue();
 
-        OperationSelector operationSelector = new OperationSelector();
-        operationSelector.sendValueToOperation(currentValue,operatorCode);
+            System.out.println("Display: " + currentValue);
+            operatorCode = display.getOperatorCode();
+
+            OperationSelector operationSelector = new OperationSelector();
+            exitConditionMet = operationSelector.sendValueToOperation(currentValue, operatorCode);
+        }
 
 
     }
-
 }
