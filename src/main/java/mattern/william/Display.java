@@ -1,31 +1,33 @@
 package mattern.william;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  * Created by williammattern on 1/13/17.
  */
 public class Display {
-    Double currentValue;
-    char operatorCode;
     Scanner scanner = new Scanner(System.in);
 
-    public Display(){
-        this.clearDisplay();
+    public void clearDisplay() throws IOException {
+        CalculatorEngine.initialValue = 0;
+        System.out.println(CalculatorEngine.initialValue);
+        Runtime.getRuntime().exec("clear");
     }
 
-    public void clearDisplay(){
-        System.out.println("0");
+    public void getInitialValue(){
+        System.out.println("give me a number");
+        CalculatorEngine.initialValue = scanner.nextDouble();
     }
 
-    public Double getCurrentValue() {
-        currentValue = scanner.nextDouble();
-        return currentValue;
+    public void getCurrentValue() {
+        System.out.println("give me another number");
+        CalculatorEngine.currentValue = scanner.nextDouble();
     }
 
-    public char getOperatorCode(){
-        operatorCode = scanner.next().charAt(0);
-        return operatorCode;
+    public void getOperatorCode(){
+        System.out.println("Give me an operation - add - mulitply - subtract - divide");
+        CalculatorEngine.operatorCode = scanner.next();
     }
 
     public void showOutputValue(Double outputValue){

@@ -4,47 +4,40 @@ package mattern.william;
  * Created by williammattern on 1/13/17.
  */
 public class OperationSelector {
-    Double currentValue;
-    char operatorCode;
-    Boolean exitConditionMet;
+    public static Double outputValue;
+    public static char operatorCode;
+    public static Double inputValue;
 
-    public Boolean sendValueToOperation(Double currentValue, char operatorCode){
+/*
+    public Double callOperation(){
+        System.out.println("Display: " + outputValue);
         switch (operatorCode){
             case 'q' :
                 Square square = new Square();
-                this.currentValue = currentValue;
-                this.operatorCode = operatorCode;
-                square.getSquare(currentValue);
-                exitConditionMet = false;
-                return exitConditionMet;
+                square.getSquare();
 
             case 'r':
                 SquareRoot squareRoot = new SquareRoot();
                 this.currentValue = currentValue;
                 this.operatorCode = operatorCode;
-                squareRoot.getSquareRoot(currentValue);
-                exitConditionMet = false;
-                return exitConditionMet;
+                outputValue = squareRoot.getSquareRoot();
+                return outputValue;
 
             case 'i':
                 Invert invert = new Invert();
                 this.currentValue = currentValue;
                 this.operatorCode = operatorCode;
-                invert.getInverse(currentValue);
-                exitConditionMet = false;
-                return exitConditionMet;
+                outputValue = invert.getInverse();
+                return outputValue;
 
             case 'b': //break operation indicator
-                exitConditionMet = true;
-                return exitConditionMet;
-
-            case 'm':
-
+                System.exit(0);
+                return 0.0;
 
             default:
-                exitConditionMet = true;
-                return exitConditionMet;
+                return 0.0;
+
 
         }
-    }
+    }*/
 }
