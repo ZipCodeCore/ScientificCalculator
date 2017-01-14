@@ -5,7 +5,7 @@ package reynoldstitko.gillian;
  */
 public class Controller {
 
-    private CalculatorModel calculatorModel;
+    private SimpleCalculationsModel simpleCalculationsModel;
     private Display displayModel;
     private UserInterface userInterface;
     private String operand;
@@ -16,18 +16,20 @@ public class Controller {
         //Clear the display
         displayModel.clearDisplay();
 
-        //Get first user input value
+        //Get first user operand value
         inputValue = userInterface.captureUserInputValue(userInterface.setUserInputValue());
+
+        //Get the first number value
 
         //Update the display
         displayModel.setCurrentDisplayValue(userInterface.setUserInputValue());
 
         //Get operand
-        operand = userInterface.captureOperandValue(userInterface.setUserOperandValue());
-        if (operand.equals("^"))
-            calculatorModel.performUnaryOperation(inputValue, '^');
-        if (operand.equals("s"))
-            calculatorModel.performUnaryOperation(inputValue, 's');
+//        operand = userInterface.captureOperandValue(userInterface.setUserOperandValue());
+//        if (operand.equals("^"))
+//            simpleCalculationsModel.performUnaryOperation(inputValue, '^');
+//        if (operand.equals("s"))
+//            simpleCalculationsModel.performUnaryOperation(inputValue, 's');
 
         //Do operation (Model)
 

@@ -14,7 +14,7 @@ public class UserInterface {
 
     public Double captureUserInputValue(Double inputValue) {
         System.out.print("Input your first value: ");
-        return inputValue;
+        return inputValue = scanner.nextDouble();
     }
 
     public Double setUserInputValue(){
