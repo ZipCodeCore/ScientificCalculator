@@ -62,5 +62,60 @@ public class CalculatorModel {
         inputValue = 0.0;
     }
 
+    public void updateStateRefactor(String[] splitUserInput) {
 
+        if ( hasOneArgument(splitUserInput) ) {
+
+            if ( isArgDouble(splitUserInput[0]) ) {
+                currentValue = updateCalculatorWithNumber();
+            }
+            else {
+                currentValue = updateCalculatorWithNoArgOperation(splitUserInput[0]);
+            }
+
+        }
+        else if ( hasTwoArguments(splitUserInput) ) {
+
+            if ( isArgDouble(splitUserInput[1]) ) {
+                currentValue =
+            }
+        }
+        else {
+            setErrorState();
+        }
+    }
+
+    public boolean hasOneArgument(String[] input) {
+        return (input.length == 1);
+    }
+
+    public boolean hasTwoArguments(String[] input) {
+        return (input.length == 2);
+    }
+
+    public boolean isArgDouble(String input) {
+        try {
+            inputValue = Double.parseDouble(input);
+            return true;
+        }
+        catch ( NumberFormatException e ) {
+            return false;
+        }
+    }
+
+    public double updateCalculatorWithNumber() {
+        return operations.performCalculation("+", 0.0, inputValue);
+    }
+
+    public double updateCalculatorWithNoArgOperation(String operation) {
+        return operations.performCalculation(operation, currentValue, 0.0);
+    }
+
+    public double updateCalculatorWithOperationAndArg(String operation) {
+
+    }
+
+    public void setErrorState() {
+        currentValue = NaN;
+    }
 }
