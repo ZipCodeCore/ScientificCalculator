@@ -7,6 +7,7 @@ package mozeik.gerrod;
 public class CalculatorEngine {
 
     Double currentValue;
+    Double memoryValue;
     char operatorCode;
     Double outputValue;
     Boolean exitConditionMet = false;

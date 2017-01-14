@@ -32,9 +32,11 @@ public class OperationSelector {
                 inverse.getInverse(currentValue);
                 exitConditionMet = false;
                 return exitConditionMet;
-            case 'b':
+            case 'b': //break
                 exitConditionMet = true;
                 return exitConditionMet;
+            case 'm': //M+
+
             default:
                 exitConditionMet = true;
                 return exitConditionMet;
