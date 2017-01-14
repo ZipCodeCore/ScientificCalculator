@@ -7,23 +7,22 @@ package mozeik.gerrod;
 public class CalculatorEngine {
 
     Double currentValue;
+    Double previousValue;
     Double memoryValue;
     char operatorCode;
     Double outputValue;
-    Boolean exitConditionMet = false;
 
     public void startEngine() {
 
-        while(!exitConditionMet) {
-            Display display = new Display();
-            currentValue = display.getCurrentValue();
+        Display display = new Display();
+        currentValue = display.getCurrentValue();
 
-            System.out.println("Display: " + currentValue);
-            operatorCode = display.getOperatorCode();
+        System.out.println("Display: " + currentValue);
+        operatorCode = display.getOperatorCode();
 
-            OperationSelector operationSelector = new OperationSelector();
-            exitConditionMet = operationSelector.sendValueToOperation(currentValue, operatorCode);
-        }
+        OperationSelector operationSelector = new OperationSelector();
+        outputValue = operationSelector.sendValueToOperation(currentValue, operatorCode);
+        display.showOutputValue(outputValue);
 
     }
 

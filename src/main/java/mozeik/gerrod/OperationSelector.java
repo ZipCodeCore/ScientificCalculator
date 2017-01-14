@@ -6,40 +6,42 @@ package mozeik.gerrod;
 public class OperationSelector {
 
     Double currentValue;
+    Double outputValue;
     char operatorCode;
-    Boolean exitConditionMet;
 
-    public Boolean sendValueToOperation(Double currentValue, char operatorCode) {
+    public Double sendValueToOperation(Double currentValue, char operatorCode) {
         switch (operatorCode) {
             case 'q': //Square
                 Square square = new Square();
                 this.currentValue = currentValue;
                 this.operatorCode = operatorCode;
-                square.getSquare(currentValue);
-                exitConditionMet = false;
-                return exitConditionMet;
+                outputValue = square.getSquare(currentValue);
+                return outputValue;
+
             case 'r': //Square Root
                 SquareRoot squareRoot = new SquareRoot();
                 this.currentValue = currentValue;
                 this.operatorCode = operatorCode;
-                squareRoot.getSquareRoot(currentValue);
-                exitConditionMet = false;
-                return exitConditionMet;
+                outputValue = squareRoot.getSquareRoot(currentValue);
+                return outputValue;
+
             case 'i': //Inverse
                 Inverse inverse = new Inverse();
                 this.currentValue = currentValue;
                 this.operatorCode = operatorCode;
                 inverse.getInverse(currentValue);
-                exitConditionMet = false;
-                return exitConditionMet;
+                outputValue = inverse.getInverse(currentValue);
+                return outputValue;
+
             case 'b': //break
-                exitConditionMet = true;
-                return exitConditionMet;
-            case 'm': //M+
+                System.exit(0);
+                return 0.0;
+
+            /*case 'm': //M+*/
 
             default:
-                exitConditionMet = true;
-                return exitConditionMet;
+                System.exit(0);
+                return 0.0;
         }
 
     }
