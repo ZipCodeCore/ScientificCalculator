@@ -31,7 +31,7 @@ public class Display {
     }
 
     public String getOperatorCode() {
-        System.out.println("add/subtract/divide/multiply?");
+        System.out.println("add/subtract/divide/multiply/end?");
         return CalculatorEngine.operatorCode = scanner.next();
     }
 
