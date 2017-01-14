@@ -25,7 +25,6 @@ public class Operations {
                     return currentValue / inputValue;
                 }
             case "square":
-                System.out.println("Squareing");
                 return currentValue * currentValue;
             case "sqrt":
             case "squareroot":
