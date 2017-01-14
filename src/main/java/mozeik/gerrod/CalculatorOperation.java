@@ -6,5 +6,5 @@ package mozeik.gerrod;
 public class CalculatorOperation {
 
     Double inputValue;
-    Double outpu
+    Double outputValue;
 }
