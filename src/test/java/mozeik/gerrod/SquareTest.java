@@ -7,6 +7,8 @@ import static org.junit.Assert.*;
 /**
  * Created by gerrodmozeik on 1/13/17.
  */
+
+/*
 public class SquareTest {
     @Test
     public void getSquare() {
@@ -16,4 +18,4 @@ public class SquareTest {
         assertEquals("I expect the square of 5 to be 25", expected, actual);
     }
 
-}
+}*/

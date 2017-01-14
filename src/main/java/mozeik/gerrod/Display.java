@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Display {
 
     Double currentValue;
+    char operatorCode;
     Scanner scanner = new Scanner(System.in);
 
     public Display() {
@@ -25,6 +26,15 @@ public class Display {
 
     public void sendErrorMessage() {
         System.out.println("ERR");
+    }
+
+    public char getOperatorCode() {
+        operatorCode = scanner.next().charAt(0);
+        return operatorCode;
+    }
+
+    public void showOutputValue(double outputValue) {
+        System.out.println(outputValue);
     }
 
 }
