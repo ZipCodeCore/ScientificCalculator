@@ -35,7 +35,7 @@ public class OperationsTest {
     }
 
     @Test
-    public void testPerformCalculationAddditionZero() {
+    public void testPerformCalculationAdditionZero() {
         double expected = 0.0;
         double actual = operations.performCalculation("+", 0.0, 0.0);
         Assert.assertEquals(expected, actual, delta);
