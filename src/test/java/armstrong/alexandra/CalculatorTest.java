@@ -60,7 +60,7 @@ public class CalculatorTest {
     @Test
     public void multiplyTest(){
         calc.setDisplay(2);
-        calc.multiply(2);
+        calc.multiply(2.0d);
         double expected = 4;
         double actual = calc.getDisplay();
         assertEquals(expected, actual, 0);
@@ -76,8 +76,13 @@ public class CalculatorTest {
     }
 
     @Test
-    @Ignore
-    public void percentTest(){}
+    public void percentTest(){
+        calc.setDisplay(50);
+        calc.percent();
+        double expected = 0.5d;
+        double actual = calc.getDisplay();
+        assertEquals(expected, actual, 0);
+    }
 
     @Test
     public void squareTest(){
@@ -98,8 +103,13 @@ public class CalculatorTest {
     }
 
     @Test
-    @Ignore
-    public void exponent(){}
+    public void exponent(){
+        calc.setDisplay(2);
+        calc.exponent(2);
+        double expected = 4;
+        double actual = calc.getDisplay();
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void inverse(){
@@ -111,27 +121,34 @@ public class CalculatorTest {
     }
 
     @Test
-    @Ignore
-    public void invertSignOfDisplay(){}
+    public void invertSignOfDisplay(){
+        calc.setDisplay(2);
+        calc.invertSignOfDisplay();
+        double expected = -2d;
+        double actual = calc.getDisplay();
+        assertEquals(expected, actual, 0);
+    }
 
     @Test
     public void getErrorTest(){
-        double expected = 0;
-        double actual = calc.getError();
+        String expected = null;
+        String actual = calc.getError();
         assertEquals(expected, actual);
     }
 
     @Test
     public void errorDisplay(){
-        double expected = 0;
-        double actual = calc.getError();
+        calc.errorDisplay();
+        String expected = "Err";
+        String actual = calc.getError();
         assertEquals(expected, actual);
     }
 
     @Test
     public void clearError(){
-        double expected = 0;
-        double actual = calc.getError();
+        calc.clearError();
+        String expected = null;
+        String actual = calc.getError();
         assertEquals(expected, actual);
 
     }

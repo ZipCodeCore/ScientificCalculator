@@ -3,6 +3,11 @@ package armstrong.alexandra;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import static armstrong.alexandra.DisplayMode.*;
+import static armstrong.alexandra.Notation.*;
+import static armstrong.alexandra.TrigUnit.*;
+
+import java.awt.*;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -44,48 +49,127 @@ public class ScientificCalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void getModeTest(){
+        DisplayMode expected = DECIMAL;
+        DisplayMode actual = sciCalc.getMode();
+        assertEquals(expected, actual);
+    }
 
     @Test
-    @Ignore
-    public void switchDisplayModeTest(){}
+    public void switchDisplayModeTest(){
+        sciCalc.switchDisplayMode();
+        sciCalc.switchDisplayMode();
+        DisplayMode expected = BINARY;
+        DisplayMode actual = sciCalc.getMode();
+        assertEquals(expected, actual);
+    }
 
     @Test
-    @Ignore
-    public void switchDisplayModeStringTest(){}
+    public void switchDisplayModeInputTest(){
+        sciCalc.switchDisplayMode(OCTAL);
+        DisplayMode expected = OCTAL;
+        DisplayMode actual   = sciCalc.getMode();
+        assertEquals(expected, actual);
+    }
 
     @Test
-    @Ignore
-    public void toggleScientificNotationTest(){}
+    public void getNotationTest(){
+        Notation expected = STANDARD;
+        Notation actual = sciCalc.getNotation();
+        assertEquals(actual, expected);
+    }
 
     @Test
-    @Ignore
-    public void sineTest(){}
+    public void toggleScientificNotationTest(){
+        sciCalc.toggleScientificNotation();
+        Notation expected = SCIENTIFIC;
+        Notation actual = sciCalc.getNotation();
+        assertEquals(actual, expected);
+    }
 
     @Test
-    @Ignore
-    public void cosineTest(){}
+    public void toggleScientificNotationWithInputTest(){
+        sciCalc.toggleScientificNotation(SCIENTIFIC);
+        Notation expected = SCIENTIFIC;
+        Notation actual = sciCalc.getNotation();
+        assertEquals(actual, expected);
+    }
+
 
     @Test
-    @Ignore
-    public void tangentTest(){}
+    public void sineTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.sine();
+        double expected = Math.sin(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0d);
+    }
 
     @Test
-    @Ignore
-    public void inverseSineTest(){}
+    public void cosineTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.cosine();
+        double expected = Math.cos(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0d);}
 
     @Test
-    @Ignore
-    public void inverseCosineTest(){}
+    public void tangentTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.tangent();
+        double expected = Math.tan(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0d);
+    }
 
     @Test
-    @Ignore
-    public void inverseTangentTest(){}
+    public void inverseSineTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.inverseSine();
+        double expected = 1d / Math.sin(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0d);
+    }
 
     @Test
-    @Ignore
-    public void switchUnitsModeTest(){}
+    public void inverseCosineTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.inverseCosine();
+        double expected = 1d / Math.cos(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0d);
+    }
 
     @Test
-    @Ignore
-    public void switchUnitsModeStringTest(){}
+    public void inverseTangentTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.inverseTangent();
+        double expected = 1 / Math.tan(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0d);
+    }
+
+    @Test
+    public void getTrigUnits(){
+        TrigUnit expected = DEGREES;
+        TrigUnit actual = sciCalc.getTrigUnit();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void switchTrigUnitsModeTest(){
+        sciCalc.switchTrigUnitsMode();
+        TrigUnit expected = RADIANS;
+        TrigUnit actual = sciCalc.getTrigUnit();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void switchTrigUnitsModeInputTest(){
+        sciCalc.switchTrigUnitsMode(RADIANS);
+        TrigUnit expected = RADIANS;
+        TrigUnit actual = sciCalc.getTrigUnit();
+        assertEquals(expected, actual);
+    }
 }
