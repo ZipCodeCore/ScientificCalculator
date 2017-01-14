@@ -34,18 +34,18 @@ public class Display {
 
     }
 
-    static public void showOutputValue(double outputValue) {
-        System.out.println(outputValue);
-    }
-
     static public void displayAfterCalculating() {
         CalculatorBasicFunctions.initialValue = CalculatorBasicFunctions.calculatedValue;
         System.out.println(CalculatorBasicFunctions.calculatedValue);
         System.out.println("add/subtract/divide/multiply/clear?");
         CalculatorBasicFunctions.operatorCode = scanner.next();
         if (CalculatorBasicFunctions.operatorCode.equals("clear")) {
-            getInitialValue();
+            Display.clearDisplay();
         }
+    }
+
+    public static void displayErrorMessage() {
+        System.out.println("ERR");
     }
 
 }

@@ -24,7 +24,8 @@ public class CalculatorBasicFunctions {
 
     static public double calculateDivision(double firstNumber, double secondNumber) {
         if (secondNumber == 0.0) {
-            return 0.0;
+            Display.displayErrorMessage();
+            return 0;
         } else {
             return calculatedValue = firstNumber / secondNumber;
         }
