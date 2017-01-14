@@ -18,14 +18,16 @@ public class Display {
     double memory = 0;
     String command;
     public DisplayMode currentMode = DisplayMode.DECIMAL;
-    boolean errorStatus = false;
+    boolean notError = true;
     double answer;
-    ArrayList<String> commandList = new ArrayList<String>(Arrays.asList("ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "POWER", "FACTORIAL", "SQUARE", "SQUAREROOT", "INVERSE", "SINE", "COSINE", "TANGENT", "INVERSESIN", "INVERSECOS", "INVERSETAN", "LOG", "INVERSELOG", "LN", "INVERSELN");
+    ArrayList<String> commandList = new ArrayList<String>(Arrays.asList("ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "POWER", "FACTORIAL", "SQUARE", "SQUAREROOT", "INVERSE", "SINE", "COSINE", "TANGENT", "INVERSESIN", "INVERSECOS", "INVERSETAN", "LOG", "INVERSELOG", "LN", "INVERSELN"));
 
     public void run() {
         Calculator calc = new Calculator();
         UserInterface UI = new UserInterface();
-        System.out.println("What would you like to do? CALCULATE  CHANGE DISPLAY");
+        System.out.println("What would you like to do? 1) CALCULATE  2) CHANGE DISPLAY");
+        // Change display commands
+
         firstValue = UI.getNumInput();
         command = UI.getCommandInput();
         if (commandList.indexOf(command) < 5) {
@@ -34,8 +36,7 @@ public class Display {
         } else {
             answer = calc.evaluate(command, firstValue);
         }
-
-
+        display(answer);
     }
 
     public String display(double input) {
