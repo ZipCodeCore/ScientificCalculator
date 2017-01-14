@@ -5,7 +5,12 @@ package mattern.william;
  */
 public class CalculatorBasicFunctions {
 
+    String choice = CalculatorEngine.operatorCode;
+
+
+
     static public double calculateAddition(double firstNumber, double secondNumber){
+
         return CalculatorEngine.calculatedValue =  firstNumber + secondNumber;
     }
 
@@ -24,5 +29,4 @@ public class CalculatorBasicFunctions {
             return CalculatorEngine.calculatedValue = firstNumber / secondNumber;
         }
     }
-
 }

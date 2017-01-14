@@ -7,31 +7,45 @@ import java.util.Scanner;
  * Created by williammattern on 1/13/17.
  */
 public class Display {
-    Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
-    public void clearDisplay() throws IOException {
-        CalculatorEngine.initialValue = 0;
-        System.out.println(CalculatorEngine.initialValue);
-        Runtime.getRuntime().exec("clear");
+    public void clearDisplay(){
+        getInitialValue();
     }
 
-    public void getInitialValue(){
+    static public void getInitialValue(){
         System.out.println("give me a number");
         CalculatorEngine.initialValue = scanner.nextDouble();
+        getOperatorCode();
+        getCurrentValue();
     }
 
-    public void getCurrentValue() {
+    static public void getCurrentValue() {
         System.out.println("give me another number");
         CalculatorEngine.currentValue = scanner.nextDouble();
+        Choice.pickChoice(CalculatorEngine.operatorCode);
     }
 
-    public void getOperatorCode(){
-        System.out.println("Give me an operation - add - mulitply - subtract - divide  - exit");
+    static public void getOperatorCode(){
+        System.out.println("Give me an operation - add - mulitply - subtract - divide  - clear");
         CalculatorEngine.operatorCode = scanner.next();
+        if (CalculatorEngine.operatorCode.equals("clear")){
+            getInitialValue();
+        }
     }
 
-    public void showOutputValue(Double outputValue){
+    static public void showOutputValue(Double outputValue){
         System.out.println(outputValue);
+    }
+
+    static public void displayAfterCalculating(){
+        CalculatorEngine.initialValue = CalculatorEngine.calculatedValue;
+        System.out.println(CalculatorEngine.calculatedValue);
+        System.out.println("Give me an operation - add - mulitply - subtract - divide  - clear");
+        CalculatorEngine.operatorCode = scanner.next();
+        if (CalculatorEngine.operatorCode.equals("clear")){
+            getInitialValue();
+        }
     }
 
     public void sendErrorMessage(){
