@@ -33,22 +33,12 @@ public class CalculatorModel {
 
         if ( hasOneArgument(splitUserInput) ) {
 
-            if ( isArgDouble(splitUserInput[0]) ) {
-                currentValue = resetCalculatorWithNumber();
-            }
-            else {
-                currentValue = updateCalculatorWithNoArgOperation(splitUserInput[0]);
-            }
+            handleOneArgInput(splitUserInput[0]);
 
         }
         else if ( hasTwoArguments(splitUserInput) ) {
 
-            if ( isArgDouble(splitUserInput[1]) ) {
-                currentValue = updateCalculatorWithOperationAndNumber(splitUserInput[0]);
-            }
-            else {
-                setErrorState();
-            }
+            handleTwoArgInput(splitUserInput);
 
         }
         else {
@@ -64,6 +54,24 @@ public class CalculatorModel {
 
     public boolean hasTwoArguments(String[] input) {
         return (input.length == 2);
+    }
+
+    public void handleOneArgInput(String input) {
+        if ( isArgDouble(input) ) {
+            currentValue = resetCalculatorWithNumber();
+        }
+        else {
+            currentValue = updateCalculatorWithNoArgOperation(input);
+        }
+    }
+
+    public void handleTwoArgInput(String[] input) {
+        if ( isArgDouble(input[1]) ) {
+            currentValue = updateCalculatorWithOperationAndNumber(input[0]);
+        }
+        else {
+            setErrorState();
+        }
     }
 
     public boolean isArgDouble(String input) {
