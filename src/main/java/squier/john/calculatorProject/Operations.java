@@ -1,5 +1,7 @@
 package squier.john.calculatorProject;
 
+import static java.lang.Double.NaN;
+
 /**
  * Created by johnsquier on 1/13/17.
  */
@@ -16,22 +18,35 @@ public class Operations {
                 return currentValue * inputValue;
             case "/":
             case "\\":
-                // check for zero
-                return currentValue / inputValue;
+                if ( inputValue == 0 ) {
+                    return NaN;
+                }
+                else {
+                    return currentValue / inputValue;
+                }
             case "square":
                 return currentValue * currentValue;
+            case "sqrt":
             case "squareroot":
                 return Math.sqrt(currentValue);
+            case "inv":
+            case "inverse":
+                if ( currentValue == 0 ) {
+                    return NaN;
+                }
+                else {
+                    return 1 / currentValue;
+                }
             case "clear":
                 return 0.0;
             default:
-                return 1.0;
+                return currentValue;
         }
     }
 
     public String getAvailableOperations() {
         return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\n" +
-                "SQUARE: square    SQUARE ROOT: squareRoot\n" +
+                "SQUARE: square    SQUARE ROOT: sqrt    INVERSE: inv\n" +
                 "EXIT: exit    CLEAR: clear\n";
     }
 }

@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.Double.NaN;
+
 /**
  * Created by johnsquier on 1/13/17.
  */
@@ -110,6 +112,20 @@ public class OperationsTest {
     }
 
     @Test
+    public void testPerformCalculationDivisionZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("/", 0.0, 10.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationDivisionByZero() {
+        double expected = NaN;
+        double actual = operations.performCalculation("\\", 10.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
     public void testPerformCalculationSquarePositive() {
         double expected = 4.0;
         double actual = operations.performCalculation("square", 2.0, 2.0);
@@ -122,4 +138,56 @@ public class OperationsTest {
         double actual = operations.performCalculation("square", -2.0, -2.0);
         Assert.assertEquals(expected, actual, delta);
     }
+
+    @Test
+    public void testPerformCalculationSquareZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("square", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationSqrtPositive() {
+        double expected = 4.0;
+        double actual = operations.performCalculation("squareroot", 16.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationSqrtNegative() {
+        double expected = NaN;
+        double actual = operations.performCalculation("sqrt", -10.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationSqrtZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("sqrt", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationInversePositive() {
+        double expected = 0.5;
+        double actual = operations.performCalculation("inv", 2.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationInverseNegative() {
+        double expected = -0.5;
+        double actual = operations.performCalculation("inverse", -2.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationInverseZero() {
+        double expected = NaN;
+        double actual = operations.performCalculation("inverse", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationClear
 }

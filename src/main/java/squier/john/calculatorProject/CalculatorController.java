@@ -1,5 +1,9 @@
 package squier.john.calculatorProject;
 
+import javax.naming.NameNotFoundException;
+
+import static java.lang.Double.NaN;
+
 /**
  * Created by johnsquier on 1/13/17.
  */
@@ -26,7 +30,14 @@ public class CalculatorController {
 
         while ( !splitUserInput[0].equalsIgnoreCase("exit") ) {
 
-            String currentValue = Double.toString(calculatorModel.getCurrentValue());
+            String currentValue;
+            if ( Double.isNaN(calculatorModel.getCurrentValue()) ) {
+                currentValue = "Err";
+            }
+            else {
+                currentValue = Double.toString(calculatorModel.getCurrentValue());
+            }
+
             calculatorDisplay.displayCurrentState(currentValue);
 
             calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());

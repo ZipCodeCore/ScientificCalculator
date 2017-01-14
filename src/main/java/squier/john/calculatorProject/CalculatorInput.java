@@ -8,10 +8,8 @@ import java.util.Scanner;
 public class CalculatorInput {
 
     private Scanner scanner;
-    private String userInput;
 
     public CalculatorInput() {
-        userInput = "";
         scanner = new Scanner(System.in);
     }
 
