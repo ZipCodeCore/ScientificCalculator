@@ -30,6 +30,74 @@ public class CalculatorModel {
     }
 
     public void updateState(String[] splitUserInput) {
+
+        if ( hasOneArgument(splitUserInput) ) {
+
+            if ( isArgDouble(splitUserInput[0]) ) {
+                currentValue = resetCalculatorWithNumber();
+            }
+            else {
+                currentValue = updateCalculatorWithNoArgOperation(splitUserInput[0]);
+            }
+
+        }
+        else if ( hasTwoArguments(splitUserInput) ) {
+
+            if ( isArgDouble(splitUserInput[1]) ) {
+                currentValue = updateCalculatorWithOperationAndNumber(splitUserInput[0]);
+            }
+            else {
+                setErrorState();
+            }
+
+        }
+        else {
+            setErrorState();
+        }
+
+        resetInputValue();
+    }
+
+    public boolean hasOneArgument(String[] input) {
+        return (input.length == 1);
+    }
+
+    public boolean hasTwoArguments(String[] input) {
+        return (input.length == 2);
+    }
+
+    public boolean isArgDouble(String input) {
+        try {
+            inputValue = Double.parseDouble(input);
+            return true;
+        }
+        catch ( NumberFormatException e ) {
+            return false;
+        }
+    }
+
+    public double resetCalculatorWithNumber() {
+        return operations.performCalculation("+", 0.0, inputValue);
+    }
+
+    public double updateCalculatorWithNoArgOperation(String operation) {
+        return operations.performCalculation(operation, currentValue, 0.0);
+    }
+
+    public double updateCalculatorWithOperationAndNumber(String operation) {
+        return operations.performCalculation(operation, currentValue, inputValue);
+    }
+
+    public void resetInputValue() {
+        inputValue = 0.0;
+    }
+
+    public void setErrorState() {
+        currentValue = NaN;
+    }
+
+    /* Old version of updateState, ugly and hard to read, love ya Uncle Bob!
+    public void updateStateDeprecated(String[] splitUserInput) {
         if (splitUserInput.length == 1) {
             // check if the first arg is a double
             try {
@@ -61,61 +129,5 @@ public class CalculatorModel {
 
         inputValue = 0.0;
     }
-
-    public void updateStateRefactor(String[] splitUserInput) {
-
-        if ( hasOneArgument(splitUserInput) ) {
-
-            if ( isArgDouble(splitUserInput[0]) ) {
-                currentValue = updateCalculatorWithNumber();
-            }
-            else {
-                currentValue = updateCalculatorWithNoArgOperation(splitUserInput[0]);
-            }
-
-        }
-        else if ( hasTwoArguments(splitUserInput) ) {
-
-            if ( isArgDouble(splitUserInput[1]) ) {
-                currentValue =
-            }
-        }
-        else {
-            setErrorState();
-        }
-    }
-
-    public boolean hasOneArgument(String[] input) {
-        return (input.length == 1);
-    }
-
-    public boolean hasTwoArguments(String[] input) {
-        return (input.length == 2);
-    }
-
-    public boolean isArgDouble(String input) {
-        try {
-            inputValue = Double.parseDouble(input);
-            return true;
-        }
-        catch ( NumberFormatException e ) {
-            return false;
-        }
-    }
-
-    public double updateCalculatorWithNumber() {
-        return operations.performCalculation("+", 0.0, inputValue);
-    }
-
-    public double updateCalculatorWithNoArgOperation(String operation) {
-        return operations.performCalculation(operation, currentValue, 0.0);
-    }
-
-    public double updateCalculatorWithOperationAndArg(String operation) {
-
-    }
-
-    public void setErrorState() {
-        currentValue = NaN;
-    }
+*/
 }
