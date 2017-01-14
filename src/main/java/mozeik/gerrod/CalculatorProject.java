@@ -7,8 +7,10 @@ public class CalculatorProject {
     static boolean exitConditionMet = false;
 
     public static void main(String[] ars) {
-        CalculatorEngine calculatorEngine = new CalculatorEngine();
-        calculatorEngine.startEngine();
-        calculatorEngine.runEngine();
+        Display.getInitialValue();
+        //CalculatorEngine calculatorEngine = new CalculatorEngine();
+        //calculatorEngine.startEngine();
+        //while (!exitConditionMet) {
+        //   calculatorEngine.runEngine();
     }
 }

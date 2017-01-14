@@ -10,17 +10,16 @@ public class CalculatorEngine {
     static double currentValue;
     static double calculatedValue;
     static String operatorCode;
+    Display display = new Display();
 
     public void startEngine() {
-        Display display = new Display();
+
         display.getInitialValue();
-        System.out.println(initialValue);
-
         display.getOperatorCode();
-        System.out.println(operatorCode);
-
         display.getCurrentValue();
-        System.out.println(currentValue);
+        if (operatorCode.equals("clear")){
+            display.clearDisplay();
+        }
 
         CalculatorBasicFunctions calculatorBasicFunctions = new CalculatorBasicFunctions();
         switch (operatorCode) {
@@ -36,6 +35,7 @@ public class CalculatorEngine {
             case "divide":
                 calculatorBasicFunctions.calculateDivision(initialValue, currentValue);
                 break;
+
         }
 
         display.showOutputValue(calculatedValue);
@@ -45,13 +45,8 @@ public class CalculatorEngine {
     public void runEngine() {
         Display display = new Display();
         this.initialValue = calculatedValue;
-        System.out.println(initialValue);
-
         display.getOperatorCode();
-        System.out.println(operatorCode);
-
         display.getCurrentValue();
-        System.out.println(currentValue);
 
         CalculatorBasicFunctions calculatorBasicFunctions = new CalculatorBasicFunctions();
         switch (operatorCode) {
@@ -66,6 +61,10 @@ public class CalculatorEngine {
                 break;
             case "divide":
                 calculatorBasicFunctions.calculateDivision(initialValue, currentValue);
+                break;
+            case "clear":
+                Display display1 = new Display();
+                display1.clearDisplay();
                 break;
         }
 

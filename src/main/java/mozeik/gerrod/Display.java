@@ -6,37 +6,47 @@ import java.util.Scanner;
  * Created by gerrodmozeik on 1/13/17.
  */
 public class Display {
-    Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
-    public void getInitialValue() {
+    static public void getInitialValue() {
         System.out.println("Enter a number.");
         CalculatorEngine.initialValue = scanner.nextDouble();
+        getOperatorCode();
+        getCurrentValue();
     }
 
-    public Display() {
-        this.clearDisplay();
+    static public void clearDisplay() {
+        getInitialValue();
     }
 
-    public void clearDisplay() {
-        System.out.println("0");
-    }
-
-    public Double getCurrentValue() {
+    static public void getCurrentValue() {
         System.out.println("Enter another number.");
-        return CalculatorEngine.currentValue = scanner.nextDouble();
+        CalculatorEngine.currentValue = scanner.nextDouble();
+        Choice.pickChoice(CalculatorEngine.operatorCode);
     }
 
-    public void sendErrorMessage() {
-        System.out.println("ERR");
+    static public void getOperatorCode() {
+        System.out.println("add/subtract/divide/multiply/clear?");
+        CalculatorEngine.operatorCode = scanner.next();
+        if (CalculatorEngine.operatorCode.equals("clear")) {
+            System.out.println("Clear Message Received");
+            getInitialValue();
+        }
+
     }
 
-    public String getOperatorCode() {
-        System.out.println("add/subtract/divide/multiply/end?");
-        return CalculatorEngine.operatorCode = scanner.next();
-    }
-
-    public void showOutputValue(double outputValue) {
+    static public void showOutputValue(double outputValue) {
         System.out.println(outputValue);
+    }
+
+    static public void displayAfterCalculating() {
+        CalculatorEngine.initialValue = CalculatorEngine.calculatedValue;
+        System.out.println(CalculatorEngine.calculatedValue);
+        System.out.println("add/subtract/divide/multiply/clear?");
+        CalculatorEngine.operatorCode = scanner.next();
+        if (CalculatorEngine.operatorCode.equals("clear")) {
+            getInitialValue();
+        }
     }
 
 }
