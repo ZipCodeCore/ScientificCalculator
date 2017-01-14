@@ -5,6 +5,7 @@ package reynoldstitko.gillian;
  */
 public class Display {
 
+    public Controller controller = new Controller();
     private Double currentDisplayValue;
 
     public void setCurrentDisplayValue(Double currentDisplayValue) {
@@ -18,5 +19,9 @@ public class Display {
     public void clearDisplay(){
         currentDisplayValue = 0.0;
         System.out.print(currentDisplayValue);
+    }
+
+    public void displayErrorMessage(){
+        System.out.print("ERR");
     }
 }
