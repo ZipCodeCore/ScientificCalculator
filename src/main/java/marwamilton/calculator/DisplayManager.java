@@ -2,6 +2,8 @@ package marwamilton.calculator;
 
 import java.util.Scanner;
 
+import static java.lang.System.*;
+
 /**
  * Created by mkulima on 1/13/17.
  */
@@ -11,26 +13,31 @@ public class DisplayManager {
 
 
     public void newCalculatorStartMessage(){
-        System.out.println();
-        System.out.println("Calculator is running.");
-        System.out.println("Please type desired operation: ");
-        System.out.println("____________________________________________________________________");
-        System.out.println();
+        out.println();
+        out.println("Calculator is running.");
+        out.println("Please type desired operation: ");
+        out.println("____________________________________________________________________");
+        out.println();
     }
 
     public void CalculatorMessage(String previousDisplayContents){
-        System.out.println("____________________________________________________________________");
-        System.out.println("Calculator is running");
-        System.out.println("The previous operation was: " + previousDisplayContents);
-        System.out.println("Please type desired operation: ");
-        System.out.println("____________________________________________________________________");
-        System.out.println();
+        out.println("____________________________________________________________________");
+        out.println("Calculator is running");
+        out.println("The previous operation was: " + previousDisplayContents);
+        out.println("Please type desired operation: ");
+        out.println("____________________________________________________________________");
+        out.println();
     }
 
     public String getUserInput(){
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(in);
         String desiredOperation = scan.nextLine();
+        //scan.close();
         return desiredOperation;
+    }
+
+    public void displayOperationResult(String[] nums, String operator, double operationResult){
+        out.println(nums[0] + " " + operator + " " + nums[1]+ " = " + operationResult);
     }
 
 }
