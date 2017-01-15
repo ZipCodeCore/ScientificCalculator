@@ -17,6 +17,7 @@ public class CalculatorController {
         calculatorParser = new CalculatorParser();
     }
 
+    // REFACTOR: this whole method needs broken up just like model
     public void runCalculator() {
 
         //boolean keepLooping = true; change loop condition to something more elegant
@@ -25,6 +26,7 @@ public class CalculatorController {
         splitUserInput[1] = "";
         splitUserInput[2] = "";
 
+        // "game" loop
         while (!splitUserInput[0].equalsIgnoreCase("exit")) {
 
             String currentValue;
@@ -41,21 +43,38 @@ public class CalculatorController {
             // fill memory value
             memoryValue = Double.toString(calculatorModel.getMemoryValue());
 
+            // update display
             calculatorDisplay.displayCurrentState(currentValue, memoryValue, calculatorModel.getDisplayMode());
-
             calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
             calculatorDisplay.displayInputPrompt();
 
+            // put user input into a string array
             String userInput = calculatorInput.getUserInput();
-
             splitUserInput = calculatorParser.parseUserInput(userInput);
 
+            // handle special operations
             if ( splitUserInput[0].equalsIgnoreCase("sdm") ) {
                 calculatorModel.setDisplayMode(calculatorModel.getDisplayMode().advanceDisplayMode());
             }
+            // update memory
             else if ( splitUserInput[0].equalsIgnoreCase("M+") ) {
-                calculatorModel.setMemoryValue(calculatorModel.getCurrentValue());
+                // if currentValue is NaN don't update memory
+                if ( Double.isNaN(calculatorModel.getCurrentValue()) ) {
+                    // do nothing in this case
+                }
+                else {
+                    calculatorModel.setMemoryValue(calculatorModel.getCurrentValue());
+                }
             }
+            // clear memory
+            else if ( splitUserInput[0].equalsIgnoreCase("MC") ) {
+                calculatorModel.setMemoryValue(0.0);
+            }
+            // recall memory
+            else if ( splitUserInput[0].equalsIgnoreCase("MRC") ) {
+                calculatorModel.setCurrentValue(calculatorModel.getMemoryValue());
+            }
+            // handle math operations
             else {
                 calculatorModel.updateState(splitUserInput);
             }

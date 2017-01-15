@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.Double.NEGATIVE_INFINITY;
 import static java.lang.Double.NaN;
 
 /**
@@ -17,7 +18,7 @@ public class OperationsTest {
     @Before
     public void setup() {
         operations = new Operations();
-        delta = 0.00001;
+        delta = 0.00000001;
     }
 
     @Test
@@ -249,6 +250,195 @@ public class OperationsTest {
     public void testPerformCalculationNegateZero() {
         double expected = 0.0;
         double actual = operations.performCalculation("neg", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationSineZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("sin", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationSineNinety() {
+        double expected = 1.0;
+        double actual = operations.performCalculation("sin", 90.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationSineTwoSeventy() {
+        double expected = -1.0;
+        double actual = operations.performCalculation("sin", 270.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArcsineNegativeOne() {
+        double expected = -90.0;
+        double actual = operations.performCalculation("asin", -1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArcsineOne() {
+        double expected = 90.0;
+        double actual = operations.performCalculation("asin", 1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArcsineError() {
+        double expected = NaN;
+        double actual = operations.performCalculation("asin", -100.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationCosineZero() {
+        double expected = 1.0;
+        double actual = operations.performCalculation("cos", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationCosineNinety() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("cos", 90.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationCosineOneEighty() {
+        double expected = -1.0;
+        double actual = operations.performCalculation("cos", 180.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArcosineNegativeOne() {
+        double expected = 180.0;
+        double actual = operations.performCalculation("acos", -1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArcosineOne() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("acos", 1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArcosineError() {
+        double expected = NaN;
+        double actual = operations.performCalculation("acos", -100.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationTanZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("tan", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationTanOneEighty() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("tan", 180.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArctanZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("atan", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationArctanOne() {
+        double expected = 45.0;
+        double actual = operations.performCalculation("atan", 1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformLogZero() {
+        double expected = NaN;
+        double actual = operations.performCalculation("log", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformLogOne() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("log", 1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformLogOneHundred() {
+        double expected = 2.0;
+        double actual = operations.performCalculation("log", 100.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformInverseLogNegativeOne() {
+        double expected = 0.1;
+        double actual = operations.performCalculation("10^x", -1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformInverseLogZero() {
+        double expected = 1.0;
+        double actual = operations.performCalculation("10^x", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformInverseLogOne() {
+        double expected = 10.0;
+        double actual = operations.performCalculation("10^x", 1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformNaturalLogZero() {
+        double expected = NaN;
+        double actual = operations.performCalculation("ln", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformNaturalLogOne() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("ln", 1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformInverseNaturalLogNegativeOne() {
+        double expected = 1/Math.E;
+        double actual = operations.performCalculation("e^x", -1.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformInverseNaturalLogZero() {
+        double expected = 1.0;
+        double actual = operations.performCalculation("e^x", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformInverseNaturalLogOne() {
+        double expected = Math.E;
+        double actual = operations.performCalculation("e^x", 1.0, 0.0);
         Assert.assertEquals(expected, actual, delta);
     }
 

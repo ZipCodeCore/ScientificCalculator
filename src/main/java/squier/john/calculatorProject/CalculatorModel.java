@@ -90,6 +90,7 @@ public class CalculatorModel {
         }
     }
 
+    // can probably just set currentValue = 0.0 without calling operations at all
     public double resetCalculatorWithNumber() {
         return operations.performCalculation("+", 0.0, inputValue);
     }

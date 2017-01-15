@@ -5,7 +5,7 @@ package squier.john.calculatorProject;
  */
 public enum DisplayModes { DECIMAL, HEXADECIMAL;
     public DisplayModes advanceDisplayMode() {
-        if ( this.name().equalsIgnoreCase("BINARY") ) {
+        if ( this.name().equalsIgnoreCase("HEXADECIMAL") ) {
             return DECIMAL;
         }
         else {
