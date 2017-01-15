@@ -6,29 +6,31 @@ package reynoldstitko.gillian;
 
 public class SimpleCalculationsModel {
 
-    public Controller controller = new Controller();
+    //public Controller controller = new Controller();
+    public UserInterface userInterface = new UserInterface();
 
 
-    public Double addition(Double inputValue, Double displayValue) {
-        return displayValue + inputValue;
+    public Double addition(Double inputFirstValue, Double inputSecondValue) {
+        return inputFirstValue + inputSecondValue;
     }
 
-    public Double subtraction(Double inputValue, Double displayValue) {
-        return displayValue - inputValue;
+    public Double subtraction(Double inputFirstValue, Double inputSecondValue) {
+
+        return inputFirstValue - inputSecondValue;
     }
 
-    public Double multiplication(Double inputValue, Double displayValue) {
-        return inputValue * displayValue;
+    public Double multiplication(Double inputFirstValue, Double inputSecondValue) {
+
+        return inputFirstValue * inputSecondValue;
     }
 
-public Double division(Double inputValue, Double displayValue) {
-    if (inputValue == 0) {
-        System.out.print("ERR");
-        return inputValue;
+    public Double division(Double inputFirstValue, Double inputSecondValue) {
+    if (inputSecondValue == 0) {
+        return 0.0;
         } else {
-
-        return displayValue / inputValue;
+        return inputFirstValue/inputSecondValue;
         }
     }
+
 
 }

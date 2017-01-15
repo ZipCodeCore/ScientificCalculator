@@ -6,6 +6,7 @@ package reynoldstitko.gillian;
 public class SquareRootCalculationModel {
 
     public Double squareRoot(Double displayValue) {
+
         return Math.sqrt(displayValue);
     }
 }

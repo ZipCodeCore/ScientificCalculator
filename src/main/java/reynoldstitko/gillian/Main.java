@@ -1,6 +1,5 @@
 package reynoldstitko.gillian;
 
-import java.util.Scanner;
 
 /**
  * Created by gillianreynolds-titko on 1/14/17.

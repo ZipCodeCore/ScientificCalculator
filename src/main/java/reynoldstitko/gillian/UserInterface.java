@@ -12,9 +12,10 @@ public class UserInterface {
     private Scanner scanner = new Scanner(System.in);
 
 
-    public Double captureUserInputValue(Double inputValue) {
-        System.out.print("Input your first value: ");
-        return inputValue = scanner.nextDouble();
+    //public Double captureUserInputValue(Double inputValue)
+    public Double captureUserInputValue() {
+        System.out.print("Input your number: ");
+        return userInputValue = scanner.nextDouble();
     }
 
     public Double setUserInputValue(){
@@ -23,11 +24,13 @@ public class UserInterface {
     }
 
     public String setUserOperandValue(){
+
         return operandValue = scanner.next();
     }
 
-    public String captureOperandValue(String operandValue) {
-        System.out.print("Input your operand (^, +, -, *, /, s (for sqrt))");
+    //public String captureOperandValue(String operandValue)
+    public String captureOperandValue() {
+        System.out.print("Input your operand (^, +, -, *, /, s (for sqrt)): ");
         return operandValue = scanner.next();
     }
 

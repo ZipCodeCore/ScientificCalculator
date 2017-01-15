@@ -5,7 +5,6 @@ package reynoldstitko.gillian;
  */
 public class Display {
 
-    public Controller controller = new Controller();
     private Double currentDisplayValue;
 
     public void setCurrentDisplayValue(Double currentDisplayValue) {

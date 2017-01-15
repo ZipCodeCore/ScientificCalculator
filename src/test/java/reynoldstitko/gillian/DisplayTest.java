@@ -14,6 +14,7 @@ public class DisplayTest {
 
     @Before
     public  void  setUp(){
+
         displayTest = new Display();
     }
 
