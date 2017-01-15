@@ -51,6 +51,21 @@ public class CalculatorModelTest {
     }
 
     @Test
+    public void getMemoryValueTest() {
+        double expected = 0.0;
+        double actual = calculatorModel.getMemoryValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void setMemoryValueTest() {
+        double expected = 100.0;
+        calculatorModel.setMemoryValue(100.0);
+        double actual = calculatorModel.getMemoryValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
     public void getDisplayModeTest() {
         DisplayModes expected = DisplayModes.DECIMAL;
         DisplayModes actual = calculatorModel.getDisplayMode();
@@ -59,10 +74,10 @@ public class CalculatorModelTest {
 
     @Test
     public void setDisplayModeTest() {
-        DisplayModes expected = DisplayModes.BINARY;
-        calculatorModel.setDisplayMode(DisplayModes.BINARY);
+        DisplayModes expected = DisplayModes.HEXADECIMAL;
+        calculatorModel.setDisplayMode(DisplayModes.HEXADECIMAL);
         DisplayModes actual = calculatorModel.getDisplayMode();
-        Assert.assertEquals("I expect actual to be BINARY", expected, actual);
+        Assert.assertEquals("I expect actual to be HEXADECIMAL", expected, actual);
     }
 
     @Test

@@ -9,12 +9,14 @@ public class CalculatorModel {
 
     private double currentValue;
     private double inputValue;
+    private double memoryValue;
     private DisplayModes displayMode = DisplayModes.DECIMAL;
     private Operations operations;
 
     public CalculatorModel() {
         currentValue = 0.0;
         inputValue = 0.0;
+        memoryValue = 0.0;
         operations = new Operations();
     }
 
@@ -28,6 +30,9 @@ public class CalculatorModel {
     public void setInputValue(double inputValue) { this. inputValue = inputValue; }
     public double getInputValue() { return inputValue; }
 
+    public void setMemoryValue(double memoryValue) { this.memoryValue = memoryValue; }
+    public double getMemoryValue() { return memoryValue; }
+
     public void setDisplayMode(DisplayModes displayMode) { this.displayMode = displayMode; }
     public DisplayModes getDisplayMode() { return displayMode; }
 
@@ -36,16 +41,11 @@ public class CalculatorModel {
     }
 
     public void updateState(String[] splitUserInput) {
-
         if ( hasOneArgument(splitUserInput) ) {
-
             handleOneArgInput(splitUserInput[0]);
-
         }
         else if ( hasTwoArguments(splitUserInput) ) {
-
             handleTwoArgInput(splitUserInput);
-
         }
         else {
             setErrorState();

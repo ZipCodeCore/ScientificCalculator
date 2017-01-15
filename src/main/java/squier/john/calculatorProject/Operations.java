@@ -52,6 +52,7 @@ public class Operations {
         return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\n" +
                 "SQUARE: square    SQUARE ROOT: sqrt    INVERSE: inv\n" +
                 "EXP: exp    NEGATE: neg    SWITCH DISPLAY MODE: sdm\n" +
+                "STORE IN MEMORY: M+\n" +
                 "EXIT: exit    CLEAR: clear\n";
     }
 }

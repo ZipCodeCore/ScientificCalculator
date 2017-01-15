@@ -10,13 +10,6 @@ import org.junit.Test;
 public class DisplayModesTest {
 
     @Test
-    public void testAdvanceDisplayModeBinary() {
-        DisplayModes expected = DisplayModes.DECIMAL;
-        DisplayModes actual = DisplayModes.BINARY.advanceDisplayMode();
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
     public void testAdvanceDisplayModeDecimal() {
         DisplayModes expected = DisplayModes.HEXADECIMAL;
         DisplayModes actual = DisplayModes.DECIMAL.advanceDisplayMode();
@@ -25,7 +18,7 @@ public class DisplayModesTest {
 
     @Test
     public void testAdvanceDispalyModeHexaDecimal() {
-        DisplayModes expected = DisplayModes.BINARY;
+        DisplayModes expected = DisplayModes.DECIMAL;
         DisplayModes actual = DisplayModes.HEXADECIMAL.advanceDisplayMode();
         Assert.assertEquals(expected, actual);
     }

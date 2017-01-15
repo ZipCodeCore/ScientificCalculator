@@ -28,7 +28,9 @@ public class CalculatorController {
         while (!splitUserInput[0].equalsIgnoreCase("exit")) {
 
             String currentValue;
+            String memoryValue;
 
+            // fill current value
             if (Double.isNaN(calculatorModel.getCurrentValue())) {
                 currentValue = "Err";
             }
@@ -36,7 +38,10 @@ public class CalculatorController {
                 currentValue = Double.toString(calculatorModel.getCurrentValue());
             }
 
-            calculatorDisplay.displayCurrentState(currentValue, calculatorModel.getDisplayMode());
+            // fill memory value
+            memoryValue = Double.toString(calculatorModel.getMemoryValue());
+
+            calculatorDisplay.displayCurrentState(currentValue, memoryValue, calculatorModel.getDisplayMode());
 
             calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
             calculatorDisplay.displayInputPrompt();
@@ -48,8 +53,12 @@ public class CalculatorController {
             if ( splitUserInput[0].equalsIgnoreCase("sdm") ) {
                 calculatorModel.setDisplayMode(calculatorModel.getDisplayMode().advanceDisplayMode());
             }
-
-            calculatorModel.updateState(splitUserInput);
+            else if ( splitUserInput[0].equalsIgnoreCase("M+") ) {
+                calculatorModel.setMemoryValue(calculatorModel.getCurrentValue());
+            }
+            else {
+                calculatorModel.updateState(splitUserInput);
+            }
         }
     }
 }

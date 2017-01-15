@@ -6,17 +6,17 @@ package squier.john.calculatorProject;
 public class CalculatorDisplay {
 
 
-    public void displayCurrentState(String currentValue, DisplayModes displayMode) {
+    public void displayCurrentState(String currentValue, String memoryValue, DisplayModes displayMode) {
         System.out.printf("\n\n-----------------\n");
 
-        if ( displayMode.equals(DisplayModes.BINARY) ) {
-            System.out.printf("CURRENT VALUE: %s\n", Double.doubleToLongBits(Double.parseDouble(currentValue)));
-        }
-        else if ( displayMode.equals(DisplayModes.DECIMAL) ) {
-            System.out.printf("CURRENT VALUE: %s\n", currentValue);
+        if ( displayMode.equals(DisplayModes.DECIMAL) ) {
+            System.out.printf("CURRENT VALUE: %s\tMEMORY VALUE: %s\n",
+                    currentValue, memoryValue);
         }
         else if ( displayMode.equals(DisplayModes.HEXADECIMAL) ) {
-            System.out.printf("CURRENT VALUE: %s\n", Double.toHexString(Double.parseDouble(currentValue)));
+            System.out.printf("CURRENT VALUE: %s\tMEMORY VALUE: %s\n",
+                    Double.toHexString(Double.parseDouble(currentValue)),
+                    Double.toHexString(Double.parseDouble(memoryValue)));
         }
     }
 
