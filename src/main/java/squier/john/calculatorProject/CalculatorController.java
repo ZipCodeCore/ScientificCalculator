@@ -44,7 +44,9 @@ public class CalculatorController {
             memoryValue = Double.toString(calculatorModel.getMemoryValue());
 
             // update display
-            calculatorDisplay.displayCurrentState(currentValue, memoryValue, calculatorModel.getDisplayMode());
+            calculatorDisplay.displayCurrentState(currentValue, memoryValue,
+                    calculatorModel.getDisplayMode(),
+                    calculatorModel.getTrigMode());
             calculatorDisplay.displayAvailableOperations();
             calculatorDisplay.displayInputPrompt();
 
@@ -53,11 +55,12 @@ public class CalculatorController {
             splitUserInput = calculatorParser.parseUserInput(userInput);
 
             // handle special operations
+            // switch display mode
             if ( splitUserInput[0].equalsIgnoreCase("sdm") ) {
                 calculatorModel.setDisplayMode(calculatorModel.getDisplayMode().advanceDisplayMode());
             }
             else if ( splitUserInput[0].equalsIgnoreCase("stu") ) {
-                // add in switch trig units
+                calculatorModel.setTrigMode(calculatorModel.getTrigMode().advanceTrigMode());
             }
             // update memory
             else if ( splitUserInput[0].equalsIgnoreCase("M+") ) {

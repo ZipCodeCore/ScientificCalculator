@@ -6,16 +6,25 @@ package squier.john.calculatorProject;
 public class CalculatorDisplay {
 
 
-    public void displayCurrentState(String currentValue, String memoryValue, DisplayModes displayMode) {
+    public void displayCurrentState(String currentValue, String memoryValue,
+                                    DisplayModes displayMode,
+                                    TrigModes trigMode) {
         displayPrettyLine();
-        displayCurrentValueLine(currentValue, displayMode);
+        displayCurrentValueLine(currentValue, displayMode, trigMode);
         displayPrettyLine();
-        displayMemoryValueLine(memoryValue, displayMode);
+        displayMemoryValueLine(memoryValue, displayMode, trigMode);
         displayPrettyLine();
     }
 
-    public void displayCurrentValueLine(String value, DisplayModes mode) {
-        if ( mode.equals(DisplayModes.DECIMAL) ) {
+    public void displayCurrentValueLine(String value, DisplayModes displayMode,
+                                        TrigModes trigMode) {
+
+        // probably shouldnt be in this class
+        if ( trigMode.equals(TrigModes.RADIANS) ) {
+            value = Double.toString(Math.toRadians(Double.parseDouble(value)));
+        }
+
+        if ( displayMode.equals(DisplayModes.DECIMAL) ) {
             System.out.printf("| CURRENT VALUE | %29s |\n", value);
         }
         else {
@@ -24,8 +33,14 @@ public class CalculatorDisplay {
         }
     }
 
-    public void displayMemoryValueLine(String value, DisplayModes mode) {
-        if ( mode.equals(DisplayModes.DECIMAL) ) {
+    public void displayMemoryValueLine(String value, DisplayModes dispalyMode,
+                                       TrigModes trigMode) {
+
+        if ( trigMode.equals(TrigModes.RADIANS) ) {
+            value = Double.toString(Math.toRadians(Double.parseDouble(value)));
+        }
+
+        if ( dispalyMode.equals(DisplayModes.DECIMAL) ) {
             System.out.printf("|  MEMORY VALUE | %29s |\n", value);
         }
         else {
@@ -33,6 +48,7 @@ public class CalculatorDisplay {
                     Double.toHexString(Double.parseDouble(value)));
         }
     }
+
     public void displayAvailableOperations() {
         System.out.printf("|   clear   |     MC    |     M+    |    MRC    |\n");
         displayPrettyLine();
