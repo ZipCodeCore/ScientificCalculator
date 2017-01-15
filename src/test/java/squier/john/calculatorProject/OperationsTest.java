@@ -443,6 +443,20 @@ public class OperationsTest {
     }
 
     @Test
+    public void testPerformCalculationFactorialZero() {
+        double expected = 0.0;
+        double actual = operations.performCalculation("!", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testPerformCalculationFactorialThree() {
+        double expected = 6.0;
+        double actual = operations.performCalculation("!", 3.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
     public void testPerformCalculationClear() {
         double expected = 0.0;
         double actual = operations.performCalculation("clear", 10.0, 10.0);

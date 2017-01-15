@@ -45,7 +45,7 @@ public class CalculatorController {
 
             // update display
             calculatorDisplay.displayCurrentState(currentValue, memoryValue, calculatorModel.getDisplayMode());
-            calculatorDisplay.displayAvailableOperations(calculatorModel.getOperations().getAvailableOperations());
+            calculatorDisplay.displayAvailableOperations();
             calculatorDisplay.displayInputPrompt();
 
             // put user input into a string array

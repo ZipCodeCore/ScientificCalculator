@@ -74,10 +74,30 @@ public class Operations {
                 }
             case "e^x":
                 return Math.pow(Math.E, currentValue);
+            case "!":
+                return factorial(Math.floor(currentValue));
             case "clear":
                 return 0.0;
             default:
                 return NaN;
+        }
+    }
+
+    public double factorial(double aNumber) {
+
+        double factorial = 1;
+
+        if ( aNumber > 0 ) {
+
+            for ( int i = 1; i <= aNumber; i++ ) {
+                factorial *= i;
+            }
+
+            return factorial;
+
+        }
+        else {
+            return 0;
         }
     }
 
@@ -86,12 +106,13 @@ public class Operations {
     public String getAvailableOperations() {
         return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\n" +
                 "SQUARE: square    SQUARE ROOT: sqrt    INVERSE: inv\n" +
-                "EXP: exp    NEGATE: neg    SWITCH DISPLAY MODE: sdm\n" +
+                "EXP: exp\tNEGATE: neg\tFACTORIAL: !\n" +
+                "SWITCH DISPLAY MODE: sdm\tSWITCH TRIG UNITS: stu\n" +
                 "SINE: sin\tSINE INV: asin\tCOSINE: cos\tCOSINE INV: acos\n" +
                 "TANGENT: tan\tTANGENT INV: atan\n" +
                 "LOG: log\t INVERSE LOG: 10^x\n" +
                 "NATURAL LOG: ln\tINVERSE NATUAL LOG: e^x\n" +
                 "STORE IN MEMORY: M+\tCLEAR MEMORY: MC\tRECALL FROM MEMORY: MRC\n" +
-                "EXIT: exit    CLEAR: clear\n";
+                "EXIT: exit\tCLEAR: clear\n";
     }
 }
