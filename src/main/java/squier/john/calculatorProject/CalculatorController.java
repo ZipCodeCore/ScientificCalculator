@@ -35,8 +35,7 @@ public class CalculatorController {
             // fill current value
             if (Double.isNaN(calculatorModel.getCurrentValue())) {
                 currentValue = "Err";
-            }
-            else {
+            } else {
                 currentValue = Double.toString(calculatorModel.getCurrentValue());
             }
 
@@ -45,46 +44,20 @@ public class CalculatorController {
 
             // update display
             calculatorDisplay.displayCurrentState(currentValue, memoryValue,
+                    calculatorModel.getDisplayMode());
+
+            calculatorDisplay.displayAvailableOperations(
                     calculatorModel.getDisplayMode(),
                     calculatorModel.getTrigMode());
-            calculatorDisplay.displayAvailableOperations();
+
             calculatorDisplay.displayInputPrompt();
 
             // put user input into a string array
             String userInput = calculatorInput.getUserInput();
             splitUserInput = calculatorParser.parseUserInput(userInput);
 
-            // handle special operations
-            // switch display mode
-            if ( splitUserInput[0].equalsIgnoreCase("sdm") ) {
-                calculatorModel.setDisplayMode(calculatorModel.getDisplayMode().advanceDisplayMode());
-            }
-            else if ( splitUserInput[0].equalsIgnoreCase("stu") ) {
-                calculatorModel.setTrigMode(calculatorModel.getTrigMode().advanceTrigMode());
-            }
-            // update memory
-            else if ( splitUserInput[0].equalsIgnoreCase("M+") ) {
-                // if currentValue is NaN don't update memory
-                if ( Double.isNaN(calculatorModel.getCurrentValue()) ) {
-                    // do nothing in this case
-                }
-                else {
-                    calculatorModel.setMemoryValue(calculatorModel.getMemoryValue()
-                                                    +calculatorModel.getCurrentValue());
-                }
-            }
-            // clear memory
-            else if ( splitUserInput[0].equalsIgnoreCase("MC") ) {
-                calculatorModel.setMemoryValue(0.0);
-            }
-            // recall memory
-            else if ( splitUserInput[0].equalsIgnoreCase("MRC") ) {
-                calculatorModel.setCurrentValue(calculatorModel.getMemoryValue());
-            }
-            // handle math operations
-            else {
-                calculatorModel.updateState(splitUserInput);
-            }
+            calculatorModel.updateState(splitUserInput);
         }
     }
 }
+

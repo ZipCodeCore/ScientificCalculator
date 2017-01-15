@@ -7,22 +7,15 @@ public class CalculatorDisplay {
 
 
     public void displayCurrentState(String currentValue, String memoryValue,
-                                    DisplayModes displayMode,
-                                    TrigModes trigMode) {
+                                    DisplayModes displayMode) {
         displayPrettyLine();
-        displayCurrentValueLine(currentValue, displayMode, trigMode);
+        displayCurrentValueLine(currentValue, displayMode);
         displayPrettyLine();
-        displayMemoryValueLine(memoryValue, displayMode, trigMode);
+        displayMemoryValueLine(memoryValue, displayMode);
         displayPrettyLine();
     }
 
-    public void displayCurrentValueLine(String value, DisplayModes displayMode,
-                                        TrigModes trigMode) {
-
-        // probably shouldnt be in this class
-        if ( trigMode.equals(TrigModes.RADIANS) ) {
-            value = Double.toString(Math.toRadians(Double.parseDouble(value)));
-        }
+    public void displayCurrentValueLine(String value, DisplayModes displayMode) {
 
         if ( displayMode.equals(DisplayModes.DECIMAL) ) {
             System.out.printf("| CURRENT VALUE | %29s |\n", value);
@@ -33,12 +26,7 @@ public class CalculatorDisplay {
         }
     }
 
-    public void displayMemoryValueLine(String value, DisplayModes dispalyMode,
-                                       TrigModes trigMode) {
-
-        if ( trigMode.equals(TrigModes.RADIANS) ) {
-            value = Double.toString(Math.toRadians(Double.parseDouble(value)));
-        }
+    public void displayMemoryValueLine(String value, DisplayModes dispalyMode) {
 
         if ( dispalyMode.equals(DisplayModes.DECIMAL) ) {
             System.out.printf("|  MEMORY VALUE | %29s |\n", value);
@@ -49,7 +37,8 @@ public class CalculatorDisplay {
         }
     }
 
-    public void displayAvailableOperations() {
+    public void displayAvailableOperations(DisplayModes displayMode,
+                                           TrigModes trigMode) {
         System.out.printf("|   clear   |     MC    |     M+    |    MRC    |\n");
         displayPrettyLine();
         System.out.printf("| + <input> | - <input> | * <input> | / <input> |\n");
@@ -62,7 +51,9 @@ public class CalculatorDisplay {
         displayPrettyLine();
         System.out.printf("|    cos    |    acos   |    tan    |   atan    |\n");
         displayPrettyLine();
-        System.out.printf("|    sdm    |    stu    |     pi    |    e      |\n");
+        System.out.printf("|  sdm (%s)  |  stu (%s)  |     pi    |    e      |\n",
+                displayMode.equals(DisplayModes.DECIMAL) ? "d" : "x",
+                trigMode.equals(TrigModes.DEGREES) ? "d" : "r");
         displayPrettyLine();
         System.out.printf("|                     exit                      |\n");
         displayPrettyLine();

@@ -7,7 +7,9 @@ import static java.lang.Double.NaN;
  */
 public class Operations {
 
-    public double performCalculation(String operation, double currentValue, double inputValue) {
+    public double performCalculation(String operation, double currentValue,
+                                     double inputValue,
+                                     TrigModes trigMode) {
 
         switch( operation.toLowerCase() ) {
             case "+":
@@ -18,10 +20,9 @@ public class Operations {
                 return currentValue * inputValue;
             case "/":
             case "\\":
-                if ( inputValue == 0 ) {
+                if (inputValue == 0) {
                     return NaN;
-                }
-                else {
+                } else {
                     return currentValue / inputValue;
                 }
             case "square":
@@ -31,10 +32,9 @@ public class Operations {
                 return Math.sqrt(currentValue);
             case "inv":
             case "inverse":
-                if ( currentValue == 0 ) {
+                if (currentValue == 0) {
                     return NaN;
-                }
-                else {
+                } else {
                     return 1 / currentValue;
                 }
             case "exp":
@@ -43,19 +43,47 @@ public class Operations {
                 return -currentValue;
             // need to determine if input is in rad or deg for these
             case "sin":
-                // sin is expecting radians
-                return Math.sin(Math.toRadians(currentValue));
+                if (trigMode.equals(TrigModes.RADIANS)) {
+                    return Math.sin(currentValue);
+                } else {
+                    // sin is expecting radians
+                    return Math.sin(Math.toRadians(currentValue));
+                }
             case "asin":
                 // recall asin 1 = 90degrees but asin returns rads
-                return Math.toDegrees(Math.asin(currentValue));
+                if (trigMode.equals(TrigModes.RADIANS)) {
+                    return Math.asin(currentValue);
+                } else {
+                    return Math.toDegrees(Math.asin(currentValue));
+                }
             case "cos":
-                return Math.cos(Math.toRadians(currentValue));
+                if (trigMode.equals(TrigModes.RADIANS)) {
+                    return Math.cos(currentValue);
+                }
+                else {
+                    return Math.cos(Math.toRadians(currentValue));
+                }
             case "acos":
-                return Math.toDegrees(Math.acos(currentValue));
+                if ( trigMode.equals(TrigModes.RADIANS) ) {
+                    return Math.acos(currentValue);
+                }
+                else {
+                    return Math.toDegrees(Math.acos(currentValue));
+                }
             case "tan":
-                return Math.tan(Math.toRadians(currentValue));
+                if ( trigMode.equals(TrigModes.RADIANS) ) {
+                    return Math.tan(currentValue);
+                }
+                else {
+                    return Math.tan(Math.toRadians(currentValue));
+                }
             case "atan":
-                return Math.toDegrees(Math.atan(currentValue));
+                if ( trigMode.equals(TrigModes.RADIANS) ) {
+                    return Math.atan(currentValue);
+                }
+                else {
+                    return Math.toDegrees(Math.atan(currentValue));
+                }
             case "log":
                 if ( currentValue <= 0.0 ) {
                     return NaN;
@@ -80,6 +108,7 @@ public class Operations {
                 return Math.PI;
             case "e":
                 return Math.E;
+            case "c":
             case "clear":
                 return 0.0;
             default:

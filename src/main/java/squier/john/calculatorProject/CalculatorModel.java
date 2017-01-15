@@ -53,6 +53,9 @@ public class CalculatorModel {
         else if ( hasTwoArguments(userInput) ) {
             handleTwoArgInput(userInput);
         }
+        else if ( hasThreeNumericArguments(userInput) ) {
+            System.out.println("solve quad");
+        }
         else {
             setErrorState();
         }
@@ -68,9 +71,23 @@ public class CalculatorModel {
         return (input.length == 2);
     }
 
+    public boolean hasThreeNumericArguments(String[] input) {
+        return (isArgDouble(input[0]) && isArgDouble(input[1])
+                && isArgDouble(input[2]));
+    }
+
     public void handleOneArgInput(String input) {
         if ( isArgDouble(input) ) {
-            currentValue = resetCalculatorWithNumber();
+            currentValue = inputValue;
+        }
+        else if ( isArgMemoryOperation(input) ) {
+            handleMemoryOperation(input);
+        }
+        else if ( isArgSwitchDisplayUnit(input) ) {
+            setDisplayMode(displayMode.advanceDisplayMode());
+        }
+        else if ( isArgSwitchTrigUnit(input) ) {
+            setTrigMode(trigMode.advanceTrigMode());
         }
         else {
             currentValue = updateCalculatorWithNoArgOperation(input);
@@ -88,6 +105,7 @@ public class CalculatorModel {
 
     public boolean isArgDouble(String input) {
         try {
+            // also sets input value, not good
             inputValue = Double.parseDouble(input);
             return true;
         }
@@ -96,17 +114,40 @@ public class CalculatorModel {
         }
     }
 
-    // can probably just set currentValue = 0.0 without calling operations at all
-    public double resetCalculatorWithNumber() {
-        return operations.performCalculation("+", 0.0, inputValue);
+    public boolean isArgMemoryOperation(String input) {
+        return ( input.equalsIgnoreCase("M+")
+                || input.equalsIgnoreCase("MC")
+                || input.equalsIgnoreCase("MRC") );
     }
 
+    public boolean isArgSwitchDisplayUnit(String input) {
+        return input.equalsIgnoreCase("sdu");
+    }
+
+    public boolean isArgSwitchTrigUnit(String input) {
+        return input.equalsIgnoreCase("stu");
+    }
+
+    public void handleMemoryOperation(String input) {
+        if ( input.equalsIgnoreCase("M+") ) {
+            memoryValue += currentValue;
+        }
+        else if ( input.equalsIgnoreCase("MC") ) {
+            memoryValue = 0.0;
+        }
+        //MRC
+        else {
+            currentValue = memoryValue;
+        }
+    }
     public double updateCalculatorWithNoArgOperation(String operation) {
-        return operations.performCalculation(operation, currentValue, 0.0);
+        return operations.performCalculation(operation, currentValue,
+                0.0, trigMode);
     }
 
     public double updateCalculatorWithOperationAndNumber(String operation) {
-        return operations.performCalculation(operation, currentValue, inputValue);
+        return operations.performCalculation(operation, currentValue,
+                inputValue, trigMode);
     }
 
     public void resetInputValue() {
