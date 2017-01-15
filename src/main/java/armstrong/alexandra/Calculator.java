@@ -48,11 +48,11 @@ public class Calculator {
     }
 
     public void square(){
-        display = getDisplay() * getDisplay();
+        exponent(2d);
     }
 
     public void squareRoot(){
-        display = Math.pow(getDisplay(), 0.5d);
+        exponent(0.5d);
     }
 
     public void exponent(double exponent){

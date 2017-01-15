@@ -13,11 +13,20 @@ public class ScientificCalculator extends Calculator{
     private DisplayMode mode;
     private TrigUnit trigUnit;
     private Notation notation;
+    private String hexDisplay;
 
     public ScientificCalculator(){
         mode = DECIMAL;
         trigUnit = DEGREES;
         notation = STANDARD;
+    }
+
+    public String getHexDisplay(){
+        return hexDisplay;
+    }
+
+    public void setHexDisplay(String hexDisplay){
+        this.hexDisplay = hexDisplay;
     }
 
     public double getMemory(){

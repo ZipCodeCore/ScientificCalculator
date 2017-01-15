@@ -40,15 +40,19 @@ public class CalculatorControllerTest {
 
     @Test
     public void convertToDecimalTest(){
+        calcCont.calc.switchDisplayMode(HEXADECIMAL);
+        calcCont.calc.setHexDisplay("2A");
         double expected = 42d;
-        double actual = calcCont.convertToDecimal("2A");
+        double actual = calcCont.convertToDecimal();
         assertEquals(expected, actual);
     }
 
     @Test
     public void convertToHexadecimalTest(){
+        calcCont.calc.switchDisplayMode(DECIMAL);
+        calcCont.calc.setDisplay(42);
         String expected = "2a";
-        String actual = calcCont.convertToHexadecimal(42);
+        String actual = calcCont.convertToHexadecimal();
         assertEquals(expected, actual);
     }
 
@@ -68,6 +72,7 @@ public class CalculatorControllerTest {
 
     @Test
     public void convertToRadiansTest(){
+        calcCont.calc.switchTrigUnitsMode(DEGREES);
         double expected = PI;
         double actual = calcCont.convertToRadians(180d);
         assertEquals(expected, actual, 1);
@@ -75,14 +80,17 @@ public class CalculatorControllerTest {
 
     @Test
     public void convertToDegreesTest(){
+        calcCont.calc.switchTrigUnitsMode(RADIANS);
         double expected = 180;
         double actual = calcCont.convertToDegrees(PI);
         assertEquals(expected, actual, 1);
     }
 
     @Test
+    @Ignore
     public void parseInputTest(){}
 
     @Test
+    @Ignore
     public void translateInputTest(){}
 }

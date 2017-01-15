@@ -17,4 +17,8 @@ public class InputHelper {
         return scanner.nextInt();
     }
 
+    public static Object blankScanner() {
+        return scanner.next();
+    }
+
 }
