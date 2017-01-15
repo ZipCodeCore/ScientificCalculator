@@ -25,23 +25,12 @@ public class Controller {
         displayModel.setCurrentDisplayValue(userInterface.setUserInputValue());
 
         //Get operand
-//        operand = userInterface.captureOperandValue(userInterface.setUserOperandValue());
-//        if (operand.equals("^"))
-//            simpleCalculationsModel.performUnaryOperation(inputValue, '^');
-//        if (operand.equals("s"))
-//            simpleCalculationsModel.performUnaryOperation(inputValue, 's');
 
         //Do operation (Model)
 
         //Update display
 
         }
-
-
-    public void captureErrorMessage(){
-        displayModel.displayErrorMessage();
-    }
-
 
 }
 

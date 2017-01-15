@@ -6,7 +6,6 @@ package reynoldstitko.gillian;
 
 public class SimpleCalculationsModel {
 
-    private Double result;
     public Controller controller = new Controller();
 
 

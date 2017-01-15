@@ -23,7 +23,4 @@ public class Display {
         System.out.print(currentDisplayValue);
     }
 
-    public void displayErrorMessage(){
-        System.out.print("ERR");
-    }
 }

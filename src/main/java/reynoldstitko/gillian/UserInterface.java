@@ -18,6 +18,7 @@ public class UserInterface {
     }
 
     public Double setUserInputValue(){
+
         return userInputValue = scanner.nextDouble();
     }
 
