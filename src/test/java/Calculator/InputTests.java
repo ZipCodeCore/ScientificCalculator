@@ -37,6 +37,7 @@ public class InputTests {
         Double actual = test.getSingleMemory();
         Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void setLeftValueTest(){
         Double expected = 1.0;
@@ -44,6 +45,7 @@ public class InputTests {
         Double actual = test.getLeftValue();
         Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void setRightValueTest (){
         Double expected = 1.0;
@@ -51,6 +53,7 @@ public class InputTests {
         Double actual = test.getRightValue();
         Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void setResultsSingleMemoryTest(){
         Double expected = 1.0;
@@ -58,6 +61,7 @@ public class InputTests {
         Double actual = test.getSingleMemory();
         Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void setResults(){
         Double expected = 1.0;
@@ -66,5 +70,12 @@ public class InputTests {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void getAndSetCommandTest(){
+        String expected = "complete";
+        test.setCommand("complete");
+        String actual = test.getCommand();
+        Assert.assertEquals(expected,actual);
+    }
 
 }

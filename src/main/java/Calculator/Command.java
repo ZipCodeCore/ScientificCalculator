@@ -18,9 +18,18 @@ public class Command {
     }
 
     public void requestFirstNumber(double input){
-            requestLine();
-            Input.setLeftValue(input);
+        requestLine();
+        Input.setLeftValue(input);
+    }
 
+    public void requestSecondNumber(double input){
+        requestLine();
+        Input.setRightValue(input);
+    }
+
+    public void requestCommand(String input){
+        requestLine();
+        Input.setCommand(input);
     }
 
 }

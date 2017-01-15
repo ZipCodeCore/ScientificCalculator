@@ -22,6 +22,8 @@ public class Input {
         return Storage.singleMemory;
     }
 
+    static public String getCommand() { return Storage.storeStringCommand; }
+
     static public void setLeftValue(double firstInput) {
         Storage.storeFirstInput = firstInput;
     }
@@ -29,6 +31,8 @@ public class Input {
     static public void setRightValue(double secondInput) {
         Storage.storeSecondInput = secondInput;
     }
+
+    static public void setCommand(String command) {Storage.storeStringCommand = command;}
 
     static public void setResults(double results) {
         Storage.singleMemory = results;
