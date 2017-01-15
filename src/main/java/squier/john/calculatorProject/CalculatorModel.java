@@ -1,5 +1,6 @@
 package squier.john.calculatorProject;
 
+import static java.lang.Double.MAX_EXPONENT;
 import static java.lang.Double.NaN;
 
 /**
@@ -54,7 +55,7 @@ public class CalculatorModel {
             handleTwoArgInput(userInput);
         }
         else if ( hasThreeNumericArguments(userInput) ) {
-            System.out.println("solve quad");
+            solveQuadratic(userInput);
         }
         else {
             setErrorState();
@@ -100,6 +101,19 @@ public class CalculatorModel {
         }
         else {
             setErrorState();
+        }
+    }
+
+    public void solveQuadratic(String[] input) {
+        double a = Double.parseDouble(input[0]);
+        double b = Double.parseDouble(input[1]);
+        double c = Double.parseDouble(input[2]);
+
+        double determinant = (b*b) - (4 * a * c);
+
+        if ( determinant >= 0 ) {
+            setCurrentValue(-b + Math.sqrt(determinant)/(2 * a));
+            setMemoryValue(-b - Math.sqrt(determinant)/(2 * a));
         }
     }
 

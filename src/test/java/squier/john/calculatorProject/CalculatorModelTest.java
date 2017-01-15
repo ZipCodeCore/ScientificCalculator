@@ -127,6 +127,20 @@ public class CalculatorModelTest {
     }
 
     @Test
+    public void hasThreeNumericArgumentsTestTrue() {
+        String[] input = {"1", "2", "3"};
+        boolean actual = calculatorModel.hasThreeNumericArguments(input);
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void hasThreeNumericArguemntsTestFalse() {
+        String[] input = {"1", "2", "a"};
+        boolean actual = calculatorModel.hasThreeNumericArguments(input);
+        Assert.assertFalse(actual);
+    }
+
+    @Test
     public void isArgDoubleTestTrue() {
         boolean actual = calculatorModel.isArgDouble("2");
         Assert.assertTrue(actual);
@@ -136,6 +150,38 @@ public class CalculatorModelTest {
     public void isArgDoubleTestFalse() {
         boolean actual = calculatorModel.isArgDouble("+");
         Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void isArgMemoryOperationTrue() {
+        boolean actual = calculatorModel.isArgMemoryOperation("M+");
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void isArgMemoryOperationFalse() {
+        boolean actual = calculatorModel.isArgMemoryOperation("+");
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void isArgSwitchDisplayUnitTrue() {
+        Assert.assertTrue(calculatorModel.isArgSwitchDisplayUnit("sdu"));
+    }
+
+    @Test
+    public void isArgSwitchDisplayUnitFalse() {
+        Assert.assertFalse(calculatorModel.isArgSwitchDisplayUnit("+"));
+    }
+
+    @Test
+    public void isArgSwitchTrigUnitTrue() {
+        Assert.assertTrue(calculatorModel.isArgSwitchTrigUnit("stu"));
+    }
+
+    @Test
+    public void isArgSwitchTrigUnitFalse() {
+        Assert.assertFalse(calculatorModel.isArgSwitchTrigUnit("+"));
     }
 
     @Test
