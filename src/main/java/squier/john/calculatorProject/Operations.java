@@ -76,6 +76,10 @@ public class Operations {
                 return Math.pow(Math.E, currentValue);
             case "!":
                 return factorial(Math.floor(currentValue));
+            case "pi":
+                return Math.PI;
+            case "e":
+                return Math.E;
             case "clear":
                 return 0.0;
             default:
@@ -99,20 +103,5 @@ public class Operations {
         else {
             return 0;
         }
-    }
-
-    // REFACTOR: change this to an array of strings, not a string,
-    // let the display class do the output formatting
-    public String getAvailableOperations() {
-        return "ADD: +    SUBTRACT: -    MULTIPLY: *    DIVIDE: /\n" +
-                "SQUARE: square    SQUARE ROOT: sqrt    INVERSE: inv\n" +
-                "EXP: exp\tNEGATE: neg\tFACTORIAL: !\n" +
-                "SWITCH DISPLAY MODE: sdm\tSWITCH TRIG UNITS: stu\n" +
-                "SINE: sin\tSINE INV: asin\tCOSINE: cos\tCOSINE INV: acos\n" +
-                "TANGENT: tan\tTANGENT INV: atan\n" +
-                "LOG: log\t INVERSE LOG: 10^x\n" +
-                "NATURAL LOG: ln\tINVERSE NATUAL LOG: e^x\n" +
-                "STORE IN MEMORY: M+\tCLEAR MEMORY: MC\tRECALL FROM MEMORY: MRC\n" +
-                "EXIT: exit\tCLEAR: clear\n";
     }
 }

@@ -8,19 +8,31 @@ public class CalculatorDisplay {
 
     public void displayCurrentState(String currentValue, String memoryValue, DisplayModes displayMode) {
         displayPrettyLine();
-
-        if (displayMode.equals(DisplayModes.DECIMAL)) {
-            System.out.printf("| MEMORY VALUE: %31s |\n| CURRENT VALUE(x): %27s |\n",
-                    currentValue, memoryValue);
-        } else {
-            System.out.printf("| MEMORY VALUE: %31s |\n| CURRENT VALUE(x): %27s |\n",
-                    Double.toHexString(Double.parseDouble(currentValue)),
-                    Double.toHexString(Double.parseDouble(memoryValue)));
-        }
-
+        displayCurrentValueLine(currentValue, displayMode);
+        displayPrettyLine();
+        displayMemoryValueLine(memoryValue, displayMode);
         displayPrettyLine();
     }
 
+    public void displayCurrentValueLine(String value, DisplayModes mode) {
+        if ( mode.equals(DisplayModes.DECIMAL) ) {
+            System.out.printf("| CURRENT VALUE | %29s |\n", value);
+        }
+        else {
+            System.out.printf("| CURRENT VALUE | %29s |\n",
+                    Double.toHexString(Double.parseDouble(value)));
+        }
+    }
+
+    public void displayMemoryValueLine(String value, DisplayModes mode) {
+        if ( mode.equals(DisplayModes.DECIMAL) ) {
+            System.out.printf("|  MEMORY VALUE | %29s |\n", value);
+        }
+        else {
+            System.out.printf("|  MEMORY VALUE | %29s |\n",
+                    Double.toHexString(Double.parseDouble(value)));
+        }
+    }
     public void displayAvailableOperations() {
         System.out.printf("|   clear   |     MC    |     M+    |    MRC    |\n");
         displayPrettyLine();
@@ -34,7 +46,9 @@ public class CalculatorDisplay {
         displayPrettyLine();
         System.out.printf("|    cos    |    acos   |    tan    |   atan    |\n");
         displayPrettyLine();
-        System.out.printf("|    sdm    |    stu    |    exit   |           |\n");
+        System.out.printf("|    sdm    |    stu    |     pi    |    e      |\n");
+        displayPrettyLine();
+        System.out.printf("|                     exit                      |\n");
         displayPrettyLine();
     }
 

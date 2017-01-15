@@ -10,13 +10,16 @@ public class CalculatorModel {
     private double currentValue;
     private double inputValue;
     private double memoryValue;
-    private DisplayModes displayMode = DisplayModes.DECIMAL;
+    private DisplayModes displayMode;
+    private TrigModes trigMode;
     private Operations operations;
 
     public CalculatorModel() {
         currentValue = 0.0;
         inputValue = 0.0;
         memoryValue = 0.0;
+        displayMode = DisplayModes.DECIMAL;
+        trigMode = TrigModes.DEGREES;
         operations = new Operations();
     }
 
@@ -36,16 +39,19 @@ public class CalculatorModel {
     public void setDisplayMode(DisplayModes displayMode) { this.displayMode = displayMode; }
     public DisplayModes getDisplayMode() { return displayMode; }
 
+    public void setTrigMode(TrigModes trigMode) { this.trigMode = trigMode; }
+    public TrigModes getTrigMode() { return trigMode; }
+
     public Operations getOperations() {
         return operations;
     }
 
-    public void updateState(String[] splitUserInput) {
-        if ( hasOneArgument(splitUserInput) ) {
-            handleOneArgInput(splitUserInput[0]);
+    public void updateState(String[] userInput) {
+        if ( hasOneArgument(userInput) ) {
+            handleOneArgInput(userInput[0]);
         }
-        else if ( hasTwoArguments(splitUserInput) ) {
-            handleTwoArgInput(splitUserInput);
+        else if ( hasTwoArguments(userInput) ) {
+            handleTwoArgInput(userInput);
         }
         else {
             setErrorState();

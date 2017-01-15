@@ -457,6 +457,20 @@ public class OperationsTest {
     }
 
     @Test
+    public void testPI() {
+        double expected = Math.PI;
+        double actual = operations.performCalculation("pi", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void testE() {
+        double expected = Math.E;
+        double actual = operations.performCalculation("e", 0.0, 0.0);
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
     public void testPerformCalculationClear() {
         double expected = 0.0;
         double actual = operations.performCalculation("clear", 10.0, 10.0);

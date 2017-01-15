@@ -56,6 +56,9 @@ public class CalculatorController {
             if ( splitUserInput[0].equalsIgnoreCase("sdm") ) {
                 calculatorModel.setDisplayMode(calculatorModel.getDisplayMode().advanceDisplayMode());
             }
+            else if ( splitUserInput[0].equalsIgnoreCase("stu") ) {
+                // add in switch trig units
+            }
             // update memory
             else if ( splitUserInput[0].equalsIgnoreCase("M+") ) {
                 // if currentValue is NaN don't update memory
@@ -63,7 +66,8 @@ public class CalculatorController {
                     // do nothing in this case
                 }
                 else {
-                    calculatorModel.setMemoryValue(calculatorModel.getCurrentValue());
+                    calculatorModel.setMemoryValue(calculatorModel.getMemoryValue()
+                                                    +calculatorModel.getCurrentValue());
                 }
             }
             // clear memory

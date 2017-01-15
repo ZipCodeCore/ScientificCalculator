@@ -81,6 +81,21 @@ public class CalculatorModelTest {
     }
 
     @Test
+    public void getTrigModeTest() {
+        TrigModes expected = TrigModes.DEGREES;
+        TrigModes actual = calculatorModel.getTrigMode();
+        Assert.assertEquals("I expect actual to be DEGREES", expected, actual);
+    }
+
+    @Test
+    public void setTrigModeTest() {
+        TrigModes expected = TrigModes.RADIANS;
+        calculatorModel.setTrigMode(TrigModes.RADIANS);
+        TrigModes actual = calculatorModel.getTrigMode();
+        Assert.assertEquals("I expect actual to be RADIANS", expected, actual);
+    }
+
+    @Test
     public void getOperationsTest() {
         Operations expected = new Operations();
         Operations actual = calculatorModel.getOperations();
