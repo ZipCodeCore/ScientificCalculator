@@ -130,25 +130,25 @@ public class CalculatorTest {
     }
 
     @Test
-    public void getErrorTest(){
+    public void getErrorDisplayTest(){
         String expected = null;
-        String actual = calc.getError();
+        String actual = calc.getErrorDisplay();
         assertEquals(expected, actual);
     }
 
     @Test
-    public void errorDisplay(){
-        calc.errorDisplay();
+    public void setErrorDisplayTest(){
+        calc.setErrorDisplay();
         String expected = "Err";
-        String actual = calc.getError();
+        String actual = calc.getErrorDisplay();
         assertEquals(expected, actual);
     }
 
     @Test
-    public void clearError(){
-        calc.clearError();
+    public void clearErrorDisplayTest(){
+        calc.clearErrorDisplay();
         String expected = null;
-        String actual = calc.getError();
+        String actual = calc.getErrorDisplay();
         assertEquals(expected, actual);
 
     }

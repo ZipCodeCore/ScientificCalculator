@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a6aa535-9c33-461e-a8c8-530edaba5468" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/armstrong/alexandra/Calculator.class" afterPath="$PROJECT_DIR$/target/classes/armstrong/alexandra/Calculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/armstrong/alexandra/CalculatorTest.class" afterPath="$PROJECT_DIR$/target/test-classes/armstrong/alexandra/CalculatorTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/CalculatorController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/InputHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorControllerTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/armstrong/alexandra/InputHelperTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/Calculator.java" afterPath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/Calculator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java" afterPath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/ScientificCalculator.java" afterPath="$PROJECT_DIR$/src/main/java/armstrong/alexandra/ScientificCalculator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/armstrong/alexandra/ScientificCalculatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/armstrong/alexandra/ScientificCalculatorTest.java" />
@@ -27,27 +31,45 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="CalculatorTest.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java">
+            <file leaf-file-name="CalculatorControllerTest.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorControllerTest.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="731">
-                    <caret line="123" column="37" lean-forward="false" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+                  <state relative-caret-position="143">
+                    <caret line="40" column="2" lean-forward="false" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
                     <folding>
                       <element signature="imports" expanded="true" />
+                      <element signature="method#convertToDecimalTest#0;class#CalculatorControllerTest#0" expanded="false" />
+                      <element signature="method#convertToHexadecimalTest#0;class#CalculatorControllerTest#0" expanded="false" />
+                      <element signature="method#convertToStandardNotationTest#0;class#CalculatorControllerTest#0" expanded="false" />
+                      <element signature="method#convertToScientificNotationTest#0;class#CalculatorControllerTest#0" expanded="false" />
+                      <element signature="method#convertToRadiansTest#0;class#CalculatorControllerTest#0" expanded="false" />
+                      <element signature="method#convertToDegreesTest#0;class#CalculatorControllerTest#0" expanded="false" />
                     </folding>
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="ScientificCalculatorTest.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/ScientificCalculatorTest.java">
+            <file leaf-file-name="CalculatorTest.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="780">
-                    <caret line="170" column="35" lean-forward="false" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
+                  <state relative-caret-position="527">
+                    <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
                     <folding>
                       <element signature="imports" expanded="true" />
-                      <element signature="e#482#483#0" expanded="true" />
-                      <element signature="e#534#535#0" expanded="true" />
+                      <element signature="e#299#300#0" expanded="true" />
+                      <element signature="e#338#339#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="ScientificCalculatorTest.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/ScientificCalculatorTest.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-382">
+                    <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -59,59 +81,43 @@
     </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="project1calculator" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="187">
+              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScientificCalculator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrintPackage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/PrintPackage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScientificCalculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/ScientificCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state relative-caret-position="132">
+              <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#switchDisplayMode#0;class#ScientificCalculator#0" expanded="false" />
+                <element signature="method#ScientificCalculator#0;class#ScientificCalculator#0" expanded="false" />
                 <element signature="method#toggleScientificNotation#0;class#ScientificCalculator#0" expanded="false" />
                 <element signature="method#switchTrigUnitsMode#0;class#ScientificCalculator#0" expanded="false" />
+                <element signature="method#factorial#0;class#ScientificCalculator#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DisplayMode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrigUnit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/TrigUnit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Notation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/Notation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -119,10 +125,57 @@
       <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-47">
-              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="-4">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="method#divide#0;class#Calculator#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculatorController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/CalculatorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#convertToStandardNotation#0;class#CalculatorController#0" expanded="false" />
+                <element signature="method#convertToScientificNotation#0;class#CalculatorController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DisplayMode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/InputHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <element signature="e#318#319#0" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,8 +186,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -154,19 +207,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/CalculatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Calculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/ScientificCalculator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/Calculator.java" />
-        <option value="$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/Mode.java" />
         <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/TrigUnitEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/TrigUnit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java" />
         <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/Notation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/InputHelper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/Calculator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java" />
         <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/ScientificCalculator.java" />
         <option value="$PROJECT_DIR$/src/test/java/armstrong/alexandra/ScientificCalculatorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/MockDisplay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/CalculatorController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armstrong/alexandra/PrintPackage.java" />
       </list>
     </option>
   </component>
@@ -184,10 +243,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
+    <option name="x" value="4" />
     <option name="y" value="22" />
-    <option name="width" value="1380" />
-    <option name="height" value="1058" />
+    <option name="width" value="1276" />
+    <option name="height" value="587" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -306,8 +365,8 @@
       <recent name="armstrong.alexandra" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScientificCalculatorTest">
-    <configuration default="false" name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.PrintPackage">
+    <configuration default="false" name="CalculatorControllerTest.convertToStandardNotationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="armstrong.alexandra.*" />
@@ -318,86 +377,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="armstrong.alexandra" />
-      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.CalculatorTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ScientificCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="armstrong.alexandra.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="armstrong.alexandra" />
-      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.ScientificCalculatorTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="armstrong.alexandra.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="armstrong.alexandra" />
-      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.CalculatorTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ScientificCalculatorTest.sineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="armstrong.alexandra.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="armstrong.alexandra" />
-      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.ScientificCalculatorTest" />
-      <option name="METHOD_NAME" value="sineTest" />
+      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.CalculatorControllerTest" />
+      <option name="METHOD_NAME" value="convertToStandardNotationTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -409,6 +390,104 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorControllerTest.convertToScientificNotationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="armstrong.alexandra.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project-1-calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="armstrong.alexandra" />
+      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.CalculatorControllerTest" />
+      <option name="METHOD_NAME" value="convertToScientificNotationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorControllerTest.convertToRadiansTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="armstrong.alexandra.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project-1-calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="armstrong.alexandra" />
+      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.CalculatorControllerTest" />
+      <option name="METHOD_NAME" value="convertToRadiansTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorControllerTest.convertToDegreesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="armstrong.alexandra.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project-1-calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="armstrong.alexandra" />
+      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.CalculatorControllerTest" />
+      <option name="METHOD_NAME" value="convertToDegreesTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="PrintPackage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="armstrong.alexandra.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="armstrong.alexandra.PrintPackage" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="project-1-calculator" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -791,23 +870,28 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ScientificCalculatorTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ScientificCalculatorTest.sineTest" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToStandardNotationTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToScientificNotationTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToRadiansTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToDegreesTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.PrintPackage" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ScientificCalculatorTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ScientificCalculatorTest.sineTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.PrintPackage" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToDegreesTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToRadiansTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToStandardNotationTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorControllerTest.convertToScientificNotationTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -819,72 +903,72 @@
       <workItem from="1484344842154" duration="1366000" />
       <workItem from="1484351528715" duration="27000" />
       <workItem from="1484351561002" duration="6250000" />
-      <workItem from="1484408271663" duration="13580000" />
+      <workItem from="1484408271663" duration="26810000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalculatorTest_(1) - 2017.01.14 at 11h 33m 33s.xml">
-      <configuration name="CalculatorTest (1)" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToDegreesTest - 2017.01.14 at 21h 48m 54s.xml">
+      <configuration name="CalculatorControllerTest.convertToDegreesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorTest_(1) - 2017.01.14 at 11h 45m 31s.xml">
-      <configuration name="CalculatorTest (1)" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToDegreesTest - 2017.01.14 at 21h 49m 22s.xml">
+      <configuration name="CalculatorControllerTest.convertToDegreesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest - 2017.01.14 at 12h 46m 59s.xml">
-      <configuration name="ScientificCalculatorTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToDegreesTest - 2017.01.14 at 21h 51m 27s.xml">
+      <configuration name="CalculatorControllerTest.convertToDegreesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest - 2017.01.14 at 13h 38m 52s.xml">
-      <configuration name="ScientificCalculatorTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToHexadecimalTest - 2017.01.14 at 21h 04m 28s.xml">
+      <configuration name="CalculatorControllerTest.convertToHexadecimalTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest - 2017.01.14 at 13h 39m 23s.xml">
-      <configuration name="ScientificCalculatorTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToRadiansTest - 2017.01.14 at 21h 48m 50s.xml">
+      <configuration name="CalculatorControllerTest.convertToRadiansTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest - 2017.01.14 at 14h 21m 25s.xml">
-      <configuration name="ScientificCalculatorTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToScientificNotationTest - 2017.01.14 at 21h 37m 56s.xml">
+      <configuration name="CalculatorControllerTest.convertToScientificNotationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest - 2017.01.14 at 14h 30m 14s.xml">
-      <configuration name="ScientificCalculatorTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToScientificNotationTest - 2017.01.14 at 21h 38m 15s.xml">
+      <configuration name="CalculatorControllerTest.convertToScientificNotationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest_sineTest - 2017.01.14 at 12h 42m 43s.xml">
-      <configuration name="ScientificCalculatorTest.sineTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToStandardNotationTest - 2017.01.14 at 21h 37m 28s.xml">
+      <configuration name="CalculatorControllerTest.convertToStandardNotationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest_sineTest - 2017.01.14 at 12h 43m 04s.xml">
-      <configuration name="ScientificCalculatorTest.sineTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToStandardNotationTest - 2017.01.14 at 21h 38m 56s.xml">
+      <configuration name="CalculatorControllerTest.convertToStandardNotationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScientificCalculatorTest_sineTest - 2017.01.14 at 12h 43m 16s.xml">
-      <configuration name="ScientificCalculatorTest.sineTest" configurationId="JUnit" />
+    <history-entry file="CalculatorControllerTest_convertToStandardNotationTest - 2017.01.14 at 21h 43m 59s.xml">
+      <configuration name="CalculatorControllerTest.convertToStandardNotationTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21223000" />
+    <option name="totallyTimeSpent" value="34453000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="22" width="1380" height="1058" extended-state="6" />
+    <frame x="4" y="22" width="1276" height="587" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262548" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23660263" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4054054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1536232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1653605" sideWeight="0.49506348" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25606796" sideWeight="0.5049365" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -901,7 +985,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -924,9 +1008,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#switchDisplayMode#0;class#ScientificCalculator#0" expanded="false" />
+            <element signature="method#ScientificCalculator#0;class#ScientificCalculator#0" expanded="false" />
             <element signature="method#toggleScientificNotation#0;class#ScientificCalculator#0" expanded="false" />
             <element signature="method#switchTrigUnitsMode#0;class#ScientificCalculator#0" expanded="false" />
+            <element signature="method#factorial#0;class#ScientificCalculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -948,8 +1033,6 @@
           <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -960,6 +1043,8 @@
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -989,8 +1074,6 @@
           <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1001,44 +1084,18 @@
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ScientificCalculator.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="123" column="37" lean-forward="false" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <element signature="method#divide#0;class#Calculator#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/TrigUnit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1051,36 +1108,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/InputHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/InputHelperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="method#divide#0;class#Calculator#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/ScientificCalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="170" column="35" lean-forward="false" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
+        <state relative-caret-position="-382">
+          <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/ScientificCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#switchDisplayMode#0;class#ScientificCalculator#0" expanded="false" />
+            <element signature="method#ScientificCalculator#0;class#ScientificCalculator#0" expanded="false" />
             <element signature="method#toggleScientificNotation#0;class#ScientificCalculator#0" expanded="false" />
             <element signature="method#switchTrigUnitsMode#0;class#ScientificCalculator#0" expanded="false" />
+            <element signature="method#factorial#0;class#ScientificCalculator#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/lang/Double.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-859">
+          <caret line="537" column="0" lean-forward="false" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/MockDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/util/Formatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="4301" column="0" lean-forward="false" selection-start-line="4301" selection-start-column="0" selection-end-line="4301" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/armstrong/alexandra/CalculatorControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="40" column="2" lean-forward="false" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#convertToDecimalTest#0;class#CalculatorControllerTest#0" expanded="false" />
+            <element signature="method#convertToHexadecimalTest#0;class#CalculatorControllerTest#0" expanded="false" />
+            <element signature="method#convertToStandardNotationTest#0;class#CalculatorControllerTest#0" expanded="false" />
+            <element signature="method#convertToScientificNotationTest#0;class#CalculatorControllerTest#0" expanded="false" />
+            <element signature="method#convertToRadiansTest#0;class#CalculatorControllerTest#0" expanded="false" />
+            <element signature="method#convertToDegreesTest#0;class#CalculatorControllerTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/DisplayMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/PrintPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/CalculatorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#convertToStandardNotation#0;class#CalculatorController#0" expanded="false" />
+            <element signature="method#convertToScientificNotation#0;class#CalculatorController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/armstrong/alexandra/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

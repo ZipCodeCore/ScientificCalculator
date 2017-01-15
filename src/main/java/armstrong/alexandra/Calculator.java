@@ -37,7 +37,7 @@ public class Calculator {
 
     public void divide(double divide){
         if (divide == 0){
-            errorDisplay();
+            setErrorDisplay();
         } else {
             display = getDisplay() / divide;
         }
@@ -67,15 +67,15 @@ public class Calculator {
         multiply(-1d);
     }
 
-    public String getError(){
+    public String getErrorDisplay(){
         return errorDisplay;
     }
 
-    public void errorDisplay(){
+    public void setErrorDisplay(){
         errorDisplay = "Err";
     }
 
-    public void clearError(){
+    public void clearErrorDisplay(){
         errorDisplay = null;
     }
 }

@@ -60,15 +60,15 @@ public class ScientificCalculatorTest {
     public void switchDisplayModeTest(){
         sciCalc.switchDisplayMode();
         sciCalc.switchDisplayMode();
-        DisplayMode expected = BINARY;
+        DisplayMode expected = DECIMAL;
         DisplayMode actual = sciCalc.getMode();
         assertEquals(expected, actual);
     }
 
     @Test
     public void switchDisplayModeInputTest(){
-        sciCalc.switchDisplayMode(OCTAL);
-        DisplayMode expected = OCTAL;
+        sciCalc.switchDisplayMode(HEXADECIMAL);
+        DisplayMode expected = HEXADECIMAL;
         DisplayMode actual   = sciCalc.getMode();
         assertEquals(expected, actual);
     }
@@ -171,5 +171,50 @@ public class ScientificCalculatorTest {
         TrigUnit expected = RADIANS;
         TrigUnit actual = sciCalc.getTrigUnit();
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void logTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.log();
+        double expected = Math.log10(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0.1d);
+    }
+
+    @Test
+    public void inverseLogTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.inverseLog();
+        double expected = 1d / Math.log10(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0.1);
+    }
+
+    @Test
+    public void naturalLogTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.naturalLog();
+        double expected = Math.log(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0.1);
+    }
+
+    @Test
+    public void inverseNaturalLogTest(){
+        sciCalc.setDisplay(2d);
+        sciCalc.inverseNaturalLog();
+        double expected = 1d / Math.log(2d);
+        double actual = sciCalc.getDisplay();
+        assertEquals(expected, actual, 0.1);
+    }
+
+    @Test
+    public void factorialTest(){
+        sciCalc.setDisplay(4d);
+        sciCalc.factorial();
+        double expected = 24d;
+        double actual = sciCalc.getDisplay();
+        assertEquals(actual, expected, 0);
     }
 }

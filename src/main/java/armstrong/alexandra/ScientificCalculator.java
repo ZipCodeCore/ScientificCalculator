@@ -46,7 +46,7 @@ public class ScientificCalculator extends Calculator{
 
     public void switchDisplayMode(){
         if (mode == HEXADECIMAL){
-            mode = BINARY;
+            mode = DECIMAL;
         }
         else{
             mode = (DisplayMode.values()[mode.ordinal() + 1]);
@@ -115,4 +115,27 @@ public class ScientificCalculator extends Calculator{
         this.trigUnit = trigUnit;
     }
 
+    public void log(){
+        setDisplay(Math.log10(getDisplay()));
+    }
+
+    public void inverseLog(){
+        setDisplay(1d / Math.log10(getDisplay()));
+    }
+
+    public void naturalLog(){
+        setDisplay(Math.log(getDisplay()));
+    }
+
+    public void inverseNaturalLog(){
+        setDisplay(1d / Math.log(getDisplay()));
+    }
+
+    public void factorial(){
+        int temp = 1;
+        for(int i = 1; i <= getDisplay(); i++){
+            temp *= i;
+        }
+        setDisplay(temp);
+    }
 }
