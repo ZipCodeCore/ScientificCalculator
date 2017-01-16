@@ -3,12 +3,11 @@ package Calculator;
 /**
  * Created by randallcrame on 1/14/17.
  */
-public class Multiple extends Expression {
+public class Multiple {
     public Multiple(){}
 
 
-    @Override
-    public void calculate() {
+    static public void calculate() {
         double results = Input.getLeftValue() * Input.getRightValue();
         Input.setResults(results);
     }

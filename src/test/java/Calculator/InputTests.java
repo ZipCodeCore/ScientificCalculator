@@ -72,10 +72,18 @@ public class InputTests {
 
     @Test
     public void getAndSetCommandTest(){
-        String expected = "complete";
-        test.setCommand("complete");
-        String actual = test.getCommand();
+        EngineCommands expected = EngineCommands.ADD;
+        test.setCommand(EngineCommands.ADD);
+        EngineCommands actual = test.getCommand();
         Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void getAndSetNumeralCommandTest() {
+        double expected = 1.0;
+        test.setNumeralCommand(1.0);
+        double actual = test.getNumeralCommand();
+        Assert.assertEquals(expected, actual, 0.0);
     }
 
 }

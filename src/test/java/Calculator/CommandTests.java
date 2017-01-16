@@ -27,9 +27,9 @@ public class CommandTests {
 
     @Test
     public void RequestCommandTest() {
-        test.requestCommand("complete");
-        String expected = "complete";
-        String actual = Storage.storeStringCommand;
+        test.requestCommand(EngineCommands.ADD);
+        EngineCommands expected = EngineCommands.ADD;
+        EngineCommands actual = Storage.storeEngineCommand;
         Assert.assertEquals(expected,actual);
     }
 

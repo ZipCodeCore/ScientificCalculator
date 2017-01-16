@@ -8,6 +8,6 @@ public class Storage {
     static public double storeFirstInput = 0.0;
     static public double storeSecondInput = 0.0;
     static public double singleMemory = 0.0;
-    static public String storeStringCommand;
-    static public double storeNumuralCommand;
+    static public EngineCommands storeEngineCommand;
+    static public double storeNumeralCommand;
 }

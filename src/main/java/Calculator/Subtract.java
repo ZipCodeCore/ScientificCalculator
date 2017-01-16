@@ -3,11 +3,10 @@ package Calculator;
 /**
  * Created by randallcrame on 1/14/17.
  */
-public class Subtract extends Expression{
+public class Subtract {
     public Subtract(){}
 
-    @Override
-    public void calculate() {
+    static public void calculate() {
         double results = Input.getLeftValue() - Input.getRightValue();
         Input.setResults(results);
     }

@@ -7,7 +7,7 @@ import org.junit.Assert;
 /**
  * Created by randallcrame on 1/14/17.
  */
-public class ExpressionsTests {
+public class  ExpressionsTests {
 
 
     @Test
@@ -114,5 +114,24 @@ public class ExpressionsTests {
         Double actual = Input.getSingleMemory();
         Assert.assertEquals(expected, actual, 0.0);
     }
+
+    @Test
+    public void InvertTest() {
+        Input.setNumeralCommand(5.0);
+        Invert.calculate();
+        double expected = -5.0;
+        double actual = Input.getNumeralCommand();
+        Assert.assertEquals(expected,actual, 0.0);
+
+    }
+   @Test
+    public void ExponentialTest(){
+        Input.setLeftValue(2);
+        Input.setRightValue(3);
+        Exponential.calculate();
+        double expected = 8.0;
+        double actual = Input.getSingleMemory();
+        Assert.assertEquals(expected, actual, 0.0);
+   }
 
 }

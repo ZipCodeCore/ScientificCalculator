@@ -6,29 +6,38 @@ import java.util.Scanner;
  * Created by randallcrame on 1/13/17.
  */
 public class Command {
-    Scanner inputNumeral = new Scanner(System.in).useDelimiter("\\s\\D");
-    Scanner inputString = new Scanner(System.in).useDelimiter("\\s\\d");
+    static Scanner input= new Scanner(System.in);//.useDelimiter("\\s\\D");
+   // static Scanner inputString = new Scanner(System.in);//.useDelimiter("\\s\\d");
 
-    public Command (){}
-
-    public void requestLine(){
-        System.out.print("Enter Number/Command");
+    static public void requestLine(){
+        System.out.print("Enter Number/Command: ");
     }
 
-    public void requestFirstNumber(double input){
-        requestLine();
+    static public void requestFirstNumber(double input){
         Input.setLeftValue(input);
+        Input.setNumeralCommand(input);
+
     }
 
-    public void requestSecondNumber(double input){
-        requestLine();
+    static public void requestSecondNumber(double input){
         Input.setRightValue(input);
     }
 
-    public void requestCommand(String input){
-        requestLine();
+    public static void requestCommand(EngineCommands input){
         Input.setCommand(input);
     }
-// Runtime.getRuntime().exec("cls");
+
+    static public void firstValueInquiry(){
+        requestLine();
+        requestFirstNumber(input.nextDouble());
+    }
+    static public void commandInquiry(){
+        requestLine();
+        requestCommand(EngineCommands.valueOf(input.nextLine()));
+    }
+    static public void secondValueInquiry(){
+        requestLine();
+        requestSecondNumber(input.nextDouble());
+    }
 
 }

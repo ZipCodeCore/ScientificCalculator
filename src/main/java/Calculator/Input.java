@@ -1,41 +1,63 @@
 package Calculator;
 
-
-import java.util.Scanner;
+import static Calculator.Storage.*;
 
 /**
  * Created by randallcrame on 1/13/17.
  */
+
 public class Input {
 
     public Input(){}
 
     static public double getLeftValue() {
-        return Storage.storeFirstInput;
+        return  storeFirstInput;
     }
 
     static public double getRightValue(){
-        return Storage.storeSecondInput;
+        return storeSecondInput;
     }
 
     static public double getSingleMemory() {
-        return Storage.singleMemory;
+        return singleMemory;
     }
 
-    static public String getCommand() { return Storage.storeStringCommand; }
-
-    static public void setLeftValue(double firstInput) {
-        Storage.storeFirstInput = firstInput;
+    static public EngineCommands getCommand() {
+        return storeEngineCommand;
     }
 
-    static public void setRightValue(double secondInput) {
-        Storage.storeSecondInput = secondInput;
+    static public double getNumeralCommand() {
+        return storeNumeralCommand;
     }
 
-    static public void setCommand(String command) {Storage.storeStringCommand = command;}
+    static public void setLeftValue(double input) {
+        storeFirstInput = input;
+    }
 
+    static public void setRightValue(double input) {
+        storeSecondInput = input;
+    }
+
+    static public void setCommand(EngineCommands input) {
+        storeEngineCommand = input;
+    }
+
+    static public void setNumeralCommand(double input) {
+        storeNumeralCommand = input;
+    }
+
+    static public void setSingleMemory (double input) {
+        singleMemory = input;
+    }
+
+    static public void resetAllValues() {
+        setLeftValue(0.0);
+        setRightValue(0.0);
+        setCommand(EngineCommands.CLEAR);
+    }
     static public void setResults(double results) {
-        Storage.singleMemory = results;
-        Storage.storeFirstInput = results;
+        setSingleMemory(results);
+        setNumeralCommand(results);
+        setLeftValue(results);
     }
 }

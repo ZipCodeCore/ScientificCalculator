@@ -1,13 +1,13 @@
 package Calculator;
 
-
+/* Currently Unnecessary
 /**
  * Created by randallcrame on 1/14/17.
- */
+
 
 public abstract class Expression {
-
     public Expression(){}
 
-    public abstract void calculate();
+    public static void calculate(){}
 }
+*/
