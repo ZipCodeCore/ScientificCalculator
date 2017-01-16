@@ -12,6 +12,9 @@ public class CalculatorCaller {
     static Boolean exitFlag;
     static Boolean clearScreen;
     static Boolean invalidInput;
+    static double ans;
+    static String[] uncheckedSplitInput;
+    static String[] checkedSplitInput;
 
     static {
         pso = new SimpleOperation();                                // init the display manager object
@@ -20,6 +23,9 @@ public class CalculatorCaller {
         exitFlag = false;
         clearScreen = false;
         invalidInput = false;
+        ans = 0;
+        uncheckedSplitInput = new String[]{"0","0"};
+        checkedSplitInput = new String[]{"0","0"};
     }
 
 
@@ -49,10 +55,13 @@ public class CalculatorCaller {
                 invalidInput = ip.invalidInputCheck(userString);
             }  // end validation______________________________________________________________________
 
-            pso.nums = ip.splitInput(userString);                          // pass user nums as array to simpleOperation
+            uncheckedSplitInput = ip.splitInput(userString);          // split user input into array with 2 nums
+            checkedSplitInput = usePreviousResultValue(uncheckedSplitInput, ans);   // check if one of the 2 array values is "ans" and assign the right value
+            pso.nums = checkedSplitInput;                             // then pass user nums as array to simpleOperation
             pso.desiredOperation = ip.determineOperationType(userString);  // pass user's operator to pso
+            ans = pso.runUserOperation();
 
-            dm.displayOperationResult(ip.splitInput(userString), ip.determineOperationType(userString), pso.runUserOperation());                    // display operation result
+            dm.displayOperationResult(ip.splitInput(userString), ip.determineOperationType(userString), ans);                    // display operation result
         }
         return;
 
@@ -67,5 +76,19 @@ public class CalculatorCaller {
         }
     } // end clear screen method _________________________________________________________________________________________________
 
+    public static void clearScreenMethod2(){
+        System.out.print("\033[2J");
+    }
+
+    public static String[] usePreviousResultValue(String[] splitString, double previousOperationResult){
+        //String[] splitStringWithAns = new String[]{"",""};
+        if(splitString[0].equals("ans"))
+            splitString[0] = Double.toString(previousOperationResult);
+
+        if (splitString[1].equals("ans"))
+            splitString[1] = Double.toString(previousOperationResult);
+
+        return splitString;
+    }
 
 } // end CalculatorCaller class

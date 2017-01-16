@@ -8,19 +8,21 @@ import java.util.regex.Pattern;
  */
 public class InputParser {
 
-    Pattern operationPattern = Pattern.compile("[\\+\\-\\*\\/]"); // match possible operations
-    Pattern exitPattern = Pattern.compile("[x]");                 // match possible exit flags
-    Pattern clearScreenPattern = Pattern.compile("[c]");
-    Pattern validInputsPattern = Pattern.compile("[cx\\+\\-\\*\\/]");
+    Pattern operationPattern = Pattern.compile("[\\+\\-\\*\\/\\^\\<]");     // match possible operations
+    Pattern exitPattern = Pattern.compile("[x]");                           // match possible exit flags
+    Pattern clearScreenPattern = Pattern.compile("[c]");                    //
+    Pattern validInputsPattern = Pattern.compile("[cx\\+\\-\\*\\/\\^\\<]");
+    Pattern ansPattern = Pattern.compile(".*\\bans\\b.*");                  // use previous ans
 
     Matcher operationMatcher;
     Matcher exitMatcher;
     Matcher clearScreenMatcher;
     Matcher validInputsMatcher;
+    Matcher ansMatcher;
 
     // splits user input into string array with the 2 numbers
     public String[] splitInput(String userInput){
-        return userInput.split("[\\+\\-\\*\\/]");
+        return userInput.split("[\\+\\-\\*\\/\\^\\<]");
     } // end splitString__________________________________________________________________
 
     // parses user input and returns desired operation
@@ -54,7 +56,8 @@ public class InputParser {
 
     boolean invalidInputCheck(String userInput){
         validInputsMatcher= validInputsPattern.matcher(userInput);
-        if(validInputsMatcher.find()){
+        ansMatcher = ansPattern.matcher(userInput);
+        if(validInputsMatcher.find() || ansMatcher.find()){
             return false;
         } else {
             return true;

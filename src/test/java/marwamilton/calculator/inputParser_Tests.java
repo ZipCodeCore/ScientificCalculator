@@ -40,8 +40,8 @@ public class inputParser_Tests {
     @Test
     public void clearScreenCheck_Test(){
         boolean expectedClearScreenCheck = false;
-        boolean actualClearscreenCheck = inputParser.clearScreenCheck("7+10");
-        Assert.assertEquals("boolean mismatch", expectedClearScreenCheck, actualClearscreenCheck);
+        boolean actualClearScreenCheck = inputParser.clearScreenCheck("7+10");
+        Assert.assertEquals("boolean mismatch", expectedClearScreenCheck, actualClearScreenCheck);
     }
 
 }
