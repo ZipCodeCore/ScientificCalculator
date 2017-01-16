@@ -49,7 +49,7 @@ public class SimpleCalculationsModelTest {
     public void divisionByZeroTest(){
         Double expected = 0.0;
         Double actual = simpleCalculationsModel.division(0.0, 3.0);
-        assertEquals("I expected the division by 0 to be 0.0", expected, actual);
+        assertEquals("I expected the division by 0 to be NAN", expected, actual);
     }
 
 }

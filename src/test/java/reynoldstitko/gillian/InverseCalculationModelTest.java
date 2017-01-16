@@ -27,6 +27,6 @@ public class InverseCalculationModelTest {
     public void inverseByZeroTest(){
         Double expected = 0.0;
         Double actual = inverseCalculationModel.inverse(0.0);
-        assertEquals("I expected the inverse of 0 to be 0.0", expected, actual);
+        assertEquals("I expected the inverse of 0 to be NAN", expected, actual);
     }
 }

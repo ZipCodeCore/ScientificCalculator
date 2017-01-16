@@ -7,8 +7,9 @@ public class InverseCalculationModel {
 
     public Double inverse(Double displayValue) {
         if(displayValue == 0){
-            System.out.print("ERR");
-            return displayValue;
+            String errorMessage = "ERR";
+            System.out.print(errorMessage);
+            return 0.0;
         } else
             return 1 / displayValue;
     }
