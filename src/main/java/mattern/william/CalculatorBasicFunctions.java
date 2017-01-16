@@ -26,5 +26,12 @@ public class CalculatorBasicFunctions {
         }
     }
 
-
+    static public double calculateSignInversion(double firstNumber){
+        if (firstNumber == 0){
+            Display.clearDisplay();
+            return 0;
+        } else {
+            return Display.calculatedValue = firstNumber * (-1);
+        }
+    }
 }

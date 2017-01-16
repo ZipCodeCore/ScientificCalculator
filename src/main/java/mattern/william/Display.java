@@ -12,11 +12,13 @@ public class Display {
     static double currentValue;
     static double calculatedValue;
     static String operatorCode;
+    static String operatorCodeOptionsPrompt = "Give me an operation - add - multiply - subtract - divide - clear - invert";
 
     static public void clearDisplay(){
         Display.initialValue = 0;
         getInitialValue();
     }
+
 
     static public void getInitialValue(){
         System.out.println(Display.initialValue);
@@ -33,7 +35,7 @@ public class Display {
     }
 
     static public void getOperatorCode(){
-        System.out.println("Give me an operation - add - multiply - subtract - divide  - clear");
+        System.out.println(operatorCodeOptionsPrompt);
         Display.operatorCode = scanner.next();
         if (Display.operatorCode.equals("clear")){
             Display.clearDisplay();
@@ -43,7 +45,7 @@ public class Display {
     static public void displayAfterCalculating(){
         Display.initialValue = Display.calculatedValue;
         System.out.println(Display.calculatedValue);
-        System.out.println("Give me an operation - add - multiply - subtract - divide  - clear");
+        System.out.println(operatorCodeOptionsPrompt);
         Display.operatorCode = scanner.next();
         if (Display.operatorCode.equals("clear")){
             Display.clearDisplay();

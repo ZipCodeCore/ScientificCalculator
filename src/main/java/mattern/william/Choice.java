@@ -26,12 +26,18 @@ public class Choice {
                 Display.displayAfterCalculating();
                 Display.getCurrentValue();
                 break;
+
+            case "invert":
+                CalculatorBasicFunctions.calculateSignInversion(Display.initialValue);
+                Display.displayAfterCalculating();
+                Display.getCurrentValue();
+                break;
+
             case "square":
 
             case "squareroot":
 
             case "inverse":
-
         }
     }
 }
