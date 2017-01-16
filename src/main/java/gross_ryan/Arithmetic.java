@@ -20,13 +20,8 @@ public class Arithmetic {
     // Look at revising this..
     // Displays an error if divided by zero...
     public double divideNumbers(double displayedNumber, double numberToDivide) {
-        if (numberToDivide != 0) {
             return displayedNumber / numberToDivide;
-        }
-        return displayedNumber;
     }
-
-
 
     public double toThePowerOf(double displayedNumber, double powerOf) {
         return Math.pow(displayedNumber, powerOf);

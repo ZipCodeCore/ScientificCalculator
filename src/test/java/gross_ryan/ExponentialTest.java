@@ -19,8 +19,16 @@ public class ExponentialTest {
    @Test
     public void squareNumberTest() {
        Assert.assertEquals(4.0, testExponential.squareNumber(2), 0);
-       Assert.assertEquals(10.0, testExponential.squaredRoot(100),0);
+   }
+
+   @Test
+   public void inverseTest() {
        Assert.assertEquals(0.2, testExponential.inverseOfNumber(5),0);
+   }
+
+   @Test
+    public void squareRootTest() {
+       Assert.assertEquals(10.0, testExponential.squaredRoot(100),0);
    }
 
 }

@@ -6,15 +6,15 @@ import java.util.Arrays;
  * Created by ryangross on 1/15/17.
  */
 public class UserInterface {
-    Converter aConverter;
     Arithmetic anArithmetic;
     Exponential anExponential;
     ErrorCheck anErrorCheck;
     Memory aMemory;
     Trig aTrig;
-    String currentMode = "decimal";
-    static String[] arrayOfModes = {"binary", "decimal", "hexadecimal", "octal"};
+    Logarithmic aLog;
+    Custom aCustom;
 
+    static String[] arrayOfModes = {"binary", "decimal", "hexadecimal", "octal"};
 
     public Double doArithmetic(String aCommand, double displayedNumber, double numberToDoArithmeticOn) {
         Double result = (double) 0;
@@ -44,7 +44,6 @@ public class UserInterface {
         } else {
             System.out.println("ERROR");
             result = null;
-            return result;
         }
         return result;
     }
@@ -66,7 +65,6 @@ public class UserInterface {
         } else {
             System.out.println("ERROR");
             result = null;
-            return result;
         }
         return result;
     }
@@ -79,27 +77,55 @@ public class UserInterface {
                     result = aTrig.displaySin(displayedNumber);
                     break;
                 case "inverse-sin":
-                    result = 1 / aTrig.displaySin(displayedNumber);
+                    result = aTrig.inverseSin(displayedNumber);
                     break;
                 case "cos":
                     result = aTrig.displayCos(displayedNumber);
                     break;
                 case "inverse-cos":
-                    result = 1 / aTrig.displayCos(displayedNumber);
+                    result = aTrig.inverseCos(displayedNumber);
                     break;
                 case "tan":
                     result = aTrig.displayTan(displayedNumber);
                     break;
                 case "inverse-tan":
-                    result = 1 / aTrig.displayTan(displayedNumber);
+                    result = aTrig.inverseTan(displayedNumber);
+                    break;
+                case "!":
+                    result = aTrig.factorial(displayedNumber);
+                    break;
             }
         } else {
             System.out.println("ERROR");
             result = null;
-            return result;
         }
         return result;
     }
+
+    public Double logFunction(String aCommand, double displayedNumber) {
+        Double result = displayedNumber;
+        if (!anErrorCheck.hasError) {
+            switch(aCommand) {
+                case "log":
+                    result = aLog.baseTenLog(displayedNumber);
+                    break;
+                case "10^x":
+                    result = aLog.inverseBaseTenLog(displayedNumber);
+                    break;
+                case "ln":
+                    result = aLog.naturalLog(displayedNumber);
+                    break;
+                case "e^x":
+                    result = aLog.inverseNaturalLog(displayedNumber);
+                    break;
+            }
+        } else {
+            System.out.println("ERROR");
+            result = null;
+        }
+        return result;
+    }
+
 
     public Double memoryFunction(String aCommand, double displayedNumber) {
         Double updateDisplay = displayedNumber;
@@ -122,18 +148,50 @@ public class UserInterface {
         return updateDisplay;
     }
 
-    // Switches mode, updates display..
-    public void setMode(String currentMode) {
-        int arrayKey = Arrays.asList(arrayOfModes).indexOf(currentMode);
-        if (arrayKey < 3) {
-            currentMode = Arrays.asList(arrayOfModes).get(arrayKey + 1);
+    public double customFunction(String aCommand, double displayedNumber) {
+        Double updateDisplay = displayedNumber;
+        if (!anErrorCheck.hasError) {
+            switch(aCommand) {
+                case "sum!":
+                    aCustom.customSum(displayedNumber);
+                    break;
+                case "odd/even":
+                    aCustom.oddOrEven(displayedNumber);
+                    break;
+            }
         } else {
-            currentMode = "decimal";
+            System.out.println("ERROR");
+            updateDisplay = null;
+        }
+        return updateDisplay;
+    }
+
+    // Change Mode
+    // Update the Display
+    public void setMode(Display aDisplay) {
+        int arrayKey = Arrays.asList(arrayOfModes).indexOf(aDisplay.displayMode);
+        if (arrayKey < 3) {
+            aDisplay.displayMode = Arrays.asList(arrayOfModes).get(arrayKey + 1);
+        } else {
+         aDisplay.displayMode = "decimal";
+        }
+        aDisplay.convertDisplayedNumberString(aDisplay.displayedNumber);
+    }
+
+    public void setMode(Display aDisplay, String selectedMode) {
+        aDisplay.displayMode = selectedMode;
+        aDisplay.setEntireDisplay(aDisplay.displayedNumber);
+    }
+
+    public void setTrigMode(Trig aTrig) {
+        if (aTrig.trigMode.equals("degrees")) {
+            aTrig.trigMode = "radians";
+        } else {
+            aTrig.trigMode = "degrees";
         }
     }
 
     public double changeSign(double displayedNumber) {
        return displayedNumber * -1;
     }
-
 }
