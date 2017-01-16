@@ -37,6 +37,8 @@ public class CalculatorController {
 
             String userInput[] = getUserInput();
 
+            // check for exit
+
             calculatorModel.updateState(userInput);
         }
     }
