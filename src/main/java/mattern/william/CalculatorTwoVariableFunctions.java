@@ -3,7 +3,7 @@ package mattern.william;
 /**
  * Created by williammattern on 1/14/17.
  */
-public class CalculatorBasicFunctions {
+public class CalculatorTwoVariableFunctions {
 
     static public double calculateAddition(double firstNumber, double secondNumber){
         return  firstNumber + secondNumber;
@@ -26,12 +26,9 @@ public class CalculatorBasicFunctions {
         }
     }
 
-    static public double calculateSwitchSign(double firstNumber){
-        if (firstNumber == 0){
-            Display.clearDisplay();
-            return 0;
-        } else {
-            return firstNumber * (-1);
-        }
+    static public double calculateToThePowerOf(double firstNumber, double secondNumber){
+        return java.lang.Math.pow(firstNumber, secondNumber);
     }
+
+
 }

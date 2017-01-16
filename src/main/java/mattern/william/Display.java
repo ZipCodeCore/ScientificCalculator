@@ -12,9 +12,9 @@ public class Display {
     static double currentValue;
     static double calculatedValue;
     static String operatorCode;
-    static String operatorCodeOptionsPrompt = "Give me an operation - add - multiply - subtract - divide - clear - signinversion(-x) - invert(1/x) - square - squareroot";
-
-
+    static String operatorCodeOptionsPrompt = "Choose an operation:\nadd - multiply - subtract - divide - clear - signinversion(-x)\n" +
+            " /invert(1/x)/square/squareroot/tothepowerof/factorial\n" +
+            " sin/cos/tan/arcsin/arccos/arctan/todegrees/toradians\n";
 
     static public void getInitialValue(){
         System.out.println(Display.initialValue);
@@ -34,6 +34,42 @@ public class Display {
         } else if (Display.operatorCode.equals("invert")){
             System.out.println("getOperatorCode() received invert message");
             System.out.println(initialValue);
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("square")) {
+            System.out.println("getOperatorCode() received square message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("squareroot")) {
+            System.out.println("getOperatorCode() received squareroot message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("signinversion")) {
+            System.out.println("getOperatorCode() received signinversion message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("factorial")) {
+            System.out.println("getOperatorCode() received factorial message");
+             Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("sin")) {
+            System.out.println("getOperatorCode() received sine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("cos")) {
+            System.out.println("getOperatorCode() received cosine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("tan")) {
+            System.out.println("getOperatorCode() received tangent message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("arcsin")) {
+            System.out.println("getOperatorCode() received arcsine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("arccos")) {
+            System.out.println("getOperatorCode() received arccosine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("arctan")) {
+            System.out.println("getOperatorCode() received arctangent message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("todegrees")) {
+            System.out.println("getOperatorCode() received todegrees message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("toradians")) {
+            System.out.println("getOperatorCode() received toradians message");
             Choice.pickChoice(Display.operatorCode);
         } else {
             System.out.println("getOperatorCode() calling getCurrentValue()");
@@ -56,9 +92,44 @@ public class Display {
         Display.operatorCode = scanner.next();
         if (Display.operatorCode.equals("clear")){
             Display.clearDisplay();
-        } else if (Display.operatorCode.equals("invert")){
+        } else if (Display.operatorCode.equals("invert")) {
             System.out.println("displayAfterCalculating() received invert message");
-            System.out.println(initialValue);
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("square")) {
+            System.out.println("displayAfterCalculating() received square message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("squareroot")) {
+            System.out.println("displayAfterCalculating() received squareroot message");
+         } else if (Display.operatorCode.equals("signinversion")) {
+            System.out.println("displayAfterCalculating() received signinversion message");
+            System.out.println(operatorCode);
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("factorial")) {
+            System.out.println("displayAfterCalculating() received factorial message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("sine")) {
+            System.out.println("displayAfterCalculating() received sine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("cosine")) {
+            System.out.println("displayAfterCalculating() received cosine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("tangent")) {
+            System.out.println("displayAfterCalculating() received tangent message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("arcsin")) {
+            System.out.println("displayAfterCalculating() received arcsine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("arccos")) {
+            System.out.println("displayAfterCalculating() received arcosine message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("arctan")) {
+            System.out.println("displayAfterCalculating() received arctangent message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("todegrees")) {
+            System.out.println("displayAfterCalculating() received todegrees message");
+            Choice.pickChoice(Display.operatorCode);
+        } else if (Display.operatorCode.equals("toradians")) {
+            System.out.println("displayAfterCalculating() received toradians message");
             Choice.pickChoice(Display.operatorCode);
         } else {
             System.out.println("displayAfterCalculating() calling getCurrentValue()");
