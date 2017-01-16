@@ -53,17 +53,17 @@ public class CalculatorWithOneNumberTest {
 
     @Test
     public void calculateAsinTest() {
-        assertEquals(1.5707963267948966, calculatorWithOneNumber.calculateInverseSine(1), 0.0);
+        assertEquals(1.5707963267948966, calculatorWithOneNumber.calculateArcSine(1), 0.0);
     }
 
     @Test
     public void calculateAcosTest() {
-        assertEquals(0, calculatorWithOneNumber.calculateInverseCosine(1), 0.0);
+        assertEquals(0, calculatorWithOneNumber.calculateArcCosine(1), 0.0);
     }
 
     @Test
     public void calculateAtanTest() {
-        assertEquals(0.7853981633974483, calculatorWithOneNumber.calculateInverseTangent(1), 0.0);
+        assertEquals(0.7853981633974483, calculatorWithOneNumber.calculateArcTangent(1), 0.0);
     }
 
     @Test

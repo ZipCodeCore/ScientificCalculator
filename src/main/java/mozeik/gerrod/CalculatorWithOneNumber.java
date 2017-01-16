@@ -41,15 +41,15 @@ public class CalculatorWithOneNumber {
         return Math.tan(firstNumber);
     }
 
-    static public double calculateInverseSine(double firstNumber) {
+    static public double calculateArcSine(double firstNumber) {
         return Math.asin(firstNumber);
     }
 
-    static public double calculateInverseCosine(double firstNumber) {
+    static public double calculateArcCosine(double firstNumber) {
         return Math.acos(firstNumber);
     }
 
-    static public double calculateInverseTangent(double firstNumber) {
+    static public double calculateArcTangent(double firstNumber) {
         return Math.atan(firstNumber);
     }
 

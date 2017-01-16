@@ -63,15 +63,15 @@ public class Choice {
                 Display.displayAfterCalculating();
                 break;
             case "asin":
-                Display.calculatedValue = CalculatorWithOneNumber.calculateInverseSine(Display.initialValue);
+                Display.calculatedValue = CalculatorWithOneNumber.calculateArcSine(Display.initialValue);
                 Display.displayAfterCalculating();
                 break;
             case "acos":
-                Display.calculatedValue = CalculatorWithOneNumber.calculateInverseCosine(Display.initialValue);
+                Display.calculatedValue = CalculatorWithOneNumber.calculateArcCosine(Display.initialValue);
                 Display.displayAfterCalculating();
                 break;
             case "atan":
-                Display.calculatedValue = CalculatorWithOneNumber.calculateInverseTangent(Display.initialValue);
+                Display.calculatedValue = CalculatorWithOneNumber.calculateArcTangent(Display.initialValue);
                 Display.displayAfterCalculating();
                 break;
             case "radianstodegrees":
