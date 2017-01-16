@@ -111,10 +111,14 @@ public class CalculatorModel {
 
         double determinant = (b*b) - (4 * a * c);
 
-        if ( determinant >= 0 ) {
+        if ( determinant > 0 ) {
             setCurrentValue(-b + Math.sqrt(determinant)/(2 * a));
             setMemoryValue(-b - Math.sqrt(determinant)/(2 * a));
         }
+        else {
+            setCurrentValue(NaN);
+        }
+
     }
 
     public boolean isArgDouble(String input) {
