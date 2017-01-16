@@ -64,20 +64,20 @@ public class CalculatorModel {
         resetInputValue();
     }
 
-    public boolean hasOneArgument(String[] input) {
+    private boolean hasOneArgument(String[] input) {
         return (input.length == 1);
     }
 
-    public boolean hasTwoArguments(String[] input) {
+    private boolean hasTwoArguments(String[] input) {
         return (input.length == 2);
     }
 
-    public boolean hasThreeNumericArguments(String[] input) {
+    private boolean hasThreeNumericArguments(String[] input) {
         return (isArgDouble(input[0]) && isArgDouble(input[1])
                 && isArgDouble(input[2]));
     }
 
-    public void handleOneArgInput(String input) {
+    private void handleOneArgInput(String input) {
         if ( isArgDouble(input) ) {
             currentValue = inputValue;
         }
@@ -99,7 +99,7 @@ public class CalculatorModel {
         }
     }
 
-    public void handleTwoArgInput(String[] input) {
+    private void handleTwoArgInput(String[] input) {
         if ( isArgDouble(input[1]) ) {
             currentValue = updateCalculatorWithOperationAndNumber(input[0]);
         }
@@ -108,7 +108,7 @@ public class CalculatorModel {
         }
     }
 
-    public void solveQuadratic(String[] input) {
+    private void solveQuadratic(String[] input) {
         double a = Double.parseDouble(input[0]);
         double b = Double.parseDouble(input[1]);
         double c = Double.parseDouble(input[2]);
@@ -125,7 +125,7 @@ public class CalculatorModel {
 
     }
 
-    public boolean isArgDouble(String input) {
+    private boolean isArgDouble(String input) {
         try {
             // also sets input value, not good
             inputValue = Double.parseDouble(input);
@@ -136,21 +136,21 @@ public class CalculatorModel {
         }
     }
 
-    public boolean isArgMemoryOperation(String input) {
+    private boolean isArgMemoryOperation(String input) {
         return ( input.equalsIgnoreCase("M+")
                 || input.equalsIgnoreCase("MC")
                 || input.equalsIgnoreCase("MRC") );
     }
 
-    public boolean isArgSwitchDisplayUnit(String input) {
+    private boolean isArgSwitchDisplayUnit(String input) {
         return input.equalsIgnoreCase("sdm");
     }
 
-    public boolean isArgSwitchTrigUnit(String input) {
+    private boolean isArgSwitchTrigUnit(String input) {
         return input.equalsIgnoreCase("stu");
     }
 
-    public boolean isArgExit(String input) {
+    private boolean isArgExit(String input) {
         if ( input.equalsIgnoreCase("exit") ) {
             return true;
         }
@@ -159,11 +159,11 @@ public class CalculatorModel {
         }
     }
 
-    public void exitCalculator() {
+    private void exitCalculator() {
         System.exit(0);
     }
 
-    public void handleMemoryOperation(String input) {
+    private void handleMemoryOperation(String input) {
         if ( input.equalsIgnoreCase("M+") ) {
             memoryValue += currentValue;
         }
@@ -175,56 +175,21 @@ public class CalculatorModel {
             currentValue = memoryValue;
         }
     }
-    public double updateCalculatorWithNoArgOperation(String operation) {
+    private double updateCalculatorWithNoArgOperation(String operation) {
         return operations.performCalculation(operation, currentValue,
                 0.0, trigMode);
     }
 
-    public double updateCalculatorWithOperationAndNumber(String operation) {
+    private double updateCalculatorWithOperationAndNumber(String operation) {
         return operations.performCalculation(operation, currentValue,
                 inputValue, trigMode);
     }
 
-    public void resetInputValue() {
+    private void resetInputValue() {
         inputValue = 0.0;
     }
 
-    public void setErrorState() {
+    private void setErrorState() {
         currentValue = NaN;
     }
-
-    /* Old version of updateState, ugly and hard to read, love ya Uncle Bob!
-    public void updateStateDeprecated(String[] splitUserInput) {
-        if (splitUserInput.length == 1) {
-            // check if the first arg is a double
-            try {
-                inputValue = Double.parseDouble(splitUserInput[0]);
-            } catch (NumberFormatException e) {
-                // if it isn't
-                currentValue = operations.performCalculation(splitUserInput[0], currentValue, 0.0);
-                return;
-            }
-
-            // if the first arg is a number
-            currentValue = operations.performCalculation("+", 0.0, inputValue);
-        }
-        else if (splitUserInput.length == 2) {
-            // check if the second arg is a double
-            try {
-                inputValue = Double.parseDouble(splitUserInput[1]);
-            }
-            // if the second arg is not a double
-            catch (NumberFormatException e) {
-                currentValue = NaN;
-                return;
-            }
-            currentValue = operations.performCalculation(splitUserInput[0], currentValue, inputValue);
-        }
-        else {
-            currentValue = NaN;
-    }
-
-        inputValue = 0.0;
-    }
-*/
 }

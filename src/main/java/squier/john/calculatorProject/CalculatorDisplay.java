@@ -15,7 +15,7 @@ public class CalculatorDisplay {
         displayPrettyLine();
     }
 
-    public void displayCurrentValueLine(String value, DisplayModes displayMode) {
+    private void displayCurrentValueLine(String value, DisplayModes displayMode) {
 
         if ( displayMode.equals(DisplayModes.DECIMAL) ) {
             System.out.printf("| CURRENT VALUE | %29s |\n", value);
@@ -26,7 +26,7 @@ public class CalculatorDisplay {
         }
     }
 
-    public void displayMemoryValueLine(String value, DisplayModes dispalyMode) {
+    private void displayMemoryValueLine(String value, DisplayModes dispalyMode) {
 
         if ( dispalyMode.equals(DisplayModes.DECIMAL) ) {
             System.out.printf("|  MEMORY VALUE | %29s |\n", value);
@@ -52,7 +52,7 @@ public class CalculatorDisplay {
         System.out.printf("|    cos    |    acos   |    tan    |   atan    |\n");
         displayPrettyLine();
         System.out.printf("|  sdm (%s)  |  stu (%s)  |     pi    |    e      |\n",
-                displayMode.equals(DisplyModes.DECIMAL) ? "d" : "x",
+                displayMode.equals(DisplayModes.DECIMAL) ? "d" : "x",
                 trigMode.equals(TrigModes.DEGREES) ? "d" : "r");
         displayPrettyLine();
         System.out.printf("|                     exit                      |\n");
@@ -63,7 +63,7 @@ public class CalculatorDisplay {
         System.out.printf("| >>>>");
     }
 
-    public void displayPrettyLine() {
+    private void displayPrettyLine() {
         System.out.printf("*-----------------------------------------------*\n");
     }
 }

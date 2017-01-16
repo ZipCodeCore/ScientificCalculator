@@ -39,7 +39,7 @@ public class CalculatorController {
         }
     }
 
-    public String fillCurrentValue() {
+    private String fillCurrentValue() {
         if (Double.isNaN(calculatorModel.getCurrentValue())) {
             return "Err";
         } else {
@@ -47,11 +47,11 @@ public class CalculatorController {
         }
     }
 
-    public String fillMemoryValue() {
+    private String fillMemoryValue() {
         return Double.toString(calculatorModel.getMemoryValue());
     }
 
-    public void updateDisplay(String currentValue, String memoryValue) {
+    private void updateDisplay(String currentValue, String memoryValue) {
         calculatorDisplay.displayCurrentState(currentValue, memoryValue,
                 calculatorModel.getDisplayMode());
 
@@ -62,7 +62,7 @@ public class CalculatorController {
         calculatorDisplay.displayInputPrompt();
     }
 
-    public String[] getUserInput() {
+    private String[] getUserInput() {
         String temp = calculatorInput.getUserInput();
         return calculatorParser.parseUserInput(temp);
     }
