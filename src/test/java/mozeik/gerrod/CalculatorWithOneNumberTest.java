@@ -36,4 +36,43 @@ public class CalculatorWithOneNumberTest {
         assertEquals(6, calculatorWithOneNumber.calculateFactorial(3), 0.0);
     }
 
+    @Test
+    public void calculateSineTest() {
+        assertEquals(0.5715301650260188, calculatorWithOneNumber.calculateSine(180), 0.0);
+    }
+
+    @Test
+    public void calculateCosineTest() {
+        assertEquals(-0.5984600690578581, calculatorWithOneNumber.calculateCosine(180), 0.0);
+    }
+
+    @Test
+    public void calculateTangentTest() {
+        assertEquals(1.3386902103511544, calculatorWithOneNumber.calculateTangent(180), 0.0);
+    }
+
+    @Test
+    public void calculateAsinTest() {
+        assertEquals(1.5707963267948966, calculatorWithOneNumber.calculateInverseSine(1), 0.0);
+    }
+
+    @Test
+    public void calculateAcosTest() {
+        assertEquals(0, calculatorWithOneNumber.calculateInverseCosine(1), 0.0);
+    }
+
+    @Test
+    public void calculateAtanTest() {
+        assertEquals(0.7853981633974483, calculatorWithOneNumber.calculateInverseTangent(1), 0.0);
+    }
+
+    @Test
+    public void convertDegreesToRadians() {
+        assertEquals(57.29577951308232, calculatorWithOneNumber.degreesToRadians(1), 0.0);
+    }
+
+    @Test
+    public void convertRadiansToDegrees() {
+        assertEquals(0.017453292519943295, calculatorWithOneNumber.radiansToDegrees(1), 0.0);
+    }
 }

@@ -21,7 +21,7 @@ public class Display {
     }
 
     static public void getOperatorCode() {
-        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot/tothepowerof/signinvert/factorial?");
+        System.out.println("add/subtract/divide/multiply/clear\ninvert/square/squareroot/tothepowerof/signinvert/factorial\nsin/cos/tan/asin/acos/atan\ndegreestoradians/radianstodegrees");
         Display.operatorCode = scanner.next();
         if (Display.operatorCode.equals("clear")) {
             Display.clearDisplay();
@@ -38,6 +38,30 @@ public class Display {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else if (Display.operatorCode.equals("factorial")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("sin")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("cos")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("tan")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("asin")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("acos")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("atan")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("radianstodegrees")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("degreestoradians")) {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else {
@@ -58,7 +82,7 @@ public class Display {
     static public void displayAfterCalculating() {
         Display.initialValue = Display.calculatedValue;
         System.out.println(Display.calculatedValue);
-        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot/tothepowerof/signinvert/factorial?");
+        System.out.println("add/subtract/divide/multiply/clear\ninvert/square/squareroot/tothepowerof/signinvert/factorial\nsin/cos/tan/asin/acos/atan\ndegreestoradians/radianstodegrees");
         Display.operatorCode = scanner.next();
         if (Display.operatorCode.equals("clear")) {
             Display.clearDisplay();
@@ -76,6 +100,30 @@ public class Display {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else if (Display.operatorCode.equals("factorial")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("sin")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("cos")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("tan")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("asin")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("acos")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("atan")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("radianstodegrees")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("degreestoradians")) {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else {

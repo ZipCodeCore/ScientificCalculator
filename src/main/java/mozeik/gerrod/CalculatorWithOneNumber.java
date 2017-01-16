@@ -28,4 +28,36 @@ public class CalculatorWithOneNumber {
         }
         return calculatedFactorialValue;
     }
+
+    static public double calculateSine(double firstNumber) {
+        return Math.sin(Math.toDegrees(firstNumber));
+    }
+
+    static public double calculateCosine(double firstNumber) {
+        return Math.cos(firstNumber);
+    }
+
+    static public double calculateTangent(double firstNumber) {
+        return Math.tan(firstNumber);
+    }
+
+    static public double calculateInverseSine(double firstNumber) {
+        return Math.asin(firstNumber);
+    }
+
+    static public double calculateInverseCosine(double firstNumber) {
+        return Math.acos(firstNumber);
+    }
+
+    static public double calculateInverseTangent(double firstNumber) {
+        return Math.atan(firstNumber);
+    }
+
+    static public double degreesToRadians(double firstNumber) {
+        return Math.toDegrees(firstNumber);
+    }
+
+    static public double radiansToDegrees(double firstNumber) {
+        return Math.toRadians(firstNumber);
+    }
 }

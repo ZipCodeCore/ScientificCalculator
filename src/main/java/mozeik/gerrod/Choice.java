@@ -50,8 +50,38 @@ public class Choice {
                 Display.calculatedValue = CalculatorWithOneNumber.calculateFactorial(Display.initialValue);
                 Display.displayAfterCalculating();
                 break;
+            case "sin":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateSine(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "cos":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateCosine(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "tan":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateTangent(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "asin":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateInverseSine(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "acos":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateInverseCosine(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "atan":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateInverseTangent(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "radianstodegrees":
+                Display.calculatedValue = CalculatorWithOneNumber.radiansToDegrees(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "degreestoradians":
+                Display.calculatedValue = CalculatorWithOneNumber.degreesToRadians(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
             }
         }
     }
-
-

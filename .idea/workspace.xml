@@ -6,7 +6,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java" afterPath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java" afterPath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,13 +22,68 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CalculatorProject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CalculatorProject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#188#189#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="606">
+              <caret line="127" column="30" lean-forward="false" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Choice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="81" column="83" lean-forward="false" selection-start-line="81" selection-start-column="83" selection-end-line="81" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculatorWithOneNumber.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="60" column="43" lean-forward="false" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+              <folding>
+                <element signature="e#172#173#0" expanded="true" />
+                <element signature="e#210#211#0" expanded="true" />
+                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#322#323#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#504#505#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
+                <element signature="e#863#864#0" expanded="true" />
+                <element signature="e#923#924#0" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1096#1097#0" expanded="true" />
+                <element signature="e#1140#1141#0" expanded="true" />
+                <element signature="e#1209#1210#0" expanded="true" />
+                <element signature="e#1254#1255#0" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
+                <element signature="e#1370#1371#0" expanded="true" />
+                <element signature="e#1442#1443#0" expanded="true" />
+                <element signature="e#1487#1488#0" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
+                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#1667#1668#0" expanded="true" />
+                <element signature="e#1717#1718#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,51 +99,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Choice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CalculatorWithTwoNumbersTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="34" column="100" lean-forward="true" selection-start-line="34" selection-start-column="100" selection-end-line="34" selection-end-column="100" />
+            <state relative-caret-position="327">
+              <caret line="40" column="100" lean-forward="true" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculatorWithOneNumber.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#172#173#0" expanded="true" />
-                <element signature="e#210#211#0" expanded="true" />
-                <element signature="e#274#275#0" expanded="true" />
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-                <element signature="e#543#544#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +112,8 @@
       <file leaf-file-name="CalculatorWithOneNumberTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="222">
+              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
                 <element signature="e#456#457#0" expanded="true" />
                 <element signature="e#536#537#0" expanded="true" />
@@ -108,6 +123,8 @@
                 <element signature="e#797#798#0" expanded="true" />
                 <element signature="e#842#843#0" expanded="true" />
                 <element signature="e#925#926#0" expanded="true" />
+                <element signature="e#1574#1575#0" expanded="true" />
+                <element signature="e#1661#1662#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,8 +169,8 @@
         <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" />
-        <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java" />
       </list>
     </option>
   </component>
@@ -171,7 +188,6 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="8" />
     <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="978" />
@@ -308,7 +324,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.CalculatorProject">
-    <configuration default="false" name="CalculatorWithOneNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CalculatorWithOneNumberTest.calculateAcosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="mozeik.gerrod.*" />
@@ -320,33 +336,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="mozeik.gerrod" />
       <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorWithTwoNumbersTest.exponentiationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mozeik.gerrod.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
-      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithTwoNumbersTest" />
-      <option name="METHOD_NAME" value="exponentiationTest" />
+      <option name="METHOD_NAME" value="calculateAcosTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -360,7 +350,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CalculatorWithTwoNumbersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CalculatorWithOneNumberTest.calculateAtanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="mozeik.gerrod.*" />
@@ -371,9 +361,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="mozeik.gerrod" />
-      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithTwoNumbersTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
+      <option name="METHOD_NAME" value="calculateAtanTest" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -386,7 +376,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CalculatorWithOneNumberTest.factorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CalculatorWithOneNumberTest.convertDegreesToRadians" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="mozeik.gerrod.*" />
@@ -398,7 +388,33 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="mozeik.gerrod" />
       <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
-      <option name="METHOD_NAME" value="factorialTest" />
+      <option name="METHOD_NAME" value="convertDegreesToRadians" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorWithOneNumberTest.convertRadiansToDegrees" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mozeik.gerrod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project-1-calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
+      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
+      <option name="METHOD_NAME" value="convertRadiansToDegrees" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -813,19 +829,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest.exponentiationTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.factorialTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateAcosTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateAtanTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.convertDegreesToRadians" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.convertRadiansToDegrees" />
       <item index="4" class="java.lang.String" itemvalue="Application.CalculatorProject" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.CalculatorProject" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.factorialTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest.exponentiationTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.convertRadiansToDegrees" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.convertDegreesToRadians" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateAtanTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateAcosTest" />
       </list>
     </recent_temporary>
   </component>
@@ -844,47 +860,47 @@
       <workItem from="1484412596463" duration="15280000" />
       <workItem from="1484531400673" duration="117000" />
       <workItem from="1484588437127" duration="98000" />
-      <workItem from="1484598941098" duration="4990000" />
+      <workItem from="1484598941098" duration="8008000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalculatorWithOneNumberTest - 2017.01.16 at 16h 34m 06s.xml">
-      <configuration name="CalculatorWithOneNumberTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_calculateAcosTest - 2017.01.16 at 17h 38m 49s.xml">
+      <configuration name="CalculatorWithOneNumberTest.calculateAcosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest - 2017.01.16 at 16h 42m 08s.xml">
-      <configuration name="CalculatorWithOneNumberTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_calculateAcosTest - 2017.01.16 at 17h 39m 00s.xml">
+      <configuration name="CalculatorWithOneNumberTest.calculateAcosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest - 2017.01.16 at 16h 49m 49s.xml">
-      <configuration name="CalculatorWithOneNumberTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_calculateAcosTest - 2017.01.16 at 17h 39m 18s.xml">
+      <configuration name="CalculatorWithOneNumberTest.calculateAcosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest_factorialTest - 2017.01.16 at 16h 58m 56s.xml">
-      <configuration name="CalculatorWithOneNumberTest.factorialTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_calculateAsinTest - 2017.01.16 at 17h 38m 44s.xml">
+      <configuration name="CalculatorWithOneNumberTest.calculateAsinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest_factorialTest - 2017.01.16 at 16h 59m 03s.xml">
-      <configuration name="CalculatorWithOneNumberTest.factorialTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_calculateAtanTest - 2017.01.16 at 17h 39m 08s.xml">
+      <configuration name="CalculatorWithOneNumberTest.calculateAtanTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest_signInvertTest - 2017.01.16 at 16h 49m 26s.xml">
-      <configuration name="CalculatorWithOneNumberTest.signInvertTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_calculateAtanTest - 2017.01.16 at 17h 39m 20s.xml">
+      <configuration name="CalculatorWithOneNumberTest.calculateAtanTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithTwoNumbersTest - 2017.01.16 at 16h 51m 54s.xml">
-      <configuration name="CalculatorWithTwoNumbersTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_convertDegreesToRadians - 2017.01.16 at 17h 47m 15s.xml">
+      <configuration name="CalculatorWithOneNumberTest.convertDegreesToRadians" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithTwoNumbersTest - 2017.01.16 at 16h 58m 18s.xml">
-      <configuration name="CalculatorWithTwoNumbersTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_convertDegreesToRadians - 2017.01.16 at 17h 47m 27s.xml">
+      <configuration name="CalculatorWithOneNumberTest.convertDegreesToRadians" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithTwoNumbersTest_exponentiationTest - 2017.01.16 at 16h 51m 42s.xml">
-      <configuration name="CalculatorWithTwoNumbersTest.exponentiationTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_convertRadiansToDegrees - 2017.01.16 at 17h 48m 28s.xml">
+      <configuration name="CalculatorWithOneNumberTest.convertRadiansToDegrees" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithTwoNumbersTest_exponentiationTest - 2017.01.16 at 16h 51m 47s.xml">
-      <configuration name="CalculatorWithTwoNumbersTest.exponentiationTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_convertRadiansToDegrees - 2017.01.16 at 17h 48m 38s.xml">
+      <configuration name="CalculatorWithOneNumberTest.convertRadiansToDegrees" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34356000" />
+    <option name="totallyTimeSpent" value="37374000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="22" width="1920" height="978" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="978" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -902,7 +918,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.165625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.165625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -917,6 +933,37 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31596828" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.165625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -925,7 +972,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1103,18 +1152,26 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/OperationSelector.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Square.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithTwoNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="34" column="100" lean-forward="true" selection-start-line="34" selection-start-column="100" selection-end-line="34" selection-end-column="100" />
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="81" column="83" lean-forward="false" selection-start-line="81" selection-start-column="83" selection-end-line="81" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="417">
+          <caret line="60" column="43" lean-forward="false" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
           <folding>
             <element signature="e#172#173#0" expanded="true" />
             <element signature="e#210#211#0" expanded="true" />
@@ -1124,30 +1181,46 @@
             <element signature="e#445#446#0" expanded="true" />
             <element signature="e#504#505#0" expanded="true" />
             <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+            <element signature="e#1487#1488#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        <state relative-caret-position="327">
+          <caret line="40" column="100" lean-forward="true" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithTwoNumbers.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="606">
+          <caret line="127" column="30" lean-forward="false" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        <state relative-caret-position="222">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
             <element signature="e#456#457#0" expanded="true" />
             <element signature="e#536#537#0" expanded="true" />
@@ -1157,6 +1230,8 @@
             <element signature="e#797#798#0" expanded="true" />
             <element signature="e#842#843#0" expanded="true" />
             <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1661#1662#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1168,14 +1243,6 @@
           <folding>
             <element signature="e#188#189#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
