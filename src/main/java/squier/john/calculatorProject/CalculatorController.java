@@ -24,8 +24,10 @@ public class CalculatorController {
 
     public void runCalculator() {
 
-        // "game" loop
+        // r-e-p loop
         while (!userInput[0].equalsIgnoreCase("exit")) {
+
+            System.out.println(userInput[0]);
 
             String currentValue;
             String memoryValue;
@@ -36,8 +38,6 @@ public class CalculatorController {
             updateDisplay(currentValue, memoryValue);
 
             String userInput[] = getUserInput();
-
-            // check for exit
 
             calculatorModel.updateState(userInput);
         }

@@ -90,6 +90,9 @@ public class CalculatorModel {
         else if ( isArgSwitchTrigUnit(input) ) {
             setTrigMode(trigMode.advanceTrigMode());
         }
+        else if ( isArgExit(input) ) {
+            exitCalculator();
+        }
         else {
             currentValue = updateCalculatorWithNoArgOperation(input);
         }
@@ -144,6 +147,19 @@ public class CalculatorModel {
 
     public boolean isArgSwitchTrigUnit(String input) {
         return input.equalsIgnoreCase("stu");
+    }
+
+    public boolean isArgExit(String input) {
+        if ( input.equalsIgnoreCase("exit") ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public void exitCalculator() {
+        System.exit(0);
     }
 
     public void handleMemoryOperation(String input) {
