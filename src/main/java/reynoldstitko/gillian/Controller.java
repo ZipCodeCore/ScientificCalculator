@@ -7,6 +7,7 @@ public class Controller {
     private SimpleCalculationsModel simpleCalculationsModel = new SimpleCalculationsModel();
     private SquaredCalculationModel squaredCalculationModel = new SquaredCalculationModel();
     private SquareRootCalculationModel squareRootCalculationModel = new SquareRootCalculationModel();
+    //private DetermineEquationToRun determineEquationToRun = new DetermineEquationToRun();
     private Display displayModel = new Display();
     private UserInterface userInterface = new UserInterface();
     private MemoryModel memoryModel = new MemoryModel();
@@ -22,12 +23,13 @@ public class Controller {
         System.out.println();
 
         //Get the first number value
-        //inputValue = userInterface.captureUserInputValue(userInterface.setUserInputValue());
         inputFirstValue = userInterface.captureUserInputValue();
         memoryModel.memoryValue = inputFirstValue;
 
         //Get user operand value
         operand = userInterface.captureOperandValue();
+
+        //determineEquationToRun.runFunction(operand, inputFirstValue);
 
         if(operand.equals("^")){
             System.out.print(squaredCalculationModel.squared(inputFirstValue));
