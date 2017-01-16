@@ -9,55 +9,64 @@ public class CalculatorController {
     private CalculatorDisplay calculatorDisplay;
     private CalculatorModel calculatorModel;
     private CalculatorParser calculatorParser;
+    private String[] userInput;
 
     public CalculatorController() {
         calculatorInput = new CalculatorInput();
         calculatorDisplay = new CalculatorDisplay();
         calculatorModel = new CalculatorModel();
         calculatorParser = new CalculatorParser();
+        userInput = new String[3];
+        userInput[0] = "";
+        userInput[1] = "";
+        userInput[2] = "";
     }
 
-    // REFACTOR: this whole method needs broken up just like model
     public void runCalculator() {
 
-        //boolean keepLooping = true; change loop condition to something more elegant
-        String[] splitUserInput = new String[3];
-        splitUserInput[0] = "";
-        splitUserInput[1] = "";
-        splitUserInput[2] = "";
-
         // "game" loop
-        while (!splitUserInput[0].equalsIgnoreCase("exit")) {
+        while (!userInput[0].equalsIgnoreCase("exit")) {
 
             String currentValue;
             String memoryValue;
 
-            // fill current value
-            if (Double.isNaN(calculatorModel.getCurrentValue())) {
-                currentValue = "Err";
-            } else {
-                currentValue = Double.toString(calculatorModel.getCurrentValue());
-            }
+            currentValue = fillCurrentValue();
+            memoryValue = fillMemoryValue();
 
-            // fill memory value
-            memoryValue = Double.toString(calculatorModel.getMemoryValue());
+            updateDisplay(currentValue, memoryValue);
 
-            // update display
-            calculatorDisplay.displayCurrentState(currentValue, memoryValue,
-                    calculatorModel.getDisplayMode());
+            String userInput[] = getUserInput();
 
-            calculatorDisplay.displayAvailableOperations(
-                    calculatorModel.getDisplayMode(),
-                    calculatorModel.getTrigMode());
-
-            calculatorDisplay.displayInputPrompt();
-
-            // put user input into a string array
-            String userInput = calculatorInput.getUserInput();
-            splitUserInput = calculatorParser.parseUserInput(userInput);
-
-            calculatorModel.updateState(splitUserInput);
+            calculatorModel.updateState(userInput);
         }
+    }
+
+    public String fillCurrentValue() {
+        if (Double.isNaN(calculatorModel.getCurrentValue())) {
+            return "Err";
+        } else {
+            return Double.toString(calculatorModel.getCurrentValue());
+        }
+    }
+
+    public String fillMemoryValue() {
+        return Double.toString(calculatorModel.getMemoryValue());
+    }
+
+    public void updateDisplay(String currentValue, String memoryValue) {
+        calculatorDisplay.displayCurrentState(currentValue, memoryValue,
+                calculatorModel.getDisplayMode());
+
+        calculatorDisplay.displayAvailableOperations(
+                calculatorModel.getDisplayMode(),
+                calculatorModel.getTrigMode());
+
+        calculatorDisplay.displayInputPrompt();
+    }
+
+    public String[] getUserInput() {
+        String temp = calculatorInput.getUserInput();
+        return calculatorParser.parseUserInput(temp);
     }
 }
 
