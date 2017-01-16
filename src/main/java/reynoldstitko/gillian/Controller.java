@@ -9,9 +9,11 @@ public class Controller {
     private SquareRootCalculationModel squareRootCalculationModel = new SquareRootCalculationModel();
     private Display displayModel = new Display();
     private UserInterface userInterface = new UserInterface();
-    private String operand;
-    private Double inputFirstValue;
-    private Double inputSecondValue;
+    private MemoryModel memoryModel = new MemoryModel();
+
+    public String operand;
+    public Double inputFirstValue;
+    public Double inputSecondValue;
 
     public void runCalculator(){
 
@@ -22,6 +24,7 @@ public class Controller {
         //Get the first number value
         //inputValue = userInterface.captureUserInputValue(userInterface.setUserInputValue());
         inputFirstValue = userInterface.captureUserInputValue();
+        memoryModel.memoryValue = inputFirstValue;
 
         //Get user operand value
         operand = userInterface.captureOperandValue();

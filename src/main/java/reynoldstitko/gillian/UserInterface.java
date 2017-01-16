@@ -13,7 +13,7 @@ public class UserInterface {
 
     //public Double captureUserInputValue(Double inputValue)
     public Double captureUserInputValue() {
-        //System.out.print("Input your number: ");
+        System.out.print("Input your number: ");
         return userInputValue = scanner.nextDouble();
     }
 
@@ -29,7 +29,7 @@ public class UserInterface {
 
     //public String captureOperandValue(String operandValue)
     public String captureOperandValue() {
-        //System.out.print("Input your operand (^, +, -, *, /, s (for sqrt)): ");
+        System.out.print("Input your operand (^, +, -, *, /, s (for sqrt)): ");
         return operandValue = scanner.next();
     }
 }
