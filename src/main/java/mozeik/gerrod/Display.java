@@ -8,26 +8,35 @@ import java.util.Scanner;
 public class Display {
 
     static Scanner scanner = new Scanner(System.in);
+    static double initialValue;
+    static double currentValue;
+    static double calculatedValue;
+    static String operatorCode;
 
     static public void getInitialValue() {
         System.out.println("Enter a number.");
-        CalculatorBasicFunctions.initialValue = scanner.nextDouble();
+        Display.initialValue = scanner.nextDouble();
         getOperatorCode();
         getCurrentValue();
     }
 
     static public void getOperatorCode() {
-        System.out.println("add/subtract/divide/multiply/clear/invert?");
-        CalculatorBasicFunctions.operatorCode = scanner.next();
-        if (CalculatorBasicFunctions.operatorCode.equals("clear")) {
-            getInitialValue();
+        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot?");
+        Display.operatorCode = scanner.next();
+        if (Display.operatorCode.equals("clear")) {
+            Display.clearDisplay();
         }
-        else if (CalculatorBasicFunctions.operatorCode.equals("invert")) {
-            System.out.println("Operator code is invert");
-            Choice.pickChoice(CalculatorBasicFunctions.operatorCode);
+        else if (Display.operatorCode.equals("invert")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("square")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("squareroot")) {
+            Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else {
-            Display.getCurrentValue();
+            getCurrentValue();
         }
     }
 
@@ -37,24 +46,29 @@ public class Display {
 
     static public void getCurrentValue() {
         System.out.println("Enter another number.");
-        CalculatorBasicFunctions.currentValue = scanner.nextDouble();
-        Choice.pickChoice(CalculatorBasicFunctions.operatorCode);
+        Display.currentValue = scanner.nextDouble();
+        Choice.pickChoice(Display.operatorCode);
     }
 
     static public void displayAfterCalculating() {
-        CalculatorBasicFunctions.initialValue = CalculatorBasicFunctions.calculatedValue;
-        System.out.println(CalculatorBasicFunctions.calculatedValue);
-        System.out.println("add/subtract/divide/multiply/clear/invert?");
-        CalculatorBasicFunctions.operatorCode = scanner.next();
-        if (CalculatorBasicFunctions.operatorCode.equals("clear")) {
+        Display.initialValue = Display.calculatedValue;
+        System.out.println(Display.calculatedValue);
+        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot?");
+        Display.operatorCode = scanner.next();
+        if (Display.operatorCode.equals("clear")) {
             Display.clearDisplay();
         }
-        else if (CalculatorBasicFunctions.operatorCode.equals("invert")) {
-            System.out.println("Operator code is invert");
-            Choice.pickChoice(CalculatorBasicFunctions.operatorCode);
+        else if (Display.operatorCode.equals("invert")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("square")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("squareroot")) {
+            Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else {
-            Display.getCurrentValue();
+            getCurrentValue();
         }
     }
 

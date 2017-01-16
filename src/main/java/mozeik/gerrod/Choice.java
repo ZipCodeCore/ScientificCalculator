@@ -8,30 +8,36 @@ public class Choice {
     static public void pickChoice(String Choice) {
         switch(Choice) {
             case "add":
-                CalculatorBasicFunctions.calculateAddition(CalculatorBasicFunctions.initialValue, CalculatorBasicFunctions.currentValue);
+                Display.calculatedValue = CalculatorWithTwoNumbers.calculateAddition(Display.initialValue, Display.currentValue);
                 Display.displayAfterCalculating();
-                Display.getCurrentValue();
                 break;
             case "subtract":
-                CalculatorBasicFunctions.calculateSubtraction(CalculatorBasicFunctions.initialValue, CalculatorBasicFunctions.currentValue);
+                Display.calculatedValue = CalculatorWithTwoNumbers.calculateSubtraction(Display.initialValue, Display.currentValue);
                 Display.displayAfterCalculating();
                 Display.getCurrentValue();
                 break;
             case "multiply":
-                CalculatorBasicFunctions.calculateMultiplication(CalculatorBasicFunctions.initialValue, CalculatorBasicFunctions.currentValue);
+                Display.calculatedValue = CalculatorWithTwoNumbers.calculateMultiplication(Display.initialValue, Display.currentValue);
                 Display.displayAfterCalculating();
                 Display.getCurrentValue();
                 break;
             case "divide":
-                CalculatorBasicFunctions.calculateDivision(CalculatorBasicFunctions.initialValue, CalculatorBasicFunctions.currentValue);
+                Display.calculatedValue = CalculatorWithTwoNumbers.calculateDivision(Display.initialValue, Display.currentValue);
                 Display.displayAfterCalculating();
                 Display.getCurrentValue();
                 break;
             case "invert":
-                System.out.println("Switch: Received invert");
-                CalculatorBasicFunctions.calculateDivision(1.0, CalculatorBasicFunctions.initialValue);
+                Display.calculatedValue = CalculatorWithOneNumber.calculateInvert(Display.initialValue);
                 Display.displayAfterCalculating();
-                Display.getCurrentValue();
+                break;
+            case "square":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateSquare(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
+            case "squareroot":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateSquareRoot(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
             }
         }
     }

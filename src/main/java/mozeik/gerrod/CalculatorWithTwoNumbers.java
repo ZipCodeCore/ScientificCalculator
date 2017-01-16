@@ -3,23 +3,18 @@ package mozeik.gerrod;
 /**
  * Created by gerrodmozeik on 1/14/17.
  */
-public class CalculatorBasicFunctions {
-
-    static double initialValue;
-    static double currentValue;
-    static double calculatedValue;
-    static String operatorCode;
+public class CalculatorWithTwoNumbers {
 
     static public double calculateAddition(double firstNumber, double secondNumber) {
-        return calculatedValue = firstNumber + secondNumber;
+        return firstNumber + secondNumber;
     }
 
     static public double calculateSubtraction(double firstNumber, double secondNumber) {
-        return calculatedValue = firstNumber - secondNumber;
+        return firstNumber - secondNumber;
     }
 
     static public double calculateMultiplication(double firstNumber, double secondNumber) {
-        return calculatedValue = firstNumber * secondNumber;
+        return firstNumber * secondNumber;
     }
 
     static public double calculateDivision(double firstNumber, double secondNumber) {
@@ -27,11 +22,7 @@ public class CalculatorBasicFunctions {
             Display.displayErrorMessage();
             return 0;
         } else {
-            return calculatedValue = firstNumber / secondNumber;
+            return firstNumber / secondNumber;
         }
-    }
-
-    static public double calculateInvert(double firstNumber) {
-        return calculatedValue = 1 / firstNumber;
     }
 }
