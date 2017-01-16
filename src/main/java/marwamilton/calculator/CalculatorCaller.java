@@ -30,6 +30,15 @@ public class CalculatorCaller {
         while (exitFlag==false){
 
             String userString = dm.getUserInput();                  // prompt user for input
+
+            clearScreen = ip.clearScreenCheck(userString);          // apparently need to do this before exit
+            while (clearScreen) {
+                System.out.println("delete this message once clear screen functionality implemented");
+                clearScreenMethod();                                // run clear screen method
+                userString = dm.getUserInput();                     // get new user input
+                clearScreen = ip.clearScreenCheck(userString);      // update clearScreen boolean
+            }  // end clearScreen_____________________________________________________________________
+
             exitFlag = ip.exitFlagCheck(userString);                // determine whether to exit or proceed
             if(exitFlag) break;                                     // break if exitFlag is true
 
@@ -39,14 +48,6 @@ public class CalculatorCaller {
                 userString = dm.getUserInput();
                 invalidInput = ip.invalidInputCheck(userString);
             }  // end validation______________________________________________________________________
-
-            clearScreen = ip.clearScreenCheck(userString);
-            while (clearScreen) {
-                System.out.println("delete this message once clear screen functionality implemented");
-                clearScreenMethod();                                // run clear screen method
-                userString = dm.getUserInput();                     // get new user input
-                clearScreen = ip.clearScreenCheck(userString);      // update clearScreen boolean
-            }  // end clearScreen_____________________________________________________________________
 
             pso.nums = ip.splitInput(userString);                          // pass user nums as array to simpleOperation
             pso.desiredOperation = ip.determineOperationType(userString);  // pass user's operator to pso

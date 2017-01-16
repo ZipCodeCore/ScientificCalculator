@@ -11,8 +11,9 @@ public class OwnDebugs {
         DisplayManager dm = new DisplayManager();
 
         String userString = dm.getUserInput();
-        Boolean clearFlag = ip.clearScreenCheck(userString);
-        System.out.println(Boolean.toString(clearFlag));
+        System.out.println(userString);
+        //Boolean clearFlag = ip.clearScreenCheck(userString);
+        //System.out.println(Boolean.toString(clearFlag));
 
 
     }

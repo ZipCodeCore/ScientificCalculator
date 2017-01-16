@@ -21,7 +21,7 @@ public class InputParser {
     // splits user input into string array with the 2 numbers
     public String[] splitInput(String userInput){
         return userInput.split("[\\+\\-\\*\\/]");
-    } // end splitString method _______________________________________________________
+    } // end splitString__________________________________________________________________
 
     // parses user input and returns desired operation
     public String determineOperationType(String userInput){
@@ -31,7 +31,7 @@ public class InputParser {
             return foundChar;
         } else {
         return "Unknown operation type"; }
-    } // end determineOperationType method ____________________________________________
+    } // end determineOperationType________________________________________________________
 
     // checks for user initiated exit
     boolean exitFlagCheck( String userInput){
@@ -40,8 +40,9 @@ public class InputParser {
             return true;
         } else {
             return false; }
-    } // end exitFlagCheck method ______________________________________________________
+    } // end exitFlagCheck_________________________________________________________________
 
+    // checks for user initiated clear screen
     boolean clearScreenCheck(String userInput){
         clearScreenMatcher = clearScreenPattern.matcher(userInput);
         if(clearScreenMatcher.find()){
@@ -49,7 +50,7 @@ public class InputParser {
         } else {
             return false;
         }
-    } // end clearScreenCheck method ______________________________________________________
+    } // end clearScreenCheck______________________________________________________________
 
     boolean invalidInputCheck(String userInput){
         validInputsMatcher= validInputsPattern.matcher(userInput);
@@ -58,6 +59,6 @@ public class InputParser {
         } else {
             return true;
         }
-    }
+    } // end invalidInputCheck_____________________________________________________________
 
 } // end class
