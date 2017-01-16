@@ -25,4 +25,8 @@ public class CalculatorWithTwoNumbers {
             return firstNumber / secondNumber;
         }
     }
+
+    static public double calculateExponentiation(double firstNumber, double secondNumber) {
+        return Math.pow(firstNumber, secondNumber);
+    }
 }

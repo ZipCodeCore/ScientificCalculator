@@ -13,20 +13,22 @@ public class CalculatorWithOneNumberTest {
 
     @Test
     public void calculateInvertTest() {
-        double firstNumber = 3;
         assertEquals(0.3333333333333333, calculatorWithOneNumber.calculateInvert(3), 0.0);
     }
 
     @Test
     public void calculateSquareTest() {
-        double firstNumber = 3;
         assertEquals(9, calculatorWithOneNumber.calculateSquare(3), 0.0);
     }
 
     @Test
     public void calculateSquareRootTest() {
-        double firstNumber = 9;
         assertEquals(3, calculatorWithOneNumber.calculateSquareRoot(9), 0.0);
+    }
+
+    @Test
+    public void signInvertTest() {
+        assertEquals(-1, calculatorWithOneNumber.signInvert(1), 0.0);
     }
 
 }

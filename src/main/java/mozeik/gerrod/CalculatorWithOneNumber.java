@@ -16,4 +16,8 @@ public class CalculatorWithOneNumber {
     static public double calculateSquareRoot(double firstNumber) {
         return java.lang.Math.sqrt(firstNumber);
     }
+
+    static public double signInvert(double firstNumber) {
+        return firstNumber * -1;
+    }
 }

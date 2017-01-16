@@ -38,6 +38,14 @@ public class Choice {
                 Display.calculatedValue = CalculatorWithOneNumber.calculateSquareRoot(Display.initialValue);
                 Display.displayAfterCalculating();
                 break;
+            case "tothepowerof":
+                Display.calculatedValue = CalculatorWithTwoNumbers.calculateExponentiation(Display.initialValue, Display.currentValue);
+                Display.displayAfterCalculating();
+                break;
+            case "signinvert":
+                Display.calculatedValue = CalculatorWithOneNumber.signInvert(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
             }
         }
     }
