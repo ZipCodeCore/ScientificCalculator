@@ -41,4 +41,10 @@ public class CalculatorWithTwoNumbersTest {
         assertEquals(0, calculatorWithTwoNumbers.calculateDivision(firstNumber, secondNumber), 0.0);
     }
 
+    @Test
+    public void exponentiationTest() {
+        double firstNumber = 2, secondNumber = 2;
+        assertEquals(4, calculatorWithTwoNumbers.calculateExponentiation(firstNumber, secondNumber), 0.0);
+    }
+
 }

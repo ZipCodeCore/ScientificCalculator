@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="44b64e0b-eb0e-4aef-aada-c622e5032aa8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithTwoNumbers.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithTwoNumbers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java" afterPath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java" afterPath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="73" column="12" lean-forward="false" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+            <state relative-caret-position="480">
+              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -58,8 +58,18 @@
       <file leaf-file-name="Choice.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+            <state relative-caret-position="522">
+              <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculatorWithTwoNumbersTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="34" column="100" lean-forward="true" selection-start-line="34" selection-start-column="100" selection-end-line="34" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -68,8 +78,8 @@
       <file leaf-file-name="CalculatorWithOneNumber.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#172#173#0" expanded="true" />
                 <element signature="e#210#211#0" expanded="true" />
@@ -84,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculatorWithOneNumberTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CalculatorWithOneNumberTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
                 <element signature="e#456#457#0" expanded="true" />
                 <element signature="e#536#537#0" expanded="true" />
@@ -96,6 +106,8 @@
                 <element signature="e#675#676#0" expanded="true" />
                 <element signature="e#721#722#0" expanded="true" />
                 <element signature="e#797#798#0" expanded="true" />
+                <element signature="e#842#843#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,12 +148,12 @@
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java" />
         <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithTwoNumbers.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" />
         <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" />
       </list>
     </option>
   </component>
@@ -295,79 +307,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorWithOneNumberTest">
-    <configuration default="false" name="CalculatorProject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mozeik.gerrod.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorProject" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="project-1-calculator" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorWithOneNumberTest.calculateSquareTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mozeik.gerrod.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
-      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
-      <option name="METHOD_NAME" value="calculateSquareTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorWithOneNumberTest.calculateSquareRootTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mozeik.gerrod.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
-      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
-      <option name="METHOD_NAME" value="calculateSquareRootTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.CalculatorProject">
     <configuration default="false" name="CalculatorWithOneNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -394,7 +334,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CalculatorWithOneNumberTest.signInvertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CalculatorWithTwoNumbersTest.exponentiationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="mozeik.gerrod.*" />
@@ -405,8 +345,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="mozeik.gerrod" />
-      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
-      <option name="METHOD_NAME" value="signInvertTest" />
+      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithTwoNumbersTest" />
+      <option name="METHOD_NAME" value="exponentiationTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -418,6 +358,78 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorWithTwoNumbersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mozeik.gerrod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project-1-calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
+      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithTwoNumbersTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorWithOneNumberTest.factorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mozeik.gerrod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project-1-calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
+      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorWithOneNumberTest" />
+      <option name="METHOD_NAME" value="factorialTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorProject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mozeik.gerrod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorProject" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="project-1-calculator" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -801,19 +813,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.CalculatorProject" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateSquareTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateSquareRootTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.signInvertTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest.exponentiationTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.factorialTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CalculatorProject" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.signInvertTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.CalculatorProject" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateSquareRootTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.calculateSquareTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CalculatorProject" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest.factorialTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorWithTwoNumbersTest.exponentiationTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorWithOneNumberTest" />
       </list>
     </recent_temporary>
   </component>
@@ -832,14 +844,11 @@
       <workItem from="1484412596463" duration="15280000" />
       <workItem from="1484531400673" duration="117000" />
       <workItem from="1484588437127" duration="98000" />
-      <workItem from="1484598941098" duration="4397000" />
+      <workItem from="1484598941098" duration="4990000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalculatorWithOneNumberTest - 2017.01.16 at 16h 05m 51s.xml">
-      <configuration name="CalculatorWithOneNumberTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CalculatorWithOneNumberTest - 2017.01.16 at 16h 34m 06s.xml">
       <configuration name="CalculatorWithOneNumberTest" configurationId="JUnit" />
     </history-entry>
@@ -849,31 +858,34 @@
     <history-entry file="CalculatorWithOneNumberTest - 2017.01.16 at 16h 49m 49s.xml">
       <configuration name="CalculatorWithOneNumberTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest_calculateInvertTest - 2017.01.16 at 16h 15m 26s.xml">
-      <configuration name="CalculatorWithOneNumberTest.calculateInvertTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_factorialTest - 2017.01.16 at 16h 58m 56s.xml">
+      <configuration name="CalculatorWithOneNumberTest.factorialTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest_calculateSquareRootTest - 2017.01.16 at 16h 33m 59s.xml">
-      <configuration name="CalculatorWithOneNumberTest.calculateSquareRootTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest_calculateSquareTest - 2017.01.16 at 16h 33m 06s.xml">
-      <configuration name="CalculatorWithOneNumberTest.calculateSquareTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorWithOneNumberTest_calculateSquareTest - 2017.01.16 at 16h 33m 14s.xml">
-      <configuration name="CalculatorWithOneNumberTest.calculateSquareTest" configurationId="JUnit" />
+    <history-entry file="CalculatorWithOneNumberTest_factorialTest - 2017.01.16 at 16h 59m 03s.xml">
+      <configuration name="CalculatorWithOneNumberTest.factorialTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CalculatorWithOneNumberTest_signInvertTest - 2017.01.16 at 16h 49m 26s.xml">
       <configuration name="CalculatorWithOneNumberTest.signInvertTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorWithTwoNumbersTest - 2017.01.16 at 16h 22m 11s.xml">
+    <history-entry file="CalculatorWithTwoNumbersTest - 2017.01.16 at 16h 51m 54s.xml">
       <configuration name="CalculatorWithTwoNumbersTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorWithTwoNumbersTest - 2017.01.16 at 16h 58m 18s.xml">
+      <configuration name="CalculatorWithTwoNumbersTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorWithTwoNumbersTest_exponentiationTest - 2017.01.16 at 16h 51m 42s.xml">
+      <configuration name="CalculatorWithTwoNumbersTest.exponentiationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorWithTwoNumbersTest_exponentiationTest - 2017.01.16 at 16h 51m 47s.xml">
+      <configuration name="CalculatorWithTwoNumbersTest.exponentiationTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33763000" />
+    <option name="totallyTimeSpent" value="34356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="8" y="22" width="1920" height="978" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1091,36 +1103,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/OperationSelector.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Square.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#188#189#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithTwoNumbersTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithTwoNumbers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="237">
+          <caret line="34" column="100" lean-forward="true" selection-start-line="34" selection-start-column="100" selection-end-line="34" selection-end-column="100" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithOneNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#172#173#0" expanded="true" />
             <element signature="e#210#211#0" expanded="true" />
@@ -1136,24 +1130,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        <state relative-caret-position="522">
+          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorWithTwoNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="73" column="12" lean-forward="false" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorWithOneNumberTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
             <element signature="e#456#457#0" expanded="true" />
             <element signature="e#536#537#0" expanded="true" />
@@ -1161,7 +1155,27 @@
             <element signature="e#675#676#0" expanded="true" />
             <element signature="e#721#722#0" expanded="true" />
             <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

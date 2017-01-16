@@ -31,4 +31,9 @@ public class CalculatorWithOneNumberTest {
         assertEquals(-1, calculatorWithOneNumber.signInvert(1), 0.0);
     }
 
+    @Test
+    public void factorialTest() {
+        assertEquals(6, calculatorWithOneNumber.calculateFactorial(3), 0.0);
+    }
+
 }

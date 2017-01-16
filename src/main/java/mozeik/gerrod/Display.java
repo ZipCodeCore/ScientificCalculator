@@ -21,7 +21,7 @@ public class Display {
     }
 
     static public void getOperatorCode() {
-        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot/tothepowerof/signinvert?");
+        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot/tothepowerof/signinvert/factorial?");
         Display.operatorCode = scanner.next();
         if (Display.operatorCode.equals("clear")) {
             Display.clearDisplay();
@@ -35,6 +35,9 @@ public class Display {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else if (Display.operatorCode.equals("signinvert")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("factorial")) {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else {
@@ -55,7 +58,7 @@ public class Display {
     static public void displayAfterCalculating() {
         Display.initialValue = Display.calculatedValue;
         System.out.println(Display.calculatedValue);
-        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot/tothepowerof/signinvert?");
+        System.out.println("add/subtract/divide/multiply/clear/invert/square/squareroot/tothepowerof/signinvert/factorial?");
         Display.operatorCode = scanner.next();
         if (Display.operatorCode.equals("clear")) {
             Display.clearDisplay();
@@ -70,6 +73,9 @@ public class Display {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else if (Display.operatorCode.equals("signinvert")) {
+            Choice.pickChoice(Display.operatorCode);
+            getInitialValue();
+        } else if (Display.operatorCode.equals("factorial")) {
             Choice.pickChoice(Display.operatorCode);
             getInitialValue();
         } else {

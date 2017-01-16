@@ -46,6 +46,10 @@ public class Choice {
                 Display.calculatedValue = CalculatorWithOneNumber.signInvert(Display.initialValue);
                 Display.displayAfterCalculating();
                 break;
+            case "factorial":
+                Display.calculatedValue = CalculatorWithOneNumber.calculateFactorial(Display.initialValue);
+                Display.displayAfterCalculating();
+                break;
             }
         }
     }
