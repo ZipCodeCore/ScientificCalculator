@@ -26,6 +26,12 @@ public class Choice {
                 Display.displayAfterCalculating();
                 Display.getCurrentValue();
                 break;
+            case "square":
+
+            case "squareroot":
+
+            case "inverse":
+
         }
     }
 }

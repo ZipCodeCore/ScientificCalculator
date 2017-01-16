@@ -25,4 +25,6 @@ public class CalculatorBasicFunctions {
             return Display.calculatedValue = firstNumber / secondNumber;
         }
     }
+
+
 }

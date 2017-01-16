@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01fd081b-b7d9-4d8d-a536-d131e102aed3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorEngine.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mattern/william/CalculatorEngine.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mattern/william/CalculatorBasicFunctions.class" afterPath="$PROJECT_DIR$/target/classes/mattern/william/CalculatorBasicFunctions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mattern/william/CalculatorProject.class" afterPath="$PROJECT_DIR$/target/classes/mattern/william/CalculatorProject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mattern/william/Choice.class" afterPath="$PROJECT_DIR$/target/classes/mattern/william/Choice.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mattern/william/Display.class" afterPath="$PROJECT_DIR$/target/classes/mattern/william/Display.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorComplexFunctions.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/mattern/william/CalculatorComplexFunctionsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorBasicFunctions.java" afterPath="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorBasicFunctions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorProject.java" afterPath="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorProject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mattern/william/Choice.java" afterPath="$PROJECT_DIR$/src/main/java/mattern/william/Choice.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mattern/william/Display.java" afterPath="$PROJECT_DIR$/src/main/java/mattern/william/Display.java" />
     </list>
@@ -29,11 +23,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CalculatorProject.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CalculatorProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/CalculatorProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding>
                 <element signature="e#152#153#0" expanded="true" />
                 <element signature="e#194#195#0" expanded="true" />
@@ -42,37 +36,42 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Choice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/Choice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CalculatorBasicFunctions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/CalculatorBasicFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Choice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/Choice.java">
+      <file leaf-file-name="CalculatorComplexFunctions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/CalculatorComplexFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="0">
+              <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/Display.java">
+      <file leaf-file-name="CalculatorComplexFunctionsTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/mattern/william/CalculatorComplexFunctionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#412#413#0" expanded="true" />
-                <element signature="e#1561#1562#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="345">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,10 +79,24 @@
       <file leaf-file-name="CalculatorBasicFunctionsTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/mattern/william/CalculatorBasicFunctionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+            <state relative-caret-position="403">
+              <caret line="39" column="90" lean-forward="true" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/Display.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1649#1650#0" expanded="true" />
+                <element signature="e#1690#1691#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,8 +107,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -121,9 +134,11 @@
         <option value="$PROJECT_DIR$/src/test/java/mattern/william/CalculatorBasicFunctionsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorEngine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mattern/william/Display.java" />
         <option value="$PROJECT_DIR$/src/main/java/mattern/william/Choice.java" />
         <option value="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorBasicFunctions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mattern/william/Display.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mattern/william/CalculatorComplexFunctions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mattern/william/CalculatorComplexFunctionsTest.java" />
       </list>
     </option>
   </component>
@@ -274,7 +289,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorBasicFunctionsTest">
+  <component name="RunManager" selected="Application.CalculatorProject">
     <configuration default="false" name="CalculatorProject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -788,9 +803,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.CalculatorProject" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CalculatorProject" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateSubtractionTest" />
       </list>
@@ -808,14 +823,11 @@
       <updated>1484351917235</updated>
       <workItem from="1484351918531" duration="14518000" />
       <workItem from="1484368931928" duration="12000" />
-      <workItem from="1484368983218" duration="19596000" />
+      <workItem from="1484368983218" duration="23199000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 14h 51m 13s.xml">
-      <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 16h 02m 31s.xml">
       <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
     </history-entry>
@@ -840,12 +852,15 @@
     <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 16h 29m 37s.xml">
       <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CalculatorBasicFunctionsTest - 2017.01.16 at 10h 54m 08s.xml">
+      <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="CalculatorBasicFunctionsTest_calculateDivisionByZeroTest - 2017.01.14 at 16h 27m 56s.xml">
       <configuration name="CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34126000" />
+    <option name="totallyTimeSpent" value="37729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="32" y="25" width="1851" height="975" extended-state="0" />
@@ -964,9 +979,8 @@
           <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1044,9 +1058,8 @@
           <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1138,10 +1151,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/CalculatorProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/Choice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/mattern/william/CalculatorBasicFunctionsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        <state relative-caret-position="403">
+          <caret line="39" column="90" lean-forward="true" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1150,41 +1182,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/Choice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/CalculatorBasicFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/CalculatorProject.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mattern/william/CalculatorComplexFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mattern/william/CalculatorComplexFunctionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
