@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b64e0b-eb0e-4aef-aada-c622e5032aa8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mozeik/gerrod/CalculatorBasicFunctions.class" afterPath="$PROJECT_DIR$/target/classes/mozeik/gerrod/CalculatorBasicFunctions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mozeik/gerrod/Choice.class" afterPath="$PROJECT_DIR$/target/classes/mozeik/gerrod/Choice.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mozeik/gerrod/Display.class" afterPath="$PROJECT_DIR$/target/classes/mozeik/gerrod/Display.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" afterPath="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java" afterPath="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,37 +29,32 @@
       <file leaf-file-name="CalculatorProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#147#148#0" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculatorBasicFunctions.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state relative-caret-position="75">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CalculatorBasicFunctions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <folding>
+                <element signature="e#1061#1062#0" expanded="true" />
+                <element signature="e#1117#1118#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-              <folding>
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#467#468#0" expanded="true" />
-                <element signature="e#1510#1511#0" expanded="true" />
-                <element signature="e#1551#1552#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="46" column="69" lean-forward="false" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,8 +62,8 @@
       <file leaf-file-name="Choice.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+            <state relative-caret-position="480">
+              <caret line="32" column="50" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -71,11 +72,9 @@
       <file leaf-file-name="CalculatorBasicFunctionsTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="417">
+              <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,12 +109,12 @@
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Inverse.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/RunEngine.java" />
-        <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorEngine.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java" />
       </list>
     </option>
@@ -154,7 +153,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,6 +248,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,7 +268,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorBasicFunctionsTest">
+  <component name="RunManager" selected="Application.CalculatorProject">
     <configuration default="false" name="CalculatorBasicFunctionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -284,32 +283,6 @@
       <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorBasicFunctionsTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalculatorBasicFunctionsTest.calculateDivisionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mozeik.gerrod.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
-      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorBasicFunctionsTest" />
-      <option name="METHOD_NAME" value="calculateDivisionTest" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -381,6 +354,32 @@
       <option name="PACKAGE_NAME" value="mozeik.gerrod" />
       <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorBasicFunctionsTest" />
       <option name="METHOD_NAME" value="calculateSubtractionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalculatorBasicFunctionsTest.calculateInvertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mozeik.gerrod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="project-1-calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mozeik.gerrod" />
+      <option name="MAIN_CLASS_NAME" value="mozeik.gerrod.CalculatorBasicFunctionsTest" />
+      <option name="METHOD_NAME" value="calculateInvertTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -776,18 +775,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.CalculatorProject" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateSubtractionTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CalculatorProject" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateSubtractionTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateInvertTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.CalculatorProject" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateSubtractionTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CalculatorProject" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateInvertTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateSubtractionTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" />
       </list>
     </recent_temporary>
   </component>
@@ -803,34 +802,37 @@
       <updated>1484351865239</updated>
       <workItem from="1484351868275" duration="2548000" />
       <workItem from="1484356204066" duration="11323000" />
-      <workItem from="1484412596463" duration="13510000" />
+      <workItem from="1484412596463" duration="15280000" />
+      <workItem from="1484531400673" duration="117000" />
+      <workItem from="1484588437127" duration="98000" />
+      <workItem from="1484598941098" duration="1270000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 12h 18m 57s.xml">
-      <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 14h 44m 51s.xml">
-      <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 14h 45m 35s.xml">
-      <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 16h 29m 29s.xml">
-      <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CalculatorBasicFunctionsTest - 2017.01.14 at 16h 29m 44s.xml">
+      <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorBasicFunctionsTest - 2017.01.15 at 13h 45m 27s.xml">
       <configuration name="CalculatorBasicFunctionsTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CalculatorBasicFunctionsTest_calculateDivisionByZeroTest - 2017.01.14 at 12h 19m 04s.xml">
       <configuration name="CalculatorBasicFunctionsTest.calculateDivisionByZeroTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CalculatorBasicFunctionsTest_calculateDivisionTest - 2017.01.14 at 12h 17m 07s.xml">
-      <configuration name="CalculatorBasicFunctionsTest.calculateDivisionTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CalculatorBasicFunctionsTest_calculateDivisionTest - 2017.01.14 at 12h 17m 16s.xml">
       <configuration name="CalculatorBasicFunctionsTest.calculateDivisionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorBasicFunctionsTest_calculateInvertTest - 2017.01.16 at 15h 54m 02s.xml">
+      <configuration name="CalculatorBasicFunctionsTest.calculateInvertTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorBasicFunctionsTest_calculateInvertTest - 2017.01.16 at 15h 54m 24s.xml">
+      <configuration name="CalculatorBasicFunctionsTest.calculateInvertTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorBasicFunctionsTest_calculateInvertTest - 2017.01.16 at 15h 54m 32s.xml">
+      <configuration name="CalculatorBasicFunctionsTest.calculateInvertTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CalculatorBasicFunctionsTest_calculateInvertTest - 2017.01.16 at 15h 55m 38s.xml">
+      <configuration name="CalculatorBasicFunctionsTest.calculateInvertTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CalculatorBasicFunctionsTest_calculateSubtractionTest - 2017.01.14 at 15h 58m 30s.xml">
       <configuration name="CalculatorBasicFunctionsTest.calculateSubtractionTest" configurationId="JUnit" />
@@ -840,41 +842,41 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27381000" />
+    <option name="totallyTimeSpent" value="30636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="978" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31596828" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4847112" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.165625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -894,16 +896,24 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorEngine.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -911,107 +921,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/OperationSelector.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        <state relative-caret-position="450">
+          <caret line="30" column="91" lean-forward="false" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <folding>
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="91" lean-forward="false" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
-            <element signature="e#1510#1511#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Square.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/SquareRoot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="30" column="91" lean-forward="false" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Inverse.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        <state relative-caret-position="315">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Memory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        <state relative-caret-position="150">
+          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/SquareTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorEngine.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/OperationSelector.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/SquareRootTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/SquareRoot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Memory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/StartEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Square.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/SquareRoot.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Inverse.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Memory.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/SquareTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/SquareRootTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/SquareRoot.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Memory.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/StartEngine.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1020,100 +1059,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/RunEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/RunEngine.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorEngine.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Inverse.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/OperationSelector.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Square.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding>
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Inverse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/OperationSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Square.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Choice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+        <state relative-caret-position="480">
+          <caret line="32" column="50" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding>
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
-            <element signature="e#1510#1511#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mozeik/gerrod/CalculatorBasicFunctionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mozeik/gerrod/CalculatorBasicFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state relative-caret-position="405">
+          <caret line="46" column="69" lean-forward="false" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="69" />
           <folding />
         </state>
       </provider>

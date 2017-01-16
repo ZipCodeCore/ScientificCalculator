@@ -30,4 +30,8 @@ public class CalculatorBasicFunctions {
             return calculatedValue = firstNumber / secondNumber;
         }
     }
+
+    static public double calculateInvert(double firstNumber) {
+        return calculatedValue = 1 / firstNumber;
+    }
 }

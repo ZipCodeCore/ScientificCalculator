@@ -27,6 +27,11 @@ public class Choice {
                 Display.displayAfterCalculating();
                 Display.getCurrentValue();
                 break;
+            case "invert":
+                System.out.println("Switch: Received invert");
+                CalculatorBasicFunctions.calculateDivision(1.0, CalculatorBasicFunctions.initialValue);
+                Display.displayAfterCalculating();
+                Display.getCurrentValue();
             }
         }
     }

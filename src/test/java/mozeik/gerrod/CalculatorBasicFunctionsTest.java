@@ -41,4 +41,10 @@ public class CalculatorBasicFunctionsTest {
         assertEquals(0, calculatorBasicFunctions.calculateDivision(firstNumber, secondNumber), 0.0);
     }
 
+    @Test
+    public void calculateInvertTest() {
+        double firstNumber = 3;
+        assertEquals(0.3333333333333333, calculatorBasicFunctions.calculateInvert(3), 0.0);
+    }
+
 }
