@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="edc37604-e0a9-4420-95a9-d9ebcb2fceab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/gross_ryan/Converter.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gross_ryan/Calculator.class" afterPath="$PROJECT_DIR$/target/classes/gross_ryan/Calculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gross_ryan/Display.class" afterPath="$PROJECT_DIR$/target/classes/gross_ryan/Display.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gross_ryan/UserInterface.class" afterPath="$PROJECT_DIR$/target/classes/gross_ryan/UserInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gross_ryan/Arithmetic.java" afterPath="$PROJECT_DIR$/src/main/java/gross_ryan/Arithmetic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gross_ryan/Calculator.java" afterPath="$PROJECT_DIR$/src/main/java/gross_ryan/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gross_ryan/Display.java" afterPath="$PROJECT_DIR$/src/main/java/gross_ryan/Display.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gross_ryan/Trig.java" afterPath="$PROJECT_DIR$/src/main/java/gross_ryan/Trig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/gross_ryan/UserInterface.java" afterPath="$PROJECT_DIR$/src/main/java/gross_ryan/UserInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/gross_ryan/ExponentialTest.java" afterPath="$PROJECT_DIR$/src/test/java/gross_ryan/ExponentialTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/gross_ryan/MemoryTest.java" afterPath="$PROJECT_DIR$/src/test/java/gross_ryan/MemoryTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/gross_ryan/TrigTest.java" afterPath="$PROJECT_DIR$/src/test/java/gross_ryan/TrigTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/gross_ryan/UITest.java" afterPath="$PROJECT_DIR$/src/test/java/gross_ryan/UITest.java" />
-    </list>
+    <list default="true" id="edc37604-e0a9-4420-95a9-d9ebcb2fceab" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,14 +17,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UITest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/gross_ryan/UITest.java">
+      <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="70" column="70" lean-forward="false" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-2366">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,8 +89,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="391" />
+    <option name="y" value="23" />
+    <option name="width" value="888" />
+    <option name="height" value="709" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -240,7 +225,6 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="FullScreen" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/ryangross/dev/labs/project-1-calculator/src/test/java/gross_ryan/CustomTest.java" />
   </component>
   <component name="RecentsManager">
@@ -793,7 +777,7 @@
       <workItem from="1484500648632" duration="2721000" />
       <workItem from="1484505236334" duration="7157000" />
       <workItem from="1484514319552" duration="10340000" />
-      <workItem from="1484528253384" duration="18370000" />
+      <workItem from="1484528253384" duration="20235000" />
     </task>
     <servers />
   </component>
@@ -830,10 +814,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42515000" />
+    <option name="totallyTimeSpent" value="44380000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="391" y="23" width="888" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -846,12 +830,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24351852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38282388" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36036035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -949,34 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Memory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <marker date="1484520055000" expanded="true" signature="21:64" ph="/**...*/" />
-            <marker date="1484520055000" expanded="true" signature="143:176" ph="{...}" />
-            <marker date="1484520055000" expanded="true" signature="222:291" ph="{...}" />
-            <marker date="1484520055000" expanded="true" signature="326:362" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Arithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <marker date="1484590423000" expanded="true" signature="21:64" ph="/**...*/" />
-            <marker date="1484590423000" expanded="true" signature="167:222" ph="{...}" />
-            <marker date="1484590423000" expanded="true" signature="307:365" ph="{...}" />
-            <marker date="1484590423000" expanded="true" signature="450:508" ph="{...}" />
-            <marker date="1484590423000" expanded="true" signature="667:727" ph="{...}" />
-            <marker date="1484590423000" expanded="true" signature="800:858" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/gross_ryan/ArithmeticTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1038,64 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Exponential.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding>
-            <marker date="1484525735000" expanded="true" signature="21:64" ph="/**...*/" />
-            <marker date="1484525735000" expanded="true" signature="148:200" ph="{...}" />
-            <marker date="1484525735000" expanded="true" signature="256:306" ph="{...}" />
-            <marker date="1484525735000" expanded="true" signature="366:409" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/ErrorCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1484519566000" expanded="true" signature="21:64" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Display.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <marker date="1484595265000" expanded="true" signature="47:90" ph="/**...*/" />
-            <marker date="1484595265000" expanded="true" signature="251:358" ph="{...}" />
-            <marker date="1484595265000" expanded="true" signature="403:445" ph="{...}" />
-            <marker date="1484595265000" expanded="true" signature="505:575" ph="{...}" />
-            <marker date="1484595265000" expanded="true" signature="632:699" ph="{...}" />
-            <marker date="1484595265000" expanded="true" signature="758:827" ph="{...}" />
-            <marker date="1484595265000" expanded="true" signature="888:943" ph="{...}" />
-            <marker date="1484595265000" expanded="true" signature="1016:1521" ph="{...}" />
-            <marker date="1484595265000" expanded="true" signature="1573:1682" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Trig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <marker date="1484595109000" expanded="true" signature="21:64" ph="/**...*/" />
-            <marker date="1484595109000" expanded="true" signature="180:339" ph="{...}" />
-            <marker date="1484595109000" expanded="true" signature="394:545" ph="{...}" />
-            <marker date="1484595109000" expanded="true" signature="600:759" ph="{...}" />
-            <marker date="1484595109000" expanded="true" signature="814:868" ph="{...}" />
-            <marker date="1484595109000" expanded="true" signature="923:978" ph="{...}" />
-            <marker date="1484595109000" expanded="true" signature="1033:1088" ph="{...}" />
-            <marker date="1484595109000" expanded="true" signature="1142:1293" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/gross_ryan/TrigTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="787">
@@ -1136,31 +1034,6 @@
         <state relative-caret-position="75">
           <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Logarithmic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1484603471000" expanded="true" signature="21:64" ph="/**...*/" />
-            <marker date="1484603471000" expanded="true" signature="146:195" ph="{...}" />
-            <marker date="1484603471000" expanded="true" signature="257:312" ph="{...}" />
-            <marker date="1484603471000" expanded="true" signature="367:418" ph="{...}" />
-            <marker date="1484603471000" expanded="true" signature="480:535" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <marker date="1484604010000" expanded="true" signature="21:64" ph="/**...*/" />
-            <marker date="1484604010000" expanded="true" signature="459:869" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1245,38 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Custom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <marker date="1484604452000" expanded="true" signature="21:64" ph="/**...*/" />
-            <marker date="1484604452000" expanded="true" signature="140:286" ph="{...}" />
-            <marker date="1484604452000" expanded="true" signature="340:463" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="155" column="29" lean-forward="true" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
-          <folding>
-            <marker date="1484604355000" expanded="true" signature="47:90" ph="/**...*/" />
-            <marker date="1484604355000" expanded="true" signature="474:1710" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="1791:2427" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="2501:3605" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="3678:4413" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="4490:5093" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="5169:5667" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="5756:6098" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="6163:6276" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="6318:6480" ph="{...}" />
-            <marker date="1484604355000" expanded="true" signature="6535:6578" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/gross_ryan/CustomTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1293,11 +1134,151 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/gross_ryan/UITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
+        <state relative-caret-position="689">
           <caret line="70" column="70" lean-forward="false" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1484604596000" expanded="true" signature="28:93" ph="..." />
+            <marker date="1484604596000" expanded="true" signature="95:138" ph="/**...*/" />
+            <marker date="1484604596000" expanded="true" signature="224:521" ph="{...}" />
+            <marker date="1484604596000" expanded="true" signature="568:913" ph="{...}" />
+            <marker date="1484604596000" expanded="true" signature="961:1181" ph="{...}" />
+            <marker date="1484604596000" expanded="true" signature="1222:1691" ph="{...}" />
+            <marker date="1484604596000" expanded="true" signature="1736:1856" ph="{...}" />
+            <marker date="1484604596000" expanded="true" signature="1903:1977" ph="{...}" />
+            <marker date="1484604596000" expanded="true" signature="2023:2317" ph="{...}" />
+            <marker date="1484604596000" expanded="true" signature="2358:2510" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Arithmetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1484590423000" expanded="true" signature="21:64" ph="/**...*/" />
+            <marker date="1484590423000" expanded="true" signature="167:222" ph="{...}" />
+            <marker date="1484590423000" expanded="true" signature="307:365" ph="{...}" />
+            <marker date="1484590423000" expanded="true" signature="450:508" ph="{...}" />
+            <marker date="1484590423000" expanded="true" signature="667:727" ph="{...}" />
+            <marker date="1484590423000" expanded="true" signature="800:858" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Custom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1484604452000" expanded="true" signature="21:64" ph="/**...*/" />
+            <marker date="1484604452000" expanded="true" signature="140:286" ph="{...}" />
+            <marker date="1484604452000" expanded="true" signature="340:463" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <marker date="1484595265000" expanded="true" signature="47:90" ph="/**...*/" />
+            <marker date="1484595265000" expanded="true" signature="251:358" ph="{...}" />
+            <marker date="1484595265000" expanded="true" signature="403:445" ph="{...}" />
+            <marker date="1484595265000" expanded="true" signature="505:575" ph="{...}" />
+            <marker date="1484595265000" expanded="true" signature="632:699" ph="{...}" />
+            <marker date="1484595265000" expanded="true" signature="758:827" ph="{...}" />
+            <marker date="1484595265000" expanded="true" signature="888:943" ph="{...}" />
+            <marker date="1484595265000" expanded="true" signature="1016:1521" ph="{...}" />
+            <marker date="1484595265000" expanded="true" signature="1573:1682" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Exponential.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <marker date="1484525735000" expanded="true" signature="21:64" ph="/**...*/" />
+            <marker date="1484525735000" expanded="true" signature="148:200" ph="{...}" />
+            <marker date="1484525735000" expanded="true" signature="256:306" ph="{...}" />
+            <marker date="1484525735000" expanded="true" signature="366:409" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Logarithmic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <marker date="1484603471000" expanded="true" signature="21:64" ph="/**...*/" />
+            <marker date="1484603471000" expanded="true" signature="146:195" ph="{...}" />
+            <marker date="1484603471000" expanded="true" signature="257:312" ph="{...}" />
+            <marker date="1484603471000" expanded="true" signature="367:418" ph="{...}" />
+            <marker date="1484603471000" expanded="true" signature="480:535" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Memory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <marker date="1484520055000" expanded="true" signature="21:64" ph="/**...*/" />
+            <marker date="1484520055000" expanded="true" signature="143:176" ph="{...}" />
+            <marker date="1484520055000" expanded="true" signature="222:291" ph="{...}" />
+            <marker date="1484520055000" expanded="true" signature="326:362" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Trig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <marker date="1484595109000" expanded="true" signature="21:64" ph="/**...*/" />
+            <marker date="1484595109000" expanded="true" signature="180:339" ph="{...}" />
+            <marker date="1484595109000" expanded="true" signature="394:545" ph="{...}" />
+            <marker date="1484595109000" expanded="true" signature="600:759" ph="{...}" />
+            <marker date="1484595109000" expanded="true" signature="814:868" ph="{...}" />
+            <marker date="1484595109000" expanded="true" signature="923:978" ph="{...}" />
+            <marker date="1484595109000" expanded="true" signature="1033:1088" ph="{...}" />
+            <marker date="1484595109000" expanded="true" signature="1142:1293" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/ErrorCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1484519566000" expanded="true" signature="21:64" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <marker date="1484604010000" expanded="true" signature="21:64" ph="/**...*/" />
+            <marker date="1484604010000" expanded="true" signature="459:869" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gross_ryan/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2366">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
