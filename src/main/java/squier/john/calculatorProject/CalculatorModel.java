@@ -1,5 +1,6 @@
 package squier.john.calculatorProject;
 
+import static java.lang.Double.MAX_EXPONENT;
 import static java.lang.Double.NaN;
 
 /**
@@ -9,58 +10,186 @@ public class CalculatorModel {
 
     private double currentValue;
     private double inputValue;
+    private double memoryValue;
+    private DisplayModes displayMode;
+    private TrigModes trigMode;
     private Operations operations;
 
     public CalculatorModel() {
         currentValue = 0.0;
         inputValue = 0.0;
+        memoryValue = 0.0;
+        displayMode = DisplayModes.DECIMAL;
+        trigMode = TrigModes.DEGREES;
         operations = new Operations();
     }
 
     public void setCurrentValue(double currentValue) {
         this.currentValue = currentValue;
     }
-
     public double getCurrentValue() {
         return currentValue;
     }
+
+    public void setInputValue(double inputValue) { this. inputValue = inputValue; }
+    public double getInputValue() { return inputValue; }
+
+    public void setMemoryValue(double memoryValue) { this.memoryValue = memoryValue; }
+    public double getMemoryValue() { return memoryValue; }
+
+    public void setDisplayMode(DisplayModes displayMode) { this.displayMode = displayMode; }
+    public DisplayModes getDisplayMode() { return displayMode; }
+
+    public void setTrigMode(TrigModes trigMode) { this.trigMode = trigMode; }
+    public TrigModes getTrigMode() { return trigMode; }
 
     public Operations getOperations() {
         return operations;
     }
 
-    public void updateState(String[] splitUserInput) {
-        if (splitUserInput.length == 1) {
-            // check if the first arg is a double
-            try {
-                inputValue = Double.parseDouble(splitUserInput[0]);
-            } catch (NumberFormatException e) {
-                // if it isn't
-                currentValue = operations.performCalculation(splitUserInput[0], currentValue, 0.0);
-                return;
-            }
-
-            // if the first arg is a number
-            currentValue = operations.performCalculation("+", 0.0, inputValue);
+    public void updateState(String[] userInput) {
+        if ( hasOneArgument(userInput) ) {
+            handleOneArgInput(userInput[0]);
         }
-        else if (splitUserInput.length == 2) {
-            // check if the second arg is a double
-            try {
-                inputValue = Double.parseDouble(splitUserInput[1]);
-            }
-            // if the second arg is not a double
-            catch (NumberFormatException e) {
-                currentValue = NaN;
-                return;
-            }
-            currentValue = operations.performCalculation(splitUserInput[0], currentValue, inputValue);
+        else if ( hasTwoArguments(userInput) ) {
+            handleTwoArgInput(userInput);
+        }
+        else if ( hasThreeNumericArguments(userInput) ) {
+            solveQuadratic(userInput);
         }
         else {
-            currentValue = NaN;
+            setErrorState();
+        }
+
+        resetInputValue();
     }
 
+    public boolean hasOneArgument(String[] input) {
+        return (input.length == 1);
+    }
+
+    public boolean hasTwoArguments(String[] input) {
+        return (input.length == 2);
+    }
+
+    public boolean hasThreeNumericArguments(String[] input) {
+        return (isArgDouble(input[0]) && isArgDouble(input[1])
+                && isArgDouble(input[2]));
+    }
+
+    private void handleOneArgInput(String input) {
+        if ( isArgDouble(input) ) {
+            currentValue = inputValue;
+        }
+        else if ( isArgMemoryOperation(input) ) {
+            handleMemoryOperation(input);
+        }
+        else if ( isArgSwitchDisplayUnit(input) ) {
+            setDisplayMode(displayMode.advanceDisplayMode());
+        }
+        else if ( isArgSwitchTrigUnit(input) ) {
+            setTrigMode(trigMode.advanceTrigMode());
+        }
+        else if ( isArgExit(input) ) {
+            exitCalculator();
+        }
+        else {
+            // do math
+            currentValue = updateCalculatorWithNoArgOperation(input);
+        }
+    }
+
+    private void handleTwoArgInput(String[] input) {
+        if ( isArgDouble(input[1]) ) {
+            currentValue = updateCalculatorWithOperationAndNumber(input[0]);
+        }
+        else {
+            setErrorState();
+        }
+    }
+
+    private void solveQuadratic(String[] input) {
+        double a = Double.parseDouble(input[0]);
+        double b = Double.parseDouble(input[1]);
+        double c = Double.parseDouble(input[2]);
+
+        double determinant = (b*b) - (4 * a * c);
+
+        if ( determinant > 0 ) {
+            setCurrentValue((-b + Math.sqrt(determinant))/(2 * a));
+            setMemoryValue((-b - Math.sqrt(determinant))/(2 * a));
+        }
+        else {
+            setCurrentValue(NaN);
+        }
+
+    }
+
+    public boolean isArgDouble(String input) {
+        try {
+            // also sets input value, not good
+            inputValue = Double.parseDouble(input);
+            return true;
+        }
+        catch ( NumberFormatException e ) {
+            return false;
+        }
+    }
+
+    public boolean isArgMemoryOperation(String input) {
+        return ( input.equalsIgnoreCase("M+")
+                || input.equalsIgnoreCase("MC")
+                || input.equalsIgnoreCase("MRC") );
+    }
+
+    public boolean isArgSwitchDisplayUnit(String input) {
+        return input.equalsIgnoreCase("sdm");
+    }
+
+    public boolean isArgSwitchTrigUnit(String input) {
+        return input.equalsIgnoreCase("stu");
+    }
+
+    private boolean isArgExit(String input) {
+        if ( input.equalsIgnoreCase("exit") ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    private void exitCalculator() {
+        System.exit(0);
+    }
+
+    private void handleMemoryOperation(String input) {
+        if ( input.equalsIgnoreCase("M+") ) {
+            memoryValue += currentValue;
+        }
+        else if ( input.equalsIgnoreCase("MC") ) {
+            memoryValue = 0.0;
+        }
+        //MRC
+        else {
+            currentValue = memoryValue;
+        }
+    }
+    private double updateCalculatorWithNoArgOperation(String operation) {
+        return operations.performCalculation(operation, currentValue,
+                0.0, trigMode);
+    }
+
+    private double updateCalculatorWithOperationAndNumber(String operation) {
+        return operations.performCalculation(operation, currentValue,
+                inputValue, trigMode);
+    }
+
+    public void resetInputValue() {
         inputValue = 0.0;
     }
 
-
+    public void setErrorState() {
+        currentValue = NaN;
+    }
 }

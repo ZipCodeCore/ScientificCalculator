@@ -6,21 +6,65 @@ package squier.john.calculatorProject;
 public class CalculatorDisplay {
 
 
-    public void displayCurrentState(String currentValue) {
-        System.out.printf("\n\n-----------------\n");
-        System.out.printf("CURRENT VALUE: %s\n", currentValue);
+    public void displayCurrentState(String currentValue, String memoryValue,
+                                    DisplayModes displayMode) {
+        displayPrettyLine();
+        displayCurrentValueLine(currentValue, displayMode);
+        displayPrettyLine();
+        displayMemoryValueLine(memoryValue, displayMode);
+        displayPrettyLine();
     }
 
-    public void displayAvailableOperations(String availableOperations) {
-        System.out.printf("\nOPERATIONS AVAILABLE\n");
-        System.out.printf("--------------------\n");
-        System.out.println(availableOperations);
+    private void displayCurrentValueLine(String value, DisplayModes displayMode) {
+
+        if ( displayMode.equals(DisplayModes.DECIMAL) ) {
+            System.out.printf("| CURRENT VALUE | %29s |\n", value);
+        }
+        else {
+            System.out.printf("| CURRENT VALUE | %29s |\n",
+                    Double.toHexString(Double.parseDouble(value)));
+        }
+    }
+
+    private void displayMemoryValueLine(String value, DisplayModes dispalyMode) {
+
+        if ( dispalyMode.equals(DisplayModes.DECIMAL) ) {
+            System.out.printf("|  MEMORY VALUE | %29s |\n", value);
+        }
+        else {
+            System.out.printf("|  MEMORY VALUE | %29s |\n",
+                    Double.toHexString(Double.parseDouble(value)));
+        }
+    }
+
+    public void displayAvailableOperations(DisplayModes displayMode,
+                                           TrigModes trigMode) {
+        System.out.printf("|   clear   |     MC    |     M+    |    MRC    |\n");
+        displayPrettyLine();
+        System.out.printf("| + <input> | - <input> | * <input> | / <input> |\n");
+        displayPrettyLine();
+        System.out.printf("|   square  |    sqrt   |    inv    |    neg    |\n");
+        displayPrettyLine();
+        System.out.printf("|     !     | exp <ipt> |    log    |    ln     |\n");
+        displayPrettyLine();
+        System.out.printf("|   10^x    |    e^x    |    sin    |   asin    |\n");
+        displayPrettyLine();
+        System.out.printf("|    cos    |    acos   |    tan    |   atan    |\n");
+        displayPrettyLine();
+        System.out.printf("|  sdm (%s)  |  stu (%s)  |     pi    |    e      |\n",
+                displayMode.equals(DisplayModes.DECIMAL) ? "d" : "x",
+                trigMode.equals(TrigModes.DEGREES) ? "d" : "r");
+        displayPrettyLine();
+        System.out.printf("|                     exit                      |\n");
+        displayPrettyLine();
     }
 
     public void displayInputPrompt() {
-        System.out.printf("INPUT IN THE FORM:<operation> <number>\n");
-        System.out.printf("                  <operation>\n");
-        System.out.printf("                  <number>\n");
-        System.out.printf(">>>> ");
+        System.out.printf("| >>>>");
+    }
+
+    private void displayPrettyLine() {
+        System.out.printf("*-----------------------------------------------*\n");
     }
 }
+

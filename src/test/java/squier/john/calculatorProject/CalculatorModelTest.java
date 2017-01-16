@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.Double.NaN;
+
 /**
  * Created by johnsquier on 1/14/17.
  */
@@ -34,9 +36,167 @@ public class CalculatorModelTest {
     }
 
     @Test
+    public void getInputValueTest() {
+        double expected = 0.0;
+        double actual = calculatorModel.getInputValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void setInputValueTest() {
+        double expected = 100.0;
+        calculatorModel.setInputValue(100.0);
+        double actual = calculatorModel.getInputValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void getMemoryValueTest() {
+        double expected = 0.0;
+        double actual = calculatorModel.getMemoryValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void setMemoryValueTest() {
+        double expected = 100.0;
+        calculatorModel.setMemoryValue(100.0);
+        double actual = calculatorModel.getMemoryValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void getDisplayModeTest() {
+        DisplayModes expected = DisplayModes.DECIMAL;
+        DisplayModes actual = calculatorModel.getDisplayMode();
+        Assert.assertEquals("I expected actual to be DECIMAL", expected, actual);
+    }
+
+    @Test
+    public void setDisplayModeTest() {
+        DisplayModes expected = DisplayModes.HEXADECIMAL;
+        calculatorModel.setDisplayMode(DisplayModes.HEXADECIMAL);
+        DisplayModes actual = calculatorModel.getDisplayMode();
+        Assert.assertEquals("I expect actual to be HEXADECIMAL", expected, actual);
+    }
+
+    @Test
+    public void getTrigModeTest() {
+        TrigModes expected = TrigModes.DEGREES;
+        TrigModes actual = calculatorModel.getTrigMode();
+        Assert.assertEquals("I expect actual to be DEGREES", expected, actual);
+    }
+
+    @Test
+    public void setTrigModeTest() {
+        TrigModes expected = TrigModes.RADIANS;
+        calculatorModel.setTrigMode(TrigModes.RADIANS);
+        TrigModes actual = calculatorModel.getTrigMode();
+        Assert.assertEquals("I expect actual to be RADIANS", expected, actual);
+    }
+
+    @Test
     public void getOperationsTest() {
         Operations expected = new Operations();
         Operations actual = calculatorModel.getOperations();
         Assert.assertEquals(expected.getClass(), actual.getClass());
+    }
+
+    @Test
+    public void hasOneArgumentTestTrue() {
+        boolean actual = calculatorModel.hasOneArgument(new String[1]);
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void hasOneArgumentTestFalse() {
+        boolean actual = calculatorModel.hasOneArgument(new String[2]);
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void hasTwoArgumentsTestTrue() {
+        boolean actual = calculatorModel.hasTwoArguments(new String[2]);
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void hasTwoArgumentsTestFalse() {
+        boolean actual = calculatorModel.hasTwoArguments(new String[1]);
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void hasThreeNumericArgumentsTestTrue() {
+        String[] input = {"1", "2", "3"};
+        boolean actual = calculatorModel.hasThreeNumericArguments(input);
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void hasThreeNumericArguemntsTestFalse() {
+        String[] input = {"1", "2", "a"};
+        boolean actual = calculatorModel.hasThreeNumericArguments(input);
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void isArgDoubleTestTrue() {
+        boolean actual = calculatorModel.isArgDouble("2");
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void isArgDoubleTestFalse() {
+        boolean actual = calculatorModel.isArgDouble("+");
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void isArgMemoryOperationTrue() {
+        boolean actual = calculatorModel.isArgMemoryOperation("M+");
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void isArgMemoryOperationFalse() {
+        boolean actual = calculatorModel.isArgMemoryOperation("+");
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void isArgSwitchDisplayUnitTrue() {
+        Assert.assertTrue(calculatorModel.isArgSwitchDisplayUnit("sdm"));
+    }
+
+    @Test
+    public void isArgSwitchDisplayUnitFalse() {
+        Assert.assertFalse(calculatorModel.isArgSwitchDisplayUnit("+"));
+    }
+
+    @Test
+    public void isArgSwitchTrigUnitTrue() {
+        Assert.assertTrue(calculatorModel.isArgSwitchTrigUnit("stu"));
+    }
+
+    @Test
+    public void isArgSwitchTrigUnitFalse() {
+        Assert.assertFalse(calculatorModel.isArgSwitchTrigUnit("+"));
+    }
+
+    @Test
+    public void resetInputValueTest() {
+        double expected = 0.0;
+        calculatorModel.resetInputValue();
+        double actual = calculatorModel.getInputValue();
+        Assert.assertEquals(expected, actual, delta);
+    }
+
+    @Test
+    public void setErrorStateTest() {
+        double expected = NaN;
+        calculatorModel.setErrorState();
+        double actual = calculatorModel.getCurrentValue();
+        Assert.assertEquals(expected, actual, delta);
     }
 }
