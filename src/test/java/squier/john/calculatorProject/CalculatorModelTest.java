@@ -166,7 +166,7 @@ public class CalculatorModelTest {
 
     @Test
     public void isArgSwitchDisplayUnitTrue() {
-        Assert.assertTrue(calculatorModel.isArgSwitchDisplayUnit("sdu"));
+        Assert.assertTrue(calculatorModel.isArgSwitchDisplayUnit("sdm"));
     }
 
     @Test

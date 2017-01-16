@@ -23,12 +23,8 @@ public class CalculatorController {
     }
 
     public void runCalculator() {
-
         // r-e-p loop
         while (!userInput[0].equalsIgnoreCase("exit")) {
-
-            System.out.println(userInput[0]);
-
             String currentValue;
             String memoryValue;
 

@@ -94,6 +94,7 @@ public class CalculatorModel {
             exitCalculator();
         }
         else {
+            // do math
             currentValue = updateCalculatorWithNoArgOperation(input);
         }
     }
@@ -142,7 +143,7 @@ public class CalculatorModel {
     }
 
     public boolean isArgSwitchDisplayUnit(String input) {
-        return input.equalsIgnoreCase("sdu");
+        return input.equalsIgnoreCase("sdm");
     }
 
     public boolean isArgSwitchTrigUnit(String input) {

@@ -52,7 +52,7 @@ public class CalculatorDisplay {
         System.out.printf("|    cos    |    acos   |    tan    |   atan    |\n");
         displayPrettyLine();
         System.out.printf("|  sdm (%s)  |  stu (%s)  |     pi    |    e      |\n",
-                displayMode.equals(DisplayModes.DECIMAL) ? "d" : "x",
+                displayMode.equals(DisplyModes.DECIMAL) ? "d" : "x",
                 trigMode.equals(TrigModes.DEGREES) ? "d" : "r");
         displayPrettyLine();
         System.out.printf("|                     exit                      |\n");
