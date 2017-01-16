@@ -64,15 +64,15 @@ public class CalculatorModel {
         resetInputValue();
     }
 
-    private boolean hasOneArgument(String[] input) {
+    public boolean hasOneArgument(String[] input) {
         return (input.length == 1);
     }
 
-    private boolean hasTwoArguments(String[] input) {
+    public boolean hasTwoArguments(String[] input) {
         return (input.length == 2);
     }
 
-    private boolean hasThreeNumericArguments(String[] input) {
+    public boolean hasThreeNumericArguments(String[] input) {
         return (isArgDouble(input[0]) && isArgDouble(input[1])
                 && isArgDouble(input[2]));
     }
@@ -125,7 +125,7 @@ public class CalculatorModel {
 
     }
 
-    private boolean isArgDouble(String input) {
+    public boolean isArgDouble(String input) {
         try {
             // also sets input value, not good
             inputValue = Double.parseDouble(input);
@@ -136,17 +136,17 @@ public class CalculatorModel {
         }
     }
 
-    private boolean isArgMemoryOperation(String input) {
+    public boolean isArgMemoryOperation(String input) {
         return ( input.equalsIgnoreCase("M+")
                 || input.equalsIgnoreCase("MC")
                 || input.equalsIgnoreCase("MRC") );
     }
 
-    private boolean isArgSwitchDisplayUnit(String input) {
+    public boolean isArgSwitchDisplayUnit(String input) {
         return input.equalsIgnoreCase("sdm");
     }
 
-    private boolean isArgSwitchTrigUnit(String input) {
+    public boolean isArgSwitchTrigUnit(String input) {
         return input.equalsIgnoreCase("stu");
     }
 
@@ -185,11 +185,11 @@ public class CalculatorModel {
                 inputValue, trigMode);
     }
 
-    private void resetInputValue() {
+    public void resetInputValue() {
         inputValue = 0.0;
     }
 
-    private void setErrorState() {
+    public void setErrorState() {
         currentValue = NaN;
     }
 }
