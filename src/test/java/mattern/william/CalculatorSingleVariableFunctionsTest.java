@@ -76,12 +76,12 @@ public class CalculatorSingleVariableFunctionsTest {
 
     @Test
     public void convertToDegreesTest() {
-        double firstNumber = 45;
-        assertEquals(0.7853,CalculatorSingleVariableFunctions.convertToDegrees(firstNumber),0.001);
+        double firstNumber = 4;
+        assertEquals(229.1831,CalculatorSingleVariableFunctions.convertToDegrees(firstNumber),0.001);
     }
     @Test
     public void convertToRadiansTest() {
-        double firstNumber = 0.7853;
-        assertEquals(45,CalculatorSingleVariableFunctions.convertToRadians(firstNumber),0.001);
+        double firstNumber = 45;
+        assertEquals(.7853,CalculatorSingleVariableFunctions.convertToRadians(firstNumber),0.001);
     }
 }
