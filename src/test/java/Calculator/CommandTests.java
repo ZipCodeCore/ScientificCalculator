@@ -26,7 +26,7 @@ public class CommandTests {
     }
 
     @Test
-    public void ReqestCommandTest() {
+    public void RequestCommandTest() {
         test.requestCommand("complete");
         String expected = "complete";
         String actual = Storage.storeStringCommand;

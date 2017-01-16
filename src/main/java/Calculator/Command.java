@@ -7,8 +7,6 @@ import java.util.Scanner;
  */
 public class Command {
     Scanner inputNumeral = new Scanner(System.in).useDelimiter("\\s\\D");
-
-
     Scanner inputString = new Scanner(System.in).useDelimiter("\\s\\d");
 
     public Command (){}
@@ -31,5 +29,6 @@ public class Command {
         requestLine();
         Input.setCommand(input);
     }
+// Runtime.getRuntime().exec("cls");
 
 }
