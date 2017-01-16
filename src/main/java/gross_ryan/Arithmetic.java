@@ -5,30 +5,31 @@ package gross_ryan;
  */
 public class Arithmetic {
 
-    public double addNumbers(String displayedNumber, double numberToAddTo) {
-        return Double.parseDouble(displayedNumber) + numberToAddTo;
+    public double addNumbers(double displayedNumber, double numberToAddTo) {
+        return displayedNumber + numberToAddTo;
     }
 
-    public double subtractNumbers(String displayedNumber, double numberToSubtract) {
-        return Double.parseDouble(displayedNumber) - numberToSubtract;
+    public double subtractNumbers(double displayedNumber, double numberToSubtract) {
+        return displayedNumber - numberToSubtract;
     }
 
-    public double multiplyNumbers(String displayedNumber, double numberToMultiply) {
-        return Double.parseDouble(displayedNumber) * numberToMultiply;
+    public double multiplyNumbers(double displayedNumber, double numberToMultiply) {
+        return displayedNumber * numberToMultiply;
     }
 
+    // Look at revising this..
     // Displays an error if divided by zero...
-    public double divideNumbers(String displayedNumber, double numberToDivide) {
-        return Double.parseDouble(displayedNumber) / numberToDivide;
+    public double divideNumbers(double displayedNumber, double numberToDivide) {
+        if (numberToDivide != 0) {
+            return displayedNumber / numberToDivide;
+        }
+        return displayedNumber;
     }
 
 
-    public double toThePowerOf(String displayedNumber, double powerOf) {
-        double result = 0;
-        for(int i = 0; i < powerOf; i++) {
-            result *= Double.parseDouble(displayedNumber);
-        }
-        return result;
+
+    public double toThePowerOf(double displayedNumber, double powerOf) {
+        return Math.pow(displayedNumber, powerOf);
     }
 
 

@@ -5,16 +5,16 @@ package gross_ryan;
  */
 public class Exponential {
 
-    public double squareNumber(String displayedNumber) {
-        return Math.pow(Double.parseDouble(displayedNumber), 2);
+    public double squareNumber(double displayedNumber) {
+        return Math.pow(displayedNumber, 2);
     }
 
-    public double squaredRoot(String displayedNumber) {
-        return Math.sqrt(Double.parseDouble(displayedNumber));
+    public double squaredRoot(double displayedNumber) {
+        return Math.sqrt(displayedNumber);
     }
 
-    public double inverseOfNumber(String displayedNumber) {
-        return 1 / Double.parseDouble(displayedNumber);
+    public double inverseOfNumber(double displayedNumber) {
+        return 1 / displayedNumber;
     }
 
 }
