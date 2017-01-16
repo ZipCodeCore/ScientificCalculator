@@ -6,11 +6,11 @@ package mattern.william;
 public class CalculatorComplexFunctions {
 
     static public double calculateSquare(double firstNumber){
-        return Display.calculatedValue = firstNumber * firstNumber;
+        return firstNumber * firstNumber;
     }
 
     static public double calculateSquareRoot(double firstNumber){
-        return Display.calculatedValue = java.lang.Math.sqrt(firstNumber);
+        return java.lang.Math.sqrt(firstNumber);
     }
 
     static public double calculateInverse(double firstNumber){
@@ -18,7 +18,7 @@ public class CalculatorComplexFunctions {
             Display.sendErrorMessage();
             return 0;
         } else {
-            return Display.calculatedValue = (1 / firstNumber);
+            return (1 / firstNumber);
         }
     }
 }

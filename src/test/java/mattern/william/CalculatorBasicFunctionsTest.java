@@ -43,6 +43,6 @@ public class CalculatorBasicFunctionsTest {
     @Test
     public void calculateSignInversionTest(){
         double firstNumber = 1;
-        assertEquals(-1, CalculatorBasicFunctions.calculateSignInversion(firstNumber),0.0);
+        assertEquals(-1, CalculatorBasicFunctions.calculateSwitchSign(firstNumber),0.0);
     }
 }
