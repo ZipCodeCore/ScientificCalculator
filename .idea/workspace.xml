@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6db709c0-9d91-4dd4-b79f-f80753ef0dea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/CalculatorEngine$1.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/CalculatorEngine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/CalculatorEngine.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/CalculatorEngine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Command.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Command.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Display.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Display.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Divide.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Divide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/EngineCommands.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/EngineCommands.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Exponential.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Exponential.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Input.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Input.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Inverse.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Inverse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Invert.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Invert.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Multiple.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Multiple.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Square.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Square.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/SquareRoot.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/SquareRoot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Storage.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Storage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Calculator/Subtract.class" afterPath="$PROJECT_DIR$/target/classes/Calculator/Subtract.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Calculator/CalculatorEngineTests.class" afterPath="$PROJECT_DIR$/target/test-classes/Calculator/CalculatorEngineTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Calculator/CalculatorTests.class" afterPath="$PROJECT_DIR$/target/test-classes/Calculator/CalculatorTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Calculator/CommandTests.class" afterPath="$PROJECT_DIR$/target/test-classes/Calculator/CommandTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Calculator/DisplayTest.class" afterPath="$PROJECT_DIR$/target/test-classes/Calculator/DisplayTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Calculator/ExpressionsTests.class" afterPath="$PROJECT_DIR$/target/test-classes/Calculator/ExpressionsTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Calculator/InputTests.class" afterPath="$PROJECT_DIR$/target/test-classes/Calculator/InputTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project-1-calculator.iml" afterPath="$PROJECT_DIR$/project-1-calculator.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Calculator/Calculator.java" afterPath="$PROJECT_DIR$/src/main/java/Calculator/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Calculator/CalculatorEngine.java" afterPath="$PROJECT_DIR$/src/main/java/Calculator/CalculatorEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Calculator/Command.java" afterPath="$PROJECT_DIR$/src/main/java/Calculator/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Calculator/Display.java" afterPath="$PROJECT_DIR$/src/main/java/Calculator/Display.java" />
-    </list>
+    <list default="true" id="6db709c0-9d91-4dd4-b79f-f80753ef0dea" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,10 +31,10 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="DisplayTest.java" pinned="false" current-in-tab="false">
+            <file leaf-file-name="DisplayTest.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/test/java/Calculator/DisplayTest.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="300">
+                  <state relative-caret-position="286">
                     <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
                     <folding>
                       <element signature="imports" expanded="true" />
@@ -117,11 +87,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="true">
+            <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Calculator.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="360">
-                    <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+                  <state relative-caret-position="225">
+                    <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
                     <folding>
                       <element signature="e#670#671#0" expanded="true" />
                       <element signature="e#712#713#0" expanded="true" />
@@ -138,10 +108,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Command.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="465">
               <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
               <folding>
                 <element signature="e#419#420#0" expanded="true" />
@@ -171,11 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="36" column="66" lean-forward="false" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -936,7 +906,7 @@
       <updated>1484356298771</updated>
       <workItem from="1484356300606" duration="2590000" />
       <workItem from="1484359059274" duration="65678000" />
-      <workItem from="1484598287754" duration="16866000" />
+      <workItem from="1484598287754" duration="17200000" />
     </task>
     <servers />
   </component>
@@ -973,7 +943,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85134000" />
+    <option name="totallyTimeSpent" value="85468000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -995,12 +965,12 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3199554" sideWeight="0.5170394" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3199554" sideWeight="0.51916933" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3199554" sideWeight="0.48296058" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3199554" sideWeight="0.48083067" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.49574015" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33779263" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33779263" sideWeight="0.49574015" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15069222" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
@@ -1298,16 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Calculator/DisplayTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/EngineCommands.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1324,6 +1284,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Calculator/DisplayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="66" lean-forward="false" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/CalculatorEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1334,31 +1323,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="465">
           <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding>
             <element signature="e#419#420#0" expanded="true" />
             <element signature="e#472#473#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding>
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Calculator/Display.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
