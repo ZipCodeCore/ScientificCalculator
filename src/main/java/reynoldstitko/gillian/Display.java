@@ -16,8 +16,10 @@ public class Display {
         return currentDisplayValue;
     }
 
-    public void clearDisplay(){
+    public void clearDisplay() {
         currentDisplayValue = 0.0;
         System.out.print(currentDisplayValue);
     }
+
+
 }
