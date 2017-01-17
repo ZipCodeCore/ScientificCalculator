@@ -6,62 +6,65 @@ import java.io.IOException;
  * Created by mkulima on 1/14/17.
  */
 public class CalculatorCaller {
-    static DisplayManager dm;
-    static InputParser ip;
-    static SimpleOperation pso;
+    static DisplayManager displayManager;
+    static InputParser inputParser;
+    static SimpleOperation simpleOperation;
     static Boolean exitFlag;
     static Boolean clearScreen;
     static Boolean invalidInput;
     static double ans;
     static String[] uncheckedSplitInput;
     static String[] checkedSplitInput;
+    static String formatSpecified;
 
     static {
-        pso = new SimpleOperation();                                // init the display manager object
-        ip = new InputParser();                                     // init input parser
-        dm = new DisplayManager();                                  //  init display manager
+        simpleOperation = new SimpleOperation();                                // init the display manager object
+        inputParser = new InputParser();                                     // init input parser
+        displayManager = new DisplayManager();                                  //  init display manager
         exitFlag = false;
         clearScreen = false;
         invalidInput = false;
         ans = 0;
         uncheckedSplitInput = new String[]{"0","0"};
         checkedSplitInput = new String[]{"0","0"};
+        formatSpecified = "double";
     }
 
 
     public static void main(String[] args) throws IOException {
 
-        dm.newCalculatorStartMessage();                             // show calculator start up message
+        displayManager.newCalculatorStartMessage();                             // show calculator start up message
 
         while (exitFlag==false){
 
-            String userString = dm.getUserInput();                  // prompt user for input
+            String userString = displayManager.getUserInput();                  // prompt user for input
 
-            clearScreen = ip.clearScreenCheck(userString);          // apparently need to do this before exit
+            clearScreen = inputParser.clearScreenCheck(userString);          // apparently need to do this before exit
             while (clearScreen) {
                 System.out.println("delete this message once clear screen functionality implemented");
                 clearScreenMethod();                                // run clear screen method
-                userString = dm.getUserInput();                     // get new user input
-                clearScreen = ip.clearScreenCheck(userString);      // update clearScreen boolean
+                userString = displayManager.getUserInput();                     // get new user input
+                clearScreen = inputParser.clearScreenCheck(userString);      // update clearScreen boolean
             }  // end clearScreen_____________________________________________________________________
 
-            exitFlag = ip.exitFlagCheck(userString);                // determine whether to exit or proceed
+            exitFlag = inputParser.exitFlagCheck(userString);                // determine whether to exit or proceed
             if(exitFlag) break;                                     // break if exitFlag is true
 
-            invalidInput = ip.invalidInputCheck(userString);
+            invalidInput = inputParser.invalidInputCheck(userString);
             while(invalidInput){
                 System.out.println("Err");
-                userString = dm.getUserInput();
-                invalidInput = ip.invalidInputCheck(userString);
+                userString = displayManager.getUserInput();
+                invalidInput = inputParser.invalidInputCheck(userString);
             }  // end validation______________________________________________________________________
 
-            uncheckedSplitInput = ip.splitInput(userString);          // split user input into array with 2 nums
+            uncheckedSplitInput = inputParser.splitInput(userString);          // split user input into array with 2 nums
             checkedSplitInput = usePreviousResultValue(uncheckedSplitInput, ans);   // check if one of the 2 array values is "ans" and assign the right value
-            pso.nums = checkedSplitInput;                             // then pass user nums as array to simpleOperation
-            pso.desiredOperation = ip.determineOperationType(userString);  // pass user's operator to pso
-            ans = pso.runUserOperation();
+            simpleOperation.nums = checkedSplitInput;                             // then pass user nums as array to simpleOperation
+            simpleOperation.desiredOperation = inputParser.determineOperationType(userString);  // pass user's operator to simpleOperation
+            ans = simpleOperation.runUserOperation();
 
-            dm.displayOperationResult(ip.splitInput(userString), ip.determineOperationType(userString), ans);                    // display operation result
+            displayManager.displayOperationResult(inputParser.splitInput(userString), inputParser.determineOperationType(userString), ans, "E2");                    // display operation result
+            formatSpecified = userSpecifiedFormatChange();
         }
         return;
 
@@ -76,9 +79,6 @@ public class CalculatorCaller {
         }
     } // end clear screen method _________________________________________________________________________________________________
 
-    public static void clearScreenMethod2(){
-        System.out.print("\033[2J");
-    }
 
     public static String[] usePreviousResultValue(String[] splitString, double previousOperationResult){
         //String[] splitStringWithAns = new String[]{"",""};
@@ -89,6 +89,13 @@ public class CalculatorCaller {
             splitString[1] = Double.toString(previousOperationResult);
 
         return splitString;
+    }  // end usePreviousResultValue______________________________________________________________________________________________
+
+    public static String userSpecifiedFormatChange(){
+        System.out.println();
+        System.out.println("To change number format, type one of: \n" +
+                            " [double] or [D2] or [E2] ");
+        return displayManager.getUserInput();
     }
 
 } // end CalculatorCaller class
