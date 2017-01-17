@@ -12,16 +12,17 @@ public class Display {
     static String storeMemoryBorderDisplay;
     static String defaultBorderDisplay = String.format("**%30.1f**", 0.0);
 
-    public void clearScreen() {
+    static public void clearScreen() {
 
-        /*char c = '\n'; //really dirty way to 'clear' screen
+        char c = '\n'; //really dirty way to 'clear' screen
         int length = 25;
         char[] chars = new char[length];
         Arrays.fill(chars, c);
-        System.out.print(String.valueOf(chars));*/
+        System.out.print(String.valueOf(chars));
     }
 
     static public void getDefaultState() {
+        clearScreen();
         System.out.println(borderDisplay);
         System.out.println(equationBorderDisplay);
         System.out.println(defaultBorderDisplay) ; // formatting %f
@@ -42,6 +43,7 @@ public class Display {
     }
 
     static public void getNumeralBorderDisplay(){
+        clearScreen();
         setNumeralValueForBorder();
         System.out.println(borderDisplay);
         System.out.println(equationBorderDisplay);
@@ -50,6 +52,7 @@ public class Display {
     }
 
     static public void getStringBorderDisplay(){
+        clearScreen();
         setStringValueForBorder();
         System.out.println(borderDisplay);
         System.out.println(equationBorderDisplay);
@@ -58,6 +61,7 @@ public class Display {
     }
 
     static public void getStoredMemoryDisplay(){
+        clearScreen();
         setSingleMemoryBorder();
         System.out.println(borderDisplay);
         System.out.println(equationBorderDisplay);

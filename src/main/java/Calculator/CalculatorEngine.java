@@ -7,6 +7,9 @@ public class CalculatorEngine {
 
     static public void executeEquations() {
         switch (Storage.storeEngineCommand) {
+            case ERR: break;
+            case CLEAR: return;
+            case EXIT: return;
             case SQU: Square.calculate(); break;
             case SQR: SquareRoot.calculate();break;
             case INV: Inverse.calculate(); break;
@@ -19,6 +22,7 @@ public class CalculatorEngine {
             default:
 
         }
+
     }
     static public void executeStateCommands( EngineCommands input){
         switch(input) {

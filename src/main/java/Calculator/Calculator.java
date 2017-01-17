@@ -9,17 +9,21 @@ import java.util.Scanner;
 public class Calculator {
 
     static public void runCalculator() {
-        do{
-            Display.getDefaultState();
-            Command.firstValueInquiry();
-            Display.getNumeralBorderDisplay();
-            do {
-                Command.commandInquiry();
-                Command.secondValueInquiry();
-                CalculatorEngine.executeEquations();
-                Display.getStoredMemoryDisplay();
-            } while (Input.getCommand()!= EngineCommands.CLEAR);
-        } while (Input.getCommand()!= EngineCommands.EXIT);
+
+              Display.getDefaultState();
+              Command.firstValueInquiry();
+
+           do {
+              Display.getNumeralBorderDisplay();
+              Command.commandInquiry();
+
+              Display.getNumeralBorderDisplay();
+              Command.secondValueInquiry();
+
+              CalculatorEngine.executeEquations();
+              Display.getStoredMemoryDisplay();
+          }while ((EngineCommands.EXIT != Storage.storeEngineCommand));
+
     }
     public static void main(String[] args){
         Calculator.runCalculator();
