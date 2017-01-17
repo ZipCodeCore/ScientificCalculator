@@ -21,5 +21,14 @@ public class Display {
         System.out.print(currentDisplayValue);
     }
 
+    public enum modes { BINARY, OCTAL, DECIMAL, HEXADECIMAL}
+
+    public void switchDisplayMode() {
+
+    }
+
+    public void switchDisplayMode(String mode){
+
+    }
 
 }
