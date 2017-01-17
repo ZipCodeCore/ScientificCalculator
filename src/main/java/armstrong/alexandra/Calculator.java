@@ -9,7 +9,9 @@ public class Calculator {
 
     private String errorDisplay;
 
-    public Calculator(){}
+    public Calculator(){
+        errorDisplay = "nope";
+    }
 
     public double getDisplay(){
         return display;

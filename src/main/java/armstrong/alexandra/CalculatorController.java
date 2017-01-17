@@ -1,5 +1,6 @@
 package armstrong.alexandra;
 
+import java.awt.geom.Arc2D;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -11,95 +12,57 @@ import static armstrong.alexandra.TrigUnit.*;
  */
 public class CalculatorController {
     ScientificCalculator calc = new ScientificCalculator();
+    public char operator;
+    public double operand;
 
     public CalculatorController(){}
 
-    public CalculatorController(double number){
-        calc.setDisplay(number);
+    public void setOperator(char operator){
+        this.operator = operator;
     }
 
-    public CalculatorController(char operator){
-        operatorSwitch(operator);
+    public char getOperator(){
+        return operator;
     }
 
-    public CalculatorController(double display, char operator){
-        calc.setDisplay(display);
-        operatorSwitch(operator);
+    public void setOperand(double operand){
+        this.operand = operand;
     }
 
-    public CalculatorController(char operator, double number){
-        operatorSwitch(operator, number);
+    public double getOperand(){
+        return operand;
     }
 
-    public CalculatorController(double display, char operator, double number){
-        calc.setDisplay(display);
-        operatorSwitch(operator, number);
-    }
-
-    public CalculatorController(TrigUnit mode){
-        if (mode == DEGREES){
-            convertToDegrees(calc.getDisplay());
-        } else {
-            convertToRadians(calc.getDisplay());
-        }
-    }
-
-    public CalculatorController(Notation mode){
-        if (mode == SCIENTIFIC){
-            convertToScientificNotation(calc.getDisplay());
-        } else {
-            convertToStandardNotation(calc.getDisplay());
-        }
-    }
-
-    public CalculatorController(DisplayMode mode){
-        if (mode == HEXADECIMAL){
-            convertToHexadecimal();
-        } else {
-            convertToDecimal();
-        }
-    }
-
-    public void operatorSwitch(char operator, double number){
+    public void operatorSwitch(/*char operator, double number*/){
         if (calc.getErrorDisplay().equalsIgnoreCase("err")){
             PrintPackage.print(calc.getErrorDisplay());
         }else{
             switch (operator){
-                case '+' : calc.add(number); break;
-                case '-' : calc.subtract(number); break;
-                case '*' : calc.multiply(number); break;
-                case '/' : calc.divide(number); break;
-                case '^' : calc.exponent(number); break;
-            }
-        }
-    }
-
-    public void operatorSwitch(char operator){
-        if (calc.getErrorDisplay().equalsIgnoreCase("err")){
-            PrintPackage.print(calc.getErrorDisplay());
-        }else {
-            switch (operator) {
-                case 'c': calc.clearDisplay();
-                case '%': calc.percent();
-                case '@': calc.square();
-                case '|': calc.squareRoot();
-                case '`': calc.inverse();
-                case '_': calc.invertSignOfDisplay();
-                case 'M': calc.addDisplayToMemory();
-                case 'C': calc.resetMemory();
-                case 'R': calc.recallStoredValueFromMemory();
-                case 's': calc.sine();
-                case 'n': calc.cosine();
-                case 't': calc.tangent();
-                case 'S': calc.inverseSine();
-                case 'N': calc.inverseCosine();
-                case 'T': calc.inverseTangent();
-                case 'l': calc.log();
-                case 'L': calc.inverseLog();
-                case 'e': calc.naturalLog();
-                case 'E': calc.inverseNaturalLog();
-                case '!': calc.factorial();
-
+                case '+': calc.add(operand); break;
+                case '-': calc.subtract(operand); break;
+                case '*': calc.multiply(operand); break;
+                case '/': calc.divide(operand); break;
+                case '^': calc.exponent(operand); break;
+                case 'c': calc.clearDisplay(); break;
+                case '%': calc.percent(); break;
+                case '@': calc.square(); break;
+                case '|': calc.squareRoot(); break;
+                case '`': calc.inverse(); break;
+                case '_': calc.invertSignOfDisplay(); break;
+                case 'M': calc.addDisplayToMemory(); break;
+                case 'C': calc.resetMemory(); break;
+                case 'R': calc.recallStoredValueFromMemory(); break;
+                case 's': calc.sine(); break;
+                case 'n': calc.cosine(); break;
+                case 't': calc.tangent(); break;
+                case 'S': calc.inverseSine(); break;
+                case 'N': calc.inverseCosine(); break;
+                case 'T': calc.inverseTangent(); break;
+                case 'l': calc.log(); break;
+                case 'L': calc.inverseLog(); break;
+                case 'e': calc.naturalLog(); break;
+                case 'E': calc.inverseNaturalLog(); break;
+                case '!': calc.factorial(); break;
             }
         }
     }

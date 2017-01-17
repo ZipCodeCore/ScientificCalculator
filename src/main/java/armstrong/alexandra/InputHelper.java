@@ -21,4 +21,16 @@ public class InputHelper {
         return scanner.next();
     }
 
+    public static char charScanner(){
+        return scanner.next().charAt(0);
+    }
+
+    public static double doubleScanner() {
+        return scanner.nextDouble();
+    }
+
+    public static boolean booleanScanner() {
+        return scanner.nextBoolean();
+    }
+
 }

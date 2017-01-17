@@ -35,14 +35,17 @@ public class PrintPackage {
                 "C : Reset Memory   R : Recall Memory\n" +
                 "l : log            L : Inverse Log\n" +
                 "e : Natural Log    E : Inverse Natural Log\n" +
-                "! : Factorial\n" +
-                "DECIMAL : Decimal Mode\n" +
+                "! : Factorial\n" );
+
+    }
+
+    public static void modeDisplay(){
+        print("DECIMAL : Decimal Mode\n" +
                 "HEXADECIMAL : Hexadecimal Mode\n" +
                 "STANDARD : Standard Notation\n" +
                 "SCIENTIFIC : Scientific Notation\n" +
                 "DEGREES : Degrees Mode\n" +
-                "RADIANS : Radians Mode\n\n" +
-                "off : turn off");
+                "RADIANS : Radians Mode\n");
     }
 
     /*public static void main(String[] args){

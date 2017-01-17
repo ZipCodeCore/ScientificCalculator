@@ -39,6 +39,17 @@ public class CalculatorControllerTest {
     public void checkTrigUnitsTest(){}*/
 
     @Test
+    public void operatorSwitchTest(){
+        calcCont.calc.setDisplay(3d);
+        calcCont.operator = '*';
+        calcCont.operand = 3d;
+        calcCont.operatorSwitch();
+        double expected = 9d;
+        double actual = calcCont.calc.getDisplay();
+        assertEquals(actual, expected, 0);
+    }
+
+    @Test
     public void convertToDecimalTest(){
         calcCont.calc.switchDisplayMode(HEXADECIMAL);
         calcCont.calc.setHexDisplay("2A");

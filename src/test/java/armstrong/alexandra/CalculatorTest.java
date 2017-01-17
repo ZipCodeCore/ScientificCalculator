@@ -27,8 +27,8 @@ public class CalculatorTest {
 
     @Test
     public void setDisplayTest(){
-        calc.setDisplay(1d);
-        double expected = 1;
+        calc.setDisplay(6d);
+        double expected = 6d;
         double actual = calc.getDisplay();
         assertEquals(expected, actual, 0);
     }
