@@ -48,16 +48,25 @@ public class UserInterface {
 
     public double getNumInput() {
         System.out.println("Enter a number:");
-        return scanner.nextDouble();
+        if(scanner.hasNextDouble()) {
+            return scanner.nextDouble();
+        }
+        if(scanner.nextLine().toLowerCase().equals("pi"))
+            return Math.PI;
+        if(scanner.nextLine().toLowerCase().equals("e"))
+            return Math.E;
+        else
+            System.out.println("Not a recognized input! Try again!");
+            return getNumInput();
     }
 
     public void displayCommands() {
         System.out.println("Choose one of the following operations:");
-        System.out.println("ADD  SUBTRACT  MULTIPLY  DIVIDE");
-        System.out.println("SQUARE   SQUAREROOT  POWER   INVERSE");
-        System.out.println("SINE  COSINE  TANGENT  INVERSESIN  INVERSECOS  INVERSETAN");
-        System.out.println("LOG  INVERSELOG  LN  INVERSELN");
-        System.out.println("FACTORIAL    M+    MC    MRC");
+        System.out.println("ADD       SUBTRACT   MULTIPLY   DIVIDE");
+        System.out.println("SQUARE   SQUAREROOT   POWER     INVERSE");
+        System.out.println("SINE       COSINE    TANGENT   INVERSESIN   INVERSECOS  INVERSETAN");
+        System.out.println("LOG      INVERSELOG    LN      INVERSELN");
+        System.out.println("FACTORIAL    M+        MC         MRC");
     }
 
     public String getCommandInput() {
