@@ -11,32 +11,33 @@ import java.util.Scanner;
  */
 public class Display {
 
-    Scanner scanner = new Scanner(System.in);
     public static String displayValue = "";
     double firstValue = 0;
     double currentValue = 0;
     double memory = 0;
     String command;
     public DisplayMode currentMode = DisplayMode.DECIMAL;
+    String angleDisplay = "radians";
     boolean notError = true;
     double answer;
-    ArrayList<String> commandList = new ArrayList<String>(Arrays.asList("ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "POWER", "FACTORIAL", "SQUARE", "SQUAREROOT", "INVERSE", "SINE", "COSINE", "TANGENT", "INVERSESIN", "INVERSECOS", "INVERSETAN", "LOG", "INVERSELOG", "LN", "INVERSELN"));
+    ArrayList<String> commandList = new ArrayList<String>(Arrays.asList("ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "POWER", "FACTORIAL", "SQUARE", "SQUAREROOT", "INVERSE", "SINE", "COSINE", "TANGENT", "INVERSESIN", "INVERSECOS", "INVERSETAN", "LOG", "INVERSELOG", "LN", "INVERSELN", "M+", "MC", "MRC"));
 
     public void run() {
         Calculator calc = new Calculator();
         UserInterface UI = new UserInterface();
-        System.out.println("What would you like to do? 1) CALCULATE  2) CHANGE DISPLAY");
-        // Change display commands
+//        while(notError) {
+            UI.displaySettingsChoice();
+            firstValue = UI.getNumInput();
+            command = UI.getCommandInput();
+            if (commandList.indexOf(command) < 5) {
+                currentValue = UI.getNumInput();
+                answer = calc.evaluateTwo(command, firstValue, currentValue);
+            } else {
+                answer = calc.evaluate(command, firstValue);
+            }
+            display(answer);
 
-        firstValue = UI.getNumInput();
-        command = UI.getCommandInput();
-        if (commandList.indexOf(command) < 5) {
-            currentValue = UI.getNumInput();
-            answer = calc.evaluateTwo(command, firstValue, currentValue);
-        } else {
-            answer = calc.evaluate(command, firstValue);
-        }
-        display(answer);
+//        };
     }
 
     public String display(double input) {
@@ -52,40 +53,24 @@ public class Display {
         return displayValue;
     }
 
-    public double getCurrentValue() {
-        return this.currentValue;
-    }
-
-    public void setCurrentValue(double value) {
-        this.currentValue = value;
-    }
-
-    public void clearCurrentValue() {
-        currentValue = 0;
-    }
-
     public void errorDisplay() {
         displayValue = "ERR";
+        run();
     }
 
     public double switchSign(double x) {
         return -x;
     }
 
-    public void storeToMemory(double x){
-        this.memory = x;
+    public void setMemory(double value) {
+        this.memory = value;
     }
 
-    public void clearMemory(){
-        this.memory = 0;
+    public double getMemory() {
+        return memory;
     }
 
-    public void recallMemory(){
-        String m = Double.toString(memory);
-        displayValue = m;
-    }
-
-    public void setDisplayMode(DisplayMode displayMode) {
+    public void switchDisplayMode(DisplayMode displayMode) {
         this.currentMode = displayMode;
 
         switch(displayMode) {
@@ -111,7 +96,7 @@ public class Display {
             i++;
         else
             i=0;
-        setDisplayMode(DisplayMode.values()[i]);
+        switchDisplayMode(DisplayMode.values()[i]);
         }
 
     public String binaryMode() {
@@ -128,4 +113,29 @@ public class Display {
         int currentInt = (int) firstValue;
         return Integer.toOctalString(currentInt);
     }
+
+    public void switchUnits() {
+        if(angleDisplay.equals("degrees"))
+            currentValue = toRadians(currentValue);
+        if (angleDisplay.equals("radians"))
+            currentValue = toDegrees(currentValue);
+    }
+
+    public void switchUnits(String angleDisplay) {
+        if (angleDisplay.toLowerCase().equals("degrees"))
+            currentValue = toDegrees(currentValue);
+        if (angleDisplay.toLowerCase().equals("radians"))
+            currentValue = toRadians(currentValue);
+    }
+
+    public double toDegrees(double rad) {
+        return Math.toDegrees(rad);
+    }
+
+    public double toRadians(double deg) {
+        return Math.toRadians(deg);
+    }
+
+
+
 }

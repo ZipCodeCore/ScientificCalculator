@@ -12,7 +12,7 @@ public class Calculator {
     public static ArrayList<String> commandList = new ArrayList<String>(Arrays.asList("ADD",
             "SUBTRACT", "MULTIPLY", "DIVIDE", "POWER", "SQUARE", "SQUAREROOT",
             "INVERSE", "SINE", "COSINE", "TANGENT", "INVERSESIN", "INVERSECOS", "INVERSETAN",
-            "LOG", "INVERSELOG", "LN", "INVERSELN", "FACTORIAL"));
+            "LOG", "INVERSELOG", "LN", "INVERSELN", "FACTORIAL", "M+", "MC", "MRC"));
     Display display = new Display();
 
 
@@ -67,6 +67,12 @@ public class Calculator {
                 return inversenaturallog(firstValue);
             case 18:
                 return factorial(firstValue);
+            case 19:
+                return addToMemory(firstValue);
+            case 20:
+                return clearMemory();
+            case 21:
+                return recallMemory();
             default:
                 return -1;
         }
@@ -87,7 +93,7 @@ public class Calculator {
     public double divide(double x, double y) {
         if(y == 0) {
             display.notError = false;
-            return 0;
+            display.errorDisplay();
         }
         return x / y;
     }
@@ -154,5 +160,20 @@ public class Calculator {
              total *= i;
         }
         return total;
+    }
+
+    private double addToMemory(double x){
+        display.setMemory(display.getMemory() + x);
+        return display.getMemory() + x;
+    }
+
+    private double clearMemory(){
+        display.setMemory(0);
+        return 0;
+    }
+
+    private double recallMemory(){
+        display.display(Double.toString(display.getMemory()));
+        return display.getMemory();
     }
 }

@@ -12,36 +12,61 @@ public class UserInterface {
     String command;
     ArrayList<String> commandList = new ArrayList<String>(Arrays.asList("ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "SQUARE", "SQUAREROOT", "POWER", "INVERSE", "SINE", "COSINE", "TANGENT", "INVERSESIN", "INVERSECOS", "INVERSETAN", "LOG", "INVERSELOG", "LN", "INVERSELN", "FACTORIAL"));
 
+    public void displaySettingsChoice() {
+        System.out.println("What would you like to do? 1) CALCULATE 2) CHANGE DISPLAY");
+        Scanner calcOrChgDisplay = new Scanner(System.in);
+        int choice = calcOrChgDisplay.nextInt();
+        if(choice == 2)
+            displaySettings();
+    }
+
+    public void displaySettings() {
+        System.out.println("Choose a display mode (or cycle to next display mode with any other input):");
+        System.out.println("1) DECIMAL 2) OCTAL 3) HEX 4) BINARY");
+        Scanner displaySettings = new Scanner(System.in);
+        Display display = new Display();
+        int choice = displaySettings.nextInt();
+        switch (choice) {
+            case 1:
+                display.switchDisplayMode(DisplayMode.DECIMAL);
+                break;
+            case 2:
+                display.switchDisplayMode(DisplayMode.OCTAL);
+                break;
+            case 3:
+                display.switchDisplayMode(DisplayMode.HEX);
+                break;
+            case 4:
+                display.switchDisplayMode(DisplayMode.BINARY);
+                break;
+            default:
+                display.switchDisplayMode();
+                break;
+        }
+    }
+
 
     public double getNumInput() {
         System.out.println("Enter a number:");
         return scanner.nextDouble();
     }
 
-    public displayCommands() {
-        System.out.println("What operation would you like to perform?");
+    public void displayCommands() {
+        System.out.println("Choose one of the following operations:");
         System.out.println("ADD  SUBTRACT  MULTIPLY  DIVIDE");
         System.out.println("SQUARE   SQUAREROOT  POWER   INVERSE");
         System.out.println("SINE  COSINE  TANGENT  INVERSESIN  INVERSECOS  INVERSETAN");
         System.out.println("LOG  INVERSELOG  LN  INVERSELN");
-        System.out.println("FACTORIAL");
-
-
+        System.out.println("FACTORIAL    M+    MC    MRC");
     }
 
     public String getCommandInput() {
-        while(!(commandList.contains(command))) {
-            System.out.println("What operation would you like to perform?");
-            System.out.println("ADD  SUBTRACT  MULTIPLY  DIVIDE");
-            System.out.println("SQUARE   SQUAREROOT  POWER   INVERSE");
-            System.out.println("SINE  COSINE  TANGENT  INVERSESIN  INVERSECOS  INVERSETAN");
-            System.out.println("LOG  INVERSELOG  LN  INVERSELN");
-            System.out.println("FACTORIAL");
-            command = scanner.nextLine().toUpperCase();
-            if (!(commandList.contains(command)))
-                System.out.println("That's not an option!");
-        }
-        return command;
-    }
+            do {
+            displayCommands();
+            Scanner scanner = new Scanner(System.in);
+            command = scanner.nextLine().toUpperCase();}
+            while(!(commandList.contains(command)));
+        return command;}
+
 
 }
