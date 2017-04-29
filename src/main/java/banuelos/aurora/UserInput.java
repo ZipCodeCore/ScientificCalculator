@@ -10,7 +10,9 @@ public class UserInput {
 
     Scanner in = new Scanner(System.in);
 
+
     public void print() {
+
 
         System.out.println("Enter first number: ");
         double firstOperand = in.nextDouble();
@@ -19,6 +21,20 @@ public class UserInput {
         String OpCode = in.next();
         System.out.println("Enter second number: ");
         double secondOperand = in.nextDouble();
+
+        System.out.println(firstOperand + " " + OpCode + " " + secondOperand);
     }
 
+//    double firstOperand;
+//    public void setFirstOperand (double firstOperand) {
+//        this.firstOperand = firstOperand;
+//
+//    double secondOperand;
+//    public void setSecondOperand (double secondOperand) {
+//        this.secondOperand = secondOperand;
+//
+//    String opCode;
+//    public void setOpCode (String opCode) {
+//        this.opCode = OpCode;
+//    }
 }

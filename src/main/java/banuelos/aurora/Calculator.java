@@ -13,6 +13,14 @@ public class Calculator {
     MathEquations equation = new MathEquations();
     double result;
 
+//    double firstOperand;
+//    double secondOperand;
+//    String opCode;
+//
+//    public void setFirstOperand (double firstOperand) {this.firstOperand = firstOperand}
+//    public void setSecondOperand (double secondOperand) {this.secondOperand = secondOperand}
+//    public void setFirstOperand (String opCode) {this.opCode = opCode}
+
 
 
 public void calculate(){
