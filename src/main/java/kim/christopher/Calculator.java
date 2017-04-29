@@ -25,7 +25,7 @@ public class Calculator {
 
     String divide(String x, String y){
         if(Double.parseDouble(y) == 0.0)
-            return Double.toString(Double.NaN);
+            return "ERROR";
         else return Double.toString(Double.parseDouble(x) / Double.parseDouble(y));
     }
 }

@@ -17,16 +17,23 @@ public class Controller {
 
     public void start(){
 
-        System.out.println("Welcome to the first attempt, please try adding two numbers: ");
-        ArrayList<String> test = reader.readLine();
-        double result = Double.NaN;
+        boolean quit = false;
+        while(!quit) {
+            System.out.println("Please try a basic math operation: ");
 
-        if(test.get(1).equals("+")) {
-            display.setDisplay(calc.add(test.get(0), test.get(2)));
-        } else if(test.get(1).equals("-")){
-            display.setDisplay(calc.subtract(test.get(0), test.get(2)));
-        } else display.setDisplay("Invalid operator");
-
+            ArrayList<String> test = reader.readLine();
+            if(test.get(0).equals("quit")) {
+                quit = true;
+            } else if (test.get(1).equals("+")) {
+                display.setDisplay(calc.add(test.get(0), test.get(2)));
+            } else if (test.get(1).equals("-")) {
+                display.setDisplay(calc.subtract(test.get(0), test.get(2)));
+            } else if (test.get(1).equals("*")) {
+                display.setDisplay(calc.multiply(test.get(0), test.get(2)));
+            } else if (test.get(1).equals("/")) {
+                display.setDisplay(calc.divide(test.get(0), test.get(2)));
+            } else display.setDisplay("Invalid operator");
+        }
 
 
 

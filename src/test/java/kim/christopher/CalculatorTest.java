@@ -82,7 +82,7 @@ public class CalculatorTest {
         String result = controller.calc.divide(firstOperand, secondOperand);
 
         //: Then
-        assertTrue(Double.isNaN(Double.parseDouble(result)));
+        assertEquals("Division by zero should result in an error", "ERROR", result);
 
     }
 
