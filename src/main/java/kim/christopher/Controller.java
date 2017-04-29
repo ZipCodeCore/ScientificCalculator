@@ -36,8 +36,11 @@ public class Controller {
             } else if (test.get(0).equals("*")) {
                 display.setDisplay(calc.multiply(display.getCurrentDisplay(), test.get(1)));
             } else if (test.get(0).equals("/")) {
-                display.setDisplay(calc.divide(display.getCurrentDisplay(), test.get(1)));
-            } else display.setDisplay("Invalid operator");
+                if(calc.divide(display.getCurrentDisplay(), test.get(1)).equals("ERROR")){
+                    System.out.println("ERROR");
+                }
+                else display.setDisplay(calc.divide(display.getCurrentDisplay(), test.get(1)));
+            } else System.out.println("Invalid Operator");
         }
 
 
