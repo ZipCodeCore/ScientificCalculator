@@ -7,19 +7,14 @@ import java.util.Scanner;
  */
 public class Display {
 
-    String currentNumber;
     String givenNumber;
     String number1;
     String number2;
     String choice;
     Operation operationOfEnum;
-    int enumCount;
-    int enumLooopCounter;
-    String enumOperation;
+    int enumLoopCounter;
     Scanner in = new Scanner(System.in);
     Calculator calculator = new Calculator();
-    double result;
-    boolean calculatorRunning = true;
 
 
     Display() {
@@ -42,8 +37,8 @@ public class Display {
 
     public void loopThroughAndPrintEnums() {
         for (Operation enumLoop : operationOfEnum.values()) {
-            enumLooopCounter++;
-            System.out.println(enumLoop + ": " + enumLooopCounter);
+            enumLoopCounter++;
+            System.out.println(enumLoop + ": " + enumLoopCounter);
         }
     }
 
@@ -58,24 +53,17 @@ public class Display {
 
         for (Operation enumLoop : operationOfEnum.values()) {
 
-
-             while(Integer.parseInt(choice) != enumCount){
-                 enumCount++;
-               //  System.out.println(enumCount);
-             }
-
             int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();//0
-            System.out.println(enumPosition);
-            if (Integer.parseInt(choice) == enumPosition) {
+
+
+            if (enumPosition == Integer.parseInt(choice) - 1) {
                 operationOfEnum = enumLoop;
                 System.out.println("You've chosen to " + operationOfEnum +
                         " Please enter your first or only number for this equation");
-                break;
-            }
-
-            else {
-                System.out.println("Pick from the list please");
+            } else if (choice.equals("") || Integer.parseInt(choice) < 1 || Integer.parseInt(choice) > 4) {
+                System.out.println("You did not enter a correct option, please try again");
                 operationChoice(choice);
+
             }
         }
     }
@@ -91,11 +79,13 @@ public class Display {
 
         number1 = this.givenNumber;
         this.number1 = number1;
-        System.out.println(number1);
+        //System.out.println(number1);
+        System.out.println("Please enter the second Number.");
 
     }
 
     public void setNumber2(String number2) {
+
         number2 = this.givenNumber;
         this.number2 = number2;
     }
@@ -103,14 +93,13 @@ public class Display {
 
     public void calculateAndSendAllNumbers() {
 
-        System.out.println(number1);
         calculator.setNumber1(Integer.parseInt(number1));
         calculator.setNumber2(Integer.parseInt(number2));
         calculator.doOperation(operationOfEnum);
     }
 
-    public void getCalculation(){
-        System.out.println(calculator.getResult());
+    public void getCalculation() {
+        System.out.println("The answer is " + calculator.getResult());
     }
 
     public void clearDisplay() {
