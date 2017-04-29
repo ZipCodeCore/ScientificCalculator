@@ -16,7 +16,7 @@ public class CalculatorTest {
 
 
         //: When
-        int actualSum = controller.calc.add(firstOperand, secondOperand);
+        int actualSum = controller.calculator.add(firstOperand, secondOperand);
 
 
         //: Then
