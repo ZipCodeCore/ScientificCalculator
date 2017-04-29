@@ -29,6 +29,9 @@ public class Controller {
             if(test.get(0).equals("quit")) {
                 quit = true;
                 System.out.println("Goodbye!");
+            } else if (test.get(0).equals("clear")) {
+                display.clearDisplay();
+                display.show();
             } else if (test.get(0).equals("+")) {
                 display.setDisplay(calc.add(display.getCurrentDisplay(), test.get(1)));
             } else if (test.get(0).equals("-")) {

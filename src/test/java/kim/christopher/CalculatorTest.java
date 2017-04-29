@@ -86,6 +86,18 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    public void testNegation(){
+
+        //Given
+        String operand = "-6.7";
+
+        //When
+        String result = controller.calc.negate(operand);
+
+        //Then
+        assertEquals("The negation of -6.7 is 6.7", "6.7", result);
+    }
 
 
 

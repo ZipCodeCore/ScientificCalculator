@@ -26,6 +26,4 @@ public class InputReader {
         return result;
     }
 
-
-
 }

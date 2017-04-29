@@ -29,13 +29,7 @@ public class Calculator {
         else return Double.toString(Double.parseDouble(x) / Double.parseDouble(y));
     }
 
-    double convertToDouble(String s){
-
-        double result;
-        try{
-            result = Double.parseDouble(s);
-        } catch(NumberFormatException e){
-            System.out.println("Error: " + s + " is not a double")
-        }
+    String negate(String x){
+        return Double.toString(0);
     }
 }
