@@ -27,6 +27,7 @@ public class State {
     }
 
     public boolean isError() {
+
         return this.hasError;
     }
 
