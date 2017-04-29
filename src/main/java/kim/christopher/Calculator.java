@@ -16,14 +16,16 @@ public class Calculator {
     }
 
     double subtract(double x, double y){
-        return 0;
+        return x - y;
     }
 
     double multiply(double x, double y){
-        return 0;
+        return x * y;
     }
 
     double divide(double x, double y){
-        return 0;
+        if(y == 0.0)
+            return Double.NaN;
+        else return x / y;
     }
 }
