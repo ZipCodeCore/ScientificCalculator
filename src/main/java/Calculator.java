@@ -23,4 +23,28 @@ public class Calculator {
         return x / y;
     }
 
+    public double square(double x) {
+        return x * x;
+    }
+
+    public double squareRoot(double x) {
+        if(x < 0) {
+            return Double.NaN;
+        }
+
+        return Math.sqrt(x);
+    }
+
+    public double exponent(double x, double y) {
+        return Math.pow(x,y);
+    }
+
+    public double inverse(double x) {
+        return divide(1.0, x);
+    }
+
+    public double opposite(double x) {
+        return -x;
+    }
+
 }
