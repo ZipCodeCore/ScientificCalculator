@@ -7,9 +7,23 @@ import java.util.Scanner;
  */
 public class Display {
 
+    String currentNumber;
+    String givenNumber;
+    Operation assignmentFromEnum;
+    Scanner in = new Scanner(System.in);
+    double result;
+
+    public static void main(String[] args){
+
+    }
+
+    public void startingCalculatorDisplay(){
+        System.out.println("0");
+    }
 
 
     public void clearDisplay(){
+
 
     }
 
