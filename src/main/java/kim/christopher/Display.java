@@ -21,9 +21,10 @@ public class Display {
         System.out.println(currentDisplay);
     }
 
-    public void setCurrentDisplay(String newCurrent){
+    public void setDisplay(String newCurrent){
         setLastDisplay(currentDisplay);
         currentDisplay = newCurrent;
+        show();
     }
 
     public String getCurrentDisplay(){
