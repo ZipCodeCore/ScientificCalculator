@@ -1,6 +1,8 @@
 package kim.christopher;
 
 
+import java.util.ArrayList;
+
 public class Controller {
 
     Calculator calculator;
@@ -16,7 +18,10 @@ public class Controller {
     public void start(){
 
         System.out.println("Welcome to the first attempt, please try adding two numbers: ");
-
+        ArrayList<String> test = reader.readLine();
+        double result = calculator.add(Double.parseDouble(test.get(0)), Double.parseDouble(test.get(2)));
+        display.setCurrentDisplay(Double.toString(result));
+        display.show();
 
 
     }
