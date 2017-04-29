@@ -15,4 +15,8 @@ public class Controller {
         reader = new InputReader();
     }
 
+    public void run(){
+        //stub
+    }
+
 }
