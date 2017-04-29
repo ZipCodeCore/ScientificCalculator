@@ -20,7 +20,7 @@ public class testBasicMath {
         double actualSum = basicmather.add(number1, number2);
 
         //then
-        Assert.assertEquals("Are you correct", expectedSum, actualSum, 0);
+        Assert.assertEquals(expectedSum, actualSum, 0);
 
     }
 
@@ -29,14 +29,14 @@ public class testBasicMath {
         //given
         double number1 = 4;
         double number2 = 5;
-        double expectedSum = number1 -number2;
+        double expectedSum = number1 - number2;
         BasicMath basicmather = new BasicMath();
 
         //when
-        double actualSum = basicmather.subtract(number1, number2);
+        double actualDifference = basicmather.subtract(number1, number2);
 
         //then
-        Assert.assertEquals("Are you correct", expectedSum, actualSum, 0);
+        Assert.assertEquals(expectedSum, actualDifference, 0);
     }
 
     @Test
@@ -48,10 +48,10 @@ public class testBasicMath {
         BasicMath basicmather = new BasicMath();
 
         //when
-        double actualSum = basicmather.multiply(number1, number2);
+        double actualProduct = basicmather.multiply(number1, number2);
 
         //then
-        Assert.assertEquals("Are you correct", expectedSum, actualSum, 0);
+        Assert.assertEquals(expectedSum, actualProduct, 0);
     }
 
     @Test
@@ -63,10 +63,10 @@ public class testBasicMath {
         BasicMath basicmather = new BasicMath();
 
         //when
-        double actualSum = basicmather.divide(number1, number2);
+        double actualQuotient = basicmather.divide(number1, number2);
 
         //then
-        Assert.assertEquals("Are you correct", expectedSum, actualSum, 1);
+        Assert.assertEquals(expectedSum, actualQuotient, 1);
     }
 
     @Test
@@ -78,25 +78,38 @@ public class testBasicMath {
         BasicMath basicmather = new BasicMath();
 
         //when
-        double actualSum = basicmather.divide(number1, number2);
+        double actualQuotient = basicmather.divide(number1, number2);
 
         //then
-        Assert.assertTrue(Double.isNaN(actualSum));
+        Assert.assertTrue(Double.isNaN(actualQuotient));
     }
 
     @Test
     public void calcSqrRoot() {
         //given
         double number1 = 4;
-
         double expectedSum = 2;
         BasicMath basicmather = new BasicMath();
 
         //when
-        double actualSum = basicmather.calcSqrRoot(number1);
+        double actualRoot = basicmather.calcSqrRoot(number1);
 
         //then
-        Assert.assertEquals("Are you correct", expectedSum, actualSum, 1);
+        Assert.assertEquals(expectedSum, actualRoot, 1);
+    }
+
+    @Test
+    public void calcSqr() {
+        //given
+        double number1 = 4;
+        double expectedSum = 16;
+        BasicMath basicmather = new BasicMath();
+
+        //when
+        double actualExponent = basicmather.calcSqrRoot(number1);
+
+        //then
+        Assert.assertEquals(expectedSum, actualExponent, 1);
     }
 
 

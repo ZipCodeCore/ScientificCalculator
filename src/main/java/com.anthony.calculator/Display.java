@@ -1,5 +1,6 @@
 package com.anthony.calculator;
 
+import javax.naming.NameNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -13,6 +14,7 @@ public class Display {
     String choice;
     Operation operationOfEnum;
     int enumLoopCounter;
+    boolean onlyOneCalculation = false;
     Scanner in = new Scanner(System.in);
     Calculator calculator = new Calculator();
 
@@ -22,10 +24,7 @@ public class Display {
         loopThroughAndPrintEnums();
         operationChoice(choice);
         operationToSend();
-        setCurrentNumber(givenNumber);
-        setNumber1(number1);
-        setCurrentNumber(givenNumber);
-        setNumber2(number2);
+        pickCorrectAmountOfNumbersToCalculate();
         calculateAndSendAllNumbers();
         getCalculation();
     }
@@ -53,28 +52,44 @@ public class Display {
 
         for (Operation enumLoop : operationOfEnum.values()) {
 
-            int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();//0
+            int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
+            try {
 
+                if (enumPosition == Integer.parseInt(choice) - 1) {
+                    operationOfEnum = enumLoop;
+                    if (enumPosition < 4) {
+                        System.out.println("You've chosen to " + operationOfEnum +
+                                " Please enter your first number for this equation");
+                    } else {
+                        System.out.println("You've chosen to " + operationOfEnum +
+                                " Please enter your number for this equation");
+                        onlyOneCalculation = true;
+                        break;
+                    }
 
-            if (enumPosition == Integer.parseInt(choice) - 1) {
-                operationOfEnum = enumLoop;
-                if (enumPosition < 4) {
-                    System.out.println("You've chosen to " + operationOfEnum +
-                            " Please enter your first number for this equation");
-                } else {
-                    System.out.println("You've chosen to " + operationOfEnum +
-                            " Please enter your number for this equation");
-                    break;
                 }
 
-            } else if (choice.equalsIgnoreCase("") || Integer.parseInt(choice) < 1 || Integer.parseInt(choice) > Operation.values().length) {
+            } catch (NumberFormatException e) {
                 System.out.println("You did not enter a correct option, please try again");
                 operationChoice(choice);
-
             }
 
         }
     }
+
+    public void pickCorrectAmountOfNumbersToCalculate() {
+
+        if (onlyOneCalculation == true) {
+            setCurrentNumber(givenNumber);
+            setNumber1(number1);
+        } else {
+            setCurrentNumber(givenNumber);
+            setNumber1(number1);
+            setCurrentNumber(givenNumber);
+            setNumber2(number2);
+        }
+    }
+
 
     public String setCurrentNumber(String numberToBeParsed) {
 
@@ -101,8 +116,13 @@ public class Display {
 
     public void calculateAndSendAllNumbers() {
 
-        calculator.setNumber1(Integer.parseInt(number1));
-        calculator.setNumber2(Integer.parseInt(number2));
+        if (onlyOneCalculation == true) {
+            calculator.setNumber1(Integer.parseInt(number1));
+        } else {
+            calculator.setNumber1(Integer.parseInt(number1));
+            calculator.setNumber2(Integer.parseInt(number2));
+        }
+
         calculator.doOperation(operationOfEnum);
     }
 

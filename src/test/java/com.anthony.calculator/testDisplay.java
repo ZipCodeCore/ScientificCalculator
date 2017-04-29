@@ -6,9 +6,15 @@ import org.junit.Test;
 public class testDisplay {
 
     @Test
+    public void operationChoice() {
+        //then
+        String choice = "g";
+
+
+    }
+
+    @Test
     public void clearDisplay() {
-
-
     }
 
     @Test

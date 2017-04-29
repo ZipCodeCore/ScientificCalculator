@@ -12,12 +12,10 @@ public class Calculator {
 
     public void setNumber1(double number1) {
         this.number1 = number1;
-        //return number1;
     }
 
     public void setNumber2(double number2) {
         this.number2 = number2;
-        // return number2;
     }
 
 
