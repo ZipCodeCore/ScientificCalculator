@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class CalculatorApp {
 
-    public static void main (String [] args) {
+    public static void main(String[] args) {
 
         double leftOperand;
         double rightOperand;
@@ -14,7 +14,7 @@ public class CalculatorApp {
 
         System.out.print("Enter a number: ");
         leftOperand = userInput.nextDouble();
-        System.out.print("Choose an operator + , - , / , * : " );
+        System.out.print("Choose an operator + , - , / , * , ^ : ");
         operator = userInput.next().charAt(0);
         System.out.print("Enter a number: ");
         rightOperand = userInput.nextDouble();
@@ -23,31 +23,34 @@ public class CalculatorApp {
 
         switch (operator) {
             case '+':
-                result = execute.add(leftOperand,rightOperand);
+                result = execute.add(leftOperand, rightOperand);
+                System.out.print(leftOperand + " + " + rightOperand + " = " + result);
                 break;
             case '-':
-                result = execute.subtract(leftOperand,rightOperand);
+                result = execute.subtract(leftOperand, rightOperand);
+                System.out.print(leftOperand + " - " + rightOperand + " = " + result);
                 break;
             case '/':
                 if (rightOperand != 0) {
-                    result = execute.divide(leftOperand,rightOperand);
+                    result = execute.divide(leftOperand, rightOperand);
+                    System.out.print(leftOperand + " / " + rightOperand + " = " + result);
                 } else {
                     System.out.println("ERR - Divide by zero");
                     break;
                 }
                 break;
             case '*':
-                result = execute.multiply(leftOperand,rightOperand);
+                result = execute.multiply(leftOperand, rightOperand);
+                System.out.print(leftOperand + " * " + rightOperand + " = " + result);
                 break;
-            default :
+            case '^':
+                result = execute.exponential(leftOperand,rightOperand);
+                System.out.print(leftOperand + "^" + rightOperand + " = " + result);
+                break;
+            default:
                 System.out.println("Invalid operation");
 
         }
-
-        System.out.println("Result = " + result);
-
-
-
 
 
     }

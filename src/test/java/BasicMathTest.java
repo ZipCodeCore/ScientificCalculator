@@ -71,7 +71,7 @@ public class BasicMathTest {
     }
 
     @Test
-    public void divide() {
+    public void testDivide() {
 
         // Given
         double leftOperand = 2.0;
@@ -136,4 +136,20 @@ public class BasicMathTest {
 
     }
 
+    @Test
+    public void testExponential() {
+
+        // Given
+        double leftOperand = 2.0;
+        double rightOperand = 2.0;
+        double expectedResult = Math.pow(leftOperand, rightOperand);
+        BasicMath calcEngine = new BasicMath();
+
+        // When
+        double actualResult = calcEngine.exponential(leftOperand,rightOperand);
+
+        // Then
+        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+
+    }
 }

@@ -24,10 +24,15 @@ public class BasicMath {
         return result;
     }
 
-
     public double multiply (double leftOperand, double rightOperand) {
         result = leftOperand * rightOperand;
         return result;
     }
+
+    public double exponential (double leftOperand, double rightOperand) {
+        result = Math.pow(leftOperand,rightOperand);
+        return result;
+    }
+
 
 }
