@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class TestCalculatorInput {
 
-    public class TestBasicMath {
+
         CalculatorInput ci;
 
         @Before
@@ -20,10 +20,10 @@ public class TestCalculatorInput {
         public void testUserInput(){
 
             //: Given
-            double userInput = 10.0;
+            double x = 10.0;
             double expectedInput = 10.0;
             //: When
-            double actualInput = userInput;
+            double actualInput = ci.userInput(x);
             //: Then
             Assert.assertEquals("the expected input value is 10.0", expectedInput, actualInput,0);
         }
@@ -31,7 +31,11 @@ public class TestCalculatorInput {
         @Test
         public void testUserOperator() {
             //: Given
-            char userOperator = + ;
+            char userOperator = '+';
+            char expectedOperator = '+';
+            //: When
+            char actualOperator = ci.userOperator(userOperator);
+            //: Then
+            Assert.assertEquals("The expected user input is '+' ", actualOperator,expectedOperator);
         }
     }
-}

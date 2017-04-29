@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89d2cbf0-88f0-4d26-9fde-1e0ebf752dae" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ford/ford/calculator.java" afterPath="$PROJECT_DIR$/src/main/java/ford/ford/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ford/ford/BasicMath.class" afterPath="$PROJECT_DIR$/target/classes/ford/ford/BasicMath.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/TestBasicMath.class" afterPath="$PROJECT_DIR$/target/test-classes/TestBasicMath.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ford/ford/BasicMath.java" afterPath="$PROJECT_DIR$/src/main/java/ford/ford/BasicMath.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestBasicMath.java" afterPath="$PROJECT_DIR$/src/test/java/TestBasicMath.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestCalculator.java" afterPath="$PROJECT_DIR$/src/test/java/TestCalculator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestCalculatorInput.java" afterPath="$PROJECT_DIR$/src/test/java/TestCalculatorInput.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,9 +67,10 @@
           <file leaf-file-name="CalculatorInput.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/ford/ford/CalculatorInput.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+                <state relative-caret-position="90">
+                  <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
                   <folding>
+                    <element signature="e#183#184#0" expanded="true" />
                     <element signature="e#207#208#0" expanded="true" />
                   </folding>
                 </state>
@@ -113,12 +108,12 @@
           <file leaf-file-name="TestCalculatorInput.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/TestCalculatorInput.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+                <state relative-caret-position="517">
+                  <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#295#296#0" expanded="true" />
-                    <element signature="e#345#346#0" expanded="true" />
+                    <element signature="e#263#264#0" expanded="true" />
+                    <element signature="e#313#314#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -292,49 +287,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
-  <component name="RunManager" selected="JUnit.TestBasicMath.testFindExponent">
-    <configuration default="false" name="TestBasicMath.testMultiply" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestBasicMath" />
-      <option name="METHOD_NAME" value="testMultiply" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestBasicMath.testFindSquare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="Calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestBasicMath" />
-      <option name="METHOD_NAME" value="testFindSquare" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestCalculatorInput.testUserInput">
     <configuration default="false" name="TestBasicMath.testFindSquareRoot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="Calculator" />
@@ -386,6 +339,48 @@
       <option name="MAIN_CLASS_NAME" value="TestBasicMath" />
       <option name="METHOD_NAME" value="testFindExponent" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestCalculatorInput.testUserInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCalculatorInput" />
+      <option name="METHOD_NAME" value="testUserInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestCalculatorInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Calculator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCalculatorInput" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -772,19 +767,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testMultiply" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindSquare" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindSquareRoot" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testDivide" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindExponent" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindSquareRoot" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testDivide" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindExponent" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestCalculatorInput.testUserInput" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestCalculatorInput" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindExponent" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testDivide" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindSquareRoot" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindSquare" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testMultiply" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestCalculatorInput.testUserInput" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestCalculatorInput" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindExponent" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testDivide" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestBasicMath.testFindSquareRoot" />
       </list>
     </recent_temporary>
   </component>
@@ -798,7 +793,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493484644937</updated>
-      <workItem from="1493484646397" duration="19582000" />
+      <workItem from="1493484646397" duration="21351000" />
     </task>
     <servers />
   </component>
@@ -812,11 +807,8 @@
     <history-entry file="TestBasicMath_testFindExponent - 2017.04.29 at 17h 55m 19s.xml">
       <configuration name="TestBasicMath.testFindExponent" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBasicMath_testFindSquare - 2017.04.29 at 16h 27m 25s.xml">
-      <configuration name="TestBasicMath.testFindSquare" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestBasicMath_testFindSquareRoot - 2017.04.29 at 16h 27m 32s.xml">
-      <configuration name="TestBasicMath.testFindSquareRoot" configurationId="JUnit" />
+    <history-entry file="TestBasicMath_testFindExponent - 2017.04.29 at 19h 26m 26s.xml">
+      <configuration name="TestBasicMath.testFindExponent" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestBasicMath_testFindSquareRoot - 2017.04.29 at 16h 27m 43s.xml">
       <configuration name="TestBasicMath.testFindSquareRoot" configurationId="JUnit" />
@@ -830,12 +822,15 @@
     <history-entry file="TestBasicMath_testFindSquareRoot - 2017.04.29 at 16h 28m 38s.xml">
       <configuration name="TestBasicMath.testFindSquareRoot" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBasicMath_testMultiply - 2017.04.29 at 16h 27m 09s.xml">
-      <configuration name="TestBasicMath.testMultiply" configurationId="JUnit" />
+    <history-entry file="TestCalculatorInput - 2017.04.29 at 19h 32m 14s.xml">
+      <configuration name="TestCalculatorInput" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCalculatorInput_testUserInput - 2017.04.29 at 19h 35m 25s.xml">
+      <configuration name="TestCalculatorInput.testUserInput" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19582000" />
+    <option name="totallyTimeSpent" value="21351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-40" y="-1057" width="1919" height="1050" extended-state="0" />
@@ -850,7 +845,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2038736" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -910,7 +905,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -978,24 +975,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ford/ford/CalculatorInput.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestCalculatorInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="517">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="e#207#208#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestCalculatorInput.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ford/ford/CalculatorInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+        <state relative-caret-position="90">
+          <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
           </folding>
         </state>
       </provider>
