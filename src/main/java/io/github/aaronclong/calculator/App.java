@@ -1,4 +1,4 @@
-package io.github.aaronclong;
+package io.github.aaronclong.calculator;
 
 import java.util.Scanner;
 /**

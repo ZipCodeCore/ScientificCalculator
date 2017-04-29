@@ -1,4 +1,4 @@
-package io.github.aaronclong;
+package io.github.aaronclong.calculator;
 
 /**
  * Created by aaronlong on 4/29/17.

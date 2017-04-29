@@ -1,4 +1,4 @@
-package io.github.aaronclong;
+package io.github.aaronclong.calculator;
 
 import org.junit.Assert;
 import org.junit.Before;
