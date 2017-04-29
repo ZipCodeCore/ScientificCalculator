@@ -5,10 +5,10 @@ package kim.christopher;
  */
 public class Calculator {
 
-    InputReader reader;
+
 
     public Calculator(){
-        reader = new InputReader();
+
     }
 
     double add(double x, double y){
