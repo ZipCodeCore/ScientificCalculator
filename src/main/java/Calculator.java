@@ -16,7 +16,7 @@ public class Calculator {
     }
 
     public double divide(double x, double y) {
-        if(y == 0) {
+        if (y == 0) {
             return Double.NaN;
         }
 
@@ -28,7 +28,7 @@ public class Calculator {
     }
 
     public double squareRoot(double x) {
-        if(x < 0) {
+        if (x < 0) {
             return Double.NaN;
         }
 
@@ -36,7 +36,7 @@ public class Calculator {
     }
 
     public double exponent(double x, double y) {
-        return Math.pow(x,y);
+        return Math.pow(x, y);
     }
 
     public double inverse(double x) {

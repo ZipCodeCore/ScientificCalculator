@@ -5,25 +5,22 @@ import java.util.*;
 
 public class Display {
 
-    State state;
-    Scanner scanner;
-    double memory;
+    private String display;
 
     Display() {
-        this.state.setValue(0);
-        this.memory = 0;
-        this.scanner = new Scanner(System.in);
+        this.setDisplay("0");
     }
 
-    public double displayValue() {
-        return this.state.getValue();
+    public void setDisplay(String display) {
+        this.display = display;
     }
 
     public void clearDisplay() {
-
+        this.setDisplay("");
     }
 
-    public void changeDisplay(double x) {
-        
+    public String getDisplay() {
+        return this.display;
     }
+
 }
