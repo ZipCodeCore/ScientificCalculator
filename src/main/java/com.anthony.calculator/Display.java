@@ -9,29 +9,54 @@ public class Display {
 
     String currentNumber;
     String givenNumber;
-    Operation assignmentFromEnum;
+    String choice;
+    Operation operationOfEnum;
     int enumCount;
+    String  enumOperation;
     Scanner in = new Scanner(System.in);
     double result;
-    boolean calculatorRunning=true;
+    boolean calculatorRunning = true;
 
-    public static void main(String[] args) {
+
+    Display() {
         startingCalculatorDisplay();
-
+        loopThroughAndPrintEnums();
+        operationChoice();
+        operationToSend();
     }
 
-    public static void startingCalculatorDisplay() {
+    public void startingCalculatorDisplay() {
         System.out.println("Welcome to Anthony's simple yet, smart Calculator!");
-        System.out.println("Please enter an option of which operation you would like to perform");
-
-        System.out.println("0");
+        System.out.println("Please enter the number of the operation you would like to perform.");
     }
 
-    public void listOfEnumOperations(){
-        for(Operation enumLoop:assignmentFromEnum.values()){
-            System.out.println(enumLoop + ": "+ " ");
-
+    public void loopThroughAndPrintEnums() {
+        for (Operation enumLoop : operationOfEnum.values()) {
+            enumCount++;
+            System.out.println(enumLoop + ": " + enumCount);
         }
+    }
+
+
+    public String operationChoice() {
+
+        choice = in.nextLine();
+        return choice;
+
+    }
+
+    public void operationToSend() {
+        for (Operation enumLoop : operationOfEnum.values()) {
+            enumCount++;
+            if(Integer.getInteger(choice) == enumCount){
+                operationOfEnum = enumLoop;
+            }else{
+                System.out.println("Pick from the list please");
+                operationChoice();
+            }
+        }
+
+
     }
 
 

@@ -29,8 +29,18 @@
       <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+            <state relative-caret-position="124">
+              <caret line="50" column="56" lean-forward="true" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InitCalculation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,6 +92,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Operation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Calculator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com.anthony.calculator/testCalculator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java" />
       </list>
     </option>
@@ -243,28 +254,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Display">
-    <configuration default="false" name="testBasicMath.testMultiply" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="project-1-calculator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testBasicMath" />
-      <option name="METHOD_NAME" value="testMultiply" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.InitCalculation">
     <configuration default="false" name="testBasicMath.testDivideByZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="project-1-calculator" />
@@ -336,6 +326,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.anthony.calculator.Display" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="project-1-calculator" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="InitCalculation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.anthony.calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.anthony.calculator.InitCalculation" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -729,19 +739,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.testBasicMath.testMultiply" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivideByZero" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivide" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.testCalculator.doOperation" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Display" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivideByZero" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivide" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.testCalculator.doOperation" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Display" />
+      <item index="4" class="java.lang.String" itemvalue="Application.InitCalculation" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Display" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.testCalculator.doOperation" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivideByZero" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivide" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.testBasicMath.testMultiply" />
+        <item index="0" class="java.lang.String" itemvalue="Application.InitCalculation" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Display" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.testCalculator.doOperation" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivideByZero" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.testBasicMath.testDivide" />
       </list>
     </recent_temporary>
   </component>
@@ -755,7 +765,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493424014948</updated>
-      <workItem from="1493424019129" duration="9058000" />
+      <workItem from="1493424019129" duration="12128000" />
     </task>
     <servers />
   </component>
@@ -792,7 +802,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9058000" />
+    <option name="totallyTimeSpent" value="12128000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="178" y="23" width="1102" height="772" extended-state="0" />
@@ -813,7 +823,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3566243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17967331" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -913,14 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com.anthony.calculator/testCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -937,10 +939,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+        <state relative-caret-position="124">
+          <caret line="50" column="56" lean-forward="true" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
           <folding />
         </state>
       </provider>
