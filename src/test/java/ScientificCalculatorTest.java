@@ -93,6 +93,26 @@ public class ScientificCalculatorTest {
     }
 
     @Test
+    public void log10ZeroTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        //When
+        double result = calc.log10(0.0);
+        //Then
+        Assert.assertTrue(Double.isInfinite(result));
+    }
+
+    @Test
+    public void log10NegativeTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        //When
+        double result = calc.log10(-19.91);
+        //Then
+        Assert.assertTrue(Double.isNaN(result));
+    }
+
+    @Test
     public void tenPowerTest() {
         //Given
         ScientificCalculator calc = new ScientificCalculator();
@@ -112,6 +132,26 @@ public class ScientificCalculatorTest {
         double actual = calc.log(550.5);
         //Then
         Assert.assertEquals("log(550.5) is roughly 6.3108", expected, actual, 0.00001);
+    }
+
+    @Test
+    public void logZeroTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        //When
+        double result = calc.log(0.0);
+        //Then
+        Assert.assertTrue(Double.isInfinite(result));
+    }
+
+    @Test
+    public void logNegativeTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        //When
+        double result = calc.log(-19.91);
+        //Then
+        Assert.assertTrue(Double.isNaN(result));
     }
 
     @Test

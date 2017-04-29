@@ -5,6 +5,7 @@
 
 public class DisplayMode {
     private int mode;
+    Display display;
 
     DisplayMode() {
         mode = 0;
@@ -19,14 +20,15 @@ public class DisplayMode {
         mode = x;
     }
 
-    public String toDisplay(double x) {
+    public void toDisplay(double x) {
         //this is a stub. gonna be mathy to write, hopefully.
-        switch(mode) {
+        switch (mode) {
             case 0:
-                return Double.toString(x);
+                display.setDisplay(Double.toString(x));
             case 1:
-                return Double.toHexString(x);
+                display.setDisplay(Double.toHexString(x));
             default:
-                return "";
+                display.setDisplay("");
+        }
     }
 }
