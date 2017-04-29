@@ -10,13 +10,13 @@ public class CalculatorTest {
     @Test
     public void testAddition(){
         //: Given
-        double firstOperand = 2, secondOperand = 2; // ... two positive values to add
-        double expectedSum = firstOperand + secondOperand; // 2 + 2 = 4
+        double firstOperand = 2.0, secondOperand = 2.0; // ... two positive values to add
+        double expectedSum = 4.0;
         Controller controller = new Controller();
 
 
         //: When
-        int actualSum = controller.calculator.add(firstOperand, secondOperand);
+        double actualSum = controller.calculator.add(firstOperand, secondOperand);
 
 
         //: Then
@@ -24,4 +24,6 @@ public class CalculatorTest {
         assertEquals("2 + 2 should equal 4", expectedSum, actualSum, 0);
 
     }
+
+
 }
