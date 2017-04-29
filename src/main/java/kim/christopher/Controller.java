@@ -15,7 +15,7 @@ public class Controller {
         reader = new InputReader();
     }
 
-    public void run(){
+    public void start(){
         //stub
     }
 
