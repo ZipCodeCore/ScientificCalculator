@@ -9,8 +9,6 @@ public class testDisplay {
     public void operationChoice() {
         //then
         String choice = "g";
-
-
     }
 
     @Test

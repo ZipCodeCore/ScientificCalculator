@@ -1,4 +1,7 @@
 package com.anthony.calculator;
+
+import org.apache.commons.math3.util.ArithmeticUtils;
+
 /**
  * Created by anthonyjones on 4/28/17.
  */
@@ -6,6 +9,7 @@ public class BasicMath {
 
 
     public double add(double number1, double number2) {
+
         return number1 + number2;
     }
 
@@ -29,5 +33,15 @@ public class BasicMath {
         return Math.sqrt(number1);
     }
 
+
+    public double calcFactorial(double number1){
+        int factorialCastToInt = (int)number1;
+        return ArithmeticUtils.factorialDouble(factorialCastToInt);
+    }
+
+    public double calcVariableExponent(double number1,double number2){
+
+        return -1;
+    }
 
 }

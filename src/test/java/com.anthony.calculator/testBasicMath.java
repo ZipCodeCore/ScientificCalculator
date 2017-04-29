@@ -85,7 +85,7 @@ public class testBasicMath {
     }
 
     @Test
-    public void calcSqrRoot() {
+    public void testCalcSqrRoot() {
         //given
         double number1 = 4;
         double expectedSum = 2;
@@ -99,7 +99,7 @@ public class testBasicMath {
     }
 
     @Test
-    public void calcSqr() {
+    public void testCalcSquared() {
         //given
         double number1 = 4;
         double expectedSum = 16;
@@ -110,6 +110,28 @@ public class testBasicMath {
 
         //then
         Assert.assertEquals(expectedSum, actualExponent, 1);
+    }
+
+    @Test
+    public void TestCalcFactorial() {
+        //given
+        double number1 = 4;
+        double expectedSum = 24;
+        BasicMath basicmather = new BasicMath();
+
+        //when
+        double actualFactorial = basicmather.calcFactorial(number1);
+
+        //then
+        Assert.assertEquals(expectedSum, actualFactorial, 1);
+    }
+
+
+    @Test
+    public void TestCalcVariableExponent(){
+        //given
+        
+
     }
 
 
