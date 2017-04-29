@@ -22,6 +22,7 @@ public class Display {
         startingCalculatorDisplay();
         loopThroughAndPrintEnums();
         operationChoice();
+        System.out.println(choice);
         operationToSend();
     }
 
@@ -40,16 +41,22 @@ public class Display {
 
     public String operationChoice() {
 
+
         choice = in.nextLine();
-        return choice;
+        choice= choice;
 
     }
 
     public void operationToSend() {
+
+        System.out.println(Integer.getInteger(choice));
+
         for (Operation enumLoop : operationOfEnum.values()) {
             enumCount++;
             if(Integer.getInteger(choice) == enumCount){
                 operationOfEnum = enumLoop;
+
+                System.out.println(enumCount);
             }else{
                 System.out.println("Pick from the list please");
                 operationChoice();
