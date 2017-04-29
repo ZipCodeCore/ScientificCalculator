@@ -1,8 +1,6 @@
 
 public class BasicMath {
 
-    public double leftOperand;
-    public double rightOperand;
     public double result;
 
     public double add (double leftOperand, double rightOperand) {
@@ -31,6 +29,11 @@ public class BasicMath {
 
     public double exponential (double leftOperand, double rightOperand) {
         result = Math.pow(leftOperand,rightOperand);
+        return result;
+    }
+
+    public double squareRoot (double leftOperand) {
+        result = Math.sqrt(leftOperand);
         return result;
     }
 

@@ -5,7 +5,7 @@ import org.junit.Test;
 public class BasicMathTest {
 
     @Test
-    public void testAddition()  {
+    public void testAddition() {
 
         // Given
         double leftOperand = 1.0;
@@ -14,14 +14,14 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.add(leftOperand,rightOperand);
+        double actualResult = calcEngine.add(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
     }
 
     @Test
-    public void testNegativeAddition()  {
+    public void testNegativeAddition() {
 
         // Given
         double leftOperand = -1.0;
@@ -30,10 +30,10 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.add(leftOperand,rightOperand);
+        double actualResult = calcEngine.add(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
     }
 
     @Test
@@ -46,10 +46,10 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.subtract(leftOperand,rightOperand);
+        double actualResult = calcEngine.subtract(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
 
     }
 
@@ -63,10 +63,10 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.subtract(leftOperand,rightOperand);
+        double actualResult = calcEngine.subtract(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
 
     }
 
@@ -80,10 +80,10 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.divide(leftOperand,rightOperand);
+        double actualResult = calcEngine.divide(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
     }
 
     @Test
@@ -96,10 +96,10 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.divide(leftOperand,rightOperand);
+        double actualResult = calcEngine.divide(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
     }
 
     @Test
@@ -112,10 +112,10 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.multiply(leftOperand,rightOperand);
+        double actualResult = calcEngine.multiply(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
 
     }
 
@@ -129,10 +129,10 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.multiply(leftOperand,rightOperand);
+        double actualResult = calcEngine.multiply(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
 
     }
 
@@ -146,10 +146,25 @@ public class BasicMathTest {
         BasicMath calcEngine = new BasicMath();
 
         // When
-        double actualResult = calcEngine.exponential(leftOperand,rightOperand);
+        double actualResult = calcEngine.exponential(leftOperand, rightOperand);
 
         // Then
-        Assert.assertEquals(expectedResult,actualResult, 1e-8);
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
+    }
 
+    @Test
+    public void testSquareRoot() {
+
+        // Given
+        double leftOperand = 2.0;
+
+        double expectedResult = Math.sqrt(leftOperand);
+        BasicMath calcEngine = new BasicMath();
+
+        // When
+        double actualResult = calcEngine.squareRoot(leftOperand);
+
+        // Then
+        Assert.assertEquals(expectedResult, actualResult, 1e-8);
     }
 }
