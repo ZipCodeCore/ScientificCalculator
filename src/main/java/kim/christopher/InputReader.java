@@ -7,16 +7,16 @@ import java.util.Scanner;
 public class InputReader {
 
     private String lastInput;
-    private Scanner scanner;
+    private Scanner sc;
 
     public InputReader(){
         lastInput = null;
-        scanner = new Scanner(System.in);
+        sc = new Scanner(System.in);
     }
 
     public ArrayList<String> readLine(){
 
-        String line = scanner.nextLine();
+        String line = sc.nextLine();
         ArrayList<String> result = new ArrayList<String>();
 
         for(String word: line.split("\\s+")){

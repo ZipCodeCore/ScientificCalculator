@@ -18,14 +18,14 @@ public class CalculatorTest {
     public void testAddition(){
 
         //: Given
-        double firstOperand = 2.0, secondOperand = 2.0;
-        double expectedSum = 4.0;
+        String firstOperand = "2.0", secondOperand = "2.0";
+        String expectedSum = "4.0";
 
         //: When
-        double actualSum = controller.calculator.add(firstOperand, secondOperand);
+        String actualSum = controller.calc.add(firstOperand, secondOperand);
 
         //: Then
-        assertEquals("2 + 2 should equal 4", expectedSum, actualSum, 0);
+        assertEquals("2 + 2 should equal 4", expectedSum, actualSum);
 
     }
 
@@ -33,14 +33,14 @@ public class CalculatorTest {
     public void testSubtraction(){
 
         //: Given
-        double firstOperand = 5.0, secondOperand = 3.0;
-        double expectedResult = 2.0;
+        String firstOperand = "5.0", secondOperand = "3.0";
+        String expectedResult = "2.0";
 
         //: When
-        double actualResult = controller.calculator.subtract(firstOperand, secondOperand);
+        String actualResult = controller.calc.subtract(firstOperand, secondOperand);
 
         //: Then
-        assertEquals("5 - 3 should equal 2", expectedResult, actualResult, 0);
+        assertEquals("5 - 3 should equal 2", expectedResult, actualResult);
 
     }
 
@@ -48,41 +48,41 @@ public class CalculatorTest {
     public void testMultiplication(){
 
         //: Given
-        double firstOperand = 5.0, secondOperand = 3.0;
-        double expectedProduct = 15.0;
+        String firstOperand = "5.0", secondOperand = "3.0";
+        String expectedProduct = "15.0";
 
         //: When
-        double actualProduct = controller.calculator.multiply(firstOperand, secondOperand);
+        String actualProduct = controller.calc.multiply(firstOperand, secondOperand);
 
         //: Then
-        assertEquals("5 * 3 should equal 15", expectedProduct, actualProduct, 0);
+        assertEquals("5 * 3 should equal 15", expectedProduct, actualProduct);
     }
 
     @Test
     public void testDivision(){
 
         //: Given
-        double firstOperand = 5.0, secondOperand = 3.0;
-        double expectedQuotient = 1.66666666667;
+        String firstOperand = "5.0", secondOperand = "3.0";
+        String expectedQuotient = "1.6666666666666667";
 
         //: When
-        double actualQuotient = controller.calculator.divide(firstOperand, secondOperand);
+        String actualQuotient = controller.calc.divide(firstOperand, secondOperand);
 
         //: Then
-        assertEquals("5 / 3 should be approximately 1.66667", expectedQuotient, actualQuotient, 0.00001);
+        assertEquals("5 / 3 should be approximately 1.66667", expectedQuotient, actualQuotient);
     }
 
     @Test
     public void testDivisionByZero(){
 
         //: Given
-        double firstOperand = 5.0, secondOperand = 0.0;
+        String firstOperand = "5.0", secondOperand = "0.0";
 
         //: When
-        double result = controller.calculator.divide(firstOperand, secondOperand);
+        String result = controller.calc.divide(firstOperand, secondOperand);
 
         //: Then
-        assertTrue(Double.isNaN(result));
+        assertTrue(Double.isNaN(Double.parseDouble(result)));
 
     }
 

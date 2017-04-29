@@ -11,21 +11,21 @@ public class Calculator {
         reader = new InputReader();
     }
 
-    double add(double x, double y){
-        return x + y;
+    String add(String x, String y) {
+        return Double.toString(Double.parseDouble(x) + Double.parseDouble(y));
     }
 
-    double subtract(double x, double y){
-        return x - y;
+    String subtract(String x, String y){
+        return Double.toString(Double.parseDouble(x) - Double.parseDouble(y));
     }
 
-    double multiply(double x, double y){
-        return x * y;
+    String multiply(String x, String y){
+        return Double.toString(Double.parseDouble(x) * Double.parseDouble(y));
     }
 
-    double divide(double x, double y){
-        if(y == 0.0)
-            return Double.NaN;
-        else return x / y;
+    String divide(String x, String y){
+        if(Double.parseDouble(y) == 0.0)
+            return Double.toString(Double.NaN);
+        else return Double.toString(Double.parseDouble(x) / Double.parseDouble(y));
     }
 }

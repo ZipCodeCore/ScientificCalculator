@@ -5,12 +5,12 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    Calculator calculator;
+    Calculator calc;
     Display display;
     InputReader reader;
 
     public Controller(){
-        calculator = new Calculator();
+        calc = new Calculator();
         display = new Display();
         reader = new InputReader();
     }
@@ -22,11 +22,9 @@ public class Controller {
         double result = Double.NaN;
 
         if(test.get(1).equals("+")) {
-            result = calculator.add(Double.parseDouble(test.get(0)), Double.parseDouble(test.get(2)));
-            display.setDisplay(Double.toString(result));
+            display.setDisplay(calc.add(test.get(0), test.get(2)));
         } else if(test.get(1).equals("-")){
-            result = calculator.subtract(Double.parseDouble(test.get(0)), Double.parseDouble(test.get(2)));
-            display.setDisplay(Double.toString(result));
+            display.setDisplay(calc.subtract(test.get(0), test.get(2)));
         } else display.setDisplay("Invalid operator");
 
 
