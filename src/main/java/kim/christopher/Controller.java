@@ -15,6 +15,9 @@ public class Controller {
 
     public void start(){
 
+        System.out.println("Welcome to the first attempt, please try adding two numbers: ");
+
+
 
     }
 
