@@ -40,7 +40,7 @@ public class TestBasicMath {
         //: Then
         Assert.assertEquals("The expected value is 2.0", actualValue, expectedValue, 0);
     }
-                     //Come back using try/catch statement in method
+    //Come back using try/catch statement in method
 //   @Test
 //   public void testDivideByZero(){
 //      double x = 4.0, y = 0;
@@ -84,15 +84,25 @@ public class TestBasicMath {
     }
 
     @Test
-    public void testFindSquareRoot(){
+    public void testFindSquareRoot() {
         //:Given
         double x = 9;
         double expectedValue = 3.0;
         //: When
         double actualValue = bm.findSquareRoot(x);
         //: Then
-        Assert.assertEquals("The expected value of the square root is 3.0", expectedValue,actualValue,0);
+        Assert.assertEquals("The expected value of the square root is 3.0", expectedValue, actualValue, 0);
     }
 
+    @Test
+    public void testFindExponent(){
+        //: Given
+        double x = 3.0, y = 3.0;
+        double expectedValue = 27.0;
+        //: When
+        double actualValue = bm.findExponent(x,y);
+        //: Then
+        Assert.assertEquals("The expected value is 27.0", actualValue,expectedValue,0);
+    }
 }
 

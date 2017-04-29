@@ -1,12 +1,8 @@
-import ford.ford.calculator;
-import org.junit.Assert;
-import org.junit.Test;
-
 /**
  * Created by rahmirford on 4/29/17.
  */
 public class TestCalculator {
-    // Testing the display of calculator
+    // Testing the display of Calculator
 //    @Test
 //    public void Testinput() {
 //        //: Given
@@ -14,7 +10,7 @@ public class TestCalculator {
 //        char enterOperator = *; // client selects operator
 //        double expectedResult = enterValue1 * enterValue2; // expected
 //
-//        calculator calc1 = new calculator();
+//        Calculator calc1 = new Calculator();
 //
 //        //: When
 //        boolean actualResult = calc1.inputValues(enterValue1,enterOperator, enterValue2);

@@ -24,4 +24,5 @@ public class BasicMath {
 
     public double findSquare(double x){return x * x;}
 
+    public double findExponent(double x, double y){ return Math.pow(x,y);}
 }
