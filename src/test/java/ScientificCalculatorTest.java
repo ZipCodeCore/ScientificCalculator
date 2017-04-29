@@ -81,4 +81,78 @@ public class ScientificCalculatorTest {
         Assert.assertEquals("arctan(0) = 0", expected, actual, 0);
     }
 
+    @Test
+    public void log10Test() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        double expected = Math.log10(81.0);
+        //When
+        double actual = calc.log10(81.0);
+        //Then
+        Assert.assertEquals("log10(81) is roughly 1.9085", expected, actual, 0);
+    }
+
+    @Test
+    public void tenPowerTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        double expected = 1000.0;
+        //When
+        double actual = calc.tenPower(3.0);
+        //Then
+        Assert.assertEquals("10 ^ 3 = 1000", expected, actual, 0);
+    }
+
+    @Test
+    public void logTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        double expected = Math.log(550.5);
+        //When
+        double actual = calc.log(550.5);
+        //Then
+        Assert.assertEquals("log(550.5) is roughly 6.3108", expected, actual, 0);
+    }
+
+    @Test
+    public void ePowerTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        double expected = Math.exp(2.23);
+        //When
+        double actual = calc.ePower(2.23);
+        //Then
+        Assert.assertEquals("e ^ 2.23 power is some number", expected, actual, 0);
+    }
+
+    @Test
+    public void factorialTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        double expected = 120.0;
+        //When
+        double actual = calc.factorial(5.0);
+        //Then
+        Assert.assertEquals("5! = 120", expected, actual, 0);
+    }
+
+    @Test
+    public void factorialNotAnIntegerTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        //When
+        double result = calc.factorial(6.66);
+        //Then
+        Assert.assertTrue(Double.isNaN(result));
+    }
+
+    @Test
+    public void factorialLessThanZeroTest() {
+        //Given
+        ScientificCalculator calc = new ScientificCalculator();
+        //When
+        double result = calc.factorial(-8.0);
+        //Then
+        Assert.assertTrue(Double.isNaN(result));
+    }
 }
