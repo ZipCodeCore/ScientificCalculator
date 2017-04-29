@@ -8,9 +8,9 @@ public class BasicMath {
 
     public double add(double x, double y){ return x + y;}
 
-    public float divide(float x, float y) {
+    public double divide(double x, double y) {
         if( y == 0) {
-            return NaN;
+            return Float.NaN;
         } else{
             return x / y;
         }
