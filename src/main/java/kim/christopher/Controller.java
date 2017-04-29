@@ -20,10 +20,15 @@ public class Controller {
         System.out.println("Welcome to the first attempt, please try adding two numbers: ");
         ArrayList<String> test = reader.readLine();
         double result = Double.NaN;
+
         if(test.get(1).equals("+")) {
             result = calculator.add(Double.parseDouble(test.get(0)), Double.parseDouble(test.get(2)));
             display.setDisplay(Double.toString(result));
+        } else if(test.get(1).equals("-")){
+            result = calculator.subtract(Double.parseDouble(test.get(0)), Double.parseDouble(test.get(2)));
+            display.setDisplay(Double.toString(result));
         } else display.setDisplay("Invalid operator");
+
 
 
 
