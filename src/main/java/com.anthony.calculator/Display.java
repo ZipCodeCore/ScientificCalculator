@@ -12,8 +12,10 @@ public class Display {
     String choice;
     Operation operationOfEnum;
     int enumCount;
-    String  enumOperation;
+    int enumLooopCounter;
+    String enumOperation;
     Scanner in = new Scanner(System.in);
+    Calculator calculator = new Calculator();
     double result;
     boolean calculatorRunning = true;
 
@@ -21,9 +23,12 @@ public class Display {
     Display() {
         startingCalculatorDisplay();
         loopThroughAndPrintEnums();
-        operationChoice();
-        System.out.println(choice);
+        operationChoice(choice);
         operationToSend();
+        changeCurrentNumber(givenNumber);
+        setNumber1();
+        setNumber2();
+        calculateAllNumbers();
     }
 
     public void startingCalculatorDisplay() {
@@ -33,45 +38,58 @@ public class Display {
 
     public void loopThroughAndPrintEnums() {
         for (Operation enumLoop : operationOfEnum.values()) {
-            enumCount++;
-            System.out.println(enumLoop + ": " + enumCount);
+            enumLooopCounter++;
+            System.out.println(enumLoop + ": " + enumLooopCounter);
         }
     }
 
 
-    public String operationChoice() {
+    public String operationChoice(String choice) {
 
 
         choice = in.nextLine();
-        choice= choice;
+        this.choice = choice;
 
+        return choice;
     }
 
     public void operationToSend() {
 
-        System.out.println(Integer.getInteger(choice));
-
         for (Operation enumLoop : operationOfEnum.values()) {
             enumCount++;
-            if(Integer.getInteger(choice) == enumCount){
+            System.out.println(enumCount);
+            if (Integer.parseInt(choice) == enumCount) {
                 operationOfEnum = enumLoop;
-
-                System.out.println(enumCount);
-            }else{
+                System.out.println("You've chosen to " + operationOfEnum +
+                        " Please enter your first or only number for this equation");
+                break;
+            } else {
                 System.out.println("Pick from the list please");
-                operationChoice();
+                operationChoice(choice);
             }
         }
-
-
     }
 
+    public void setNumber1(){
+        calculator.setNumber1(Integer.parseInt(givenNumber));
+    }
+
+    public void setNumber2(){
+        calculator.setNumber2(Integer.parseInt(givenNumber));
+    }
+
+
+    public void calculateAllNumbers(){
+        calculator.doOperation(operationOfEnum);
+    }
 
     public void clearDisplay() {
     }
 
-    public void changeCurrentNumber(String number) {
+    public String changeCurrentNumber(String number) {
 
+        number = in.nextLine();
+        return number;
     }
 
     public void switchDisplayMode() {
