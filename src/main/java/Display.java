@@ -5,22 +5,19 @@ import java.util.*;
 
 public class Display {
 
-    private String display;
-
     Display() {
         this.setDisplay("0");
     }
 
     public void setDisplay(String display) {
-        this.display = display;
+        System.out.println(display);
     }
 
     public void clearDisplay() {
         this.setDisplay("");
     }
 
-    public String getDisplay() {
-        return this.display;
-    }
+    //not worrying about a getDisplay method right now, since it seems a little redundant and will make my life difficult
+    //but if I have to...
 
 }
