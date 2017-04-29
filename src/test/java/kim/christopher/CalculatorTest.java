@@ -1,7 +1,7 @@
 package kim.christopher;
 
-import junit.framework.Test;
-import static junit.framework.Assert.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
 /**
  * Created by christopherkim on 4/28/17.
  */
@@ -21,7 +21,7 @@ public class CalculatorTest {
 
         //: Then
         // ... The result should be the sum of those two values
-        assertEquals("2 + 2 should equal 4", expectedSum, actualSum);
+        assertEquals("2 + 2 should equal 4", expectedSum, actualSum, 0);
 
     }
 }

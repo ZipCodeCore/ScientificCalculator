@@ -1,7 +1,7 @@
 package kim.christopher;
 
-import junit.framework.Test;
-import static junit.framework.Assert.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * Unit test for simple App.

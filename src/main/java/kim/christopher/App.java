@@ -7,6 +7,6 @@ public class App
 
         Controller myController = new Controller();
         myController.start();
-        
+
     }
 }
