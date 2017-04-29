@@ -18,7 +18,7 @@ public class Display {
     }
 
     public void show(){
-        System.out.println(currentDisplay + "\n");
+        System.out.println(currentDisplay);
     }
 
     public void setDisplay(String newCurrent){
