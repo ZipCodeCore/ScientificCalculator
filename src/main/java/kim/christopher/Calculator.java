@@ -11,5 +11,7 @@ public class Calculator {
         reader = new InputReader();
     }
 
-    
+    private double add(double x, double y){
+        return x + y;
+    }
 }
