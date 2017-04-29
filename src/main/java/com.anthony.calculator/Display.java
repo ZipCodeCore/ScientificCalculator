@@ -57,9 +57,16 @@ public class Display {
     public void operationToSend() {
 
         for (Operation enumLoop : operationOfEnum.values()) {
-            enumCount++;
-             System.out.println(enumCount);
-            if (Integer.parseInt(choice) == enumCount) {
+
+
+             while(Integer.parseInt(choice) != enumCount){
+                 enumCount++;
+               //  System.out.println(enumCount);
+             }
+
+            int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();//0
+            System.out.println(enumPosition);
+            if (Integer.parseInt(choice) == enumPosition) {
                 operationOfEnum = enumLoop;
                 System.out.println("You've chosen to " + operationOfEnum +
                         " Please enter your first or only number for this equation");
