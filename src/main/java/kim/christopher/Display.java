@@ -9,7 +9,7 @@ public class Display {
     public Display(){
 
         currentDisplay = "0";
-        lastDisplay = null;
+        lastDisplay = "0";
     }
 
     public void clearDisplay(){
@@ -33,6 +33,10 @@ public class Display {
 
     public void setLastDisplay(String newLast){
         lastDisplay = newLast;
+    }
+
+    public String getLastDisplay(){
+        return lastDisplay;
     }
 
 }

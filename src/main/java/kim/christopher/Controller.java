@@ -18,20 +18,25 @@ public class Controller {
     public void start(){
 
         boolean quit = false;
+        System.out.println("Welcome, enter a number: ");
+        display.setDisplay("0");
+        display.setDisplay(reader.readLine().get(0));
+
         while(!quit) {
-            System.out.println("Please try a basic math operation: ");
+            System.out.println("Enter operator and 2nd operand: ");
 
             ArrayList<String> test = reader.readLine();
             if(test.get(0).equals("quit")) {
                 quit = true;
-            } else if (test.get(1).equals("+")) {
-                display.setDisplay(calc.add(test.get(0), test.get(2)));
-            } else if (test.get(1).equals("-")) {
-                display.setDisplay(calc.subtract(test.get(0), test.get(2)));
-            } else if (test.get(1).equals("*")) {
-                display.setDisplay(calc.multiply(test.get(0), test.get(2)));
-            } else if (test.get(1).equals("/")) {
-                display.setDisplay(calc.divide(test.get(0), test.get(2)));
+                System.out.println("Goodbye!");
+            } else if (test.get(0).equals("+")) {
+                display.setDisplay(calc.add(display.getCurrentDisplay(), test.get(1)));
+            } else if (test.get(0).equals("-")) {
+                display.setDisplay(calc.subtract(display.getCurrentDisplay(), test.get(1)));
+            } else if (test.get(0).equals("*")) {
+                display.setDisplay(calc.multiply(display.getCurrentDisplay(), test.get(1)));
+            } else if (test.get(0).equals("/")) {
+                display.setDisplay(calc.divide(display.getCurrentDisplay(), test.get(1)));
             } else display.setDisplay("Invalid operator");
         }
 
