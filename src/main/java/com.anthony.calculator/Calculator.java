@@ -17,7 +17,7 @@ public class Calculator {
 
     public void setNumber2(double number2) {
         this.number2 = number2;
-       // return number2;
+        // return number2;
     }
 
 
@@ -25,16 +25,19 @@ public class Calculator {
 
         switch (assignmentFromEnum) {
             case ADD:
-               result =  basicMath.add(number1, number2);
+                result = basicMath.add(number1, number2);
                 break;
             case SUBTRACT:
-                result =  basicMath.subtract(number1, number2);
+                result = basicMath.subtract(number1, number2);
                 break;
             case MULTIPLY:
-                result =  basicMath.multiply(number1, number2);
+                result = basicMath.multiply(number1, number2);
                 break;
             case DIVIDE:
-                result =  basicMath.divide(number1, number2);
+                result = basicMath.divide(number1, number2);
+                break;
+            case SQUARE_ROOT:
+                result = basicMath.calcSqrRoot(number1);
                 break;
             default:
 
@@ -43,7 +46,7 @@ public class Calculator {
         }
     }
 
-    public double getResult(){
+    public double getResult() {
         return result;
     }
 

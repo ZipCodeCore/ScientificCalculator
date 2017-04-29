@@ -84,5 +84,20 @@ public class testBasicMath {
         Assert.assertTrue(Double.isNaN(actualSum));
     }
 
+    @Test
+    public void calcSqrRoot() {
+        //given
+        double number1 = 4;
+
+        double expectedSum = 2;
+        BasicMath basicmather = new BasicMath();
+
+        //when
+        double actualSum = basicmather.calcSqrRoot(number1);
+
+        //then
+        Assert.assertEquals("Are you correct", expectedSum, actualSum, 1);
+    }
+
 
 }

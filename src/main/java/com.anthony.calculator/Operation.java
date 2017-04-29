@@ -6,5 +6,5 @@ package com.anthony.calculator;
 
 public enum Operation {
 
-    ADD, SUBTRACT, MULTIPLY, DIVIDE
+    ADD, SUBTRACT, MULTIPLY, DIVIDE,SQUARE_ROOT
 }

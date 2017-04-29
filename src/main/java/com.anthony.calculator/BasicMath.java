@@ -25,5 +25,9 @@ public class BasicMath {
         return number1 / number2;
     }
 
+    public double calcSqrRoot(double number1) {
+        return Math.sqrt(number1);
+    }
+
 
 }

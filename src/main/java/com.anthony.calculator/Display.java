@@ -58,13 +58,21 @@ public class Display {
 
             if (enumPosition == Integer.parseInt(choice) - 1) {
                 operationOfEnum = enumLoop;
-                System.out.println("You've chosen to " + operationOfEnum +
-                        " Please enter your first or only number for this equation");
-            } else if (choice.equals("") || Integer.parseInt(choice) < 1 || Integer.parseInt(choice) > 4) {
+                if (enumPosition < 4) {
+                    System.out.println("You've chosen to " + operationOfEnum +
+                            " Please enter your first number for this equation");
+                } else {
+                    System.out.println("You've chosen to " + operationOfEnum +
+                            " Please enter your number for this equation");
+                    break;
+                }
+
+            } else if (choice.equalsIgnoreCase("") || Integer.parseInt(choice) < 1 || Integer.parseInt(choice) > Operation.values().length) {
                 System.out.println("You did not enter a correct option, please try again");
                 operationChoice(choice);
 
             }
+
         }
     }
 
