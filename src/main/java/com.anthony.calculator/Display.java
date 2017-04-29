@@ -1,3 +1,5 @@
+package com.anthony.calculator;
+
 import java.util.Scanner;
 
 /**

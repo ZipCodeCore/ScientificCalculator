@@ -1,3 +1,5 @@
+package com.anthony.calculator;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -27,7 +29,7 @@ public class testBasicMath {
         //given
         double number1 = 4;
         double number2 = 5;
-        double expectedSum = number1 - number2;
+        double expectedSum = number1 -number2;
         BasicMath basicmather = new BasicMath();
 
         //when
@@ -46,7 +48,7 @@ public class testBasicMath {
         BasicMath basicmather = new BasicMath();
 
         //when
-        double actualSum = basicmather.multply(number1, number2);
+        double actualSum = basicmather.multiply(number1, number2);
 
         //then
         Assert.assertEquals("Are you correct", expectedSum, actualSum, 0);
