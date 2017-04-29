@@ -9,6 +9,8 @@ public class Display {
 
     String currentNumber;
     String givenNumber;
+    String number1;
+    String number2;
     String choice;
     Operation operationOfEnum;
     int enumCount;
@@ -25,10 +27,12 @@ public class Display {
         loopThroughAndPrintEnums();
         operationChoice(choice);
         operationToSend();
-        changeCurrentNumber(givenNumber);
-        setNumber1();
-        setNumber2();
-        calculateAllNumbers();
+        setCurrentNumber(givenNumber);
+        setNumber1(number1);
+        setCurrentNumber(givenNumber);
+        setNumber2(number2);
+        calculateAndSendAllNumbers();
+        getCalculation();
     }
 
     public void startingCalculatorDisplay() {
@@ -45,11 +49,8 @@ public class Display {
 
 
     public String operationChoice(String choice) {
-
-
         choice = in.nextLine();
         this.choice = choice;
-
         return choice;
     }
 
@@ -57,40 +58,57 @@ public class Display {
 
         for (Operation enumLoop : operationOfEnum.values()) {
             enumCount++;
-            System.out.println(enumCount);
+             System.out.println(enumCount);
             if (Integer.parseInt(choice) == enumCount) {
                 operationOfEnum = enumLoop;
                 System.out.println("You've chosen to " + operationOfEnum +
                         " Please enter your first or only number for this equation");
                 break;
-            } else {
+            }
+
+            else {
                 System.out.println("Pick from the list please");
                 operationChoice(choice);
             }
         }
     }
 
-    public void setNumber1(){
-        calculator.setNumber1(Integer.parseInt(givenNumber));
+    public String setCurrentNumber(String numberToBeParsed) {
+
+        numberToBeParsed = in.nextLine();
+        this.givenNumber = numberToBeParsed;
+        return numberToBeParsed;
     }
 
-    public void setNumber2(){
-        calculator.setNumber2(Integer.parseInt(givenNumber));
+    public void setNumber1(String number1) {
+
+        number1 = this.givenNumber;
+        this.number1 = number1;
+        System.out.println(number1);
+
+    }
+
+    public void setNumber2(String number2) {
+        number2 = this.givenNumber;
+        this.number2 = number2;
     }
 
 
-    public void calculateAllNumbers(){
+    public void calculateAndSendAllNumbers() {
+
+        System.out.println(number1);
+        calculator.setNumber1(Integer.parseInt(number1));
+        calculator.setNumber2(Integer.parseInt(number2));
         calculator.doOperation(operationOfEnum);
+    }
+
+    public void getCalculation(){
+        System.out.println(calculator.getResult());
     }
 
     public void clearDisplay() {
     }
 
-    public String changeCurrentNumber(String number) {
-
-        number = in.nextLine();
-        return number;
-    }
 
     public void switchDisplayMode() {
 
