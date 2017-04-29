@@ -4,10 +4,11 @@ package io.github.aaronclong;
  * Created by aaronlong on 4/28/17.
  */
 public class InputBuffer {
-    private final String value;
+    private final String input;
+    private String value;
 
     private InputBuffer(String inputValue) {
-        value = inputValue;
+        input = inputValue;
     }
 
     public static InputBuffer makeInputBuffer(String inputValue) {
@@ -16,6 +17,11 @@ public class InputBuffer {
     }
 
     public String getValue() {
+        computeValue();
         return value;
+    }
+
+    private void computeValue() {
+        value = input;
     }
 }
