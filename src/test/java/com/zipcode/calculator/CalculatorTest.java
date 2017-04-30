@@ -106,6 +106,34 @@ public class CalculatorTest {
         //then
         assertEquals(new Double(0.0625), calculator.divide(4.00));
 
+        //then
+        assertTrue(Double.isNaN(calculator.divide(0.00)));
+
 
     }
+
+    @Test
+    public void testComputeSquare() {
+        //when
+        Calculator calculator = new Calculator();
+        calculator.setValue(4.00);
+
+        //then
+        assertEquals(new Double(16.00), calculator.computeSquare());
+
+
+    }
+
+    @Test
+    public void testComputeSquareRoot() {
+        //when
+        Calculator calculator = new Calculator();
+        calculator.setValue(4.00);
+
+
+        //then
+        assertEquals(new Double(2.00), calculator.computeSquareRoot());
+
+    }
+
 }

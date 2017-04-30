@@ -11,13 +11,13 @@ public class CalculatorInput {
 
     public void getUserInput() {
         Scanner input = new Scanner(System.in);
-        Double firstNumber=getUserInputAndConvertToDouble(input);
+        Double firstNumber = getUserInputAndConvertToDouble(input);
         Calculator calculator = new Calculator();
         calculator.setValue(firstNumber);
 
 
         while (true) {
-            System.out.println("Enter the operation (Clear | Add | Subtract | Multiply| Divide | Exit) ");
+            System.out.println("Enter the operation (Clear | Add | Subtract | Multiply| Divide | Square|Sqrtroot ) ");
 
             String userOperation = input.next();
 
@@ -37,11 +37,17 @@ public class CalculatorInput {
                 case "Divide":
                     callDivide(calculator, input);
                     break;
+                case "Square":
+                    callComputeSquare(calculator);
+                    break;
+                case "Sqrtroot":
+                    callComputeSquareRoot(calculator);
+                    break;
                 case "Exit":
                     return;
 
                 default:
-                    System.out.println("Invalid input (Valid inputs are Add |Subtract|Multiply|Divide");
+                    System.out.println("Invalid input (Valid inputs are Clear|Add|Subtract|Multiply|Divide|Square|Sqrtroot|Exit");
                     break;
 
             }
@@ -85,7 +91,19 @@ public class CalculatorInput {
 
     }
 
-    private Double getUserInputAndConvertToDouble(Scanner input){
+    private void callComputeSquare(Calculator calculator) {
+        calculator.computeSquare();
+        System.out.println(calculator.getCurrentDisplay());
+    }
+
+
+    private void callComputeSquareRoot(Calculator calculator) {
+        calculator.computeSquareRoot();
+        System.out.println(calculator.getCurrentDisplay());
+
+    }
+
+    private Double getUserInputAndConvertToDouble(Scanner input) {
         System.out.println("Enter The Number");
         String firstInput = input.next();
         while (!NumberUtils.isNumber(firstInput)) {
@@ -95,6 +113,7 @@ public class CalculatorInput {
         Double firstNumber = Double.parseDouble(firstInput);
         return firstNumber;
     }
+
 }
 
 

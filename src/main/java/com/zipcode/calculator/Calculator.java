@@ -54,5 +54,18 @@ public class Calculator {
     }
 
 
+    public Double computeSquare() {
+        currentDisplay =currentDisplay * currentDisplay;
+        return currentDisplay;
+
+    }
+
+    public Double computeSquareRoot() {
+        currentDisplay = Math.sqrt(currentDisplay);
+        return currentDisplay;
+
+    }
+
+
 }
 
