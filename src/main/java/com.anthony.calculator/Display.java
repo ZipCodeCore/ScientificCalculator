@@ -12,9 +12,10 @@ public class Display {
     private String number2;
     private String choice;
     private int enumLoopCounter;
-    private int methodCounterForBoolean = 0;
     private boolean onlyOneCalculation = false;
     private boolean isRunning = false;
+    private boolean resetBecauseErr = true;
+    private boolean turnOffCalculator = true;
     private Operation operationOfEnum;
     Calculator calculator = new Calculator();
     private Scanner in = new Scanner(System.in);
@@ -135,6 +136,7 @@ public class Display {
         if (calculator.getResult().isNaN()) {
             System.out.println("ERR");
 
+
         } else {
             System.out.println("The answer is " + calculator.getResult() + " Enter an operation if you would like to continue, or press q to quit");
             System.out.println();
@@ -144,28 +146,30 @@ public class Display {
     public void continuousRun() {
 
         while (!isRunning) {
-            displayChoices();
-            operationChoice(choice);
-            operationToSend();
+            
 
-            if (onlyOneCalculation) {
+                displayChoices();
+                operationChoice(choice);
+                operationToSend();
+
+                if (onlyOneCalculation) {
+                    calculateAndSendAllNumbers();
+                    getCalculation();
+                    onlyOneCalculation = false;
+                    memoryHolder();
+                    continuousRun();
+                }
+
+
+                setCurrentNumber(givenNumber);
+                setNumber2(number2);
                 calculateAndSendAllNumbers();
+
                 getCalculation();
-                onlyOneCalculation = false;
                 memoryHolder();
-                continuousRun();
-            }
 
-
-            setCurrentNumber(givenNumber);
-            setNumber2(number2);
-            calculateAndSendAllNumbers();
-
-            getCalculation();
-            memoryHolder();
 
         }
-
 
     }
 
@@ -175,6 +179,7 @@ public class Display {
     }
 
     public void clearDisplay() {
+        System.out.println("0");
     }
 
 
