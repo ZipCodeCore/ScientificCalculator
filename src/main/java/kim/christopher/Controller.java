@@ -31,8 +31,7 @@ public class Controller {
                 System.out.println("Goodbye!");
             } else if (test.get(0).equals("clear")) {
                 display.clearDisplay();
-                System.out.print("DISPLAY: ");
-                display.show();
+
             } else if (test.get(0).equals("+")) {
                 display.setDisplay(calc.add(display.getDisplay(), test.get(1)));
             } else if (test.get(0).equals("-")) {

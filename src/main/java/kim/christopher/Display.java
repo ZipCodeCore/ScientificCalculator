@@ -15,6 +15,8 @@ public class Display {
     public void clearDisplay(){
 
         currentDisplay = "0";
+        System.out.print("DISPLAY: ");
+        show();
     }
 
     public void show(){
