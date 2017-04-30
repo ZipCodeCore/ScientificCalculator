@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10065964-1427-44eb-aed8-10a72d7356cd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/ScientificMath.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com.anthony.calculator/testScientificMath.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/anthony/calculator/ScientificMath.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/anthony/calculator/testScientificMath.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/anthony/calculator/Calculator.class" afterPath="$PROJECT_DIR$/target/classes/com/anthony/calculator/Calculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/anthony/calculator/testBasicMath.class" afterPath="$PROJECT_DIR$/target/test-classes/com/anthony/calculator/testBasicMath.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/anthony/calculator/Display.class" afterPath="$PROJECT_DIR$/target/classes/com/anthony/calculator/Display.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/BasicMath.java" afterPath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/BasicMath.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Calculator.java" afterPath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java" afterPath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Operation.java" afterPath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Operation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com.anthony.calculator/testBasicMath.java" afterPath="$PROJECT_DIR$/src/test/java/com.anthony.calculator/testBasicMath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java" afterPath="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,8 +21,8 @@
       <file leaf-file-name="InitCalculation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -40,17 +31,20 @@
       <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="3" />
+              <folding>
+                <element signature="e#5176#5177#0" expanded="true" />
+                <element signature="e#5246#5247#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrigMath.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TrigMath.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/TrigMath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
+            <state relative-caret-position="120">
               <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
               <folding>
                 <element signature="e#148#149#0" expanded="true" />
@@ -70,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testTrigMath.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testTrigMath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com.anthony.calculator/testTrigMath.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -99,9 +93,15 @@
       <find>system.out</find>
       <find>calculator</find>
       <find>please</find>
-      <find>in.</find>
       <find>methodCounterForBoolean</find>
       <find>Integer.parseInt</find>
+      <find>in.</find>
+      <find>string</find>
+      <find>s</find>
+      <find>number2</find>
+      <find>onlyOneCalculation</find>
+      <find>operationOfEnum</find>
+      <find>operationOfChoice</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,14 +126,14 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com.anthony.calculator/testDisplay.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Memory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Calculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Operation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/BasicMath.java" />
         <option value="$PROJECT_DIR$/src/test/java/com.anthony.calculator/testTrigMath.java" />
         <option value="$PROJECT_DIR$/src/test/java/com.anthony.calculator/testBasicMath.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/TrigMath.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java" />
       </list>
     </option>
   </component>
@@ -145,7 +145,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="839" />
+    <option name="width" value="585" />
     <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -294,7 +294,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testTrigMath.testSin">
+  <component name="RunManager" selected="Application.InitCalculation">
     <configuration default="false" name="testBasicMath.testCalcInverseNaturalLog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -815,10 +815,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.testTrigMath.testSin" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.testTrigMath" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.testBasicMath" />
-        <item index="3" class="java.lang.String" itemvalue="Application.InitCalculation" />
+        <item index="0" class="java.lang.String" itemvalue="Application.InitCalculation" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.testTrigMath.testSin" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.testTrigMath" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.testBasicMath" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.testBasicMath.testCalcInverseNaturalLog" />
       </list>
     </recent_temporary>
@@ -837,14 +837,11 @@
       <option name="presentableId" value="Default" />
       <updated>1493424014948</updated>
       <workItem from="1493424019129" duration="71720000" />
-      <workItem from="1493571017383" duration="3927000" />
+      <workItem from="1493571017383" duration="8283000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="testBasicMath - 2017.04.30 at 13h 28m 15s.xml">
-      <configuration name="testBasicMath" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="testBasicMath - 2017.04.30 at 14h 15m 43s.xml">
       <configuration name="testBasicMath" configurationId="JUnit" />
     </history-entry>
@@ -872,12 +869,15 @@
     <history-entry file="testTrigMath_testSin - 2017.04.30 at 14h 17m 17s.xml">
       <configuration name="testTrigMath.testSin" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="testTrigMath_testSin - 2017.04.30 at 14h 39m 48s.xml">
+      <configuration name="testTrigMath.testSin" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75647000" />
+    <option name="totallyTimeSpent" value="80003000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="839" height="773" extended-state="0" />
+    <frame x="0" y="23" width="585" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -889,13 +889,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33664772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33664772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27651966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27651966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -916,7 +916,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -933,10 +933,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33664772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33664772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27741936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27651966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -989,7 +989,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2100">
           <caret line="140" column="27" lean-forward="true" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#5176#5177#0" expanded="true" />
+            <element signature="e#5246#5247#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,14 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/ScientificMath.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1121,17 +1116,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com.anthony.calculator/testTrigMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/FloatingDecimal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="126" column="8" lean-forward="false" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/InitCalculation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="e#5176#5177#0" expanded="true" />
+            <element signature="e#5246#5247#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.anthony.calculator/TrigMath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
+        <state relative-caret-position="120">
           <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding>
             <element signature="e#148#149#0" expanded="true" />
@@ -1146,16 +1170,6 @@
             <element signature="e#493#494#0" expanded="true" />
             <element signature="e#549#550#0" expanded="true" />
             <element signature="e#574#575#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com.anthony.calculator/testTrigMath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -8,34 +8,33 @@ import java.util.Scanner;
 public class Display {
 
     private String givenNumber;
-    private String number1;
-    private String number2;
-    private String choice;
+    private String firstNumber;
+    private String secondNumber;
+    private String operationOfChoice;
     private int enumLoopCounter;
-    private boolean onlyOneCalculation = false;
-    private boolean isRunning = true;
+    private boolean ifOnlyOneNumber = false;
+    private boolean isCalculatorRunning = true;
     private Operation operationOfEnum;
     Calculator calculator = new Calculator();
-    private Scanner in = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
 
     Display() {
         startingCalculatorDisplay();
         setCurrentNumber(givenNumber);
-        setNumber1(number1);
+        setFirstNumber(firstNumber);
         displayChoices();
-        continuousRun();
+        continouslyRunCalculator();
     }
 
-    public void startingCalculatorDisplay() {
+    private void startingCalculatorDisplay() {
         // System.out.println("Welcome to Anthony's simple, yet smart Calculator!");
         System.out.println("Please enter your first number.");
         System.out.println("0");
     }
 
-
-    public void displayChoices() {
-        System.out.println();
+    private void displayChoices() {
+        //  System.out.println();
         System.out.println("Please choose a number from the options below.");
         for (Operation enumLoop : operationOfEnum.values()) {
             enumLoopCounter++;
@@ -48,112 +47,106 @@ public class Display {
         System.out.println();
     }
 
-
-    public String operationChoice(String choice) {
-        choice = in.nextLine();
-        this.choice = choice;
-        return choice;
+    private void operationChoice(String choice) {
+        choice = input.nextLine().replaceAll("\\s","");
+        this.operationOfChoice = choice.trim();
     }
 
-    public void operationToSend() {
-        if (choice.equals("q")) {
-            isRunning = false;
-            continuousRun();
+    private void methodOfOperation() {
 
-        } else if (choice.equals("`")) {
-            clearDisplay();
-            resetState();
+        switch (operationOfChoice) {
 
-        } else {
-            for (Operation enumLoop : operationOfEnum.values()) {
-                int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
-                try {
+            case "q":
+                isCalculatorRunning = false;
+                continouslyRunCalculator();
+                break;
 
-                    if (enumPosition == Integer.parseInt(choice) - 1) {
-                        operationOfEnum = enumLoop;
-                        if (enumPosition < 5) {
-                            System.out.println("You've chosen to " + "'" + operationOfEnum + "'" + " Please enter another number.");
-                        } else {
-                            System.out.println("You've chosen " + operationOfEnum);
-                            onlyOneCalculation = true;
-                            break;
+            case "`":
+                clearDisplay();
+                resetState();
+                break;
+            default:
+                for (Operation enumLoop : operationOfEnum.values()) {
+                    int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
+                    try {
+
+                        if (enumPosition == Integer.parseInt(operationOfChoice) - 1) {
+                            operationOfEnum = enumLoop;
+                            if (enumPosition < 5) {
+                                System.out.println("You've chosen to " + "'" +
+                                        operationOfEnum + "'" +
+                                        " Please enter another number.");
+                            } else {
+                                System.out.println("You've chosen " + operationOfEnum);
+                                ifOnlyOneNumber = true;
+                                break;
+                            }
                         }
+
+                    } catch (NumberFormatException e) {
+                        System.out.println("You did not enter a correct option, please try again");
+                        operationChoice(operationOfChoice);
                     }
-
-                } catch (NumberFormatException e) {
-                    System.out.println("You did not enter a correct option, please try again");
-                    operationChoice(choice);
                 }
-            }
+                break;
         }
     }
 
-
-    public void setCurrentNumber(String numberToBeParsed) {
-
-        numberToBeParsed = in.nextLine();
+    private void setCurrentNumber(String numberToBeParsed) {
+        numberToBeParsed = input.nextLine().trim();
         this.givenNumber = numberToBeParsed;
-
     }
 
-    public void setNumber1(String number1) {
-
-        number1 = this.givenNumber;
-        this.number1 = number1;
-        //System.out.println(number1);
-
+    private void setFirstNumber(String firstNumber) {
+        firstNumber = this.givenNumber;
+        this.firstNumber = firstNumber;
     }
 
-    public void setNumber2(String number2) {
-
-        number2 = this.givenNumber;
-        this.number2 = number2;
+    private void setSecondNumber(String secondNumber) {
+        secondNumber = this.givenNumber;
+        this.secondNumber = secondNumber.replaceAll("\\s", "");
     }
 
+    private void calculateAndSendAllNumbers() {
 
-    public void calculateAndSendAllNumbers() {
-
-        if (onlyOneCalculation) {
-            calculator.setNumber1(Double.parseDouble(number1));
+        if (ifOnlyOneNumber) {
+            calculator.setNumber1(Double.parseDouble(firstNumber));
         } else {
-            calculator.setNumber1(Double.parseDouble(number1));
-            calculator.setNumber2(Double.parseDouble(number2));
+            calculator.setNumber1(Double.parseDouble(firstNumber));
+            calculator.setNumber2(Double.parseDouble(secondNumber));
         }
-
         calculator.doOperation(operationOfEnum);
     }
 
-    public void getCalculation() {
+    private void getCalculation() {
         if (calculator.getResult().isNaN()) {
             System.out.println("ERR");
             resetState();
         } else {
             System.out.println();
             System.out.println("The answer is " + calculator.getResult() + "\n" +
-                    "Enter an operation if you would like to continue, q to quit or ` if you would like to reset calculator");
+                    " \nEnter an operation if you would like to continue, q to quit or ` if you would like to reset calculator");
             System.out.println();
 
         }
     }
 
-    public void continuousRun() {
+    private void continouslyRunCalculator() {
+        while (isCalculatorRunning) {
+            operationChoice(operationOfChoice);
+            methodOfOperation();
 
-        while (isRunning) {
-
-            operationChoice(choice);
-            operationToSend();
-
-            if (onlyOneCalculation) {
+            if (ifOnlyOneNumber) {
                 calculateAndSendAllNumbers();
                 getCalculation();
-                onlyOneCalculation = false;
+                ifOnlyOneNumber = false;
                 memoryHolder();
                 displayChoices();
-                continuousRun();
+                continouslyRunCalculator();
             }
 
             setCurrentNumber(givenNumber);
-            setNumber2(number2);
+            setSecondNumber(secondNumber);
             calculateAndSendAllNumbers();
             getCalculation();
             memoryHolder();
@@ -163,27 +156,20 @@ public class Display {
         System.exit(0);
     }
 
-    public void memoryHolder() {
-        // System.out.println(calculator.getResult() + " Ignore me");
-        number1 = calculator.getResult().toString();
+    private void memoryHolder() {
+        firstNumber = calculator.getResult().toString().trim();
     }
 
-    public void quitCalculator() {
-
-        //  isRunning = false;
-    }
-
-    public void clearDisplay() {
+    private void clearDisplay() {
         for (int a = 0; a < 50; a++)
             System.out.println();
     }
 
-    public void resetMemory() {
-        number1 = "0";
+    private void resetMemory() {
+        firstNumber = "0";
     }
 
-    public void resetState() {
-
+    private void resetState() {
         resetMemory();
         new Display();
     }
