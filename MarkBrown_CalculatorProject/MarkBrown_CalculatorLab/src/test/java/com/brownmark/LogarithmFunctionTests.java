@@ -63,4 +63,5 @@ public class LogarithmFunctionTests {
         Assert.assertEquals(expectedResult, actualResult, 0.0001);
 
     }
+
 }

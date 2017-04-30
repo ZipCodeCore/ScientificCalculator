@@ -70,4 +70,30 @@ public class ErrorChecksTest {
         Assert.assertTrue(actualResults);
     }
 
+    @Test
+    public void testErrIsThrownForTanOf90DegreesAnd270Degrees() {
+        //Given:
+        double operand1 = 270;
+        CalculationFeed calculationFeed = new CalculationFeed();
+
+        //When:
+        boolean actualResults = calculationFeed.degreeTrigErrorChecks(operand1, "tan");
+
+        //Then:
+        Assert.assertTrue(actualResults);
+    }
+
+    @Test
+    public void testErrIsThrownForTanOf90DegreesAnd270DegreesInRadians() {
+        //Given:
+        double operand1 = (3 * Math.PI / 2);
+        CalculationFeed calculationFeed = new CalculationFeed();
+
+        //When:
+        boolean actualResults = calculationFeed.radianTrigErrorChecks(operand1, "tan");
+
+        //Then:
+        Assert.assertTrue(actualResults);
+    }
+
 }
