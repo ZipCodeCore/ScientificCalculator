@@ -14,6 +14,6 @@ public class InputBufferTest {
     @Test
     public void testGetValue() {
         InputBuffer buffer = InputBuffer.makeInputBuffer("10 * 9");
-        Assert.assertEquals("10 * 9", buffer.getValue());
+        Assert.assertEquals("Confirming proper value return for buffer",90.0, buffer.getValue(), .003);
     }
 }

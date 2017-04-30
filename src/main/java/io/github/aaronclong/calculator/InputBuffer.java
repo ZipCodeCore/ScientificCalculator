@@ -5,7 +5,7 @@ package io.github.aaronclong.calculator;
  */
 public class InputBuffer {
     private final String input;
-    private String value;
+    private double value;
 
     private InputBuffer(String inputValue) {
         input = inputValue;
@@ -16,12 +16,13 @@ public class InputBuffer {
         return new InputBuffer(inputValue);
     }
 
-    public String getValue() {
+    public double getValue() {
         computeValue();
         return value;
     }
 
     private void computeValue() {
-        value = input;
+        StringParser parser = StringParser.makeStringParser(input);
+        value = parser.getValue();
     }
 }
