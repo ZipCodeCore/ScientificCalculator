@@ -4,10 +4,12 @@ package kim.christopher;
 public class Display {
 
     private String currentDisplay;
+    private DisplayMode displayMode;
 
     public Display(){
 
         currentDisplay = "0";
+        displayMode = DisplayMode.DECIMAL;
     }
 
     public void clearDisplay(){
@@ -42,6 +44,10 @@ public class Display {
 
     public void showInvalidNumber(String s){
         System.out.println(s + " is not a number, please try again");
+    }
+
+    public void switchDisplayMode(){
+
     }
 
 }
