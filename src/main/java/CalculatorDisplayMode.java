@@ -3,10 +3,10 @@
  * So far, only decimal and hexadecimal here.
  */
 
-public class DisplayMode {
+public class CalculatorDisplayMode {
     private int mode;
 
-    DisplayMode() {
+    CalculatorDisplayMode() {
         mode = 0;
     }
 

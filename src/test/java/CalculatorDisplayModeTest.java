@@ -5,15 +5,15 @@
  */
 import org.junit.*;
 
-public class DisplayModeTest {
+public class CalculatorDisplayModeTest {
 
     @Test
     public void toDisplayDecimalTest() {
         //Given
-        DisplayMode displayMode = new DisplayMode();
+        CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
         String expected = Double.toString(12.34);
         //When
-        String actual = displayMode.toDisplayMode(12.34);
+        String actual = calculatorDisplayMode.toDisplayMode(12.34);
         //Then
         Assert.assertEquals("12.34 should read like 12.34", expected, actual);
     }
@@ -21,11 +21,11 @@ public class DisplayModeTest {
     @Test
     public void toDisplayHexadecimalTest() {
         //Given
-        DisplayMode displayMode = new DisplayMode();
-        displayMode.switchDisplayMode();
+        CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
+        calculatorDisplayMode.switchDisplayMode();
         String expected = Double.toHexString(-81.81);
         //When
-        String actual = displayMode.toDisplayMode(-81.81);
+        String actual = calculatorDisplayMode.toDisplayMode(-81.81);
         //Then
         Assert.assertEquals("-81.81 should read like -81.81", expected, actual);
     }

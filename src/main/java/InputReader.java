@@ -93,6 +93,9 @@ public class InputReader {
                     case "/":
                         display.setDisplay(calc.divide(display.getDisplay(), nextOperand));
                         break;
+                    case "^":
+                        display.setDisplay(calc.exponent(display.getDisplay(), nextOperand));
+                        break;
                     default:
                         display.setDisplay(Double.NaN);
                         break;

@@ -4,19 +4,20 @@
 
 public class Display {
 
-    DisplayMode displayMode;
     private double display;
+    private CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
 
     Display() {
-        this.setDisplay(0.0);
+        this.display = 0.0;
     }
 
     public void setDisplay(double x) {
         if(Double.isNaN(x)) {
             System.out.println("Err");
+            return;
         }
         this.display = x;
-        System.out.println(displayMode.toDisplayMode(x));
+        System.out.println(calculatorDisplayMode.toDisplayMode(x));
     }
 
     public void clearDisplay() {
