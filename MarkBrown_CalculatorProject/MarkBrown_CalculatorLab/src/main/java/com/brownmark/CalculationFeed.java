@@ -1,0 +1,37 @@
+package com.brownmark;
+import java.lang.Math;
+
+public class CalculationFeed {
+
+
+    public CalculationFeed() {}
+
+
+    BasicAlgebraEngine basicAlgebraEngine = new BasicAlgebraEngine();
+
+
+    public boolean errorChecks (double operandOne, String operator, double operandTwo) {
+        if (operator.equals("/") && operandTwo == 0) {return true;}
+        else {return false;}
+    }
+
+
+    public double sendInputsThroughFeed (double operandOne, String operator) {
+        if (operator.equals("^2")) {return basicAlgebraEngine.square(operandOne);}
+        else if (operator.equals("1/")) {return basicAlgebraEngine.recipricol(operandOne);}
+        else if (operator.equals("-")) {return basicAlgebraEngine.multiply(operandOne, -1);}
+        else if (operator.equals("sqrt")) {return Math.sqrt(operandOne);}
+        else {return Double.NaN;}
+    }
+
+
+    public double sendInputsThroughFeed (double operandOne, String operator, double operandTwo) {
+        if (operator.equals("+")) {return basicAlgebraEngine.add(operandOne, operandTwo);}
+        else if (operator.equals("-")) {return basicAlgebraEngine.subtract(operandOne, operandTwo);}
+        else if (operator.equals("-")) {return basicAlgebraEngine.multiply(operandOne, operandTwo);}
+        else if (operator.equals("/")) {return basicAlgebraEngine.divide(operandOne, operandTwo);}
+        else {return Double.NaN;}
+    }
+
+
+}
