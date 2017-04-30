@@ -29,6 +29,22 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testClearDisplayErr(){
+        //given;
+        ulator = new Calculator();
+        ulator.setError();
+        float expected = 0.0f;
+
+        //then;
+        ulator.clearDisplay();
+
+        //when;
+        float actual = Float.parseFloat(ulator.getDisplay());
+        Assert.assertTrue(expected == actual);
+
+    }
+
+    @Test
     public void testSetDisplay(){
         //given;
         ulator = new Calculator();
@@ -36,6 +52,22 @@ public class CalculatorTest {
 
         //when;
         ulator.setDisplay(sample);
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testSetDisplayErr(){
+        //given;
+        ulator = new Calculator();
+        float expected = sample;
+        ulator.setError();// set the display to be in error mode
+
+        //when;
+        ulator.setDisplay(sample); // attempt to clear error with replacement value
         float actual = Float.parseFloat(ulator.getDisplay());
 
         //then;
@@ -162,7 +194,6 @@ public class CalculatorTest {
         //when;
         ulator.divide(b);
         float actual = Float.parseFloat(ulator.getDisplay());
-        System.out.println("divide result is " + actual);
 
         //then;
         Assert.assertEquals(expected, actual, delta);
@@ -184,6 +215,7 @@ public class CalculatorTest {
         Assert.assertTrue(expected == actual);
 
     }
+
 
 
 
