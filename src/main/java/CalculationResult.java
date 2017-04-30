@@ -18,4 +18,5 @@ public class CalculationResult{
     public double getValue() {
         return value;
     }
+
 }

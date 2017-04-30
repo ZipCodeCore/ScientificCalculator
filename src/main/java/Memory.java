@@ -29,6 +29,7 @@ public class Memory {
         this.memoryValue = memoryValue;
     }
 
+    //shouldn't this be in display? or getDisplayValueInString?
     public String printDisplayValueInString(){
         return Double.toString(displayValue);
     }
