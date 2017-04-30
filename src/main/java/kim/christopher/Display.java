@@ -17,6 +17,7 @@ public class Display {
         currentDisplay = "0";
         System.out.print("DISPLAY: ");
         show();
+
     }
 
     public void show(){
@@ -41,6 +42,8 @@ public class Display {
     public String getLastDisplay(){
         return lastDisplay;
     }
+
+
 
 
 

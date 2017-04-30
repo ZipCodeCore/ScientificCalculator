@@ -18,21 +18,10 @@ public class Controller {
 
     public void start() {
 
-        boolean quit = false;
-        System.out.println("Welcome, enter a number: ");
-        display.setDisplay("0");
-        String test = reader.readLine().get(0);
-        while(!quit){
-            if (!NumberUtils.isNumber(test)) {
-                System.out.println(test + " is not a number, please try again");
-                test = reader.readLine().get(0);
-            } else {
-                display.setDisplay(test);
-                quit = true;
-            }
-        }
+        reset();
 
-        quit = false;
+        boolean quit = false;
+
         while(!quit) {
            readInput(quit);
         }
@@ -46,7 +35,7 @@ public class Controller {
             quit = true;
             System.out.println("Goodbye!");
         } else if (input.get(0).equals("clear")) {
-            display.clearDisplay();
+            reset();
         } else if (input.get(0).equals("+")) {
             display.setDisplay(calc.add(display.getDisplay(), input.get(1)));
         } else if (input.get(0).equals("-")) {
@@ -61,6 +50,23 @@ public class Controller {
         } else if(input.get(0).equals("negate")){
             display.setDisplay(calc.negate(display.getDisplay()));
         } else System.out.println("Invalid Operator, please try again");
+    }
+
+    void reset(){
+
+        boolean quit = false;
+        display.clearDisplay();
+        String test = reader.readLine().get(0);
+
+        while(!quit){
+            if (!NumberUtils.isNumber(test)) {
+                System.out.println(test + " is not a number, please try again");
+                test = reader.readLine().get(0);
+            } else {
+                display.setDisplay(test);
+                quit = true;
+            }
+        }
     }
 
 }
