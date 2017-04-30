@@ -41,27 +41,19 @@ public class Calculator {
     }
 
     String negate(String x){
-        if(NumberUtils.isNumber(x))
-            return Double.toString(-Double.parseDouble(x));
-        else return "ERROR";
+        return Double.toString(-Double.parseDouble(x));
     }
 
     String inverse(String x){
-        if(NumberUtils.isNumber(x))
-            return Double.toString(1 / Double.parseDouble(x));
-        else return "ERROR";
+        return Double.toString(1 / Double.parseDouble(x));
     }
 
     String square(String x){
-        if(NumberUtils.isNumber(x))
-            return power(x, "2");
-        else return "ERROR";
+        return power(x, "2");
     }
 
     String sqrt(String x){
-        if(NumberUtils.isNumber(x))
-            return Double.toString(Math.sqrt(Double.parseDouble(x)));
-        else return "ERROR";
+        return Double.toString(Math.sqrt(Double.parseDouble(x)));
     }
 
 

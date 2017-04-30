@@ -16,6 +16,7 @@ public class Controller {
         reader = new InputReader();
     }
 
+
     public void start() {
 
         reset();
@@ -32,33 +33,36 @@ public class Controller {
         ArrayList<String> input = reader.readLine();
         String first = input.get(0);
 
+        if(input.size() == 1) {
 
-        if(first.equals("quit") || first.equals("q")) {
-            quit = true;
-            System.out.println("Goodbye!");
-        } else if (first.equals("clear") || first.equals("c")) {
-            reset();
-        } else if(first.equals("negate")){
-            disp.setDisplay(calc.negate(disp.getDisplay()));
-        }else if (first.equals("+")) {
-            if(calc.add(disp.getDisplay(), input.get(1)).equals("ERROR")) {
-                disp.displayError();
-            } else disp.setDisplay(calc.add(disp.getDisplay(), input.get(1)));
-        } else if (first.equals("-")) {
-            if(calc.subtract(disp.getDisplay(), input.get(1)).equals("ERROR")) {
-                disp.displayError();
-            } else disp.setDisplay(calc.subtract(disp.getDisplay(), input.get(1)));
-        } else if (first.equals("*")) {
-            if(calc.multiply(disp.getDisplay(), input.get(1)).equals("ERROR")) {
-                disp.displayError();
-            } else disp.setDisplay(calc.multiply(disp.getDisplay(), input.get(1)));
-        } else if (first.equals("/")) {
-            if (calc.divide(disp.getDisplay(), input.get(1)).equals("ERROR")) {
-                disp.displayError();
-            } else disp.setDisplay(calc.divide(disp.getDisplay(), input.get(1)));
+            if (first.equals("quit") || first.equals("q")) {
+                quit = true;
+                System.out.println("Goodbye!");
+            } else if (first.equals("clear") || first.equals("c")) {
+                reset();
+            } else if (first.equals("negate")) {
+                disp.setDisplay(calc.negate(disp.getDisplay()));
+            } else disp.showInvalidOperator(first);
 
-
-        }  else disp.showInvalidOperator(input.get(0));
+        } else if(input.size() == 2) {
+            if (first.equals("+")) {
+                if (calc.add(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                    disp.displayError();
+                } else disp.setDisplay(calc.add(disp.getDisplay(), input.get(1)));
+            } else if (first.equals("-")) {
+                if (calc.subtract(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                    disp.displayError();
+                } else disp.setDisplay(calc.subtract(disp.getDisplay(), input.get(1)));
+            } else if (first.equals("*")) {
+                if (calc.multiply(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                    disp.displayError();
+                } else disp.setDisplay(calc.multiply(disp.getDisplay(), input.get(1)));
+            } else if (first.equals("/")) {
+                if (calc.divide(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                    disp.displayError();
+                } else disp.setDisplay(calc.divide(disp.getDisplay(), input.get(1)));
+            } else disp.showInvalidOperator(first);
+        } else disp.displayError();
     }
 
     void reset(){
