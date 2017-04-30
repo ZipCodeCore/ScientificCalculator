@@ -42,7 +42,7 @@ public class TestCalculatorInput {
         public void testUserInputValidator(){
             //: Given
             String userInput = "+";
-            double expectedInput = '+';
+            double expectedInput = 43.0;
 
             //: When
             double actualInput = ci.userInputValidator(userInput);

@@ -8,6 +8,7 @@ import static java.lang.System.*;
 
 public class CalculatorInput {
     public String userOperator;
+    public double userInputValue;
 
     public String acceptUserOperator() {
         System.out.print("choose an operator (*, +, -, /, sq, sqrt) ");
@@ -35,21 +36,26 @@ public class CalculatorInput {
             return unicodeValue;
 
             // Come back to add square root and square handling
-//        } else if (userOperator.equals("sq")) {
-//        unicodeValue = 47.0;
-//        return unicodeValue;
-//
-//        } else if (userOperator.equals("sqrt")) {
-//        unicodeValue = 47.0;
-//        return unicodeValue;
+        } else if (userOperator.equals("sq")) {
+        unicodeValue = 2.0;
+        return unicodeValue;
+
+        } else if (userOperator.equals("sqrt")) {
+        unicodeValue = 1.0;
+        return unicodeValue;
 
         } else {
             return 0;
         }
 
-
-//    public char userOperator(char x){
-//        return 0;
-//    }
     }
+
+    public double acceptUserValue(){
+        System.out.print("Enter a value: ");
+        Scanner sc = new Scanner(in);
+        double userInputValue = Double.valueOf( sc.nextLine());
+        return userInputValue;
+    }
+
+
 }
