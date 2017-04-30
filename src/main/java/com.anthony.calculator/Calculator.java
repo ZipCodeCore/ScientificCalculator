@@ -38,7 +38,7 @@ public class Calculator {
             case SQUARE_ROOT:
                 result = basicMath.calcSqrRoot(number1);
                 break;
-            case CALCULATEVARIBLEEXP:
+            case CALCULATE_VARIBLE_EXP:
                 result = basicMath.calcVariableExponent(number1, number2);
                 break;
             case SQUARED:
@@ -53,12 +53,23 @@ public class Calculator {
             case CELSIUS_TO_FAHRENHEIT:
                 result = basicMath.calcTemperatureInFahrenheit(number1);
                 break;
-
             case INVERT_SIGN:
                 result = basicMath.invertSign(number1);
                 break;
             case INVERSE_NUMBER:
                 result = basicMath.inverseNumber(number1);
+                break;
+            case LOG:
+                result = basicMath.calcNaturalLog(number1);
+                break;
+            case LOG_10:
+                result = basicMath.calcLog(number1);
+                break;
+            case LOG_INVERSE:
+                result = basicMath.calcInverseLog(number1);
+                break;
+            case LOG_INVERSE_NATURAL_LOG:
+                result = basicMath.calcInverseNaturalLog(number1);
                 break;
 
             default:

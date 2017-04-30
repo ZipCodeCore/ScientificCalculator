@@ -203,6 +203,68 @@ public class testBasicMath {
 
     }
 
+    @Test
+    public void testCalcLog(){
+        //given
+        double number1 = 10;
+        double expectedExponent = 1;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.calcLog(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
+    @Test
+    public void testCalcNaturalLog(){
+        //given
+        double number1 = 10;
+        double expectedExponent = 2.30258509299;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.calcNaturalLog(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
+    @Test
+    public void testCalcInverseLog(){
+        //given
+        double number1 = 1;
+        double expectedExponent = 10;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.calcInverseLog(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
+    @Test
+    public void testCalcInverseNaturalLog(){
+        //given
+        double number1 = 2;
+        double expectedExponent = 7.38905609893065;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.calcInverseNaturalLog(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
+
+
 
 
 

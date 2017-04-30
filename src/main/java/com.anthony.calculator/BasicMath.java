@@ -52,7 +52,7 @@ public class BasicMath {
     }
 
     public double calcTemperatureInFahrenheit(double number1) {
-        return 1.8*number1+32;
+        return 1.8 * number1 + 32;
     }
 
     public double invertSign(double number1) {
@@ -60,9 +60,25 @@ public class BasicMath {
     }
 
     public double inverseNumber(double number1) {
-        return Math.pow(number1,-1);
+        return Math.pow(number1, -1);
     }
 
+    public double calcLog(double number1) {
+        return Math.log10(number1);
+    }
+
+    public double calcNaturalLog(double number1) {
+        return Math.log(number1);
+    }
+
+    public double calcInverseLog(double number1) {
+
+        return Math.pow(10,number1);
+    }
+
+    public double calcInverseNaturalLog(double number1) {
+        return Math.exp(number1);
+    }
 
 
 }

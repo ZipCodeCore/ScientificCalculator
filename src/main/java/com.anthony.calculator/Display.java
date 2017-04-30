@@ -40,7 +40,7 @@ public class Display {
         for (Operation enumLoop : operationOfEnum.values()) {
             enumLoopCounter++;
             System.out.print(enumLoop + " : " + enumLoopCounter + "  " + "|" + " ");
-            if (enumLoopCounter == 6) {
+            if (enumLoopCounter % 4 == 0) {
                 System.out.println();
             }
         }
@@ -72,7 +72,7 @@ public class Display {
                     if (enumPosition == Integer.parseInt(choice) - 1) {
                         operationOfEnum = enumLoop;
                         if (enumPosition < 5) {
-                            System.out.println("You've chosen to " + "'"+operationOfEnum +"'"+ " Please enter another number.");
+                            System.out.println("You've chosen to " + "'" + operationOfEnum + "'" + " Please enter another number.");
                         } else {
                             System.out.println("You've chosen " + operationOfEnum);
                             onlyOneCalculation = true;
@@ -182,7 +182,7 @@ public class Display {
         number1 = "0";
     }
 
-    public void resetState(){
+    public void resetState() {
 
         resetMemory();
         new Display();
