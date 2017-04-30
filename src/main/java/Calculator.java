@@ -11,8 +11,12 @@ public class Calculator {
         currentOperator = "";
     }
 
-    private void setCurrentOperator(String operator) {
+    public void setCurrentOperator(String operator) {
         currentOperator = operator;
+    }
+
+    public String getCurrentOperator() {
+        return currentOperator;
     }
 
 
@@ -35,7 +39,7 @@ public class Calculator {
         }
     }
 
-    private double handleSecondNumber(double number, double number2) {
+    private double handleSecondNumber(double number, double number2) throws Exception{
 
         if (currentOperator == "+") {
             return add(number, number2);
@@ -46,7 +50,9 @@ public class Calculator {
         } else if (currentOperator == "/") {
             return divide(number, number2);
         } else {
-            return 0.0;
+            Exception e = new Exception();
+            throw e;
+
         }
     }
 
@@ -66,6 +72,10 @@ public class Calculator {
         return number1 / number2;
     }
 
+    public void clearOperator() {
+        currentOperator = "";
+    }
+
     private void mainLoop() {
         Display display = new Display();
 
@@ -73,30 +83,38 @@ public class Calculator {
 
         while (true) {
             System.out.println(display.getCurrentValue());
-            double currentVal = convertToDouble(display.getCurrentValue());
             String input = scanner.nextLine();
 
             if (input == "quit" || input == "q") {
                 break;
             }
 
-            if (currentOperator.equals("")) {
-                handleGetOperator(input);
+            if (input == "clear" || input == "c") {
+                display.clear();
                 continue;
-            } else {
-                display.setCurrentValue(input);
             }
 
-
-            double result = handleSecondNumber(currentVal, convertToDouble(input));
-            display.setCurrentValue(Double.toString(result));
-
+            if (display.validateDouble(input)) {
+                try {
+                    double result = handleSecondNumber(convertToDouble(display.getCurrentValue()), convertToDouble(input));
+                    display.setCurrentValue(Double.toString(result));
+                } catch (Exception e) {
+                    display.setCurrentValue(input);
+                }
+            } else {
+                try {
+                    handleGetOperator(input);
+                } catch (Exception e) {
+                    display.sendErr();
+                }
+            }
 
         }
 
     }
 
     private double convertToDouble(String input) {
+        System.out.println(input);
         return Double.parseDouble(input);
     }
 

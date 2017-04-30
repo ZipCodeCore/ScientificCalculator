@@ -17,6 +17,16 @@ public class TestCalculator {
     }
 
     @Test
+    public void testAdditionDivideByZero() {
+
+        Calculator calculator = new Calculator();
+        String expectedValue = "Err";
+
+        Assert.assertEquals(expectedValue, calculator.divide(5, 0));
+
+    }
+
+    @Test
     public void testSubtraction() {
 
         Calculator calculator = new Calculator();
@@ -42,5 +52,31 @@ public class TestCalculator {
         double actualValue = calculator.divide(2.0, 5.0);
         Assert.assertEquals(expectedValue, actualValue, 0.001);
     }
+
+
+    @Test
+    public void testGetSetCurrentOperator() {
+
+        Calculator calculator = new Calculator();
+        calculator.setCurrentOperator("/");
+        String actualValue = calculator.getCurrentOperator();
+
+        Assert.assertEquals("/", actualValue);
+
+    }
+
+    @Test
+    public void testClearOperator() {
+
+        Calculator calculator = new Calculator();
+        calculator.setCurrentOperator("/");
+        calculator.clearOperator();
+
+        String expectedValue = "";
+        String actualValue = calculator.getCurrentOperator();
+
+        Assert.assertEquals(expectedValue, actualValue);
+    }
+
 
 }

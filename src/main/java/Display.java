@@ -5,7 +5,6 @@ import java.util.Scanner;
  */
 public class Display {
     private String currentValue;
-    private String currentOperator;
 
 
     public Display() {
@@ -33,15 +32,8 @@ public class Display {
 
     }
 
-    public void setCurrentOperator(String operator) {
-        currentOperator = operator;
-    }
 
-    public String getCurrentOperator() {
-        return currentOperator;
-    }
-
-    private boolean validateDouble(String input) {
+    public boolean validateDouble(String input) {
         try {
            Double.parseDouble(input);
         } catch (Exception err) {
@@ -50,8 +42,8 @@ public class Display {
         return true;
     }
 
-    private void sendErr() {
-        setCurrentValue("Err");
+    public void sendErr() {
+        currentValue = "Err";
     }
 
 }

@@ -43,14 +43,32 @@ public class TestDisplay {
     }
 
     @Test
-    public void testSetCurrentOperator() {
+    public void testSendErr() {
+
+        Display display = new Display();
+        String expectedValue = "Err";
+        display.sendErr();
+
+        Assert.assertEquals(expectedValue, display.getCurrentValue());
+    }
+
+    @Test
+    public void testValidateDoubleTrue() {
+
+        Display display = new Display();
+        Boolean expectedValue = true;
+        Boolean actualValue = display.validateDouble("5.0");
+
+        Assert.assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    public void testValidateDoubleFalse() {
 
         Display display = new Display();
 
-        display.setCurrentOperator("+");
-
-        String expectedValue = "+";
-        String actualValue = display.getCurrentOperator();
+        Boolean expectedValue = false;
+        Boolean actualValue = display.validateDouble("Five point oh");
 
         Assert.assertEquals(expectedValue, actualValue);
     }
