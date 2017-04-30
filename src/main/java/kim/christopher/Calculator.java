@@ -30,6 +30,6 @@ public class Calculator {
     }
 
     String negate(String x){
-        return Double.toString(0);
+        return Double.toString(-Double.parseDouble(x));
     }
 }

@@ -24,10 +24,11 @@ public class Display {
     public void setDisplay(String newCurrent){
         setLastDisplay(currentDisplay);
         currentDisplay = newCurrent;
+        System.out.print("DISPLAY: ");
         show();
     }
 
-    public String getCurrentDisplay(){
+    public String getDisplay(){
         return currentDisplay;
     }
 
