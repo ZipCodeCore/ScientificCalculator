@@ -11,6 +11,6 @@ public class Display {
     }
 
     private static void addToScreen(String input) {
-        System.out.print(input);
+        System.out.println(input);
     }
 }
