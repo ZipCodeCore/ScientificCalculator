@@ -159,6 +159,21 @@ public class testBasicMath {
     }
 
     @Test
+    public void testCalcTemperatureInFahrenheit(){
+        //given
+        double number1 = 10;
+        double expectedExponent = 50;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.calcTemperatureInFahrenheit(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
+    @Test
     public void testInvertSign(){
         //given
         double number1 = -2;

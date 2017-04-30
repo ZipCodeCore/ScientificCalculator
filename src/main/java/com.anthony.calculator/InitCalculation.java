@@ -7,6 +7,7 @@ public class InitCalculation {
 
 
     public static void main(String[] args) {
-      Display displayCalc = new Display();
+     new Display();
+
     }
 }

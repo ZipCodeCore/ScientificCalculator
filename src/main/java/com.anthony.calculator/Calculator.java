@@ -52,6 +52,10 @@ public class Calculator {
             case FAHRENHEIT_TO_CELSIUS:
                 result = basicMath.calcTemperatureInCelsius(number1);
                 break;
+            case CELSIUS_TO_FAHRENHEIT:
+                result = basicMath.calcTemperatureInFahrenheit(number1);
+                break;
+
             case INVERT_SIGN:
                 result = basicMath.invertSign(number1);
                 break;

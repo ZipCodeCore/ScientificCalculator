@@ -30,7 +30,7 @@ public class Display {
     }
 
     public void startingCalculatorDisplay() {
-        System.out.println("Welcome to Anthony's simple, yet smart Calculator!");
+        // System.out.println("Welcome to Anthony's simple, yet smart Calculator!");
         System.out.println("0");
     }
 
@@ -62,10 +62,10 @@ public class Display {
         } else if (choice.equals("`")) {
             clearDisplay();
             resetMemory();
+            new Display();
 
         } else {
             for (Operation enumLoop : operationOfEnum.values()) {
-
                 int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
                 try {
 
@@ -80,12 +80,10 @@ public class Display {
                         }
                     }
 
-
                 } catch (NumberFormatException e) {
                     System.out.println("You did not enter a correct option, please try again");
                     operationChoice(choice);
                 }
-
             }
         }
     }
