@@ -29,14 +29,14 @@ public class testBasicMath {
         //given
         double number1 = 4;
         double number2 = 5;
-        double expectedSum = number1 - number2;
+        double expectedDifference = number1 - number2;
         BasicMath basicmather = new BasicMath();
 
         //when
         double actualDifference = basicmather.subtract(number1, number2);
 
         //then
-        Assert.assertEquals(expectedSum, actualDifference, 0);
+        Assert.assertEquals(expectedDifference, actualDifference, 0);
     }
 
     @Test
@@ -44,14 +44,14 @@ public class testBasicMath {
         //given
         double number1 = 4;
         double number2 = 5;
-        double expectedSum = number1 * number2;
+        double expectedProduct = number1 * number2;
         BasicMath basicmather = new BasicMath();
 
         //when
         double actualProduct = basicmather.multiply(number1, number2);
 
         //then
-        Assert.assertEquals(expectedSum, actualProduct, 0);
+        Assert.assertEquals(expectedProduct, actualProduct, 0);
     }
 
     @Test
@@ -59,14 +59,14 @@ public class testBasicMath {
         //given
         double number1 = 4;
         double number2 = 5;
-        double expectedSum = number1 / number2;
+        double expectedQuotient = number1 / number2;
         BasicMath basicmather = new BasicMath();
 
         //when
         double actualQuotient = basicmather.divide(number1, number2);
 
         //then
-        Assert.assertEquals(expectedSum, actualQuotient, 1);
+        Assert.assertEquals(expectedQuotient, actualQuotient, 1);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class testBasicMath {
         //given
         double number1 = 4;
         double number2 = 0;
-        double expectedSum = number1 / number2;
+        double expectedQuotient = number1 / number2;
         BasicMath basicmather = new BasicMath();
 
         //when
@@ -88,28 +88,28 @@ public class testBasicMath {
     public void testCalcSqrRoot() {
         //given
         double number1 = 4;
-        double expectedSum = 2;
+        double expectedRoot = 2;
         BasicMath basicmather = new BasicMath();
 
         //when
         double actualRoot = basicmather.calcSqrRoot(number1);
 
         //then
-        Assert.assertEquals(expectedSum, actualRoot, 1);
+        Assert.assertEquals(expectedRoot, actualRoot, 1);
     }
 
     @Test
     public void testCalcSquared() {
         //given
-        double number1 = 4;
-        double expectedSum = 16;
+        double number1 = 6;
+        double expectedExponent = 36;
         BasicMath basicmather = new BasicMath();
 
         //when
-        double actualExponent = basicmather.calcSqrRoot(number1);
+        double actualExponent = basicmather.calcSquared(number1);
 
         //then
-        Assert.assertEquals(expectedSum, actualExponent, 1);
+        Assert.assertEquals(expectedExponent, actualExponent, 1);
     }
 
     @Test
@@ -130,7 +130,16 @@ public class testBasicMath {
     @Test
     public void TestCalcVariableExponent(){
         //given
-        
+        double number1 = 2;
+        double number2 = 2;
+        double expectedExponent = 4;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.calcVariableExponent(number1,number2);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
 
     }
 

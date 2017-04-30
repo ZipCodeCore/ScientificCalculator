@@ -6,6 +6,7 @@ package com.anthony.calculator;
 public class Calculator {
 
     BasicMath basicMath = new BasicMath();
+    Memory holderOfMemory = new Memory();
     double number1;
     double number2;
     double result;
@@ -37,6 +38,17 @@ public class Calculator {
             case SQUARE_ROOT:
                 result = basicMath.calcSqrRoot(number1);
                 break;
+            case CALCULATEVARIBLEEXP:
+                result = basicMath.calcVariableExponent(number1, number2);
+                break;
+
+            case SQUARED:
+                result = basicMath.calcSquared(number1);
+                break;
+
+            case FACTORIAL:
+                result = basicMath.calcFactorial(number1);
+                break;
             default:
 
                 break;
@@ -44,7 +56,13 @@ public class Calculator {
         }
     }
 
-    public double getResult() {
+    public void sendNumberToMemory(){
+        holderOfMemory.addToMemory(number1);
+    }
+
+
+
+    public Double getResult() {
 
         return result;
     }

@@ -1,6 +1,5 @@
 package com.anthony.calculator;
 
-import javax.naming.NameNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -8,37 +7,44 @@ import java.util.Scanner;
  */
 public class Display {
 
-    String givenNumber;
-    String number1;
-    String number2;
-    String choice;
-    Operation operationOfEnum;
-    int enumLoopCounter;
-    boolean onlyOneCalculation = false;
-    Scanner in = new Scanner(System.in);
+    private String givenNumber;
+    private String number1;
+    private String number2;
+    private String choice;
+    private int enumLoopCounter;
+    private int methodCounterForBoolean = 0;
+    private boolean onlyOneCalculation = false;
+    private boolean isRunning = false;
+    private Operation operationOfEnum;
     Calculator calculator = new Calculator();
+    private Scanner in = new Scanner(System.in);
 
 
     Display() {
         startingCalculatorDisplay();
-        loopThroughAndPrintEnums();
-        operationChoice(choice);
-        operationToSend();
-        pickCorrectAmountOfNumbersToCalculate();
-        calculateAndSendAllNumbers();
-        getCalculation();
+
+        setCurrentNumber(givenNumber);
+        setNumber1(number1);
+        //chooseCorrectAmountOfNumbersToCalculate();
+        continuousRun();
+
+
     }
 
     public void startingCalculatorDisplay() {
-        System.out.println("Welcome to Anthony's simple yet, smart Calculator!");
-        System.out.println("Please enter the number of the operation you would like to perform.");
+        System.out.println("Welcome to Anthony's simple, yet smart Calculator!");
+        //System.out.println("Please enter the number of the operation you would like to perform.");
+        System.out.println("0");
     }
 
-    public void loopThroughAndPrintEnums() {
+
+    public void displayChoices() {
         for (Operation enumLoop : operationOfEnum.values()) {
             enumLoopCounter++;
-            System.out.println(enumLoop + ": " + enumLoopCounter);
+            System.out.print(enumLoop + " : " + enumLoopCounter + "  " + "|" + " ");
         }
+        enumLoopCounter = 0;
+        System.out.println();
     }
 
 
@@ -49,7 +55,6 @@ public class Display {
     }
 
     public void operationToSend() {
-
         for (Operation enumLoop : operationOfEnum.values()) {
 
             int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
@@ -58,12 +63,12 @@ public class Display {
                 if (enumPosition == Integer.parseInt(choice) - 1) {
                     operationOfEnum = enumLoop;
                     if (enumPosition < 4) {
-                        System.out.println("You've chosen to " + operationOfEnum +
-                                " Please enter your first number for this equation");
+                        System.out.println("You've chosen to " + operationOfEnum + " Enter another number");
                     } else {
-                        System.out.println("You've chosen to " + operationOfEnum +
-                                " Please enter your number for this equation");
+                        System.out.println("You've chosen " + operationOfEnum);
                         onlyOneCalculation = true;
+
+
                         break;
                     }
 
@@ -77,7 +82,7 @@ public class Display {
         }
     }
 
-    public void pickCorrectAmountOfNumbersToCalculate() {
+    public void chooseCorrectAmountOfNumbersToCalculate() {
 
         if (onlyOneCalculation == true) {
             setCurrentNumber(givenNumber);
@@ -85,17 +90,18 @@ public class Display {
         } else {
             setCurrentNumber(givenNumber);
             setNumber1(number1);
+            System.out.println("Please enter the second Number.");
             setCurrentNumber(givenNumber);
             setNumber2(number2);
         }
     }
 
 
-    public String setCurrentNumber(String numberToBeParsed) {
+    public void setCurrentNumber(String numberToBeParsed) {
 
         numberToBeParsed = in.nextLine();
         this.givenNumber = numberToBeParsed;
-        return numberToBeParsed;
+
     }
 
     public void setNumber1(String number1) {
@@ -103,7 +109,6 @@ public class Display {
         number1 = this.givenNumber;
         this.number1 = number1;
         //System.out.println(number1);
-        System.out.println("Please enter the second Number.");
 
     }
 
@@ -116,18 +121,57 @@ public class Display {
 
     public void calculateAndSendAllNumbers() {
 
-        if (onlyOneCalculation == true) {
-            calculator.setNumber1(Integer.parseInt(number1));
+        if (onlyOneCalculation) {
+            calculator.setNumber1(Double.parseDouble(number1));
         } else {
-            calculator.setNumber1(Integer.parseInt(number1));
-            calculator.setNumber2(Integer.parseInt(number2));
+            calculator.setNumber1(Double.parseDouble(number1));
+            calculator.setNumber2(Double.parseDouble(number2));
         }
 
         calculator.doOperation(operationOfEnum);
     }
 
     public void getCalculation() {
-        System.out.println("The answer is " + calculator.getResult());
+        if (calculator.getResult().isNaN()) {
+            System.out.println("ERR");
+
+        } else {
+            System.out.println("The answer is " + calculator.getResult() + " Enter an operation if you would like to continue, or press q to quit");
+            System.out.println();
+        }
+    }
+
+    public void continuousRun() {
+
+        while (!isRunning) {
+            displayChoices();
+            operationChoice(choice);
+            operationToSend();
+
+            if (onlyOneCalculation) {
+                calculateAndSendAllNumbers();
+                getCalculation();
+                onlyOneCalculation = false;
+                memoryHolder();
+                continuousRun();
+            }
+
+
+            setCurrentNumber(givenNumber);
+            setNumber2(number2);
+            calculateAndSendAllNumbers();
+
+            getCalculation();
+            memoryHolder();
+
+        }
+
+
+    }
+
+    public void memoryHolder() {
+        // System.out.println(calculator.getResult() + " Ignore me");
+        number1 = calculator.getResult().toString();
     }
 
     public void clearDisplay() {

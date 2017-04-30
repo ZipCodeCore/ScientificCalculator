@@ -33,15 +33,18 @@ public class BasicMath {
         return Math.sqrt(number1);
     }
 
+    public double calcSquared(double number1) {
+        return Math.pow(number1, 2);
+    }
 
-    public double calcFactorial(double number1){
-        int factorialCastToInt = (int)number1;
+    public double calcFactorial(double number1) {
+        int factorialCastToInt = (int) number1;
         return ArithmeticUtils.factorialDouble(factorialCastToInt);
     }
 
-    public double calcVariableExponent(double number1,double number2){
+    public double calcVariableExponent(double number1, double number2) {
 
-        return -1;
+        return Math.pow(number1, number2);
     }
 
 }
