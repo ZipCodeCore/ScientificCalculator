@@ -113,7 +113,7 @@ public class testBasicMath {
     }
 
     @Test
-    public void TestCalcFactorial() {
+    public void testCalcFactorial() {
         //given
         double number1 = 4;
         double expectedSum = 24;
@@ -128,7 +128,7 @@ public class testBasicMath {
 
 
     @Test
-    public void TestCalcVariableExponent(){
+    public void testCalcVariableExponent(){
         //given
         double number1 = 2;
         double number2 = 2;
@@ -142,6 +142,37 @@ public class testBasicMath {
         Assert.assertEquals(expectedExponent,actualExponent,1);
 
     }
+
+    @Test
+    public void testCalcTemperatureInCelsius(){
+        //given
+        double number1 = 50;
+        double expectedExponent = 10;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.calcTemperatureInCelsius(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
+    @Test
+    public void testInvertSign(){
+        //given
+        double number1 = -2;
+        double expectedExponent = 2;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.invertSign(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
 
 
 }

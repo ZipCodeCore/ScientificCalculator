@@ -49,6 +49,13 @@ public class Calculator {
             case FACTORIAL:
                 result = basicMath.calcFactorial(number1);
                 break;
+            case FAHRENHEIT_TO_CELSIUS:
+                result = basicMath.calcTemperatureInCelsius(number1);
+                break;
+            case INVERT_SIGN:
+                result = basicMath.invertSign(number1);
+                break;
+
             default:
 
                 break;

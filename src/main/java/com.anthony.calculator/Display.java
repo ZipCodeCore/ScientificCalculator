@@ -14,8 +14,6 @@ public class Display {
     private int enumLoopCounter;
     private boolean onlyOneCalculation = false;
     private boolean isRunning = true;
-    private boolean resetBecauseErr = true;
-    private boolean turnOffCalculator = true;
     private Operation operationOfEnum;
     Calculator calculator = new Calculator();
     private Scanner in = new Scanner(System.in);
@@ -23,7 +21,6 @@ public class Display {
 
     Display() {
         startingCalculatorDisplay();
-
         setCurrentNumber(givenNumber);
         setNumber1(number1);
         displayChoices();
@@ -34,16 +31,17 @@ public class Display {
 
     public void startingCalculatorDisplay() {
         System.out.println("Welcome to Anthony's simple, yet smart Calculator!");
-        //System.out.println("Please enter the number of the operation you would like to perform.");
         System.out.println("0");
     }
 
 
     public void displayChoices() {
-        //System.out.println("Choose a number for the operation you would like to perform");
         for (Operation enumLoop : operationOfEnum.values()) {
             enumLoopCounter++;
             System.out.print(enumLoop + " : " + enumLoopCounter + "  " + "|" + " ");
+            if (enumLoopCounter == 6) {
+                System.out.println();
+            }
         }
         enumLoopCounter = 0;
         System.out.println();
@@ -58,8 +56,12 @@ public class Display {
 
     public void operationToSend() {
         if (choice.equals("q")) {
-            isRunning=false;
+            isRunning = false;
             continuousRun();
+
+        } else if (choice.equals("`")) {
+            clearDisplay();
+            resetMemory();
 
         } else {
             for (Operation enumLoop : operationOfEnum.values()) {
@@ -128,7 +130,7 @@ public class Display {
             System.out.println("ERR");
         } else {
             System.out.println("The answer is " + calculator.getResult() + "\n" +
-                    "Enter an operation if you would like to continue, or press q to quit");
+                    "Enter an operation if you would like to continue, q to quit or ` if you would like to start anew");
             System.out.println();
 
         }
@@ -146,6 +148,7 @@ public class Display {
                 getCalculation();
                 onlyOneCalculation = false;
                 memoryHolder();
+                displayChoices();
                 continuousRun();
             }
 
@@ -155,10 +158,9 @@ public class Display {
             getCalculation();
             memoryHolder();
             displayChoices();
-            quitCalculator();
         }
 
-        System.exit(01);
+        System.exit(0);
     }
 
     public void memoryHolder() {
@@ -168,17 +170,16 @@ public class Display {
 
     public void quitCalculator() {
 
-          //  isRunning = false;
-
-
+        //  isRunning = false;
     }
 
     public void clearDisplay() {
-        System.out.println("0");
+        for (int a = 0; a < 50; a++)
+            System.out.println();
     }
 
-    public void stopCalculator() {
-        System.out.println();
+    public void resetMemory() {
+        number1 = "0";
     }
 
     public void switchDisplayMode() {

@@ -47,4 +47,12 @@ public class BasicMath {
         return Math.pow(number1, number2);
     }
 
+    public double calcTemperatureInCelsius(double number1){
+        return (number1-32)*.5556;
+    }
+
+    public double invertSign(double number1){
+        return number1 * -1;
+    }
+
 }

@@ -6,10 +6,12 @@ package com.anthony.calculator;
 public class Memory {
 
     double memoryHolder;
+    //Calculator calculator = new Calculator();
 
     void addToMemory(double memory) {
 
         this.memoryHolder = memory;
+       //calculator.getResult().toString();
 
     }
 
