@@ -1,7 +1,14 @@
 package com.brownmark;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 public class CalculatorApp {
+
+
+
+    private String operandOne;
+    private String operator;
+    private String operandTwo;
 
 
 
@@ -29,9 +36,6 @@ public class CalculatorApp {
 
 
         while (calculatorOn.getCalculatorPower()) {
-            String operandOne;
-            String operator;
-            String operandTwo;
 
 
 
@@ -40,6 +44,9 @@ public class CalculatorApp {
                 if (operandOne.equals("c") || operandOne.equals("")) {
                     calculatorDisplay.defaultDisplay();
                     continue;
+                }
+                if (operandOne.equals("e")) {
+                    break;
                 }
                 if (operandOne.equalsIgnoreCase("Rad") && storedMemory.returnDegreeFlag() == true) {
                     System.out.println("Now in Rad Mode.");
@@ -57,29 +64,29 @@ public class CalculatorApp {
                     calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
                     continue;
                 }
-                if (operandOne.equalsIgnoreCase("Deg") && storedMemory.returnDegreeFlag() == true){
+                if (operandOne.equalsIgnoreCase("Deg") && storedMemory.returnDegreeFlag() == true) {
                     System.out.println("Now in Deg Mode.");
                     calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
                     continue;
                 }
-                if (operandOne.equalsIgnoreCase("Rad") && storedMemory.returnDegreeFlag() == false){
+                if (operandOne.equalsIgnoreCase("Rad") && storedMemory.returnDegreeFlag() == false) {
                     System.out.println("Now in Rad Mode.");
                     calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
                     continue;
                 }
-                if (operandOne.equals("e")) {
-                    break;
+                if (NumberUtils.isParsable(operandOne)) {
+                    storedMemory.pushNumberToStorage(Double.parseDouble(operandOne));
+                    calculatorDisplay.returnDisplay(Double.parseDouble(operandOne));
+                    storedMemory.incrementCalculationCount();
                 }
-                if (!StringUtils.isNumeric(operandOne)) {
-                    calculatorDisplay.displayInvalidInput();
-                    calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
+                else {
+                    calculatorDisplay.displayInvalidOperator();
+                    calculatorDisplay.defaultDisplay();
                     continue;
                 }
-                storedMemory.pushNumberToStorage(Double.parseDouble(operandOne));
-                calculatorDisplay.returnDisplay(Double.parseDouble(operandOne));
-            }
-            storedMemory.incrementCalculationCount();
 
+
+            }
 
 
             operator = input.getOperator();
@@ -111,19 +118,21 @@ public class CalculatorApp {
                 continue;
             }
             if (operator.equalsIgnoreCase("Rad") && storedMemory.returnDegreeFlag() == false){
-                System.out.println("Now in Deg Mode.");
+                System.out.println("Now in Rad Mode.");
                 calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
                 continue;
             }
             if (operator.equals("e")) {
                 break;
             }
-            if (StringUtils.isNumeric(operator)) {
-                double tempDouble = Double.parseDouble(operator);
-                storedMemory.pushNumberToStorage(tempDouble);
+            if (NumberUtils.isParsable(operator)) {
+                storedMemory.pushNumberToStorage(Double.parseDouble(operator));
                 calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
                 continue;
             }
+
+
+
             if (calculationFeed.errorChecks(storedMemory.returnStoredNumber(), operator)) {
                 calculatorDisplay.displayErr();
                 storedMemory.resetStorage();
@@ -165,7 +174,9 @@ public class CalculatorApp {
                 calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
                 continue;
             }
+
             calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
+
 
 
 
@@ -194,6 +205,7 @@ public class CalculatorApp {
             double binaryCalculationResult = calculationFeed.sendInputsThroughFeed(storedMemory.returnStoredNumber(), operator, operandTwoNumber);
             if (Double.isNaN(binaryCalculationResult)) {
                 calculatorDisplay.displayInvalidOperator();
+                calculatorDisplay.defaultDisplay();
                 continue;
             }
             storedMemory.pushNumberToStorage(binaryCalculationResult);
