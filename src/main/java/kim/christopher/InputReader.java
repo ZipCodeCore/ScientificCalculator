@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class InputReader {
 
-    private String lastInput;
+
     private Scanner sc;
 
     public InputReader(){
-        lastInput = null;
+    
         sc = new Scanner(System.in);
     }
 
