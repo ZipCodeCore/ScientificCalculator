@@ -1,7 +1,6 @@
 
-public class BasicMath {
-
-    public double result;
+public class BasicMath extends CalculatorApp {
+    double result;
 
     public double add (double leftOperand, double rightOperand) {
         result = leftOperand + rightOperand;
@@ -15,7 +14,7 @@ public class BasicMath {
 
     public double divide (double leftOperand, double rightOperand) {
         if (rightOperand == 0) {
-            System.out.println("Can not divide by zero");
+            System.out.println("ERR");
         } else {
             result = leftOperand / rightOperand;
         }
