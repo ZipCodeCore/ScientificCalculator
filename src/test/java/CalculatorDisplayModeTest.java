@@ -30,4 +30,28 @@ public class CalculatorDisplayModeTest {
         Assert.assertEquals("-81.81 should read like -81.81", expected, actual);
     }
 
+    @Test
+    public void toDisplayBinaryTest() {
+        //Given
+        CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
+        calculatorDisplayMode.switchDisplayMode(2);
+        String expected = "0100000001000110111001111010111000010100011110101110000101001000";
+        //When
+        String actual = calculatorDisplayMode.toDisplayMode(45.81);
+        //Then
+        Assert.assertEquals("binary conversion test", expected, actual);
+    }
+
+    @Test
+    public void toDisplayOctalTest() {
+        //Given
+        CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
+        calculatorDisplayMode.switchDisplayMode(3);
+        String expected = "-144.063146314631463";
+        //When
+        String actual = calculatorDisplayMode.toDisplayMode(-100.1);
+        //Then
+        Assert.assertEquals("octal conversion test", expected, actual);
+    }
+
 }
