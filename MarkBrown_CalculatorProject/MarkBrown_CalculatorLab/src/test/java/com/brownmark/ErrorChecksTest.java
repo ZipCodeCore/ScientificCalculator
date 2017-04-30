@@ -44,4 +44,30 @@ public class ErrorChecksTest {
         Assert.assertTrue(actualResults);
     }
 
+    @Test
+    public void testErrIsThrownForLogarithmOfNegative() {
+        //Given:
+        double operand1 = -1;
+        CalculationFeed calculationFeed = new CalculationFeed();
+
+        //When:
+        boolean actualResults = calculationFeed.errorChecks(operand1, "log");
+
+        //Then:
+        Assert.assertTrue(actualResults);
+    }
+
+    @Test
+    public void testErrIsThrownForNaturalLogarithmOfNegative() {
+        //Given:
+        double operand1 = -1;
+        CalculationFeed calculationFeed = new CalculationFeed();
+
+        //When:
+        boolean actualResults = calculationFeed.errorChecks(operand1, "ln");
+
+        //Then:
+        Assert.assertTrue(actualResults);
+    }
+
 }

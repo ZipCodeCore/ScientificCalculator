@@ -16,6 +16,7 @@ public class BasicAlgebraEngine {
     public double subtract (double operandOne, double operandTwo) {return operandOne - operandTwo;}
     public double multiply (double operandOne, double operandTwo) {return operandOne * operandTwo;}
     public double divide (double operandOne, double operandTwo) {return operandOne / operandTwo;}
+    public double exponential (double operandOne, double operandTwo) {return Math.pow(operandOne, operandTwo);}
 
 
 

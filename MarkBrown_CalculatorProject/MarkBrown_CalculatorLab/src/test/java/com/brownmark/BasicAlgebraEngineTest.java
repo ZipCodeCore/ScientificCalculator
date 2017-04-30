@@ -136,4 +136,22 @@ public class BasicAlgebraEngineTest {
         Assert.assertEquals(expectedOutput, actualOutput,0.0001);
 
     }
+
+    @Test
+    public void testVariableExponentiation () {
+
+        //Given:
+        double operand1 = 10;
+        double operand2 = -2;
+        BasicAlgebraEngine basicAlgebraEngine = new BasicAlgebraEngine();
+        double expectedOutput = 0.01;
+
+        //When:
+        double actualOutput = basicAlgebraEngine.exponential(operand1, operand2);
+
+        //Then:
+        Assert.assertEquals(expectedOutput, actualOutput,0.0001);
+
+    }
+
 }
