@@ -14,20 +14,9 @@ public class Calculator {
     private void setCurrentOperator(String operator) {
         currentOperator = operator;
     }
-    public void getUserInput() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.println();
-            String input = scanner.nextLine();
-            handleInput(input);
-
-        }
-    }
 
 
-    private void handleInput(String input, double currentValue) {
+    private void handleGetOperator(String input) {
         switch(input) {
             case "+":
                 setCurrentOperator(input);
@@ -41,9 +30,23 @@ public class Calculator {
             case "*":
                 setCurrentOperator(input);
                 break;
-            case ()
             default:
-                return input;
+                break;
+        }
+    }
+
+    private double handleSecondNumber(double number, double number2) {
+
+        if (currentOperator == "+") {
+            return add(number, number2);
+        } else if (currentOperator == "-") {
+            return subtract(number, number2);
+        } else if (currentOperator == "*") {
+            return multiply(number, number2);
+        } else if (currentOperator == "/") {
+            return divide(number, number2);
+        } else {
+            return 0.0;
         }
     }
 
@@ -65,16 +68,29 @@ public class Calculator {
 
     private void mainLoop() {
         Display display = new Display();
-        String currentVal = display.getCurrentValue();
 
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println(currentVal);
+            System.out.println(display.getCurrentValue());
+            double currentVal = convertToDouble(display.getCurrentValue());
             String input = scanner.nextLine();
 
+            if (input == "quit" || input == "q") {
+                break;
+            }
 
-            handleInput(input, convertToDouble(currentVal));
+            if (currentOperator.equals("")) {
+                handleGetOperator(input);
+                continue;
+            } else {
+                display.setCurrentValue(input);
+            }
+
+
+            double result = handleSecondNumber(currentVal, convertToDouble(input));
+            display.setCurrentValue(Double.toString(result));
+
 
         }
 
@@ -86,9 +102,8 @@ public class Calculator {
 
     public static void main(String[] args) {
 
-
-
-
+        Calculator calculator = new Calculator();
+        calculator.mainLoop();
 
     }
 }

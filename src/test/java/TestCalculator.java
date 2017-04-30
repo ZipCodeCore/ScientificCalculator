@@ -39,7 +39,7 @@ public class TestCalculator {
 
         Calculator calculator = new Calculator();
         double expectedValue = 10.0;
-        double actualValue = calculator.multiply(2.0, 5.0);
+        double actualValue = calculator.divide(2.0, 5.0);
         Assert.assertEquals(expectedValue, actualValue, 0.001);
     }
 
