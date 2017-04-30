@@ -13,7 +13,7 @@ public class Display {
     private String choice;
     private int enumLoopCounter;
     private boolean onlyOneCalculation = false;
-    private boolean isRunning = false;
+    private boolean isRunning = true;
     private boolean resetBecauseErr = true;
     private boolean turnOffCalculator = true;
     private Operation operationOfEnum;
@@ -40,6 +40,7 @@ public class Display {
 
 
     public void displayChoices() {
+        //System.out.println("Choose a number for the operation you would like to perform");
         for (Operation enumLoop : operationOfEnum.values()) {
             enumLoopCounter++;
             System.out.print(enumLoop + " : " + enumLoopCounter + "  " + "|" + " ");
@@ -56,44 +57,33 @@ public class Display {
     }
 
     public void operationToSend() {
-        for (Operation enumLoop : operationOfEnum.values()) {
+        if (choice.equals("q")) {
+            quitCalculator();
+            System.out.println("ASd");
+        } else {
+            for (Operation enumLoop : operationOfEnum.values()) {
 
-            int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
-            try {
+                int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
+                try {
 
-                if (enumPosition == Integer.parseInt(choice) - 1) {
-                    operationOfEnum = enumLoop;
-                    if (enumPosition < 4) {
-                        System.out.println("You've chosen to " + operationOfEnum + " Enter another number");
-                    } else {
-                        System.out.println("You've chosen " + operationOfEnum);
-                        onlyOneCalculation = true;
-
-
-                        break;
+                    if (enumPosition == Integer.parseInt(choice) - 1) {
+                        operationOfEnum = enumLoop;
+                        if (enumPosition < 4) {
+                            System.out.println("You've chosen to " + operationOfEnum + " Enter another number");
+                        } else {
+                            System.out.println("You've chosen " + operationOfEnum);
+                            onlyOneCalculation = true;
+                            break;
+                        }
                     }
 
+
+                } catch (NumberFormatException e) {
+                    System.out.println("You did not enter a correct option, please try again");
+                    operationChoice(choice);
                 }
 
-            } catch (NumberFormatException e) {
-                System.out.println("You did not enter a correct option, please try again");
-                operationChoice(choice);
             }
-
-        }
-    }
-
-    public void chooseCorrectAmountOfNumbersToCalculate() {
-
-        if (onlyOneCalculation == true) {
-            setCurrentNumber(givenNumber);
-            setNumber1(number1);
-        } else {
-            setCurrentNumber(givenNumber);
-            setNumber1(number1);
-            System.out.println("Please enter the second Number.");
-            setCurrentNumber(givenNumber);
-            setNumber2(number2);
         }
     }
 
@@ -135,42 +125,37 @@ public class Display {
     public void getCalculation() {
         if (calculator.getResult().isNaN()) {
             System.out.println("ERR");
-
-
         } else {
-            System.out.println("The answer is " + calculator.getResult() + " Enter an operation if you would like to continue, or press q to quit");
+            System.out.println("The answer is " + calculator.getResult() + "\n" +
+                    "Enter an operation if you would like to continue, or press q to quit");
             System.out.println();
+
         }
     }
 
     public void continuousRun() {
 
-        while (!isRunning) {
-            
+        while (isRunning) {
+            displayChoices();
+            operationChoice(choice);
+            operationToSend();
 
-                displayChoices();
-                operationChoice(choice);
-                operationToSend();
-
-                if (onlyOneCalculation) {
-                    calculateAndSendAllNumbers();
-                    getCalculation();
-                    onlyOneCalculation = false;
-                    memoryHolder();
-                    continuousRun();
-                }
-
-
-                setCurrentNumber(givenNumber);
-                setNumber2(number2);
+            if (onlyOneCalculation) {
                 calculateAndSendAllNumbers();
-
                 getCalculation();
+                onlyOneCalculation = false;
                 memoryHolder();
+                continuousRun();
+            }
 
+            setCurrentNumber(givenNumber);
+            setNumber2(number2);
+            calculateAndSendAllNumbers();
 
+            getCalculation();
+            quitCalculator();
+            memoryHolder();
         }
-
     }
 
     public void memoryHolder() {
@@ -178,10 +163,22 @@ public class Display {
         number1 = calculator.getResult().toString();
     }
 
+    public void quitCalculator() {
+        if(in.nextLine().equals("q")){
+            isRunning = false;
+        }else{
+            isRunning=true;
+        }
+
+    }
+
     public void clearDisplay() {
         System.out.println("0");
     }
 
+    public void stopCalculator() {
+        System.out.println();
+    }
 
     public void switchDisplayMode() {
 
