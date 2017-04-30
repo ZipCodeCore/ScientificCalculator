@@ -105,4 +105,35 @@ public class BasicAlgebraEngineTest {
 
     }
 
+    @Test
+    public void testTakeNegative() {
+
+        //Given:
+        double operand1 = 10;
+        BasicAlgebraEngine basicAlgebraEngine = new BasicAlgebraEngine();
+        double expectedOutput = -10;
+
+        //When:
+        double actualOutput = basicAlgebraEngine.multiply(operand1, -1);
+
+        //Then:
+        Assert.assertEquals(expectedOutput, actualOutput,0.0001);
+
+    }
+
+    @Test
+    public void testTakeSquareRoot() {
+
+        //Given:
+        double operand1 = 100;
+        BasicAlgebraEngine basicAlgebraEngine = new BasicAlgebraEngine();
+        double expectedOutput = 10;
+
+        //When:
+        double actualOutput = basicAlgebraEngine.squareRoot(operand1);
+
+        //Then:
+        Assert.assertEquals(expectedOutput, actualOutput,0.0001);
+
+    }
 }

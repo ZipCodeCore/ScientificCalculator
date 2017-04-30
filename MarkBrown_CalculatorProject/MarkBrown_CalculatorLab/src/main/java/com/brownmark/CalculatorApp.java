@@ -53,6 +53,13 @@ public class CalculatorApp {
             if (operator.equals("e")) {
                 break;
             }
+            if (calculationFeed.errorChecks(storedMemory.returnStoredNumber(), operator)) {
+                System.out.println("Err");
+                storedMemory.resetStorage();
+                storedMemory.resetCalculationCount();
+                continue;
+            }
+
             if(calculationFeed.checkForMatchingUnaryOperator(operator)) {
                 double unaryCalculationResult = calculationFeed.sendInputsThroughFeed(storedMemory.returnStoredNumber(), operator);
                 storedMemory.pushNumberToStorage(unaryCalculationResult);
@@ -60,7 +67,6 @@ public class CalculatorApp {
                 continue;
             }
             calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
-
 
 
             operandTwo = input.getOperandInput();

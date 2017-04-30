@@ -18,4 +18,30 @@ public class ErrorChecksTest {
         Assert.assertTrue(actualResults);
     }
 
+    @Test
+    public void testErrIsThrownForReciprocalDivideByZero() {
+        //Given:
+        double operand1 = 0;
+        CalculationFeed calculationFeed = new CalculationFeed();
+
+        //When:
+        boolean actualResults = calculationFeed.errorChecks(operand1, "1/");
+
+        //Then:
+        Assert.assertTrue(actualResults);
+    }
+
+    @Test
+    public void testErrIsThrownForSquareRootOfNegative() {
+        //Given:
+        double operand1 = -1;
+        CalculationFeed calculationFeed = new CalculationFeed();
+
+        //When:
+        boolean actualResults = calculationFeed.errorChecks(operand1, "sqrt");
+
+        //Then:
+        Assert.assertTrue(actualResults);
+    }
+
 }
