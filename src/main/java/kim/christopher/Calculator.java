@@ -32,4 +32,10 @@ public class Calculator {
     String negate(String x){
         return Double.toString(-Double.parseDouble(x));
     }
+
+    String inverse(String x){
+        return Double.toString(1 / Double.parseDouble(x));
+    }
+
+    
 }

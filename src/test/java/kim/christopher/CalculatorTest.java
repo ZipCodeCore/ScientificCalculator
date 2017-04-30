@@ -30,6 +30,18 @@ public class CalculatorTest {
 
     }
 
+    public void testAdditionWithoutParameter(){
+
+        //Given
+
+        //When
+
+        //Then
+
+
+    }
+
+
     @Test
     public void testSubtraction(){
 
@@ -98,5 +110,19 @@ public class CalculatorTest {
 
         //Then
         assertEquals("The negation of -6.7 is 6.7", "6.7", result);
+    }
+
+    @Test
+    public void testInverse(){
+
+        //Given
+        String operand = "2";
+
+        //When
+        String result = controller.calc.inverse(operand);
+
+        //Then
+        assertEquals("The inverse of 2 is 0.5", "0.5", result);
+
     }
 }
