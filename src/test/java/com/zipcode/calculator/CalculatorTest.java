@@ -14,21 +14,21 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
 
         //then
-        assertEquals(new Double(0), calculator.getCurrentDisplay());
+        assertEquals("0.0", calculator.getCurrentDisplay());
 
     }
 
     @Test
-    public void testCurrentDisplay() {
+    public void testSetValue() {
         //when
         Calculator calculator = new Calculator();
-        calculator.changeDisplay(5.00);
+        calculator.setValue(5.00);
 
         //then
-        assertEquals(new Double(5.00), calculator.getCurrentDisplay());
+        assertEquals("5.0", calculator.getCurrentDisplay());
 
         //then
-        assertEquals(new Double(5.00), calculator.getCurrentDisplay());
+        assertEquals("5.0", calculator.getCurrentDisplay());
     }
 
     @Test
@@ -46,7 +46,7 @@ public class CalculatorTest {
         assertEquals(new Double(-13.00), calculator.add(-21.00));
 
         //then
-        assertEquals(new Double(-13.00), calculator.getCurrentDisplay());
+        assertEquals("-13.0", calculator.getCurrentDisplay());
 
     }
 
@@ -82,7 +82,7 @@ public class CalculatorTest {
         //then (ensure that when current display is 0, the product is 0;
         assertEquals(new Double(0.00), calculator.multiply(4.00));
 
-        calculator.changeDisplay(1.00);
+        calculator.setValue(1.00);
 
         //then
         assertEquals(new Double(4.00), calculator.multiply(4.00));
@@ -90,9 +90,22 @@ public class CalculatorTest {
         //then
         assertEquals(new Double(16.00), calculator.multiply(4.00));
 
+    }
+
+    @Test
+    public void testDivide() {
+        //when
+        Calculator calculator = new Calculator();
+
+        calculator.setValue(1.00);
+
+
+        //then
+        assertEquals(new Double(0.25), calculator.divide(4.00));
+
+        //then
+        assertEquals(new Double(0.0625), calculator.divide(4.00));
 
 
     }
-
-
 }

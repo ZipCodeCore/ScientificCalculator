@@ -13,11 +13,14 @@ public class Calculator {
         currentDisplay = new Double(0);
     }
 
-    public Double getCurrentDisplay() {
-        return currentDisplay;
+    public String getCurrentDisplay() {
+      if (Double.isNaN(currentDisplay)) {
+            return "ERR";
+        }
+        return currentDisplay.toString();
     }
 
-    public Double changeDisplay(Double newValue) {
+    public Double setValue(Double newValue) {
         currentDisplay = newValue;
         return newValue;
     }
@@ -38,6 +41,18 @@ public class Calculator {
         return currentDisplay;
 
     }
+
+    public Double divide(Double number) {
+        if (number == 0.00) {
+            currentDisplay = Double.NaN;
+            return Double.NaN;
+        }
+
+        currentDisplay = currentDisplay / number;
+        return currentDisplay;
+
+    }
+
 
 }
 
