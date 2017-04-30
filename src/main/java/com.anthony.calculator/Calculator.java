@@ -5,7 +5,7 @@ package com.anthony.calculator;
  */
 public class Calculator {
 
-   private BasicMath basicMath = new BasicMath();
+    private BasicMath basicMath = new BasicMath();
     private Memory holderOfMemory = new Memory();
     private double number1;
     private double number2;
@@ -79,10 +79,9 @@ public class Calculator {
         }
     }
 
-    public void sendNumberToMemory(){
+    public void sendNumberToMemory() {
         holderOfMemory.addToMemory(number1);
     }
-
 
 
     public Double getResult() {

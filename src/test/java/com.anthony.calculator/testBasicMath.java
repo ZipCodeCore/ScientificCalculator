@@ -36,7 +36,7 @@ public class testBasicMath {
         double actualDifference = basicmather.subtract(number1, number2);
 
         //then
-        Assert.assertEquals(expectedDifference, actualDifference, 0);
+        Assert.assertEquals(expectedDifference, actualDifference, .0001);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class testBasicMath {
         double actualProduct = basicmather.multiply(number1, number2);
 
         //then
-        Assert.assertEquals(expectedProduct, actualProduct, 0);
+        Assert.assertEquals(expectedProduct, actualProduct, .0001);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class testBasicMath {
         double actualQuotient = basicmather.divide(number1, number2);
 
         //then
-        Assert.assertEquals(expectedQuotient, actualQuotient, 1);
+        Assert.assertEquals(expectedQuotient, actualQuotient, .0001);
     }
 
     @Test
@@ -95,7 +95,7 @@ public class testBasicMath {
         double actualRoot = basicmather.calcSqrRoot(number1);
 
         //then
-        Assert.assertEquals(expectedRoot, actualRoot, 1);
+        Assert.assertEquals(expectedRoot, actualRoot, .0001);
     }
 
     @Test
@@ -109,7 +109,7 @@ public class testBasicMath {
         double actualExponent = basicmather.calcSquared(number1);
 
         //then
-        Assert.assertEquals(expectedExponent, actualExponent, 1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
     }
 
     @Test
@@ -123,12 +123,12 @@ public class testBasicMath {
         double actualFactorial = basicmather.calcFactorial(number1);
 
         //then
-        Assert.assertEquals(expectedSum, actualFactorial, 1);
+        Assert.assertEquals(expectedSum, actualFactorial, .0001);
     }
 
 
     @Test
-    public void testCalcVariableExponent(){
+    public void testCalcVariableExponent() {
         //given
         double number1 = 2;
         double number2 = 2;
@@ -136,30 +136,30 @@ public class testBasicMath {
         BasicMath basicMather = new BasicMath();
 
         //when
-        double actualExponent = basicMather.calcVariableExponent(number1,number2);
+        double actualExponent = basicMather.calcVariableExponent(number1, number2);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testCalcTemperatureInCelsius(){
+    public void testCalcTemperatureInCelsius() {
         //given
         double number1 = 50;
-        double expectedExponent = 10;
+        double expectedExponent = 10.0008;
         BasicMath basicMather = new BasicMath();
 
         //when
         double actualExponent = basicMather.calcTemperatureInCelsius(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testCalcTemperatureInFahrenheit(){
+    public void testCalcTemperatureInFahrenheit() {
         //given
         double number1 = 10;
         double expectedExponent = 50;
@@ -169,12 +169,12 @@ public class testBasicMath {
         double actualExponent = basicMather.calcTemperatureInFahrenheit(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testInvertSign(){
+    public void testInvertSign() {
         //given
         double number1 = -2;
         double expectedExponent = 2;
@@ -184,12 +184,12 @@ public class testBasicMath {
         double actualExponent = basicMather.invertSign(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testInverseNumber(){
+    public void testInverseNumber() {
         //given
         double number1 = 2;
         double expectedExponent = .5;
@@ -199,12 +199,12 @@ public class testBasicMath {
         double actualExponent = basicMather.inverseNumber(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testCalcLog(){
+    public void testCalcLog() {
         //given
         double number1 = 10;
         double expectedExponent = 1;
@@ -214,12 +214,12 @@ public class testBasicMath {
         double actualExponent = basicMather.calcLog(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testCalcNaturalLog(){
+    public void testCalcNaturalLog() {
         //given
         double number1 = 10;
         double expectedExponent = 2.30258509299;
@@ -229,12 +229,12 @@ public class testBasicMath {
         double actualExponent = basicMather.calcNaturalLog(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testCalcInverseLog(){
+    public void testCalcInverseLog() {
         //given
         double number1 = 1;
         double expectedExponent = 10;
@@ -244,12 +244,12 @@ public class testBasicMath {
         double actualExponent = basicMather.calcInverseLog(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
 
     @Test
-    public void testCalcInverseNaturalLog(){
+    public void testCalcInverseNaturalLog() {
         //given
         double number1 = 2;
         double expectedExponent = 7.38905609893065;
@@ -259,14 +259,9 @@ public class testBasicMath {
         double actualExponent = basicMather.calcInverseNaturalLog(number1);
 
         //then
-        Assert.assertEquals(expectedExponent,actualExponent,1);
+        Assert.assertEquals(expectedExponent, actualExponent, .0001);
 
     }
-
-
-
-
-
 
 
 }
