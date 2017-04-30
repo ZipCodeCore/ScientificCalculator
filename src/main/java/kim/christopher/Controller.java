@@ -42,9 +42,16 @@ public class Controller {
                 reset();
             } else if (first.equals("negate")) {
                 disp.setDisplay(calc.negate(disp.getDisplay()));
+            } else if (first.equals("square")) {
+                disp.setDisplay(calc.square(disp.getDisplay()));
+            } else if (first.equals("sqrt")) {
+                disp.setDisplay(calc.sqrt(disp.getDisplay()));
+            } else if (first.equals("inverse")) {
+                disp.setDisplay(calc.inverse(disp.getDisplay()));
             } else disp.showInvalidOperator(first);
 
         } else if(input.size() == 2) {
+
             if (first.equals("+")) {
                 if (calc.add(disp.getDisplay(), input.get(1)).equals("ERROR")) {
                     disp.displayError();
@@ -61,7 +68,12 @@ public class Controller {
                 if (calc.divide(disp.getDisplay(), input.get(1)).equals("ERROR")) {
                     disp.displayError();
                 } else disp.setDisplay(calc.divide(disp.getDisplay(), input.get(1)));
+            } else if (first.equals("^")) {
+                if (calc.multiply(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                    disp.displayError();
+                } else disp.setDisplay(calc.power(disp.getDisplay(), input.get(1)));
             } else disp.showInvalidOperator(first);
+
         } else disp.displayError();
     }
 
