@@ -1,5 +1,5 @@
 
-public class BasicMath extends CalculatorApp {
+public class BasicMath {
     double result;
 
     public double add (double leftOperand, double rightOperand) {
