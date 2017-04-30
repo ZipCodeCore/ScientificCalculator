@@ -79,7 +79,7 @@ public class InputReader {
                         break;
                 }
             } else if (checker.isBinaryOperation(input)) {
-                nextOperand = scan.nextDouble();
+                nextOperand = Double.parseDouble(scan.nextLine());
                 switch (input) {
                     case "+":
                         display.setDisplay(calc.add(display.getDisplay(), nextOperand));
