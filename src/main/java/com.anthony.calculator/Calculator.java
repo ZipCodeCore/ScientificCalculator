@@ -5,11 +5,11 @@ package com.anthony.calculator;
  */
 public class Calculator {
 
-    BasicMath basicMath = new BasicMath();
-    Memory holderOfMemory = new Memory();
-    double number1;
-    double number2;
-    double result;
+   private BasicMath basicMath = new BasicMath();
+    private Memory holderOfMemory = new Memory();
+    private double number1;
+    private double number2;
+    private double result;
 
     public void setNumber1(double number1) {
         this.number1 = number1;
@@ -41,11 +41,9 @@ public class Calculator {
             case CALCULATEVARIBLEEXP:
                 result = basicMath.calcVariableExponent(number1, number2);
                 break;
-
             case SQUARED:
                 result = basicMath.calcSquared(number1);
                 break;
-
             case FACTORIAL:
                 result = basicMath.calcFactorial(number1);
                 break;
@@ -58,6 +56,9 @@ public class Calculator {
 
             case INVERT_SIGN:
                 result = basicMath.invertSign(number1);
+                break;
+            case INVERSE_NUMBER:
+                result = basicMath.inverseNumber(number1);
                 break;
 
             default:

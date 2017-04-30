@@ -188,6 +188,23 @@ public class testBasicMath {
 
     }
 
+    @Test
+    public void testInverseNumber(){
+        //given
+        double number1 = 2;
+        double expectedExponent = .5;
+        BasicMath basicMather = new BasicMath();
+
+        //when
+        double actualExponent = basicMather.inverseNumber(number1);
+
+        //then
+        Assert.assertEquals(expectedExponent,actualExponent,1);
+
+    }
+
+
+
 
 
 }

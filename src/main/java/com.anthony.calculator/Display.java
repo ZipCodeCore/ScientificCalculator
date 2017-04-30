@@ -25,17 +25,18 @@ public class Display {
         setNumber1(number1);
         displayChoices();
         continuousRun();
-
-
     }
 
     public void startingCalculatorDisplay() {
         // System.out.println("Welcome to Anthony's simple, yet smart Calculator!");
+        System.out.println("Please enter your first number.");
         System.out.println("0");
     }
 
 
     public void displayChoices() {
+        System.out.println();
+        System.out.println("Please choose a number from the options below.");
         for (Operation enumLoop : operationOfEnum.values()) {
             enumLoopCounter++;
             System.out.print(enumLoop + " : " + enumLoopCounter + "  " + "|" + " ");
@@ -61,8 +62,7 @@ public class Display {
 
         } else if (choice.equals("`")) {
             clearDisplay();
-            resetMemory();
-            new Display();
+            resetState();
 
         } else {
             for (Operation enumLoop : operationOfEnum.values()) {
@@ -71,8 +71,8 @@ public class Display {
 
                     if (enumPosition == Integer.parseInt(choice) - 1) {
                         operationOfEnum = enumLoop;
-                        if (enumPosition < 4) {
-                            System.out.println("You've chosen to " + operationOfEnum + " Enter another number");
+                        if (enumPosition < 5) {
+                            System.out.println("You've chosen to " + "'"+operationOfEnum +"'"+ " Please enter another number.");
                         } else {
                             System.out.println("You've chosen " + operationOfEnum);
                             onlyOneCalculation = true;
@@ -126,9 +126,11 @@ public class Display {
     public void getCalculation() {
         if (calculator.getResult().isNaN()) {
             System.out.println("ERR");
+            resetState();
         } else {
+            System.out.println();
             System.out.println("The answer is " + calculator.getResult() + "\n" +
-                    "Enter an operation if you would like to continue, q to quit or ` if you would like to start anew");
+                    "Enter an operation if you would like to continue, q to quit or ` if you would like to reset calculator");
             System.out.println();
 
         }
@@ -178,6 +180,12 @@ public class Display {
 
     public void resetMemory() {
         number1 = "0";
+    }
+
+    public void resetState(){
+
+        resetMemory();
+        new Display();
     }
 
     public void switchDisplayMode() {

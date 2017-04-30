@@ -59,4 +59,10 @@ public class BasicMath {
         return number1 * -1;
     }
 
+    public double inverseNumber(double number1) {
+        return Math.pow(number1,-1);
+    }
+
+
+
 }
