@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.apache.commons.lang3.math.NumberUtils;
 
 public class CalculatorTest {
 
@@ -98,7 +99,4 @@ public class CalculatorTest {
         //Then
         assertEquals("The negation of -6.7 is 6.7", "6.7", result);
     }
-
-
-
 }

@@ -10,7 +10,7 @@ public class InputReader {
     private Scanner sc;
 
     public InputReader(){
-    
+
         sc = new Scanner(System.in);
     }
 
