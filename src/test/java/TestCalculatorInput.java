@@ -31,23 +31,23 @@ public class TestCalculatorInput {
         @Test
         public void testUserOperator() {
             //: Given
-            char userOperator = '+';
-            char expectedOperator = '+';
+            String userOperator = "";
+            String expectedOperator = "+";
             //: When
-            char actualOperator = ci.userOperator(userOperator);
+            String actualOperator = ci.acceptUserOperator();
             //: Then
-            Assert.assertEquals("The expected user input is '+' ", actualOperator,expectedOperator);
+            Assert.assertEquals("The expected user input is \"+\" ", actualOperator,expectedOperator);
         }
         @Test
-        public void userInputValidator(){
+        public void testUserInputValidator(){
             //: Given
-            String userInput = "10.0";
-            double expectedInput = 10.0;
+            String userInput = "+";
+            double expectedInput = '+';
 
             //: When
-            double actualInput = ci.inputValidator(userInput);
+            double actualInput = ci.userInputValidator(userInput);
             //: Then
-            Assert.assertEquals("The expected result is the number 10.0.", expectedInput,actualInput,0);
+            Assert.assertEquals("The expected result is the number '+' ", expectedInput,actualInput,0);
         }
 
     }
