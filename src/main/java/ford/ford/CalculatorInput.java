@@ -53,8 +53,16 @@ public class CalculatorInput {
     public double acceptUserValue(){
         System.out.print("Enter a value: ");
         Scanner sc = new Scanner(in);
-        double userInputValue = Double.valueOf( sc.nextLine());
+        userInputValue = Double.valueOf(sc.nextLine());
         return userInputValue;
+    }
+
+    public double userValueInputValidator(double userInputValue){
+        if (userInputValue != Float.NaN) {
+            return userInputValue;
+        } else {
+            return Float.NaN;
+        }
     }
 
 

@@ -5,8 +5,11 @@ package ford.ford;
  */
 public class Calculator {
     public static void main(String[] args) {
+
         CalculatorInput calculatorInput = new CalculatorInput();
+
         calculatorInput.acceptUserOperator();
+
         calculatorInput.acceptUserValue();
 
     }

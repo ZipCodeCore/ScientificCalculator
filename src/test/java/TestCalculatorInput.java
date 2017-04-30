@@ -47,7 +47,20 @@ public class TestCalculatorInput {
             //: When
             double actualInput = ci.userInputValidator(userInput);
             //: Then
-            Assert.assertEquals("The expected result is the number '+' ", expectedInput,actualInput,0);
+            Assert.assertEquals("The expected result is the operator '+' ", expectedInput,actualInput,0);
+        }
+
+
+        @Test
+        public void testUserValueInputValidator(){
+            //: Given
+            double userInput = 10.0;
+            double expectedInput = userInput;
+
+            //: When
+            double actualInput = ci.userValueInputValidator(userInput);
+            //: Then
+            Assert.assertEquals("The expected result is the number 10.0 ", expectedInput,actualInput,0);
         }
 
     }
