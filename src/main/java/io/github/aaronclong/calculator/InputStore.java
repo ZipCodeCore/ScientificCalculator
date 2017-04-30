@@ -16,8 +16,12 @@ public class InputStore {
     public void add(InputBuffer element){
         oldInputs.add(element);
     }
-    
+
     public ArrayList<InputBuffer> getInput() {
         return (ArrayList<InputBuffer>) oldInputs.clone();
+    }
+
+    public void clear() {
+        oldInputs = new ArrayList<InputBuffer>();
     }
 }
