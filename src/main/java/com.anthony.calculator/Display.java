@@ -26,7 +26,7 @@ public class Display {
 
         setCurrentNumber(givenNumber);
         setNumber1(number1);
-        //chooseCorrectAmountOfNumbersToCalculate();
+        displayChoices();
         continuousRun();
 
 
@@ -58,8 +58,9 @@ public class Display {
 
     public void operationToSend() {
         if (choice.equals("q")) {
-            quitCalculator();
-            System.out.println("ASd");
+            isRunning=false;
+            continuousRun();
+
         } else {
             for (Operation enumLoop : operationOfEnum.values()) {
 
@@ -136,7 +137,7 @@ public class Display {
     public void continuousRun() {
 
         while (isRunning) {
-            displayChoices();
+
             operationChoice(choice);
             operationToSend();
 
@@ -151,11 +152,13 @@ public class Display {
             setCurrentNumber(givenNumber);
             setNumber2(number2);
             calculateAndSendAllNumbers();
-
             getCalculation();
-            quitCalculator();
             memoryHolder();
+            displayChoices();
+            quitCalculator();
         }
+
+        System.exit(01);
     }
 
     public void memoryHolder() {
@@ -164,11 +167,9 @@ public class Display {
     }
 
     public void quitCalculator() {
-        if(in.nextLine().equals("q")){
-            isRunning = false;
-        }else{
-            isRunning=true;
-        }
+
+          //  isRunning = false;
+
 
     }
 
