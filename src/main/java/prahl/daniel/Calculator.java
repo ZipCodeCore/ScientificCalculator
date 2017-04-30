@@ -6,11 +6,16 @@ package prahl.daniel;
 public class Calculator {
 
     private String display;
+    private float memory;
+    //private boolean isError; // flag not needed, just test for existing string "Err" in display
+    private boolean memoryOccupied;
 
     //constructor
     public Calculator(){
         clearDisplay();
+        memoryClear();
     }
+
 
     //core display methods
     public void clearDisplay(){
@@ -70,8 +75,45 @@ public class Calculator {
         }
     }
 
+    public void square(){
+        if( !isError() ){
+            setDisplay( (Float.parseFloat(getDisplay())) * Float.parseFloat(getDisplay()));
+        }
+    }
+
+    public void squareRoot(){
+        if( !isError() ){
+            setDisplay( (float) Math.sqrt(Float.parseFloat(getDisplay())) );
+        }
+    }
+
+    public void raiseTo(float operand){
+        if( !isError() ){
+            setDisplay( (float) Math.pow(Float.parseFloat(getDisplay()), operand) );
+        }
+    }
+
+
 
     //advanced math functions
+    public void memoryAdd(){
+        if( !isError() ) {
+            memory += Float.parseFloat(getDisplay());
+            memoryOccupied = true;
+        }
+    }
+
+    public void memoryClear(){
+        memory = 0.0f;
+        memoryOccupied = false;
+    }
+
+    public void memoryRecall(){
+        setDisplay(memory);
+    }
+
+
+
 
 
 

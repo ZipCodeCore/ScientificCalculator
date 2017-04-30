@@ -134,8 +134,8 @@ public class CalculatorTest {
     }
 
     //testing basic math functions
-    float a = 5;
-    float b = 10;
+    float a = 5.0f; // sample value for display
+    float b = 10.0f; // sample value for operand
 
     @Test
     public void testAdd(){
@@ -213,6 +213,131 @@ public class CalculatorTest {
 
         //then;
         Assert.assertTrue(expected == actual);
+
+    }
+
+    @Test
+    public void testSquare(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set display to 5 - also works with 0.0
+        float expected = 25.0f; // the product 5 times 5
+
+        //when;
+        ulator.square(); // should turn 5 into 25 on display
+        float actual = Float.parseFloat(ulator.getDisplay()); // get the current value in the display
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testSquareRoot(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(100.0f); // set display to 100
+        float expected = 10.0f; // 10 is the square root of 100
+
+        //when;
+        ulator.squareRoot(); // should return the square root of display
+        float actual = Float.parseFloat(ulator.getDisplay()); // get what display is now
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testRaiseTo(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set to 5
+        float expected = 9765625f; // 5 to the 10th
+
+        //when;
+        ulator.raiseTo(b); // raise current display to the 10th power
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+
+    // testing scientific functions
+    @Test
+    public void testMemoryAdd(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set display to 5
+        float expected = 5.0f; // value that should be added into memory
+
+        //when;
+        ulator.memoryAdd(); // should set memory to 5
+        ulator.clearDisplay(); // set display back to 0
+        ulator.memoryRecall(); // send current value in memory into display
+        float actual = Float.parseFloat(ulator.getDisplay()); //  get the current value in display
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testMemoryAddErr(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set display to 5
+        ulator.memoryAdd(); // set memory to 5
+        ulator.setError(); // set display to "Err"
+        float expected = 5.0f;// should not add 5 a second time
+
+        //when;
+        ulator.memoryAdd(); // attempt to add "Err" into memory, should remain 5
+        ulator.memoryRecall(); // move 5 in memory into display, clearing "Err"
+        float actual = Float.parseFloat(ulator.getDisplay()); // 5 from the display, sent from memory
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testMemoryClear(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set displayed value to 5
+        ulator.memoryAdd(); // add that same 5 to 0 already in memory
+        float expected = 0.0f; // what should return from memory after clearing
+
+
+        //when;
+        ulator.memoryClear(); // clear the memory
+        ulator.memoryRecall(); //  set display to whats currently in memory
+        float actual = Float.parseFloat(ulator.getDisplay()); // get current value in display
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testMemoryRecall(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set display to 5
+        ulator.memoryAdd(); // add 5 to memory
+        ulator.memoryAdd(); // add same 5 to memory again
+        float expected = 10.0f; // what should return from memory after adding display twice
+
+
+        //when;
+        ulator.memoryRecall(); // should send value in memory into display
+        float actual = Float.parseFloat(ulator.getDisplay()); // get current value in display
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
 
     }
 
