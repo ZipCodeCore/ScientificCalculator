@@ -4,12 +4,10 @@ package kim.christopher;
 public class Display {
 
     private String currentDisplay;
-    private String lastDisplay;
 
     public Display(){
 
         currentDisplay = "0";
-        lastDisplay = "0";
     }
 
     public void clearDisplay(){
@@ -17,7 +15,6 @@ public class Display {
         currentDisplay = "0";
         System.out.print("DISPLAY: ");
         show();
-
     }
 
     public void show(){
@@ -25,7 +22,7 @@ public class Display {
     }
 
     public void setDisplay(String newCurrent){
-        setLastDisplay(currentDisplay);
+
         currentDisplay = newCurrent;
         System.out.print("DISPLAY: ");
         show();
@@ -35,16 +32,16 @@ public class Display {
         return currentDisplay;
     }
 
-    public void setLastDisplay(String newLast){
-        lastDisplay = newLast;
+    public void displayError(){
+        System.out.println("DISPLAY: ERROR");
     }
 
-    public String getLastDisplay(){
-        return lastDisplay;
+    public void showInvalidOperator(String s){
+        System.out.println(s + " is not a valid operator, please try again");
     }
 
-
-
-
+    public void showInvalidNumber(String s){
+        System.out.println(s + " is not a number, please try again");
+    }
 
 }

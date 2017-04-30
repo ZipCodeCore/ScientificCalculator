@@ -7,12 +7,12 @@ import org.apache.commons.lang3.math.NumberUtils;
 public class Controller {
 
     Calculator calc;
-    Display display;
+    Display disp;
     InputReader reader;
 
     public Controller(){
         calc = new Calculator();
-        display = new Display();
+        disp = new Display();
         reader = new InputReader();
     }
 
@@ -30,40 +30,49 @@ public class Controller {
     void readInput(boolean quit){
 
         ArrayList<String> input = reader.readLine();
+        String first = input.get(0);
 
-        if(input.get(0).equals("quit")) {
+
+        if(first.equals("quit") || first.equals("q")) {
             quit = true;
             System.out.println("Goodbye!");
-        } else if (input.get(0).equals("clear")) {
+        } else if (first.equals("clear") || first.equals("c")) {
             reset();
-        } else if (input.get(0).equals("+")) {
-            display.setDisplay(calc.add(display.getDisplay(), input.get(1)));
-        } else if (input.get(0).equals("-")) {
-            display.setDisplay(calc.subtract(display.getDisplay(), input.get(1)));
-        } else if (input.get(0).equals("*")) {
-            display.setDisplay(calc.multiply(display.getDisplay(), input.get(1)));
-        } else if (input.get(0).equals("/")) {
-            if(calc.divide(display.getDisplay(), input.get(1)).equals("ERROR")){
-                System.out.println("DISPLAY: ERROR");
-            }
-            else display.setDisplay(calc.divide(display.getDisplay(), input.get(1)));
-        } else if(input.get(0).equals("negate")){
-            display.setDisplay(calc.negate(display.getDisplay()));
-        } else System.out.println("Invalid Operator, please try again");
+        } else if(first.equals("negate")){
+            disp.setDisplay(calc.negate(disp.getDisplay()));
+        }else if (first.equals("+")) {
+            if(calc.add(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                disp.displayError();
+            } else disp.setDisplay(calc.add(disp.getDisplay(), input.get(1)));
+        } else if (first.equals("-")) {
+            if(calc.subtract(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                disp.displayError();
+            } else disp.setDisplay(calc.subtract(disp.getDisplay(), input.get(1)));
+        } else if (first.equals("*")) {
+            if(calc.multiply(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                disp.displayError();
+            } else disp.setDisplay(calc.multiply(disp.getDisplay(), input.get(1)));
+        } else if (first.equals("/")) {
+            if (calc.divide(disp.getDisplay(), input.get(1)).equals("ERROR")) {
+                disp.displayError();
+            } else disp.setDisplay(calc.divide(disp.getDisplay(), input.get(1)));
+
+
+        }  else disp.showInvalidOperator(input.get(0));
     }
 
     void reset(){
 
         boolean quit = false;
-        display.clearDisplay();
+        disp.clearDisplay();
         String test = reader.readLine().get(0);
 
         while(!quit){
             if (!NumberUtils.isNumber(test)) {
-                System.out.println(test + " is not a number, please try again");
+                disp.showInvalidNumber(test);
                 test = reader.readLine().get(0);
             } else {
-                display.setDisplay(test);
+                disp.setDisplay(test);
                 quit = true;
             }
         }

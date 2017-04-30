@@ -30,6 +30,7 @@ public class CalculatorTest {
 
     }
 
+    @Test
     public void testAdditionWithoutParameter(){
 
         //Given
@@ -37,7 +38,6 @@ public class CalculatorTest {
         //When
 
         //Then
-
 
     }
 
@@ -47,13 +47,12 @@ public class CalculatorTest {
 
         //: Given
         String firstOperand = "5.0", secondOperand = "3.0";
-        String expectedResult = "2.0";
 
         //: When
-        String actualResult = controller.calc.subtract(firstOperand, secondOperand);
+        String result = controller.calc.subtract(firstOperand, secondOperand);
 
         //: Then
-        assertEquals("5 - 3 should equal 2", expectedResult, actualResult);
+        assertEquals("5 - 3 should equal 2", "2.0", result);
 
     }
 
@@ -62,13 +61,12 @@ public class CalculatorTest {
 
         //: Given
         String firstOperand = "5.0", secondOperand = "3.0";
-        String expectedProduct = "15.0";
 
         //: When
-        String actualProduct = controller.calc.multiply(firstOperand, secondOperand);
+        String result = controller.calc.multiply(firstOperand, secondOperand);
 
         //: Then
-        assertEquals("5 * 3 should equal 15", expectedProduct, actualProduct);
+        assertEquals("5 * 3 should equal 15", "15.0", result);
     }
 
     @Test
@@ -76,13 +74,12 @@ public class CalculatorTest {
 
         //: Given
         String firstOperand = "5.0", secondOperand = "3.0";
-        String expectedQuotient = "1.6666666666666667";
 
         //: When
-        String actualQuotient = controller.calc.divide(firstOperand, secondOperand);
+        String result = controller.calc.divide(firstOperand, secondOperand);
 
         //: Then
-        assertEquals("5 / 3 should be approximately 1.66667", expectedQuotient, actualQuotient);
+        assertEquals("5 / 3 should be approximately 1.6666666666666667", "1.6666666666666667", result);
     }
 
     @Test
@@ -98,6 +95,20 @@ public class CalculatorTest {
         assertEquals("Division by zero should result in an error", "ERROR", result);
 
     }
+
+    @Test
+    public void testExponentiation(){
+
+        //: Given
+        String firstOperand = "3", secondOperand = "3";
+
+        //: When
+        String result = controller.calc.power(firstOperand, secondOperand);
+
+        //: Then
+        assertEquals("", "27.0", result);
+    }
+
 
     @Test
     public void testNegation(){
@@ -125,4 +136,48 @@ public class CalculatorTest {
         assertEquals("The inverse of 2 is 0.5", "0.5", result);
 
     }
+
+    @Test
+    public void testSquare(){
+
+        //Given
+        String operand = "3";
+
+        //When
+        String result = controller.calc.square(operand);
+
+        //Then
+        assertEquals("The square of 3 is 9", "9.0", result);
+
+    }
+
+    @Test
+    public void testSqrt(){
+
+        //Given
+        String operand = "9";
+
+        //When
+        String result = controller.calc.sqrt(operand);
+
+        //Then
+        assertEquals("The square root of 9 is 3", "3.0", result);
+
+    }
+
+    @Test
+    public void testSqrtNegative() {
+
+        //Given
+        String operand = "-9";
+
+        //When
+        String result = controller.calc.sqrt(operand);
+
+        //Then
+        assertEquals("The square root of a negative number should be NaN", "NaN", result);
+    }
+
+
+
 }
