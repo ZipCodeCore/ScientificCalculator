@@ -7,34 +7,45 @@ import java.util.Scanner;
  */
 public class UserInput {
 
-
-    Scanner in = new Scanner(System.in);
-
-
-    public void print() {
-
-
-        System.out.println("Enter first number: ");
-        double firstOperand = in.nextDouble();
-        System.out.println("Operators available are add, subtract, multiply, divide");
-        System.out.println("Enter operator: ");
-        String OpCode = in.next();
-        System.out.println("Enter second number: ");
-        double secondOperand = in.nextDouble();
-
-        System.out.println(firstOperand + " " + OpCode + " " + secondOperand);
-    }
-
+//
+//    Scanner in = new Scanner(System.in);
 //    double firstOperand;
-//    public void setFirstOperand (double firstOperand) {
-//        this.firstOperand = firstOperand;
-//
 //    double secondOperand;
-//    public void setSecondOperand (double secondOperand) {
-//        this.secondOperand = secondOperand;
-//
 //    String opCode;
-//    public void setOpCode (String opCode) {
-//        this.opCode = OpCode;
+//
+//
+//    public void print() {
+//
+//
+//        System.out.println("Enter first number: ");
+//        firstOperand = in.nextDouble();
+//        System.out.println("Operators available are add, subtract, multiply, divide");
+//        System.out.println("Enter operator: ");
+//        opCode = in.next();
+//        System.out.println("Enter second number: ");
+//        secondOperand = in.nextDouble();
+//
+//        System.out.println(firstOperand + " " + opCode + " " + secondOperand);
+//
 //    }
+//
+//
+////    public void setFirstOperand (double firstOperand) {this.firstOperand = firstOperand}
+////    public void setSecondOperand (double secondOperand) {this.secondOperand = secondOperand}
+////    public void setOpCode (String opCode) {this.opCode = opCode}
+//
+//    public double getFirstOperand(){
+//        return firstOperand;
+//    }
+//
+//    public double getSecondOperand(){
+//        return secondOperand;
+//    }
+//
+//    public String getOpCode(){
+//        return opCode;
+//    }
+
+
+
 }

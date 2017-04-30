@@ -8,18 +8,15 @@ public class CalcInitializer {
 
 
     public static void main(String[] args) {
-        UserInput input = new UserInput();
+
         Calculator calculator = new Calculator();
-        MathEquations equations = new MathEquations();
         DisplayScreen currentDisplay = new DisplayScreen();
 
         currentDisplay.displayDefault();
-        input.print();
+        calculator.print();
         calculator.calculate();
-        currentDisplay.displayResult();
-
+        //currentDisplay.displayResult();
 
     }
-
 
 }

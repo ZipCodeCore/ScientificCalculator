@@ -12,8 +12,8 @@ public class DisplayScreen {
         System.out.println("0");
     }
 
-    public void displayResult(){
-       System.out.println("Answer: " + calculator.getResult());
-    }
+//    public void displayResult(){
+//       System.out.println("Answer: " + calculator.result);
+//    }
 
 }

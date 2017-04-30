@@ -1,5 +1,6 @@
 package banuelos.aurora;
 
+import java.util.Scanner;
 
 /**
  * Created by aurorabanuelos on 4/29/17.
@@ -8,50 +9,65 @@ package banuelos.aurora;
 
 public class Calculator {
 
-
-    UserInput input = new UserInput();
     MathEquations equation = new MathEquations();
     double result;
 
-//    double firstOperand;
-//    double secondOperand;
-//    String opCode;
-//
-//    public void setFirstOperand (double firstOperand) {this.firstOperand = firstOperand}
-//    public void setSecondOperand (double secondOperand) {this.secondOperand = secondOperand}
-//    public void setFirstOperand (String opCode) {this.opCode = opCode}
+    Scanner in = new Scanner(System.in);
+    double firstOperand;
+    double secondOperand;
+    String opCode;
 
 
 
-public void calculate(){
+        public void print () {
 
-    String opCode = input.in.next();
 
-    switch (opCode.toLowerCase()){
+        System.out.println("Enter first number: ");
+        firstOperand = in.nextDouble();
+        System.out.println("Operators available are add, subtract, multiply, divide");
+        System.out.println("Enter operator: ");
+        opCode = in.next();
+        System.out.println("Enter second number: ");
+        secondOperand = in.nextDouble();
+
+    }
+
+
+public void calculate() {
+
+    String operator = opCode;
+
+    switch (operator.toLowerCase()){
         case "add":
-            result = equation.add(input.in.nextDouble(),input.in.nextDouble());
+            result = equation.add(firstOperand, secondOperand);
+            System.out.println("Answer: " + result);
             break;
 
         case "subtract":
-            result = equation.subtract(input.in.nextDouble(),input.in.nextDouble());
+            result = equation.subtract(firstOperand, secondOperand);
+            System.out.println("Answer: " + result);
             break;
 
         case "multiply":
-            result = equation.multiply(input.in.nextDouble(),input.in.nextDouble());
+            result = equation.multiply(firstOperand, secondOperand);
+            System.out.println("Answer: " + result);
             break;
 
         case "divide":
-            result = equation.divide(input.in.nextDouble(),input.in.nextDouble());
+            result = equation.divide(firstOperand, secondOperand);
+            System.out.println("Answer: " + result);
             break;
 
         default:
+
     }
 }
 
 
-    public double getResult(){
-            return result;
-    }
+//    public double getResult(){
+//            return result;
+//    }
+
 
 
 }
