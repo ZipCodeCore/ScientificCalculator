@@ -20,4 +20,25 @@ public class BasicMath {
     public static double subtract(double x, double y) {
         return x - y;
     }
+
+    public static double findOperation(String symbol, double x, double y) {
+        double value;
+        switch (symbol.charAt(0)) {
+            case '+':
+                value = addition(x, y);
+                break;
+            case '-':
+                value = subtract(x, y);
+                break;
+            case '*':
+                value = multiply(x, y);
+                break;
+            case '/':
+                value = division(x, y);
+                break;
+            default:
+                value = Double.NaN;
+        }
+        return value;
+    }
 }

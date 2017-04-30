@@ -12,7 +12,7 @@ public enum Lexer {
         description = value;
     }
 
-    public static String analize(char c) {
+    public static String analyze(char c) {
         String type = "";
         if (Character.isDigit(c)) type = Lexer.NUMBER.name();
         else if (c == ',' || c == '.') Lexer.NUMBER.name();

@@ -40,4 +40,12 @@ public class BasicMathTest {
         Assert.assertEquals("Confirming two doubles can be subtracted", 3.0, BasicMath.subtract(4.0, 1.0), .003);
     }
 
+    @Test
+    public void testFindOperation() {
+        Assert.assertEquals("Testing findOperation addition", 5.0, BasicMath.findOperation("+", 3.0, 2.0), .003);
+        Assert.assertEquals("Testing findOperation subtraction", 7.0, BasicMath.findOperation("-", 10.0, 3.0), .003);
+        Assert.assertEquals("Testing findOperation multiplication", 15.0, BasicMath.findOperation("*", 3.0, 5.0), .003);
+        Assert.assertEquals("Testing findOperation division", 9.0, BasicMath.findOperation("/", 18.0, 2.0), .003);
+    }
+
 }
