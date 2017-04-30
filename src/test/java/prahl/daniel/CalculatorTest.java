@@ -264,6 +264,39 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    public void testInverse(){
+        //given:
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set the display to 5
+        float expected = 0.2f; // 1 / 5 = .2
+
+        //when:
+        ulator.inverse(); // should return 1 divided by 5
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then:
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testSwitchSign(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set to 5
+        float expected = -5.0f; // only the sign will be flipped
+
+        //when;
+        ulator.switchSign(); // attempt to change only the sign of the value in display
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+    
+
 
     // testing scientific functions
     @Test

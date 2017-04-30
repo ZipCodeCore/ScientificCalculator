@@ -93,6 +93,17 @@ public class Calculator {
         }
     }
 
+    public void inverse(){
+        if( !isError() ){
+            setDisplay( 1 / Float.parseFloat(getDisplay()) );
+        }
+    }
+
+    public void switchSign(){
+        if( !isError() ){
+            setDisplay( -1.0f * Float.parseFloat(getDisplay()) );
+        }
+    }
 
 
     //advanced math functions
