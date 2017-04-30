@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58a43147-446c-440c-bc1b-09c044bcda07" name="Default" comment="" />
+    <list default="true" id="58a43147-446c-440c-bc1b-09c044bcda07" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/haas/justin/Display.java" afterPath="$PROJECT_DIR$/src/main/java/haas/justin/Display.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,91 +19,101 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Display.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding>
-                <element signature="e#125#126#0" expanded="true" />
-                <element signature="e#160#161#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Input.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Input.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding>
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#221#222#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#291#292#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Calculate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Calculate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-              <folding>
-                <element signature="e#132#133#0" expanded="true" />
-                <element signature="e#158#159#0" expanded="true" />
-                <element signature="e#200#201#0" expanded="true" />
-                <element signature="e#226#227#0" expanded="true" />
-                <element signature="e#271#272#0" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#402#403#0" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#483#484#0" expanded="true" />
-                <element signature="e#520#521#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestMain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/haas/justin/TestMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5383895">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pom.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Display.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#125#126#0" expanded="true" />
+                    <element signature="e#160#161#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Input.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Input.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#185#186#0" expanded="true" />
+                    <element signature="e#221#222#0" expanded="true" />
+                    <element signature="e#255#256#0" expanded="true" />
+                    <element signature="e#291#292#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Calculate.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Calculate.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#132#133#0" expanded="true" />
+                    <element signature="e#158#159#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestMain.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/haas/justin/TestMain.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="TestMain.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/haas/justin/TestMain.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -128,11 +141,11 @@
         <option value="$PROJECT_DIR$/src/main/java/haas/justin/Subtraction.java" />
         <option value="$PROJECT_DIR$/src/main/java/haas/justin/Scientific.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/haas/justin/Display.java" />
         <option value="$PROJECT_DIR$/src/main/java/haas/justin/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/haas/justin/Input.java" />
         <option value="$PROJECT_DIR$/src/main/java/haas/justin/Calculate.java" />
         <option value="$PROJECT_DIR$/src/test/java/haas/justin/TestMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/haas/justin/Display.java" />
       </list>
     </option>
   </component>
@@ -143,16 +156,14 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="-90" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -166,8 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -262,6 +271,65 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="project-1-calculator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="project-1-calculator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="test/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="haas/justin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="project-1-calculator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="main/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="haas/justin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -277,7 +345,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TestMain">
     <configuration default="false" name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -773,8 +841,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestMain" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestMain" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
         <item index="2" class="java.lang.String" itemvalue="Application.Subtraction" />
         <item index="3" class="java.lang.String" itemvalue="Application.Multiplication" />
         <item index="4" class="java.lang.String" itemvalue="Application.Calculator" />
@@ -792,7 +860,8 @@
       <option name="presentableId" value="Default" />
       <updated>1493421580428</updated>
       <workItem from="1493421585215" duration="5028000" />
-      <workItem from="1493433220790" duration="20702000" />
+      <workItem from="1493433220790" duration="20824000" />
+      <workItem from="1493513822945" duration="465000" />
     </task>
     <servers />
   </component>
@@ -815,32 +884,34 @@
     <history-entry file="TestMain - 2017.04.29 at 19h 00m 03s.xml">
       <configuration name="TestMain" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestMain - 2017.04.29 at 21h 01m 05s.xml">
+      <configuration name="TestMain" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25730000" />
+    <option name="totallyTimeSpent" value="26317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-90" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32720232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32669324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45111325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45019922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16614583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.165625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -852,6 +923,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -904,13 +976,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Addition.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -918,59 +990,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/haas/justin/TestMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Subtraction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Addition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Multiplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Scientific.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="180">
           <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
             <element signature="e#125#126#0" expanded="true" />
@@ -981,7 +1003,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Input.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="210">
           <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
             <element signature="e#185#186#0" expanded="true" />
@@ -999,16 +1021,6 @@
           <folding>
             <element signature="e#132#133#0" expanded="true" />
             <element signature="e#158#159#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1023,10 +1035,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Addition.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/haas/justin/TestMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Subtraction.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Addition.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Multiplication.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Scientific.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/haas/justin/TestMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Calculate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#132#133#0" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#125#126#0" expanded="true" />
+            <element signature="e#160#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Input.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/haas/justin/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="30">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding />
         </state>
       </provider>
