@@ -16,7 +16,6 @@ public class ErrorChecksTest {
 
         //Then:
         Assert.assertTrue(actualResults);
-
     }
 
 }

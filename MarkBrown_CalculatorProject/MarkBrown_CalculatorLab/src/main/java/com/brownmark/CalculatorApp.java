@@ -53,6 +53,12 @@ public class CalculatorApp {
             if (operator.equals("e")) {
                 break;
             }
+            if(calculationFeed.checkForMatchingUnaryOperator(operator)) {
+                double unaryCalculationResult = calculationFeed.sendInputsThroughFeed(storedMemory.returnStoredNumber(), operator);
+                storedMemory.pushNumberToStorage(unaryCalculationResult);
+                calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
+                continue;
+            }
             calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
 
 
@@ -78,8 +84,12 @@ public class CalculatorApp {
             }
 
 
-            double newResult = calculationFeed.sendInputsThroughFeed(storedMemory.returnStoredNumber(), operator, operandTwoNumber);
-            storedMemory.pushNumberToStorage(newResult);
+            double binaryCalculationResult = calculationFeed.sendInputsThroughFeed(storedMemory.returnStoredNumber(), operator, operandTwoNumber);
+            if (Double.isNaN(binaryCalculationResult)) {
+                System.out.println("Err. Not Valid Operator.");
+                continue;
+            }
+            storedMemory.pushNumberToStorage(binaryCalculationResult);
             calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
 
 

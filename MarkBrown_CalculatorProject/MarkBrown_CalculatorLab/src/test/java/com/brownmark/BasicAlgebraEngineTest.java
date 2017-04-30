@@ -90,7 +90,7 @@ public class BasicAlgebraEngineTest {
     }
 
     @Test
-    public void testReciprical() {
+    public void testReciprocal() {
 
         //Given:
         double operand1 = 10;
@@ -98,7 +98,7 @@ public class BasicAlgebraEngineTest {
         double expectedOutput = 0.1;
 
         //When:
-        double actualOutput = basicAlgebraEngine.recipricol(operand1);
+        double actualOutput = basicAlgebraEngine.reciprocal(operand1);
 
         //Then:
         Assert.assertEquals(expectedOutput, actualOutput,0.0001);

@@ -7,7 +7,7 @@ public class BasicAlgebraEngine {
     public BasicAlgebraEngine() {}
 
     public double square (double operandOne) {return operandOne * operandOne;}
-    public double recipricol (double operanOne) {return (1 / operanOne);}
+    public double reciprocal (double operanOne) {return (1 / operanOne);}
 
     public double add (double operandOne, double operandTwo) {return operandOne + operandTwo;}
     public double subtract (double operandOne, double operandTwo) {return operandOne - operandTwo;}
