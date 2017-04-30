@@ -4,7 +4,6 @@
 public class Controller
 {
     DisplayOperation examples = new DisplayOperation();
-    Input ex = new Input();
 
     public static void main (String[] args)
     {
@@ -24,6 +23,10 @@ public class Controller
         examples.variableExp(8);
         examples.squareRoot();
         examples.invert();
+        System.out.println(examples.display());
+        examples.setMode("binary");
+        System.out.println(examples.getMode());
+        System.out.println(examples.displayModeNum());
         System.out.println(examples.display());
 
 

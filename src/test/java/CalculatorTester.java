@@ -86,5 +86,76 @@ public class CalculatorTester
         Assert.assertEquals(expected, answer, 0);
     }
 
+    @Test
+    public void testSquare()
+    {
+        //given
+        double val1 = 3;
+        double expected = val1 * val1;
+
+        //when
+        double actual = calc.square(val1);
+
+        //then
+        Assert.assertEquals(expected, actual,0);
+    }
+
+    @Test
+    public void testSquareRoot()
+    {
+        //given
+        double val1 = 9;
+        double expected = 3;
+
+        //when
+        double actual = calc.squareRoot(val1);
+
+        //then
+        Assert.assertEquals(expected, actual, 0);
+
+    }
+
+    @Test
+    public void testVariableExp()
+    {
+        //given
+        double val1 = 3;
+        double val2 = 8;
+        double expected = Math.pow(val1, val2);
+
+        //when
+        double acutal = calc.variableExp(val1, val2);
+
+        //then
+        Assert.assertEquals(expected, acutal, 0);
+    }
+
+    @Test
+    public void testInverse()
+    {
+        //given
+        double val1 = 8;
+        double expected = 1 / val1;
+
+        //when
+        double actual = calc.inverse(val1);
+
+        //then
+        Assert.assertEquals(expected, actual, 0);
+    }
+
+    @Test
+    public void testInvert()
+    {
+        //given
+        double val1 = 8;
+        double expected = val1 * -1;
+
+        //when
+        double actual = calc.invert(val1);
+
+        //then
+        Assert.assertEquals(expected, actual, 0);
+    }
 
 }

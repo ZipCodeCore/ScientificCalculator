@@ -22,6 +22,8 @@ public class DisplayOperation
         return displayer.display();
     }
 
+
+
     public double add(double input)
     {
         double d = calc.add(displayer.getCurrentNum(),input);
@@ -88,25 +90,37 @@ public class DisplayOperation
 
 
 
-    public double operation(String op, double x)
-    {
-        if(op.equalsIgnoreCase("ADD"))
-        {
-            return add(x);
-        }
-        else if(op.equalsIgnoreCase("DIVIDE"))
-        {
-            return divide(x);
-        }
-
-        return displayer.getCurrentNum();
-
-    }
+//    public double operation(String op, double x)
+//    {
+//        if(op.equalsIgnoreCase("ADD"))
+//        {
+//            return add(x);
+//        }
+//        else if(op.equalsIgnoreCase("DIVIDE"))
+//        {
+//            return divide(x);
+//        }
+//
+//        return displayer.getCurrentNum();
+//
+//    }
 
     public String getMode()
     {
-        return displayer.displayMode();
+        return displayer.displayCurrentMode();
     }
+
+    public void setMode(String mode)
+    {
+        displayer.switchDisplayMode(mode);
+    }
+
+    public String displayModeNum()
+    {
+        return displayer.displayModeNum();
+    }
+
+
 
 
 

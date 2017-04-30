@@ -31,8 +31,12 @@ public class Display
             return "Err";
         }
         else
+        {
             return String.valueOf(currentNum);
+        }
     }
+
+
 
     private int count = 2;
     private String[] modes = {"binary", "octal", "decimal", "hexadecimal"};
@@ -45,13 +49,37 @@ public class Display
         }
     }
 
-    public void switchDisplayMode(String mode) {
+    public void switchDisplayMode(String mode)
+    {
         this.count = Arrays.asList(modes).indexOf(mode);
     }
 
-    public String displayMode()
+    public String displayCurrentMode()
     {
         return modes[count];
+    }
+
+    public String displayModeNum()
+    {
+        String value;
+        switch (displayCurrentMode())
+        {
+            case "binary":
+                value = Integer.toBinaryString((int)getCurrentNum());
+                break;
+            case "octal":
+                value = Integer.toOctalString((int)getCurrentNum());
+                break;
+            case "decimal":
+                value = display();
+                break;
+            case "hexadecimal":
+                value = Integer.toHexString((int)getCurrentNum());
+                break;
+            default:
+                value = display();
+        }
+        return value;
     }
 
 
