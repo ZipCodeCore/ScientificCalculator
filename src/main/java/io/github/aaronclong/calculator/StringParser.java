@@ -16,7 +16,7 @@ public class StringParser {
     private StringParser(String inputVal) {
         input = inputVal;
         lexed = new ArrayList<String>();
-        iterator();
+        Lexer.iterator(input, lexed);
         parse();
     }
 
@@ -70,27 +70,4 @@ public class StringParser {
             previous = currentValue;
         }
     }
-
-    private void iterator() {
-        StringBuilder cur = new StringBuilder(20);
-        String type = null;
-        for (char i : input.toCharArray()) {
-            String lexerResult = Lexer.analyze(i);
-            if (type == null) {
-                type = lexerResult;
-                cur.append(i);
-            }
-            else if (!type.equals(lexerResult)) {
-                String lex = String.format("%s %s", type, cur.toString());
-                lexed.add(lex);
-                cur = new StringBuilder(20);
-                cur.append(i);
-                type = lexerResult;
-            }
-            else cur.append(i);
-        }
-        String lex = String.format("%s %s", type, cur.toString());
-        lexed.add(lex);
-    }
-
 }
