@@ -18,7 +18,6 @@ public class Calculator {
     String opCode;
 
 
-
         public void print () {
 
 
@@ -34,7 +33,6 @@ public class Calculator {
         }
         System.out.println("Enter second number: ");
         secondOperand = in.nextDouble();
-
 
     }
 
@@ -94,10 +92,6 @@ public void calculate() {
     }
 }
 
-
-//    public double getResult(){
-//            return result;
-//    }
 
 
 

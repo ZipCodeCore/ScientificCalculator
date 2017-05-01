@@ -11,13 +11,16 @@ public class MathEquations {
         return firstOperand + secondOperand;
     }
 
+
     public double subtract(double firstOperand, double secondOperand) {
         return firstOperand - secondOperand;
     }
 
+
     public double multiply(double firstOperand, double secondOperand) {
         return firstOperand * secondOperand;
     }
+
 
     public double divide(double firstOperand, double secondOperand) {
         if (secondOperand == 0) {
@@ -26,6 +29,7 @@ public class MathEquations {
             return firstOperand / secondOperand;
         }
     }
+
 
     public double exponent(double firstOperand, double secondOperand) {
          if(firstOperand == 0 && secondOperand < 0) {
@@ -36,7 +40,9 @@ public class MathEquations {
          }
     }
 
+
     public double square(double firstOperand) {return Math.pow(firstOperand, 2.0);}
+
 
     public double squareRoot(double firstOperand) {
         if (firstOperand <0) {
@@ -47,6 +53,7 @@ public class MathEquations {
         }
     }
 
+
     public double inverse(double firstOperand) {
         if (firstOperand == 0) {
             return Double.NaN;
@@ -55,6 +62,7 @@ public class MathEquations {
             return 1 / firstOperand;
         }
     }
+
 
     public double switchSign(double firstOperand) {return firstOperand * -1;}
 

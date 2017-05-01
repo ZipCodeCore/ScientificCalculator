@@ -12,13 +12,15 @@ public class CalcInitializer {
         Calculator calculator = new Calculator();
         DisplayScreen currentDisplay = new DisplayScreen();
 
-        do {
+
 
             currentDisplay.displayDefault();
+        do {
             calculator.print();
             calculator.calculate();
-            //currentDisplay.displayResult();
+            currentDisplay.continueUse();
         }
+        while(currentDisplay.continueOrExit.equalsIgnoreCase("Y"));
     }
 
 }
