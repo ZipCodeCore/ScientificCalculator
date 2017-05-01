@@ -36,6 +36,8 @@ public class StringParser {
         private double previous;
         private double currentValue;
         private String basicOperation;
+        private String functionOperation;
+        private String functionState;
 
         public ParseObject() {
             for (String instruction : lexed) {
@@ -47,6 +49,11 @@ public class StringParser {
                 else if (details[0].equals(Lexer.BASICOP.name())) {
                     basicOperationHandler(details[1]);
                 }
+                else if (details[0].equals(Lexer.TRIG.name())) {
+                    trigHandler(details[1]);
+                }
+                else if (details[0].equals(Lexer.BEGIN.name())) functionState = Lexer.BEGIN.name();
+                else if (details[0].equals(Lexer.END.name())) runFunction();
             }
         }
 
@@ -68,6 +75,15 @@ public class StringParser {
         private void basicOperationHandler(String operation) {
             basicOperation = operation;
             previous = currentValue;
+        }
+
+        private void trigHandler(String operation) {
+            functionOperation = operation;
+        }
+
+        private void runFunction() {
+            functionState = null;
+            currentValue = TrigFunctions.process(functionOperation, currentValue);
         }
     }
 }

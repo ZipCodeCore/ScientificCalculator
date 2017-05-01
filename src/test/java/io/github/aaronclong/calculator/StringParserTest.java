@@ -19,4 +19,10 @@ public class StringParserTest {
         Assert.assertEquals("Confirming string conversion for multiplication", 32.0, parserMultiplication.getValue(), .003);
         Assert.assertEquals("Confirming string conversion for subtraction", 9.0, parserDivision.getValue(), .003);
     }
+
+    @Test
+    public void testTrigFunctionExpression() {
+        StringParser parserAddition = StringParser.makeStringParser("sin(7)");
+        Assert.assertEquals("Confirming trig sn function run", 0.121869343405, parserAddition.getValue(), .003);
+    }
 }
