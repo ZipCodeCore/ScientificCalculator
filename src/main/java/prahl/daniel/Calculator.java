@@ -8,12 +8,16 @@ public class Calculator {
     private String display;
     private float memory;
     //private boolean isError; // flag not needed, just test for existing string "Err" in display
-    private boolean memoryOccupied;
+    private String displayMode; // broken, able to be set but not yet used // Enum may fit better here
+    private boolean memoryOccupied; // flag not yet used
+    private boolean inRadians; // broken, able to be set but not yet used
 
     //constructor
     public Calculator(){
         clearDisplay();
+        switchDisplayMode("decimal");
         memoryClear();
+        switchUnitsMode("radians");
     }
 
 
@@ -109,6 +113,28 @@ public class Calculator {
 
 
     // advanced math functions
+    // switch display mode (binary, octal, decimal, hexadecimal)
+
+    /*
+    public void switchDisplayMode(){
+        // todo
+    }
+    */
+
+    // broken because displayMode is not yet used
+    public void switchDisplayMode(String mode){
+        if(mode == "binary" || mode == "octal" || mode == "decimal" || mode == "hexadecimal") {
+            displayMode = mode;
+        }else{
+            System.out.println("Error - input not recognized as displayMode, current mode: " + getDisplayMode());
+        }
+    }
+
+    public String getDisplayMode(){
+        return displayMode;
+    }
+
+
     // memory slot
     public void memoryAdd(){
         if( !isError() ) {
@@ -164,12 +190,42 @@ public class Calculator {
         }
     }
 
+    // Switch Trig Units Mode
+    public boolean isInRadians(){
+        return inRadians;
+    }
 
+    public void switchUnitsMode(){
+        inRadians = !inRadians;
+    }
+
+    // ugly method - needs reworking
+    public void switchUnitsMode(String mode){
+        if(mode == "Radians" || mode == "radians" || mode == "rad" || mode == "r") {
+            inRadians = true;
+        }else if(mode == "Degrees" || mode == "degrees" || mode == "deg" || mode == "d"){
+            inRadians = false;
+        }else {
+            System.out.println("Error - trig units must be labeled as <Degrees> or <Radians>");
+        }
+    }
+
+
+    /* PLACEHOLDERS ONLY - NOT YET IMPLEMENTED todo
     // Logarithmic functions
+    float e = 2.718f; // base for natural logarithm
+
+    public void log(){}
+
+    public void inverseLog(){} // base 10
+
+    public void naturalLog(){} // base e ~2.718
+
+    public void inverseNaturalLog(){}
+    */
 
 
     // Factorial
-
     public void factorial(){
         if( !isError()) {
             float sum = 1.0f;

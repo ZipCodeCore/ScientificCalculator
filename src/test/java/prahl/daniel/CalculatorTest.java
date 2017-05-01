@@ -300,6 +300,51 @@ public class CalculatorTest {
 
     // testing scientific functions
     @Test
+    public void testSwitchDisplayMode(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        String initial = ulator.getDisplayMode();
+
+        //when;
+        ulator.switchDisplayMode("binary"); // attempt to change displayMode
+        String actual = ulator.getDisplayMode(); // store displayMode into variable to compare
+
+        //then;
+        Assert.assertTrue(initial != actual); // verify they are not equal
+
+    }
+
+    @Test
+    public void testSwitchDisplayModeErr(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        String initial = ulator.getDisplayMode();
+
+        //when;
+        ulator.switchDisplayMode("quadral"); // attempt to change displayMode to ineligible mode
+        String actual = ulator.getDisplayMode(); // store displayMode into variable to compare
+
+        //then;
+        Assert.assertTrue(initial == actual); // verify the initial value was not changed
+
+    }
+
+    @Test
+    public void testGetDisplayMode(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        String expected = "binary"; // the expected return string
+        ulator.switchDisplayMode(expected); // set the displayMode
+
+        //when;
+        String actual = ulator.getDisplayMode(); //attempt to get the displayMode
+
+        //then;
+        Assert.assertTrue(expected == actual);
+
+    }
+
+    @Test
     public void testMemoryAdd(){
         //given;
         ulator = new Calculator(); // create fresh instance
@@ -477,6 +522,49 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    public void testIsInRadians(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.switchUnitsMode("Radians"); // ensure inRadians is set to true
+
+        //when;
+        boolean actual = ulator.isInRadians(); // check if inRadians is true and store in actual
+
+        //then;
+        Assert.assertTrue(actual); // test actual for expected true
+
+    }
+
+    @Test
+    public void testSwitchUnitsMode(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+
+        //when;
+        ulator.switchUnitsMode("Degrees"); // attempt to set inRadians to false
+        boolean actual = ulator.isInRadians(); // store value of inRadians
+
+        //then;
+        Assert.assertFalse(actual); // verify inRadians was set to false
+
+    }
+
+    @Test
+    public void testSwitchUnitsModeNoArg(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        boolean initial = ulator.isInRadians(); // store true into varable for later comparison
+
+        //when;
+        ulator.switchUnitsMode(); // attempt to switch from true to false
+        boolean actual = ulator.isInRadians(); // store current boolean value
+
+        //then:
+        Assert.assertTrue(initial != actual); // compare initial to current to verify inequality
+
+    }
+
 
     // testing factorial function
     @Test
@@ -487,7 +575,7 @@ public class CalculatorTest {
         float expected = 120.0f; // factorial of 5
 
         //when;
-        ulator.factorial(); // should try to multiply 5 times 4 times 3 times 2
+        ulator.factorial(); // should try to multiply 5 times 4 times 3 times 2 (times 1)...redundant
         float actual = Float.parseFloat(ulator.getDisplay());
 
         //then;
