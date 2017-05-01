@@ -23,6 +23,7 @@ public class StringParserTest {
     @Test
     public void testTrigFunctionExpression() {
         StringParser parserAddition = StringParser.makeStringParser("sin(7)");
-        Assert.assertEquals("Confirming trig sn function run", 0.121869343405, parserAddition.getValue(), .003);
+        double testValue = Math.sin(7);
+        Assert.assertEquals("Confirming trig sn function run", testValue, parserAddition.getValue(), .003);
     }
 }

@@ -70,6 +70,10 @@ public enum Lexer {
                 list.add(String.format("%s ", Lexer.BEGIN.name()));
             }
             else if (i == ')') {
+                String lex = String.format("%s %s", type, data.toString());
+                list.add(lex);
+                type = null;
+                data = new StringBuilder();
                 list.add(String.format("%s ", Lexer.END.name()));
             }
         }
