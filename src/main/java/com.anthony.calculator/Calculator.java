@@ -7,7 +7,6 @@ public class Calculator {
 
     private BasicMath basicMath = new BasicMath();
     private TrigMath trigMath = new TrigMath();
-    private Memory holderOfMemory = new Memory();
     private double number1;
     private double number2;
     private double result;
@@ -98,9 +97,6 @@ public class Calculator {
         }
     }
 
-    public void sendNumberToMemory() {
-        holderOfMemory.addToMemory(number1);
-    }
 
 
     public Double getResult() {

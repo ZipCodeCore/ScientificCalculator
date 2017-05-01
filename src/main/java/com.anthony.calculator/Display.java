@@ -24,7 +24,7 @@ public class Display {
         setCurrentNumber(givenNumber);
         setFirstNumber(firstNumber);
         displayChoices();
-        continouslyRunCalculator();
+        continuouslyRunCalculator();
     }
 
     private void startingCalculatorDisplay() {
@@ -48,7 +48,7 @@ public class Display {
     }
 
     private void operationChoice(String choice) {
-        choice = input.nextLine().replaceAll("\\s","");
+        choice = input.nextLine().replaceAll("\\s", "");
         this.operationOfChoice = choice.trim();
     }
 
@@ -58,10 +58,10 @@ public class Display {
 
             case "q":
                 isCalculatorRunning = false;
-                continouslyRunCalculator();
+                continuouslyRunCalculator();
                 break;
 
-            case "`":
+            case "r":
                 clearDisplay();
                 resetState();
                 break;
@@ -125,13 +125,13 @@ public class Display {
         } else {
             System.out.println();
             System.out.println("The answer is " + calculator.getResult() + "\n" +
-                    " \nEnter an operation if you would like to continue, q to quit or ` if you would like to reset calculator");
+                    " \nEnter an operation if you would like to continue, 'q' to quit or 'r' if you would like to reset calculator");
             System.out.println();
 
         }
     }
 
-    private void continouslyRunCalculator() {
+    private void continuouslyRunCalculator() {
         while (isCalculatorRunning) {
             operationChoice(operationOfChoice);
             methodOfOperation();
@@ -142,7 +142,7 @@ public class Display {
                 ifOnlyOneNumber = false;
                 memoryHolder();
                 displayChoices();
-                continouslyRunCalculator();
+                continuouslyRunCalculator();
             }
 
             setCurrentNumber(givenNumber);
