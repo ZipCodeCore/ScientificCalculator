@@ -1,6 +1,7 @@
 package com.brownmark;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
+
+
 
 public class CalculatorApp {
 
@@ -80,7 +81,7 @@ public class CalculatorApp {
                     storedMemory.incrementCalculationCount();
                 }
                 else {
-                    calculatorDisplay.displayInvalidOperator();
+                    calculatorDisplay.displayInvalidInput();
                     calculatorDisplay.defaultDisplay();
                     continue;
                 }
