@@ -35,21 +35,23 @@ public class CalculatorDisplayModeTest {
         //Given
         CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
         calculatorDisplayMode.switchDisplayMode(2);
-        String expected = "0100000001000110111001111010111000010100011110101110000101001000";
+        String expected = "1000.001";
         //When
-        String actual = calculatorDisplayMode.toDisplayMode(45.81);
+        String actual = calculatorDisplayMode.toDisplayMode(8.125);
         //Then
         Assert.assertEquals("binary conversion test", expected, actual);
     }
 
+
+    //This method doesn't work.
     @Test
     public void toDisplayOctalTest() {
         //Given
         CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
         calculatorDisplayMode.switchDisplayMode(3);
-        String expected = "-144.063146314631463";
+        String expected = "110.5";
         //When
-        String actual = calculatorDisplayMode.toDisplayMode(-100.1);
+        String actual = calculatorDisplayMode.toDisplayMode(64.625);
         //Then
         Assert.assertEquals("octal conversion test", expected, actual);
     }
