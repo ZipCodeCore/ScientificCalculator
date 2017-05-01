@@ -6,12 +6,14 @@ import java.lang.*;
  */
 public class BasicMath {
 
+
+
     public double add(double x, double y){ return x + y;}
 
     public double divide(double x, double y) {
         if( y == 0) {
             return Float.NaN;
-        } else{
+        } else {
             return x / y;
         }
     }
@@ -24,5 +26,5 @@ public class BasicMath {
 
     public double findSquare(double x){return x * x;}
 
-    public double findExponent(double x, double y){ return Math.pow(x,y);}
+    public double findExponent(double x, double y){return Math.pow(x,y);}
 }
