@@ -19,6 +19,7 @@ public class Logic {
         display.printString("Display value:");
         display.printDisplayValue();
         do {
+            System.out.println("Select add, subtract, multiply, divide, sin, cos, tan, invsin, invcos, invtan");
             String operation = display.userStringInput("What operation would you like to do? (Enter off to turn calculator off)");
             if (operation.equalsIgnoreCase("off")) {
                 power = false;

@@ -7,19 +7,18 @@ import static org.junit.Assert.*;
  */
 public class BasicMathTests {
 
-    //changed UML so need to changes tests
     @Test
     public void add_SimpleInput_ReturnsResult() {
 
-        //given
+        //Arrange
         double firstNumber = 2;
         double secondNumber = 2;
         double expectedResult = 4;
 
-        //when
+        //Act
         CalculationResult actualCalculationResult = BasicMath.add(firstNumber, secondNumber);
 
-        //then
+        //Assert
         assertEquals(expectedResult, actualCalculationResult.getValue(), 1D);
         assertFalse(actualCalculationResult.hasError());
 
@@ -29,15 +28,15 @@ public class BasicMathTests {
     @Test
     public void add_NegativeInputs_ReturnsNegative() {
 
-        //given
+        //Arrange
         double firstNumber = -35;
         double secondNumber = -36;
         double expectedResult = -71;
 
-        //when
+        //Act
         CalculationResult actualCalculationResult = BasicMath.add(firstNumber, secondNumber);
 
-        //then
+        //Assert
         assertEquals(expectedResult, actualCalculationResult.getValue(), 1D);
         assertFalse(actualCalculationResult.hasError());
     }
@@ -45,15 +44,15 @@ public class BasicMathTests {
     @Test
     public void subtract_SimpleInput_ReturnsResult() {
 
-        //given
+        //Arrange
         double firstNumber = 5;
         double secondNumber = 2;
         double expectedResult = 3;
 
-        //when
+        //Act
         CalculationResult actualCalculationResult = BasicMath.subtract(firstNumber, secondNumber);
 
-        //then
+        //Assert
         assertEquals(expectedResult, actualCalculationResult.getValue(), 1D);
         assertFalse(actualCalculationResult.hasError());
 
@@ -62,15 +61,15 @@ public class BasicMathTests {
     @Test
     public void subtract_UnderflowInput_ReturnsNegativeResult() {
 
-        //given
+        //Arrange
         double firstNumber = 25;
         double secondNumber = 100;
         double expectedResult = -75;
 
-        //when
+        //Act
         CalculationResult actualCalculationResult = BasicMath.subtract(firstNumber, secondNumber);
 
-        //then
+        //Assert
         assertEquals(expectedResult, actualCalculationResult.getValue(), 1D);
         assertFalse(actualCalculationResult.hasError());
     }
@@ -78,15 +77,15 @@ public class BasicMathTests {
     @Test
     public void subtract_NegativeInput_ReturnsResult() {
 
-        //given
+        //Arrange
         double firstNumber = 50;
         double secondNumber = -20;
         double expectedResult = 70;
 
-        //when
+        //Act
         CalculationResult actualCalculationResult = BasicMath.subtract(firstNumber, secondNumber);
 
-        //then
+        //Assert
         assertEquals(expectedResult, actualCalculationResult.getValue(), 1D);
         assertFalse(actualCalculationResult.hasError());
     }
@@ -94,15 +93,15 @@ public class BasicMathTests {
     @Test
     public void multiply_SimpleInput_ReturnsResult() {
 
-        //given
+        //Arrange
         double firstNumber = 3;
         double secondNumber = 2;
         double expectedResult = 6;
 
-        //when
+        //Act
         CalculationResult actualCalculationResult = BasicMath.multiply(firstNumber, secondNumber);
 
-        //then
+        //Assert
         assertEquals(expectedResult, actualCalculationResult.getValue(), 1D);
         assertFalse(actualCalculationResult.hasError());
     }
@@ -110,15 +109,15 @@ public class BasicMathTests {
     @Test
     public void multiply_NegativeInput_ReturnsNegativeResult() {
 
-        //given
+        //Arrange
         double firstNumber = 3;
         double secondNumber = -4;
         double expectedResult = -12;
 
-        //when
+        //Act
         CalculationResult actualCalculationResult = BasicMath.multiply(firstNumber, secondNumber);
 
-        //then
+        //Assert
         assertEquals(expectedResult, actualCalculationResult.getValue(), 1D);
         assertFalse(actualCalculationResult.hasError());
     }
@@ -157,7 +156,6 @@ public class BasicMathTests {
 
     @Test
     public void divide_DivideByZero_ReturnsError() {
-        // nameOfMethod_Scanario_ExpectedResult
         // Arrange
         double firstNumber = 10;
         double secondNumber = 0;
