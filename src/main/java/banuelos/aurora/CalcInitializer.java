@@ -12,11 +12,13 @@ public class CalcInitializer {
         Calculator calculator = new Calculator();
         DisplayScreen currentDisplay = new DisplayScreen();
 
-        currentDisplay.displayDefault();
-        calculator.print();
-        calculator.calculate();
-        //currentDisplay.displayResult();
+        do {
 
+            currentDisplay.displayDefault();
+            calculator.print();
+            calculator.calculate();
+            //currentDisplay.displayResult();
+        }
     }
 
 }

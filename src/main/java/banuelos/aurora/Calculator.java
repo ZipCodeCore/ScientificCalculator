@@ -24,11 +24,17 @@ public class Calculator {
 
         System.out.println("Enter first number: ");
         firstOperand = in.nextDouble();
-        System.out.println("Operators available are add, subtract, multiply, divide");
+        System.out.println("Operators available are add, subtract, multiply, divide, " +
+                "exponent, square, squareroot, inverse, switch sign");
         System.out.println("Enter operator: ");
         opCode = in.next();
+        if(opCode.equalsIgnoreCase("square") || opCode.equalsIgnoreCase("squareroot")
+                || opCode.equalsIgnoreCase("inverse") || opCode.equalsIgnoreCase("switchsign")) {
+            return;
+        }
         System.out.println("Enter second number: ");
         secondOperand = in.nextDouble();
+
 
     }
 
@@ -55,6 +61,31 @@ public void calculate() {
 
         case "divide":
             result = equation.divide(firstOperand, secondOperand);
+            System.out.println(!Double.isNaN(result) ? "Answer: " + result : "Error");
+            break;
+
+        case "exponent":
+            result = equation.exponent(firstOperand, secondOperand);
+            System.out.println(!Double.isNaN(result) ? "Answer: " + result : "Error");
+            break;
+
+        case "square":
+            result = equation.square(firstOperand);
+            System.out.println("Answer: " + result);
+            break;
+
+        case "squareroot":
+            result = equation.squareRoot(firstOperand);
+            System.out.println(!Double.isNaN(result) ? "Answer: " + result : "Error");
+            break;
+
+        case "inverse":
+            result = equation.inverse(firstOperand);
+            System.out.println(!Double.isNaN(result) ? "Answer: " + result : "Error");
+            break;
+
+        case "switchsign":
+            result = equation.switchSign(firstOperand);
             System.out.println("Answer: " + result);
             break;
 
