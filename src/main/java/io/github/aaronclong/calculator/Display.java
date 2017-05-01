@@ -14,7 +14,7 @@ public class Display {
 
     public void addInput(String input) {
         InputBuffer buffer = InputBuffer.makeInputBuffer(input);
-        String screenValue = (Double.compare(buffer.getValue(), Double.NaN) == 1) ? Double.toString(buffer.getValue()) : "Err";
+        String screenValue = (Double.compare(buffer.getValue(), Double.NaN) != 0) ? Double.toString(buffer.getValue()) : "Err";
         Display.addToScreen(screenValue);
         store.add(buffer);
     }
