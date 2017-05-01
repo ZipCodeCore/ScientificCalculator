@@ -29,9 +29,9 @@ public enum Lexer {
         return type;
     }
 
-    public static String analyze(String c) {
+    public static String analyze(String s) {
         String type = "";
-        if (c.equals("sine")) type = Lexer.TRIG.name();
+        if (s.equals("sine")) type = Lexer.TRIG.name();
         return type;
     }
 
@@ -67,10 +67,10 @@ public enum Lexer {
                 String result = Lexer.analyze(tmp.toString());
                 String lex = String.format("%s %s", result, tmp.toString());
                 list.add(lex);
-                list.add(Lexer.BEGIN.name());
+                list.add(String.format("%s ", Lexer.BEGIN.name()));
             }
             else if (i == ')') {
-                list.add(Lexer.END.name());
+                list.add(String.format("%s ", Lexer.END.name()));
             }
         }
 
