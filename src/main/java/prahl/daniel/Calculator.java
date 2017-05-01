@@ -20,6 +20,7 @@ public class Calculator {
     //core display methods
     public void clearDisplay(){
         setDisplay(0.0f);
+        //isError = false; // flag not needed, just test for existing string "Err" in display
     }
 
     public void setDisplay(float value){
@@ -32,12 +33,13 @@ public class Calculator {
 
     public void setError(){
         display = "Err";
+        //isError = true; // flag not needed, just test for existing string "Err" in display
     }
 
     public boolean isError(){
         if(getDisplay() == "Err") {
-            System.out.println("==Error condition must be cleared before==");
-            System.out.println("==any further operation can be attempted==");
+            System.out.println("== Error condition must be cleared before ==");
+            System.out.println("== any further operation can be attempted ==");
             return true;
         }else{
             return false;
@@ -106,7 +108,8 @@ public class Calculator {
     }
 
 
-    //advanced math functions
+    // advanced math functions
+    // memory slot
     public void memoryAdd(){
         if( !isError() ) {
             memory += Float.parseFloat(getDisplay());
@@ -121,6 +124,69 @@ public class Calculator {
 
     public void memoryRecall(){
         setDisplay(memory);
+    }
+
+
+    // Trig functions
+    public void sine(){
+        if( !isError() ){
+            setDisplay( (float) Math.sin(Float.parseFloat(getDisplay())) );
+        }
+    }
+
+    public void cosine(){
+        if( !isError() ){
+            setDisplay( (float) Math.cos(Float.parseFloat(getDisplay())) );
+        }
+    }
+
+    public void tangent(){
+        if( !isError() ){
+            setDisplay( (float) Math.tan(Float.parseFloat(getDisplay())) );
+        }
+    }
+
+    public void inverseSine(){
+        if( !isError() ){
+            setDisplay( (float) Math.asin(Float.parseFloat(getDisplay())) );
+        }
+    }
+
+    public void inverseCosine(){
+        if( !isError() ){
+            setDisplay( (float) Math.acos(Float.parseFloat(getDisplay())) );
+        }
+    }
+
+    public void inverseTangent(){
+        if( !isError() ){
+            setDisplay( (float) Math.atan(Float.parseFloat(getDisplay())) );
+        }
+    }
+
+
+    // Logarithmic functions
+
+
+    // Factorial
+
+    public void factorial(){
+        if( !isError()) {
+            float sum = 1.0f;
+            if (Float.parseFloat(getDisplay()) <= -1.0) {
+                for (float i = Float.parseFloat(getDisplay()); i <= -1; i++) {
+                    sum *= i;
+                }
+                setDisplay(sum);
+            } else if (Float.parseFloat(getDisplay()) >= 1.0f) {
+                for (float j = Float.parseFloat(getDisplay()); j >= 1; j--) {
+                    sum *= j;
+                }
+                setDisplay(sum);
+            } else {
+                setError();
+            }
+        }
     }
 
 

@@ -295,7 +295,7 @@ public class CalculatorTest {
         Assert.assertEquals(expected, actual, delta);
 
     }
-    
+
 
 
     // testing scientific functions
@@ -373,6 +373,160 @@ public class CalculatorTest {
         Assert.assertEquals(expected, actual, delta);
 
     }
+
+    // testing trig functions
+    @Test
+    public void testSine(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set to 5
+        //float expected = 0.087155f; // the sine of the angle 5 degrees
+        float expected = -0.958924f; // the sine of the angle 5 radians
+
+        //when;
+        ulator.sine();
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testCosine(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set to 5
+        //float expected = 0.996194f; // the cosine of the angle 5 degrees
+        float expected = 0.283662f; // the cosine of the angle 5 radians
+
+        //when;
+        ulator.cosine();
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testTangent(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set to 5
+        //float expected = 0.087488f; // the tangent of the angle 5 degrees
+        float expected = -3.380515f; // the tangent of the angle 5 radians
+
+        //when;
+        ulator.tangent();
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testInverseSine(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(0.5f); // set to 0.5
+        //float expected = 30.0f; // the angle of the inverse sine 0.5 in degrees
+        float expected = 0.523598f; // the angle of the inverse sine 0.5 in radians
+
+        //when;
+        ulator.inverseSine();
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testInverseCosine(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(0.5f); // set to 0.5
+        //float expected = 60.0f; // the angle of the inverse cosine 0.5 in degrees
+        float expected = 1.047197f; // the angle of the inverse cosine 0.5 in radians
+
+        //when;
+        ulator.inverseCosine();
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testInverseTangent(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(0.5f); // set to 0.5
+        //float expected = 26.565051f; // the angle of the inverse tangent 0.5 in degrees
+        float expected = 0.463647f; // the angle of the inverse tangent 0.5 in radians
+
+        //when;
+        ulator.inverseTangent();
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+
+    // testing factorial function
+    @Test
+    public void testFactorial(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set to 5
+        float expected = 120.0f; // factorial of 5
+
+        //when;
+        ulator.factorial(); // should try to multiply 5 times 4 times 3 times 2
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testFactorialNeg(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(a); // set to 5
+        ulator.switchSign(); // switch to -5
+        float expected = -120.0f; // factorial of -5
+
+        //when;
+        ulator.factorial(); // should try to multiply -5 times -4 times -3 times -2 times -1
+        float actual = Float.parseFloat(ulator.getDisplay());
+
+        //then;
+        Assert.assertEquals(expected, actual, delta);
+
+    }
+
+    @Test
+    public void testFactorialErr(){
+        //given;
+        ulator = new Calculator(); // create fresh instance
+        ulator.setDisplay(0.5f); // set to 0.5
+        String expected = "Err"; // error if less than 1.0
+
+        //when;
+        ulator.factorial(); // should fail and send error state to display
+        String actual = ulator.getDisplay();
+
+        //then;
+        Assert.assertTrue(expected == actual);
+    }
+
 
 
 
