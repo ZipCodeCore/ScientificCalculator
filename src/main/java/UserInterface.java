@@ -8,20 +8,41 @@ import java.lang.*;
 
 public class UserInterface {
 
-	{
-		public static double display = 0;
-		public static String error = "Err";
+	public static void main(String[] args) {
+		UserInterface userInterface = new UserInterface();
+		userInterface.start();
 	}
 
-	Scanner in = new Scanner(System.in);
-	int choice = in.nextInt();
+	ScientificCalculator scientificCalculator = new ScientificCalculator();
 
-	switch (choice) {
-		case 1:
-			choice = 1;
-			addOperation();
-			break;
+		boolean isRunning = true;
 
+		public static double display = 0;
+		public static String error = "Err";
+
+
+		Scanner in = new Scanner(System.in);
+		int choice;
+
+		public void start(){
+			while(isRunning){
+				mySwitch();
+			}
+		}
+
+	public void mySwitch() {
+		System.out.println("This is a calculator, you can Exit (Type 0), Add (Type: 1)");
+		choice = in.nextInt();
+		switch (choice) {
+			case 0:
+				isRunning = false;
+				break;
+			case 1:
+				choice = 1;
+				addOperation();
+				break;
+
+		}
 	}
 
 	public void addOperation() {
@@ -29,6 +50,7 @@ public class UserInterface {
 		int inputOne = in.nextInt();
 		System.out.println("Give second number: ");
 		int inputTwo = in.nextInt();
-		System.out.println(CoreCalculator.add(inputOne, inputTwo));
+		scientificCalculator.add(inputOne, inputTwo);
+		System.out.println(display);
 	}
 }

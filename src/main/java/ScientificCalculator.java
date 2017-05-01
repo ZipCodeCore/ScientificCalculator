@@ -1,7 +1,7 @@
 /**
  * Created by gregoryfletcher on 4/29/17.
  */
-public class ScientificCalculator {
+public class ScientificCalculator extends CoreCalculator {
 	private double memory = 0;
 
 	public double getMemory() {
