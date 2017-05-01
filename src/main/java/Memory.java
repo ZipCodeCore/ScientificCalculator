@@ -55,7 +55,7 @@ public class Memory {
 
     }
 
-    public boolean getError(){
+    public boolean hasError(){
         return error;
     }
 }

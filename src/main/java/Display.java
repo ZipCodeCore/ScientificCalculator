@@ -17,8 +17,14 @@ public class Display {
 
     public void printDisplayValue() {
         double displayValue = memory.getDisplayValue();
+
+        if(displayMode.equals("Binary")) {
+            //doconverstion
+
+        }
         System.out.println(displayValue);
     }
+
 
 
     public void printString(String input) {

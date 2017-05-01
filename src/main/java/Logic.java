@@ -1,16 +1,17 @@
-import java.util.Scanner;
 /**
  * Created by andrewwong on 4/30/17.
  */
 public class Logic {
 
-    private Calculator calculator;
+    private TaskAssigner taskDelegater;
     private Display display;
+    private Memory memory;
 
 
-    public Logic(Calculator calculator, Display display) {
-        this.calculator = calculator;
+    public Logic(TaskAssigner taskDelegater, Display display, Memory memory) {
+        this.taskDelegater = taskDelegater;
         this.display = display;
+        this.memory = memory;
     }
 
     public void run(){
@@ -26,10 +27,16 @@ public class Logic {
             String secondOperand = display.userStringInput("Enter the second operand");
             double secondNumber = Double.parseDouble(secondOperand);
 
-            calculator.doOperation(operation, secondNumber);
+            taskDelegater.doOperation(operation, secondNumber);
 
-            display.printString("Display value:");
-            display.printDisplayValue();
+            if(memory.hasError()){
+                display.updateDisplayToError();
+            }
+            else {
+                display.printString("Display value:");
+                display.printDisplayValue();
+                memory.setMemoryValue(memory.getDisplayValue());
+            }
 
         }while (power);
 

@@ -1,17 +1,17 @@
 /**
  * Created by andrewwong on 4/28/17.
  */
-public class Calculator {
+public class TaskAssigner {
     private BasicMath basicMath;
-    //private TrigMath trigMath;
+    private TrigMath trigMath;
     private Memory memory;
 
-    public Calculator(BasicMath basicMath, Memory memory) {
+    public TaskAssigner(BasicMath basicMath, Memory memory) {
         this.basicMath = basicMath;
         this.memory = memory;
     }
 
-    public Calculator(BasicMath basicMath) {
+    public TaskAssigner(BasicMath basicMath) {
         this.basicMath = basicMath;
     }
 
@@ -43,6 +43,17 @@ public class Calculator {
             case "divide":
                 return basicMath.divide(firstNumber, secondNumber);
             case "sin":
+                return trigMath.calculateSin(secondNumber);
+            case "cos":
+                return trigMath.calculateCos(secondNumber);
+            case "tan":
+                return trigMath.calculateTan(secondNumber);
+            case "invsin":
+                return trigMath.calculateInvSin(secondNumber);
+            case "invcos":
+                return trigMath.calculateInvCos(secondNumber);
+            case "invtan":
+                return trigMath.calculateInvTan(secondNumber);
 
             default:
                 return null;

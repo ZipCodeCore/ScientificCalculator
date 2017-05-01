@@ -10,9 +10,9 @@ public class App {
         TrigMath trigMath = new TrigMath();
         Memory memory = new Memory();
         Display display = new Display(memory, scanner);
-        Calculator calculator = new Calculator(basicMath, memory);
+        TaskAssigner taskDelegater = new TaskAssigner(basicMath, memory);
 
-        Logic logic = new Logic(calculator, display);
+        Logic logic = new Logic(taskDelegater, display, memory);
         logic.run();
 
     }

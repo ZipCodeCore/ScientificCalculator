@@ -1,9 +1,9 @@
-# Project 1: Calculator
+# Project 1: TaskAssigner
 
 
 ## Description
 
-In this project you will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
+In this project you will build a small app to function as a taskDelegater. This app  will be built in Java, and will use the topics and techniques discussed during the week.
 
 You should work on this project in your own repository. Click the `fork` button in the top right corner to create a copy of this repository on your github account. You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
 
@@ -22,7 +22,7 @@ You must produce UML diagrams for your program. All classes (excluding test clas
 
 All calculators should have the following features:
 
-- A state, representing the value currently displayed on the calculator (default 0) *
+- A state, representing the value currently displayed on the taskDelegater (default 0) *
 - Get the current number on the display *
 - Clear the display *
 - Change the number on the display *
@@ -66,7 +66,7 @@ Each operation should automatically update the display
 
 ### Custom Features
 
-In addition to the Core and Scientific features, you are required to create at least two of your own features for the calculator. They can be any two features that are not already covered and that you can implement as you see fit. These features must be properly tested.
+In addition to the Core and Scientific features, you are required to create at least two of your own features for the taskDelegater. They can be any two features that are not already covered and that you can implement as you see fit. These features must be properly tested.
 
 ### Hints
 
@@ -86,4 +86,4 @@ The following functions should take the displayed value (x) and updated it accor
 
 ## Submission
 
-Completed projects should be submitted by submitting a pull request against the [original repository](https://github.com/Zipcoder/project-1-calculator). All work should be done in your own repository.
+Completed projects should be submitted by submitting a pull request against the [original repository](https://github.com/Zipcoder/project-1-taskDelegater). All work should be done in your own repository.
