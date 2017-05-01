@@ -1,4 +1,4 @@
-# Project 1: Calculator
+# Project 1: banuelos.aurora.Calculator
 
 
 ## Description
