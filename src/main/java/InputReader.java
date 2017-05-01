@@ -18,7 +18,7 @@ public class InputReader {
 
     public static void main(String[] args) {
 
-        ScientificCalculator calc = new ScientificCalculator();
+        CustomScientificCalculator calc = new CustomScientificCalculator();
         Display display = new Display();
         OperatorChecker checker = new OperatorChecker();
         Memory memory = new Memory();
@@ -104,6 +104,12 @@ public class InputReader {
                         break;
                     case "^":
                         display.setDisplay(calc.exponent(display.getDisplay(), nextOperand));
+                        break;
+                    case "logbx":
+                        display.setDisplay(calc.logbx(display.getDisplay(), nextOperand));
+                        break;
+                    case "modulus":
+                        display.setDisplay(calc.modulus(display.getDisplay(), nextOperand));
                         break;
                     default:
                         display.setDisplay(Double.NaN);

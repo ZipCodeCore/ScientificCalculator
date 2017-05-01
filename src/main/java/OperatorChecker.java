@@ -3,7 +3,7 @@
  */
 public class OperatorChecker {
     public static final String[] binaryOperations =
-            {"+", "-", "*", "/", "^"};
+            {"+", "-", "*", "/", "^", "logbx", "modulus"};
     public static final String[] unaryOperations =
             {"sq", "sqrt", "inv", "opp",
                     "sin", "cos", "tan", "asin", "acos", "atan",
