@@ -19,49 +19,55 @@ public class MethodSelect {
         input1 = 0;
         input2 = 0;
     }
+    //take user's input, and direct it to the correspondent computation method
+    public void pickMethod(boolean quit){
 
-    public void pickMethod(){
+        boolean go = true;
+        while(go) {
+            System.out.println("Please choose a computation method from the menu above:");
 
-        System.out.println("Please choose a computation method from the menu above:");
-        int methodChoosed = input.nextInt();
+            int methodChoosed = input.nextInt();
+            switch (methodChoosed) {
 
-        switch (methodChoosed){
+                case 1:
+                    System.out.println("Addition selected: Enter your first number:");
+                    input1 = input.nextDouble();
+                    System.out.println("Enter your second number:");
+                    input2 = input.nextDouble();
+                    System.out.println(input1 + " + " + input2 + " = " + methodPicked.add(input1, input2));
+                    break;
 
-            case 1:
-                System.out.println("Addition selected: Enter your first number:");
-                input1 = input.nextDouble();
-                System.out.println("Enter your second number:");
-                input2 = input.nextDouble();
-                System.out.println(input1 +  " + " + input2 + " = " + methodPicked.add(input1, input2));
-                break;
+                case 2:
+                    System.out.println("Subtraction selected: Enter your first number:");
+                    input1 = input.nextDouble();
+                    System.out.println("Enter your second number:");
+                    input2 = input.nextDouble();
+                    System.out.println(input1 + " - " + input2 + " = " + methodPicked.subtract(input1, input2));
+                    break;
 
-            case 2:
-                System.out.println("Subtraction selected: Enter your first number:");
-                input1 = input.nextDouble();
-                System.out.println("Enter your second number:");
-                input2 = input.nextDouble();
-                System.out.println(input1 +  " - " + input2 + " = " + methodPicked.subtract(input1, input2));
-                break;
+                case 3:
+                    System.out.println("Multiplication selected: Enter your first number:");
+                    input1 = input.nextDouble();
+                    System.out.println("Enter your second number:");
+                    input2 = input.nextDouble();
+                    System.out.println(input1 + " * " + input2 + " = " + methodPicked.multiply(input1, input2));
+                    break;
 
-            case 3:
-                System.out.println("Multiplication selected: Enter your first number:");
-                input1 = input.nextDouble();
-                System.out.println("Enter your second number:");
-                input2 = input.nextDouble();
-                System.out.println(input1 +  " * " + input2 + " = " + methodPicked.multiply(input1, input2));
-                break;
+                case 4:
+                    System.out.println("Division selected: Enter your first number:");
+                    input1 = input.nextDouble();
+                    System.out.println("Enter your second number:");
+                    input2 = input.nextDouble();
+                    System.out.println(input1 + " / " + input2 + " = " + methodPicked.divide(input1, input2));
+                    break;
 
-            case 4:
-                System.out.println("Division selected: Enter your first number:");
-                input1 = input.nextDouble();
-                System.out.println("Enter your second number:");
-                input2 = input.nextDouble();
-                System.out.println(input1 +  " / " + input2 + " = " + methodPicked.divide(input1, input2));
-                break;
+                case 5:
+                    System.out.println("EXIT");
+                    System.out.println("Goodbye!");
+                    go = false;
+                    break;
 
-
-
-
+            }
         }
 
     }

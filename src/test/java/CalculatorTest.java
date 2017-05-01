@@ -1,5 +1,5 @@
 /**
  * Created by mattwu on 4/30/17.
  */
-public class DisplayTest {
+public class CalculatorTest {
 }
