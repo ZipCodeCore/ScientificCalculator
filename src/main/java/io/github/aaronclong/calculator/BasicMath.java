@@ -10,6 +10,7 @@ public class BasicMath {
     }
 
     public static double division(double x, double y) {
+        if (x == 0 || y == 0) return Double.NaN;
         return x/y;
     }
 

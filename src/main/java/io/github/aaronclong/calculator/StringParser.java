@@ -45,11 +45,9 @@ public class StringParser {
                     handleNumbers(details[1]);
                 }
                 else if (details[0].equals(Lexer.BASICOP.name())) {
-                    basicOperation = details[1];
-                    previous = currentValue;
+                    basicOperationHandler(details[1]);
                 }
             }
-            parsed = currentValue;
         }
 
         public double getValue() {
@@ -65,6 +63,11 @@ public class StringParser {
             }
             previous = currentValue;
             currentValue = Double.parseDouble(nums);
+        }
+
+        private void basicOperationHandler(String operation) {
+            basicOperation = operation;
+            previous = currentValue;
         }
     }
 
