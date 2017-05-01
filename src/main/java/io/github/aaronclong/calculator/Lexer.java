@@ -32,6 +32,8 @@ public enum Lexer {
     public static String analyze(String s) {
         String type = "";
         if (s.equals("sin")) type = Lexer.TRIG.name();
+        else if (s.equals("cos")) type = Lexer.TRIG.name();
+        else if (s.equals("tan")) type = Lexer.TRIG.name();
         return type;
     }
 

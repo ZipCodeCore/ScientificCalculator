@@ -21,9 +21,23 @@ public class StringParserTest {
     }
 
     @Test
-    public void testTrigFunctionExpression() {
-        StringParser parserAddition = StringParser.makeStringParser("sin(7)");
-        double testValue = Math.sin(7);
+    public void testTrigFunctionSin() {
+        StringParser parserAddition = StringParser.makeStringParser("sin(7)+7");
+        double testValue = Math.sin(7)+7;
+        Assert.assertEquals("Confirming trig sn function run", testValue, parserAddition.getValue(), .003);
+    }
+
+    @Test
+    public void testTrigFunctionCos() {
+        StringParser parserAddition = StringParser.makeStringParser("cos(7)+7");
+        double testValue = Math.cos(7)+7;
+        Assert.assertEquals("Confirming trig sn function run", testValue, parserAddition.getValue(), .003);
+    }
+
+    @Test
+    public void testTrigFunctionTan() {
+        StringParser parserAddition = StringParser.makeStringParser("tan(7)+7");
+        double testValue = Math.tan(7)+7;
         Assert.assertEquals("Confirming trig sn function run", testValue, parserAddition.getValue(), .003);
     }
 }
