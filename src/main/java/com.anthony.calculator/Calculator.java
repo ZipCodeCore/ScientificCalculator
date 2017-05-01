@@ -6,6 +6,7 @@ package com.anthony.calculator;
 public class Calculator {
 
     private BasicMath basicMath = new BasicMath();
+    private TrigMath trigMath = new TrigMath();
     private Memory holderOfMemory = new Memory();
     private double number1;
     private double number2;
@@ -38,7 +39,7 @@ public class Calculator {
             case SQUARE_ROOT:
                 result = basicMath.calcSqrRoot(number1);
                 break;
-            case CALCULATE_VARIBLE_EXP:
+            case CALCULATE_VARIABLE_EXP:
                 result = basicMath.calcVariableExponent(number1, number2);
                 break;
             case SQUARED:
@@ -70,6 +71,24 @@ public class Calculator {
                 break;
             case LOG_INVERSE_NATURAL_LOG:
                 result = basicMath.calcInverseNaturalLog(number1);
+                break;
+            case SINE:
+                result = trigMath.calcSine(number1);
+                break;
+            case COSINE:
+                result = trigMath.calcCosine(number1);
+                break;
+            case TANGENT:
+                result = trigMath.calcTangent(number1);
+                break;
+            case INVERSE_SINE:
+                result = trigMath.calcInverseSine(number1);
+                break;
+            case INVERSE_COSINE:
+                result = trigMath.calcInverseCosine(number1);
+                break;
+            case INVERSE_TANGENT:
+                result = trigMath.calcInverseTangent(number1);
                 break;
 
             default:
