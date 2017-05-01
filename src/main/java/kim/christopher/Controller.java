@@ -45,7 +45,9 @@ public class Controller {
             } else if (first.equals("square")) {
                 disp.setDisplay(calc.square(disp.getDisplay()));
             } else if (first.equals("sqrt")) {
-                disp.setDisplay(calc.sqrt(disp.getDisplay()));
+                if(calc.sqrt(disp.getDisplay()).equals("ERROR"))
+                    disp.displayError();
+                else disp.setDisplay(calc.sqrt(disp.getDisplay()));
             } else if (first.equals("inverse")) {
                 disp.setDisplay(calc.inverse(disp.getDisplay()));
             } else disp.showInvalidOperator(first);

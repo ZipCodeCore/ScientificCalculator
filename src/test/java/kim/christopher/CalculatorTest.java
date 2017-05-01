@@ -175,7 +175,7 @@ public class CalculatorTest {
         String result = controller.calc.sqrt(operand);
 
         //Then
-        assertEquals("The square root of a negative number should be NaN", "NaN", result);
+        assertEquals("The square root of a negative number is not allowed", "ERROR" , result);
     }
 
 

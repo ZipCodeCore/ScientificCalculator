@@ -29,9 +29,9 @@ public class Calculator {
     }
 
     String divide(String x, String y){
-        if(Double.parseDouble(y) == 0.0 || !NumberUtils.isNumber(y))
-            return "ERROR";
-        else return Double.toString(Double.parseDouble(x) / Double.parseDouble(y));
+        if((Double.parseDouble(y) != 0.0d) && NumberUtils.isNumber(y))
+            return Double.toString(Double.parseDouble(x) / Double.parseDouble(y));
+        else return "ERROR";
     }
 
     String power(String x, String y){
@@ -53,7 +53,9 @@ public class Calculator {
     }
 
     String sqrt(String x){
-        return Double.toString(Math.sqrt(Double.parseDouble(x)));
+        if(Double.parseDouble(x) >= 0)
+            return Double.toString(Math.sqrt(Double.parseDouble(x)));
+        else return "ERROR";
     }
 
 
