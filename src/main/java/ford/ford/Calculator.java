@@ -8,16 +8,46 @@ public class Calculator {
 
         // accept operator input
         // accept and store number input x * y
-        double x;
-        double y;
-        double z;
+
 
         CalculatorInput calculatorInput = new CalculatorInput();
+
+        double x;
+        double y;
+        String z;
 
         x = calculatorInput.userValueInputValidator(calculatorInput.acceptUserValue());
         z = calculatorInput.userInputValidator(calculatorInput.acceptUserOperator());
         y = calculatorInput.userValueInputValidator(calculatorInput.acceptUserValue());
 
+//        public String userInputValidator(String userOperator) {
+//            double x = userInputValue;
+//            double y = userInputValue;
 
-    }
+            if (calculatorInput.userOperator.equals("+")) {
+                BasicMath.add(x, y);
+
+            } else if (calculatorInput.userOperator.equals("/")) {
+                BasicMath.divide(x, y);
+
+            } else if (calculatorInput.userOperator.equals("-")) {
+                BasicMath.subtract(x, y);
+
+            } else if (calculatorInput.userOperator.equals("*")) {
+                BasicMath.multiply(x, y);
+
+            } else if (calculatorInput.userOperator.equals("sq")) {
+                BasicMath.findSquare(x);
+
+            } else if (calculatorInput.userOperator.equals("sqrt")) {
+                BasicMath.findSquareRoot(x);
+            } else {
+                calculatorInput.acceptUserOperator();
+            }
+        }
+
+
+
+
 }
+

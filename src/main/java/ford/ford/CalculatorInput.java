@@ -18,34 +18,32 @@ public class CalculatorInput {
         return userOperator;
     }
     // Test to make sure user operator is valid for input
-    public double userInputValidator(String userOperator) {
-        double unicodeValue;
+    public String userInputValidator(String userOperator) {
+       double x = userInputValue;
+       double y = userInputValue;
+
         if (userOperator.equals("+")) {
-            unicodeValue = 43.0;
-            return unicodeValue;
-
-        } else if (userOperator.equals("-")) {
-            unicodeValue = 45.0;
-            return unicodeValue;
-
-        } else if (userOperator.equals("*")) {
-            unicodeValue = 42.0;
-            return unicodeValue;
+            BasicMath.add(x, y);
 
         } else if (userOperator.equals("/")) {
-            unicodeValue = 47.0;
-            return unicodeValue;
+            BasicMath.divide(x, y);
+
+        } else if (userOperator.equals("-")) {
+            BasicMath.subtract(x, y);
+
+        } else if (userOperator.equals("*")) {
+            BasicMath.multiply(x, y);
 
         } else if (userOperator.equals("sq")) {
-        unicodeValue = 2.0;
-        return unicodeValue;
+            BasicMath.findSquare(x);
 
         } else if (userOperator.equals("sqrt")) {
-        unicodeValue = 1.0;
-        return unicodeValue;
+            BasicMath.findSquareRoot(x);
+        } else {
+            acceptUserOperator();
+        }
 
-        } else return Float.NaN;   // need to return to user that input is invalid
-
+        return userOperator;
     }
 
     // Accepts value input from user
@@ -65,5 +63,11 @@ public class CalculatorInput {
         }
     }
 
+    /*  Operation output: accept value 1, value 2, and operator
+        switch statement to choose
+    */
+    public double mathEquationOutput(double x, double y, String z){
+        return 0;
+    }
 
 }

@@ -16,18 +16,6 @@ public class TestCalculatorInput {
             ci = new CalculatorInput();
         }
 
-//        @Test
-//        public void testUserInput(){
-//
-//            //: Given
-//            double x = 10.0;
-//            double expectedInput = 10.0;
-//            //: When
-//            double actualInput = ci.userInput();
-//            //: Then
-//            Assert.assertEquals("the expected input value is 10.0", expectedInput, actualInput,0);
-//        }
-
         @Test
         public void testUserOperator() {
             //: Given
@@ -39,15 +27,15 @@ public class TestCalculatorInput {
             Assert.assertEquals("The expected user input is \"+\" ", actualOperator,expectedOperator);
         }
         @Test
-        public void testUserInputValidator(){
+        public void testUserInputValidator() {
             //: Given
-            String userInput = "+";
-            double expectedInput = 43.0;
+            String userOperator = "+";
+            String expectedUserOperator = "+";
 
             //: When
-            double actualInput = ci.userInputValidator(userInput);
+            String actualUserOperator = ci.userInputValidator(userOperator);
             //: Then
-            Assert.assertEquals("The expected result is the operator '+' ", expectedInput,actualInput,0);
+            Assert.assertEquals("The expected user output should be +", actualUserOperator,expectedUserOperator);
         }
 
 
@@ -63,4 +51,17 @@ public class TestCalculatorInput {
             Assert.assertEquals("The expected result is the number 10.0 ", expectedInput,actualInput,0);
         }
 
+        @Test
+        public void TestMathEquationOutput(){
+            //: Given
+            double x = 10.0;
+            double y = 6.0;
+            String operator = "+";
+            double expectedOutput = 16.0;
+            //: When
+            double actualOutput = ci.mathEquationOutput(x, y, operator);
+            //: Then
+            Assert.assertEquals("The expected result of the equation is 16.0", expectedOutput,actualOutput,0);
+
+        }
     }
