@@ -3,7 +3,7 @@ package kim.christopher;
 
 public class Display {
 
-    private String currentDisplay;
+    private static String currentDisplay;
 
 
     public Display(){

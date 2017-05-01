@@ -30,17 +30,6 @@ public class CalculatorTest {
 
     }
 
-    @Test
-    public void testAdditionWithoutParameter(){
-
-        //Given
-
-        //When
-
-        //Then
-
-    }
-
 
     @Test
     public void testSubtraction(){
@@ -177,6 +166,46 @@ public class CalculatorTest {
         //Then
         assertEquals("The square root of a negative number is not allowed", "ERROR" , result);
     }
+
+    @Test
+    public void testSine() {
+
+        //Given
+        String operand = "30";
+
+        //When
+        String result = controller.calc.sin(operand);
+
+        //Then
+        assertEquals("Sine 30 degrees is 0.5", 0.5 , Double.parseDouble(result), 0.00001);
+    }
+
+    @Test
+    public void testCosine() {
+
+        //Given
+        String operand = "60";
+
+        //When
+        String result = controller.calc.cos(operand);
+
+        //Then
+        assertEquals("Cosine 60 is 0.5", 0.5 , Double.parseDouble(result), 0.00001);
+    }
+
+    @Test
+    public void testTangent() {
+
+        //Given
+        String operand = "45";
+
+        //When
+        String result = controller.calc.tan(operand);
+
+        //Then
+        assertEquals("Tangent 45 is 1", 1.0 ,  Double.parseDouble(result), 0.00001);
+    }
+
 
 
 

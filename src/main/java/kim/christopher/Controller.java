@@ -50,10 +50,15 @@ public class Controller {
                 else disp.setDisplay(calc.sqrt(disp.getDisplay()));
             } else if (first.equals("inverse")) {
                 disp.setDisplay(calc.inverse(disp.getDisplay()));
+            } else if (first.equals("sin")) {
+                disp.setDisplay(calc.sin(disp.getDisplay()));
+            }  else if (first.equals("cos")) {
+                disp.setDisplay(calc.cos(disp.getDisplay()));
+            } else if (first.equals("tan")) {
+                disp.setDisplay(calc.tan(disp.getDisplay()));
             } else disp.showInvalidOperator(first);
 
         } else if(input.size() == 2) {
-
             if (first.equals("+")) {
                 if (calc.add(disp.getDisplay(), input.get(1)).equals("ERROR")) {
                     disp.displayError();

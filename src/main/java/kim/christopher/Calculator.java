@@ -58,6 +58,18 @@ public class Calculator {
         else return "ERROR";
     }
 
+    String sin(String x){
+        return Double.toString(Math.sin(Math.toRadians(Double.parseDouble(x))));
+    }
+
+    String cos(String x){
+        return Double.toString(Math.cos(Math.toRadians(Double.parseDouble(x))));
+    }
+
+    String tan(String x){
+        return Double.toString(Math.tan(Math.toRadians(Double.parseDouble(x))));
+    }
+
 
 
 
