@@ -168,42 +168,81 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testSine() {
+    public void testSineDegree() {
 
         //Given
         String operand = "30";
 
         //When
-        String result = controller.calc.sin(operand);
+        String result = controller.calc.sin(operand, "degree");
 
         //Then
         assertEquals("Sine 30 degrees is 0.5", 0.5 , Double.parseDouble(result), 0.00001);
     }
 
     @Test
-    public void testCosine() {
+    public void testCosineDegree() {
 
         //Given
         String operand = "60";
 
         //When
-        String result = controller.calc.cos(operand);
+        String result = controller.calc.cos(operand, "degree");
 
         //Then
         assertEquals("Cosine 60 is 0.5", 0.5 , Double.parseDouble(result), 0.00001);
     }
 
     @Test
-    public void testTangent() {
+    public void testTangentDegree() {
 
         //Given
         String operand = "45";
 
         //When
-        String result = controller.calc.tan(operand);
+        String result = controller.calc.tan(operand, "degree");
 
         //Then
         assertEquals("Tangent 45 is 1", 1.0 ,  Double.parseDouble(result), 0.00001);
+    }
+
+    @Test
+    public void testSineRadian() {
+
+        //Given
+        String operand = "3.14159265358979323846";
+
+        //When
+        String result = controller.calc.sin(operand, "radian");
+
+        //Then
+        assertEquals("Sine PI Radians is 0.0", 0.0 , Double.parseDouble(result), 0.00001);
+    }
+
+    @Test
+    public void testCosineRadian() {
+
+        //Given
+        String operand = "3.14159265358979323846";
+
+        //When
+        String result = controller.calc.cos(operand, "radian");
+
+        //Then
+        assertEquals("Cosine PI Radians is -1", 0.5 , Double.parseDouble(result), 0.00001);
+    }
+
+    @Test
+    public void testTangentRadian() {
+
+        //Given
+        String operand = "3.14159265358979323846";
+
+        //When
+        String result = controller.calc.tan(operand, "radian");
+
+        //Then
+        assertEquals("Tangent PI radians is 0", 0.0 ,  Double.parseDouble(result), 0.00001);
     }
 
 

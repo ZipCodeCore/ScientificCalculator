@@ -58,19 +58,21 @@ public class Calculator {
         else return "ERROR";
     }
 
-    String sin(String x){
-        return Double.toString(Math.sin(Math.toRadians(Double.parseDouble(x))));
+    String sin(String x, String mode){
+        if(mode.equals("degree"))
+            return Double.toString(Math.sin(Math.toRadians(Double.parseDouble(x))));
+        else return Double.toString(Math.sin(Double.parseDouble(x)));
     }
 
-    String cos(String x){
-        return Double.toString(Math.cos(Math.toRadians(Double.parseDouble(x))));
+    String cos(String x, String mode){
+        if(mode.equals("degree"))
+            return Double.toString(Math.cos(Math.toRadians(Double.parseDouble(x))));
+        else return Double.toString(Math.cos(Double.parseDouble(x)));
     }
 
-    String tan(String x){
-        return Double.toString(Math.tan(Math.toRadians(Double.parseDouble(x))));
+    String tan(String x, String mode){
+        if(mode.equals("degree"))
+            return Double.toString(Math.tan(Math.toRadians(Double.parseDouble(x))));
+        else return Double.toString(Math.tan(Double.parseDouble(x)));
     }
-
-
-
-
 }
