@@ -8,8 +8,10 @@ import java.lang.*;
 
 public class UserInterface {
 
-	public static double display = 0;
-	public static String error = "Err";
+	{
+		public static double display = 0;
+		public static String error = "Err";
+	}
 
 	Scanner in = new Scanner(System.in);
 	int choice = in.nextInt();
