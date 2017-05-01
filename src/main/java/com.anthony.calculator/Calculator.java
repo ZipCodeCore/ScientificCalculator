@@ -19,7 +19,6 @@ public class Calculator {
         this.number2 = number2;
     }
 
-
     public void doOperation(Operation assignmentFromEnum) {
 
         switch (assignmentFromEnum) {
@@ -91,16 +90,11 @@ public class Calculator {
                 break;
 
             default:
-
                 break;
-
         }
     }
 
-
-
     public Double getResult() {
-
         return result;
     }
 

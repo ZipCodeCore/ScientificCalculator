@@ -21,20 +21,18 @@ public class Display {
 
     Display() {
         startingCalculatorDisplay();
-        setCurrentNumber(givenNumber);
-        setFirstNumber(firstNumber);
+        setCurrentNumber();
+        setFirstNumber();
         displayChoices();
         continuouslyRunCalculator();
     }
 
     private void startingCalculatorDisplay() {
-        // System.out.println("Welcome to Anthony's simple, yet smart Calculator!");
         System.out.println("Please enter your first number.");
         System.out.println("0");
     }
 
     private void displayChoices() {
-        //  System.out.println();
         System.out.println("Please choose a number from the options below.");
         for (Operation enumLoop : operationOfEnum.values()) {
             enumLoopCounter++;
@@ -47,8 +45,8 @@ public class Display {
         System.out.println();
     }
 
-    private void operationChoice(String choice) {
-        choice = input.nextLine().replaceAll("\\s", "");
+    private void operationChoice() {
+       String choice = input.nextLine().replaceAll("\\s", "");
         this.operationOfChoice = choice.trim();
     }
 
@@ -69,7 +67,6 @@ public class Display {
                 for (Operation enumLoop : operationOfEnum.values()) {
                     int enumPosition = Operation.valueOf(enumLoop.toString()).ordinal();
                     try {
-
                         if (enumPosition == Integer.parseInt(operationOfChoice) - 1) {
                             operationOfEnum = enumLoop;
                             if (enumPosition < 5) {
@@ -82,27 +79,26 @@ public class Display {
                                 break;
                             }
                         }
-
                     } catch (NumberFormatException e) {
                         System.out.println("You did not enter a correct option, please try again");
-                        operationChoice(operationOfChoice);
+                        operationChoice();
                     }
                 }
                 break;
         }
     }
 
-    private void setCurrentNumber(String numberToBeParsed) {
-        numberToBeParsed = input.nextLine().trim();
+    private void setCurrentNumber() {
+       String numberToBeParsed = input.nextLine().trim();
         this.givenNumber = numberToBeParsed;
     }
 
-    private void setFirstNumber(String firstNumber) {
-        firstNumber = this.givenNumber;
+    private void setFirstNumber() {
+        String firstNumber = this.givenNumber;
         this.firstNumber = firstNumber;
     }
 
-    private void setSecondNumber(String secondNumber) {
+    private void setSecondNumber() {
         secondNumber = this.givenNumber;
         this.secondNumber = secondNumber.replaceAll("\\s", "");
     }
@@ -133,7 +129,7 @@ public class Display {
 
     private void continuouslyRunCalculator() {
         while (isCalculatorRunning) {
-            operationChoice(operationOfChoice);
+            operationChoice();
             methodOfOperation();
 
             if (ifOnlyOneNumber) {
@@ -145,8 +141,8 @@ public class Display {
                 continuouslyRunCalculator();
             }
 
-            setCurrentNumber(givenNumber);
-            setSecondNumber(secondNumber);
+            setCurrentNumber();
+            setSecondNumber();
             calculateAndSendAllNumbers();
             getCalculation();
             memoryHolder();
@@ -174,12 +170,5 @@ public class Display {
         new Display();
     }
 
-    public void switchDisplayMode() {
-
-    }
-
-    public void switchDisplayMode(String mode) {
-
-    }
 
 }

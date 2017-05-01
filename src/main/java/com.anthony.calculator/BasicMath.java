@@ -72,7 +72,6 @@ public class BasicMath {
     }
 
     public double calcInverseLog(double number1) {
-
         return Math.pow(10, number1);
     }
 
