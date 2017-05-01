@@ -40,6 +40,8 @@ public class Controller {
                 System.out.println("Goodbye!");
             } else if (first.equals("clear") || first.equals("c")) {
                 reset();
+            } else if (first.equals("menu") || first.equals("m")) {
+                disp.showMenu();
             } else if (first.equals("negate")) {
                 disp.setDisplay(calc.negate(disp.getDisplay()));
             } else if (first.equals("square")) {
@@ -56,6 +58,12 @@ public class Controller {
                 disp.setDisplay(calc.cos(disp.getDisplay()));
             } else if (first.equals("tan")) {
                 disp.setDisplay(calc.tan(disp.getDisplay()));
+            } else if (first.equals("arcsin")) {
+                disp.setDisplay(calc.arcsin(disp.getDisplay()));
+            }  else if (first.equals("arccos")) {
+                disp.setDisplay(calc.arccos(disp.getDisplay()));
+            } else if (first.equals("arctan")) {
+                disp.setDisplay(calc.arctan(disp.getDisplay()));
             } else disp.showInvalidOperator(first);
 
         } else if(input.size() == 2) {
@@ -88,6 +96,7 @@ public class Controller {
 
         boolean quit = false;
         disp.clearDisplay();
+        disp.showMenu();
         String test = reader.readLine().get(0);
 
         while(!quit){

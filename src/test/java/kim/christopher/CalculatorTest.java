@@ -174,7 +174,7 @@ public class CalculatorTest {
         String operand = "30";
 
         //When
-        String result = controller.calc.sin(operand, "degree");
+        String result = controller.calc.sin(operand);
 
         //Then
         assertEquals("Sine 30 degrees is 0.5", 0.5 , Double.parseDouble(result), 0.00001);
@@ -187,7 +187,7 @@ public class CalculatorTest {
         String operand = "60";
 
         //When
-        String result = controller.calc.cos(operand, "degree");
+        String result = controller.calc.cos(operand);
 
         //Then
         assertEquals("Cosine 60 is 0.5", 0.5 , Double.parseDouble(result), 0.00001);
@@ -200,49 +200,49 @@ public class CalculatorTest {
         String operand = "45";
 
         //When
-        String result = controller.calc.tan(operand, "degree");
+        String result = controller.calc.tan(operand);
 
         //Then
         assertEquals("Tangent 45 is 1", 1.0 ,  Double.parseDouble(result), 0.00001);
     }
 
     @Test
-    public void testSineRadian() {
+    public void testArcSine() {
 
         //Given
-        String operand = "3.14159265358979323846";
+        String operand = "0.5";
 
         //When
-        String result = controller.calc.sin(operand, "radian");
+        String result = controller.calc.arcsin(operand);
 
         //Then
-        assertEquals("Sine PI Radians is 0.0", 0.0 , Double.parseDouble(result), 0.00001);
+        assertEquals("ArcSine 0.5 is 30 degrees", 0.0 , Double.parseDouble(result), 0.00001);
     }
 
     @Test
-    public void testCosineRadian() {
+    public void testArcCosine() {
 
         //Given
-        String operand = "3.14159265358979323846";
+        String operand = "0.5";
 
         //When
-        String result = controller.calc.cos(operand, "radian");
+        String result = controller.calc.arccos(operand);
 
         //Then
-        assertEquals("Cosine PI Radians is -1", 0.5 , Double.parseDouble(result), 0.00001);
+        assertEquals("ArcCosine 0.5 is 60 degrees", 0.5 , Double.parseDouble(result), 0.00001);
     }
 
     @Test
-    public void testTangentRadian() {
+    public void testArcTangent() {
 
         //Given
-        String operand = "3.14159265358979323846";
+        String operand = "1";
 
         //When
-        String result = controller.calc.tan(operand, "radian");
+        String result = controller.calc.arctan(operand);
 
         //Then
-        assertEquals("Tangent PI radians is 0", 0.0 ,  Double.parseDouble(result), 0.00001);
+        assertEquals("ArcTangent 1 is 45 degrees", 0.0 ,  Double.parseDouble(result), 0.00001);
     }
 
 
