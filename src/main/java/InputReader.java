@@ -22,6 +22,7 @@ public class InputReader {
         Display display = new Display();
         OperatorChecker checker = new OperatorChecker();
         Memory memory = new Memory();
+        RadianDegreeFilter filter = new RadianDegreeFilter();
 
         Scanner scan = new Scanner(System.in);
         String input;
@@ -45,22 +46,22 @@ public class InputReader {
                         display.setDisplay(calc.opposite(display.getDisplay()));
                         break;
                     case "sin":
-                        display.setDisplay(calc.sin(display.getDisplay()));
+                        display.setDisplay(calc.sin(filter.trigInputFilter(display.getDisplay())));
                         break;
                     case "cos":
-                        display.setDisplay(calc.cos(display.getDisplay()));
+                        display.setDisplay(calc.cos(filter.trigInputFilter(display.getDisplay())));
                         break;
                     case "tan":
-                        display.setDisplay(calc.tan(display.getDisplay()));
+                        display.setDisplay(calc.tan(filter.trigInputFilter(display.getDisplay())));
                         break;
                     case "asin":
-                        display.setDisplay(calc.asin(display.getDisplay()));
+                        display.setDisplay(filter.trigOutputFilter(calc.asin(display.getDisplay())));
                         break;
                     case "acos":
-                        display.setDisplay(calc.acos(display.getDisplay()));
+                        display.setDisplay(filter.trigOutputFilter(calc.acos(display.getDisplay())));
                         break;
                     case "atan":
-                        display.setDisplay(calc.atan(display.getDisplay()));
+                        display.setDisplay(filter.trigOutputFilter(calc.atan(display.getDisplay())));
                         break;
                     case "log10":
                         display.setDisplay(calc.log10(display.getDisplay()));
@@ -117,6 +118,12 @@ public class InputReader {
                 display.setDisplay(0.0);
             } else if (input.equals("mrc")) {
                 display.setDisplay(memory.getMemory());
+            } else if (input.equals("degrees")) {
+                filter.setUnits("degrees");
+            } else if (input.equals("radians")) {
+                filter.setUnits("radians");
+            } else if (input.equals("switch units")) {
+                filter.setUnits();
             } else if (input.equals("quit")) {
                 break;
             } else if (input.equals("clear")) {
