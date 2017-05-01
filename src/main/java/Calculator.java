@@ -76,6 +76,7 @@ public class Calculator {
         currentOperator = "";
     }
 
+    // I can't seem to quite figure out this implementation...
     private void mainLoop() {
         Display display = new Display();
 
