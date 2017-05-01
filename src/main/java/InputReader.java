@@ -21,9 +21,12 @@ public class InputReader {
         ScientificCalculator calc = new ScientificCalculator();
         Display display = new Display();
         OperatorChecker checker = new OperatorChecker();
+        Memory memory = new Memory();
+
         Scanner scan = new Scanner(System.in);
         String input;
-        double nextOperand;
+        String nextOperandString;
+        double nextOperand = 0;
 
         while (true) {
             input = scan.nextLine();
@@ -79,7 +82,12 @@ public class InputReader {
                         break;
                 }
             } else if (checker.isBinaryOperation(input)) {
-                nextOperand = Double.parseDouble(scan.nextLine());
+                nextOperandString = scan.nextLine();
+                if (isNumeric(nextOperandString)) {
+                    nextOperand = Double.parseDouble(nextOperandString);
+                } else {
+                    display.setDisplay(Double.NaN);
+                }
                 switch (input) {
                     case "+":
                         display.setDisplay(calc.add(display.getDisplay(), nextOperand));
@@ -102,6 +110,13 @@ public class InputReader {
                 }
             } else if (isNumeric(input)) {
                 display.setDisplay(Double.parseDouble(input));
+            } else if (input.equals("m+")) {
+                memory.setMemory(display.getDisplay());
+            } else if (input.equals("m-")) {
+                memory.resetMemory();
+                display.setDisplay(0.0);
+            } else if (input.equals("mrc")) {
+                display.setDisplay(memory.getMemory());
             } else if (input.equals("quit")) {
                 break;
             } else if (input.equals("clear")) {
