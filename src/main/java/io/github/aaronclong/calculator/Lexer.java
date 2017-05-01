@@ -31,7 +31,7 @@ public enum Lexer {
 
     public static String analyze(String s) {
         String type = "";
-        if (s.equals("sine")) type = Lexer.TRIG.name();
+        if (s.equals("sin")) type = Lexer.TRIG.name();
         return type;
     }
 
@@ -55,14 +55,14 @@ public enum Lexer {
             for (char i : text.toCharArray()) {
                 String lexerResult = Lexer.analyze(i);
                 if (!lexerResult.equals("NOT")) handleSingleCharacter(lexerResult, i);
-                else handleFunctionStrings(i);
+                else if (lexerResult.equals("NOT")) handleFunctionStrings(i);
             }
             String lex = String.format("%s %s", type, data.toString());
             list.add(lex);
         }
 
         private void handleFunctionStrings(char i) {
-            if (i != '(' || i != ')') tmp.append(i);
+            if (!checkForParenths(i)) { tmp.append(i); }
             else if (i == '(') {
                 String result = Lexer.analyze(tmp.toString());
                 String lex = String.format("%s %s", result, tmp.toString());
@@ -88,6 +88,13 @@ public enum Lexer {
                 type = lexerResult;
             }
             else data.append(i);
+        }
+
+        private boolean checkForParenths(char c) {
+            boolean exist = false;
+            if (c == ')') exist = true;
+            else if (c == '(') exist = true;
+            return exist;
         }
 
 
