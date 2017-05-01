@@ -6,11 +6,18 @@ package ford.ford;
 public class Calculator {
     public static void main(String[] args) {
 
+        // accept operator input
+        // accept and store number input x * y
+        double x;
+        double y;
+        double z;
+
         CalculatorInput calculatorInput = new CalculatorInput();
 
-        calculatorInput.acceptUserOperator();
+        x = calculatorInput.userValueInputValidator(calculatorInput.acceptUserValue());
+        z = calculatorInput.userInputValidator(calculatorInput.acceptUserOperator());
+        y = calculatorInput.userValueInputValidator(calculatorInput.acceptUserValue());
 
-        calculatorInput.acceptUserValue();
 
     }
 }
