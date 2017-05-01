@@ -190,7 +190,13 @@ public class CalculatorApp {
             if (operandTwo.equals("e")) {
                 break;
             }
+            while (!NumberUtils.isParsable(operandTwo)) {
+                calculatorDisplay.displayInvalidInput();
+                calculatorDisplay.returnDisplay(storedMemory.returnStoredNumber());
+                operandTwo = input.getOperandInput();
+            }
             double operandTwoNumber = Double.parseDouble(operandTwo);
+
 
 
             if (calculationFeed.errorChecks(storedMemory.returnStoredNumber(), operator, operandTwoNumber)) {
