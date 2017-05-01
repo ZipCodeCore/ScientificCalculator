@@ -9,7 +9,9 @@ public enum Lexer {
     NUMBER("NUMBER"),
     BASICOP("BASICOP"),
     WHITESPACE("WHITESPACE"),
-    TRIG("TRIG");
+    TRIG("TRIG"),
+    BEGIN("BEGIN"),
+    END("END");
 
     private final String description;
 
@@ -23,28 +25,71 @@ public enum Lexer {
         else if (c == ',' || c == '.') Lexer.NUMBER.name();
         else if (c == ' ') type = Lexer.WHITESPACE.name();
         else if (c == '*' || c == '+' || c == '-' || c == '/') type = Lexer.BASICOP.name();
+        else type = "NOT";
+        return type;
+    }
+
+    public static String analyze(String c) {
+        String type = "";
+        if (c.equals("sine")) type = Lexer.TRIG.name();
         return type;
     }
 
     public static void iterator(String text, ArrayList<String> list) {
-        StringBuilder cur = new StringBuilder(20);
-        String type = null;
-        for (char i : text.toCharArray()) {
+        new LexerObject(text, list);
+    }
+
+    private static class LexerObject {
+
+        private ArrayList<String> list;
+        private String text;
+        private StringBuilder data;
+        private StringBuilder tmp;
+        private String type;
+
+        public LexerObject(String textParam, ArrayList<String> listParam) {
+            list = listParam;
+            text = textParam;
+            data = new StringBuilder(20);
+            tmp = new StringBuilder(40);
+            for (char i : text.toCharArray()) {
+                String lexerResult = Lexer.analyze(i);
+                if (!lexerResult.equals("NOT")) handleSingleCharacter(lexerResult, i);
+                else handleFunctionStrings(i);
+            }
+            String lex = String.format("%s %s", type, data.toString());
+            list.add(lex);
+        }
+
+        private void handleFunctionStrings(char i) {
+            if (i != '(' || i != ')') tmp.append(i);
+            else if (i == '(') {
+                String result = Lexer.analyze(tmp.toString());
+                String lex = String.format("%s %s", result, tmp.toString());
+                list.add(lex);
+                list.add(Lexer.BEGIN.name());
+            }
+            else if (i == ')') {
+                list.add(Lexer.END.name());
+            }
+        }
+
+        private void handleSingleCharacter(String result, char i) {
             String lexerResult = Lexer.analyze(i);
             if (type == null) {
-                type = lexerResult;
-                cur.append(i);
+                type = result;
+                data.append(i);
             }
             else if (!type.equals(lexerResult)) {
-                String lex = String.format("%s %s", type, cur.toString());
+                String lex = String.format("%s %s", type, data.toString());
                 list.add(lex);
-                cur = new StringBuilder(20);
-                cur.append(i);
+                data = new StringBuilder(20);
+                data.append(i);
                 type = lexerResult;
             }
-            else cur.append(i);
+            else data.append(i);
         }
-        String lex = String.format("%s %s", type, cur.toString());
-        list.add(lex);
+
+
     }
 }
