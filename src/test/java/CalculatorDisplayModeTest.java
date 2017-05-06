@@ -42,14 +42,12 @@ public class CalculatorDisplayModeTest {
         Assert.assertEquals("binary conversion test", expected, actual);
     }
 
-
-    //This method doesn't work.
     @Test
     public void toDisplayOctalTest() {
         //Given
         CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
         calculatorDisplayMode.switchDisplayMode(3);
-        String expected = "110.5";
+        String expected = "100.5";
         //When
         String actual = calculatorDisplayMode.toDisplayMode(64.625);
         //Then

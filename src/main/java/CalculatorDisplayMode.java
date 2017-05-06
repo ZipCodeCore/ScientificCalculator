@@ -12,7 +12,7 @@ class CalculatorDisplayMode {
 
     void switchDisplayMode() {
         mode++;
-        mode = mode % 3;  //Can turn this to 3 or 4 when I've fixed the binary and octal display modes
+        mode = mode % 4;
     }
 
     void switchDisplayMode(int x) {
@@ -47,13 +47,13 @@ class CalculatorDisplayMode {
                 StringBuilder octal = new StringBuilder();
                 double number = x - z;
                 while (number > 0 && octal.length() < 15) {
-                    double r = number * 8;
+                    int r = (int) (number * 8);
                     if (r >= 1) {
-                        octal.append(1);
-                        number = r - 1;
+                        octal.append(r);
+                        number -= r;
                     } else {
                         octal.append(0);
-                        number = r;
+                        number -= r;
                     }
                 }
                 return Long.toOctalString(z) + "." + octal.toString();
