@@ -130,6 +130,16 @@ public class InputReader {
                 filter.setUnits("radians");
             } else if (input.equals("switch units")) {
                 filter.setUnits();
+            } else if (input.equals("switch display mode")) {
+                display.switchDisplayMode();
+            } else if (input.equals("switch display mode binary")) {
+                display.switchDisplayMode(2);
+            } else if (input.equals("switch display mode octal")) {
+                display.switchDisplayMode(3);
+            } else if (input.equals("switch display mode decimal")) {
+                display.switchDisplayMode(0);
+            } else if (input.equals("switch display mode hexadecimal")) {
+                display.switchDisplayMode(1);
             } else if (input.equals("quit")) {
                 break;
             } else if (input.equals("clear")) {

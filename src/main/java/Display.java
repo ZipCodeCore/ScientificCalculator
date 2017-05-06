@@ -1,6 +1,4 @@
-/**
- * Created by danzygmund-felt on 4/28/17.
- */
+
 
 public class Display {
 
@@ -9,6 +7,14 @@ public class Display {
 
     Display() {
         this.display = 0.0;
+    }
+
+    public void switchDisplayMode() {
+        calculatorDisplayMode.setMode();
+    }
+
+    public void switchDisplayMode(int x) {
+        calculatorDisplayMode.setMode(x);
     }
 
     public void setDisplay(double x) {

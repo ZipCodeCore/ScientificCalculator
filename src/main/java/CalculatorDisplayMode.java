@@ -10,12 +10,12 @@ class CalculatorDisplayMode {
         mode = 0;
     }
 
-    void switchDisplayMode() {
+    void setMode() {
         mode++;
         mode = mode % 4;
     }
 
-    void switchDisplayMode(int x) {
+    void setMode(int x) {
         mode = x;
     }
 

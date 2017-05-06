@@ -22,7 +22,7 @@ public class CalculatorDisplayModeTest {
     public void toDisplayHexadecimalTest() {
         //Given
         CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
-        calculatorDisplayMode.switchDisplayMode();
+        calculatorDisplayMode.setMode();
         String expected = Double.toHexString(-81.81);
         //When
         String actual = calculatorDisplayMode.toDisplayMode(-81.81);
@@ -34,7 +34,7 @@ public class CalculatorDisplayModeTest {
     public void toDisplayBinaryTest() {
         //Given
         CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
-        calculatorDisplayMode.switchDisplayMode(2);
+        calculatorDisplayMode.setMode(2);
         String expected = "1000.001";
         //When
         String actual = calculatorDisplayMode.toDisplayMode(8.125);
@@ -46,7 +46,7 @@ public class CalculatorDisplayModeTest {
     public void toDisplayOctalTest() {
         //Given
         CalculatorDisplayMode calculatorDisplayMode = new CalculatorDisplayMode();
-        calculatorDisplayMode.switchDisplayMode(3);
+        calculatorDisplayMode.setMode(3);
         String expected = "100.5";
         //When
         String actual = calculatorDisplayMode.toDisplayMode(64.625);
