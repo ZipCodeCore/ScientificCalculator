@@ -1,3 +1,5 @@
+package com.zipcodewilmington.scientificcalculator;
+
 public class scientificCalculator {
     public String state;
     public Double currentNumber;
