@@ -1,22 +1,23 @@
-# ZCW-MacroLabs-OOP-ScientificCalculator
+# ScientificCalculator (maven) ZCW
 
 
 ## Description
 
-In this project you will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
+In this project your team will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
 
-You should work on this project in your own repository. Click the `fork` button in the top right corner to create a copy of this repository on your github account. You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
+Your team should work on this project in a single repository. Click the `fork` button in the top right corner to create a copy of this repository in one of your github accounts. You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
 
+Then, each of the other team members should clone from the shared repository. You may want to dived the work into various classes, where each person takes responsibility for a whole class. 
 
 ## Requirements
 
 ### Testing
 
-All features must be tested. Tests must include normal behavior, and any possible error situations. Tests must have descriptive names and should be independent of each other (running or not running one test should not influence the behavior of any other test).
+All features must be tested with Test classes. Tests must include normal behavior, and any possible error situations. Tests must have descriptive names and should be independent of each other (running or not running one test should not influence the behavior of any other test).
 
 ### Documentation
 
-You must produce UML diagrams for your program. All classes (excluding test classes) must be included in the UML class diagrams.
+You must produce UML diagrams for your program. All classes (excluding test classes) must be included in the UML class diagrams. Each class should have a UML box, with variables and a list of methods.
 
 ### Core Features 
 
@@ -86,4 +87,4 @@ The following functions should take the displayed value (x) and updated it accor
 
 ## Submission
 
-Completed projects should be submitted by submitting a pull request against the [original repository](https://github.com/Zipcoder/project-1-calculator). All work should be done in your own repository.
+Completed projects should be submitted by submitting a pull request against the [original repository](https://github.com/Zipcoder/ScientificCalculator.Maven). All work should be done in your team's repository.
