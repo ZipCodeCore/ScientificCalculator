@@ -4,7 +4,6 @@ import java.lang.Math;
 public class Calculator {
 
     public Calculator() {
-
     }
 
     public static Double add (Double a, Double b){
@@ -23,8 +22,8 @@ public class Calculator {
         return Math.sqrt(a);
     }
 
-    public Double sq(Double a, Double b){
-        return Math.pow(a, 2);
+    public Double sq(Double a){
+        return Math.pow(a, (double)2);
     }
 
     public Double exp(Double a, Double b){
