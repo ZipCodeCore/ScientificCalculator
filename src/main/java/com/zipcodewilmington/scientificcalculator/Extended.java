@@ -89,52 +89,71 @@ public class Extended {
     public double memRecal(){
         return memory;
     }
-
+/*
+    public double convertDegreesToRadians (double degrees){
+        return degrees*Math.PI/180;
+    }
+    */
     public double cosine(double input){
-        return 0;
+        if(currentTrigUnits=='d') input = Math.toRadians(input);
+        return Math.cos(input);
     }
 
     public double tangent(double input){
-        return 0;
+        if(currentTrigUnits=='d') input = Math.toRadians(input);
+        return Math.tan(input);
     }
 
     public double invSine(double input){
-        return 0;
+        if(currentTrigUnits=='d') input = Math.toRadians(input);
+        return Math.asin(input);
     }
 
     public double invCosine(double input){
-        return 0;
+        if(currentTrigUnits=='d') input = Math.toRadians(input);
+        return Math.acos(input);
     }
 
     public double invTan(double input){
-        return 0;
+        if(currentTrigUnits=='d') input = Math.toRadians(input);
+        return Math.atan(input);
     }
 
     public void switchUnitsMode(){
-
+        if(currentTrigUnits==trigUnits[0])currentTrigUnits=trigUnits[1];
+        else currentTrigUnits = trigUnits[0];
     }
 
     public void switchUnitsMode(String mode){
-
+        if(mode.equals("degrees")) currentTrigUnits=trigUnits[1];
+        else currentTrigUnits = trigUnits[0];
     }
 
     public double log(double input){
-        return 0;
+        return Math.log10(input);
     }
 
     public double invLog(double input){
-        return 0;
+        return Math.pow(10,input);
     }
 
     public double ln(double input){
-        return 0;
+        return Math.log(input);
     }
 
     public double invLn(double input){
-        return 0;
+        return Math.exp(input);
     }
 
     public double factorial(double input){
+        double myResult=1;
+        if(input%1==0){
+            for(int i=Math.abs(input);i>1){
+                myResult *= i;
+            }
+            if(input<0) myResult *= (-1);
+            return myResult;
+        }
         return 0;
     }
 
