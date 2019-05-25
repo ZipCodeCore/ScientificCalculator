@@ -3,21 +3,9 @@ package com.zipcodewilmington.scientificcalculator;
 import javax.xml.transform.Result;
 import java.sql.ResultSet;
 
-/*
-*
-*
-*
-* commented out bits aren't done
-*   -bob
-*
-*
-*
-*
-* */
+
 public class scientificCalculator extends Calculator {
-    public String state;
-    public Double currentNumber;
-    public char currentDisplayMode = 'd'; ///d = decimals, h = hex, o = oct, b = binary
+
     public Boolean resultInRadians = true;
 
     public scientificCalculator() {}
@@ -29,43 +17,12 @@ public class scientificCalculator extends Calculator {
 
 
 
-    /*
-    *
-    *
-    * these next to methods are to covert to other displays.
-    * Can just call at the end of each method if to covert to the
-    * correct mode. I dont know if it makes any sense, code to implement the
-    * change in dispay is not in there but I'm tired and it
-    * is late through it in there. feel free to destroy :P
-    *
-    *
-    * */
-    ///Changes display mode of
-//    public void switchDisplayMode (char modeInput) {
-//        this.currentDisplayMode = modeInput;
+//    public Double changeDisplayType() {
+//        return Double;
 //    }
 //
 //
-//    public Double covertNumber(Double num, char currentDisplayMode) {
 //
-//        switch (currentDisplayMode) {
-//            case 'b':
-//                //covert to binary
-//                break;
-//            case 'h':
-//                //convert to hex
-//                break;
-//            case 'o':
-//                //convert to oct
-//                break;
-//            case 'd':
-//                //convert to decimal
-//                break;
-//            default:
-//                break;
-//        }
-//        return num;
-//    }
 
     public Double roundDecTen (Double num) {
         Double result = Double.parseDouble(String.format("%.6f %n", num));

@@ -5,6 +5,7 @@ package com.zipcodewilmington.scientificcalculator;
 //
 //import javax.xml.transform.Result;
 
+import java.sql.SQLOutput;
 import java.util.zip.Deflater;
 
 public class Runner {
@@ -15,8 +16,10 @@ public class Runner {
     private String operator;
     private String calcType = "";
     private Boolean isRunning = true;
+    private String displayType = "d"; // decimal hex oct binary
     Calculator calc;
     scientificCalculator sciCalc;
+
 
 
 
@@ -28,6 +31,7 @@ public class Runner {
            while(isRunning) {
 
                calcType = Console.getStringInput("Enter \"c\" for core or \"s\" for scientific ***this is case sensitive*** ");
+               displayType = Console.getStringInput("Enter \"d\" for Decimal, \"h\" for Hexidecimal, \"h\" for Octal or \"b\" for Binary ***this is case sensitive*** ");
 
 
                if (calcType.equals("c")) {
@@ -36,7 +40,8 @@ public class Runner {
                            "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n" );
                } else if (calcType.equals("s")) {
                    sciCalc = new scientificCalculator();
-                   System.out.println("------Scientific Mode------");
+                   System.out.println("------Scientific Mode------" + "Available Operations: \n " +
+                           "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: aSin | ArcCos: acos | ArcTan: aTan | \n" + " Log: log | Inverse Log: invLog | Natual Log: ln | Inverse Natual: invLn | Factorial: factorial\n" );;
                } else {
                    System.out.println("error: did not enter c or s" ); //This needs to go back to start
                }
@@ -117,9 +122,29 @@ public class Runner {
                default:
                    System.out.println ("error: please enter valid operator ");
                    break;
-
-
            }
+
+           //---- could handle chaning display this way? Just need to
+           //---- create the methods in scientificCalculator and we are good i think.
+
+
+//           if(displayType = "d") {
+//
+//               System.out.println(calc.covertDec(result));
+//
+//           } else if(displayType = "o") {
+//
+//               System.out.println( calc.covertOct(result));
+//
+//           } else if(displayType = "h") {
+//
+//                   System.out.println( calc.covertHex(result));
+//           } else if (displayType = "b") {
+//
+//                   System.out.println( calc.covertHex(result));
+//               }
+
+
 
            System.out.println("result = " + result);
        }
