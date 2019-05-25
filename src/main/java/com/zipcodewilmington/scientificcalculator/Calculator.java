@@ -6,7 +6,7 @@ public class Calculator {
 
     }
 
-    public static Double add (Double a, Double b){
+    public  Double add (Double a, Double b){
         return null;
     }
 

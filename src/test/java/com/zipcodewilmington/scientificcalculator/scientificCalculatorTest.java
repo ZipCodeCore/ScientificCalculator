@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class scientificCalculatorTest {
+public class scientificCalculatorTest extends Calculator {
 
     @Test
     public void switchDisplayMode() {
@@ -25,8 +25,8 @@ public class scientificCalculatorTest {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.sine(input);
-
-        assertEquals(new Double(-0.959), result);
+        Double expected = -0.959;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test

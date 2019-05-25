@@ -68,7 +68,7 @@ public class scientificCalculator extends Calculator {
 //    }
 
     public Double roundDecTen (Double num) {
-        Double result = Double.parseDouble(String.format("%.3f %n", num));
+        Double result = Double.parseDouble(String.format("%.6f %n", num));
         return result;
     }
 
