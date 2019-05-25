@@ -35,8 +35,9 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.cosine(input);
+        Double expected = 0.284;
 
-        assertEquals(new Double(0.284), result);
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -45,8 +46,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.tangent(new Double(input));
-
-        assertEquals(new Double(-3.381), result);
+        Double expected = -3.381;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -55,8 +56,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.arcSine(new Double(input));
-
-        assertEquals(new Double(0.524), result);
+        Double expected = 0.524;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -65,8 +66,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.arcCos(new Double(input));
-
-        assertEquals(new Double(1.047), result);
+        Double expected = 1.047;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -76,8 +77,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.arcTan(input);
-
-        assertEquals(new Double(0.464), result);
+        Double expected = 0.464;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -94,8 +95,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.log(input);
-
-        assertEquals(new Double(0.699), result);
+        Double expected = 0.699;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -104,8 +105,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.invLog(input);
-
-        assertEquals(new Double(100000), result);
+        Double expected = 100000.0;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -114,8 +115,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.ln(input);
-
-        assertEquals(new Double(1.609), result);
+        Double expected = 1.609;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -124,8 +125,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.invLn(input);
-
-        assertEquals(new Double(148.413), result);
+        Double expected = 148.413;
+        assertEquals( expected, result, 0.01 );
     }
 
     @Test
@@ -134,8 +135,8 @@ public class scientificCalculatorTest extends Calculator {
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.factorial(input);
-
-        assertEquals(new Double(120), result);
+        Double expected = 120.0;
+        assertEquals( expected, result, 0.01 );
 
     }
 }
