@@ -74,16 +74,17 @@ public class ExtendedTest {
 
     @Test
     public void logTest() {
-        Assert.assertEquals(Math.log(0),extended.log(0),delta);
+        Assert.assertEquals(2,extended.log(100),delta);
     }
 
     @Test
     public void invLogTest() {
-        Assert.assertEquals(Math.cos(0),extended.cosine(0),delta);
+        Assert.assertEquals(100000,extended.invLog(5),delta);
     }
 
     @Test
     public void lnTest() {
+        Assert.assertEquals(1,extended.ln(Math.E),delta);
     }
 
     @Test
