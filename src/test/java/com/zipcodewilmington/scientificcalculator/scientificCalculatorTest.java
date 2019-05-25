@@ -51,33 +51,33 @@ public class scientificCalculatorTest {
 
     @Test
     public void arcSine() {
-        Double input = 5.0;
+        Double input = 0.5;
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.arcSine(new Double(input));
 
-        assertEquals(new Double(100), result);
+        assertEquals(new Double(0.524), result);
     }
 
     @Test
     public void arcCos() {
-        Double input = 5.0;
+        Double input = 0.5;
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.arcCos(new Double(input));
 
-        assertEquals(new Double(100), result);
+        assertEquals(new Double(1.047), result);
     }
 
     @Test
     public void arcTan() {
-        Double input = 5.0;
+        Double input = 0.5;
 
 
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.arcTan(input);
 
-        assertEquals(new Double(100), result);
+        assertEquals(new Double(0.464), result);
     }
 
     @Test
@@ -93,9 +93,9 @@ public class scientificCalculatorTest {
         Double input = 5.0;
 
         scientificCalculator testCalc = new scientificCalculator();
-        Double result = testCalc.invLn(input);
+        Double result = testCalc.log(input);
 
-        assertEquals(new Double(100), result);
+        assertEquals(new Double(0.699), result);
     }
 
     @Test
@@ -103,9 +103,9 @@ public class scientificCalculatorTest {
         Double input = 5.0;
 
         scientificCalculator testCalc = new scientificCalculator();
-        Double result = testCalc.invLn(input);
+        Double result = testCalc.invLog(input);
 
-        assertEquals(new Double(100), result);
+        assertEquals(new Double(100000), result);
     }
 
     @Test
@@ -115,7 +115,7 @@ public class scientificCalculatorTest {
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.ln(input);
 
-        assertEquals(new Double(100), result);
+        assertEquals(new Double(1.609), result);
     }
 
     @Test
@@ -125,7 +125,7 @@ public class scientificCalculatorTest {
         scientificCalculator testCalc = new scientificCalculator();
         Double result = testCalc.invLn(input);
 
-        assertEquals(new Double(100), result);
+        assertEquals(new Double(148.413), result);
     }
 
     @Test

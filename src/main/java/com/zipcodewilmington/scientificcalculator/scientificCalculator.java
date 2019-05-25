@@ -77,6 +77,14 @@ public class scientificCalculator extends Calculator {
 //        return null;
 //    } //save up to one number for later
 
+    //need to be able to clear and recall saved num
+
+
+    //Switch between radians and degrees which is handled in each method.
+//    public Double switchUnitsMode()  {
+//     }
+
+
      public Double sine(Double x){
         if(resultInRadians) {
            return roundDecTen(Math.sin(x));
@@ -98,35 +106,30 @@ public class scientificCalculator extends Calculator {
 
          return roundDecTen(Math.toDegrees(Math.tan(x)));
      }
+
      public Double arcSine(Double x){
          if(resultInRadians) {
              return roundDecTen(Math.asin(x));
          }
-
          return roundDecTen(Math.toDegrees(Math.asin(x)));
+         //need err handling for nums < -1 or > 1
      }
+
      public Double arcCos(Double x){
          if(resultInRadians) {
              return roundDecTen(Math.acos(x));
          }
-
          return roundDecTen(Math.toDegrees(Math.acos(x)));
+         //need err handling for nums < -1 or > 1
      }
+
      public Double arcTan(Double x){
          if(resultInRadians) {
              return roundDecTen(Math.atan(x));
          }
-
          return roundDecTen(Math.toDegrees(Math.atan(x)));
+         //need err handling for nums < -1 or > 1
      }
-//     public Double switchUnitsMode()  {
-//        return null;
-//     }
-//
-//     public Double switchUnitesMode(String mode) {
-//
-//        return null;
-//     }
 
 
      public Double log(Double x)
