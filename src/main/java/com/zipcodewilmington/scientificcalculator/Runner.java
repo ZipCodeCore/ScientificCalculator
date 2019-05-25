@@ -56,70 +56,72 @@ public class Runner {
                    isRunning = false;
                    break;
                case "+":
-                   System.out.println(calc.add(x , y));
+                   result =(calc.add(x , y));
                    break;
                case "-":
-                   System.out.println(calc.subtract( x, y));
+                   result =(calc.subtract( x, y));
                    break;
                case "*":
-                   System.out.println(calc.multiply(x, y));
+                   result =(calc.multiply(x, y));
                    break;
                case "/":
-                   System.out.println(calc.divide(x, y));
+                   result =(calc.divide(x, y));
                    break;
                case "sqrt":
-                   System.out.println(calc.sqrt(x));
+                   result =(calc.sqrt(x));
                    break;
                case "sq":
-                   System.out.println(calc.sq(x));
+                   result =(calc.sq(x));
                    break;
                case "exp":
-                   System.out.println(calc.exp(x, y));
+                   result =(calc.exp(x, y));
                    break;
                case "inv":
-                   System.out.println(calc.inv(x));
+                   result =(calc.inv(x));
                    break;
                case "neg":
-                   System.out.println(calc.negate(x));
+                   result =(calc.negate(x));
                    break;
 
 //   //////////Scientific Methods
                case "sin":
-                   System.out.println(sciCalc.sine(x));
+                   result =(sciCalc.sine(x));
                    break;
                case "cos":
-                   System.out.println(sciCalc.cosine( x));
+                   result =(sciCalc.cosine( x));
                    break;
                case "tan":
-                   System.out.println(sciCalc.tangent(x));
+                   result =(sciCalc.tangent(x));
                    break;
                case "asin":
-                   System.out.println(sciCalc.arcSine(x));
+                   result =(sciCalc.arcSine(x));
                    break;
                case "acos":
-                   System.out.println(sciCalc.arcCos(x));
+                   result =(sciCalc.arcCos(x));
                    break;
                case "atan":
-                   System.out.println(sciCalc.arcTan(x));
+                   result =(sciCalc.arcTan(x));
                    break;
                case "log":
-                   System.out.println(sciCalc.log(x));
+                   result =(sciCalc.log(x));
                    break;
                case "invlog":
-                   System.out.println(sciCalc.invLog(x));
+                   result =(sciCalc.invLog(x));
                    break;
                case "ln":
-                   System.out.println(sciCalc.ln(x));
+                   result =(sciCalc.ln(x));
                    break;
                case "factorial":
-                   System.out.println(sciCalc.factorial(x));
+                   result =(sciCalc.factorial(x));
 
                default:
-                   System.out.println("error: please enter valid operator ");
+                   System.out.println ("error: please enter valid operator ");
                    break;
 
 
            }
+
+           System.out.println("result = " + result);
        }
     }
 
