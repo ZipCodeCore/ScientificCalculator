@@ -77,6 +77,10 @@ public class Extended {
         return returnArray;
     }
 
+    public static String getCurTrigUnits(){
+        return trigUnitNames[curTrigUnitsIndex];
+    }
+
     public static String[] getTrigModeOptions(){
         //   return Arrays.copyOf(displayModeNames,displayModeNames.length);
         String[] returnArray=new String[trigUnitNames.length];
