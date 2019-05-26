@@ -20,8 +20,8 @@ public class Calculator extends Console
     }
 
     private void getUserInput(){
-        userInput = Console.getStringInput("");
-        userInput.toUpperCase();
+        userInput = getStringInput("");
+        userInput = userInput.toUpperCase();
     }
 
     private void checkUserInput()
@@ -29,15 +29,22 @@ public class Calculator extends Console
 
         // if user entered a number
         //  call core.changeDisplay();
-        // else if user entered a operator (Example: sine)
+        // else if user entered a operator / command (Example: sine)
         //  call core.changeDisplay(Extended.sine(core.getDisplay()));
         // else if user entered a double-side operator (Example: addition)
         //  isWaitingForNumInput = true;
         // else if user entered switch mode command
         // {
         //      if user entered mode option
-        //          Extended.switchMode(userInput)
-        // }    .... to be continued!
+        //          Extended.switchMode(userInput);
+        //      else
+        //          Extended.switchMOdeRotate();
+        // }
+        // else if user entered emptyString
+        //      do nothing;
+        // else
+        //      print invalid command error
+        //
 
     }
 
