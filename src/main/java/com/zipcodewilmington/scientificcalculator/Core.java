@@ -2,7 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Arrays;
 
-public class Core extends Extended{
+public class Core extends Calculator{
     private Double firstVal;
     private Double secondVal;
     private static Double result;
@@ -18,7 +18,7 @@ public class Core extends Extended{
         result = firstVal + secondVal;
         return result;
     }
-    public double subtract (double firstVal, double secondVal) {
+    public static double subtract (double firstVal, double secondVal) {
         result = firstVal - secondVal;
         return result;
     }

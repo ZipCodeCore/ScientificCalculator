@@ -8,7 +8,7 @@ enum trigUnits {
 enum displayModes {
     BINARY, OCTAL, DECIMAL, HEXADECIMAL;
 }*/
-public class Extended {
+public class Extended extends Core{
 /*
     public displayModes currentDisplayMode = displayModes.DECIMAL;
 

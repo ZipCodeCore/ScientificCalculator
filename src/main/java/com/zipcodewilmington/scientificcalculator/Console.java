@@ -9,7 +9,7 @@ public class Console {
     private Double num1 = 0.0;
     private Double num2 = 0.0;
     private Double result = 0.0;
-    private String userInput;
+//    private String userInput;
 
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
@@ -34,6 +34,7 @@ public class Console {
         return null;
     }
 
+    /*
     public void run() {
 
         userInput = Console.getStringInput("0");
@@ -136,7 +137,7 @@ public class Console {
                     case "-": {
                         userInput = Console.getStringInput("-");
                         num2 = Double.parseDouble(userInput);
-                        result = Core.substract(num1, num2);
+                        result = Core.subtract(num1, num2);
                         break;
                     }
                     case "*": {
@@ -175,5 +176,6 @@ public class Console {
             num1 = result;
         }
 
-    }
+
+    }*/
 }
