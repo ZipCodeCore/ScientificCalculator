@@ -32,7 +32,7 @@ public class ScientificCalculator {
                         break;
             case 4: ScientificArithmeticOperations s4 = new ScientificArithmeticOperations();
                         double b = sc.nextDouble();
-                        result = s4.sum(a,b);
+                        result = s4.Sum(a,b);
                         break;
             default: System.out.println("ERR");
 
