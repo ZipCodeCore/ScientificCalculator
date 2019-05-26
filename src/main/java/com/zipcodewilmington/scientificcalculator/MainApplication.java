@@ -17,6 +17,7 @@ public class MainApplication {
         Console calc1 = new Console();
         //MainApplication calc = new MainApplication();
         calc1.run();
+//        String input = Console.getStringInput("0");
 
 
     }

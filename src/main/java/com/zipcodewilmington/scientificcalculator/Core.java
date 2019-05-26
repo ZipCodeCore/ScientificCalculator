@@ -2,7 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Arrays;
 
-public class Core {
+public class Core extends Extended{
     private Double firstVal;
     private Double secondVal;
     private static Double result;
@@ -22,11 +22,11 @@ public class Core {
         result = firstVal - secondVal;
         return result;
     }
-    public double multiply (double firstVal, double secondVal) {
+    public static double multiply (double firstVal, double secondVal) {
         result = firstVal * secondVal;
         return result;
     }
-    public double divide (double firstVal, double secondVal) {
+    public static double divide (double firstVal, double secondVal) {
         if (secondVal == 0) {
             return 0;
         }
@@ -35,20 +35,20 @@ public class Core {
             return result;
         }
     }
-    public double square (double firstVal) {
+    public static double square (double firstVal) {
         result = firstVal*firstVal;
         return result;
 
     }
-    public double squareRoot (double firstVal) {
+    public static double squareRoot (double firstVal) {
         result = Math.sqrt(firstVal);
         return result;
     }
-    public double exponent (double firstVal, double secondVal) {
+    public static double exponent (double firstVal, double secondVal) {
         result =  Math.pow(firstVal, secondVal);
         return result;
     }
-    public double inverse (double firstVal) {
+    public static double inverse (double firstVal) {
         if (firstVal == 0) {
             return 0;
         }
@@ -57,7 +57,7 @@ public class Core {
             return result;
         }
     }
-    public double invertSign (double firstVal) {
+    public static double invertSign (double firstVal) {
 
         if (firstVal == 0) {
             return 0;
@@ -67,13 +67,13 @@ public class Core {
             return result;
         }
     }
-    public int clear() {
-        return 0;
+    public static double clear() {
+        return 0.0;
     }
 
     public static Integer validOperator (String inputTest) {
 
-        String [] oneSidedOp = {"M+","MC","MRC","sin","cos","tan","asin","acos","atan","log","ln","e^x","10^x","!","clear","sq","sqrt","inv","sign"};
+        String [] oneSidedOp = {"M+","MC","MRC","sin","cos","tan","asin","acos","atan","log","ln","e^x","10^x","!","c","sq","sqrt","inv","sign"};
         String [] twoSidedOp = {"+","-","*","/","exp","switchDR","switchDISP"};
 
         for (String operator : oneSidedOp) {

@@ -77,10 +77,11 @@ public class Extended {
         System.arraycopy(displayModeNames,0,returnArray,0,displayModeNames.length);
         return returnArray;
     }
-
-    public static String getCurTrigUnits(){
+    
+    public static String getCurTrigUnitsName(){
         return trigUnitNames[curTrigUnitsIndex];
     }
+
 
     public static String[] getTrigModeOptions(){
         //   return Arrays.copyOf(displayModeNames,displayModeNames.length);
@@ -143,10 +144,6 @@ public static double sine(double input){
     public static void switchUnitsMode(String mode){
         if(mode.equals(trigUnitNames[0])) curTrigUnitsIndex=0;
         else if(mode.equals(trigUnitNames[1]))curTrigUnitsIndex = 1;
-    }
-
-    public static String getCurTrigUnitsName(){
-        return trigUnitNames[curTrigUnitsIndex];
     }
 
     public static double log(double input){
