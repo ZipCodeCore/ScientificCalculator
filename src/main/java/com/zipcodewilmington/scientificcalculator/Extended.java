@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 import java.util.Arrays;
+//import java.lang.StringBuilder;
 /*
 enum trigUnits {
     RADIANS, DEGREES;
@@ -175,6 +176,23 @@ public static double sine(double input){
         }
         return 0;
 
+    }
+
+    public static String fib(Double num1, Double num2){
+    double prev=0;
+    StringBuilder myBuilder = new StringBuilder(Double.toString(prev));
+    for (int i=1;i<num2;i++){
+            if(i%2==1) {
+                myBuilder.append(", " + convertOutput(num1));
+                prev+=num1;
+            }
+            else{
+                myBuilder.append(", " + convertOutput(prev));
+                num1+=prev;
+            }
+
+        }
+    return myBuilder.toString();
     }
 
 
