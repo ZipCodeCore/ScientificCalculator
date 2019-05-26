@@ -18,7 +18,7 @@ public class Core {
         result = firstVal + secondVal;
         return result;
     }
-    public double substract (double firstVal, double secondVal) {
+    public double subtract (double firstVal, double secondVal) {
         result = firstVal - secondVal;
         return result;
     }
