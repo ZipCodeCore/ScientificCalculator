@@ -4,119 +4,97 @@ import java.lang.Math;
 import java.math.BigInteger;
 
 
-public class ScientificCalc{
-//String s;
-//Integer i;
-//Double d;
-//
-//public ScientificCalc(String s,Integer i,Double d){
-//    this.s=s.toUpperCase();
-//    this.i=i;
-//    this.d=d;
-//    }
+public class ScientificCalc {
+    Double memory = 0.0;
 
-  public String  switchDisplayMode(String s,int i){
 
-      String mode="";
-      switch (s) {
-          case "binary": mode = Integer.toBinaryString(i);
-                        break;
-          case "octal":  mode=Integer.toOctalString(i);
-                        break;
+    public Double MathOperation(String s, Double d,Integer i) {
 
-          case "hexadecimal":   mode=Integer.toHexString(i);
-                        break;
-          case "decimal": mode=Integer.toBinaryString(i);
-                            break;
-           default:
-               System.out.println("Please enter a valid input");
-      }
-
-        return mode;
-    }
-
-    public double trig(String s,Double d){
-
-        Double trigval=0.0;
+        Double returnValue = 0.0;
         switch (s) {
-            case "sin":  trigval = Math.sin(d);  //d in radians
+            case "binary":
+                returnValue = Double.valueOf(Integer.toBinaryString(d.intValue()));
                 break;
-            case "cos":  trigval = Math.cos(d);
+            case "octal":
+                returnValue = Double.valueOf(Integer.toOctalString(d.intValue()));
                 break;
-            case "tan":  trigval = Math.tan(d);
-                break;
-            case "inverse sine":  trigval = Math.asin(d);
-                break;
-            case "inverse cosine":  trigval = Math.acos(d);
-                break;
-            case "inverse tan":  trigval = Math.atan(d);
-                break;
-            default:  System.out.println("Please enter a valid input");
-            break;
-        }
-        return trigval;
-    }
 
-    public double trigdeg(String s,Double d) {
+            case "hexadecimal":
+                returnValue = Double.valueOf(Integer.toHexString(d.intValue()));
+                break;
+            case "decimal":
+                returnValue = Double.valueOf(Integer.toBinaryString(d.intValue()));
+                break;
 
-        Double trigvald = 0.0;
-        switch (s) {
             case "sin":
-                trigvald = Math.sin(Math.toRadians(d));  //d in degrees
+                String ui = Console.getStringInput("Enter Degrees or Radians");
+                returnValue = ui.equalsIgnoreCase("degrees") ? Math.sin(Math.toRadians(d)) : Math.sin(d);
                 break;
             case "cos":
-                trigvald = Math.cos(Math.toRadians(d));
+                ui = Console.getStringInput("Enter Degrees or Radians");
+                returnValue = ui.equalsIgnoreCase("degrees") ? Math.cos(Math.toRadians(d)) : Math.cos(d);
                 break;
             case "tan":
-                trigvald = Math.tan(Math.toRadians(d));
+                ui = Console.getStringInput("Enter Degrees or Radians");
+                returnValue = ui.equalsIgnoreCase("degrees") ? Math.tan(Math.toRadians(d)) : Math.tan(d);
                 break;
             case "inverse sine":
-                trigvald = Math.asin(Math.toRadians(d));
+                ui = Console.getStringInput("Enter Degrees or Radians");
+                returnValue = ui.equalsIgnoreCase("degrees") ? Math.asin(Math.toRadians(d)) : Math.asin(d);
                 break;
             case "inverse cosine":
-                trigvald = Math.acos(Math.toRadians(d));
+                ui = Console.getStringInput("Enter Degrees or Radians");
+                returnValue = ui.equalsIgnoreCase("degrees") ? Math.sin(Math.toRadians(d)) : Math.sin(d);
                 break;
             case "inverse tan":
-                trigvald = Math.atan(Math.toRadians(d));
+                ui = Console.getStringInput("Enter Degrees or Radians");
+                returnValue = ui.equalsIgnoreCase("degrees") ? Math.atan(Math.toRadians(d)) : Math.atan(d);
+                break;
+            case "log":
+                returnValue = Math.log(d);
+                break;
+            case "log10":
+                returnValue = Math.log10(d);
+                break;
+            case "inverse natural log":
+                returnValue = Math.pow(Math.E, d);
+                break;
+            case "inverse log":
+                returnValue = Math.pow(10, d);
+                break;
+            case "factorial":
+                returnValue= (factorial(i)).doubleValue();
+                break;
+            case "mr":
+                returnValue = memory;
+            case "mc":
+                this.memory = 0.0;
+            case "m+":
+                returnValue = memory + d;
                 break;
             default:
                 System.out.println("Please enter a valid input");
                 break;
         }
-        return trigvald;
+        memory = returnValue;
+        return returnValue;
     }
 
+    public BigInteger factorial(Integer i) {
 
-    public BigInteger factorial(Integer i){
+        BigInteger f = new BigInteger("1");
 
-
-        BigInteger f=new BigInteger("1");
-
-        for(int j=1;j<=i;j++){
-            f=f.multiply(BigInteger.valueOf(j));
+        for (int j = 1; j <= i; j++) {
+            f = f.multiply(BigInteger.valueOf(j));
         }
-        System.out.println("The Factorial of "+f);
+        memory = f.doubleValue();
         return f;
     }
-
-    public double logfns(String s, Double d){
-         Double logres=0.0;
-    switch(s) {
-        case "log": logres=Math.log(d);
-                    break;
-        case "log10": logres=Math.log10(d);
-                    break;
-        case "inverse natural log":logres=Math.pow(Math.E,d);
-                    break;
-        case "inverse log": logres=Math.pow(10,d);
-                break;
-        default:
-            System.out.println("Please enter a valid input");
-                break;
-
-    }
-          return logres; }
-
-
-
 }
+
+
+
+
+
+
+
