@@ -8,15 +8,6 @@ public class scientificCalculator extends Calculator {
 
     public Boolean resultInRadians = true;
 
-    public scientificCalculator() {}
-
-    public scientificCalculator(Double x, Double y) {
-
-    }
-    public scientificCalculator(Double x) {}
-
-
-
 //    public Double changeDisplayType() {
 //        return Double;
 //    }

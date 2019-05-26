@@ -31,8 +31,10 @@ public class Runner {
            while(isRunning) {
 
                calcType = Console.getStringInput("Enter \"c\" for core or \"s\" for scientific ***this is case sensitive*** ");
-               displayType = Console.getStringInput("Enter \"d\" for Decimal, \"h\" for Hexidecimal, \"h\" for Octal or \"b\" for Binary ***this is case sensitive*** ");
+               //if calc type does not = c or s handle err
 
+               displayType = Console.getStringInput("Enter \"d\" for Decimal, \"h\" for Hexidecimal, \"h\" for Octal or \"b\" for Binary ***this is case sensitive*** ");
+               // if wrong type enter let user know it has defaulted to decimal
 
                if (calcType.equals("c")) {
                    calc = new Calculator();
@@ -43,7 +45,8 @@ public class Runner {
                    System.out.println("------Scientific Mode------ \n" + "Available Operations: \n " +
                            "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: asin | ArcCos: acos | ArcTan: atan | \n" + " Log: log | Inverse Log: invog | Natual Log: ln | Inverse Natual: invln | Factorial: factorial\n" );;
                } else {
-                   System.out.println("error: did not enter c or s" ); //This needs to go back to start
+                   System.out.println("error: did not enter c or s" );
+                   //This needs to go back to start
                }
 
            Console.println("Enter q as operator to quit");
