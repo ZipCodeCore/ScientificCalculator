@@ -15,6 +15,7 @@ public class Calculator extends Console
         while (!userInput.equals("Q"));
         {
             getUserInput();
+            // checkInput
         }
 
     }
