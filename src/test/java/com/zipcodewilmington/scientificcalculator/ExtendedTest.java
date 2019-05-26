@@ -107,12 +107,30 @@ public class ExtendedTest {
     }
 
     @Test
-    public void switchUnitsModeTest() {
+    public void switchUnitsModeRotateTest1() {
+        extended.switchUnitsMode();
+        Assert.assertEquals("degrees", extended.getCurTrigUnitsName());
+    }
+
+    @Test
+    public void switchUnitsModeRotateTest2() {
+        extended.switchUnitsMode();
+        extended.switchUnitsMode();
+        Assert.assertEquals("radians", extended.getCurTrigUnitsName());
+    }
+
+    @Test
+    public void switchUnitsModeTestR() {
+        extended.switchUnitsMode("radians");
+        Assert.assertEquals("radians", extended.getCurTrigUnitsName());
 
     }
 
     @Test
-    public void switchUnitsMode1Test() {
+    public void switchUnitsModeTestD() {
+        extended.switchUnitsMode("degrees");
+        Assert.assertEquals("degrees", extended.getCurTrigUnitsName());
+
     }
 
     @Test
@@ -123,6 +141,7 @@ public class ExtendedTest {
     @Test
     public void invLogTest() {
         Assert.assertEquals(100000,extended.invLog(5),delta);
+
     }
 
     @Test
@@ -131,10 +150,18 @@ public class ExtendedTest {
     }
 
     @Test
-    public void invLnTest() {
+    public void invLnTest1() {
+        Assert.assertEquals(Math.exp(10),extended.invLn(10),delta);
     }
 
     @Test
+    public void invLnTest2() {
+        Assert.assertEquals(Math.pow(Math.E,20),extended.invLn(20),delta);
+    }
+
+
+    @Test
     public void factorialTest() {
+        Assert.assertEquals(3628800, extended.factorial(10),delta);
     }
 }
