@@ -36,12 +36,12 @@ public class Runner {
 
                if (calcType.equals("c")) {
                    calc = new Calculator();
-                   System.out.println("------Core Mode------ " + "Available Operations: " + "" +
+                   System.out.println("------Core Mode------ \n" + "Available Operations: " + "" +
                            "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n" );
                } else if (calcType.equals("s")) {
                    sciCalc = new scientificCalculator();
-                   System.out.println("------Scientific Mode------" + "Available Operations: \n " +
-                           "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: aSin | ArcCos: acos | ArcTan: aTan | \n" + " Log: log | Inverse Log: invLog | Natual Log: ln | Inverse Natual: invLn | Factorial: factorial\n" );;
+                   System.out.println("------Scientific Mode------ \n" + "Available Operations: \n " +
+                           "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: asin | ArcCos: acos | ArcTan: atan | \n" + " Log: log | Inverse Log: invog | Natual Log: ln | Inverse Natual: invln | Factorial: factorial\n" );;
                } else {
                    System.out.println("error: did not enter c or s" ); //This needs to go back to start
                }
