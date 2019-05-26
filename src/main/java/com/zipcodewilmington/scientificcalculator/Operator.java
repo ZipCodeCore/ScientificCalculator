@@ -17,6 +17,7 @@ public class Operator {
         else if(operator.equals("/")){
             answer = firstNum / secondNum;
         }
+        // this down is advancedMath
         else if(operator.equals("r")){
             answer= Math.sqrt(firstNum);
 
