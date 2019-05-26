@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 import java.util.Arrays;
+//import java.lang.StringBuilder;
 /*
 enum trigUnits {
     RADIANS, DEGREES;
@@ -14,24 +15,24 @@ public class Extended {
     public trigUnits currentTrigUnits = trigUnits.DEGREES;
     */
 //    private Character[] displayModesChar = {'b', 'o', 'd', 'h'};
-    private String[] displayModeNames = {"binary","octal","decimal","hexadecimal"};
+    private static String[] displayModeNames = {"binary","octal","decimal","hexadecimal"};
 
 //    private Character[] trigUnitsChar = {'r','d'};
-    private String[] trigUnitNames = {"radians","degrees"};
+    private static String[] trigUnitNames = {"radians","degrees"};
 
 //    public Character currentTrigUnits = trigUnitsChar[0];
-    private Integer curTrigUnitsIndex=0;
+    private static Integer curTrigUnitsIndex=0;
 
 //    public Character currentDisplayMode = displayModesChar[2];
-    private Integer curDisplayModeIndex=2;
+    private static Integer curDisplayModeIndex=2;
 
-    private double memory=0;
+    private static double memory=0;
 
     public static void main(String[] args) {
 
     }
 
-    public String convertOutput (double output){
+    public static String convertOutput (double output){
         String converted;
         switch (curDisplayModeIndex) {
             case 0: {
@@ -54,45 +55,49 @@ public class Extended {
         return converted;
     }
 
-    public void switchDisplayMode() {
+    public static void switchDisplayMode() {
         if (curDisplayModeIndex > 2) curDisplayModeIndex=0;
         else curDisplayModeIndex++;
     }
 
-    public void switchDisplayMode(String mode){
+    public static void switchDisplayMode(String mode){
         if(mode.equals(displayModeNames[0])) curDisplayModeIndex=0;
         else if(mode.equals(displayModeNames[1])) curDisplayModeIndex=1;
         else if(mode.equals(displayModeNames[2])) curDisplayModeIndex=2;
         else if(mode.equals(displayModeNames[3])) curDisplayModeIndex=3;
     }
 
-    public String getCurDisplayModeName(){
+    public static String getCurDisplayModeName(){
         return displayModeNames[curDisplayModeIndex];
     }
 
-    public String[] getDisplayModeOptions(){
+    public static String[] getDisplayModeOptions(){
      //   return Arrays.copyOf(displayModeNames,displayModeNames.length);
         String[] returnArray=new String[displayModeNames.length];
         System.arraycopy(displayModeNames,0,returnArray,0,displayModeNames.length);
         return returnArray;
     }
 
-    public String[] getTrigModeOptions(){
+    public static String getCurTrigUnits(){
+        return trigUnitNames[curTrigUnitsIndex];
+    }
+
+    public static String[] getTrigModeOptions(){
         //   return Arrays.copyOf(displayModeNames,displayModeNames.length);
         String[] returnArray=new String[trigUnitNames.length];
         System.arraycopy(trigUnitNames,0,returnArray,0,trigUnitNames.length);
         return returnArray;
     }
 
-    public void memClear(){
+    public static void memClear(){
         memory=0;
     }
 
-    public void memPlus(double input){
+    public static void memPlus(double input){
         memory+=input;
     }
 
-    public double memRecal(){
+    public static double memRecal(){
         return memory;
     }
 /*
@@ -100,70 +105,70 @@ public class Extended {
         return degrees*Math.PI/180;
     }
     */
-    public double sine(double input){
+public static double sine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.sin(input);
     }
 
-    public double cosine(double input){
+    public static double cosine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.cos(input);
     }
 
-    public double tangent(double input){
+    public static double tangent(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.tan(input);
     }
 
-    public double invSine(double input){
+    public static double invSine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.asin(input);
     }
 
-    public double invCosine(double input){
+    public static double invCosine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.acos(input);
     }
 
-    public double invTan(double input){
+    public static double invTan(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.atan(input);
     }
 
-    public void switchUnitsMode(){
+    public static void switchUnitsMode(){
         if(curTrigUnitsIndex==0)curTrigUnitsIndex++;
         else curTrigUnitsIndex=0;
     }
 
-    public void switchUnitsMode(String mode){
+    public static void switchUnitsMode(String mode){
         if(mode.equals(trigUnitNames[0])) curTrigUnitsIndex=0;
         else if(mode.equals(trigUnitNames[1]))curTrigUnitsIndex = 1;
     }
 
-    public String getCurTrigUnitsName(){
+    public static String getCurTrigUnitsName(){
         return trigUnitNames[curTrigUnitsIndex];
     }
 
-    public double log(double input){
+    public static double log(double input){
         return Math.log10(input);
     }
 
-    public double invLog(double input){
+    public static double invLog(double input){
         return Math.pow(10,input);
     }
 
-    public double ln(double input){
+    public static double ln(double input){
         return Math.log(input);
     }
 
-    public double invLn(double input){
+    public static double invLn(double input){
         return Math.exp(input);
     }
 
-    public double factorial(double input){
+    public static double factorial(double input){
         double myResult=1;
         if(input%1==0){
-            for(Integer i=(int)Math.abs(input);i>1;i++){
+            for(Integer i=(int)Math.abs(input);i>1;i--){
                 myResult *= i;
             }
             if(input<0) myResult *= (-1);
@@ -171,6 +176,23 @@ public class Extended {
         }
         return 0;
 
+    }
+
+    public static String fib(Double num1, Double num2){
+    double prev=0;
+    StringBuilder myBuilder = new StringBuilder(Double.toString(prev));
+    for (int i=1;i<num2;i++){
+            if(i%2==1) {
+                myBuilder.append(", " + convertOutput(num1));
+                prev+=num1;
+            }
+            else{
+                myBuilder.append(", " + convertOutput(prev));
+                num1+=prev;
+            }
+
+        }
+    return myBuilder.toString();
     }
 
 
