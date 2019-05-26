@@ -42,45 +42,85 @@ public class Console {
             if (Core.validOperator(userInput) == 1) {
                 switch (userInput.toUpperCase()) {
                     case "M+": {
-
+                        //result = Core.memPlus(num1);
+                        break;
                     }
                     case "MC": {
+                        //result = Core.memClear(num1);
+                        break;
                     }
                     case "MRC": {
+                        result = Core.memRecal();
+                        break;
                     }
                     case "SIN": {
+                        result = Core.sine(num1);
+                        break;
                     }
                     case "COS": {
+                        result = Core.cosine(num1);
+                        break;
                     }
                     case "TAN": {
+                        result = Core.tangent(num1);
+                        break;
                     }
                     case "ASIN": {
+                        result = Core.invSine(num1);
+                        break;
                     }
                     case "ACOS": {
+                        result = Core.invCosine(num1);
+                        break;
                     }
                     case "ATAN": {
+                        result = Core.invTan(num1);
+                        break;
                     }
                     case "LOG": {
+                        result = Core.log(num1);
+                        break;
                     }
                     case "LN": {
+                        result = Core.ln(num1);
+                        break;
                     }
                     case "E^X": {
+                        result = Core.invLn(num1);
+                        break;
                     }
                     case "10^X": {
+                        result = Core.invLog(num1);
+                        break;
                     }
                     case "!": {
+                        result = Core.factorial(num1);
+                        break;
                     }
                     case "C": {
+                        result = Core.clear();
+                        break;
                     }
                     case "SQ": {
+                        result = Core.square(num1);
+                        num1 = result;
+                        break;
                     }
                     case "SQRT": {
+                        result = Core.squareRoot(num1);
+                        break;
                     }
                     case "INV": {
+                        result = Core.inverse(num1);
+                        break;
                     }
                     case "SIGN": {
+                        result = Core.invertSign(num1);
+                        break;
                     }
                     default:
+                        result = 666.66;
+                        break;
                 }
 
             }
@@ -91,29 +131,48 @@ public class Console {
                         userInput = Console.getStringInput("+");
                         num2 = Double.parseDouble(userInput);
                         result = Core.add(num1, num2);
-                        num1 = result;
                         break;
                     }
                     case "-": {
+                        userInput = Console.getStringInput("-");
+                        num2 = Double.parseDouble(userInput);
+                        result = Core.substract(num1, num2);
+                        break;
                     }
                     case "*": {
+                        userInput = Console.getStringInput("*");
+                        num2 = Double.parseDouble(userInput);
+                        result = Core.multiply(num1, num2);
+                        break;
                     }
                     case "/": {
+                        userInput = Console.getStringInput("/");
+                        num2 = Double.parseDouble(userInput);
+                        result = Core.divide(num1, num2);
+                        break;
                     }
                     case "EXP": {
+                        userInput = Console.getStringInput("EXP");
+                        num2 = Double.parseDouble(userInput);
+                        result = Core.exponent(num1, num2);
+                        break;
                     }
                     case "SWDR": {
                     }
                     case "SWD": {
                     }
                     default:
+                        result = 666.66;
+                        break;
                 }
             }
             else {
                 num1 = Double.parseDouble(userInput);
-            };
+                result = num1;
+            }
 
-            userInput = Console.getStringInput(num1.toString());
+            userInput = Console.getStringInput(result.toString());
+            num1 = result;
         }
 
     }
