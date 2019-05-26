@@ -10,34 +10,77 @@ public class ExtendedTest {
     double delta = 0;
 
     @Before
-    private void before()
+    public void before()
     {
         extended = new Extended();
     }
 
     @Test
-    public void switchDisplayModeTest() {
+    public void switchDisplayModeRotateTest1() {
+        extended.switchDisplayMode();
+        Assert.assertEquals("hexadecimal",extended.getCurDisplayModeName());
+    }
+    @Test
+    public void switchDisplayModeRotateTest2() {
+    for (int i = 0; i < 2; i++) extended.switchDisplayMode();
+        Assert.assertEquals("binary",extended.getCurDisplayModeName());
+    }
+    @Test
+    public void switchDisplayModeRotateTest3() {
+        for (int i = 0; i < 3; i++) extended.switchDisplayMode();
+        Assert.assertEquals("octal",extended.getCurDisplayModeName());
+    }
+    @Test
+    public void switchDisplayModeRotateTest4() {
+        for (int i = 0; i < 4; i++) extended.switchDisplayMode();
+        Assert.assertEquals("decimal",extended.getCurDisplayModeName());
     }
 
+
     @Test
-    public void switchDisplayMode1Test() {
+    public void switchDisplayModeTestB() {
+        extended.switchDisplayMode("binary");
+        Assert.assertEquals("binary",extended.getCurDisplayModeName());
     }
+    @Test
+    public void switchDisplayModeTestO() {
+        extended.switchDisplayMode("octal");
+        Assert.assertEquals("octal",extended.getCurDisplayModeName());
+    }
+    @Test
+    public void switchDisplayModeTestD() {
+        extended.switchDisplayMode("decimal");
+        Assert.assertEquals("decimal",extended.getCurDisplayModeName());
+    }
+    @Test
+    public void switchDisplayModeTestH() {
+        extended.switchDisplayMode("hexadecimal");
+        Assert.assertEquals("hexadecimal",extended.getCurDisplayModeName());
+    }
+
 
     @Test
     public void memClearTest() {
+        extended.memClear();
+        Assert.assertEquals(0,extended.memRecal(),delta);
     }
 
     @Test
-    public void memPlusTest() {
+    public void memPlusTest1() {
+        extended.memPlus(20);
+        Assert.assertEquals(20,extended.memRecal(),delta);
     }
 
     @Test
-    public void memRecalTest() {
+    public void memPlusTest2() {
+        extended.memPlus(20);
+        extended.memPlus(30);
+        Assert.assertEquals(50,extended.memRecal(),delta);
     }
 
     @Test
     public void sineTest() {
-//        Assert.assertEquals(Math.sin(0),extended.sine(0),delta);
+        Assert.assertEquals(Math.sin(0),extended.sine(0),delta);
     }
     @Test
     public void cosineTest() {
