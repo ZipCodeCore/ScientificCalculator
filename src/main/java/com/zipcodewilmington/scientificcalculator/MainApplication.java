@@ -14,10 +14,14 @@ public class MainApplication {
         //Console.println("The user input %s as a integer", i);
         //Console.println("The user input %s as a d", d);
 
-        Console calc1 = new Console();
-        //MainApplication calc = new MainApplication();
-        calc1.run();
+
+//        Console calc1 = new Console();
+//        MainApplication calc = new MainApplication();
+//        calc1.run();
 //        String input = Console.getStringInput("0");
+
+        Calculator calculator = new Calculator();
+        calculator.run();
 
 
     }
