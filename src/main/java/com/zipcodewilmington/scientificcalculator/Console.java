@@ -42,11 +42,11 @@ public class Console {
             if (Core.validOperator(userInput) == 1) {
                 switch (userInput.toUpperCase()) {
                     case "M+": {
-                        //result = Core.memPlus(num1);
+                        Core.memPlus(num1);
                         break;
                     }
                     case "MC": {
-                        //result = Core.memClear(num1);
+                        Core.memClear();
                         break;
                     }
                     case "MRC": {
