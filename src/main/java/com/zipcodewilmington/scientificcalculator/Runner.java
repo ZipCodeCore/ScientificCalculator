@@ -9,7 +9,7 @@ import java.sql.SQLOutput;
 import java.util.zip.Deflater;
 
 public class Runner {
-
+    private String state = "";
     private Double result = 0.0;
     private Double x;
     private Double y;
@@ -33,9 +33,10 @@ public class Runner {
 
                calcType = Console.getStringInput("Enter \"c\" for core or \"s\" for scientific ***this is case sensitive*** ");
                //if calc type does not = c or s handle err
-
-               displayType = Console.getStringInput("Enter \"d\" for Decimal, \"h\" for Hexidecimal, \"h\" for Octal or \"b\" for Binary ***this is case sensitive*** ");
-               // if wrong type enter let user know it has defaulted to decimal
+               if(calcType.equals("s") ) {
+                   displayType = Console.getStringInput("Enter \"d\" for Decimal, \"h\" for Hexidecimal, \"h\" for Octal or \"b\" for Binary ***this is case sensitive*** ");
+                   // if wrong type enter let user know it has defaulted to decimal
+               }
 
                if (calcType.equals("c")) {
                    calc = new Calculator();
@@ -52,10 +53,14 @@ public class Runner {
 
            Console.println("Enter q as operator to quit");
            x = Double.parseDouble(Console.getStringInput("Enter First number"));
+           state += x;
+               System.out.println(state);
            y = Double.parseDouble(Console.getStringInput("Enter Second number (if no second is needed enter 0)"));
+           state += y;
+               System.out.println(state);
            operator = Console.getStringInput("Operator");
-
-
+           state += operator;
+               System.out.println(state);
 
 
 //loop through operator and print out aw
@@ -93,6 +98,7 @@ public class Runner {
                    break;
 
 //   //////////Scientific Methods
+
                case "sin":
                    result =(sciCalc.sine(x));
                    break;
@@ -128,29 +134,15 @@ public class Runner {
                    break;
            }
 
-           //---- could handle chaning display this way? Just need to
-           //---- create the methods in scientificCalculator and we are good i think.
 
 
-//           if(displayType = "d") {
-//
-//               System.out.println(calc.covertDec(result));
-//
-//           } else if(displayType = "o") {
-//
-//               System.out.println( calc.covertOct(result));
-//
-//           } else if(displayType = "h") {
-//
-//                   System.out.println( calc.covertHex(result));
-//           } else if (displayType = "b") {
-//
-//                   System.out.println( calc.covertHex(result));
-//               }
+            if (displayType != "d") {
+                state = sciCalc.switchDisplayMode(displayType, x);
+                System.out.println(state + " = " + result);
+            } else {
+                System.out.println(result);
+            }
 
-
-
-           System.out.println("result = " + result);
        }
     }
 

@@ -8,21 +8,61 @@ public class scientificCalculator extends Calculator {
 
     public Boolean resultInRadians = true;
 
-//    public Double changeDisplayType() {
-//        return Double;
+//    public String switchDisplayMode() {
+//        String[] displayModes = {"d", "h", "o", "b"};
+//        //toggle something
+//        return;
 //    }
-//
-//
-//
+
+    public static String switchDisplayMode(String currentDisplayMode, Double x) {
+        String displayNum;
+        switch (currentDisplayMode) {
+            case "b":
+                displayNum = Long.toBinaryString(Double.doubleToRawLongBits(x));
+                break;
+            case "o":
+                displayNum = Long.toOctalString(Double.doubleToRawLongBits(x));
+                break;
+            case "h":
+                displayNum = Long.toHexString(Double.doubleToRawLongBits(x));
+                break;
+            case "d":
+                displayNum = String.valueOf(x);
+                break;
+            default:
+                displayNum = "That is not a valid display mode!";
+                break;
+
+        }
+        return displayNum;
+    }
+
+
 
     public Double roundDecTen (Double num) {
         Double result = Double.parseDouble(String.format("%.6f %n", num));
         return result;
     }
 
-
+//
 //    public Double saveNumber(String memStatus) {
-//        return null;
+//        Double saved;
+//        switch (memStatus) {
+//            case "MC":
+//                saved = null;
+//                break;
+//            case "M+":
+//                saved = ;
+//                break;
+//            case "MRC":
+//                saved = ;
+//                break;
+//            default:
+//                saved = null;
+//                break;
+//
+//        }
+//        return saved;
 //    } //save up to one number for later
 
     //need to be able to clear and recall saved num
