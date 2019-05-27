@@ -202,7 +202,7 @@ public class Extended{
     public String fib(Double num1, Double num2){
     double prev=0;
     StringBuilder myBuilder = new StringBuilder(decFormat.format(prev));
-    for (int i=1;i<num2;i++){
+    for (int i=1;i<num2.intValue();i++){
             if(i%2==1) {
                 myBuilder.append(", " + convertOutput(num1));
                 prev+=num1;

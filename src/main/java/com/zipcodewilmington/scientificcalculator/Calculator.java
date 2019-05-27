@@ -3,7 +3,7 @@ package com.zipcodewilmington.scientificcalculator;
 public class Calculator extends Console {
     static String[] oneSidedOp = {"SIN","COS","TAN","ASIN","ACOS","ATAN","LOG","LN","E^X","10^X","!",
             "SQ","SQRT","INV","INVSIGN"};
-    static String[] twoSidedOp = {"+","-","*","/","^"};
+    static String[] twoSidedOp = {"+","-","*","/","^","FIBTO"};
     static String[] command = {"ZCW","?","C","M+","MC","MRC"};
 
     private String userInput;
@@ -178,6 +178,7 @@ public class Calculator extends Console {
     {
         int length = core.getDisplay().length();
         String operator = core.getDisplay().substring(length-1);
+        boolean isFib = false;
 
         switch (operator) {
             case "+":{
@@ -192,6 +193,19 @@ public class Calculator extends Console {
             case "/":{
                 core.setCurNum(core.divide(core.getCurNum(),Double.parseDouble(userInput))); break;
             }
+            case "O":{
+                if(isConvertible(core.getCurNum())) {
+                    core.setDisplay(extended.fib(core.getCurNum(), Double.parseDouble(userInput)) +
+                            "\n" + extended.convertOutput(core.getCurNum()));
+                }
+                else {
+                    core.setDisplayErr("Cannot convert to "+extended.getCurDisplayModeName()+ ", changing back to decimal mode");
+                    isErr = true;
+                    extended.switchDisplayMode("decimal");
+                }
+                isFib = true;
+                break;
+            }
             default: {
                 core.setDisplayErr("Invalid operator");
                 break;
@@ -202,7 +216,8 @@ public class Calculator extends Console {
             isErr = true;
         }
         else
-            setConvertibleToDisplay();
+            if(!isFib)
+                setConvertibleToDisplay();
 }
     private void doOneSideOp(String operator)
     {

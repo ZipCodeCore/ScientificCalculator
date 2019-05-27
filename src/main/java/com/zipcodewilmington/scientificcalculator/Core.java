@@ -114,7 +114,9 @@ public class Core {
         System.out.println("\"!\" ----- take factorial");
         System.out.println("\"INV\" ----- take inverse of the number (1/x)");
         System.out.println("\"INVSIGN\" ----- inverse sign\n");
-
+        System.out.println("============ EXTRA ============");
+        System.out.println("\"FIBTO\" ----- a classic sequence with variations");
+//        System.out.println("\"ZCW\" ----- ???");
     }
     public void showMePuppy() {
         System.out.println("   __");
