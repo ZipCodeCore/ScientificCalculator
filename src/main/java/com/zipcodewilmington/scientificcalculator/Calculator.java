@@ -29,6 +29,7 @@ public class Calculator extends Console {
             if(isErr) {
                 if(userInput.equals("C")) {
                     core.clear();
+                    core.setDisplay(extended.convertOutput(core.getCurNum()));
                     isErr = false;
                 }
             }
@@ -36,12 +37,19 @@ public class Calculator extends Console {
                 if(isWaitingForNumInput) {
                     if(isNumeric(userInput)) {
                         doTwoSideOp(userInput);
-                        isWaitingForNumInput = false;
+                    }
+                    else if (userInput.equals("C")){
+                        core.clear();
+                        core.setDisplay(extended.convertOutput(core.getCurNum()));
+                    }
+                    else if (userInput.equals("MRC")) {
+                        doTwoSideOp(Double.toString(extended.memRecal()));
                     }
                     else {
                         core.setDisplayErr("Syntax Error");
                         isErr = true;
                     }
+                    isWaitingForNumInput = false;
                 }
                 else {
                     if(isNumeric(userInput)) {
@@ -52,12 +60,12 @@ public class Calculator extends Console {
                         doOneSideOp(userInput);
                     else if (validOperator(userInput)==2) {
                         isWaitingForNumInput = true;
-                        core.addToDisplay(userInput);
+                        core.setDisplay(Double.toString(core.getCurNum())+userInput);
                     }
                     else if (validOperator(userInput)==3)
                         doCommand(userInput);
                     else if (userInput.equals("")) {
-                        // do nothing
+                        core.setDisplay(extended.convertOutput(core.getCurNum()));
                     }
                     else if (userInput.length() < 8) {
                         core.setDisplayErr("Invalid input");
@@ -84,7 +92,12 @@ public class Calculator extends Console {
                             }
                         }
                         if (!isErr)
-                            core.setDisplay("Trig mode: " + extended.getCurTrigUnitsName());
+                            core.setDisplay("Trig mode: " + extended.getCurTrigUnitsName() + "\n"
+                                    + extended.convertOutput(core.getCurNum()));
+                    }
+                    else if (userInput.length() < 10) {
+                        core.setDisplayErr("Invalid input");
+                        isErr = true;
                     }
                     else if (userInput.substring(0,10).equals("SWITCHDISP")) {
                         switch (userInput) {
@@ -115,7 +128,8 @@ public class Calculator extends Console {
                             }
                         }
                         if (!isErr)
-                            core.setDisplay("Display mode: " + extended.getCurDisplayModeName());
+                            core.setDisplay("Display mode: " + extended.getCurDisplayModeName() + "\n"
+                            + extended.convertOutput(core.getCurNum()));
                     }
                     else {
                         core.setDisplayErr("Invalid input");
@@ -153,7 +167,7 @@ public class Calculator extends Console {
                 core.setCurNum(core.divide(core.getCurNum(),Double.parseDouble(userInput))); break;
             }
             default: {
-                core.setDisplayErr("Invalid input");
+                core.setDisplayErr("Invalid operator");
                 break;
             }
         }
@@ -235,7 +249,9 @@ public class Calculator extends Console {
         switch (command)
         {
             case "C":{
-                core.clear();   break;
+                core.clear();
+                core.setDisplay(extended.convertOutput(core.getCurNum()));
+                break;
             }
             case "M+":{
                 extended.memPlus(core.getCurNum()); break;
