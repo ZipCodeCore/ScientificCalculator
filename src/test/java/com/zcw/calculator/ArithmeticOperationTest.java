@@ -5,31 +5,31 @@ import org.junit.Test;
 
 public class ArithmeticOperationTest {
     @Test
-    public void Sum() {
+    public void sum() {
         ArithmeticOperations ao = new ArithmeticOperations();
-        Assert.assertEquals("10",ao.Sum(2,8));
+        Assert.assertEquals("10",ao.sum(2,8));
     }
     @Test
-    public void Diff() {
+    public void diff() {
         ArithmeticOperations ao = new ArithmeticOperations();
-        Assert.assertEquals("10",ao.Diff(20,10));
-    }
-    //test fsafasf
-    @Test
-    public void Multi() {
-        ArithmeticOperations ao = new ArithmeticOperations();
-        Assert.assertEquals("10",ao.Multi(2,8));
+        Assert.assertEquals("10",ao.diff(20,10));
     }
     //test fsafasf
     @Test
-    public void Modulus() {
+    public void multi() {
         ArithmeticOperations ao = new ArithmeticOperations();
-        Assert.assertEquals("1",ao.Modulus(4,3));
+        Assert.assertEquals("16",ao.multi(2,8));
     }
     //test fsafasf
     @Test
-    public void Div() {
+    public void modulus() {
         ArithmeticOperations ao = new ArithmeticOperations();
-        Assert.assertEquals("10",ao.Div(20,2));
+        Assert.assertEquals("1",ao.modulus(4,3));
+    }
+    //test fsafasf
+    @Test
+    public void div() {
+        ArithmeticOperations ao = new ArithmeticOperations();
+        Assert.assertEquals("10",ao.div(20,2));
     }
 }
