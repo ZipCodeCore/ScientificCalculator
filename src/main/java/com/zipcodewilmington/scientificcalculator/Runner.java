@@ -150,7 +150,7 @@ public class Runner {
 
 
 
-           System.out.println("result = " + result));
+           System.out.println("result = " + result);
        }
     }
 
