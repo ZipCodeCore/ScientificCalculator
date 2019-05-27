@@ -2,17 +2,26 @@ package com.zipcodewilmington.scientificcalculator;
 import java.lang.Math;
 
 public class Calculator {
+
+
+    private Double currentNumber;
+    private String state; //display
+
     public Double getCurrentNumber() {
         return currentNumber;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getState() {
         return state;
     }
 
-    private Double currentNumber;
-    private String state; //display
-
+    public void setCurrentNumber(Double currentNumber) {
+        this.currentNumber = currentNumber;
+    }
 
     public Calculator() {
         currentNumber = 0.0;
@@ -103,7 +112,7 @@ public class Calculator {
             System.out.println("Try again suckah");
         }
             state = String.valueOf(currentNumber);
-        System.out.println(state);
+        //System.out.println(state);
 
     }
 

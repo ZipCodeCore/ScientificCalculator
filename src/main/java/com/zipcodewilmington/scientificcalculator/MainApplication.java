@@ -38,6 +38,12 @@ public class MainApplication {
                     parseInput(mode, input, calc, scientific);
                     break;
             }
+            if (mode.equals("sci")) {
+                System.out.println(scientific.getSciState());
+            } else {
+                System.out.println(calc.getState());
+            }
+
             mainScreen(mode);
             input = Console.getStringInput("Enter x y operator or a menu command to begin");
         }
