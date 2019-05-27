@@ -4,7 +4,7 @@ public class Calculator extends Console {
     static String[] oneSidedOp = {"SIN","COS","TAN","ASIN","ACOS","ATAN","LOG","LN","E^X","10^X","!",
             "SQ","SQRT","INV","INVSIGN"};
     static String[] twoSidedOp = {"+","-","*","/","^"};
-    static String[] command = {"C","SWITCHDR","SWITCHDISP","M+","MC","MRC"};
+    static String[] command = {"C","M+","MC","MRC"};
 
     private String userInput;
     private boolean isWaitingForNumInput;
@@ -23,96 +23,109 @@ public class Calculator extends Console {
 
     public void run() {
 
-        while (!userInput.equals("Q"));
-        {
-            println(core.getDisplay());
-            if(!isErr) {
+        while (!userInput.equals("Q")) {
+//            println(Double.toString(core.getCurNum()));
+//            println(userInput);
+            if(isErr) {
                 if(userInput.equals("C")) {
                     core.clear();
                     isErr = false;
                 }
             }
-            else
-            {
-                if(isWaitingForNumInput)
-                {
-                    if(isNumeric(userInput)){
-
+            else {
+                if(isWaitingForNumInput) {
+                    if(isNumeric(userInput)) {
+                        doTwoSideOp(userInput);
+                        isWaitingForNumInput = false;
                     }
-                    // if input is number
-                    // check the last char in display to determine op
-                    // do op with input
-                    // set isWaitingForNumInput to false
-                    // if input is not number, print err: invalid input
+                    else {
+                        core.setDisplayErr("Syntax Error");
+                        isErr = true;
+                    }
                 }
                 else {
-                    if(isNumeric(userInput)){
+                    if(isNumeric(userInput)) {
                         core.setCurNum(Double.parseDouble(userInput));
-                        core.setDisplay(userInput);
+                        core.setDisplay(extended.convertOutput(core.getCurNum()));
                     }
                     else if (validOperator(userInput)==1)
-                    {
-
-
-                    }
-                    else if (validOperator(userInput)==2)
-                    {
+                        doOneSideOp(userInput);
+                    else if (validOperator(userInput)==2) {
                         isWaitingForNumInput = true;
                         core.addToDisplay(userInput);
                     }
-                    else if (userInput.equals(""))
-                    {
-
+                    else if (validOperator(userInput)==3)
+                        doCommand(userInput);
+                    else if (userInput.equals("")) {
+                        // do nothing
                     }
-                    else if (userInput.substring(0,5).equals("SWITCH"))
-                    {
-                        switch (userInput)
-                        {
+                    else if (userInput.length() < 8) {
+                        core.setDisplayErr("Invalid input");
+                        isErr = true;
+                    }
+                    else if (userInput.substring(0,8).equals("SWITCHDR")) {
+                        switch (userInput) {
                             case "SWITCHDR": {
-                                extended.switchUnitsMode(); break;
+                                extended.switchUnitsMode();
+                                break;
                             }
                             case "SWITCHDR DEGREES": {
-                                extended.switchUnitsMode("degrees"); break;
+                                extended.switchUnitsMode("degrees");
+                                break;
                             }
                             case "SWITCHDR RADIANS": {
-                                extended.switchUnitsMode("radians"); break;
-                            }
-                            case "SWITCHDISP": {
-                                extended.switchDisplayMode(); break;
-                            }
-                            case "SWITCHDISP BIN": {
-                                extended.switchDisplayMode("binary"); break;
-                            }
-                            case "SWITCHDISP OCT": {
-                                extended.switchDisplayMode("octal"); break;
-                            }
-                            case "SWITCHDISP DEC": {
-                                extended.switchDisplayMode("decimal"); break;
-                            }
-                            case "SWITCHDISP HEX": {
-                                extended.switchDisplayMode("hexadecimal"); break;
+                                extended.switchUnitsMode("radians");
+                                break;
                             }
                             default: {
-                                core.setDisplayErr("Invalid input"); break;
+                                core.setDisplayErr("Invalid input");
+                                isErr = true;
+                                break;
                             }
                         }
+                        if (!isErr)
+                            core.setDisplay("Trig mode: " + extended.getCurTrigUnitsName());
                     }
-                    else{
+                    else if (userInput.substring(0,10).equals("SWITCHDISP")) {
+                        switch (userInput) {
+                            case "SWITCHDISP": {
+                                extended.switchDisplayMode();
+                                break;
+                            }
+                            case "SWITCHDISP BIN": {
+                                extended.switchDisplayMode("binary");
+                                break;
+                            }
+                            case "SWITCHDISP OCT": {
+                                extended.switchDisplayMode("octal");
+                                break;
+                            }
+                            case "SWITCHDISP DEC": {
+                                extended.switchDisplayMode("decimal");
+                                break;
+                            }
+                            case "SWITCHDISP HEX": {
+                                extended.switchDisplayMode("hexadecimal");
+                                break;
+                            }
+                            default: {
+                                core.setDisplayErr("Invalid input");
+                                isErr = true;
+                                break;
+                            }
+                        }
+                        if (!isErr)
+                            core.setDisplay("Display mode: " + extended.getCurDisplayModeName());
+                    }
+                    else {
                         core.setDisplayErr("Invalid input");
+                        isErr = true;
                     }
-                    // if input is num, set curr num and set display
-                    // if input is single op, do op on curNum
-                    // if input is two side op, set isWaitingForNumInput to true, and add op to display
-                    // if clear, clear
-                    // if switch mode, switch mode
-                    // if "", do nothing
-                    // else input is invalid, print err: invalid input
                 }
             }
+            println(core.getDisplay());
             getUserInput();
-
         }
-
     }
 
     private void getUserInput(){
@@ -121,20 +134,39 @@ public class Calculator extends Console {
         userInput = userInput.toUpperCase();
     }
 
+    private void doTwoSideOp(String userInput)
+    {
+        int length = core.getDisplay().length();
+        String operator = core.getDisplay().substring(length-1);
+
+        switch (operator) {
+            case "+":{
+                core.setCurNum(core.add(core.getCurNum(),Double.parseDouble(userInput))); break;
+            }
+            case "-":{
+                core.setCurNum(core.subtract(core.getCurNum(),Double.parseDouble(userInput))); break;
+            }
+            case "*":{
+                core.setCurNum(core.multiply(core.getCurNum(),Double.parseDouble(userInput))); break;
+            }
+            case "/":{
+                core.setCurNum(core.divide(core.getCurNum(),Double.parseDouble(userInput))); break;
+            }
+            default: {
+                core.setDisplayErr("Invalid input");
+                break;
+            }
+        }
+        if (Double.isNaN(core.getCurNum())) {
+            core.setDisplayErr("Division by zero");
+            isErr = true;
+        }
+        else
+            core.setDisplay(extended.convertOutput(core.getCurNum()));
+}
     private void doOneSideOp(String operator)
     {
         switch (operator) {
-/*            case "M+": {
-                extended.memPlus(core.getCurNum()); break;
-            }
-            case "MC": {
-                extended.memClear(); break;
-            }
-            case "MRC": {
-                core.setDisplay(Double.toString(extended.memRecal()));
-                core.setCurNum(extended.memRecal());
-                break;
-            }*/
             case "SIN": {
                 core.setCurNum(extended.sine(core.getCurNum())); break;
             }
@@ -185,50 +217,43 @@ public class Calculator extends Console {
             }
             default:{
                 core.setDisplayErr("Invalid input");
+                isErr = true;
                 break;
             }
         }
-        core.setDisplay(Double.toString(core.getCurNum()));
-    }
-/*
-        else if (validOperator(userInput)==1)
+        if (Double.isNaN(core.getCurNum()))
         {
-
+            core.setDisplayErr("Division by zero");
+            isErr = true;
         }
-        else if (validOperator(userInput)==2)
-        {
-
-        }
-        else if (validOperator(userInput)==3)
-        {
-        }
-    }
-        else if (userInput.equals(""))
-        {}
         else
-            core.setDisplay("Err: invalid input");
-*/
+            core.setDisplay(extended.convertOutput(core.getCurNum()));
+    }
 
-
-        // if user entered a number
-        //  call core.changeDisplay();
-        // else if user entered a operator / command (Example: sine)
-        //  call core.changeDisplay(Extended.sine(core.getDisplay()));
-        // else if user entered a double-side operator (Example: addition)
-        //  isWaitingForNumInput = true;
-        // else if user entered switch mode command
-        // {
-        //      if user entered mode option
-        //          Extended.switchMode(userInput);
-        //      else
-        //          Extended.switchMOdeRotate();
-        // }
-        // else if user entered emptyString
-        //      do nothing;
-        // else
-        //      print invalid command error
-        //
-
+    private void doCommand(String command)
+    {
+        switch (command)
+        {
+            case "C":{
+                core.clear();   break;
+            }
+            case "M+":{
+                extended.memPlus(core.getCurNum()); break;
+            }
+            case "MC":{
+                extended.memClear();    break;
+            }
+            case "MRC":{
+                core.setCurNum(extended.memRecal());
+                core.setDisplay(extended.convertOutput(core.getCurNum()));
+                break;
+            }
+            default: {
+                core.setDisplay("Invalid input");
+                isErr = true;
+            }
+        }
+    }
 
     public static Integer validOperator (String inputTest) {
 
