@@ -2,6 +2,14 @@ package com.zipcodewilmington.scientificcalculator;
 import java.lang.Math;
 
 public class Calculator {
+    public Double getCurrentNumber() {
+        return currentNumber;
+    }
+
+    public String getState() {
+        return state;
+    }
+
     private Double currentNumber;
     private String state; //display
 
