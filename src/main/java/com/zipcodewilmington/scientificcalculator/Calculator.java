@@ -4,6 +4,7 @@ import java.lang.Math;
 public class Calculator {
 
     public Calculator() {
+        
     }
 
     public static Double add (Double a, Double b){
@@ -16,6 +17,9 @@ public class Calculator {
 
     public Double multiply(Double a, Double b){
         return a * b;
+    }
+    public Double divide(Double a, Double b) {
+        return a / b;
     }
 
     public Double sqrt(Double a){

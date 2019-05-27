@@ -88,6 +88,33 @@ public class CalculatorTest {
 
         Double expected = 6.0;
         assertEquals(expected,  result, 0.01);
+<<<<<<< HEAD
+    }
+
+    @Test
+    public void multiply2() {
+        Double a = -2.0;
+        Double b = 3.0;
+        Calculator c = new Calculator();
+
+        Double result = c.multiply(a, b);
+
+        Double expected = -6.0;
+        assertEquals(expected,  result, 0.01);
+    }
+
+    @Test
+    public void multiply3() {
+        Double a = -2.0;
+        Double b = -3.0;
+        Calculator c = new Calculator();
+
+        Double result = c.multiply(a, b);
+
+        Double expected = 6.0;
+        assertEquals(expected,  result, 0.01);
+=======
+>>>>>>> fd3539b8a131252f4a9d65c7ae0c11ec19a499e3
     }
 
     @Test
@@ -115,6 +142,54 @@ public class CalculatorTest {
     }
 
     @Test
+    public void divide() {
+        Double a = 4.0;
+        Double b = 2.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        Double expected = 2.0;
+        assertEquals(expected,  result, 0.01);
+    }
+
+    @Test
+    public void divide2() {
+        Double a = 2.0;
+        Double b = 4.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        Double expected = 0.5;
+        assertEquals(expected,  result, 0.01);
+    }
+
+    @Test
+    public void divide3() {
+        Double a = -2.0;
+        Double b = 4.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        Double expected = -0.5;
+        assertEquals(expected,  result, 0.01);
+    }
+
+    @Test
+    public void divide4() {
+        Double a = 2.0;
+        Double b = 0.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        assertEquals(new Double("Infinity"), result);
+    }
+
+
+    @Test
     public void sqrt() {
         Double a = 4.0;
         Calculator c = new Calculator();
@@ -135,7 +210,11 @@ public class CalculatorTest {
         assertEquals(new Double("NaN"), result);
     }
 
+<<<<<<< HEAD
         @Test
+=======
+    @Test
+>>>>>>> fd3539b8a131252f4a9d65c7ae0c11ec19a499e3
     public void sqrt3() {
         Double a = 7.0;
         Calculator c = new Calculator();
