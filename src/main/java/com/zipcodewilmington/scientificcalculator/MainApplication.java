@@ -41,7 +41,7 @@ public class MainApplication {
 
                     if (s.equalsIgnoreCase("+") || s.equalsIgnoreCase("-") || s.equalsIgnoreCase("*") || s.equalsIgnoreCase("\n")) {
                         Double d2 = Console.getDoubleInput("Enter the second operand");
-                        System.out.println("The computed value of the operation is " + core.basicCalcs(d, d2, s));
+                        System.out.println("The computed value of the operation is " + core.basicCalcs(s,d, d2));
                     }
 
                     s = Console.getStringInput("Enter another mathematical operation or 'Exit' to Quit or 'S' to switch to scientific calculator!").toLowerCase();

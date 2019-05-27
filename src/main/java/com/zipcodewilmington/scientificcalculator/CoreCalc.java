@@ -2,7 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 
 public class CoreCalc {
-    public double basicCalcs (double d, double d2, String s){
+    public double basicCalcs (String s,double d, double d2){
 
         Double result= 0.0;
         switch (s) {
