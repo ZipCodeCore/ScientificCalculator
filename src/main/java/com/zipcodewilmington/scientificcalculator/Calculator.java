@@ -54,18 +54,25 @@ public class Calculator extends Console {
                 else {
                     if(isNumeric(userInput)) {
                         core.setCurNum(Double.parseDouble(userInput));
-                        core.setDisplay(extended.convertOutput(core.getCurNum()));
+                        setConvertibleToDisplay();
                     }
                     else if (validOperator(userInput)==1)
                         doOneSideOp(userInput);
                     else if (validOperator(userInput)==2) {
                         isWaitingForNumInput = true;
-                        core.setDisplay(extended.convertOutput((core.getCurNum()))+userInput);
+                        if (isConvertible(core.getCurNum()))    //!!! should remove?//
+                            core.setDisplay(extended.convertOutput((core.getCurNum()))+userInput);
+                        else {
+                            core.setDisplayErr("Cannot convert to "+extended.getCurDisplayModeName()
+                                    + ", changing back to decimal mode");
+                            isErr = true;
+                            extended.switchDisplayMode("decimal");
+                        }
                     }
                     else if (validOperator(userInput)==3)
                         doCommand(userInput);
                     else if (userInput.equals("")) {
-                        core.setDisplay(extended.convertOutput(core.getCurNum()));
+                        setConvertibleToDisplay();
                     }
                     else if (userInput.length() < 8) {
                         core.setDisplayErr("Invalid input");
@@ -91,9 +98,17 @@ public class Calculator extends Console {
                                 break;
                             }
                         }
-                        if (!isErr)
+                        if (!isErr){
+                            if (isConvertible(core.getCurNum()))
                             core.setDisplay("Trig mode: " + extended.getCurTrigUnitsName() + "\n"
                                     + extended.convertOutput(core.getCurNum()));
+                            else{
+                                core.setDisplayErr("Cannot convert to "+extended.getCurDisplayModeName()
+                                        + ", changing back to decimal mode");
+                                isErr = true;
+                                extended.switchDisplayMode("decimal");
+                            }
+                        }
                     }
                     else if (userInput.length() < 10) {
                         core.setDisplayErr("Invalid input");
@@ -127,9 +142,19 @@ public class Calculator extends Console {
                                 break;
                             }
                         }
-                        if (!isErr)
-                            core.setDisplay("Display mode: " + extended.getCurDisplayModeName() + "\n"
-                            + extended.convertOutput(core.getCurNum()));
+
+                        if (!isErr) {
+                            if (isConvertible(core.getCurNum())) {
+                                core.setDisplay("Display mode: " + extended.getCurDisplayModeName() + "\n"
+                                + extended.convertOutput(core.getCurNum()));
+                            }
+                            else {
+                                core.setDisplayErr("Cannot convert to "+extended.getCurDisplayModeName()
+                                        + ", changing back to decimal mode");
+                                isErr = true;
+                                extended.switchDisplayMode("decimal");
+                            }
+                        }
                     }
                     else {
                         core.setDisplayErr("Invalid input");
@@ -137,6 +162,7 @@ public class Calculator extends Console {
                     }
                 }
             }
+
             println(core.getDisplay());
             getUserInput();
         }
@@ -176,7 +202,7 @@ public class Calculator extends Console {
             isErr = true;
         }
         else
-            core.setDisplay(extended.convertOutput(core.getCurNum()));
+            setConvertibleToDisplay();
 }
     private void doOneSideOp(String operator)
     {
@@ -241,7 +267,7 @@ public class Calculator extends Console {
             isErr = true;
         }
         else
-            core.setDisplay(extended.convertOutput(core.getCurNum()));
+           setConvertibleToDisplay();
     }
 
     private void doCommand(String command)
@@ -269,7 +295,7 @@ public class Calculator extends Console {
             }
             case "MRC":{
                 core.setCurNum(extended.memRecal());
-                core.setDisplay(extended.convertOutput(core.getCurNum()));
+                setConvertibleToDisplay();
                 break;
             }
             default: {
@@ -297,6 +323,24 @@ public class Calculator extends Console {
             }
         }
         return 0;
+    }
+
+    private boolean isConvertible(double valToConvert)
+    {
+        if (extended.convertOutput(valToConvert).equals("NaN"))
+            return false;
+        else
+            return true;
+    }
+
+    private void setConvertibleToDisplay() {
+        if (isConvertible(core.getCurNum()))
+            core.setDisplay(extended.convertOutput(core.getCurNum()));
+        else{
+            core.setDisplayErr("Cannot convert to "+extended.getCurDisplayModeName()+ ", changing back to decimal mode");
+            isErr = true;
+            extended.switchDisplayMode("decimal");
+        }
     }
 
     private static boolean isNumeric(String str){
