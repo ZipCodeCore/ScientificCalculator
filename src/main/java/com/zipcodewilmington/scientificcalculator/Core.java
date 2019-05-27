@@ -63,7 +63,6 @@ public class Core {
     }
 
     public void clear() {
-        setDisplay("0");
         setCurNum(0);
     }
 
@@ -77,10 +76,6 @@ public class Core {
 
     public void setDisplay(String input) {
         display = input;
-    }
-
-    public void addToDisplay(String input) {
-        display += input;
     }
 
     public void setDisplayErr(String message) {
