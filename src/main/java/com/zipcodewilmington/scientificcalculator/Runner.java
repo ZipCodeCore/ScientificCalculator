@@ -9,13 +9,13 @@ import java.sql.SQLOutput;
 import java.util.zip.Deflater;
 
 public class Runner {
-    private String state = "";
+    private String state = ""; //holds what base the output is in
     private Double result = 0.0;
     private Double savedNum = 0.0;
     private Double x;
     private Double y;
     private String operator;
-    private String calcType = "";
+    private String calcType = ""; // sci / basic calc
     private Boolean isRunning = true;
     private String displayType = "d"; // decimal hex oct binary
     Calculator calc;
@@ -67,7 +67,7 @@ public class Runner {
                System.out.println(state) ;
            y = Double.parseDouble(Console.getStringInput("Enter Second number (if no second is needed enter 0)"));
            state +=   " " + y;
-               System.out.println(state );
+               System.out.println(state);
 
 
 
@@ -151,9 +151,12 @@ public class Runner {
                    break;
            }
 
+//
+//           if(sciCalc.resultInRadians = false) {
+//               result = Math.toDegrees(result);
+//           }
 
-
-            if (!displayType.equals("d")) {
+           if (!displayType.equals("d")) {
                 state = sciCalc.switchDisplayMode(displayType, x);
                 System.out.println(state + " = " + result);
             } else {
@@ -164,4 +167,13 @@ public class Runner {
        }
 
     }
+
+//    private void display(){
+//        if(calcType.equals("c")){
+//            System.out.println("------Core Mode------ \n" + "Available Operations: " + "" +
+//                    "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n  Reset Memory: MC |" );
+//        }
+//
+//
+//    }
 }

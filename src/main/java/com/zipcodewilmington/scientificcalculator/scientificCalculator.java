@@ -46,8 +46,7 @@ public class scientificCalculator extends Calculator {
 
 
     //Switch between radians and degrees which is handled in each method.
-//    public Double switchUnitsMode()  {
-//     }
+//
 
 
      public Double sine(Double x){
