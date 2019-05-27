@@ -1,4 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 //import java.lang.StringBuilder;
 /*
@@ -28,10 +29,13 @@ public class Extended{
 
     private double memory;
 
+    private DecimalFormat decFormat;
+
     public Extended() {
         curTrigUnitsIndex = 0;
         curDisplayModeIndex = 2;
         memory = 0;
+        decFormat = new DecimalFormat("#.##########");
     }
 
 
@@ -51,7 +55,7 @@ public class Extended{
                 break;
             }
             default: {
-                converted = String.format("%1.10f", output);
+                converted = decFormat.format(output);
                 break;
             }
         }

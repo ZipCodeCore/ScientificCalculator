@@ -60,7 +60,7 @@ public class Calculator extends Console {
                         doOneSideOp(userInput);
                     else if (validOperator(userInput)==2) {
                         isWaitingForNumInput = true;
-                        core.setDisplay(Double.toString(core.getCurNum())+userInput);
+                        core.setDisplay(extended.convertOutput((core.getCurNum()))+userInput);
                     }
                     else if (validOperator(userInput)==3)
                         doCommand(userInput);
