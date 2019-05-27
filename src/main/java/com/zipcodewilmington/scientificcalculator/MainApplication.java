@@ -1,13 +1,16 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.SortedMap;
+
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
 
 
+
     public static void main(String[] args) {
-<<<<<<< HEAD
+
 //        Console.println("Welcome to my calculator!");
 //        String s = Console.getStringInput("Enter a string");
 //        Integer i = Console.getIntegerInput("Enter an integer");
@@ -16,11 +19,76 @@ public class MainApplication {
 //        Console.println("The user input %s as a string", s);
 //        Console.println("The user input %s as a integer", i);
 //        Console.println("The user input %s as a d", d);
-=======
-        Runner run = new Runner();
 
-        run.runner();
->>>>>>> fd3539b8a131252f4a9d65c7ae0c11ec19a499e3
+
+      //  run.runner();
+
+        run();
     }
 
+    public static void run() {
+        System.out.println("Welcome to our calculator");
+        Calculator calc = new Calculator();
+        ScientificCalculator scientific = new ScientificCalculator();
+        String mode = "core";
+        mainScreen(mode);
+        String input = Console.getStringInput("Enter x y operator or a menu command to begin");
+        while (!input.equals("q")){
+            switch (input) {
+                case "q" :
+                    break;
+                case "m" :
+                    //add shenanigans
+                    printOptions(mode);
+                    break;
+                case "sci":
+                    mode = "sci";
+                    break;
+                case "core":
+                    mode = "core";
+                    break;
+                default:
+                    parseInput(mode, input, calc, scientific);
+                    break;
+            }
+            mainScreen(mode);
+            input = Console.getStringInput("Enter x y operator or a menu command to begin");
+        }
+
+
+
+    }
+
+    public static void parseInput(String mode, String input, Calculator calc, ScientificCalculator scientific) {
+        String[] inputList = input.split(" ");
+        int length = inputList.length;
+
+        if (length > 3) {
+            System.out.println("Invalid input. Reformat or press [m] to see options");
+        } else{
+            if (mode.equals("sci")) {
+                scientific.parse(inputList);
+            }
+            else
+                calc.parse(inputList);
+        }
+
+    }
+
+    public static void mainScreen(String mode) {
+        System.out.println("Mode = " + mode);
+        System.out.println("Switch mode [sci] [core]");
+        System.out.println("See operators [m]");
+        System.out.println("Quit [q]");
+    }
+
+    public static void printOptions(String mode) {
+        System.out.println("------Core Mode------ \n" + "Available Operations: " + "" +
+                "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n" );
+        if (mode.equals("sci")) {
+            System.out.println("------Scientific Mode------ \n" + "Bonus Operations: \n " +
+                    "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: asin | ArcCos: acos | ArcTan: atan | \n" + " Log: log | Inverse Log: invog | Natual Log: ln | Inverse Natual: invln | Factorial: factorial\n" );;
+
+        }
+    }
 }
