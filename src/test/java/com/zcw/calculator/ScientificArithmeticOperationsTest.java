@@ -28,7 +28,7 @@ public class ScientificArithmeticOperationsTest {
     @Test
     public void switchSign() {
         ScientificArithmeticOperations sao = new ScientificArithmeticOperations();
-        Assert.assertEquals("-1",sao.switchSign(-1));
+        Assert.assertEquals("-1",sao.switchSign(1));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class ScientificArithmeticOperationsTest {
     @Test
     public void cosine() {
         ScientificArithmeticOperations c = new ScientificArithmeticOperations();
-        Assert.assertEquals("1", c.cosine(1));
+        Assert.assertEquals("1", c.cosine(0));
     }
 
     @Test
@@ -52,27 +52,27 @@ public class ScientificArithmeticOperationsTest {
     @Test
     public void inverseSine() {
         ScientificArithmeticOperations ins = new ScientificArithmeticOperations();
-        Assert.assertEquals("90", ins.inverseSine(1));
+        Assert.assertEquals("1", ins.inverseSine(90));
 
     }
 
     @Test
     public void inverseCosine() {
         ScientificArithmeticOperations inc = new ScientificArithmeticOperations();
-        Assert.assertEquals("0", inc.inverseCosine(1));
+        Assert.assertEquals("1", inc.inverseCosine(0));
     }
 
     @Test
     public void inverseTangent() {
         ScientificArithmeticOperations inst = new ScientificArithmeticOperations();
-        Assert.assertEquals("45", inst.inverseTangent(1));
+        Assert.assertEquals("0", inst.inverseTangent(90));
     }
 
 
     @Test
     public void factorial() {
         ScientificArithmeticOperations fact = new ScientificArithmeticOperations();
-        Assert.assertEquals("5", fact.factorial(120));
+        Assert.assertEquals("120", fact.factorial(5));
     }
 
     @Test
@@ -96,7 +96,7 @@ public class ScientificArithmeticOperationsTest {
     @Test
     public void inverseNaturalLogarith() {
         ScientificArithmeticOperations t = new ScientificArithmeticOperations();
-        Assert.assertEquals(Double.toString(Math.E), t.tangent(1));
+        Assert.assertEquals(Double.toString(Math.E), t.inverseNaturalLogarith(1));
 
 
     }

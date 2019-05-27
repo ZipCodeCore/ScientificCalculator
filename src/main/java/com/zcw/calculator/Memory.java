@@ -1,13 +1,15 @@
 package com.zcw.calculator;
 
 public class Memory {
-    public void store() {
-
+    String memory = "0";
+    public void store(String m) {
+        memory = m;
     }
     public void resetMemory() {
+        memory = "0";
 
     }
     public String recallCurrentValue() {
-        return null;
+        return memory;
     }
 }
