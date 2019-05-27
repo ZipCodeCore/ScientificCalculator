@@ -26,28 +26,22 @@ public class ScientificCalc {
                 break;
 
             case "sin":
-                String ui = Console.getStringInput("Enter Degrees or Radians");
-                returnValue = ui.equalsIgnoreCase("degrees") ? Math.sin(Math.toRadians(d)) : Math.sin(d);
+                returnValue = Math.sin(d);
                 break;
             case "cos":
-                ui = Console.getStringInput("Enter Degrees or Radians");
-                returnValue = ui.equalsIgnoreCase("degrees") ? Math.cos(Math.toRadians(d)) : Math.cos(d);
+                returnValue =Math.cos(d);
                 break;
             case "tan":
-                ui = Console.getStringInput("Enter Degrees or Radians");
-                returnValue = ui.equalsIgnoreCase("degrees") ? Math.tan(Math.toRadians(d)) : Math.tan(d);
+                returnValue=Math.tan(d);
                 break;
             case "inverse sine":
-                ui = Console.getStringInput("Enter Degrees or Radians");
-                returnValue = ui.equalsIgnoreCase("degrees") ? Math.asin(Math.toRadians(d)) : Math.asin(d);
+                returnValue = Math.asin(d);
                 break;
             case "inverse cosine":
-                ui = Console.getStringInput("Enter Degrees or Radians");
-                returnValue = ui.equalsIgnoreCase("degrees") ? Math.sin(Math.toRadians(d)) : Math.acos(d);
+                returnValue=Math.acos(d);
                 break;
             case "inverse tan":
-                ui = Console.getStringInput("Enter Degrees or Radians");
-                returnValue = ui.equalsIgnoreCase("degrees") ? Math.atan(Math.toRadians(d)) : Math.atan(d);
+                returnValue = Math.atan(d);
                 break;
             case "log":
                 returnValue = Math.log(d);
@@ -104,6 +98,36 @@ public class ScientificCalc {
         memory = f.doubleValue();
         return f;
     }
+
+    public Double MathDegrees(String s,Double d){
+        Double returnValue = 0.0;
+switch (s) {
+    case "sin":
+        returnValue = Math.sin(Math.toRadians(d));
+        break;
+    case "cos":
+        returnValue =Math.cos(Math.toRadians(d));
+        break;
+    case "tan":
+        returnValue = Math.tan(Math.toRadians(d));
+        break;
+    case "inverse sine":
+        returnValue = Math.asin(Math.toRadians(d)) ;
+        break;
+    case "inverse cosine":
+        returnValue = Math.acos(Math.toRadians(d));
+        break;
+    case "inverse tan":
+        returnValue = Math.atan(Math.toRadians(d));
+        break;
+
+}memory=returnValue;
+return returnValue;
+    }
+
+  //  public String MathOperation(String binary,double v){
+  //    return  ;
+ //   }
 }
 
 
