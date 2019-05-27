@@ -8,7 +8,7 @@ public class ScientificCalc {
     Double memory = 0.0;
 
 
-    public Double MathOperation(String s, Double d,Integer i) {
+    public Double MathOperation(String s, Double d) {
 
         Double returnValue = 0.0;
         switch (s) {
@@ -63,10 +63,20 @@ public class ScientificCalc {
                 returnValue = Math.pow(10, d);
                 break;
             case "factorial":
-                returnValue= (factorial(i)).doubleValue();
+                returnValue= (factorial(Integer.valueOf((int)d.doubleValue()))).doubleValue();
+                break;
+            case "round":
+                returnValue=Double.valueOf(Math.round(d));
+                break;
+            case "cube":
+                returnValue=d*d*d;
+                break;
+            case "circlearea":
+                returnValue=Math.PI*d*d;
                 break;
             case "mr":
                 returnValue = memory;
+                break;
             case "mc":
                 this.memory = 0.0;
             case "m+":
