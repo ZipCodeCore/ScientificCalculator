@@ -6,6 +6,7 @@ package com.zipcodewilmington.scientificcalculator;
 public class MainApplication {
     public static void main(String[] args) {
         Console.println("Welcome to my calculator!");
+        Console.println("Please press \"?\" to see all available options");
         //String s = Console.getStringInput("Enter a string");
         //Integer i = Console.getIntegerInput("Enter an integer");
         //Double d = Console.getDoubleInput("Enter a double.");
