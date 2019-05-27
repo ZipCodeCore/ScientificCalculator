@@ -43,7 +43,7 @@ public class ScientificCalc {
                 break;
             case "inverse cosine":
                 ui = Console.getStringInput("Enter Degrees or Radians");
-                returnValue = ui.equalsIgnoreCase("degrees") ? Math.sin(Math.toRadians(d)) : Math.sin(d);
+                returnValue = ui.equalsIgnoreCase("degrees") ? Math.sin(Math.toRadians(d)) : Math.acos(d);
                 break;
             case "inverse tan":
                 ui = Console.getStringInput("Enter Degrees or Radians");
