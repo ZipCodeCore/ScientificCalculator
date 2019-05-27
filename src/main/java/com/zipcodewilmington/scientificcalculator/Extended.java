@@ -31,20 +31,41 @@ public class Extended extends Core{
     public static void main(String[] args) {
 
     }
-
+/*
+    private static String doubleToBinaryString (double given, int sigDigits){
+        long integerPart = (long)given;
+        double fractional = given-integerPart;
+        StringBuilder myBuilder=new StringBuilder("");
+        while (myBuilder.length()<sigDigits && fractional>0){
+            double curDigit = 2*fractional;
+            if (curDigit>0){
+                given=curDigit-1;
+                myBuilder.append(1);
+            }
+            else {
+                given=curDigit;
+                myBuilder.append(1);
+            }
+        }
+        String output = Long.toBinaryString(integerPart)+'.'+myBuilder.toString();
+        return output;
+    }
+*/
     public static String convertOutput (double output){
+        if(output%1!=0 && curDisplayModeIndex!=2) return "Invalid input.";
+        long asLong = (long) output;
         String converted;
         switch (curDisplayModeIndex) {
             case 0: {
-                converted = Long.toBinaryString(Double.doubleToRawLongBits(output));
+                converted = Long.toBinaryString(asLong);
                 break;
             }
             case 1: {
-                converted = Long.toOctalString(Double.doubleToRawLongBits(output));
+                converted = Long.toOctalString(asLong);
                 break;
             }
             case 3: {
-                converted = Double.toHexString(output);
+                converted = Long.toHexString(asLong);
                 break;
             }
             default: {
