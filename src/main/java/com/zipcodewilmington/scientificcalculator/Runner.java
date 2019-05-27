@@ -24,6 +24,7 @@ public class Runner {
 
 
 
+
     public void runner() {
 
 
@@ -121,7 +122,7 @@ public class Runner {
                    break;
                case "factorial":
                    result =(sciCalc.factorial(x));
-
+                   break;
                default:
                    System.out.println ("error: please enter valid operator ");
                    break;
