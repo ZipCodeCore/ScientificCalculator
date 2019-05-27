@@ -115,10 +115,13 @@ public class Core {
         System.out.println("\"INV\" ----- take inverse of the number (1/x)");
         System.out.println("\"INVSIGN\" ----- inverse sign\n");
 
-
-
-
-
+    }
+    public void showMePuppy() {
+        System.out.println("   __");
+        System.out.println("o-''|\\\\_____/)");
+        System.out.println("\\\\_/|_)     )");
+        System.out.println("   \\\\  __  /");
+        System.out.println("    (_/ (_/    ZCW ROCKS");
     }
 }
 

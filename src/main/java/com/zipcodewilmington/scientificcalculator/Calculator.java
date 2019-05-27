@@ -4,7 +4,7 @@ public class Calculator extends Console {
     static String[] oneSidedOp = {"SIN","COS","TAN","ASIN","ACOS","ATAN","LOG","LN","E^X","10^X","!",
             "SQ","SQRT","INV","INVSIGN"};
     static String[] twoSidedOp = {"+","-","*","/","^"};
-    static String[] command = {"?","C","M+","MC","MRC"};
+    static String[] command = {"ZCW","?","C","M+","MC","MRC"};
 
     private String userInput;
     private boolean isWaitingForNumInput;
@@ -248,6 +248,10 @@ public class Calculator extends Console {
     {
         switch (command)
         {
+            case "ZCW":{
+                core.showMePuppy();
+                break;
+            }
             case "?":{
                 core.availableOptions();
                 break;
