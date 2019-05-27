@@ -11,6 +11,7 @@ import java.util.zip.Deflater;
 public class Runner {
     private String state = "";
     private Double result = 0.0;
+    private Double savedNum = 0.0;
     private Double x;
     private Double y;
     private String operator;
@@ -128,6 +129,15 @@ public class Runner {
                    break;
                case "factorial":
                    result =(sciCalc.factorial(x));
+                   break;
+               case "MC":
+                   savedNum = 0.0;
+                   break;
+               case "M+":
+                   savedNum = x;
+                   break;
+               case "MRC":
+                   System.out.println(savedNum);
                    break;
                default:
                    System.out.println ("error: please enter valid operator ");

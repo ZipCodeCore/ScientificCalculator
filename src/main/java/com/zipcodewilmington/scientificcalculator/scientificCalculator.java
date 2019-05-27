@@ -44,33 +44,10 @@ public class scientificCalculator extends Calculator {
         return result;
     }
 
-//
-//    public Double saveNumber(String memStatus) {
-//        Double saved;
-//        switch (memStatus) {
-//            case "MC":
-//                saved = null;
-//                break;
-//            case "M+":
-//                saved = ;
-//                break;
-//            case "MRC":
-//                saved = ;
-//                break;
-//            default:
-//                saved = null;
-//                break;
-//
-//        }
-//        return saved;
-//    } //save up to one number for later
-
-    //need to be able to clear and recall saved num
-
 
     //Switch between radians and degrees which is handled in each method.
-//    public Double switchUnitsMode()  {
-//     }
+    public Double switchUnitsMode()  {
+     }
 
 
      public Double sine(Double x){
