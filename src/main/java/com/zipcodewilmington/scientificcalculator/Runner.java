@@ -14,7 +14,7 @@ public class Runner {
     private Double x;
     private Double y;
     private String operator;
-    private String calcType = "";
+    private String calcType = "c";
     private Boolean isRunning = true;
     private String displayType = "d"; // decimal hex oct binary
     Calculator calc;
@@ -150,7 +150,7 @@ public class Runner {
 
 
 
-           System.out.println("result = " + result);
+           System.out.println("result = " + result));
        }
     }
 
