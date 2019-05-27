@@ -12,7 +12,8 @@ public class CalculatorTest {
         Double b = 6.0;
         Calculator c = new Calculator();
 
-        Double result = c.add(a, b);
+        c.add(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 10.0;
         assertEquals(expected,  result, 0.01);
