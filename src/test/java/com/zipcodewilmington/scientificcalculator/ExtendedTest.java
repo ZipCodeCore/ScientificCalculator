@@ -167,6 +167,6 @@ public class ExtendedTest {
 
     @Test
     public void fibTest1(){
-        Assert.assertEquals("0 1 1 2 3 5",extended.fib((double)1,(double)6));
+        Assert.assertEquals("0, 1, 1, 2, 3, 5",extended.fib((double)1,(double)6));
     }
 }

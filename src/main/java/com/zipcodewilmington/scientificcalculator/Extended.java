@@ -59,7 +59,7 @@ public class Extended{
     }
 */
     public String convertOutput (double output){
-        if(output%1!=0 && curDisplayModeIndex!=2) return "Invalid input.";
+        if(output%1!=0 && curDisplayModeIndex!=2) return "NaN";
         long asLong = (long) output;
         String converted;
         switch (curDisplayModeIndex) {
@@ -201,7 +201,7 @@ public class Extended{
 
     public String fib(Double num1, Double num2){
     double prev=0;
-    StringBuilder myBuilder = new StringBuilder(Double.toString(prev));
+    StringBuilder myBuilder = new StringBuilder(decFormat.format(prev));
     for (int i=1;i<num2;i++){
             if(i%2==1) {
                 myBuilder.append(", " + convertOutput(num1));
