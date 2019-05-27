@@ -1,4 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 //import java.lang.StringBuilder;
 /*
@@ -8,7 +9,7 @@ enum trigUnits {
 enum displayModes {
     BINARY, OCTAL, DECIMAL, HEXADECIMAL;
 }*/
-public class Extended extends Core{
+public class Extended{
 /*
     public displayModes currentDisplayMode = displayModes.DECIMAL;
 
@@ -21,16 +22,22 @@ public class Extended extends Core{
     private static String[] trigUnitNames = {"radians","degrees"};
 
 //    public Character currentTrigUnits = trigUnitsChar[0];
-    private static Integer curTrigUnitsIndex=0;
+    private Integer curTrigUnitsIndex;
 
 //    public Character currentDisplayMode = displayModesChar[2];
-    private static Integer curDisplayModeIndex=2;
+    private Integer curDisplayModeIndex;
 
-    private static double memory=0;
+    private double memory;
 
-    public static void main(String[] args) {
+    private DecimalFormat decFormat;
 
+    public Extended() {
+        curTrigUnitsIndex = 0;
+        curDisplayModeIndex = 2;
+        memory = 0;
+        decFormat = new DecimalFormat("#.##########");
     }
+
 /*
     private static String doubleToBinaryString (double given, int sigDigits){
         long integerPart = (long)given;
@@ -51,8 +58,8 @@ public class Extended extends Core{
         return output;
     }
 */
-    public static String convertOutput (double output){
-        if(output%1!=0 && curDisplayModeIndex!=2) return "Invalid input.";
+    public String convertOutput (double output){
+        if(output%1!=0 && curDisplayModeIndex!=2) return "NaN";
         long asLong = (long) output;
         String converted;
         switch (curDisplayModeIndex) {
@@ -69,26 +76,26 @@ public class Extended extends Core{
                 break;
             }
             default: {
-                converted = String.format("%1.10f", output);
+                converted = decFormat.format(output);
                 break;
             }
         }
         return converted;
     }
 
-    public static void switchDisplayMode() {
+    public void switchDisplayMode() {
         if (curDisplayModeIndex > 2) curDisplayModeIndex=0;
         else curDisplayModeIndex++;
     }
 
-    public static void switchDisplayMode(String mode){
+    public void switchDisplayMode(String mode){
         if(mode.equals(displayModeNames[0])) curDisplayModeIndex=0;
         else if(mode.equals(displayModeNames[1])) curDisplayModeIndex=1;
         else if(mode.equals(displayModeNames[2])) curDisplayModeIndex=2;
         else if(mode.equals(displayModeNames[3])) curDisplayModeIndex=3;
     }
 
-    public static String getCurDisplayModeName(){
+    public String getCurDisplayModeName(){
         return displayModeNames[curDisplayModeIndex];
     }
 
@@ -99,7 +106,7 @@ public class Extended extends Core{
         return returnArray;
     }
 
-    public static String getCurTrigUnitsName(){
+    public String getCurTrigUnitsName(){
         return trigUnitNames[curTrigUnitsIndex];
     }
 
@@ -111,58 +118,54 @@ public class Extended extends Core{
         return returnArray;
     }
 
-    public static void memClear(){
+    public void memClear(){
         memory=0;
     }
 
-    public static void memPlus(double input){
+    public void memPlus(double input){
         memory+=input;
     }
 
-    public static double memRecal(){
+    public double memRecal(){
         return memory;
     }
-/*
-    private double convertDegreesToRadians (double degrees){
-        return degrees*Math.PI/180;
-    }
-    */
-public static double sine(double input){
+
+    public double sine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.sin(input);
     }
 
-    public static double cosine(double input){
+    public double cosine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.cos(input);
     }
 
-    public static double tangent(double input){
+    public double tangent(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.tan(input);
     }
 
-    public static double invSine(double input){
+    public double invSine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.asin(input);
     }
 
-    public static double invCosine(double input){
+    public double invCosine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.acos(input);
     }
 
-    public static double invTan(double input){
+    public double invTan(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.atan(input);
     }
 
-    public static void switchUnitsMode(){
+    public void switchUnitsMode(){
         if(curTrigUnitsIndex==0)curTrigUnitsIndex++;
         else curTrigUnitsIndex=0;
     }
 
-    public static void switchUnitsMode(String mode){
+    public void switchUnitsMode(String mode){
         if(mode.equals(trigUnitNames[0])) curTrigUnitsIndex=0;
         else if(mode.equals(trigUnitNames[1]))curTrigUnitsIndex = 1;
     }
@@ -196,9 +199,9 @@ public static double sine(double input){
 
     }
 
-    public static String fib(Double num1, Double num2){
+    public String fib(Double num1, Double num2){
     double prev=0;
-    StringBuilder myBuilder = new StringBuilder(Double.toString(prev));
+    StringBuilder myBuilder = new StringBuilder(decFormat.format(prev));
     for (int i=1;i<num2;i++){
             if(i%2==1) {
                 myBuilder.append(", " + convertOutput(num1));

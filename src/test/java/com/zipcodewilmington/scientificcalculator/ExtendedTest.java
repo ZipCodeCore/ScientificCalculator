@@ -164,4 +164,9 @@ public class ExtendedTest {
     public void factorialTest() {
         Assert.assertEquals(3628800, extended.factorial(10),delta);
     }
+
+    @Test
+    public void fibTest1(){
+        Assert.assertEquals("0, 1, 1, 2, 3, 5",extended.fib((double)1,(double)6));
+    }
 }
