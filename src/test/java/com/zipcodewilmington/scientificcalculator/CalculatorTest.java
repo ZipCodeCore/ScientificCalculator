@@ -115,6 +115,54 @@ public class CalculatorTest {
     }
 
     @Test
+    public void divide() {
+        Double a = 4.0;
+        Double b = 2.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        Double expected = 2.0;
+        assertEquals(expected,  result, 0.01);
+    }
+
+    @Test
+    public void divide2() {
+        Double a = 2.0;
+        Double b = 4.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        Double expected = 0.5;
+        assertEquals(expected,  result, 0.01);
+    }
+
+    @Test
+    public void divide3() {
+        Double a = -2.0;
+        Double b = 4.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        Double expected = -0.5;
+        assertEquals(expected,  result, 0.01);
+    }
+
+    @Test
+    public void divide4() {
+        Double a = 2.0;
+        Double b = 0.0;
+        Calculator c = new Calculator();
+
+        Double result = c.divide(a, b);
+
+        assertEquals(new Double("Infinity"), result);
+    }
+
+
+    @Test
     public void sqrt() {
         Double a = 4.0;
         Calculator c = new Calculator();
