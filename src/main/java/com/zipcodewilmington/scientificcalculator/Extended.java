@@ -37,11 +37,7 @@ public class Extended{
         memory = 0;
         decFormat = new DecimalFormat("#.##########");
     }
-<<<<<<< HEAD
 
-
-    public String convertOutput (double output){
-=======
 /*
     private static String doubleToBinaryString (double given, int sigDigits){
         long integerPart = (long)given;
@@ -62,10 +58,9 @@ public class Extended{
         return output;
     }
 */
-    public static String convertOutput (double output){
+    public String convertOutput (double output){
         if(output%1!=0 && curDisplayModeIndex!=2) return "Invalid input.";
         long asLong = (long) output;
->>>>>>> a7433155b0cc3aa68d4221adcdff5644c49189f8
         String converted;
         switch (curDisplayModeIndex) {
             case 0: {
