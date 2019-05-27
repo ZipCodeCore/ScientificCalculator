@@ -105,10 +105,6 @@ public class Extended{
         return memory;
     }
 
-    public static double convertDegreesToRadians (double degrees){
-        return Math.toRadians(degrees);
-    }
-
     public double sine(double input){
         if(curTrigUnitsIndex==1) input = Math.toRadians(input);
         return Math.sin(input);
