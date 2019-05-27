@@ -1,6 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -23,7 +22,7 @@ public class scientificCalculatorTest extends Calculator {
     public void sine() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.sine(input);
         Double expected = -0.959;
         assertEquals( expected, result, 0.01 );
@@ -33,7 +32,7 @@ public class scientificCalculatorTest extends Calculator {
     public void cosine() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.cosine(input);
         Double expected = 0.284;
 
@@ -44,7 +43,7 @@ public class scientificCalculatorTest extends Calculator {
     public void tangent() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.tangent(new Double(input));
         Double expected = -3.381;
         assertEquals( expected, result, 0.01 );
@@ -54,7 +53,7 @@ public class scientificCalculatorTest extends Calculator {
     public void arcSine() {
         Double input = 0.5;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.arcSine(new Double(input));
         Double expected = 0.524;
         assertEquals( expected, result, 0.01 );
@@ -64,7 +63,7 @@ public class scientificCalculatorTest extends Calculator {
     public void arcCos() {
         Double input = 0.5;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.arcCos(new Double(input));
         Double expected = 1.047;
         assertEquals( expected, result, 0.01 );
@@ -75,7 +74,7 @@ public class scientificCalculatorTest extends Calculator {
         Double input = 0.5;
 
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.arcTan(input);
         Double expected = 0.464;
         assertEquals( expected, result, 0.01 );
@@ -93,7 +92,7 @@ public class scientificCalculatorTest extends Calculator {
     public void log() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.log(input);
         Double expected = 0.699;
         assertEquals( expected, result, 0.01 );
@@ -103,7 +102,7 @@ public class scientificCalculatorTest extends Calculator {
     public void invLog() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.invLog(input);
         Double expected = 100000.0;
         assertEquals( expected, result, 0.01 );
@@ -113,7 +112,7 @@ public class scientificCalculatorTest extends Calculator {
     public void ln() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.ln(input);
         Double expected = 1.609;
         assertEquals( expected, result, 0.01 );
@@ -123,7 +122,7 @@ public class scientificCalculatorTest extends Calculator {
     public void invLn() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.invLn(input);
         Double expected = 148.413;
         assertEquals( expected, result, 0.01 );
@@ -133,7 +132,7 @@ public class scientificCalculatorTest extends Calculator {
     public void factorial() {
         Double input = 5.0;
 
-        scientificCalculator testCalc = new scientificCalculator();
+        ScientificCalculator testCalc = new ScientificCalculator();
         Double result = testCalc.factorial(input);
         Double expected = 120.0;
         assertEquals( expected, result, 0.01 );

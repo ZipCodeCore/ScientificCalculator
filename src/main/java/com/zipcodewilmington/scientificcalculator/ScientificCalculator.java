@@ -4,7 +4,7 @@ import javax.xml.transform.Result;
 import java.sql.ResultSet;
 
 
-public class scientificCalculator extends Calculator {
+public class ScientificCalculator extends Calculator {
 
     public Boolean resultInRadians = true;
 
