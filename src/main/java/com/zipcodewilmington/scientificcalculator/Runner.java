@@ -42,7 +42,7 @@ public class Runner {
                if (calcType.equals("c")) {
                    calc = new Calculator();
                    System.out.println("------Core Mode------ \n" + "Available Operations: " + "" +
-                           "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n" );
+                           "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n  Reset Memory: MC |" );
                } else if (calcType.equals("s")) {
                    sciCalc = new scientificCalculator();
                    System.out.println("------Scientific Mode------ \n" + "Available Operations: \n " +
@@ -53,15 +53,22 @@ public class Runner {
                }
 
            Console.println("Enter q as operator to quit");
-           x = Double.parseDouble(Console.getStringInput("Enter First number"));
-           state += x;
-               System.out.println(state);
-           y = Double.parseDouble(Console.getStringInput("Enter Second number (if no second is needed enter 0)"));
-           state += y;
-               System.out.println(state);
            operator = Console.getStringInput("Operator");
-           state += operator;
-               System.out.println(state);
+
+
+           if(operator.equals("MRC")) {
+               x = savedNum;
+               operator = Console.getStringInput("Operator");
+           } else{
+               x = Double.parseDouble(Console.getStringInput("Enter First number"));
+           }
+
+           state += x + " " + operator;
+               System.out.println(state) ;
+           y = Double.parseDouble(Console.getStringInput("Enter Second number (if no second is needed enter 0)"));
+           state +=   " " + y;
+               System.out.println(state );
+
 
 
 //loop through operator and print out aw
@@ -134,7 +141,7 @@ public class Runner {
                    savedNum = 0.0;
                    break;
                case "M+":
-                   savedNum = x;
+                   savedNum = Double.parseDouble(Console.getStringInput("Enter number to memory"));
                    break;
                case "MRC":
                    System.out.println(savedNum);
@@ -146,14 +153,15 @@ public class Runner {
 
 
 
-            if (displayType != "d") {
+            if (!displayType.equals("d")) {
                 state = sciCalc.switchDisplayMode(displayType, x);
                 System.out.println(state + " = " + result);
             } else {
                 System.out.println(result);
             }
 
+            state = "";
        }
-    }
 
+    }
 }
