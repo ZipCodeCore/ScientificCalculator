@@ -27,7 +27,7 @@ public class CoreTest {
 
     @Test
     public void multiplyTest() {
-        Assert.assertEquals(169, core.multiply(13,11), delta);
+        Assert.assertEquals(143, core.multiply(13,11), delta);
     }
 
     @Test
@@ -87,6 +87,42 @@ public class CoreTest {
     @Test
     public void invertSignTest0() {
         Assert.assertEquals(0, core.invertSign(0), delta);
+
+    }
+
+    @Test
+    public void clearTest() {
+        core.clear();
+        Assert.assertEquals(0,core.getCurNum(),delta);
+    }
+
+    @Test
+    public void setCurNumTest() {
+        core.setCurNum(20);
+        Assert.assertEquals(20,core.getCurNum(),delta);
+    }
+    @Test
+    public void getCurNumTest() {
+        core.setCurNum(30);
+        Assert.assertEquals(30,core.getCurNum(),delta);
+
+    }
+    @Test
+    public void setDisplayTest() {
+        core.setDisplay("abcdefg");
+        Assert.assertEquals("abcdefg",core.getDisplay());
+    }
+
+    @Test
+    public void setDisplayErrTest() {
+        core.setDisplayErr("This is a test");
+        Assert.assertEquals("Err: This is a test", core.getDisplay());
+    }
+
+    @Test
+    public void getDisplayTest() {
+        core.setDisplay("1234567");
+        Assert.assertEquals("1234567",core.getDisplay());
 
     }
 }
