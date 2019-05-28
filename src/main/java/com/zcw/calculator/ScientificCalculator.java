@@ -7,6 +7,7 @@ public class ScientificCalculator {
         Scanner sc = new Scanner(System.in);
         String result = "0";
         Memory memory = new Memory();
+        DisplayOperations displayOperations = new DisplayOperations();
         while (true) {
             try {
                 System.out.println("Result : " + result);
@@ -42,7 +43,13 @@ public class ScientificCalculator {
                 System.out.println("Store In Memory : 20 ");
                 System.out.println("Reset Memory : 21");
                 System.out.println("Recall Value from Memory : 22");
+                System.out.println("Clear : 23");
+                System.out.println("Switch Mode: 24");
+                System.out.println("Switch to Binary: 25");
+                System.out.println("Switch to Hex: 26");
+                System.out.println("Switch to Octal: 27");
                 System.out.println("Select an Operation form the list : ");
+
                 int enter = sc.nextInt();
 
                 switch (enter) {
@@ -143,13 +150,28 @@ public class ScientificCalculator {
                     case 22:
                         result = memory.recallCurrentValue();
                         break;
+                    case 23:
+                        result = "0";
+                        break;
+                    case 24:
+                        result = displayOperations.switchDisplayMode(a);
+                        break;
+                    case 25:
+                        result = displayOperations.switchDisplayMode("binary", a);
+                        break;
+                    case 26:
+                        result = displayOperations.switchDisplayMode("hexa", a);
+                        break;
+                    case 27:
+                        result = displayOperations.switchDisplayMode("octa", a);
+                        break;
                     default:
                         System.out.println("ERR");
 
 
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                //e.printStackTrace();
                 result = "ERR";
             }
             //System.out.println(result);
