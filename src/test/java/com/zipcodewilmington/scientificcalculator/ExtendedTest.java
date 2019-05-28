@@ -169,4 +169,37 @@ public class ExtendedTest {
     public void fibTest1(){
         Assert.assertEquals("0, 1, 1, 2, 3, 5",extended.fib((double)1,(double)6));
     }
+
+    @Test
+    public void convertOutputTestB (){
+        extended.switchDisplayMode("binary");
+        Assert.assertEquals("10100101001",extended.convertOutput(1321));
+    }
+
+    @Test
+    public void convertOutputTestO (){
+        extended.switchDisplayMode("octal");
+        Assert.assertEquals("2451",extended.convertOutput(1321));
+    }
+
+    @Test
+    public void convertOutputTestD (){
+        extended.switchDisplayMode("decimal");
+        Assert.assertEquals("332.34",extended.convertOutput(332.340000));
+    }
+
+    @Test
+    public void convertOutputTestD2 (){
+        extended.switchDisplayMode("decimal");
+        Assert.assertEquals("62",extended.convertOutput(62.0));
+    }
+
+    @Test
+    public void convertOutputTestH (){
+        extended.switchDisplayMode("hexadecimal");
+        Assert.assertEquals("dc71",extended.convertOutput(56433));
+    }
+
+
+
 }
