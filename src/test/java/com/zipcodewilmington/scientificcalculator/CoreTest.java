@@ -89,13 +89,4 @@ public class CoreTest {
         Assert.assertEquals(0, core.invertSign(0), delta);
 
     }
-
-//    @Test
-//    public void clearTest() {
-//       core.clear();
-//    }
-
-//    @Test
-//    public void validOperator() {
-//    }
 }
