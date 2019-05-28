@@ -100,10 +100,9 @@ public class Extended{
     }
 
     public static String[] getDisplayModeOptions(){
-     //   return Arrays.copyOf(displayModeNames,displayModeNames.length);
+      return Arrays.copyOf(displayModeNames,displayModeNames.length);
 //        String[] returnArray=new String[displayModeNames.length];
 //        System.arraycopy(displayModeNames,0,returnArray,0,displayModeNames.length);
-        return displayModeNames;
     }
 
     public String getCurTrigUnitsName(){
@@ -112,10 +111,10 @@ public class Extended{
 
 
     public static String[] getTrigModeOptions(){
-        //   return Arrays.copyOf(displayModeNames,displayModeNames.length);
-        String[] returnArray=new String[trigUnitNames.length];
-        System.arraycopy(trigUnitNames,0,returnArray,0,trigUnitNames.length);
-        return trigUnitNames;
+           return Arrays.copyOf(displayModeNames,displayModeNames.length);
+//         String[] returnArray=new String[trigUnitNames.length];
+//         System.arraycopy(trigUnitNames,0,returnArray,0,trigUnitNames.length);
+//         return trigUnitNames;
     }
 
     public void memClear(){
