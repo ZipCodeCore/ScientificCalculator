@@ -117,13 +117,14 @@ public class Core {
         System.out.println("============ EXTRA ============");
         System.out.println("\"FIBTO\" ----- a classic sequence with variations");
 //        System.out.println("\"ZCW\" ----- ???");
+        System.out.println(" ");
     }
     public void showMePuppy() {
         System.out.println("   __");
         System.out.println("o-''|\\\\_____/)");
         System.out.println("\\\\_/|_)     )");
         System.out.println("   \\\\  __  /");
-        System.out.println("    (_/ (_/    ZCW ROCKS");
+        System.out.println("    (_/ (_/    ZCW ROCKS\n");
     }
 }
 
