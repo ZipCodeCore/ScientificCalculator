@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //package com.zipcodewilmington.scientificcalculator;
 //
 //import org.junit.Assert;
@@ -141,7 +141,7 @@
 //
 //    }
 //}
-=======
+
 package com.zipcodewilmington.scientificcalculator;
 
 import org.junit.Test;
@@ -436,4 +436,3 @@ public class scientificCalculatorTest extends Calculator {
 
     }
 }
->>>>>>> ec9fa74777f3c3416d706487f65f68e1a04b20e9

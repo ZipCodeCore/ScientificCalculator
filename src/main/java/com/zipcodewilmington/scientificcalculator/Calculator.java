@@ -2,8 +2,6 @@ package com.zipcodewilmington.scientificcalculator;
 import java.lang.Math;
 
 public class Calculator {
-
-
     private Double currentNumber;
     private String state; //display
 
@@ -29,8 +27,6 @@ public class Calculator {
     }
 
     public  void parse(String [] input){
-
-
         String operator = input[input.length-1];
 
         if(input.length == 3) {
@@ -116,8 +112,6 @@ public class Calculator {
 
     }
 
-
-
     public void add (Double a, Double b){
         currentNumber = a + b;
     }
@@ -189,12 +183,12 @@ public class Calculator {
     }
 
     //if positive currentNumber = neg / if neg return pos
-    public Double negate(Double a){
-        return a * (-1);
+    public void negate(Double a){
+        currentNumber = a * (-1);
     }
 
-    public Double negate(){
-        return currentNumber * (-1);
+    public void negate(){
+        currentNumber *= (-1);
     }
 
 

@@ -28,15 +28,19 @@ public class MainApplication {
     }
 
     public static void run() {
-        System.out.println("Welcome to our calculator");
+        System.out.println("\nWelcome To Our Calculator\n");
         Calculator calc = new Calculator();
         ScientificCalculator scientific = new ScientificCalculator();
         String mode = "core";
         mainScreen(mode);
-        String input = Console.getStringInput("Enter x y operator or a menu command to begin");
+        String input = Console.getStringInput("Enter x y operator or a menu command to begin\n");
         while (!input.equals("q")){
             switch (input) {
                 case "q" :
+                    break;
+                case "clear":
+                    calc = new Calculator();
+                    scientific = new ScientificCalculator();
                     break;
                 case "m" :
                     //add shenanigans
@@ -84,17 +88,20 @@ public class MainApplication {
 
     public static void mainScreen(String mode) {
         System.out.println("Mode = " + mode);
-        System.out.println("Switch mode [sci] [core]");
+        if(mode.equals("core"))
+            System.out.println("Switch mode: [core] sci");
+        else
+            System.out.println("Switch mode: core [sci]");
         System.out.println("See operators [m]");
-        System.out.println("Quit [q]");
+        System.out.println("Quit [q]\n");
     }
 
     public static void printOptions(String mode) {
         System.out.println("------Core Mode------ \n" + "Available Operations: " + "" +
-                "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n" );
+                "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg | Clear: clear\n" );
         if (mode.equals("sci")) {
             System.out.println("------Scientific Mode------ \n" + "Bonus Operations: \n " +
-                    "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: asin | ArcCos: acos | ArcTan: atan | \n" + " Log: log | Inverse Log: invog | Natual Log: ln | Inverse Natual: invln | Factorial: factorial\n" );
+                    "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: asin | ArcCos: acos | ArcTan: atan | \n" + " Log: log | Inverse Log: invog | Natual Log: ln | Inverse Natual: invln | Factorial: factorial | Clear: clear\n" );
             System.out.println("See different bases [base]");
 
         }
