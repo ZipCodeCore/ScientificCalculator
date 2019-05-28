@@ -181,48 +181,52 @@ public class ScientificCalculator extends Calculator {
     public void sine(Double x) {
         if (resultInRadians) {
             super.setCurrentNumber(Math.sin(x));
+        }else {
+            super.setCurrentNumber(Math.toDegrees(Math.sin(x)));
         }
-
-        super.setCurrentNumber(Math.toDegrees(Math.sin(x)));
     }
 
     public void cosine(Double x) {
         if (resultInRadians) {
             super.setCurrentNumber(Math.cos(x));
-        }
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.cos(x)));
 
-        super.setCurrentNumber(Math.toDegrees(Math.cos(x)));
+        }
     }
 
     public void tangent(Double x) {
         if (resultInRadians) {
             super.setCurrentNumber(Math.tan(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.tan(x)));
         }
-
-        super.setCurrentNumber(Math.toDegrees(Math.tan(x)));
     }
 
     public void arcSine(Double x) {
         if (resultInRadians) {
             super.setCurrentNumber(Math.asin(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.asin(x)));
         }
-        super.setCurrentNumber(Math.toDegrees(Math.asin(x)));
         //need err handling for nums < -1 or > 1
     }
 
     public void arcCos(Double x) {
         if (resultInRadians) {
             super.setCurrentNumber(Math.acos(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.acos(x)));
         }
-        super.setCurrentNumber(Math.toDegrees(Math.acos(x)));
         //need err handling for nums < -1 or > 1
     }
 
     public void arcTan(Double x) {
         if (resultInRadians) {
             super.setCurrentNumber(Math.atan(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.atan(x)));
         }
-        super.setCurrentNumber(Math.toDegrees(Math.atan(x)));
         //need err handling for nums < -1 or > 1
     }
 
