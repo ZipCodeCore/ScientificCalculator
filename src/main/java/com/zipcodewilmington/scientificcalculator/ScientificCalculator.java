@@ -6,106 +6,259 @@ import java.sql.ResultSet;
 
 public class ScientificCalculator extends Calculator {
 
-    public Boolean resultInRadians = true;
+    private Double saved;
+    private Boolean resultInRadians;
+    private String sciState;
 
-//    public Double changeDisplayType() {
-//        return Double;
-//    }
-//
-//
-//
+    public Double getSaved() {
+        return saved;
+    }
 
-    public Double roundDecTen (Double num) {
-        Double result = Double.parseDouble(String.format("%.6f %n", num));
-        return result;
+    public void setSaved(Double saved) {
+        this.saved = saved;
+    }
+
+    public Boolean getResultInRadians() {
+        return resultInRadians;
+    }
+
+    public void setResultInRadians(Boolean resultInRadians) {
+        this.resultInRadians = resultInRadians;
+    }
+
+    public String getSciState() {
+        return sciState;
+    }
+
+    public void setSciState(String sciState) {
+        this.sciState = sciState;
+    }
+
+    public ScientificCalculator() {
+        resultInRadians = true;
+        saved = 0.0;
+        sciState = null;
+    }
+
+    public void parse(String[] input) {
+        Double x = 0.0;
+        if (input.length == 2) {
+            x = Double.valueOf(input[0]);
+
+        } else if (input.length == 1) {
+            x = super.getCurrentNumber();
+        } else {
+            super.parse(input);
+        }
+        // String operator = input[input.length-1];
+
+        runOperator(x, input);
+    }
+
+    public void runOperator(Double x, String[] input) {
+        String operator = input[input.length - 1];
+        switch (operator) {
+            case "sin":
+                sine(x);
+                break;
+            case "cos":
+                cosine(x);
+                break;
+            case "tan":
+                tangent(x);
+                break;
+            case "asin":
+                arcSine(x);
+                break;
+            case "acos":
+                arcCos(x);
+                break;
+            case "atan":
+                arcTan(x);
+                break;
+            case "log":
+                log(x);
+                break;
+            case "invlog":
+                invLog(x);
+                break;
+            case "ln":
+                ln(x);
+                break;
+            case "factorial":
+                factorial(x);
+                break;
+            case "M+":
+                memSet(x);
+                break;
+            case "MC":
+                memReset();
+                break;
+            case "MRC":
+                memSetDisplay();
+                break;
+            case "base":
+                super.setCurrentNumber(x);
+                switchDisplayMode();
+                break;
+            case "trig":
+                switchUnitsMode();
+                break;
+            default:
+                super.parse(input);
+        }
+        if (!operator.equals("base")) {
+            setSciState(String.valueOf(super.getCurrentNumber()));
+        }
+
+    }
+
+    public void memSet(Double x) {
+        setSaved(x);
+    }
+    public void memReset() {
+        setSaved(0.0);
+    }
+    public void memSetDisplay() {
+        Double x = getSaved();
+        super.setCurrentNumber(x);
+    }
+
+    public void switchDisplayMode() {
+        String[] displayModes = {"h", "o", "b", "d"};
+        for (String mode : displayModes) {
+            switchDisplayMode(mode);
+            System.out.println(getSciState());
+        }
+        setSciState(String.valueOf(super.getCurrentNumber()));
+    }
+
+    public void switchDisplayMode(String displayMode) {
+        Double x = super.getCurrentNumber();
+        switch (displayMode) {
+            case "b":
+                setSciState("binary: " + Long.toBinaryString(Double.doubleToRawLongBits(x)));
+                break;
+            case "o":
+                setSciState("octal: " + Long.toOctalString(Double.doubleToRawLongBits(x)));
+                break;
+            case "h":
+                setSciState("hexadecimal: " + Long.toHexString(Double.doubleToRawLongBits(x)));
+                break;
+            case "d":
+                setSciState("decimal: " + x);
+                break;
+            default:
+                setSciState("That is not a valid display mode!");
+                break;
+        }
+
     }
 
 
-//    public Double saveNumber(String memStatus) {
-//        return null;
-//    } //save up to one number for later
-
-    //need to be able to clear and recall saved num
-
-
-    //Switch between radians and degrees which is handled in each method.
-//    public Double switchUnitsMode()  {
-//     }
+//    public void Double roundDecTen (Double num) {
+//        Double result = Double.parseDouble(String.format("%.6f %n", num));
+//        return result;
+//    }
 
 
-     public Double sine(Double x){
-        if(resultInRadians) {
-           return roundDecTen(Math.sin(x));
+  public void switchUnitsMode() {
+        Double x = super.getCurrentNumber();
+       if (resultInRadians) {
+           setResultInRadians(false);
+           super.setCurrentNumber(Math.toDegrees(x));
+       } else {
+           setResultInRadians(true);
+           super.setCurrentNumber(Math.toRadians(x));
+       }
+  }
+
+  public void switchUnitsMode(boolean resultInRadians) {
+        switchUnitsMode();
+  }
+
+
+    public void sine(Double x) {
+        if (resultInRadians) {
+            super.setCurrentNumber(Math.sin(x));
+        }else {
+            super.setCurrentNumber(Math.toDegrees(Math.sin(x)));
         }
+    }
 
-         return roundDecTen(Math.toDegrees(Math.sin(x)));
-     }
-     public Double cosine(Double x){
-         if(resultInRadians) {
-             return roundDecTen(Math.cos(x));
-         }
+    public void cosine(Double x) {
+        if (resultInRadians) {
+            super.setCurrentNumber(Math.cos(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.cos(x)));
 
-         return roundDecTen(Math.toDegrees(Math.cos(x)));
-     }
-     public Double tangent(Double x){
-         if(resultInRadians) {
-             return roundDecTen(Math.tan(x));
-         }
+        }
+    }
 
-         return roundDecTen(Math.toDegrees(Math.tan(x)));
-     }
+    public void tangent(Double x) {
+        if (resultInRadians) {
+            super.setCurrentNumber(Math.tan(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.tan(x)));
+        }
+    }
 
-     public Double arcSine(Double x){
-         if(resultInRadians) {
-             return roundDecTen(Math.asin(x));
-         }
-         return roundDecTen(Math.toDegrees(Math.asin(x)));
-         //need err handling for nums < -1 or > 1
-     }
+    public void arcSine(Double x) {
+        if (resultInRadians) {
+            super.setCurrentNumber(Math.asin(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.asin(x)));
+        }
+        //need err handling for nums < -1 or > 1
+    }
 
-     public Double arcCos(Double x){
-         if(resultInRadians) {
-             return roundDecTen(Math.acos(x));
-         }
-         return roundDecTen(Math.toDegrees(Math.acos(x)));
-         //need err handling for nums < -1 or > 1
-     }
+    public void arcCos(Double x) {
+        if (resultInRadians) {
+            super.setCurrentNumber(Math.acos(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.acos(x)));
+        }
+        //need err handling for nums < -1 or > 1
+    }
 
-     public Double arcTan(Double x){
-         if(resultInRadians) {
-             return roundDecTen(Math.atan(x));
-         }
-         return roundDecTen(Math.toDegrees(Math.atan(x)));
-         //need err handling for nums < -1 or > 1
-     }
+    public void arcTan(Double x) {
+        if (resultInRadians) {
+            super.setCurrentNumber(Math.atan(x));
+        } else {
+            super.setCurrentNumber(Math.toDegrees(Math.atan(x)));
+        }
+        //need err handling for nums < -1 or > 1
+    }
 
 
-     public Double log(Double x)
-     {
-        return roundDecTen(Math.log10(x));
-     }
-     public Double invLog(Double x) {
+    public void log(Double x) {
+        super.setCurrentNumber(Math.log10(x));
+    }
 
-        return roundDecTen(Math.pow(10, x));
-     }
-     public Double ln(Double x) {
+    public void invLog(Double x) {
 
-        return roundDecTen(Math.log(x));
-     }
-     public Double invLn(Double x) {
+        super.setCurrentNumber(Math.pow(10, x));
+    }
 
-        return roundDecTen(Math.exp(x));
-     }
-     public Double factorial(Double x) {
+    public void ln(Double x) {
 
-         Double holder = 1.0;
-         for(int i = 2; i <= x; i++) {
-             holder *= i;
-         }
-         Double result = roundDecTen(holder) ;
-         return result;
-     }
+        super.setCurrentNumber(Math.log(x));
+    }
 
+    public void invLn(Double x) {
+
+        super.setCurrentNumber(Math.exp(x));
+    }
+
+    public void factorial(Double x) {
+
+        Double holder = 1.0;
+        for (int i = 2; i <= x; i++) {
+            holder *= i;
+        }
+        Double result = (holder);
+        super.setCurrentNumber(result);
+    }
 
 
 }

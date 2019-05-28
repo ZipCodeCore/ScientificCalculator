@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import javax.sound.midi.Soundbank;
 import java.util.SortedMap;
 
 /**
@@ -51,6 +52,12 @@ public class MainApplication {
                     parseInput(mode, input, calc, scientific);
                     break;
             }
+            if (mode.equals("sci")) {
+                System.out.println(scientific.getSciState());
+            } else {
+                System.out.println(calc.getState());
+            }
+
             mainScreen(mode);
             input = Console.getStringInput("Enter x y operator or a menu command to begin");
         }
@@ -87,7 +94,8 @@ public class MainApplication {
                 "| Add: + |  Subtract: - | Multiply: * | Divide: / | Square Root: sqrt | Square: sq | Exponent: exp | Inverse: inv | Negate: neg |\n" );
         if (mode.equals("sci")) {
             System.out.println("------Scientific Mode------ \n" + "Bonus Operations: \n " +
-                    "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: asin | ArcCos: acos | ArcTan: atan | \n" + " Log: log | Inverse Log: invog | Natual Log: ln | Inverse Natual: invln | Factorial: factorial\n" );;
+                    "Sine: sin |  Cosine: cos | Tangent: tan | ArcSin: asin | ArcCos: acos | ArcTan: atan | \n" + " Log: log | Inverse Log: invog | Natual Log: ln | Inverse Natual: invln | Factorial: factorial\n" );
+            System.out.println("See different bases [base]");
 
         }
     }

@@ -25,7 +25,9 @@ public class CalculatorTest {
         Double b = -4.0;
         Calculator c = new Calculator();
 
-        Double result = c.add(a, b);
+        c.add(a, b);
+
+        Double result = c.getCurrentNumber();
 
         Double expected = 1.0;
         assertEquals(expected,  result, 0.01);
@@ -37,7 +39,8 @@ public class CalculatorTest {
         Double b = -4.0;
         Calculator c = new Calculator();
 
-        Double result = c.add(a, b);
+        c.add(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = -9.0;
         assertEquals(expected,  result, 0.01);
@@ -49,7 +52,8 @@ public class CalculatorTest {
         Double b = 2.0;
         Calculator c = new Calculator();
 
-        Double result = c.subtract(a, b);
+        c.subtract(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 4.0;
         assertEquals(expected,  result, 0.01);
@@ -61,7 +65,8 @@ public class CalculatorTest {
         Double b = -5.0;
         Calculator c = new Calculator();
 
-        Double result = c.subtract(a, b);
+        c.subtract(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 11.0;
         assertEquals(expected,  result, 0.01);
@@ -73,7 +78,8 @@ public class CalculatorTest {
         Double b = -5.0;
         Calculator c = new Calculator();
 
-        Double result = c.subtract(a, b);
+        c.subtract(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = -1.0;
         assertEquals(expected,  result, 0.01);
@@ -85,7 +91,8 @@ public class CalculatorTest {
         Double b = 3.0;
         Calculator c = new Calculator();
 
-        Double result = c.multiply(a, b);
+        c.multiply(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 6.0;
         assertEquals(expected,  result, 0.01);
@@ -97,7 +104,8 @@ public class CalculatorTest {
         Double b = 3.0;
         Calculator c = new Calculator();
 
-        Double result = c.multiply(a, b);
+        c.multiply(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = -6.0;
         assertEquals(expected,  result, 0.01);
@@ -109,7 +117,8 @@ public class CalculatorTest {
         Double b = -3.0;
         Calculator c = new Calculator();
 
-        Double result = c.multiply(a, b);
+        c.multiply(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 6.0;
         assertEquals(expected,  result, 0.01);
@@ -121,7 +130,8 @@ public class CalculatorTest {
         Double b = 2.0;
         Calculator c = new Calculator();
 
-        Double result = c.divide(a, b);
+        c.divide(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 2.0;
         assertEquals(expected,  result, 0.01);
@@ -133,7 +143,8 @@ public class CalculatorTest {
         Double b = 4.0;
         Calculator c = new Calculator();
 
-        Double result = c.divide(a, b);
+        c.divide(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 0.5;
         assertEquals(expected,  result, 0.01);
@@ -145,7 +156,8 @@ public class CalculatorTest {
         Double b = 4.0;
         Calculator c = new Calculator();
 
-        Double result = c.divide(a, b);
+        c.divide(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = -0.5;
         assertEquals(expected,  result, 0.01);
@@ -157,7 +169,8 @@ public class CalculatorTest {
         Double b = 0.0;
         Calculator c = new Calculator();
 
-        Double result = c.divide(a, b);
+        c.divide(a, b);
+        Double result = c.getCurrentNumber();
 
         assertEquals(new Double("Infinity"), result);
     }
@@ -168,7 +181,8 @@ public class CalculatorTest {
         Double a = 4.0;
         Calculator c = new Calculator();
 
-        Double result = c.sqrt(a);
+        c.sqrt(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = 2.0;
         assertEquals(expected,  result, 0.01);
@@ -179,7 +193,8 @@ public class CalculatorTest {
         Double a = -4.0;
         Calculator c = new Calculator();
 
-        Double result = c.sqrt(a);
+        c.sqrt(a);
+        Double result = c.getCurrentNumber();
 
         assertEquals(new Double("NaN"), result);
     }
@@ -189,7 +204,8 @@ public class CalculatorTest {
         Double a = 7.0;
         Calculator c = new Calculator();
 
-        Double result = c.sqrt(a);
+        c.sqrt(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = 2.64;
         assertEquals(expected,  result, 0.01);
@@ -200,7 +216,8 @@ public class CalculatorTest {
         Double a = 2.0;
         Calculator c = new Calculator();
 
-        Double result = c.sq(a);
+        c.sq(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = 4.0;
         assertEquals(expected, result, 0.01);
@@ -211,7 +228,8 @@ public class CalculatorTest {
         Double a = -3.0;
         Calculator c = new Calculator();
 
-        Double result = c.sq(a);
+        c.sq(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = 9.0;
         assertEquals(expected, result, 0.01);
@@ -224,7 +242,8 @@ public class CalculatorTest {
         Double b = 3.0;
         Calculator c = new Calculator();
 
-        Double result = c.exp(a, b);
+        c.exp(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 8.0;
         assertEquals(expected, result, 0.01);
@@ -236,7 +255,8 @@ public class CalculatorTest {
         Double b = 3.0;
         Calculator c = new Calculator();
 
-        Double result = c.exp(a, b);
+        c.exp(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = -8.0;
         assertEquals(expected, result, 0.01);
@@ -248,7 +268,8 @@ public class CalculatorTest {
         Double b = -3.0;
         Calculator c = new Calculator();
 
-        Double result = c.exp(a, b);
+        c.exp(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = -0.125;
         assertEquals(expected, result, 0.01);
@@ -260,7 +281,8 @@ public class CalculatorTest {
         Double b = 3.0;
         Calculator c = new Calculator();
 
-        Double result = c.exp(a, b);
+        c.exp(a, b);
+        Double result = c.getCurrentNumber();
 
         Double expected = 15.625;
         assertEquals(expected, result, 0.01);
@@ -271,7 +293,8 @@ public class CalculatorTest {
         Double a = 2.0;
         Calculator c = new Calculator();
 
-        Double result = c.inv(a);
+        c.inv(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = .5;
         assertEquals(expected, result, 0.01);
@@ -282,7 +305,8 @@ public class CalculatorTest {
         Double a = -2.0;
         Calculator c = new Calculator();
 
-        Double result = c.inv(a);
+        c.inv(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = -0.5;
         assertEquals(expected, result, 0.01);
@@ -293,7 +317,8 @@ public class CalculatorTest {
         Double a = .7;
         Calculator c = new Calculator();
 
-        Double result = c.inv(a);
+        c.inv(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = 1.4285714285714286;
         assertEquals(expected, result, 0.01);
@@ -304,7 +329,8 @@ public class CalculatorTest {
         Double a = 2.0;
         Calculator c = new Calculator();
 
-        Double result = c.negate(a);
+        c.negate(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = -2.0;
         assertEquals(expected, result, 0.01);
@@ -315,7 +341,8 @@ public class CalculatorTest {
         Double a = -2.0;
         Calculator c = new Calculator();
 
-        Double result = c.negate(a);
+        c.negate(a);
+        Double result = c.getCurrentNumber();
 
         Double expected = 2.0;
         assertEquals(expected, result, 0.01);
