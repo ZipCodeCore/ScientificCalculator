@@ -320,7 +320,7 @@ public class Calculator extends Console {
         }
     }
 
-    public static Integer validOperator (String inputTest) {
+    private static Integer validOperator (String inputTest) {
 
         for (String operator : oneSidedOp) {
             if (inputTest.equals(operator)) {
