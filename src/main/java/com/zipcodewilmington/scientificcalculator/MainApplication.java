@@ -56,7 +56,7 @@ public class MainApplication {
                     parseInput(mode, input, calc, scientific);
                     break;
             }
-            if (mode.equals("sci")) {
+            if (mode.equals("sci") && (scientific.getSciState() != null)) {
                 System.out.println(scientific.getSciState());
             } else {
                 System.out.println(calc.getState());
