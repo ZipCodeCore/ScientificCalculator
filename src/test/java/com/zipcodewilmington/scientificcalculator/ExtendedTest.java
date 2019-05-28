@@ -93,6 +93,11 @@ public class ExtendedTest {
     }
 
     @Test
+    public void tangentTestInf() {
+        Assert.assertEquals(Math.tan(Math.PI/2),extended.tangent(Math.PI/2),delta);
+    }
+
+    @Test
     public void invSineTest() {
         Assert.assertEquals(Math.asin(0),extended.invSine(0),delta);    }
 
@@ -104,6 +109,11 @@ public class ExtendedTest {
     @Test
     public void invTanTest() {
         Assert.assertEquals(Math.atan(0),extended.invTan(0),delta);
+    }
+
+    @Test
+    public void invTanTestInf() {
+        Assert.assertEquals(Math.atan(Math.PI),extended.invTan(Math.PI),delta);
     }
 
     @Test
@@ -156,7 +166,7 @@ public class ExtendedTest {
 
     @Test
     public void invLnTest2() {
-        Assert.assertEquals(Math.pow(Math.E,20),extended.invLn(20),delta);
+        Assert.assertEquals(Math.pow(Math.E,20),extended.invLn(20),0.000001);
     }
 
 
@@ -198,6 +208,12 @@ public class ExtendedTest {
     public void convertOutputTestH (){
         extended.switchDisplayMode("hexadecimal");
         Assert.assertEquals("dc71",extended.convertOutput(56433));
+    }
+
+    @Test
+    public void convertOutputTestNaN (){
+        extended.switchDisplayMode("hexadecimal");
+        Assert.assertEquals("NaN",extended.convertOutput(564.33));
     }
 
 
