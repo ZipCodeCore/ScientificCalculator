@@ -27,6 +27,11 @@ public class Console {
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        // need to handle operator input gracefully
+        Scanner scanner = new Scanner(System.in);
+
+        Double userInput = scanner.nextDouble();
+
+        return userInput;
     }
 }

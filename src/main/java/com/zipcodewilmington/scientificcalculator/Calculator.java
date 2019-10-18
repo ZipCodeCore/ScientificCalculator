@@ -3,17 +3,19 @@ package com.zipcodewilmington.scientificcalculator;
 public class Calculator {
 
     private Double state;
-    private Double lastImport;
-    private Memory memory;
-    private Trig trig;
+    private Double lastInput;
+    private Double display;
+//    private Memory memory;
+//    private Trig trig;
 
 
-    public void Calculator() {
+    public Calculator() {
 
-        this.state = 0;
-        this.lastImport = 0;
-        this.memory = new Memory();
-        this.trig = new Trig();
+        state = 0.0;
+        lastInput = 0.0;
+        display = 0.0;
+//        this.memory = new Memory();
+//        this.trig = new Trig();
 
     }
 
@@ -23,8 +25,8 @@ public class Calculator {
         return state;
     }
 
-    public Double getLastImport() {
-        return lastImport;
+    public Double getLastInput() {
+        return lastInput;
     }
 
     // Setters
@@ -33,8 +35,8 @@ public class Calculator {
         this.state = state;
     }
 
-    public void setLastImport(Double lastImport) {
-        this.lastImport = lastImport;
+    public void setLastInput(Double lastImport) {
+        this.lastInput = lastInput;
     }
 
     // Helper Methods
@@ -52,7 +54,14 @@ public class Calculator {
 
     public void inputLoop() {
         Double input = Console.getDoubleInput("");
-        Console.println(input);
+
+        this.lastInput = this.display;
+        this.display = input;
+
+        Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+
+        // need to do this only until the previous input was an operator
+        this.inputLoop();
     }
 
     public void handleOperator() {
