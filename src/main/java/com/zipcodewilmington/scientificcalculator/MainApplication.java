@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+
 /**
  * Created by leon on 2/9/18.
  */
@@ -14,4 +15,17 @@ public class MainApplication {
         Console.println("The user input %s as a integer", i);
         Console.println("The user input %s as a d", d);
     }
+    public static Integer calcDiv(Integer a, Integer b) {
+        Integer div = a / b;
+        return div;
+    }
+    public static Double calcSqrt (double a) {
+        Double sqrt = Math.sqrt(a);
+        return sqrt;
+    }
+    public static Double calcInverse(double a) {
+        Double inverse = 1 / a;
+        return inverse;
+    }
+
 }
