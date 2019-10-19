@@ -17,6 +17,11 @@ public class MainApplication {
         String userAgeAsString =  scanner.nextLine();
         Integer userAge = Integer.parseInt(userAgeAsString);
 
+        System.out.println("Enter your operator");
+        String userOperator = scanner.nextLine();
+
+        if(n2V[].inlcludes(userOperator))
+
 
 
     }

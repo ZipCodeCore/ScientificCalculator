@@ -1,8 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Sqrt{
-    private double value1;
-
 
     public Sqrt(){
     }
