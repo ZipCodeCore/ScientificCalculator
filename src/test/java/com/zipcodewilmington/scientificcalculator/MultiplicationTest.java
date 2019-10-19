@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientific_calculator;
+package com.zipcodewilmington.scientificcalculator;
 
 import com.zipcodewilmington.scientificcalculator.Multiplication;
 import org.junit.Before;
