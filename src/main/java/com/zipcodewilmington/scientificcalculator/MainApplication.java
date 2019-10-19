@@ -7,7 +7,7 @@ public class MainApplication {
     public static void main(String[] args) {
 
         Calculator calculator = new Calculator();
-        calculator.inputLoop();
+        calculator.run();
 
 //        Console.println("Welcome to my calculator!");
 //        String s = Console.getStringInput("Enter a string");
