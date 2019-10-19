@@ -16,11 +16,11 @@ public class InverseTest {
     public void inverseTest1() {
         // given
         Inverse result = new Inverse();
-        double inputValue1 = 4;
-        double expected = 1 / inputValue1;
+        double inputValue = 4;
+        double expected = 1 / inputValue;
 
         // when
-        double actual = result.inverse(inputValue1);
+        double actual = result.inverse(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
@@ -30,11 +30,11 @@ public class InverseTest {
     public void inverseTest2() {
         // given
         Inverse result = new Inverse();
-        double inputValue1 = 15;
-        double expected = 1 / inputValue1;
+        double inputValue = 15;
+        double expected = 1 / inputValue;
 
         // when
-        double actual = result.inverse(inputValue1);
+        double actual = result.inverse(inputValue);
 
         // then
         assertEquals(expected, actual, .00);

@@ -19,12 +19,12 @@ public class PositiveToNegativeTest {
     @Test
     public void multiplicationTest1() {
         // given
-        PositiveToNegative product = new PositiveToNegative();
-        double inputValue1 = 2;
-        double expected = -1 * inputValue1;
+        PositiveToNegative result = new PositiveToNegative();
+        double inputValue = 2;
+        double expected = -1 * inputValue;
 
         // when
-        double actual = product.positiveToNegative(inputValue1);
+        double actual = result.positiveToNegative(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
@@ -34,11 +34,11 @@ public class PositiveToNegativeTest {
     public void multiplicationTest2() {
         // given
         PositiveToNegative product = new PositiveToNegative();
-        double inputValue1 = 17;
-        double expected = -1 * inputValue1;
+        double inputValue = 17;
+        double expected = -1 * inputValue;
 
         // when
-        double actual = product.positiveToNegative(inputValue1);
+        double actual = product.positiveToNegative(inputValue);
 
         // then
         assertEquals(expected, actual, .00);

@@ -15,13 +15,13 @@ public class ExponentTest {
     public void exponent1() {
 
         // given
-        Exponent product = new Exponent();
+        Exponent result = new Exponent();
         double inputValue1 = 2;
         double inputValue2 = 3;
         double expected = Math.pow(inputValue1, inputValue2);
 
         // when
-        double actual = product.exponent(inputValue1,inputValue2);
+        double actual = result.exponent(inputValue1,inputValue2);
 
         // then
         assertEquals(expected, actual, .00);
@@ -31,13 +31,13 @@ public class ExponentTest {
     @Test
     public void exponent2() {
         // given
-        Exponent product = new Exponent();
+        Exponent result = new Exponent();
         double inputValue1 = 7;
         double inputValue2 = 3;
         double expected = Math.pow(inputValue1, inputValue2);
 
         // when
-        double actual = product.exponent(inputValue1,inputValue2);
+        double actual = result.exponent(inputValue1,inputValue2);
 
         // then
         assertEquals(expected, actual, .00);

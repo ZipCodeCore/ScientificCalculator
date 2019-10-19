@@ -20,14 +20,14 @@ public class FactorialTest {
     public void factorialTest1() {
         // given
         Factorial result = new Factorial();
-        Integer inputValue1 = 5;
+        Integer inputValue = 5;
         double expected = 1;
-            for(int i = 1; i <= inputValue1;i++){
+            for(int i = 1; i <= inputValue;i++){
                 expected = expected * i;
             }
 
         // when
-        double actual = result.factorial(inputValue1);
+        double actual = result.factorial(inputValue);
 
         // then
         assertEquals(expected, actual, 0);
@@ -37,14 +37,14 @@ public class FactorialTest {
     public void factorialTest2() {
         // given
         Factorial result = new Factorial();
-        Integer inputValue1 = 10;
+        Integer inputValue = 10;
         double expected = 1;
-        for(int i = 1; i <= inputValue1;i++){
+        for(int i = 1; i <= inputValue;i++){
             expected = expected * i;
         }
 
         // when
-        double actual = result.factorial(inputValue1);
+        double actual = result.factorial(inputValue);
 
         // then
         assertEquals(expected, actual, 0);
@@ -54,14 +54,14 @@ public class FactorialTest {
     public void factorialTest3() {
         // given
         Factorial result = new Factorial();
-        Integer inputValue1 = 1;
+        Integer inputValue = 1;
         double expected = 1;
-        for(int i = 1; i <= inputValue1;i++){
+        for(int i = 1; i <= inputValue;i++){
             expected = expected * i;
         }
 
         // when
-        double actual = result.factorial(inputValue1);
+        double actual = result.factorial(inputValue);
 
         // then
         assertEquals(expected, actual, 0);

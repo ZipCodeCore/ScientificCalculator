@@ -15,12 +15,12 @@ public class SqrtTest {
     public void sqrt1() {
 
         // given
-        Sqrt product = new Sqrt();
+        Sqrt result = new Sqrt();
         double inputValue1 = 2;
         double expected = Math.sqrt(inputValue1);
 
         // when
-        double actual = product.sqrt(inputValue1);
+        double actual = result.sqrt(inputValue1);
 
         // then
         assertEquals(expected, actual, .00);
@@ -30,12 +30,12 @@ public class SqrtTest {
     @Test
     public void sqrt2() {
         // given
-        Sqrt product = new Sqrt();
+        Sqrt result = new Sqrt();
         double inputValue1 = 7;
         double expected = Math.sqrt(inputValue1);
 
         // when
-        double actual = product.sqrt(inputValue1);
+        double actual = result.sqrt(inputValue1);
 
         // then
         assertEquals(expected, actual, .00);

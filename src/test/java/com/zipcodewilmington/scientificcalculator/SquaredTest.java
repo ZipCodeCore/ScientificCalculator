@@ -15,12 +15,12 @@ public class SquaredTest {
     @Test
     public void squaredTest1() {
         // given
-        Squared product = new Squared();
-        double inputValue1 = 2;
-        double expected = inputValue1 * inputValue1;
+        Squared result = new Squared();
+        double inputValue = 2;
+        double expected = inputValue * inputValue;
 
         // when
-        double actual = product.squared(inputValue1);
+        double actual = result.squared(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
@@ -30,12 +30,12 @@ public class SquaredTest {
     @Test
     public void multiplicationTest2() {
         // given
-        Squared product = new Squared();
-        double inputValue1 = 7;
-        double expected = inputValue1 * inputValue1;
+        Squared result = new Squared();
+        double inputValue = 7;
+        double expected = inputValue * inputValue;
 
         // when
-        double actual = product.squared(inputValue1);
+        double actual = result.squared(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
