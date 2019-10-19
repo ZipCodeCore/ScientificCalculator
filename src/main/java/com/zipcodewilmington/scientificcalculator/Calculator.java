@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Calculator {
 
-    private  Boolean running;
+    private Boolean running;
     private Double lastInput;
     private Double display;
     public static final String[] UNARYOPERATORS = {"sqrt", "sq",
@@ -21,8 +21,8 @@ public class Calculator {
         running = false;
         lastInput = 0.0;
         display = 0.0;
-        this.memory = new Memory();
-        this.trig = new TrigFunctions();
+        memory = new Memory();
+        trig = new TrigFunctions();
 
     }
 
@@ -37,7 +37,7 @@ public class Calculator {
     }
 
     public TrigFunctions getTrig() { // just for testing, really
-        return trig;
+        return this.trig;
     }
 
     // Setters
@@ -66,7 +66,7 @@ public class Calculator {
     }
 
     public void run() {
-        running = true;
+        this.running = true;
         inputLoop();
     }
 
@@ -74,8 +74,7 @@ public class Calculator {
     private void inputLoop() {
         String input = Console.getInput("");
 
-        while (running) {
-
+        while (this.running) {
 
             if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
                 this.lastInput = this.display;
@@ -101,25 +100,25 @@ public class Calculator {
         Console.println("%s (command)", command);
         switch (command) {
             case "quit" :
-                running = false;
+                this.running = false;
                 break;
             case "clear":
                 clearCalculator();
                 break;
             case "deg":
-                trig.degreeMode();
+                this.trig.degreeMode();
                 break;
             case "rad":
-                trig.radianMode();
+                this.trig.radianMode();
                 break;
             case "m+":
-                memory.memoryPlus(display);
+                this.memory.memoryPlus(display);
                 break;
             case "mc":
-                memory.memoryClear();
+                this.memory.memoryClear();
                 break;
             case "mrc":
-                lastInput = display;
+                this.lastInput = display;
                 display = memory.memoryRecall();
                 break;
         }
@@ -133,27 +132,27 @@ public class Calculator {
         switch (operator) {
 
             case "sin":
-                result = trig.sin(this.display);
+                result = this.trig.sin(this.display);
                 this.display = result;
                 break;
             case "cos":
-                result = trig.cos(this.display);
+                result = this.trig.cos(this.display);
                 this.display = result;
                 break;
             case "tan":
-                result = trig.tan(this.display);
+                result = this.trig.tan(this.display);
                 this.display = result;
                 break;
             case "asin":
-                result = trig.arcSin(this.display);
+                result = this.trig.arcSin(this.display);
                 this.display = result;
                 break;
             case "acos":
-                result = trig.arcCos(this.display);
+                result = this.trig.arcCos(this.display);
                 this.display = result;
                 break;
             case "atan":
-                result = trig.arcTan(this.display);
+                result = this.trig.arcTan(this.display);
                 this.display = result;
                 break;
 

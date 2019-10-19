@@ -83,6 +83,27 @@ public class CalculatorTest {
             assertTrue(0 == Double.compare(actual,expected));
 
             calculator.setDisplay(n);
+            calculator.handleOperator("tan");
+            expected = calculator.getTrig().tan(n);
+            actual = calculator.getDisplay();
+
+            assertTrue(0 == Double.compare(actual,expected));
+
+            calculator.setDisplay(n);
+            calculator.handleOperator("asin");
+            expected = calculator.getTrig().arcSin(n);
+            actual = calculator.getDisplay();
+
+            assertTrue(0 == Double.compare(actual,expected));
+
+            calculator.setDisplay(n);
+            calculator.handleOperator("acos");
+            expected = calculator.getTrig().arcCos(n);
+            actual = calculator.getDisplay();
+
+            assertTrue(0 == Double.compare(actual,expected));
+
+            calculator.setDisplay(n);
             calculator.handleOperator("atan");
             expected = calculator.getTrig().arcTan(n);
             actual = calculator.getDisplay();
