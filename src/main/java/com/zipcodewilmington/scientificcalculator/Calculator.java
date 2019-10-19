@@ -11,7 +11,7 @@ public class Calculator {
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", ""};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", "?", "help"};// still need display modes
 
     private Memory memory;
     private TrigFunctions trig;
@@ -68,6 +68,14 @@ public class Calculator {
         inputLoop();
     }
 
+    public void showHelp() {
+        Console.println("Available commands (case insensitive):");
+        Console.println(String.join(", ",Calculator.COMMANDS));
+        Console.println("Available operators:");
+        Console.println(String.join(", ",Calculator.BINARYOPERATORS));
+        Console.println(String.join(", ",Calculator.UNARYOPERATORS));
+    }
+
     // Input Methods
     private void inputLoop() {
         String input = Console.getInput("");
@@ -115,6 +123,10 @@ public class Calculator {
             case "mrc":
                 this.lastInput = display;
                 display = memory.memoryRecall();
+                break;
+            case "?":
+            case "help":
+                this.showHelp();
                 break;
         }
         return "";
@@ -186,4 +198,6 @@ public class Calculator {
 
         return "";
     }
+
+
 }
