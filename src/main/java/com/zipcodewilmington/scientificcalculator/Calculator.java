@@ -50,11 +50,17 @@ public class Calculator {
 
 
     private void throwError() {
-
+        Console.println("0");
+        this.lastInput = 0.0;
+        this.display = 0.0;
+        this.state = 0.0;
     }
 
     private void clearCalculator() {
-
+        Console.println("ERR");
+        this.lastInput = 0.0;
+        this.display = 0.0;
+        this.state = 0.0;
     }
 
     // Input Methods
@@ -71,8 +77,26 @@ public class Calculator {
                 Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
             } else if (Arrays.asList(Calculator.COMMANDS).contains(input)){
                 Console.println("%s (command)", input);
+                switch (input) {
+                    case "clear":
+                        clearCalculator();
+                        break;
+
+
+                }
+
             } else if (Arrays.asList(Calculator.OPERATORS).contains(input)){
                 Console.println("%s (operator)", input);
+                switch (input) {
+                    case "+":
+                        clearCalculator();
+                        break;
+                    case "sin":
+                        Trig.sin(this.display);
+                        
+
+
+                }
             } else { //error
                 this.throwError();
             }
