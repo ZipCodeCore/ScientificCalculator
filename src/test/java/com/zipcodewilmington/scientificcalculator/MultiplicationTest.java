@@ -16,13 +16,13 @@ public class MultiplicationTest {
     @Test
     public void multiplicationTest1() {
         // given
-        Multiplication product = new Multiplication();
+        Multiplication result = new Multiplication();
         double inputValue1 = 2;
         double inputValue2 = 3;
         double expected = inputValue1 * inputValue2;
 
         // when
-        double actual = product.multiply(inputValue1,inputValue2);
+        double actual = result.multiply(inputValue1,inputValue2);
 
         // then
         assertEquals(expected, actual, .00);
@@ -32,13 +32,13 @@ public class MultiplicationTest {
     @Test
     public void multiplicationTest2() {
         // given
-        Multiplication product = new Multiplication();
+        Multiplication result = new Multiplication();
         double inputValue1 = 7;
         double inputValue2 = 3;
         double expected = inputValue1 * inputValue2;
 
         // when
-        double actual = product.multiply(inputValue1,inputValue2);
+        double actual = result.multiply(inputValue1,inputValue2);
 
         // then
         assertEquals(expected, actual, .00);

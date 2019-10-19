@@ -14,13 +14,13 @@ public class AdditionTest {
     @Test
     public void additionTest() {
         // given
-        Addition product = new Addition();
+        Addition result = new Addition();
         double inputValue1 = 5;
         double inputValue2 = 5;
         double expected = inputValue1 + inputValue2;
 
         // when
-        double actual = product.add(inputValue1,inputValue2);
+        double actual = result.add(inputValue1,inputValue2);
 
         // then
         assertEquals(expected, actual, .00);
@@ -30,13 +30,13 @@ public class AdditionTest {
     @Test
     public void additionTest2() {
         // given
-        Addition product = new Addition() ;
+        Addition result = new Addition() ;
         double inputValue1 = 10;
         double inputValue2 = 10;
         double expected = inputValue1 + inputValue2;
 
         // when
-        double actual = product.add(inputValue1,inputValue2);
+        double actual = result.add(inputValue1,inputValue2);
 
         // then
         assertEquals(expected, actual, .00);
