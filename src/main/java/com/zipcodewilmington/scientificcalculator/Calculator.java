@@ -11,8 +11,8 @@ public class Calculator {
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", ""};// still need display modes
-//    private Memory memory;
-//    private Trig trig;
+    private Memory memory;
+    private TrigFunctions trig;
 
 
     public Calculator() {
@@ -20,8 +20,8 @@ public class Calculator {
         state = 0.0;
         lastInput = 0.0;
         display = 0.0;
-//        this.memory = new Memory();
-//        this.trig = new Trig();
+        this.memory = new Memory();
+        this.trig = new TrigFunctions();
 
     }
 
@@ -70,6 +70,7 @@ public class Calculator {
 
         while (!input.equals("quit")) {
 
+
             if (input.matches("-?\\d+(\\.\\d+)?")) {
                 this.lastInput = this.display;
                 this.display = Double.valueOf(input);
@@ -81,8 +82,21 @@ public class Calculator {
                     case "clear":
                         clearCalculator();
                         break;
+                    case "deg" :
+                        trig.degreeMode();
+                        break;
+                    case "rad" :
+                        trig.radianMode();
+                        break;
+                    case "m+" :
+                        memory.memoryPlus(0.0);
+                        break;
+                    case "mc" :
 
+                        break;
+                    case "mrc" :
 
+                        break;
                 }
 
             } else if (Arrays.asList(Calculator.OPERATORS).contains(input)){
@@ -92,7 +106,7 @@ public class Calculator {
                         clearCalculator();
                         break;
                     case "sin":
-                        Trig.sin(this.display);
+                        trig.sin(this.display);
                         
 
 
