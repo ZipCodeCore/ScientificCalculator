@@ -11,7 +11,7 @@ public class Calculator {
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "clear", "deg", "rad", "quit", "?", "help"};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "clear", "deg", "rad", "quit", "q", "?", "help", "stats"};// still need display modes
 
     private Memory memory;
     private TrigFunctions trig;
@@ -103,6 +103,7 @@ public class Calculator {
     public String handleCommands(String command) {
         Console.println("%s (command)", command);
         switch (command) {
+            case "q" :
             case "quit" :
                 this.running = false;
                 break;
@@ -129,6 +130,20 @@ public class Calculator {
             case "?":
             case "help":
                 this.showHelp();
+                break;
+            case "stats":
+                Statistics1Var stats = new Statistics1Var(); // create stats object
+                Console.println("in");
+                Double[] input = Console.getDoubleList(); // get new data
+                Console.println("out");
+                if (input.length > 0) {
+                    stats.setData(input); // apply the data
+                    stats.calculateStatistics(); // calculate the statistics
+                    Console.println(stats.getOutput()); // output the result
+                } else {
+                    throwError();
+                }
+
                 break;
         }
         return "";

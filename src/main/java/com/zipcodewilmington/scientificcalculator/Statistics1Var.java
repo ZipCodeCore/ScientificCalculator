@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Statistics1Var {
@@ -73,7 +74,7 @@ public class Statistics1Var {
 
     // Core logic
 
-    public String calculateStatistics() {
+    public void calculateStatistics() {
 
         this.mean = this.calcMean();
         this.median = this.calcMedian();
@@ -83,15 +84,14 @@ public class Statistics1Var {
         this.var = null;
         this.n = data.length;
         this.output = "1-Variable Statistics:\n" +
-                "n: " + Double.toString(this.n) + "\n" +
+                "n: " + Integer.toString(this.n.intValue()) + "\n" +
                 "Mean: " + Double.toString(this.mean) +"\n" +
                 "Median: " + Double.toString(this.median) +"\n" +
                 "Min: " + Double.toString(this.min) +"\n" +
-                "Max: " + Double.toString(this.max) +"\n" +
-                "Std Dev: " + Double.toString(this.stdDev) +"\n" +
-                "Var: " + Double.toString(this.var);
+                "Max: " + Double.toString(this.max) +"\n";
+//                "Std Dev: " + Double.toString(this.stdDev) +"\n" +
+//                "Var: " + Double.toString(this.var);
 
-        return output;
     }
 
     public Double calcMean() {
