@@ -100,4 +100,37 @@ public class CalculatorTest {
         }
 
     }
+    @Test
+    public void testHandleOperator_inv() {
+
+
+        calculator.setDisplay(5.0);
+
+        calculator.handleOperator("inv");
+
+        assertTrue(1.0/5.0 ==  calculator.getDisplay().doubleValue());
+
+    }
+    @Test
+    public void testHandleOperator_sign() {
+
+
+        calculator.setDisplay(1.0);
+
+        calculator.handleOperator("sign");
+
+        assertTrue(-1.0 ==  calculator.getDisplay().doubleValue());
+
+    }
+    @Test
+    public void testHandleOperator_sign2() {
+
+
+        calculator.setDisplay(-1.0);
+
+        calculator.handleOperator("sign");
+
+        assertTrue(1.0 ==  calculator.getDisplay().doubleValue());
+
+    }
 }

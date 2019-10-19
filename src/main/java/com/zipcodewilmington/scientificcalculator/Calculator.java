@@ -134,7 +134,7 @@ public class Calculator {
         return "";
     }
 
-    /*,  "!", "inv", "sign"};*/
+    /*,  "!", "sign"};*/
     public String handleOperator(String operator) {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
@@ -189,15 +189,24 @@ public class Calculator {
                 break;
             case "!":
                 if(this.display == Math.floor(this.display)){
+                    System.out.println(Math.floor(this.display));
                     System.out.print("Yes it is");
                 } else {
                     System.out.print("nope");
                 }
                 this.display = result;
                 break;
+            case "inv":
+                result = (1.0 / this.display);
+                this.display = result;
+                break;
+            case "sign":
+                this.display *=  -1.0;
+
+                break;
         }
         Console.println(Double.toString(this.display));
-        return "";
+        return Double.toString(display);
     }
 
     /* "+", "-", "/", "*", "^" */
