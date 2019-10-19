@@ -28,9 +28,9 @@ public class MainApplication {
 
 
         System.out.println("Enter your operator");
-        String userOperator = scanner.nextLine();
+     //   String userOperator = scanner.nextLine();
 
-        if(n2V[].inlcludes(userOperator))
+     //   if(n2V[].inlcludes(userOperator))
 
 
 

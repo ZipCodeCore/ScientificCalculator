@@ -1,0 +1,69 @@
+package com.zipcodewilmington.scientificcalculator;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class FactorialTest {
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void factorialTest1() {
+        // given
+        Factorial result = new Factorial();
+        Integer inputValue1 = 5;
+        double expected = 1;
+            for(int i = 1; i <= inputValue1;i++){
+                expected = expected * i;
+            }
+
+        // when
+        double actual = result.factorial(inputValue1);
+
+        // then
+        assertEquals(expected, actual, 0);
+    }
+
+    @Test
+    public void factorialTest2() {
+        // given
+        Factorial result = new Factorial();
+        Integer inputValue1 = 10;
+        double expected = 1;
+        for(int i = 1; i <= inputValue1;i++){
+            expected = expected * i;
+        }
+
+        // when
+        double actual = result.factorial(inputValue1);
+
+        // then
+        assertEquals(expected, actual, 0);
+    }
+
+    @Test
+    public void factorialTest3() {
+        // given
+        Factorial result = new Factorial();
+        Integer inputValue1 = 1;
+        double expected = 1;
+        for(int i = 1; i <= inputValue1;i++){
+            expected = expected * i;
+        }
+
+        // when
+        double actual = result.factorial(inputValue1);
+
+        // then
+        assertEquals(expected, actual, 0);
+    }
+}
