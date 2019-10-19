@@ -11,6 +11,7 @@ public class Calculator {
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", ""};// still need display modes
+
     private Memory memory;
     private TrigFunctions trig;
 
@@ -82,35 +83,24 @@ public class Calculator {
                     case "clear":
                         clearCalculator();
                         break;
-                    case "deg" :
+                    case "deg":
                         trig.degreeMode();
                         break;
-                    case "rad" :
+                    case "rad":
                         trig.radianMode();
                         break;
-                    case "m+" :
+                    case "m+":
                         memory.memoryPlus(0.0);
                         break;
-                    case "mc" :
+                    case "mc":
 
                         break;
-                    case "mrc" :
+                    case "mrc":
 
                         break;
                 }
-
-            } else if (Arrays.asList(Calculator.OPERATORS).contains(input)){
-                Console.println("%s (operator)", input);
-                switch (input) {
-                    case "+":
-                        clearCalculator();
-                        break;
-                    case "sin":
-                        trig.sin(this.display);
-                        
-
-
-                }
+            } else if (Arrays.asList(Calculator.OPERATORS).contains(input)) {
+                handleOperator(input);
             } else { //error
                 this.throwError();
             }
@@ -119,7 +109,42 @@ public class Calculator {
         }
     }
 
-    public void handleOperator() {
+    public String handleOperator(String operator) {
+        Console.println("%s (%f)", operator, this.display);
+        Double result = 0.0;
+        switch (operator) {
+            case "+":
 
+                break;
+
+            case "sin":
+                result = trig.sin(this.display);
+                this.display = result;
+                break;
+            case "cos":
+                result = trig.cos(this.display);
+                this.display = result;
+                break;
+            case "tan":
+                result = trig.tan(this.display);
+                this.display = result;
+                break;
+            case "asin":
+                result = trig.arcSin(this.display);
+                this.display = result;
+                break;
+            case "acos":
+                result = trig.arcCos(this.display);
+                this.display = result;
+                break;
+            case "atan":
+                result = trig.arcTan(this.display);
+                this.display = result;
+                break;
+
+
+        }
+        Console.println(Double.toString(this.display));
+        return "";
     }
 }

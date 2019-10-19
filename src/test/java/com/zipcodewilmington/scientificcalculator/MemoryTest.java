@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MemoryTest_2 {
+public class MemoryTest {
 
     @Before
     public void setUp() throws Exception {
