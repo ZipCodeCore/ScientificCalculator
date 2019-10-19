@@ -134,7 +134,7 @@ public class Calculator {
         return "";
     }
 
-    /*,  "!", "sign"};*/
+    /*,  "!"};*/
     public String handleOperator(String operator) {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;

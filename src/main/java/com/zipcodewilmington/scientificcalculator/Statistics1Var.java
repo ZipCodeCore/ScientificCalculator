@@ -88,8 +88,8 @@ public class Statistics1Var {
                 "Median: " + Double.toString(this.median) +"\n" +
                 "Min: " + Double.toString(this.min) +"\n" +
                 "Max: " + Double.toString(this.max) +"\n" +
-//                "Std Dev: " + Double.toString(this.stdDev) +"\n" +
-//                "Var: " + Double.toString(this.var);
+                "Std Dev: " + Double.toString(this.stdDev) +"\n" +
+                "Var: " + Double.toString(this.var);
 
         return output;
     }
