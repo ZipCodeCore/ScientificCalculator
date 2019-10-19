@@ -14,7 +14,7 @@ public class MultiplicationTest {
     }
 
     @Test
-    public void multiplicationTest() {
+    public void multiplicationTest1() {
         // given
         Multiplication product = new Multiplication();
         double inputValue1 = 2;
@@ -30,7 +30,7 @@ public class MultiplicationTest {
 
 
     @Test
-    public void divideTest2() {
+    public void multiplicationTest2() {
         // given
         Multiplication product = new Multiplication();
         double inputValue1 = 7;
