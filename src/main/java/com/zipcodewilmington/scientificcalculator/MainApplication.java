@@ -16,6 +16,16 @@ public class MainApplication {
         System.out.println("Enter your age");
         String userAgeAsString =  scanner.nextLine();
         Integer userAge = Integer.parseInt(userAgeAsString);
+        
+        System.out.println("Enter your value");
+        String userValueAsString =  scanner.nextLine();
+        Integer userValue = Integer.parseInt(userValueAsString);
+
+        System.out.println("Choose your Operator");
+        String userOperatorAsString =  scanner.nextLine();
+        Integer userOperator = Integer.parseInt(userOperatorAsString);
+
+
 
 
 
