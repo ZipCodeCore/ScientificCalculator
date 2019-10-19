@@ -2,26 +2,47 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class TrigFunctions {
 
-    trigMode mode;
+    private Boolean inDegreeMode = false;
 
-    enum trigMode { DEGREES, RADIANS; }
+    public void changeMode() { inDegreeMode = !inDegreeMode; }
+    public void radianMode() { inDegreeMode = false; }
+    public void degreeMode() { inDegreeMode = false; }
 
-    //Calculate the sine of the displayed value and display it
-    public double sine()  { return 0.0; }
 
-    //Calculate the cosine of the displayed value and display it
-    public double cosine() { return 0.0; }
+    //Calculate the sine in radians or degrees
+    public Double sin(Double arg)  {
+        if(!inDegreeMode) return Math.sin(arg);
+        else return Math.sin(Math.toRadians(arg));
+    }
 
-    //Calculate the tangent of the displayed value and display it
-    public double tangent() { return 0.0; }
+    //Calculate the cosine in radians or degrees
+    public Double cos(Double arg) {
+        if(!inDegreeMode) return Math.cos(arg);
+        else return Math.cos(Math.toRadians(arg));
+    }
 
-    //Calculate the inverse sine of the displayed value and display it
-    public double inverseSine() { return 0.0; }
+    //Calculate the tangent in radians or degrees
+    public Double tan(Double arg) {
+        if(!inDegreeMode) return Math.tan(arg);
+        else return Math.tan(Math.toRadians(arg));
+    }
 
-    //Calculate the inverse cosine of the displayed value and display it
-    public double inverseCosine() { return 0.0; }
+    //Calculate the inverse sine in radians or degrees
+    public Double arcSin(Double arg) {
+        if(!inDegreeMode) return Math.asin(arg);
+        else return Math.toDegrees(Math.asin(arg));
+    }
 
-    //Calculate the inverse tangent of the displayed value and display it
-    public double inverseTangent() { return 0.0; }
+    //Calculate the inverse cosine in radians or degrees
+    public Double arcCos(Double arg) {
+        if(!inDegreeMode) return Math.acos(arg);
+        else return Math.toDegrees(Math.acos(arg));
+    }
+
+    //Calculate the inverse tangent in radians or degrees
+    public Double arcTan(Double arg) {
+        if(!inDegreeMode) return Math.atan(arg);
+        else return Math.toDegrees(Math.atan(arg));
+    }
 
 }
