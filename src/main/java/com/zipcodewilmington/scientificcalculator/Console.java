@@ -15,18 +15,34 @@ public class Console {
         print(output + "\n", args);
     }
 
+    public static void clear() {
+//        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+//    public static void close() {
+//        System.out.close();
+//    }
+
     public static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
-        println(prompt);
+        print(prompt);
         String userInput = scanner.nextLine();
         return userInput;
     }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        print(prompt);
+        Integer userInput = scanner.nextInt();
+        return userInput;
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        print(prompt);
+        Double userInput = scanner.nextDouble();
+        return userInput;
     }
 }

@@ -4,14 +4,127 @@ package com.zipcodewilmington.scientificcalculator;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
-    public static void main(String[] args) {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
+    private static String[] coreFunctions = {"set", "clear", "exit", "help"};
+    private static String[] coreMath = {"add", "subtract", "multiply", "divide"};
+//    private static String[] sciMath = {};
+    private static boolean calcOn = true;
 
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
+    private static double currentState = 0;
+    private static String currentOperation = "none";
+    private static double currentMemory;
+
+    public static void main(String[] args) {
+        Console.println("Welcome to my CLI Calculator!");
+        Console.println("\ttype 'help' for list of valid operations");
+        Console.println("\ttype 'exit' to exit CLI Calculator");
+        Console.getStringInput("press enter to begin");
+
+        while (calcOn == true) {
+            setDisplay();
+            // get operation from user input
+            currentOperation = Console.getStringInput("Enter your operation: ");
+
+
+            executeOperation(currentOperation);
+            // if valid operation,
+                // determine # of params to prompt user for
+                // or some other function (clear, mc, m+, m)
+            // if invalid operation or "help",
+                // return list of valid operations
+                // continue (reset while loop)
+            // if math operation
+                // prompt user for params
+                // display params, operation, and result
+            // if mem operation
+                // complete operation
+            //
+        } // end while
+
+
+    } // end main method
+
+    public static void setDisplay() {
+        Console.clear();
+        Console.println("CLI Scientific Calculator");
+        Console.println("Value: \t\t" + currentState);
+        Console.println("Operation:\t" + currentOperation + "\n");
+        // if help bool true, display more
     }
+
+    public static String determineOperationType(String operation) {
+        String operationType = "none";
+        for (String validOp: coreFunctions) {
+            if (operation.equals(validOp)) {
+                    operationType = "core";
+                break;
+            }
+        }
+        if (operationType != "none") {
+            for (String validOp: coreMath) {
+                if (operation.equals(validOp)) {
+                    operationType = "math";
+                    break;
+                }
+            }
+        }
+//        if (operationType != "none") {
+//            for (String validOp: sciMath) {
+//                if (operation.equals(validOp)) {
+//                    operationType = "sci";
+//                    break;
+//                }
+//            }
+//        }
+        return operationType;
+    }
+
+    public static void executeOperation(String operation) {
+        setDisplay(); //reset display so operation is displayed properly
+        // set clear add subtract multiply divide square sqrt inverse invert_sign
+        executeCoreOperation(operation);
+        executeMathOperation(operation);
+//        executeSciOperation(operation);
+
+    }
+
+    public static void executeCoreOperation(String operation) {
+        if (operation.equals("set")) {
+            // prompt user to set currentState
+            currentState = Console.getDoubleInput("Enter a number, x = ");
+        }
+        else if (operation.equals("clear")) {
+            Console.clear();
+        }
+        else if (operation.equals("exit")) {
+            calcOn = false;
+        }
+        else if (operation.equals("help")) {
+            Console.println("set, clear, exit, help");
+            Console.println("add, subtract, multiply, divide, inverse, invertsign");
+        }
+    }
+
+    public static void executeMathOperation(String operation) {
+        if (operation.equals("add")) {
+            Console.println("f(y) = " + currentState + " + y");
+            double y = Console.getDoubleInput("y = ");
+            currentState = Calculator.add(currentState, y);
+        }
+        else if (operation.equals("subtract")) {
+            Console.println("f(y) = " + currentState + " - y");
+            double y = Console.getDoubleInput("y = ");
+            currentState = Calculator.subtract(currentState, y);
+        }
+        else if (operation.equals("multiply")) {
+            Console.println("f(y) = " + currentState + " * y");
+            double y = Console.getDoubleInput("y = ");
+            currentState = Calculator.multiply(currentState, y);
+        }
+        else if (operation.equals("divide")) {
+            Console.println("f(y) = " + currentState + " / y");
+            double y = Console.getDoubleInput("y = ");
+            currentState = Calculator.divide(currentState, y);
+        }
+    }
+
 }
