@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SineTest {
+public class CosineTest {
 
     @Before
     public void setUp() throws Exception {
@@ -17,27 +17,28 @@ public class SineTest {
     }
 
     @Test
-    public void sineTest1() {
+    public void cosineTest1() {
         // given
-        Sine result = new Sine();
-        double inputValue = 90;
-        double expected = Math.sin(inputValue);
+        Cosine result = new Cosine();
+        double inputValue = 45;
+        double expected = Math.cos(inputValue);
 
         // when
-        double actual = result.sine(inputValue);
+        double actual = result.cosine(inputValue);
 
         // then
         assertEquals(expected, actual, .00000);
     }
+
     @Test
-    public void sineTest2() {
+    public void cosineTest2() {
         // given
-        Sine result = new Sine();
-        double inputValue = 45;
-        double expected = Math.sin(inputValue);
+        Cosine result = new Cosine();
+        double inputValue = 90;
+        double expected = Math.cos(inputValue);
 
         // when
-        double actual = result.sine(inputValue);
+        double actual = result.cosine(inputValue);
 
         // then
         assertEquals(expected, actual, .00000);
