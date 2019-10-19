@@ -12,6 +12,9 @@ public class TestMainApplication {
 
     @Test
     public void additionTest1(){
-  
 }
+
+    @Test
+    public void additionTestTHISISCLERLYAFUCKINGTEST() {
+    }
 }
