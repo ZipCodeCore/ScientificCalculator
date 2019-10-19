@@ -4,26 +4,25 @@ import java.util.Arrays;
 
 public class Calculator {
 
-    private  Boolean running;
+    private Boolean running;
     private Double lastInput;
     private Double display;
     public static final String[] UNARYOPERATORS = {"sqrt", "sq",
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", ""};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "clear", "deg", "rad", "quit", "?", "help"};// still need display modes
 
     private Memory memory;
     private TrigFunctions trig;
 
 
     public Calculator() {
-        running = false;
-        lastInput = 0.0;
-        display = 0.0;
+        this.running = false;
+        this.lastInput = 0.0;
+        this.display = 0.0;
         this.memory = new Memory();
         this.trig = new TrigFunctions();
-
     }
 
     // Getters
@@ -36,8 +35,8 @@ public class Calculator {
         return this.display;
     }
 
-    public TrigFunctions getTrig() { // just for testing, really
-        return trig;
+    public TrigFunctions getTrig() {
+        return this.trig;
     }
 
     // Setters
@@ -52,7 +51,6 @@ public class Calculator {
 
     // Helper Methods
 
-
     public void throwError() {
         Console.println("ERR");
         this.lastInput = 0.0;
@@ -66,21 +64,29 @@ public class Calculator {
     }
 
     public void run() {
-        running = true;
+        this.running = true;
         inputLoop();
+    }
+
+    public void showHelp() {
+        Console.println("Available commands (case insensitive):");
+        Console.println(String.join(", ",Calculator.COMMANDS));
+        Console.println("Available operators:");
+        Console.println(String.join(", ",Calculator.BINARYOPERATORS));
+        Console.println(String.join(", ",Calculator.UNARYOPERATORS));
     }
 
     // Input Methods
     private void inputLoop() {
-        String input = Console.getInput("");
+        String input;
 
-        while (running) {
-
+        while (this.running) {
+            // need to do this only until the previous input was an operator
+            input = Console.getInput();
 
             if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
                 this.lastInput = this.display;
                 this.display = Double.valueOf(input);
-
                 Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
             } else if (Arrays.asList(Calculator.COMMANDS).contains(input)){
                 handleCommands(input);
@@ -91,39 +97,40 @@ public class Calculator {
             } else { //error
                 this.throwError();
             }
-            // need to do this only until the previous input was an operator
-            input = Console.getInput("");
         }
     }
 
     public String handleCommands(String command) {
-
         Console.println("%s (command)", command);
         switch (command) {
             case "quit" :
-                running = false;
+                this.running = false;
                 break;
             case "clear":
                 clearCalculator();
                 break;
             case "deg":
-                trig.degreeMode();
+                this.trig.degreeMode();
                 break;
             case "rad":
-                trig.radianMode();
+                this.trig.radianMode();
                 break;
             case "m+":
-                memory.memoryPlus(display);
+                this.memory.memoryPlus(display);
                 break;
             case "mc":
-                memory.memoryClear();
+                this.memory.memoryClear();
                 break;
+            case "mr":
             case "mrc":
-                lastInput = display;
+                this.lastInput = display;
                 display = memory.memoryRecall();
                 break;
+            case "?":
+            case "help":
+                this.showHelp();
+                break;
         }
-
         return "";
     }
 
@@ -132,29 +139,28 @@ public class Calculator {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
         switch (operator) {
-
             case "sin":
-                result = trig.sin(this.display);
+                result = this.trig.sin(this.display);
                 this.display = result;
                 break;
             case "cos":
-                result = trig.cos(this.display);
+                result = this.trig.cos(this.display);
                 this.display = result;
                 break;
             case "tan":
-                result = trig.tan(this.display);
+                result = this.trig.tan(this.display);
                 this.display = result;
                 break;
             case "asin":
-                result = trig.arcSin(this.display);
+                result = this.trig.arcSin(this.display);
                 this.display = result;
                 break;
             case "acos":
-                result = trig.arcCos(this.display);
+                result = this.trig.arcCos(this.display);
                 this.display = result;
                 break;
             case "atan":
-                result = trig.arcTan(this.display);
+                result = this.trig.arcTan(this.display);
                 this.display = result;
                 break;
             case "sqrt":
@@ -189,16 +195,44 @@ public class Calculator {
                 }
                 this.display = result;
                 break;
-
         }
         Console.println(Double.toString(this.display));
         return "";
     }
 
+    /* "+", "-", "/", "*", "^" */
     public String handleBinaryOperator(String operator) {
 
-
+        switch (operator) {
+            case "+" :
+                this.lastInput = this.display;
+                this.display += Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "-" :
+                this.lastInput = this.display;
+                this.display -= Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "/" :
+                this.lastInput = this.display;
+                this.display /= Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "*" :
+                this.lastInput = this.display;
+                this.display *= Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "^" :
+                this.lastInput = this.display;
+                this.display =  Math.pow( this.display, Console.getNumber() );
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+        }
 
         return "";
     }
+
+
 }

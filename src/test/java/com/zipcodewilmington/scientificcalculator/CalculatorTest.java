@@ -34,28 +34,15 @@ public class CalculatorTest {
 
     @Test
     public void clearCalculator() {
+        Double[] options = {Double.NEGATIVE_INFINITY,-2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
 
-        calculator.setDisplay(23.3);
-        calculator.setLastInput(-2.0);
-        calculator.clearCalculator();
-        assertTrue(calculator.getDisplay() == 0.0);
-        assertTrue(calculator.getLastInput() == 0.0);
-
-        calculator.clearCalculator();
-        assertTrue(calculator.getDisplay() == 0.0);
-        assertTrue(calculator.getLastInput() == 0.0);
-
-        calculator.setDisplay(-23.3);
-        calculator.setLastInput(0.0);
-        calculator.clearCalculator();
-        assertTrue(calculator.getDisplay() == 0.0);
-        assertTrue(calculator.getLastInput() == 0.0);
-
-        calculator.setDisplay(-23.3);
-        calculator.setLastInput(0.0);
-        calculator.clearCalculator();
-        assertTrue(calculator.getDisplay() == 0.0);
-        assertTrue(calculator.getLastInput() == 0.0);
+        for (Double n : options) {
+            calculator.setDisplay(n);
+            calculator.setDisplay(n * 212.5 * Math.PI);
+            calculator.clearCalculator();
+            assertTrue(calculator.getDisplay() == 0.0);
+            assertTrue(calculator.getLastInput() == 0.0);
+        }
     }
 
     @Test
@@ -78,6 +65,27 @@ public class CalculatorTest {
             calculator.setDisplay(n);
             calculator.handleOperator("cos");
             expected = calculator.getTrig().cos(n);
+            actual = calculator.getDisplay();
+
+            assertTrue(0 == Double.compare(actual,expected));
+
+            calculator.setDisplay(n);
+            calculator.handleOperator("tan");
+            expected = calculator.getTrig().tan(n);
+            actual = calculator.getDisplay();
+
+            assertTrue(0 == Double.compare(actual,expected));
+
+            calculator.setDisplay(n);
+            calculator.handleOperator("asin");
+            expected = calculator.getTrig().arcSin(n);
+            actual = calculator.getDisplay();
+
+            assertTrue(0 == Double.compare(actual,expected));
+
+            calculator.setDisplay(n);
+            calculator.handleOperator("acos");
+            expected = calculator.getTrig().arcCos(n);
             actual = calculator.getDisplay();
 
             assertTrue(0 == Double.compare(actual,expected));
