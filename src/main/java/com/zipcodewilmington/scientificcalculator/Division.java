@@ -1,19 +1,17 @@
-/*ackage com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator;
 
 public class Division {
-    private double x;
-    private double y;
-
+    private double value1;
+    private double value2
     public Division(){
     }
 
-    public double divide(double x, double y){
-        if(y == 0){
+    public Double divide(double value1, double value2){
+        if(value2 == 0){
             System.out.println("Invalid entry. Cannot divide by 0");
             return null;
         } else {
-            return
+            return value1 / value2;
         }
     }
 }
-*/

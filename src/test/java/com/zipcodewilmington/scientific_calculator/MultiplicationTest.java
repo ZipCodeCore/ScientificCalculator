@@ -3,7 +3,6 @@ package com.zipcodewilmington.scientific_calculator;
 import com.zipcodewilmington.scientificcalculator.Multiplication;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
@@ -15,12 +14,12 @@ public class MultiplicationTest {
     }
 
     @Test
-    public void multiplyTest() {
+    public void multiplicationTest() {
         // given
         Multiplication product = new Multiplication();
         double inputValue1 = 2;
         double inputValue2 = 3;
-        double expected = inputValue1 * inputValue2;
+        double expected = inputValue1 / inputValue2;
 
         // when
         double actual = product.multiply(inputValue1,inputValue2);
@@ -31,7 +30,7 @@ public class MultiplicationTest {
 
 
     @Test
-    public void multiplyTest2() {
+    public void divideTest2() {
         // given
         Multiplication product = new Multiplication();
         double inputValue1 = 7;
