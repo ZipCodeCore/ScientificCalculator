@@ -24,7 +24,7 @@ public class TrigFunctions {
     //Calculate the tangent in radians or degrees
     public Double tan(Double arg) {
 
-        if(this.cos(arg) == 0) { /* throw error*/ }
+        if(this.cos(arg) == 0.0) { /* throw error*/ }
 
         if(!inDegreeMode) return Math.tan(arg);
         else return Math.tan(Math.toRadians(arg));
