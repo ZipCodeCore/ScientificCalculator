@@ -10,7 +10,8 @@ public class Calculator {
     public static final String[] OPERATORS = {"+", "-", "/", "=", "*", "sqrt", "sq",
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
-    public static final String[] COMMANDS = {"m+", "mc", "mr", "clear", "deg", "rad", "quit", ""};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", ""};// still need display modes
+
     private Memory memory;
     private TrigFunctions trig;
 
@@ -73,6 +74,7 @@ public class Calculator {
 
         while (!input.equals("quit")) {
 
+
             if (input.matches("-?\\d+(\\.\\d+)?")) {
                 this.lastInput = this.display;
                 this.display = Double.valueOf(input);
@@ -84,10 +86,21 @@ public class Calculator {
                     case "clear":
                         clearCalculator();
                         break;
+                    case "deg":
+                        trig.degreeMode();
+                        break;
+                    case "rad":
+                        trig.radianMode();
+                        break;
+                    case "m+":
+                        memory.memoryPlus(0.0);
+                        break;
+                    case "mc":
+                        break;
+                    case "mrc":
 
-
+                        break;
                 }
-
             } else if (Arrays.asList(Calculator.OPERATORS).contains(input)) {
                 handleOperator(input);
             } else { //error

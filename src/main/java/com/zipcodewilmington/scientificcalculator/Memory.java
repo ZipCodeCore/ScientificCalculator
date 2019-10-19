@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Memory {
     public Double state =  0.0;
 
-    public Double getMemory(){
+    public Double memoryRecall(){
 
         return state;
     }
@@ -16,7 +16,7 @@ public class Memory {
 
         state = input;
     }
-    public void memoryReset(){
+    public void memoryClear(){
         state = 0.0;
     }
 }
