@@ -45,6 +45,9 @@ public class Calculator {
         this.lastInput = lastInput;
     }
 
+    public void setDisplay(Double display) {
+        this.display = display;
+    }
 
     // Helper Methods
 
