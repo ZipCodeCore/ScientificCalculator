@@ -93,12 +93,14 @@ public class Calculator {
                         trig.radianMode();
                         break;
                     case "m+":
-                        memory.memoryPlus(0.0);
+                        memory.memoryPlus(display);
                         break;
                     case "mc":
+                        memory.memoryClear();
                         break;
                     case "mrc":
-
+                        lastInput = display;
+                        display = memory.memoryRecall();
                         break;
                 }
             } else if (Arrays.asList(Calculator.OPERATORS).contains(input)) {
