@@ -21,7 +21,12 @@ public class TestMainApplication {
     @Test
     public void HI() {
     }
+
     @Test
     public void KwameTest() {
+    }
+
+    @Test
+    public void TESTTESTTESTFUCKINTEST() {
     }
 }
