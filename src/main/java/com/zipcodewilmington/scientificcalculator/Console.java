@@ -29,6 +29,9 @@ public class Console {
         String input = getInput();
         while (true) {
             if (input.matches("-?\\d+(\\.\\d+)?")) break;
+            /*else if (input.matches("mrc") || input.matches("mr")){
+              return this.memory.memoryRecall();
+            }*/
             else {
                 println("Enter a number");
                 input = getInput();

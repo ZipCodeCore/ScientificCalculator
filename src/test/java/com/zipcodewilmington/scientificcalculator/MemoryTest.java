@@ -18,11 +18,10 @@ public class MemoryTest {
     @Test
     public void Memory_state1() {
         Double expected = 25d;
-        ;
 
-        ;
         Memory myMemory = new Memory();
         myMemory.memoryPlus(25d);
+
         Double actual = myMemory.memoryRecall();
         assertEquals(expected, actual);
     }
@@ -30,9 +29,7 @@ public class MemoryTest {
     @Test
     public void Memory_state2() {
         Double expected = 32d;
-        ;
 
-        ;
         Memory myMemory = new Memory();
         myMemory.memoryPlus(25d);
         myMemory.memoryPlus(32d);
@@ -43,9 +40,7 @@ public class MemoryTest {
     @Test
     public void Memory_state3() {
         Double expected = 25d;
-        ;
 
-        ;
         Memory myMemory = new Memory();
         myMemory.memoryPlus(25d);
         myMemory.memoryPlus(32d);
@@ -56,9 +51,7 @@ public class MemoryTest {
     @Test
     public void Memory_Reset1() {
         Double expected = 0.0d;
-        ;
 
-        ;
         Memory myMemory = new Memory();
         myMemory.memoryPlus(32d);
         myMemory.memoryClear();
@@ -69,15 +62,27 @@ public class MemoryTest {
     @Test
     public void Memory_Reset2() {
         Double expected = 0.0d;
-        ;
 
-        ;
         Memory myMemory = new Memory();
+        myMemory.memoryPlus(32d);
+        myMemory.memoryClear();
         myMemory.memoryPlus(32d);
         myMemory.memoryClear();
 
         Double actual = myMemory.memoryRecall();
         assertEquals(expected, actual);
+    }
+    @Test
+    public void Memory_Reset3() {
+        Double expected = 32d;
+
+        Memory myMemory = new Memory();
+        myMemory.memoryPlus(32d);
+        myMemory.memoryClear();
+
+
+        Double actual = myMemory.memoryRecall();
+        assertNotEquals(expected, actual);
     }
 
 }
