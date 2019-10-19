@@ -44,9 +44,5 @@ public class MultiplicationTest {
         // then
         assertEquals(expected, actual, .00);
     }
-
-    @Test
-    public void testMultiply() {
-    }
 }
 

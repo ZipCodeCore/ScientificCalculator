@@ -7,14 +7,14 @@ package com.zipcodewilmington.scientificcalculator;
  */
 
 public class Multiplication{
-    private double x;
-    private double y;
+    private double value1;
+    private double value2;
 
     public Multiplication(){
     }
 
-    public double multiply(double x, double y){
-        return x * y;
+    public Double multiply(double value1, double value2){
+        return value1 * value2;
     }
 }
 
