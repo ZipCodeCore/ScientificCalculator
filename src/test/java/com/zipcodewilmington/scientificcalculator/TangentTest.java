@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CosineTest {
+public class TangentTest {
 
     @Before
     public void setUp() throws Exception {
@@ -17,57 +17,57 @@ public class CosineTest {
     }
 
     @Test
-    public void cosineTest1() {
+    public void tangestTest1() {
         // given
-        Cosine result = new Cosine();
+        Tangent result = new Tangent();
         double inputValue = 45;
         double expected;
         if(inputValue < 0) {
-            expected = Math.cos(-inputValue);
+            expected = Math.tan(-inputValue);
         } else {
-            expected = Math.cos(inputValue);
+            expected = Math.tan(inputValue);
         }
 
         // when
-        double actual = result.cosine(inputValue);
+        double actual = result.tangent(inputValue);
 
         // then
         assertEquals(expected, actual, .00000);
     }
 
     @Test
-    public void cosineTest2() {
+    public void tangestTest2() {
         // given
-        Cosine result = new Cosine();
+        Tangent result = new Tangent();
         double inputValue = 90;
         double expected;
         if(inputValue < 0) {
-            expected = Math.cos(-inputValue);
+            expected = Math.tan(-inputValue);
         } else {
-            expected = Math.cos(inputValue);
+            expected = Math.tan(inputValue);
         }
 
         // when
-        double actual = result.cosine(inputValue);
+        double actual = result.tangent(inputValue);
 
         // then
         assertEquals(expected, actual, .00000);
     }
 
     @Test
-    public void cosineTest3() {
+    public void tangestTest3() {
         // given
-        Cosine result = new Cosine();
-        double inputValue = -810;
+        Tangent result = new Tangent();
+        double inputValue = 180;
         double expected;
         if(inputValue < 0) {
-            expected = Math.cos(-inputValue);
+            expected = Math.tan(-inputValue);
         } else {
-            expected = Math.cos(inputValue);
+            expected = Math.tan(inputValue);
         }
 
         // when
-        double actual = result.cosine(inputValue);
+        double actual = result.tangent(inputValue);
 
         // then
         assertEquals(expected, actual, .00000);

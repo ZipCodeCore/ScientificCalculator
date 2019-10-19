@@ -21,7 +21,12 @@ public class SineTest {
         // given
         Sine result = new Sine();
         double inputValue = 90;
-        double expected = Math.sin(inputValue);
+        double expected;
+        if(inputValue < 0) {
+            expected = Math.sin(-inputValue);
+        } else {
+            expected = Math.sin(inputValue);
+        }
 
         // when
         double actual = result.sine(inputValue);
@@ -34,8 +39,30 @@ public class SineTest {
         // given
         Sine result = new Sine();
         double inputValue = 45;
-        double expected = Math.sin(inputValue);
+        double expected;
+        if(inputValue < 0) {
+            expected = Math.sin(-inputValue);
+        } else {
+            expected = Math.sin(inputValue);
+        }
+        // when
+        double actual = result.sine(inputValue);
 
+        // then
+        assertEquals(expected, actual, .00000);
+    }
+
+    @Test
+    public void sineTest3() {
+        // given
+        Sine result = new Sine();
+        double inputValue = -180;
+        double expected;
+        if(inputValue < 0) {
+            expected = Math.sin(-inputValue);
+        } else {
+            expected = Math.sin(inputValue);
+        }
         // when
         double actual = result.sine(inputValue);
 
