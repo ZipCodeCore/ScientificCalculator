@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -33,5 +34,21 @@ public class Console {
         Double userInput = scanner.nextDouble();
 
         return userInput;
+    }
+
+    public static String getInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine().toLowerCase(); //get input from user
+
+        return Console.cleanInput(input);
+    }
+
+    public static String cleanInput(String userInput) {
+        if (Arrays.asList(Calculator.COMMANDS).contains(userInput) || Arrays.asList(Calculator.OPERATORS).contains(userInput) || userInput.matches("-?\\d+(\\.\\d+)?")) {
+            return userInput;
+        } else {
+            return "ERR";
+        }
     }
 }
