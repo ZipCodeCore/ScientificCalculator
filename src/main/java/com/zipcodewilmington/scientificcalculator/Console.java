@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -39,6 +40,25 @@ public class Console {
         }
         return Double.valueOf(input);
     }
+
+    public static Double[] getDoubleList() {
+        ArrayList<Double> numbers = new ArrayList<Double>();
+
+        String input = getInput();
+        while (true) {
+            if (input.matches("-?\\d+(\\.\\d+)?")) {
+                numbers.add(Double.valueOf(input));
+            } else if (input.equals("q")) {
+                break;
+            } else {
+                println("Enter a number (blank to end)");
+            }
+            input = getInput();
+        }
+
+        return numbers.toArray(new Double[numbers.size()]);
+    }
+
 
     public static String cleanInput(String userInput) {
         // three/four legit options: was input a command, operator (unary or binary), or number (checked by regEx)?
