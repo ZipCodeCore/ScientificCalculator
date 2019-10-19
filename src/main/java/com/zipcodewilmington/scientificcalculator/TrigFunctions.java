@@ -23,18 +23,27 @@ public class TrigFunctions {
 
     //Calculate the tangent in radians or degrees
     public Double tan(Double arg) {
+
+        if(this.cos(arg) == 0) { /* throw error*/ }
+
         if(!inDegreeMode) return Math.tan(arg);
         else return Math.tan(Math.toRadians(arg));
     }
 
     //Calculate the inverse sine in radians or degrees
     public Double arcSin(Double arg) {
+
+        if(arg < -1 || arg > 1 ) { /*throw error*/ }
+
         if(!inDegreeMode) return Math.asin(arg);
         else return Math.toDegrees(Math.asin(arg));
     }
 
     //Calculate the inverse cosine in radians or degrees
     public Double arcCos(Double arg) {
+
+        if(arg < -1 || arg > 1 ) { /*throw error*/ }
+
         if(!inDegreeMode) return Math.acos(arg);
         else return Math.toDegrees(Math.acos(arg));
     }
