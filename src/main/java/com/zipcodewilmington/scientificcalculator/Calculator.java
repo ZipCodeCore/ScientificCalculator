@@ -7,9 +7,10 @@ public class Calculator {
     private Double state;
     private Double lastInput;
     private Double display;
-    public static final String[] OPERATORS = {"+", "-", "/", "=", "*", "sqrt", "sq",
+    public static final String[] UNARYOPERATORS = {"sqrt", "sq",
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
+    public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^"};
     public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", ""};// still need display modes
 
     private Memory memory;
@@ -107,8 +108,10 @@ public class Calculator {
                         display = memory.memoryRecall();
                         break;
                 }
-            } else if (Arrays.asList(Calculator.OPERATORS).contains(input)) {
+            } else if (Arrays.asList(Calculator.UNARYOPERATORS).contains(input)) {
                 handleOperator(input);
+            } else if (Arrays.asList(Calculator.BINARYOPERATORS).contains(input)) {
+                handleBinaryOperator(input);
             } else { //error
                 this.throwError();
             }
@@ -121,9 +124,6 @@ public class Calculator {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
         switch (operator) {
-            case "+":
-
-                break;
 
             case "sin":
                 result = trig.sin(this.display);
@@ -153,6 +153,10 @@ public class Calculator {
 
         }
         Console.println(Double.toString(this.display));
+        return "";
+    }
+
+    public String handleBinaryOperator(String operator) {
         return "";
     }
 }

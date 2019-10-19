@@ -27,7 +27,7 @@ public class CalculatorTest {
 
     @Test
     public void setLastInput() {
-        Double[] options = {-2.3, 0.0, 4.7, 89359.009384};
+        Double[] options = {Double.NEGATIVE_INFINITY,-2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
         for (Double n : options) {
             calculator.setLastInput(n);
             Console.println(Double.toString(n),Double.toString(calculator.getLastInput()));
@@ -45,6 +45,12 @@ public class CalculatorTest {
         assertTrue(calculator.getDisplay() == 0.0);
         assertTrue(calculator.getLastInput() == 0.0);
 
+        calculator.clearCalculator();
+        assertTrue(calculator.getDisplay() == 0.0);
+        assertTrue(calculator.getLastInput() == 0.0);
+
+        calculator.setDisplay(-23.3);
+        calculator.setLastInput(0.0);
         calculator.clearCalculator();
         assertTrue(calculator.getDisplay() == 0.0);
         assertTrue(calculator.getLastInput() == 0.0);

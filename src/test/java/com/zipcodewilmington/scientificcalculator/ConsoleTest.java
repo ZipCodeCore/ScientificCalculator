@@ -21,7 +21,14 @@ public class ConsoleTest {
 
     @Test
     public void cleanInputOperators() {
-        for (String operator : Calculator.OPERATORS) {
+        for (String operator : Calculator.UNARYOPERATORS) {
+            assertEquals(operator,Console.cleanInput(operator));
+        }
+    }
+
+    @Test
+    public void cleanInputBinaryOperators() {
+        for (String operator : Calculator.BINARYOPERATORS) {
             assertEquals(operator,Console.cleanInput(operator));
         }
     }
