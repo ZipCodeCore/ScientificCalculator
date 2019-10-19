@@ -1,5 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.Arrays;
+
 public class Calculator {
 
     private Double state;
@@ -8,7 +10,7 @@ public class Calculator {
     public static final String[] OPERATORS = {"+", "-", "/", "=", "*", "sqrt", "sq",
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad"};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "clear", "deg", "rad", "quit", ""};// still need display modes
 //    private Memory memory;
 //    private Trig trig;
 
@@ -31,14 +33,6 @@ public class Calculator {
 
     public Double getLastInput() {
         return lastInput;
-    }
-
-    public static String[] getOperators() {
-        return OPERATORS;
-    }
-
-    public static String[] getCommands() {
-        return COMMANDS;
     }
 
     // Setters
@@ -66,15 +60,25 @@ public class Calculator {
     // Input Methods
 
     public void inputLoop() {
-        Double input = Console.getDoubleInput("");
+        String input = Console.getInput("");
 
-        this.lastInput = this.display;
-        this.display = input;
+        while (!input.equals("quit")) {
 
-        Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+            if (input.matches("-?\\d+(\\.\\d+)?")) {
+                this.lastInput = this.display;
+                this.display = Double.valueOf(input);
 
-        // need to do this only until the previous input was an operator
-        this.inputLoop();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+            } else if (Arrays.asList(Calculator.COMMANDS).contains(input)){
+                Console.println("%s (command)", input);
+            } else if (Arrays.asList(Calculator.OPERATORS).contains(input)){
+                Console.println("%s (operator)", input);
+            } else { //error
+                this.throwError();
+            }
+            // need to do this only until the previous input was an operator
+            input = Console.getInput("");
+        }
     }
 
     public void handleOperator() {
