@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Calculator {
 
-    private  Boolean running;
+    private Boolean running;
     private Double lastInput;
     private Double display;
     public static final String[] UNARYOPERATORS = {"sqrt", "sq",
@@ -33,6 +33,10 @@ public class Calculator {
 
     public Double getDisplay() {
         return this.display;
+    }
+
+    public TrigFunctions getTrig() { // just for testing, really
+        return this.trig;
     }
 
     // Setters
@@ -86,62 +90,79 @@ public class Calculator {
             input = Console.getInput("");
         }
     }
-
+    
     public String handleCommands(String command) {
         Console.println("%s (command)", command);
         switch (command) {
             case "quit" :
-                running = false;
+                this.running = false;
                 break;
             case "clear":
                 clearCalculator();
                 break;
             case "deg":
-                trig.degreeMode();
+                this.trig.degreeMode();
                 break;
             case "rad":
-                trig.radianMode();
+                this.trig.radianMode();
                 break;
             case "m+":
-                memory.memoryPlus(display);
+                this.memory.memoryPlus(display);
                 break;
             case "mc":
-                memory.memoryClear();
+                this.memory.memoryClear();
                 break;
             case "mrc":
-                lastInput = display;
+                this.lastInput = display;
                 display = memory.memoryRecall();
                 break;
         }
         return "";
     }
 
+    /*,  "log", "ln", "!", "inv", "sign"};*/
     public String handleOperator(String operator) {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
         switch (operator) {
             case "sin":
-                result = trig.sin(this.display);
+                result = this.trig.sin(this.display);
                 this.display = result;
                 break;
             case "cos":
-                result = trig.cos(this.display);
+                result = this.trig.cos(this.display);
                 this.display = result;
                 break;
             case "tan":
-                result = trig.tan(this.display);
+                result = this.trig.tan(this.display);
                 this.display = result;
                 break;
             case "asin":
-                result = trig.arcSin(this.display);
+                result = this.trig.arcSin(this.display);
                 this.display = result;
                 break;
             case "acos":
-                result = trig.arcCos(this.display);
+                result = this.trig.arcCos(this.display);
                 this.display = result;
                 break;
             case "atan":
-                result = trig.arcTan(this.display);
+                result = this.trig.arcTan(this.display);
+                this.display = result;
+                break;
+            case "sqrt":
+                result = Math.sqrt(this.display);
+                this.display = result;
+                break;
+            case "sq":
+                result = this.display * this.display;
+                this.display = result;
+                break;
+            case "exp":
+                result = Math.exp(this.display);
+                this.display = result;
+                break;
+            case "10^":
+                result = Math.pow(10, this.display);
                 this.display = result;
                 break;
         }
