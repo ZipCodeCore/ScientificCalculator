@@ -41,6 +41,10 @@ public class Calculator {
         return this.display;
     }
 
+    public TrigFunctions getTrig() { // just for testing, really
+        return trig;
+    }
+
     // Setters
 
     public void setState(Double state) {
