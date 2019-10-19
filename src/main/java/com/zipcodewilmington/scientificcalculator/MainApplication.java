@@ -31,3 +31,4 @@ public class MainApplication {
         Console.println("The user input %s as a double", d);
     }
 }
+
