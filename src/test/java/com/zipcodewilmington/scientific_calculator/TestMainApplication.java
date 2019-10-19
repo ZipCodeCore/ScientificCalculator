@@ -17,4 +17,7 @@ public class TestMainApplication {
     @Test
     public void additionTestTHISISCLERLYAFUCKINGTEST() {
     }
+    @Test
+    public void HI() {
+    }
 }
