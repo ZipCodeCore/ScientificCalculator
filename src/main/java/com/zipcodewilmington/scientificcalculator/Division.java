@@ -1,8 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Division {
-    private double value1;
-    private double value2;
     public Division(){
     }
 

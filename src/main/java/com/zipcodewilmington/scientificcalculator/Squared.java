@@ -1,7 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Squared{
-    double value1;
 
     public Squared(){
     }
