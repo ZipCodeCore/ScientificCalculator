@@ -18,12 +18,11 @@ public class Calculator {
 
 
     public Calculator() {
-        running = false;
-        lastInput = 0.0;
-        display = 0.0;
+        this.running = false;
+        this.lastInput = 0.0;
+        this.display = 0.0;
         this.memory = new Memory();
         this.trig = new TrigFunctions();
-
     }
 
     // Getters
@@ -48,7 +47,6 @@ public class Calculator {
 
     // Helper Methods
 
-
     public void throwError() {
         Console.println("ERR");
         this.lastInput = 0.0;
@@ -62,7 +60,7 @@ public class Calculator {
     }
 
     public void run() {
-        running = true;
+        this.running = true;
         inputLoop();
     }
 
@@ -70,13 +68,10 @@ public class Calculator {
     private void inputLoop() {
         String input = Console.getInput("");
 
-        while (running) {
-
-
+        while (this.running) {
             if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
                 this.lastInput = this.display;
                 this.display = Double.valueOf(input);
-
                 Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
             } else if (Arrays.asList(Calculator.COMMANDS).contains(input)){
                 handleCommands(input);
@@ -93,7 +88,6 @@ public class Calculator {
     }
 
     public String handleCommands(String command) {
-
         Console.println("%s (command)", command);
         switch (command) {
             case "quit" :
@@ -119,7 +113,6 @@ public class Calculator {
                 display = memory.memoryRecall();
                 break;
         }
-
         return "";
     }
 
@@ -127,7 +120,6 @@ public class Calculator {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
         switch (operator) {
-
             case "sin":
                 result = trig.sin(this.display);
                 this.display = result;
@@ -152,16 +144,24 @@ public class Calculator {
                 result = trig.arcTan(this.display);
                 this.display = result;
                 break;
-
-
         }
         Console.println(Double.toString(this.display));
         return "";
     }
 
+    /* "+", "-", "/", "*", "^"*/
     public String handleBinaryOperator(String operator) {
 
-
+        switch (operator) {
+            case "+" :
+                String input = Console.getInput("");
+                if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
+                    this.lastInput = this.display;
+                    this.display += Double.valueOf(input);
+                    Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                }
+                break;
+        }
 
         return "";
     }
