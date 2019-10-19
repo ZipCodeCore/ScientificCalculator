@@ -86,28 +86,7 @@ public class Calculator {
 
                 Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
             } else if (Arrays.asList(Calculator.COMMANDS).contains(input)){
-                Console.println("%s (command)", input);
-                switch (input) {
-                    case "clear":
-                        clearCalculator();
-                        break;
-                    case "deg":
-                        trig.degreeMode();
-                        break;
-                    case "rad":
-                        trig.radianMode();
-                        break;
-                    case "m+":
-                        memory.memoryPlus(display);
-                        break;
-                    case "mc":
-                        memory.memoryClear();
-                        break;
-                    case "mrc":
-                        lastInput = display;
-                        display = memory.memoryRecall();
-                        break;
-                }
+                handleCommands(input);
             } else if (Arrays.asList(Calculator.UNARYOPERATORS).contains(input)) {
                 handleOperator(input);
             } else if (Arrays.asList(Calculator.BINARYOPERATORS).contains(input)) {
@@ -118,6 +97,34 @@ public class Calculator {
             // need to do this only until the previous input was an operator
             input = Console.getInput("");
         }
+    }
+
+    public String handleCommands(String command) {
+
+        Console.println("%s (command)", command);
+        switch (command) {
+            case "clear":
+                clearCalculator();
+                break;
+            case "deg":
+                trig.degreeMode();
+                break;
+            case "rad":
+                trig.radianMode();
+                break;
+            case "m+":
+                memory.memoryPlus(display);
+                break;
+            case "mc":
+                memory.memoryClear();
+                break;
+            case "mrc":
+                lastInput = display;
+                display = memory.memoryRecall();
+                break;
+        }
+
+        return "";
     }
 
     public String handleOperator(String operator) {
