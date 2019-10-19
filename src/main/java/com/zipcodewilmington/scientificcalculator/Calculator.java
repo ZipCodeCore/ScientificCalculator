@@ -10,7 +10,7 @@ public class Calculator {
     public static final String[] UNARYOPERATORS = {"sqrt", "sq",
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
-    public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^"};
+    public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^", "logb"};
     public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "clear", "deg", "rad", "quit", "q", "?", "help", "stats"};// still need display modes
 
     private Memory memory;
@@ -253,6 +253,11 @@ public class Calculator {
                 Console.println("%s ^ %s", Double.toString(this.display), Double.toString(input));
                 this.lastInput = this.display;
                 display = Math.pow(display, input);
+                break;
+            case "logb" :
+                Console.println("log_%s(%s)", Double.toString(input), Double.toString(this.display));
+                this.lastInput = this.display;
+                display = Math.log(display) / Math.log(input);
                 break;
         }
 
