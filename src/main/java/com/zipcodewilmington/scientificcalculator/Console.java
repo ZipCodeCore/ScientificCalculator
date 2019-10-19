@@ -23,10 +23,10 @@ public class Console {
     }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+        return getDoubleInput(prompt).intValue();
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        return Double.parseDouble(getStringInput(prompt));
     }
 }
