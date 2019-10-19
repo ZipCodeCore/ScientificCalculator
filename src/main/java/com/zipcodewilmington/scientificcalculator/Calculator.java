@@ -95,7 +95,7 @@ public class Calculator {
             input = Console.getInput("");
         }
     }
-    
+
     public String handleCommands(String command) {
 
         Console.println("%s (command)", command);
@@ -127,7 +127,7 @@ public class Calculator {
         return "";
     }
 
-    /*,  "log", "ln", "!", "inv", "sign"};*/
+    /*,  "!", "inv", "sign"};*/
     public String handleOperator(String operator) {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
@@ -173,7 +173,22 @@ public class Calculator {
                 result = Math.pow(10, this.display);
                 this.display = result;
                 break;
-
+            case "log":
+                result = Math.log(this.display);
+                this.display = result;
+                break;
+            case "ln":
+                result = Math.log1p(this.display);
+                this.display = result;
+                break;
+            case "!":
+                if(this.display == Math.floor(this.display)){
+                    System.out.print("Yes it is");
+                } else {
+                    System.out.print("nope");
+                }
+                this.display = result;
+                break;
 
         }
         Console.println(Double.toString(this.display));
