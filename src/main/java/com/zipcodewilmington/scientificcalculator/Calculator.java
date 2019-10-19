@@ -78,9 +78,12 @@ public class Calculator {
 
     // Input Methods
     private void inputLoop() {
-        String input = Console.getInput("");
+        String input;
 
         while (this.running) {
+            // need to do this only until the previous input was an operator
+            input = Console.getInput();
+
             if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
                 this.lastInput = this.display;
                 this.display = Double.valueOf(input);
@@ -94,8 +97,6 @@ public class Calculator {
             } else { //error
                 this.throwError();
             }
-            // need to do this only until the previous input was an operator
-            input = Console.getInput("");
         }
     }
     
@@ -183,17 +184,34 @@ public class Calculator {
         return "";
     }
 
-    /* "+", "-", "/", "*", "^"*/
+    /* "+", "-", "/", "*", "^" */
     public String handleBinaryOperator(String operator) {
 
         switch (operator) {
             case "+" :
-                String input = Console.getInput("");
-                if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
-                    this.lastInput = this.display;
-                    this.display += Double.valueOf(input);
-                    Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
-                }
+                this.lastInput = this.display;
+                this.display += Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "-" :
+                this.lastInput = this.display;
+                this.display -= Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "/" :
+                this.lastInput = this.display;
+                this.display /= Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "*" :
+                this.lastInput = this.display;
+                this.display *= Console.getNumber();
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                break;
+            case "^" :
+                this.lastInput = this.display;
+                this.display =  Math.pow( this.display, Console.getNumber() );
+                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
                 break;
         }
 
