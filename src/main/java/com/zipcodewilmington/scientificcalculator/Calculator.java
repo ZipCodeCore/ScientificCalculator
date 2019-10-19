@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Calculator {
 
-    private Double state;
+    private  Boolean running;
     private Double lastInput;
     private Double display;
     public static final String[] UNARYOPERATORS = {"sqrt", "sq",
@@ -18,8 +18,7 @@ public class Calculator {
 
 
     public Calculator() {
-
-        state = 0.0;
+        running = false;
         lastInput = 0.0;
         display = 0.0;
         this.memory = new Memory();
@@ -29,10 +28,6 @@ public class Calculator {
 
     // Getters
 
-    public Double getState() {
-        return this.state;
-    }
-
     public Double getLastInput() {
         return this.lastInput;
     }
@@ -41,11 +36,11 @@ public class Calculator {
         return this.display;
     }
 
-    // Setters
-
-    public void setState(Double state) {
-        this.state = state;
+    public TrigFunctions getTrig() { // just for testing, really
+        return trig;
     }
+
+    // Setters
 
     public void setLastInput(Double lastInput) {
         this.lastInput = lastInput;
@@ -62,22 +57,24 @@ public class Calculator {
         Console.println("ERR");
         this.lastInput = 0.0;
         this.display = 0.0;
-        this.state = 0.0;
     }
 
     public void clearCalculator() {
         Console.println("0");
         this.lastInput = 0.0;
         this.display = 0.0;
-        this.state = 0.0;
+    }
+
+    public void run() {
+        running = true;
+        inputLoop();
     }
 
     // Input Methods
-
-    public void inputLoop() {
+    private void inputLoop() {
         String input = Console.getInput("");
 
-        while (!input.equals("quit")) {
+        while (running) {
 
 
             if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
@@ -86,28 +83,7 @@ public class Calculator {
 
                 Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
             } else if (Arrays.asList(Calculator.COMMANDS).contains(input)){
-                Console.println("%s (command)", input);
-                switch (input) {
-                    case "clear":
-                        clearCalculator();
-                        break;
-                    case "deg":
-                        trig.degreeMode();
-                        break;
-                    case "rad":
-                        trig.radianMode();
-                        break;
-                    case "m+":
-                        memory.memoryPlus(display);
-                        break;
-                    case "mc":
-                        memory.memoryClear();
-                        break;
-                    case "mrc":
-                        lastInput = display;
-                        display = memory.memoryRecall();
-                        break;
-                }
+                handleCommands(input);
             } else if (Arrays.asList(Calculator.UNARYOPERATORS).contains(input)) {
                 handleOperator(input);
             } else if (Arrays.asList(Calculator.BINARYOPERATORS).contains(input)) {
@@ -118,6 +94,37 @@ public class Calculator {
             // need to do this only until the previous input was an operator
             input = Console.getInput("");
         }
+    }
+    
+    public String handleCommands(String command) {
+
+        Console.println("%s (command)", command);
+        switch (command) {
+            case "quit" :
+                running = false;
+                break;
+            case "clear":
+                clearCalculator();
+                break;
+            case "deg":
+                trig.degreeMode();
+                break;
+            case "rad":
+                trig.radianMode();
+                break;
+            case "m+":
+                memory.memoryPlus(display);
+                break;
+            case "mc":
+                memory.memoryClear();
+                break;
+            case "mrc":
+                lastInput = display;
+                display = memory.memoryRecall();
+                break;
+        }
+
+        return "";
     }
 
     /*,  "log", "ln", "!", "inv", "sign"};*/
@@ -174,6 +181,9 @@ public class Calculator {
     }
 
     public String handleBinaryOperator(String operator) {
+
+
+
         return "";
     }
 }
