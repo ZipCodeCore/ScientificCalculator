@@ -16,16 +16,12 @@ public class Console {
         print(output + "\n", args);
     }
 
-    public static String getInput(String arg) {
+    public static String getInput() {
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine().toLowerCase(); //get input from user
 
         return Console.cleanInput(input);
-    }
-
-    public static String getInput() {
-        return getInput("");
     }
 
     public static Double getNumber() {
