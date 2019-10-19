@@ -92,7 +92,7 @@ public class Calculator {
                         clearCalculator();
                         break;
                     case "sin":
-                        Trig.sin(this.display);
+                        TrigFunctions.sin(this.display);
                         
 
 

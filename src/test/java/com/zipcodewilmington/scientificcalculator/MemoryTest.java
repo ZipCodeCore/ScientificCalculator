@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MemoryTest_2 {
+public class MemoryTest {
 
     @Before
     public void setUp() throws Exception {
@@ -23,7 +23,7 @@ public class MemoryTest_2 {
         ;
         Memory myMemory = new Memory();
         myMemory.memoryPlus(25d);
-        Double actual = myMemory.getMemory();
+        Double actual = myMemory.memoryRecall();
         assertEquals(expected, actual);
     }
 
@@ -36,7 +36,7 @@ public class MemoryTest_2 {
         Memory myMemory = new Memory();
         myMemory.memoryPlus(25d);
         myMemory.memoryPlus(32d);
-        Double actual = myMemory.getMemory();
+        Double actual = myMemory.memoryRecall();
         assertEquals(expected, actual);
     }
 
@@ -49,7 +49,7 @@ public class MemoryTest_2 {
         Memory myMemory = new Memory();
         myMemory.memoryPlus(25d);
         myMemory.memoryPlus(32d);
-        Double actual = myMemory.getMemory();
+        Double actual = myMemory.memoryRecall();
         assertNotEquals(expected, actual);
     }
 
@@ -61,9 +61,9 @@ public class MemoryTest_2 {
         ;
         Memory myMemory = new Memory();
         myMemory.memoryPlus(32d);
-        myMemory.memoryReset();
+        myMemory.memoryClear();
 
-        Double actual = myMemory.getMemory();
+        Double actual = myMemory.memoryRecall();
         assertEquals(expected, actual);
     }
     @Test
@@ -74,9 +74,9 @@ public class MemoryTest_2 {
         ;
         Memory myMemory = new Memory();
         myMemory.memoryPlus(32d);
-        myMemory.memoryReset();
+        myMemory.memoryClear();
 
-        Double actual = myMemory.getMemory();
+        Double actual = myMemory.memoryRecall();
         assertEquals(expected, actual);
     }
 
