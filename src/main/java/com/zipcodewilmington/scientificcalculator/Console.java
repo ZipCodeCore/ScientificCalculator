@@ -16,7 +16,7 @@ public class Console {
         print(output + "\n", args);
     }
 
-    public static String getInput(String prompt) {
+    public static String getInput(String arg) {
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine().toLowerCase(); //get input from user
@@ -24,11 +24,29 @@ public class Console {
         return Console.cleanInput(input);
     }
 
+    public static String getInput() {
+        return getInput("");
+    }
+
+    public static Double getNumber() {
+        String input = getInput();
+        while (true) {
+            if (input.matches("-?\\d+(\\.\\d+)?")) break;
+            else {
+                println("Enter a number");
+                input = getInput();
+            }
+        }
+        return Double.valueOf(input);
+    }
+
     public static String cleanInput(String userInput) {
         // three/four legit options: was input a command, operator (unary or binary), or number (checked by regEx)?
         if (Arrays.asList(Calculator.COMMANDS).contains(userInput) || Arrays.asList(Calculator.UNARYOPERATORS).contains(userInput) || Arrays.asList(Calculator.BINARYOPERATORS).contains(userInput) || userInput.matches("-?\\d+(\\.\\d+)?")) {
             return userInput;
-        } else {
+        } else if (userInput.equals("")) {
+            return "0";
+        } else{
             return "ERR";
         }
     }
