@@ -29,11 +29,15 @@ public class Calculator {
     // Getters
 
     public Double getState() {
-        return state;
+        return this.state;
     }
 
     public Double getLastInput() {
-        return lastInput;
+        return this.lastInput;
+    }
+
+    public Double getDisplay() {
+        return this.display;
     }
 
     // Setters
@@ -42,7 +46,7 @@ public class Calculator {
         this.state = state;
     }
 
-    public void setLastInput(Double lastImport) {
+    public void setLastInput(Double lastInput) {
         this.lastInput = lastInput;
     }
 
@@ -53,15 +57,15 @@ public class Calculator {
     // Helper Methods
 
 
-    private void throwError() {
-        Console.println("0");
+    public void throwError() {
+        Console.println("ERR");
         this.lastInput = 0.0;
         this.display = 0.0;
         this.state = 0.0;
     }
 
-    private void clearCalculator() {
-        Console.println("ERR");
+    public void clearCalculator() {
+        Console.println("0");
         this.lastInput = 0.0;
         this.display = 0.0;
         this.state = 0.0;
@@ -75,7 +79,7 @@ public class Calculator {
         while (!input.equals("quit")) {
 
 
-            if (input.matches("-?\\d+(\\.\\d+)?")) {
+            if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
                 this.lastInput = this.display;
                 this.display = Double.valueOf(input);
 

@@ -6,9 +6,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CalculatorTest {
+    private Calculator calculator;
     @Before
     public void setUp() throws Exception {
-        Calculator calculator = new Calculator();
+        this.calculator = new Calculator();
 
     }
 
@@ -26,16 +27,33 @@ public class CalculatorTest {
 
     @Test
     public void setLastInput() {
+        Double[] options = {-2.3, 0.0, 4.7, 89359.009384};
+        for (Double n : options) {
+            calculator.setLastInput(n);
+            Console.println(Double.toString(n),Double.toString(calculator.getLastInput()));
+            assertTrue(calculator.getLastInput() == n);
+        }
+
     }
 
     @Test
     public void clearCalculator() {
-        Calculator calculator = new Calculator();
+
         calculator.setDisplay(23.3);
-        calculator.setLastInput(-2);
+        calculator.setLastInput(-2.0);
         calculator.clearCalculator();
-        assertEquals(calculator.getDisplay(),0.0);
-        assertEquals(calculator.getLastInput(),0.0);
+        assertTrue(calculator.getDisplay() == 0.0);
+        assertTrue(calculator.getLastInput() == 0.0);
+
+        calculator.clearCalculator();
+        assertTrue(calculator.getDisplay() == 0.0);
+        assertTrue(calculator.getLastInput() == 0.0);
+
+        calculator.setDisplay(-23.3);
+        calculator.setLastInput(0.0);
+        calculator.clearCalculator();
+        assertTrue(calculator.getDisplay() == 0.0);
+        assertTrue(calculator.getLastInput() == 0.0);
     }
 
     @Test

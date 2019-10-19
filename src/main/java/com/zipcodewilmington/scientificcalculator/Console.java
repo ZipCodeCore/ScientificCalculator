@@ -45,6 +45,7 @@ public class Console {
     }
 
     public static String cleanInput(String userInput) {
+        // three legit options: was input a command, operator, or number (checked by regEx)
         if (Arrays.asList(Calculator.COMMANDS).contains(userInput) || Arrays.asList(Calculator.OPERATORS).contains(userInput) || userInput.matches("-?\\d+(\\.\\d+)?")) {
             return userInput;
         } else {
