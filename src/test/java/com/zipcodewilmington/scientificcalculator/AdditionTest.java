@@ -14,7 +14,7 @@ public class AdditionTest {
     @Test
     public void additionTest() {
         // given
-        additionTest product = new addition();
+        Addition product = new Addition();
         double inputValue1 = 5;
         double inputValue2 = 5;
         double expected = inputValue1 + inputValue2;
@@ -30,10 +30,10 @@ public class AdditionTest {
     @Test
     public void additionTest2() {
         // given
-        AdditionTest product = new AdditionTest() ;
+        Addition product = new Addition() ;
         double inputValue1 = 10;
         double inputValue2 = 10;
-        double expected = inputValue1 * inputValue2;
+        double expected = inputValue1 + inputValue2;
 
         // when
         double actual = product.add(inputValue1,inputValue2);
