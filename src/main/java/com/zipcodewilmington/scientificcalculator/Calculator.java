@@ -11,7 +11,7 @@ public class Calculator {
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^", "logb"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "clear", "deg", "rad", "quit", "q", "?", "help", "stats"};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "last", "clear", "deg", "rad", "stats", "quit", "q", "?", "help"};// still need display modes
 
     private Memory memory;
     private TrigFunctions trig;
@@ -124,8 +124,12 @@ public class Calculator {
                 break;
             case "mr":
             case "mrc":
-                this.lastInput = display;
-                display = memory.memoryRecall();
+                this.lastInput = this.display;
+                this.display = this.memory.memoryRecall();
+                break;
+            case "last":
+                this.display = this.lastInput;
+                this.lastInput = 0.0;
                 break;
             case "?":
             case "help":

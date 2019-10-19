@@ -46,6 +46,20 @@ public class CalculatorTest {
     }
 
     @Test
+    public void lastTest() {
+        Double[] options = {Double.NEGATIVE_INFINITY,-2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
+
+        for (Double n : options) {
+            calculator.setDisplay(n * 2.21);
+            calculator.setLastInput(n);
+            calculator.handleCommands("last");
+            assertTrue(calculator.getDisplay() == n);
+            assertTrue(calculator.getLastInput() == 0.0);
+        }
+    }
+
+
+    @Test
     public void inputLoop() {
     }
 
@@ -133,4 +147,5 @@ public class CalculatorTest {
         assertTrue(1.0 ==  calculator.getDisplay().doubleValue());
 
     }
+
 }
