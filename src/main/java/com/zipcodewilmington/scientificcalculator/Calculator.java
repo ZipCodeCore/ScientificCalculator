@@ -120,6 +120,7 @@ public class Calculator {
         }
     }
 
+    /*,  "log", "ln", "!", "inv", "sign"};*/
     public String handleOperator(String operator) {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
@@ -147,6 +148,22 @@ public class Calculator {
                 break;
             case "atan":
                 result = trig.arcTan(this.display);
+                this.display = result;
+                break;
+            case "sqrt":
+                result = Math.sqrt(this.display);
+                this.display = result;
+                break;
+            case "sq":
+                result = this.display * this.display;
+                this.display = result;
+                break;
+            case "exp":
+                result = Math.exp(this.display);
+                this.display = result;
+                break;
+            case "10^":
+                result = Math.pow(10, this.display);
                 this.display = result;
                 break;
 
