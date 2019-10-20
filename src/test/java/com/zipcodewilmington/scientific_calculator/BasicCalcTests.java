@@ -46,7 +46,7 @@ public class BasicCalcTests {
 
         calc.subtract( 690045.875, 438294.54);
 
-        Assert.assertEquals(251751.335,calc.getDoubleResult() , 0);
+        Assert.assertEquals(251751.335,calc.getDoubleResult() , 1e-8);
     }
 
     @Test
@@ -89,7 +89,7 @@ public class BasicCalcTests {
 
         calc.multiply( 4083.6, 3834.7);
 
-        Assert.assertEquals(15659380.9,calc.getDoubleResult() , 0);
+        Assert.assertEquals(15659380.9,calc.getDoubleResult() , 1e-2 );
     }
 
     @Test
@@ -115,33 +115,4 @@ public class BasicCalcTests {
         Assert.assertEquals(12.9930738,calc.getDoubleResult() , 0);
     }
 
-
-//    @Test
-//    public void exponentTest1(){
-//        calc.( 4083.6, 3834.7);
-//
-//        Assert.assertEquals(15659380.9,calc.getDoubleResult() , 0);
-//    }
-//
-//    @Test
-//    public void exponentTest2(){
-//        double x = 5;
-//        double y = 3;
-//        double expected = 125;
-//        double actual = calc.exponent(x,y);
-//
-//        assertEquals(expected, actual);
-//
-//    }
-//
-//    @Test
-//    public void exponentTest3(){
-//        double x = 5;
-//        double y = 3;
-//        double expected = 125;
-//        double actual = calc.exponent(x,y);
-//
-//        assertEquals(expected, actual);
-//
-//    }
 }
