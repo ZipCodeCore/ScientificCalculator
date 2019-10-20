@@ -11,7 +11,7 @@ public class MainApplication {
 
     private static String currentState = "0";
     private static String currentOperation = "none";
-    private static double currentMemory;
+    private static double currentMemory = 0;
 
     public static void main(String[] args) {
         startUpMessage(); // prints welcome message to console and awaits input
@@ -60,7 +60,7 @@ public class MainApplication {
         // set clear add subtract multiply divide square sqrt inverse invert_sign
         executeCoreOperation(operation);
         executeMathOperation(operation);
-//        executeSciOperation(operation);
+        executeSciOperation(operation);
     }
 
     public static void executeCoreOperation(String operation) {
@@ -124,6 +124,27 @@ public class MainApplication {
         else if (operation.equals("invert sign")) {
             currentState = Calculator.invertSign(x);
         }
+    }
+
+    public static void executeSciOperation(String operation) {
+        // m+ currentMemory = currentState
+        if (operation.equals("m+")) {
+            Console.println(currentState + " saved to memory");
+            currentMemory = Double.valueOf(currentState);
+        }
+        // mc currentMemory = 0
+        else if (operation.equals("mc")) {
+            Console.println("memory reset to zero");
+            currentMemory = 0;
+        }
+        // mrc currentState = currentMemory
+        else if (operation.equals("mrc")) {
+            Console.println(currentMemory + " recalled from memory");
+            currentState = String.valueOf(currentMemory);
+        }
+//        else if (operation.equals("m")) {
+//            Console.println("Stored in memory: " + currentMemory);
+//        }
     }
 
 }
