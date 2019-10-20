@@ -3,6 +3,7 @@ package com.zipcodewilmington.scientificcalculator;
 public class Intro {
 
     public static String intro() {
+
         Console.println("\nWelcome to my calculator! \n");
 
         String s = Console.getStringInput(
@@ -72,8 +73,7 @@ public class Intro {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
                 Exponents.squareRoot(d);
-                Intro.intro();
-
+                Intro.intro()
             } else if (s1.equalsIgnoreCase("3")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
