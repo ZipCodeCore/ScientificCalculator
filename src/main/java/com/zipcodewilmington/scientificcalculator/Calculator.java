@@ -4,25 +4,23 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Calculator {
-    Scanner scanner = new Scanner(System.in);
-    InputChecker inputCheck = new InputChecker();
+class Calculator {
+    private Scanner scanner = new Scanner(System.in);
     //create an array that includes all of the available operators
-    String[] operators = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
+    private String[] operators = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
             "10", "11", "12", "13,", "14", "15", "16",
             "17", "18", "19", "20", "return"};
     //turn that array into a string
-    List<String> operatorsList = Arrays.asList(operators);
+    private List<String> operatorsList = Arrays.asList(operators);
     //create an array of each operation that requires two values
-    String[] need2Values = {"1", "2", "3", "4", "5"};
+    private String[] need2Values = {"1", "2", "3", "4", "5"};
     //turn that array into a string
-    List<String> need2ValuesList = Arrays.asList(need2Values);
+    private List<String> need2ValuesList = Arrays.asList(need2Values);
 
-    public Calculator() {
+    Calculator() {
     }
-    public void runCalculator() {
-        boolean returnToMainMenu = true;
-        while (returnToMainMenu) {
+    void runCalculator() {
+        while (true) {
             System.out.println("Choose your Operator\nType \"cmd\" for commands.");
             String userOperator = scanner.nextLine();
             //ask the user for a operator
@@ -70,36 +68,35 @@ public class Calculator {
                 //ask the user for a value
                     System.out.println("Enter your value");
                     String userValueAsString = scanner.nextLine();
-                    boolean correctInput = false;
+                    boolean correctInput;
                     //run a while loop that checks if a proper number was entered
-                    while(!correctInput) {
-                            correctInput = inputCheck.isNumeric(userValueAsString);
+                    while(true) {
+                            correctInput = InputChecker.isNumeric(userValueAsString);
                             if(correctInput) break;
                             System.out.println("Enter your value");
                             userValueAsString = scanner.nextLine();
 
                     }
-                    Double userValue1 = Double.parseDouble(userValueAsString);
+                    double userValue1 = Double.parseDouble(userValueAsString);
 
                 if (need2ValuesList.contains(userOperator)) {
                     //ask for a second value
                     System.out.println("Enter your second value");
                     String userValue2AsString = scanner.nextLine();
-                    correctInput = false;
                     //run a while loop that checks if a proper number was entered
-                    while(!correctInput) {
-                        correctInput = inputCheck.isNumeric(userValueAsString);
+                    while(true) {
+                        correctInput = InputChecker.isNumeric(userValueAsString);
                         if(correctInput) break;
                         System.out.println("Enter your second value");
                         userValueAsString = scanner.nextLine();
                     }
-                    Double userValue2 = Double.parseDouble(userValue2AsString);
+                    double userValue2 = Double.parseDouble(userValue2AsString);
 
                     //run the need2value operators INSIDE the if statement
                     switch (userOperator) {
                         case "1":
                             Addition add = new Addition();
-                            Double sum = add.add(userValue1, userValue2);
+                            double sum = add.add(userValue1, userValue2);
                             System.out.println(userValue1 + " + " + userValue2 + " = " + sum);
                             break;
                         case "2":
