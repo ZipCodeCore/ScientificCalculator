@@ -21,10 +21,11 @@ public class MainApplication {
         //call the scanner
         Scanner scanner = new Scanner(System.in);
         //welcome the user
-        System.out.println("Hello! Welcome to the calculator main menu!\nWould you care for a drink?\n\n");
+
 
 
         while (turnOn) {
+            System.out.println("Hello! Welcome to the calculator main menu!\nWould you care for a drink?\n\n");
             System.out.println("What would you like to do?\nType \"cmd\" for commands.");
             String userCommand = scanner.nextLine();
 

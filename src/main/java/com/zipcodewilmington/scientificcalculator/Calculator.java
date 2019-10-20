@@ -62,6 +62,9 @@ public class Calculator {
                 System.out.println("Choose your Operator\nType \"cmd\" for commands.");
                 userOperator = scanner.nextLine();
             }
+            if(userOperator.equals("return")){
+                break;
+            }
 
                 //ask the user for a value
                 System.out.println("Enter your value");
@@ -108,9 +111,6 @@ public class Calculator {
                     }
                 } else if (!need2ValuesList.contains(userOperator)) {
                     switch (userOperator) {
-                        case "return":
-                            returnToMainMenu = false;
-                            break;
                         case "square":
                             Squared squared = new Squared();
                             Double powerOf = squared.squared(userValue1);
