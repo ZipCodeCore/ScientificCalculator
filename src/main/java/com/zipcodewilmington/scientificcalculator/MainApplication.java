@@ -43,11 +43,13 @@ public class MainApplication {
             //run the need2value operators INSIDE the if statement
             switch (userOperator) {
                 case "add":
-                    double sum = userValue1 + userValue2;
+                    Addition add = new Addition ();
+                    double sum = add.add(userValue1, userValue2);
                     System.out.println(userValue1 + " + " + userValue2 + " = " + sum);
                     break;
                 case "subtract":
-                    double difference = userValue1 - userValue2;
+                    Subtraction subtract = new Subtraction();
+                    double difference = subtract.subtract(userValue1, userValue2);
                     System.out.println(userValue1 + " - " + userValue2 + " = " + difference);
                     break;
             }
