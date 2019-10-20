@@ -14,7 +14,7 @@ public class BasicCalculator {
 
     //Basic Operator functions
     public void add(Double x){
-        try { //
+        try {
 
             if (x == 0) {                                              //Checks if there's already a number to work with
                 x = Console.getDoubleInput("First number: ");
@@ -74,7 +74,7 @@ public class BasicCalculator {
             }
 
             Double y = Console.getDoubleInput(x + " / ");
-            this.setDoubleResult(x * y);
+            this.setDoubleResult(x / y);
             this.setStringResult(Double.toString(x / y));
 
         }
