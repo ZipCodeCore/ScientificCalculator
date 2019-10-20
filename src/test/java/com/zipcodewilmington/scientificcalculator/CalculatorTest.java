@@ -84,6 +84,25 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void setDisplayModesTest() {
+        calculator.setDisplayMode(Calculator.dMode.BINARY);
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.BINARY);
+        calculator.setDisplayMode();
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.OCTAL);
+        calculator.setDisplayMode(Calculator.dMode.HEXADECIMAL);
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.HEXADECIMAL);
+        calculator.setDisplayMode();
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.BINARY);
+        calculator.setDisplayMode(Calculator.dMode.DECIMAL);
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.DECIMAL);
+        calculator.setDisplayMode();
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.HEXADECIMAL);
+        calculator.setDisplayMode(Calculator.dMode.OCTAL);
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.OCTAL);
+        calculator.setDisplayMode();
+        assertEquals(calculator.getDisplayMode(), Calculator.dMode.DECIMAL);
+    }
 
     @Test
     public void inputLoop() {
