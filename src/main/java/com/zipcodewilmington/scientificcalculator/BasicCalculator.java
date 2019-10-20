@@ -16,16 +16,8 @@ public class BasicCalculator {
     public void add(Double x, Double y){
         try {
 
-            //Checks if there's already a Chl
-            // number to work with
-//            if (x == 0) {
-//                x = Console.getDoubleInput("First number: ");
-//            }
-//
-//            Double y = Console.getDoubleInput(x + " + ");
             this.setDoubleResult(x + y);
             this.setStringResult(Double.toString(x + y));
-
         }
         //for non-double inputs
         catch(Exception e){

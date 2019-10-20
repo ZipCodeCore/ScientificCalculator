@@ -13,7 +13,7 @@ public class MainApplication {
 
         //creating instances of classes
         BasicCalculator basicCalc = new BasicCalculator();
-        //ScientificCalculator sciencecalc = new ScientificCalculator();
+        ScientificCalculator sciencecalc = new ScientificCalculator();
         MemoryAndSettings memoryandSettings = new MemoryAndSettings();
         GetInputs getInputs = new GetInputs();
         Console console = new Console();
@@ -31,8 +31,8 @@ public class MainApplication {
             switch (s) {
                 case "add":
 
-                    currentDouble = getInputs.getx(currentDouble);
-                    y = Console.getDoubleInput(currentDouble + " + ");
+                    currentDouble = getInputs.getx(currentDouble, "");
+                    y = getInputs.gety(" + ");
 
                     basicCalc.add(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
@@ -42,10 +42,9 @@ public class MainApplication {
                     break;
 
                 case "subtract":
-                    if (currentDouble == 0) {
-                        currentDouble = Console.getDoubleInput("First number: ");
-                    }
-                    y = Console.getDoubleInput(currentDouble + " - ");
+
+                    currentDouble = getInputs.getx(currentDouble,"");
+                    y = getInputs.gety(" - ");
 
                     basicCalc.subtract(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
@@ -54,10 +53,9 @@ public class MainApplication {
                     break;
 
                 case "multiply":
-                    if (currentDouble == 0) {
-                        currentDouble = Console.getDoubleInput("First number: ");
-                    }
-                    y = Console.getDoubleInput(currentDouble + " * ");
+
+                    currentDouble = getInputs.getx(currentDouble,"");
+                    y = getInputs.gety(" * ");
 
                     basicCalc.multiply(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
@@ -67,11 +65,9 @@ public class MainApplication {
 
                 case "divide":
 
-                    if (currentDouble == 0) {
-                        currentDouble = Console.getDoubleInput("First number: ");
-                    }
+                    currentDouble = getInputs.getx(currentDouble,"");
+                    y = getInputs.gety(" / ");
 
-                    y = Console.getDoubleInput(currentDouble + " / ");
                     while(y == 0){
                         y = Console.getDoubleInput("Please enter a non-zero denominator: ");
                     }
@@ -115,12 +111,12 @@ public class MainApplication {
                     break;
 
                 case "MRC":
-                    memoryandSettings.forgetthis();
+                    currentDouble = memoryandSettings.getRememberedNum();
+                    currentString = Double.toString(currentDouble);
                     break;
 
                 case "MC":
-                    memoryandSettings.setRememberedNum(0.0);
-                    memoryandSettings.setRememberedStr("0");
+                    memoryandSettings.forgetthis();
                     break;
 
                 case "settings":
