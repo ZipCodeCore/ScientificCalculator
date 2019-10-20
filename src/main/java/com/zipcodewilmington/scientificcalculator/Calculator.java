@@ -13,7 +13,7 @@ public class Calculator {
     //turn that array into a string
     List<String> operatorsList = Arrays.asList(operators);
     //create an array of each operation that requires two values
-    String[] need2Values = {"add", "subtract", "multiply", "divided", "exponent"};
+    String[] need2Values = {"add", "subtract", "multiply", "divide", "exponent"};
     //turn that array into a string
     List<String> need2ValuesList = Arrays.asList(need2Values);
 
@@ -21,9 +21,11 @@ public class Calculator {
     }
 
     public void runCalculator(){
+        boolean returnToMainMenu = true;
         System.out.println("Choose your Operator\nType \"cmd\" for commands.");
         String userOperator = scanner.nextLine();
         //ask the user for a operator
+        while(returnToMainMenu)
         while(!operatorsList.contains(userOperator)){
             //provide a list of commands
             if(userOperator.equals("cmd")){
@@ -47,6 +49,8 @@ public class Calculator {
                 System.out.println("*\"inverse log\" - 10^x - Inverse Logarithm*");
                 System.out.println("*\"natural log\" - ln(x) - Natural Logarithm*");
                 System.out.println("*\"inverse natural log\" - e^x - Inverse Natural Logarithm*");
+                //give an option to exit the calculator and go back to the main menu
+                System.out.println("*\"return\" - e^x - Return to Main Menu*");
                 //check if operator is correct, and break the loop
             } else if (operatorsList.contains(userOperator)){
                 break;
@@ -89,8 +93,10 @@ public class Calculator {
                     break;
                 case "divide":
                     Division divide = new Division();
-                    double quotient = divide.divide(userValue1, userValue2);
-                    System.out.println(userValue1 + " / " + userValue2 + " = " + quotient);
+                    Double quotient = divide.divide(userValue1, userValue2);
+                    if(quotient != null){
+                        System.out.println(userValue1 + " / " + userValue2 + " = " + quotient);
+                    }
                     break;
                 case "exponent":
                     Exponent exponent = new Exponent();
@@ -100,6 +106,9 @@ public class Calculator {
             }
         } else if (!need2ValuesList.contains(userOperator)){
             switch (userOperator){
+                case "return":
+                    returnToMainMenu = false;
+                    break;
                 case "square":
                     Squared squared = new Squared();
                     double powerOf = squared.squared(userValue1);
