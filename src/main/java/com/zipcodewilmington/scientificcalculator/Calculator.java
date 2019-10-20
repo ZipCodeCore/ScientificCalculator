@@ -156,7 +156,7 @@ public class Calculator {
         }
     }
 
-    // Main I\O loop
+    // Main I/O loop
     private void inputLoop() {
         String input;
 
