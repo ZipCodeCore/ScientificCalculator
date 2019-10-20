@@ -66,39 +66,39 @@ public class TestSciCalculator
 
     @Test
     public void testcsc1() {
-        String expected = "-0.9880316240928618";
-        String actual = csc(30);
+        String expected = "0.0";
+        String actual = csc(0);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testcsc2() {
-        String expected = "0.8509035245341184";
-        String actual = csc(45);
+        String expected = "0.5235987755982989";
+        String actual = csc(0.5);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testcsc3() {
-        String expected = "-0.3048106211022167";
-        String actual = csc(60);
+        String expected = "NaN";
+        String actual = csc(2);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testsec1() {
-        String expected = "-0.9880316240928618";
-        String actual = sec(30);
+        String expected = "0.0";
+        String actual = sec(1);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testsec2() {
-        String expected = "0.8509035245341184";
-        String actual = sec(45);
+        String expected = "1.5707963267948966";
+        String actual = sec(0);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testsec3() {
-        String expected = "-0.3048106211022167";
-        String actual = sec(60);
+        String expected = "3.141592653589793";
+        String actual = sec(-1);
         Assert.assertEquals(expected, actual);
     }
 
