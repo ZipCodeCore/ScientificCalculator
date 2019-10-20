@@ -124,20 +124,19 @@ public class Calculator {
                     case "factorial":
                         Factorial factorial = new Factorial();
                         Double facto = factorial.factorial(userValue1);
-                        if (factorial != null) {
+                        if (factorial != null)
                             System.out.println("!" + userValue1 + " = " + facto);
-                            break;
-                        }
+                        break;
                     case "inverse":
                         Inverse inverse = new Inverse();
                         Double inversed = inverse.inverse(userValue1);
                         if (inverse != null)
-                            System.out.println("1/" + userValue1" = " + inversed);
+                            System.out.println("1/" + userValue1 + " = " + inversed);
                         break;
                     case "invert":
                         Invert invert = new Invert();
                         Double inverted = invert.invert(userValue1);
-                        System.out.println(userValue1 + " inverted = "inverted);
+                        System.out.println(userValue1 + " inverted = " + inverted);
                         break;
                     case "sin":
                         Sine sine = new Sine();
@@ -172,16 +171,14 @@ public class Calculator {
                     case "log":
                         Logarithm logarithm = new Logarithm();
                         Double log = logarithm.logarithm(userValue1);
-                        if (log != null) {
+                        if (log != null)
                             System.out.println("Log(" + userValue1 + ") = " + log);
-                        }
                         break;
                     case "inverse log":
                         InverseLogarithm inverseLogarithm = new InverseLogarithm();
                         Double inverseLog = inverseLogarithm.inverseLogarithm(userValue1);
-                        if (inverseLog != null){
+                        if (inverseLog != null)
                             System.out.println("10^" + userValue1 + " = " + inverseLog);
-                        }
                         break;
                     case "inverse natural log":
                         InverseNaturalLogarithm inverseNaturalLogarithm = new InverseNaturalLogarithm();
@@ -195,10 +192,9 @@ public class Calculator {
                             System.out.println("ln(" + uservalue1 + ") = " + naturalLog);
                         }
                         break;*/
-                    
+
                     }
                 }
             }
         }
     }
-}
