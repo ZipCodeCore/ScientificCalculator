@@ -36,7 +36,7 @@ public class Console {
         return userInput;
     }
 
-    /////Prompt Functions////
+    /////Prompt Functions///
     /////////////////////////
      public static int corePrompt(){
         int response = Console.getIntegerInput("What sup bitch! what do you want \n" +
