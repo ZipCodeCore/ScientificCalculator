@@ -7,6 +7,7 @@ public class TrigFunctions {
     public void changeMode() { inDegreeMode = !inDegreeMode; }
     public void radianMode() { inDegreeMode = false; }
     public void degreeMode() { inDegreeMode = true; }
+    public Boolean inDegreeMode() { return inDegreeMode; }
 
 
     //Calculate the sine in radians or degrees
