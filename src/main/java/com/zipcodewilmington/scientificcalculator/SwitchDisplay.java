@@ -14,3 +14,4 @@ public class SwitchDisplay {
         return Integer.toHexString(num1);
     }
 }
+
