@@ -3,13 +3,14 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Calculator {
     Scanner scanner = new Scanner(System.in);
     //create an array that includes all of the available operators
     String[] operators = {"add", "subtract", "multiply", "divide", "exponent", "square", "square root", "factorial",
-            "inverse", "invert", "sine", "cosine", "tangent", "inverse sin", "inverse cos",
-            "inverse tang", "log", "inverse log", "natural log", "inverse natural log","return"};
+            "inverse", "invert", "sin", "cos,", "tan", "inverse sin", "inverse cos",
+            "inverse tan", "log", "inverse log", "natural log", "inverse natural log","return"};
     //turn that array into a string
     List<String> operatorsList = Arrays.asList(operators);
     //create an array of each operation that requires two values
@@ -48,7 +49,7 @@ public class Calculator {
                     System.out.println("*\"log\" - log(x) - Logarithm*");
                     System.out.println("*\"inverse log\" - 10^x - Inverse Logarithm*");
                     System.out.println("*\"natural log\" - ln(x) - Natural Logarithm*");
-                    System.out.println("*\"inverse natural log\" - Inverse Natural Logarithm*");
+                    System.out.println("*\"inverse natural log\" - e^x - Inverse Natural Logarithm*");
                     //give an option to exit the calculator and go back to the main menu
                     System.out.println("*\"return\" - e^x - Return to Main Menu*");
                     //check if operator is correct, and break the loop
@@ -123,22 +124,79 @@ public class Calculator {
                     case "factorial":
                         Factorial factorial = new Factorial();
                         Double facto = factorial.factorial(userValue1);
-                        if (factorial != null){
+                        if (factorial != null) {
                             System.out.println("!" + userValue1 + " = " + facto);
-                        break;
+                            break;
                         }
                     case "inverse":
                         Inverse inverse = new Inverse();
                         Double inversed = inverse.inverse(userValue1);
-                        if(inverse != null)
-                            System.out.println("1/" + userValue1 " = " + inversed);
+                        if (inverse != null)
+                            System.out.println("1/" + userValue1" = " + inversed);
                         break;
                     case "invert":
                         Invert invert = new Invert();
                         Double inverted = invert.invert(userValue1);
-                        System.out.println(userValue1 + " inverted = " inverted);
+                        System.out.println(userValue1 + " inverted = "inverted);
                         break;
-                        case 
+                    case "sin":
+                        Sine sine = new Sine();
+                        Double sin = sine.sine(userValue1);
+                        System.out.println("sin(" + userValue1 + ") = " + sin);
+                        break;
+                    case "cos":
+                        Cosine cosine = new Cosine();
+                        Double cos = cosine.cosine(userValue1);
+                        System.out.println("cos(" + userValue1 + ") = " + cos);
+                        break;
+                    case "tan":
+                        Tangent tangent = new Tangent();
+                        Double tan = tangent.tangent(userValue1);
+                        System.out.println("tan(" + userValue1 + ") = " + tan);
+                        break;
+                    case "inverse sin":
+                        InverseSine inverseSine = new InverseSine();
+                        Double inverseSin = inverseSine.inverseSine(userValue1);
+                        System.out.println("sin(" + userValue1 + ")^-1 = " + inverseSin);
+                        break;
+                    case "inverse cos":
+                        InverseCosine inverseCosine = new InverseCosine();
+                        Double inverseCos = inverseCosine.inverseCosine(userValue1);
+                        System.out.println("cos(" + userValue1 + ")^-1 = " + inverseCos);
+                        break;
+                    case "inverse tan":
+                        InverseTangent inverseTangent = new InverseTangent();
+                        Double inverseTan = inverseTangent.inverseTangent(userValue1);
+                        System.out.println("tan(" + userValue1 + ")^-1 = " + inverseTan);
+                        break;
+                    case "log":
+                        Logarithm logarithm = new Logarithm();
+                        Double log = logarithm.logarithm(userValue1);
+                        if (log != null) {
+                            System.out.println("Log(" + userValue1 + ") = " + log);
+                        }
+                        break;
+                    case "inverse log":
+                        InverseLogarithm inverseLogarithm = new InverseLogarithm();
+                        Double inverseLog = inverseLogarithm.inverseLogarithm(userValue1);
+                        if (inverseLog != null){
+                            System.out.println("10^" + userValue1 + " = " + inverseLog);
+                        }
+                        break;
+                    case "inverse natural log":
+                        InverseNaturalLogarithm inverseNaturalLogarithm = new InverseNaturalLogarithm();
+                        Double inverseNatLog = inverseNaturalLogarithm.inverseNaturalLogarithm(userValue1);
+                        System.out.println("(e^" + userValue1 + " = " + inverseNatLog);
+                        break;
+                    /*case "natural log":
+                        NaturalLogarithm naturalLogarithm = new NaturalLogarithm();
+                        Double naturalLog = naturalLogarithm.naturalLogarithm(userValue1);
+                        if(naturalLog != null){
+                            System.out.println("ln(" + uservalue1 + ") = " + naturalLog);
+                        }
+                        break;*/
+                    
+                    }
                 }
             }
         }
