@@ -315,7 +315,7 @@ public class Calculator {
                 break;
             case "!":
                 if ((this.display.equals(Math.floor(this.display))) && !this.display.equals(0.0)
-                        && (this.display.compare(this.display, 0.0) > 0.0)) {
+                        && this.display > 0.0) {
                             result = 1.0;
                         for (Double i = 2.0; i <= this.display; i++) {
                             result *= i;
@@ -325,7 +325,7 @@ public class Calculator {
                     } else if (this.display.equals(0.0)) {
                         this.display = 1.0;
 
-                    } else if (this.display.compare(this.display, 0.0) < 0.0) {
+                    } else if (this.display < 0.0) {
                         result = -1.0;
                         for (Double i = 2.0; i <= this.display; i++) {
                             result *= i;
