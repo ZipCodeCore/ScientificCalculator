@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.OptionalDouble;
 
 
 public class Calculator {
@@ -16,12 +15,18 @@ public class Calculator {
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^", "logb"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "last", "clear", "deg", "rad", "stats", "quit", "q", "?", "help", "man"};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "last", "clear", "deg", "rad", "mode", "bin", "oct", "dec", "hex", "stats", "quit", "q", "?", "help", "man"};// still need display modes
 
     private Memory memory;
     private TrigFunctions trig;
 
     public static Map<String, String> MANUAL = new HashMap<>();
+
+    enum dMode {
+        BINARY, OCTAL, DECIMAL, HEXADECIMAL
+    };
+    private dMode displayMode;
+
 
 
     public Calculator() {
@@ -30,6 +35,7 @@ public class Calculator {
         this.display = 0.0;
         this.memory = new Memory();
         this.trig = new TrigFunctions();
+        this.displayMode = dMode.DECIMAL;
 
         MANUAL.put("+", "Addition (binary operator): Enter a number, then +, then another number");
         MANUAL.put("-", "Subtraction (binary operator): Enter a number, then -, then another number");
@@ -61,6 +67,11 @@ public class Calculator {
         MANUAL.put("last", "Return second-to-last result to the display");
         MANUAL.put("clear", "Clear calculator display and storage (not memory)");
         MANUAL.put("stats", "Statistical analysis mode - enter data set and get 1-variable descriptive statistics");
+        MANUAL.put("mode", "Change display mode (toggle binary -> octal -> decimal -> hexadecimal)");
+        MANUAL.put("bin","Change display mode to binary");
+        MANUAL.put("oct","Change display mode to octal");
+        MANUAL.put("dec","Change display mode to decimal");
+        MANUAL.put("hex","Change display mode to hexadecimal");
         MANUAL.put("?", "Help: a list of commands (also 'help')");
         MANUAL.put("help", "Help: a list of commands (also '?')");
         MANUAL.put("quit", "Quit (also 'q')");
@@ -82,6 +93,10 @@ public class Calculator {
         return this.trig;
     }
 
+    public dMode getDisplayMode() {
+        return displayMode;
+    }
+
     // Setters
 
     public void setLastInput(Double lastInput) {
@@ -90,6 +105,15 @@ public class Calculator {
 
     public void setDisplay(Double display) {
         this.display = display;
+    }
+
+    public void setDisplayMode(dMode displayMode) { // choose display mode directly
+        this.displayMode = displayMode;
+    }
+
+    public void setDisplayMode() { // step through display modes
+        int current = this.displayMode.ordinal();
+        this.displayMode = dMode.values()[(current + 1)%dMode.values().length];
     }
 
     // Helper Methods
@@ -208,7 +232,21 @@ public class Calculator {
                 } else {
                     throwError();
                 }
-
+                break;
+            case "mode":
+                setDisplayMode();
+                break;
+            case "bin":
+                setDisplayMode(dMode.BINARY);
+                break;
+            case "oct":
+                setDisplayMode(dMode.OCTAL);
+                break;
+            case "dec":
+                setDisplayMode(dMode.DECIMAL);
+                break;
+            case "hex":
+                setDisplayMode(dMode.HEXADECIMAL);
                 break;
         }
         return "";
