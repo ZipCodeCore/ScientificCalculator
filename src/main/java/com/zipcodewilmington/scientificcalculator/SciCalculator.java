@@ -1,9 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class SciCalculator {
-    public static String sine(double x){
-        return String.valueOf(Math.sin(x));
-    }
+    public static String sine(double x){ return String.valueOf(Math.sin(x)); }
     public static String cosine(double x){
         return String.valueOf(Math.cos(x));
     }
@@ -66,6 +64,20 @@ public class SciCalculator {
             convertedNum = Integer.toHexString(num);
         }
         return convertedNum;
+    }
+
+    //Method to Convert degrees to radians and vice-versa
+    public static String switchUnits(String number, String mode) {
+        Double num = Double.valueOf(number);
+        String convertedUnit = "";
+        if (mode.equals("degrees")) {
+            convertedUnit = String.valueOf(Math.toRadians(num));
+        }
+        else if (mode.equals("radian")) {
+            convertedUnit = String.valueOf(Math.toDegrees(num));
+        }
+
+    return convertedUnit;
     }
 // if input contains disp:
     // if input is disp bin
