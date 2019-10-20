@@ -44,7 +44,7 @@ public class MemoryTest {
 
     @Test
     //An assertnotequals Test if memory plus method changes the objects state
-    
+
     public void Memory_state3() {
         Double expected = 25d;
 

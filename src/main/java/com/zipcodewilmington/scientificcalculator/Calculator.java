@@ -268,12 +268,14 @@ public class Calculator {
                 break;
             case "!":
                 if(this.display == Math.floor(this.display)){
-                    System.out.println(Math.floor(this.display));
-                    System.out.print("Yes it is");
-                } else {
-                    System.out.print("nope");
-                }
+                     result = 1.0;
+                    for (Double i = 2.0; i <= this.display; i++) {
+                        result *= i;
+
+                    }
                 this.display = result;
+                }
+
                 break;
             case "inv":
                 result = (1.0 / this.display);
