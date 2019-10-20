@@ -5,7 +5,7 @@ public class Submenu {
     public static Integer arithmeticMenu() {
 
         Integer input2 = Console.getIntegerInput(
-                "Enter an operation \n" +
+                "Pick an operation by entering a number and pressing enter. \n" +
                         "1. Add \n" +
                         "2. Subtract \n" +
                         "3. Multiply \n" +
@@ -21,7 +21,7 @@ public class Submenu {
     public static Integer trigonometryMenu() {
 
         Integer input2 = Console.getIntegerInput(
-                "Enter an operation \n" +
+                "Pick an operation by entering a number and pressing enter. \n" +
                         "1. Tangent \n" +
                         "2. Sine \n" +
                         "3. Cosine \n" +
@@ -39,7 +39,7 @@ public class Submenu {
     public static Integer exponentsMenu() {
 
         Integer input2 = Console.getIntegerInput(
-                "Enter an operation \n" +
+                "Pick an operation by entering a number and pressing enter. \n" +
                         "1. Square \n" +
                         "2. Cube \n" +
                         "3. Variable Exponent \n" +
@@ -55,7 +55,7 @@ public class Submenu {
     public static Integer inversionMenu() {
 
         Integer input2 = Console.getIntegerInput(
-                "Enter an operation \n" +
+                "Pick an operation by entering a number and pressing enter. \n" +
                         "1. Invert Sign \n" +
                         "2. Return to Inversion Menu \n" +
                         "3. Return to Main Menu \n");

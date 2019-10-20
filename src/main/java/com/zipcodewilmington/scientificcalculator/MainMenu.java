@@ -7,10 +7,10 @@ public class MainMenu {
 
         Integer input;
 
-        Console.println("\nWelcome to my calculator! \n");
+
 
         input = Console.getIntegerInput(
-                "What would you like to do? \n" +
+                "What would you like to do? Input a number and press enter. \n" +
                         "1. Arithmetic \n" +
                         "2. Trigonometry \n" +
                         "3. Exponents \n" +
