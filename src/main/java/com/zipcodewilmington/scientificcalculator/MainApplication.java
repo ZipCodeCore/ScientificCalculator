@@ -11,11 +11,10 @@ public class MainApplication {
         String currentString = "";
 
         //creating instances of classes
-        Console console = new Console();
         BasicCalculator basicCalc = new BasicCalculator();
         ScientificCalculator sciencecalc = new ScientificCalculator();
         MemoryAndSettings memoryandSettings = new MemoryAndSettings();
-        Display display = new Display();
+        Console console = new Console();
 
         String s = "";
 
