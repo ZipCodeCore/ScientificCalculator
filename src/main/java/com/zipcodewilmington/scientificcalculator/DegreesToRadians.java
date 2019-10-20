@@ -3,24 +3,28 @@ import java.util.Scanner;
 
 public class DegreesToRadians {
     Scanner scanner = new Scanner(System.in);
-    String[] degreesRadians = {"radians", "degrees"};
+    String degreesRadians;
 
     public String degreesToRadians() {
         boolean D2R = true;
-        String degreesRadians = "";
+
         while (D2R) {
-            System.out.println("Pick between degrees or radians");
-            String userOperator = scanner.nextLine();
-            if (userOperator.equals("degrees")) {
-                degreesRadians = "degrees";
-                D2R = false;
-            } else if (userOperator.equals("radians")) {
-                degreesRadians = "radians";
-                D2R = false;
-            } else {
-                System.out.println("ERROR: Please enter \"degrees\" or \"radians\".");
+            String userOperator = "";
+            while(!userOperator.equals("degrees") || !userOperator.equals("radians")){
+                System.out.println("Pick between degrees or radians");
+                userOperator = scanner.nextLine();
+                switch (userOperator){
+                    case "degrees":
+                        degreesRadians = "degrees";
+                        break;
+                    case "radians":
+                        degreesRadians = "radians";
+                        break;
+                    default:
+                        System.out.println("ERROR: Please enter \"degrees\" or \"radians\".");
+                }
+                }if(userOperator.equals("degrees") || userOperator.equals("radians")) break;
             }
-        }
         return degreesRadians;
     }
 }

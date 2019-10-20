@@ -14,7 +14,7 @@ public class MainApplication {
         boolean turnOn = true;
         //make a list of basic commands for calulator
 
-        String[] basicCommands = {"run calculator", "turn off"};
+        String[] basicCommands = {"1", "2", "3"};
 
         //turn that array into a string
         List<String> basicCommandsList = Arrays.asList(basicCommands);
@@ -31,10 +31,9 @@ public class MainApplication {
 
             while (!basicCommandsList.contains(userCommand)) {
                 if (userCommand.equals("cmd")) {
-                    System.out.println("*\"run calculator\" - Run the Calculator*");
-                    System.out.println("*\"degrees or radians\" - Switch between trig numerics");
-                    System.out.println("*\"turn off\" - Turn Off the Calculator*");
-                    System.out.println("*Other list of commands UPCOMING!*\n");
+                    System.out.println("\"1\" - Run the Calculator");
+                    System.out.println("\"2\" - Switch between trig numerics");
+                    System.out.println("\"3\" - Turn Off the Calculator");
                 } else if (basicCommandsList.contains(userCommand)) {
                     break;
                 } else {
@@ -45,15 +44,15 @@ public class MainApplication {
             }
 
             switch (userCommand) {
-                case "run calculator":
+                case "1":
                     Calculator calculator = new Calculator();
                     calculator.runCalculator();
                     break;
-                case "degrees or radians":
+                case "2":
                     DegreesToRadians degreesRadians = new DegreesToRadians();
                     degreesRadians.degreesToRadians();
                     break;
-                case "turn off":
+                case "3":
                     turnOn = false;
                     break;
             }
