@@ -78,12 +78,24 @@ public class MainApplication {
                     console.print(basicCalc.getStringResult());//place holder for display
                     break;
 
-                case "Trig":
-
+                case "Sine":
+                    currentDouble = getInputs.getx(currentDouble,"sine of: ");
+                    sciencecalc.sine(currentDouble);
                     break;
 
-                case "Inverse":
+                case "Cosine":
+                    currentDouble = getInputs.getx(currentDouble,"cosine of: ");
+                    sciencecalc.cosine(currentDouble);
+                    break;
 
+                case "Tangent":
+                    currentDouble = getInputs.getx(currentDouble,"tangent of: ");
+                    sciencecalc.tangent(currentDouble);
+                    break;
+
+                case "InverseSine":
+                    currentDouble = getInputs.getx(currentDouble,"Inverse of: ");
+                    sciencecalc.inverse(currentDouble);
                     break;
 
                 case "exponent":
