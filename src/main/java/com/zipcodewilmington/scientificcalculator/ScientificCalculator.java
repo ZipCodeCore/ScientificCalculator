@@ -92,7 +92,7 @@ public class ScientificCalculator {
     public void sine(Double x){
         try {
             if (x > 0) {
-                x = Console.getDoubleInput("Sine: ");
+                x = Console.getDoubleInput("Sin: ");
             }
 
             while(x == 0){
@@ -113,7 +113,7 @@ public class ScientificCalculator {
     public void cosine(Double x){
         try {
             if (x > 0) {
-                x = Console.getDoubleInput("Cosine: ");
+                x = Console.getDoubleInput("Cosin: ");
             }
 
             while(x == 0){
@@ -240,9 +240,9 @@ public class ScientificCalculator {
 
             int i, fact = 1;
 
-            for(i = 0; i <= x; i++) {
+            if (x == 0) {
+                for(i = 0; i <= x; i++) {
 
-                if (x == 0) {
                     x = Console.getDoubleInput("Factorial: ");
                 }
 
