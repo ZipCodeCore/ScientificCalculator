@@ -174,10 +174,21 @@ public class CalculatorTest {
 
     }
     @Test
-    public void testHandleOperator_Factorial() {
+    public void testHandleOperator_Factorial_1() {
 
 
         calculator.setDisplay(4.0);
+
+        calculator.handleOperator("!");
+
+        assertTrue(24.0 ==  calculator.getDisplay().doubleValue());
+
+    }
+    @Test
+    public void testHandleOperator_Factorial_2() {
+
+
+        calculator.setDisplay(4.3);
 
         calculator.handleOperator("!");
 
