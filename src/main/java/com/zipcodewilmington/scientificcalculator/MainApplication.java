@@ -1,6 +1,8 @@
 package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 import java.lang.Math;
 
 /**
@@ -10,51 +12,47 @@ public class MainApplication {
 
 
     public static void main(String[] args) {
-        String[] need2Values = new String[5];
-        need2Values[] = {"add", "sub", "multi", "div", "exp"};
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Hey welcome to the calculator");
+        Console console = new Console();
+        //welcome the user, and use PROPER ENGLISH!!
+        System.out.println("Hey! Welcome to the calculator");
 
-        System.out.println("Enter your name");
-        String userName = scanner.nextLine();
-
-        System.out.println("Enter your age");
-        String userAgeAsString =  scanner.nextLine();
-        Integer userAge = Integer.parseInt(userAgeAsString);
-        
+        //ask the user for a value
         System.out.println("Enter your value");
-        String userValueAsString =  scanner.nextLine();
-        Integer userValue = Integer.parseInt(userValueAsString);
+        String userValueAsString = scanner.nextLine();
+        Double userValue1 = console.getDoubleInput(userValueAsString);
 
+        //ask the user for a operator
+        //should eventually test to see if they've entered a proper input
+        //should also eventually System.out.println a list for them to choose from
         System.out.println("Choose your Operator");
-        String userOperator =  scanner.nextLine();
+        String userOperator = scanner.nextLine();
 
-        if(need2Values[].includes(userOperator)){
+
+        //create an array of each operation that requires two values
+        String[] need2Values = {"add", "subtract", "multiply", "divide", "exponent"};
+        //turn that array into a string
+        List<String> need2ValuesList = Arrays.asList(need2Values);
+
+        //test the array to see if the userOperator is included
+        if (need2ValuesList.contains(userOperator)) {
+            //ask for a second value
             System.out.println("Enter your second value");
-            String userValue2AsString =  scanner.nextLine();
+            String userValue2AsString = scanner.nextLine();
             Integer userValue2 = Integer.parseInt(userValue2AsString);
+
+            //run the need2value operators INSIDE the if statement
+            switch (userOperator) {
+                case "add":
+                    double sum = userValue1 + userValue2;
+                    System.out.println(userValue1 + " + " + userValue2 + " = " + sum);
+                    break;
+                case "subtract":
+                    double difference = userValue1 - userValue2;
+                    System.out.println(userValue1 + " + " + userValue2 + " = " + difference);
+                    break;
+            }
         }
-
-
-
-        System.out.println("Enter your operator");
-     //   String userOperator = scanner.nextLine();
-
-     //   if(n2V[].inlcludes(userOperator))
-
-
-
-    }
-    public static void main1(String[] args) {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
-
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a double", d);
     }
 }
 
