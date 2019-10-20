@@ -12,7 +12,7 @@ public class MainApplication {
 
         //creating instances of classes
         BasicCalculator basicCalc = new BasicCalculator();
-        ScientificCalculator sciencecalc = new ScientificCalculator();
+        //ScientificCalculator sciencecalc = new ScientificCalculator();
         MemoryAndSettings memoryandSettings = new MemoryAndSettings();
         Console console = new Console();
 
@@ -27,7 +27,11 @@ public class MainApplication {
 
             switch (s) {
                 case "add":
-                    basicCalc.add(currentDouble);
+                    if (currentDouble == 0) {
+                        currentDouble = Console.getDoubleInput("First number: ");
+                    }
+                    Double y = Console.getDoubleInput(currentDouble + " + ");
+                    basicCalc.add(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     console.print(basicCalc.getStringResult());//place holder for display
                     break;

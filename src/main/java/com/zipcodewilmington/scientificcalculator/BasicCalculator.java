@@ -13,15 +13,15 @@ public class BasicCalculator {
     }
 
     //Basic Operator functions
-    public void add(Double x){
+    public void add(Double x, Double y){
         try {
 
             //Checks if there's already a number to work with
-            if (x == 0) {
-                x = Console.getDoubleInput("First number: ");
-            }
-
-            Double y = Console.getDoubleInput(x + " + ");
+//            if (x == 0) {
+//                x = Console.getDoubleInput("First number: ");
+//            }
+//
+//            Double y = Console.getDoubleInput(x + " + ");
             this.setDoubleResult(x + y);
             this.setStringResult(Double.toString(x + y));
 
