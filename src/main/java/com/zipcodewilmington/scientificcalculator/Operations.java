@@ -1,5 +1,8 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import jdk.internal.loader.AbstractClassLoaderValue;
+import sun.tools.jar.Main;
+
 public class Operations {
     static Double num1;
     static Double num2;
@@ -30,6 +33,12 @@ public class Operations {
                 num1 = Console.getDoubleInput("Enter a double.");
                 num2 = Console.getDoubleInput("Enter another double.");
                 Arithmetic.division(num1, num2);
+                MainMenu.mainMenu();
+                break;
+            case 5:
+                Submenu.arithmeticMenu();
+                break;
+            case 6:
                 MainMenu.mainMenu();
                 break;
             default:
@@ -76,6 +85,12 @@ public class Operations {
                 Trigonometry.asin(num1);
                 MainMenu.mainMenu();
                 break;
+            case 7:
+                Submenu.trigonometryMenu();
+                break;
+            case 8:
+                MainMenu.mainMenu();
+                break;
             default:
                 Console.println("Invalid selection. Please try again.");
                 Submenu.trigonometryMenu();
@@ -106,6 +121,11 @@ public class Operations {
                 num1 = Console.getDoubleInput("Enter a double.");
                 Exponents.sqrt(num1);
                 MainMenu.mainMenu();
+            case 5:
+                Submenu.exponentsMenu();
+                break;
+            case 6:
+                MainMenu.mainMenu();
                 break;
             default:
                 Console.println("Invalid selection. Please try again.");
@@ -122,9 +142,33 @@ public class Operations {
                 //Inversion.methodName(num1);
                 MainMenu.mainMenu();
                 break;
+            case 2:
+                Submenu.inversionMenu();
+                break;
+            case 3:
+                MainMenu.mainMenu();
+                break;
             default:
                 Console.println("Invalid selection. Please try again.");
                 Submenu.inversionMenu();
+        }
+
+    }
+
+    public static void performLogarithmOperation (Integer selection) {
+
+        switch (selection) {
+            case 1:
+                num1 = Console.getDoubleInput("Enter a double.");
+                //Inversion.methodName(num1);
+                MainMenu.mainMenu();
+                break;
+            case 2:
+                MainMenu.mainMenu();
+                break;
+            default:
+                Console.println("Invalid selection. Please try again.");
+                //Submenu.logarithmMenu();
         }
 
     }
