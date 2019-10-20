@@ -50,7 +50,11 @@ public class MainApplication {
                 System.out.println("Division Time!");
                 double a = Console.getDoubleInput("Enter your number:");
                 double b = Console.getDoubleInput("Enter your number:");
-                System.out.println(basic.calcDiv(a, b));
+                if (a == 0 && b == 0) {
+                    System.out.println("Undefined");
+                } else {
+                    System.out.println(basic.calcDiv(a, b));
+                }
             } else if (inputValue == 5) {
                 System.out.println("Square Root Time!");
                 double a = Console.getDoubleInput("Enter your number:");
