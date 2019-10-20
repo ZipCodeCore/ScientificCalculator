@@ -17,7 +17,7 @@ public class TangentTest {
     }
 
     @Test
-    public void tangestTest1() {
+    public void tangentTest1() {
         // given
         Tangent result = new Tangent();
         double inputValue = 45;
@@ -36,7 +36,7 @@ public class TangentTest {
     }
 
     @Test
-    public void tangestTest2() {
+    public void tangentTest2() {
         // given
         Tangent result = new Tangent();
         double inputValue = 90;
@@ -55,10 +55,10 @@ public class TangentTest {
     }
 
     @Test
-    public void tangestTest3() {
+    public void tangentTest3() {
         // given
         Tangent result = new Tangent();
-        double inputValue = 180;
+        double inputValue = -180;
         double expected;
         if(inputValue < 0) {
             expected = Math.tan(-inputValue);
