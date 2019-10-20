@@ -124,14 +124,15 @@ public class Statistics1VarTest {
             stats.setData(dataArr[i]);
             stats.calculateStatistics();
 
-            expected = "1-Variable Statistics:\n" +
+            expected = "\n1-Variable Statistics:\n" +
                     "n: " + Integer.toString(results[i][0].intValue()) + "\n" +
                     "Mean: " + Double.toString(results[i][1]) +"\n" +
                     "Median: " + Double.toString(results[i][2]) +"\n" +
                     "Min: " + Double.toString(results[i][3]) +"\n" +
                     "Max: " + Double.toString(results[i][4]) +"\n" +
                     "Sample Std Dev: " + Double.toString(results[i][5]) +"\n" +
-                    "Sample Var: " + Double.toString(results[i][6]);
+                    "Sample Var: " + Double.toString(results[i][6]) +
+                    "\n\nReturning to normal mode";
             actual = stats.getOutput();
             Assert.assertEquals(actual, expected);
         }
