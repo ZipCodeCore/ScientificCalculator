@@ -14,10 +14,7 @@ public class MainApplication {
     private static double currentMemory;
 
     public static void main(String[] args) {
-        Console.println("Welcome to my CLI Calculator!");
-        Console.println("\ttype 'help' for list of valid operations");
-        Console.println("\ttype 'exit' to exit CLI Calculator");
-        Console.getStringInput("press enter to begin");
+        startUpMessage(); // prints welcome message to console and awaits input
 
         while (calcOn == true) {
             setDisplay();
@@ -42,6 +39,13 @@ public class MainApplication {
 
 
     } // end main method
+
+    public static void startUpMessage() {
+        Console.println("Welcome to my CLI Calculator!");
+        Console.println("\ttype 'help' for list of valid operations");
+        Console.println("\ttype 'exit' to exit CLI Calculator");
+        Console.getStringInput("press enter to begin");
+    }
 
     public static void setDisplay() {
         Console.clear();
