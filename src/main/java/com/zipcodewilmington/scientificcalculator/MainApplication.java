@@ -9,6 +9,7 @@ public class MainApplication {
         //initial setup of fields
         Double currentDouble = 0.00;
         String currentString = "";
+        Double y;
 
         //creating instances of classes
         BasicCalculator basicCalc = new BasicCalculator();
@@ -30,27 +31,53 @@ public class MainApplication {
                     if (currentDouble == 0) {
                         currentDouble = Console.getDoubleInput("First number: ");
                     }
-                    Double y = Console.getDoubleInput(currentDouble + " + ");
+                    y = Console.getDoubleInput(currentDouble + " + ");
+
                     basicCalc.add(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
+                    currentString = basicCalc.getStringResult();
+
                     console.print(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "subtract":
-                    basicCalc.subtract(currentDouble);
+                    if (currentDouble == 0) {
+                        currentDouble = Console.getDoubleInput("First number: ");
+                    }
+                    y = Console.getDoubleInput(currentDouble + " - ");
+
+                    basicCalc.subtract(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
+                    currentString = basicCalc.getStringResult();
                     console.print(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "multiply":
-                    basicCalc.multiply(currentDouble);
+                    if (currentDouble == 0) {
+                        currentDouble = Console.getDoubleInput("First number: ");
+                    }
+                    y = Console.getDoubleInput(currentDouble + " * ");
+
+                    basicCalc.multiply(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
+                    currentString = basicCalc.getStringResult();
                     console.print(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "divide":
-                    basicCalc.divide(currentDouble);
+
+                    if (currentDouble == 0) {
+                        currentDouble = Console.getDoubleInput("First number: ");
+                    }
+
+                    y = Console.getDoubleInput(currentDouble + " / ");
+                    while(y == 0){
+                        y = Console.getDoubleInput("Please enter a non-zero denominator: ");
+                    }
+
+                    basicCalc.divide(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
+                    currentString = basicCalc.getStringResult();
                     console.print(basicCalc.getStringResult());//place holder for display
                     break;
 
@@ -93,4 +120,7 @@ public class MainApplication {
         }
         System.exit(0);
     }
+
+
+
 }

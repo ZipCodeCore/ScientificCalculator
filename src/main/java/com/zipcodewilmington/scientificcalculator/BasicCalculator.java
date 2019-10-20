@@ -16,7 +16,8 @@ public class BasicCalculator {
     public void add(Double x, Double y){
         try {
 
-            //Checks if there's already a number to work with
+            //Checks if there's already a Chl
+            // number to work with
 //            if (x == 0) {
 //                x = Console.getDoubleInput("First number: ");
 //            }
@@ -33,13 +34,8 @@ public class BasicCalculator {
         }
     }
 
-    public void subtract(Double x){
+    public void subtract(Double x, Double y){
         try {
-            if (x == 0) {
-                x = Console.getDoubleInput("First number: ");
-            }
-
-            Double y = Console.getDoubleInput(x + " - ");
             this.setDoubleResult(x - y);
             this.setStringResult(Double.toString(x - y));
 
@@ -51,13 +47,8 @@ public class BasicCalculator {
         }
     }
 
-    public void multiply(Double x){
+    public void multiply(Double x, Double y){
         try {
-            if (x == 0) {
-                x = Console.getDoubleInput("First number: ");
-            }
-
-            Double y = Console.getDoubleInput(x + " * ");
             this.setDoubleResult(x * y);
             this.setStringResult(Double.toString(x * y));
 
@@ -68,17 +59,8 @@ public class BasicCalculator {
         }
     }
 
-    public void divide(Double x){
+    public void divide(Double x, Double y){
         try {
-            if (x == 0) {
-                x = Console.getDoubleInput("First number: ");
-            }
-
-            Double y = Console.getDoubleInput(x + " / ");
-            while(y == 0){
-                y = Console.getDoubleInput("Please enter a non-zero denominator: ");
-            }
-
             this.setDoubleResult(x / y);
             this.setStringResult(Double.toString(x / y));
 
