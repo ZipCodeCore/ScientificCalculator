@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Calculator {
     Scanner scanner = new Scanner(System.in);
+    InputChecker inputCheck = new InputChecker();
     //create an array that includes all of the available operators
     String[] operators = {"add", "subtract", "multiply", "divide", "exponent", "square", "square root", "factorial",
             "inverse", "invert", "sin", "cos,", "tan", "inverse sin", "inverse cos",
@@ -60,21 +61,41 @@ public class Calculator {
                 System.out.println("Choose your Operator\nType \"cmd\" for commands.");
                 userOperator = scanner.nextLine();
             }
+
                 if(userOperator.equals("return")){
                     break;
                 }
 
-                //ask the user for a value
-                System.out.println("Enter your value");
-                String userValueAsString = scanner.nextLine();
-                Double userValue1 = Double.parseDouble(userValueAsString);
+            if(userOperator.equals("return")){
+                break;
+            }
 
+                //ask the user for a value
+                    System.out.println("Enter your value");
+                    String userValueAsString = scanner.nextLine();
+                    boolean correctInput = false;
+                    //run a while loop that checks if a proper number was entered
+                    while(!correctInput) {
+                            correctInput = inputCheck.isNumeric(userValueAsString);
+                            if(correctInput) break;
+                            System.out.println("Enter your value");
+                            userValueAsString = scanner.nextLine();
+
+                    }
+                    Double userValue1 = Double.parseDouble(userValueAsString);
 
                 if (need2ValuesList.contains(userOperator)) {
                     //ask for a second value
                     System.out.println("Enter your second value");
                     String userValue2AsString = scanner.nextLine();
-                    ;
+                    correctInput = false;
+                    //run a while loop that checks if a proper number was entered
+                    while(!correctInput) {
+                        correctInput = inputCheck.isNumeric(userValueAsString);
+                        if(correctInput) break;
+                        System.out.println("Enter your second value");
+                        userValueAsString = scanner.nextLine();
+                    }
                     Double userValue2 = Double.parseDouble(userValue2AsString);
 
                     //run the need2value operators INSIDE the if statement
@@ -109,7 +130,6 @@ public class Calculator {
                     }
                 } else if (!need2ValuesList.contains(userOperator)) {
                     switch (userOperator) {
-
                         case "square":
                             Squared squared = new Squared();
                             Double powerOf = squared.squared(userValue1);
@@ -179,22 +199,17 @@ public class Calculator {
                             if (inverseLog != null)
                                 System.out.println("10^" + userValue1 + " = " + inverseLog);
                             break;
+                        case "natural log":
+                            NaturalLogarithm naturalLogarithm = new NaturalLogarithm();
+                            Double naturalLog = naturalLogarithm.naturalLogarithm(userValue1);
+                            if(naturalLog != null)
+                                System.out.println("ln(" + userValue1 + ") = " + naturalLog);
+                            break;
                         case "inverse natural log":
                             InverseNaturalLogarithm inverseNaturalLogarithm = new InverseNaturalLogarithm();
                             Double inverseNatLog = inverseNaturalLogarithm.inverseNaturalLogarithm(userValue1);
                             System.out.println("(e^" + userValue1 + " = " + inverseNatLog);
                             break;
-
-                        case "return":
-                            runCalculator();
-                            break;
-                    /*case "natural log":
-                        NaturalLogarithm naturalLogarithm = new NaturalLogarithm();
-                        Double naturalLog = naturalLogarithm.naturalLogarithm(userValue1);
-                        if(naturalLog != null){
-                            System.out.println("ln(" + uservalue1 + ") = " + naturalLog);
-                        }
-                        break;*/
                     }
                 }
             }
