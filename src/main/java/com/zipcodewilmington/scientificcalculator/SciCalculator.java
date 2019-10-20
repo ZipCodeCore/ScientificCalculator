@@ -31,7 +31,7 @@ public class SciCalculator {
             mode = "decimal";
         }
         else if (operation.equals("disp hex")) {
-            mode = "hexidecimal";
+            mode = "hexadecimal";
         }
         else {
             for (int i = 0; i < modes.length; i++) {
@@ -49,18 +49,21 @@ public class SciCalculator {
     }
 
     public static String convertNumberToMode(String number, String mode) {
-        int num = Integer.valueOf(number);
         String convertedNum = "";
+        int num;
         if (mode.equals("binary")) {
+            num = Integer.valueOf(number);
             convertedNum = Integer.toBinaryString(num);
         }
         else if (mode.equals("octal")) {
+            num = Integer.valueOf(number);
             convertedNum = Integer.toOctalString(num);
         }
         else if (mode.equals("decimal")) {
-            convertedNum = String.valueOf(num);
+            convertedNum = number;
         }
         else if (mode.equals("hexadecimal")) {
+            num = Integer.valueOf(number);
             convertedNum = Integer.toHexString(num);
         }
         return convertedNum;

@@ -21,9 +21,9 @@ public class MainApplication {
             setDisplay();
             // get operation from user input
             currentOperation = Console.getStringInput("Enter your operation: ");
-
-            executeOperation(currentOperation);
             checkErrorInState();
+            executeOperation(currentOperation);
+
             //check if currentState = "Err"
                 // if true, lock calculator until currentState reset
         } // end while
@@ -81,6 +81,7 @@ public class MainApplication {
             Console.println("\tadd, subtract, multiply, divide, \n\t" +
                     "inverse, invert sign, square, sqrt, exp");
             Console.println("\tm+, mc, mrc");
+            Console.println("\tdisp, disp bin, disp oct, disp dec, disp hex");
         }
         else if (operation.contains("disp")) {
             currentDisplayMode = SciCalculator.switchDisplayMode(currentDisplayMode, operation);

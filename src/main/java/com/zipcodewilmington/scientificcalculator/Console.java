@@ -41,7 +41,7 @@ public class Console {
         do {
             print(prompt);
             userInput = scanner.nextLine();
-        } while (!userInput.matches("[0-9]+"));
+        } while (!userInput.matches("/\\d+\\.?\\d*/"));
 
         return Double.valueOf(userInput);
     }
