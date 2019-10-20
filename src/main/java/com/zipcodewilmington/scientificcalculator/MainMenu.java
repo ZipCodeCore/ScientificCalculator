@@ -16,7 +16,10 @@ public class MainMenu {
                         "3. Exponents \n" +
                         "4. Logarithms \n" +
                         "5. Inversions \n" +
-                        "6. Exit \n");
+                        "6. M+ \n" +
+                        "7. MRC \n" +
+                        "8. MC \n" +
+                        "9. Exit \n");
 
         switch (input) {
             case 1:
@@ -33,8 +36,22 @@ public class MainMenu {
                 break;
             case 5:
                 Submenu.inversionMenu();
+                MainMenu.mainMenu();
                 break;
             case 6:
+                Memory.memorySave();
+                MainMenu.mainMenu();
+                break;
+            case 7:
+                Memory.memoryReturn();
+                MainMenu.mainMenu();
+                break;
+            case 8:
+                Memory.memoryClear();
+                MainMenu.mainMenu();
+                break;
+            case 9:
+                Console.println("Bye!");
                 System.exit(0);
                 break;
             default:

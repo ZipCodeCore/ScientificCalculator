@@ -1,8 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import jdk.internal.loader.AbstractClassLoaderValue;
-import sun.tools.jar.Main;
-
 public class Operations {
     static Double num1;
     static Double num2;
