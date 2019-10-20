@@ -35,7 +35,7 @@ public class Console {
 
     public static Double getDoubleInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
-        println(prompt);
+        print(prompt);
         Double userInput = Double.valueOf(scanner.nextLine());
         return userInput;
     }

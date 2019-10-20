@@ -31,7 +31,7 @@ public class MainApplication {
             switch (s) {
                 case "add":
 
-                    currentDouble = getInputs.getx(currentDouble, "");
+                    currentDouble = getInputs.getx(currentDouble, "First number: ");
                     y = getInputs.gety(" + ");
 
                     basicCalc.add(currentDouble, y);
@@ -43,7 +43,7 @@ public class MainApplication {
 
                 case "subtract":
 
-                    currentDouble = getInputs.getx(currentDouble,"");
+                    currentDouble = getInputs.getx(currentDouble,"First number: ");
                     y = getInputs.gety(" - ");
 
                     basicCalc.subtract(currentDouble, y);
@@ -54,7 +54,7 @@ public class MainApplication {
 
                 case "multiply":
 
-                    currentDouble = getInputs.getx(currentDouble,"");
+                    currentDouble = getInputs.getx(currentDouble,"First Number: ");
                     y = getInputs.gety(" * ");
 
                     basicCalc.multiply(currentDouble, y);
@@ -65,7 +65,7 @@ public class MainApplication {
 
                 case "divide":
 
-                    currentDouble = getInputs.getx(currentDouble,"");
+                    currentDouble = getInputs.getx(currentDouble,"First number");
                     y = getInputs.gety(" / ");
 
                     while(y == 0){
@@ -120,7 +120,7 @@ public class MainApplication {
                     break;
 
                 case "settings":
-
+                    memoryandSettings.select();
                     break;
 
                 case "exit":
@@ -139,7 +139,7 @@ public class MainApplication {
             }
 
             //currently empty method
-            //display.updatedisplay();
+            //Console.updatedisplay();
 
         }
         System.exit(0);
