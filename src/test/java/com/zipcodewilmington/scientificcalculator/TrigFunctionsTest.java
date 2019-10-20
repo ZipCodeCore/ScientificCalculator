@@ -22,7 +22,7 @@ public class TrigFunctionsTest {
 
 
     @Test
-    public void changeMode() {
+    public void changeModeTest() {
         trig.radianMode();
         assertEquals(false, trig.inDegreeMode());
 
@@ -34,7 +34,7 @@ public class TrigFunctionsTest {
     }
 
     @Test
-    public void radianMode() {
+    public void radianModeTest() {
         trig.radianMode();
         assertEquals(false, trig.inDegreeMode());
 
@@ -47,7 +47,7 @@ public class TrigFunctionsTest {
     }
 
     @Test
-    public void degreeMode() {
+    public void degreeModeTest() {
         trig.degreeMode();
         assertEquals(true, trig.inDegreeMode());
 
