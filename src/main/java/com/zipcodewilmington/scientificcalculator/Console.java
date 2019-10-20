@@ -38,10 +38,12 @@ public class Console {
     public static Double getDoubleInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         String userInput = "";
+        Boolean check = false;
         do {
             print(prompt);
             userInput = scanner.nextLine();
-        } while (!userInput.matches("/\\d+\\.?\\d*/"));
+            check = userInput.matches("^\\d+(\\.\\d*)?$");
+        } while (check == false);
 
         return Double.valueOf(userInput);
     }
