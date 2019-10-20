@@ -2,13 +2,13 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class ErrorMessages {
 
-    public static String errorMessage(Double d, Double d2, String s1) {
+    public static String errorMessage(Double d, Double d2, Integer s1) {
 
-        if(d2 == 0 && s1.equalsIgnoreCase("divide")) {
-            Console.println("You cannot divide by 0. \n");
-            Intro.intro();
+        if(d2 == 0 && s1 == 4) {
+                Console.println("You cannot divide by 0. \n");
+                Submenu.arithmeticMenu();
 
-        } else if (d <0 && s1.equalsIgnoreCase("4")) {
+        } else if (d <0) {
             Console.println("You cannot find the square root of a negative number.");
 
         }
