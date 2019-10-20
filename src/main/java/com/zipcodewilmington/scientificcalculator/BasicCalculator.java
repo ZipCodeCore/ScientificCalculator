@@ -74,6 +74,10 @@ public class BasicCalculator {
             }
 
             Double y = Console.getDoubleInput(x + " / ");
+            while(y == 0){
+                y = Console.getDoubleInput("Please enter a non-zero denominator: ");
+            }
+
             this.setDoubleResult(x / y);
             this.setStringResult(Double.toString(x / y));
 
