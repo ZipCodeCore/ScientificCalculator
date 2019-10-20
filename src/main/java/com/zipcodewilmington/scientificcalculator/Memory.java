@@ -1,17 +1,19 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Memory {
+static Double savedValue;
 
-    public void memorySave(Double d) {
-       Double savedValue = d;
+    public static void memorySave() {
+       savedValue = Console.getDoubleInput("Enter the number you want to save and press enter.");
     }
 
-    public void memoryClear() {
-        Double savedValue;
+    public static void memoryClear() {
+        savedValue = null;
+        Console.println("\n Memory cleared.");
+
     }
 
-    public static Double memoryReturn(Double d) {
-        Double savedValue = d;
-        return savedValue;
+    public static void memoryReturn() {
+        Console.println("\n" + savedValue);
     }
 }
