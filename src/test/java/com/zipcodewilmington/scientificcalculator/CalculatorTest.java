@@ -159,6 +159,76 @@ public class CalculatorTest {
         }
 
     }
+
+
+    @Test
+    public void handleBinaryOperatorTest() {
+        // addition tests
+        calculator.setDisplay(5.0);
+        calculator.handleBinaryOperator("+", 5.0);
+        assertEquals(10.0, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(2.0);
+        calculator.handleBinaryOperator("+", 2.0);
+        assertNotEquals(5.0, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(514.5);
+        calculator.handleBinaryOperator("+", 27.0);
+        assertEquals(541.5, calculator.getDisplay(), 0);
+
+
+        //subtraction tests
+        calculator.setDisplay(5.0);
+        calculator.handleBinaryOperator("-", 5.0);
+        assertEquals(0.0, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(10.0);
+        calculator.handleBinaryOperator("-", 2.0);
+        assertEquals(8.0, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(64.5);
+        calculator.handleBinaryOperator("-", 4.0);
+        assertEquals(60.5, calculator.getDisplay(), 0);
+
+
+        //Division tests
+        calculator.setDisplay(5.0);
+        calculator.handleBinaryOperator("/", 2.0);
+        assertEquals(2.5, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(10.0);
+        calculator.handleBinaryOperator("/", 5.0);
+        assertEquals(2.0, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(100.0);
+        calculator.handleBinaryOperator("/", 10.0);
+        assertEquals(10.0, calculator.getDisplay(), 0);
+
+
+        //Multiplication tests
+        calculator.setDisplay(5.0);
+        calculator.handleBinaryOperator("*", 2.0);
+        assertEquals(10, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(10.0);
+        calculator.handleBinaryOperator("*", 5.0);
+        assertEquals(50.0, calculator.getDisplay(), 0);
+
+        calculator.setDisplay(2.5);
+        calculator.handleBinaryOperator("*", 10.0);
+        assertEquals(25.0, calculator.getDisplay(), 0);
+
+        Double val1 = Math.random() * 100.0;
+        Double val2 = Math.random() * 100.0;
+        Double expected = Math.log(val1) / Math.log(val2);
+
+        calculator.setDisplay(val1);
+        calculator.handleBinaryOperator("logb", val2);
+
+        assertEquals(expected, calculator.getDisplay(), 0.0);
+    }
+
+
     @Test
     public void testHandleOperator_inv() {
 
