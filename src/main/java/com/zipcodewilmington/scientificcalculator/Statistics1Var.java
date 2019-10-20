@@ -94,13 +94,13 @@ public class Statistics1Var {
         this.stdDev = this.calcStdDev();
         this.var = this.calcVar();
         this.output = "\n1-Variable Statistics:\n" +
-                "n: " + Console.printNum(new Double (this.n.doubleValue()), displayMode) + "\n" +
-                "Mean: " + Console.printNum(this.mean, displayMode) +"\n" +
-                "Median: " + Console.printNum(this.median, displayMode) +"\n" +
-                "Min: " + Console.printNum(this.min, displayMode) +"\n" +
-                "Max: " + Console.printNum(this.max, displayMode) +"\n" +
-                "Sample Std Dev: " + Console.printNum(this.stdDev, displayMode) +"\n" +
-                "Sample Var: " + Console.printNum(this.var, displayMode);
+                "n: " + Console.printNum(new Double (this.n.doubleValue()), this.displayMode) + "\n" +
+                "Mean: " + Console.printNum(this.mean, this.displayMode) +"\n" +
+                "Median: " + Console.printNum(this.median, this.displayMode) +"\n" +
+                "Min: " + Console.printNum(this.min, this.displayMode) +"\n" +
+                "Max: " + Console.printNum(this.max, this.displayMode) +"\n" +
+                "Sample Std Dev: " + Console.printNum(this.stdDev, this.displayMode) +"\n" +
+                "Sample Var: " + Console.printNum(this.var, this.displayMode);
     }
 
     public Double calcMean() {
