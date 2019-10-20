@@ -16,11 +16,11 @@ public class ScientificCalculator {
     //Scientific Operator functions
     public void square(Double x){
         try {
-            if (x >= 0) {
-                this.setDoubleResult(x * x);
-                this.setStringResult(Double.toString(x * x));
-            }
+
+            this.setDoubleResult(x * x);
+            this.setStringResult(Double.toString(x * x));
         }
+
         //for non-double inputs
         catch(Exception e){
             this.setDoubleResult(null);
@@ -30,10 +30,10 @@ public class ScientificCalculator {
 
     public void squareRoot(Double x){
         try {
-            if (x >= 0) {
-                this.setDoubleResult(Math.sqrt(x));
-                this.setStringResult(Double.toString(Math.sqrt(x)));
-            }
+
+            this.setDoubleResult(Math.sqrt(x));
+            this.setStringResult(Double.toString(Math.sqrt(x)));
+
         }
         //for non double inputs
         catch(Exception e){
@@ -44,10 +44,10 @@ public class ScientificCalculator {
 
     public void inverse(Double x){
         try {
-            if (x > 0) {
-                this.setDoubleResult(1 / x);
-                this.setStringResult(Double.toString(1 / x));
-            }
+
+            this.setDoubleResult(1 / x);
+            this.setStringResult(Double.toString(1 / x));
+
         }
         //for non double inputs
         catch(Exception e){
@@ -57,12 +57,10 @@ public class ScientificCalculator {
 
     public void switchSign(Double x){
         try {
-            x = x * -1;
 
-            if (x > 0) {
-                this.setDoubleResult(x * -1);
-                this.setStringResult(Double.toString(x * -1));
-            }
+            this.setDoubleResult(x * -1);
+            this.setStringResult(Double.toString(x * -1));
+
         }
         //for non double inputs and division by zero.
         catch(Exception e){
@@ -72,10 +70,10 @@ public class ScientificCalculator {
 
     public void sine(Double x){
         try {
-            if (x > 0) {
-                this.setDoubleResult(Math.sin(x));
-                this.setStringResult(Double.toString(Math.sin(x)));
-            }
+
+            this.setDoubleResult(Math.sin(x));
+            this.setStringResult(Double.toString(Math.sin(x)));
+
         }
         //for non double inputs
         catch (Exception e) {
@@ -86,10 +84,10 @@ public class ScientificCalculator {
 
     public void cosine(Double x){
         try {
-            if (x > 0) {
-                this.setDoubleResult(Math.cos(x));
-                this.setStringResult(Double.toString(Math.cos(x)));
-            }
+
+            this.setDoubleResult(Math.cos(x));
+            this.setStringResult(Double.toString(Math.cos(x)));
+
         }
         //for non double inputs
         catch (Exception e) {
@@ -103,11 +101,9 @@ public class ScientificCalculator {
     public void tangent(Double x) {
         try {
 
-            if (x > 0) {
+            this.setDoubleResult(Math.tan(x));
+            this.setStringResult(Double.toString(Math.tan(x)));
 
-                this.setDoubleResult(Math.tan(x));
-                this.setStringResult(Double.toString(Math.tan(x)));
-            }
         }
         //for non double inputs
         catch(Exception e){
@@ -124,10 +120,9 @@ public class ScientificCalculator {
 
             sin = Math.sin(radians);
 
-            if (x > 0) {
-                this.setDoubleResult(Math.toDegrees(Math.asin(sin)));
-                this.setStringResult(Double.toString(Math.toDegrees(Math.asin(sin))));
-            }
+            this.setDoubleResult(Math.toDegrees(Math.asin(sin)));
+            this.setStringResult(Double.toString(Math.toDegrees(Math.asin(sin))));
+
         }
         //for non double inputs and division by zero.
         catch(Exception e){
@@ -144,10 +139,9 @@ public class ScientificCalculator {
 
             cos = Math.cos(radians);
 
-            if (x > 0) {
-                this.setDoubleResult(Math.toDegrees(Math.acos(cos)));
-                this.setStringResult(Double.toString(Math.toDegrees(Math.acos(cos))));
-            }
+            this.setDoubleResult(Math.toDegrees(Math.acos(cos)));
+            this.setStringResult(Double.toString(Math.toDegrees(Math.acos(cos))));
+
         }
         //for non double inputs and division by zero.
         catch(Exception e){
@@ -164,10 +158,9 @@ public class ScientificCalculator {
 
             tan = Math.tan(radians);
 
-            if (x > 0) {
-                this.setDoubleResult(Math.toDegrees(Math.atan(tan)));
-                this.setStringResult(Double.toString(Math.toDegrees(Math.atan(tan))));
-            }
+            this.setDoubleResult(Math.toDegrees(Math.atan(tan)));
+            this.setStringResult(Double.toString(Math.toDegrees(Math.atan(tan))));
+
         }
         //for non double inputs and division by zero.
         catch(Exception e){
@@ -180,15 +173,15 @@ public class ScientificCalculator {
 
             int i, fact = 1;
 
-            if (x >= 0) {
-                for (i = 0; i <= x; i++) {
+            for (i = 0; i <= x; i++) {
 
-                    fact = fact * i;
-                }
+                fact = fact * i;
+
 
                 this.setDoubleResult(x * fact);
                 this.setStringResult(Double.toString(x * fact));
             }
+
 
         }
         //for non double inputs
