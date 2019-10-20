@@ -22,6 +22,7 @@ public class MainApplication {
             currentOperation = Console.getStringInput("Enter your operation: ");
 
             executeOperation(currentOperation);
+            checkErrorInState();
             //check if currentState = "Err"
                 // if true, lock calculator until currentState reset
         } // end while
@@ -34,6 +35,15 @@ public class MainApplication {
         Console.println("\ttype 'help' for list of valid operations");
         Console.println("\ttype 'exit' to exit CLI Calculator");
         Console.getStringInput("press enter to begin");
+    }
+
+    public static void checkErrorInState() {
+        if (currentState.equals("Err")) {
+            setDisplay();
+            Console.println("You must clear the error before continuing");
+            Console.println("choose a new value to reset the number in the display");
+            currentState = String.valueOf(Console.getDoubleInput("Please enter a valid number: "));
+        }
     }
 
     public static void setDisplay() {
@@ -122,7 +132,9 @@ public class MainApplication {
     }
 
     public static void executeSciOperation(String operation) {
-        double x = Double.valueOf(currentState);
+        checkErrorInState();
+        double x;
+        x = Double.valueOf(currentState);
 
         // m+ currentMemory = currentState
         if (operation.equals("m+")) {

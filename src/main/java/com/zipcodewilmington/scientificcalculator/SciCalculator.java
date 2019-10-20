@@ -20,4 +20,8 @@ public class SciCalculator {
         return String.valueOf(Math.atan(x));
     }
 
+    public static void switchDisplayMode(String mode) {
+        
+    }
+
 }
