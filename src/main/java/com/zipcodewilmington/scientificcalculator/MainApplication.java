@@ -42,24 +42,24 @@ public class MainApplication {
                 System.out.println(num1 + " / " + num2 + " = " + result);
                 break;
             case 5:
-                simpleMath.square(num1);
+                result = simpleMath.square(num1);
                 System.out.println(num1 + " squared is " + result);
                 break;
             case 6:
                 num2 = Console.getDoubleInput("Enter your second number.");
-                simpleMath.expo(num1, num2);
+                result = simpleMath.expo(num1, num2);
                 System.out.println(num1 + " to the power of " + num2 + " = " + result);
                 break;
             case 7:
-                simpleMath.squareRoot(num1);
+                result = simpleMath.squareRoot(num1);
                 System.out.println("The square root of " + num1 + " is " + result);
                 break;
             case 8:
-                simpleMath.inverse(num1);
+                result = simpleMath.inverse(num1);
                 System.out.println("The inverse of " + num1 + " is " + result);
                 break;
             case 9:
-                simpleMath.invertSign(num1);
+                result = simpleMath.invertSign(num1);
                 System.out.println("The invert of " + num1 + " is " + result);
             case 10:
                 System.out.println("The logarithm of " + num1 + " is " + result);
