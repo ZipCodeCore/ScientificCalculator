@@ -28,38 +28,38 @@ public class TestSciCalculator
 
     @Test
     public void testcosine1() {
-        String expected = "-0.9880316240928618";
+        String expected = "0.15425144988758405";
         String actual = cosine(30);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testcosine2() {
-        String expected = "0.8509035245341184";
+        String expected = "0.5253219888177297";
         String actual = cosine(45);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testcosine3() {
-        String expected = "-0.3048106211022167";
+        String expected = "-0.9524129804151563";
         String actual = cosine(60);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testtangent1() {
-        String expected = "-0.9880316240928618";
+        String expected = "-6.405331196646276";
         String actual = tangent(30);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testtangent2() {
-        String expected = "0.8509035245341184";
+        String expected = "1.6197751905438615";
         String actual = tangent(45);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void testtangent3() {
-        String expected = "-0.3048106211022167";
+        String expected = "0.320040389379563";
         String actual = tangent(60);
         Assert.assertEquals(expected, actual);
     }
@@ -104,7 +104,7 @@ public class TestSciCalculator
 
     @Test
     public void testcotan1() {
-        String expected = "1.5485777614681775";
+        String expected = "1.5374753309166493";
         String actual = cotan(30);
         Assert.assertEquals(expected, actual);
     }
@@ -116,7 +116,7 @@ public class TestSciCalculator
     }
     @Test
     public void testcotan3() {
-        String expected = "-1.5485777614681775";
+        String expected = "1.554131203080956";
         String actual = cotan(60);
         Assert.assertEquals(expected, actual);
     }

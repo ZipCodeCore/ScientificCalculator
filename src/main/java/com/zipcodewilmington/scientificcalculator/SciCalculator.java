@@ -76,7 +76,6 @@ public class SciCalculator {
         else if (mode.equals("radian")) {
             convertedUnit = String.valueOf(Math.toDegrees(num));
         }
-
     return convertedUnit;
     }
 // if input contains disp:
