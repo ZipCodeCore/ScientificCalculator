@@ -9,7 +9,9 @@ public class Submenu {
                         "1. Add \n" +
                         "2. Subtract \n" +
                         "3. Multiply \n" +
-                        "4. Divide \n");
+                        "4. Divide \n" +
+                        "5. Return to Arithmetic Menu \n" +
+                        "6. Return to Main Menu \n");
 
         Operations.performArithmeticOperation(input2);
 
@@ -25,7 +27,9 @@ public class Submenu {
                         "3. Cosine \n" +
                         "4. Inverse Tangent \n" +
                         "5. Inverse Cosine \n" +
-                        "6. Inverse Sine \n");
+                        "6. Inverse Sine \n" +
+                        "7. Return to Trig Menu \n" +
+                        "8. Return to Main Menu \n");
 
         Operations.performTrigonometryOperation(input2);
 
@@ -39,7 +43,9 @@ public class Submenu {
                         "1. Square \n" +
                         "2. Cube \n" +
                         "3. Variable Exponent \n" +
-                        "4. Square Root \n");
+                        "5. Square Root \n" +
+                        "4. Return to Exponent Menu \n" +
+                        "5. Return to Main Menu \n");
 
         Operations.performExponentOperation(input2);
 
@@ -50,7 +56,9 @@ public class Submenu {
 
         Integer input2 = Console.getIntegerInput(
                 "Enter an operation \n" +
-                        "1. Invert Sign \n");
+                        "1. Invert Sign \n" +
+                        "2. Return to Inversion Menu \n" +
+                        "3. Return to Main Menu \n");
 
         Operations.performInversionOperation(input2);
 
