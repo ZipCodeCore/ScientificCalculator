@@ -50,20 +50,18 @@ public class SciCalculator {
 
     public static String convertNumberToMode(String number, String mode) {
         String convertedNum = "";
-        int num;
+        int num = (int) Math.round(Double.valueOf(number));
+
         if (mode.equals("binary")) {
-            num = Integer.valueOf(number);
             convertedNum = Integer.toBinaryString(num);
         }
         else if (mode.equals("octal")) {
-            num = Integer.valueOf(number);
             convertedNum = Integer.toOctalString(num);
         }
         else if (mode.equals("decimal")) {
             convertedNum = number;
         }
         else if (mode.equals("hexadecimal")) {
-            num = Integer.valueOf(number);
             convertedNum = Integer.toHexString(num);
         }
         return convertedNum;
