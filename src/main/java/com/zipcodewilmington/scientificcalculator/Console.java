@@ -16,14 +16,10 @@ public class Console {
     }
 
     public static void clear() {
-//        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+//        System.out.print("\033[H\033[2J");
+//        System.out.flush();
     }
-
-//    public static void close() {
-//        System.out.close();
-//    }
 
     public static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);

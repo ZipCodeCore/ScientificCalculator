@@ -12,6 +12,7 @@ public class MainApplication {
     private static String currentState = "0";
     private static String currentOperation = "none";
     private static double currentMemory = 0;
+    private static String currentDisplayMode = "decimal";
 
     public static void main(String[] args) {
         startUpMessage(); // prints welcome message to console and awaits input
@@ -47,9 +48,11 @@ public class MainApplication {
     }
 
     public static void setDisplay() {
+        String value = SciCalculator.convertNumberToMode(currentState, currentDisplayMode);
         Console.clear();
         Console.println("CLI Scientific Calculator");
-        Console.println("Value:\t\t\t\t" + currentState);
+        Console.println("Mode: \t\t\t\t" + currentDisplayMode);
+        Console.println("Value:\t\t\t\t" + value);
         Console.println("Previous operation:\t" + currentOperation + "\n");
         // if help bool true, display more
     }
@@ -74,9 +77,13 @@ public class MainApplication {
             calcOn = false;
         }
         else if (operation.equals("help")) {
-            Console.println("set, clear, exit, help");
-            Console.println("add, subtract, multiply, divide, inverse, invert sign");
-            Console.println("m+, mc, mrc");
+            Console.println("\tset, clear, exit, help");
+            Console.println("\tadd, subtract, multiply, divide, \n\t" +
+                    "inverse, invert sign, square, sqrt, exp");
+            Console.println("\tm+, mc, mrc");
+        }
+        else if (operation.contains("disp")) {
+            currentDisplayMode = SciCalculator.switchDisplayMode(currentDisplayMode, operation);
         }
     }
 
