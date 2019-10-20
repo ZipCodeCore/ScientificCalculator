@@ -73,9 +73,11 @@ public class Calculator {
                     boolean correctInput = false;
                     //run a while loop that checks if a proper number was entered
                     while(!correctInput) {
-                        correctInput = inputCheck.isNumeric(userValueAsString);
-                        System.out.println("Enter your value");
-                        userValueAsString = scanner.nextLine();
+                            correctInput = inputCheck.isNumeric(userValueAsString);
+                            if(correctInput) break;
+                            System.out.println("Enter your value");
+                            userValueAsString = scanner.nextLine();
+
                     }
                     Double userValue1 = Double.parseDouble(userValueAsString);
 
@@ -87,7 +89,8 @@ public class Calculator {
                     //run a while loop that checks if a proper number was entered
                     while(!correctInput) {
                         correctInput = inputCheck.isNumeric(userValueAsString);
-                        System.out.println("Enter your value");
+                        if(correctInput) break;
+                        System.out.println("Enter your second value");
                         userValueAsString = scanner.nextLine();
                     }
                     Double userValue2 = Double.parseDouble(userValue2AsString);
