@@ -180,18 +180,17 @@ public class Calculator {
                             if (inverseLog != null)
                                 System.out.println("10^" + userValue1 + " = " + inverseLog);
                             break;
+                        case "natural log":
+                            NaturalLogarithm naturalLogarithm = new NaturalLogarithm();
+                            Double naturalLog = naturalLogarithm.naturalLogarithm(userValue1);
+                            if(naturalLog != null)
+                                System.out.println("ln(" + userValue1 + ") = " + naturalLog);
+                            break;
                         case "inverse natural log":
                             InverseNaturalLogarithm inverseNaturalLogarithm = new InverseNaturalLogarithm();
                             Double inverseNatLog = inverseNaturalLogarithm.inverseNaturalLogarithm(userValue1);
                             System.out.println("(e^" + userValue1 + " = " + inverseNatLog);
                             break;
-                    /*case "natural log":
-                        NaturalLogarithm naturalLogarithm = new NaturalLogarithm();
-                        Double naturalLog = naturalLogarithm.naturalLogarithm(userValue1);
-                        if(naturalLog != null){
-                            System.out.println("ln(" + uservalue1 + ") = " + naturalLog);
-                        }
-                        break;*/
                     }
                 }
             }
