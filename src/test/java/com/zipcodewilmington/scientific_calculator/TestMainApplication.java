@@ -8,3 +8,4 @@ public class TestMainApplication {
     @Test
     String TestManny = "Does this work?"
 }
+@test
