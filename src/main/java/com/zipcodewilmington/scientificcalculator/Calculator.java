@@ -3,7 +3,6 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.SortedMap;
 
 public class Calculator {
     Scanner scanner = new Scanner(System.in);
@@ -20,7 +19,6 @@ public class Calculator {
 
     public Calculator() {
     }
-
     public void runCalculator() {
         boolean returnToMainMenu = true;
         while (returnToMainMenu) {
@@ -62,6 +60,9 @@ public class Calculator {
                 System.out.println("Choose your Operator\nType \"cmd\" for commands.");
                 userOperator = scanner.nextLine();
             }
+                if(userOperator.equals("return")){
+                    break;
+                }
 
                 //ask the user for a value
                 System.out.println("Enter your value");
@@ -108,9 +109,7 @@ public class Calculator {
                     }
                 } else if (!need2ValuesList.contains(userOperator)) {
                     switch (userOperator) {
-                        case "return":
-                            returnToMainMenu = false;
-                            break;
+
                         case "square":
                             Squared squared = new Squared();
                             Double powerOf = squared.squared(userValue1);
@@ -184,6 +183,10 @@ public class Calculator {
                             InverseNaturalLogarithm inverseNaturalLogarithm = new InverseNaturalLogarithm();
                             Double inverseNatLog = inverseNaturalLogarithm.inverseNaturalLogarithm(userValue1);
                             System.out.println("(e^" + userValue1 + " = " + inverseNatLog);
+                            break;
+
+                        case "return":
+                            runCalculator();
                             break;
                     /*case "natural log":
                         NaturalLogarithm naturalLogarithm = new NaturalLogarithm();
