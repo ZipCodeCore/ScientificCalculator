@@ -178,6 +178,11 @@ public class Calculator {
             } else { //error
                 this.throwError();
             }
+
+
+            if(display.equals(Double.NaN) || display.equals(Double.POSITIVE_INFINITY) || display.equals(Double.NEGATIVE_INFINITY)) {
+                throwError();
+            }
         }
     }
 

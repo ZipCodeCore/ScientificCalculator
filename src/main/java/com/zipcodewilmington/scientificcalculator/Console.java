@@ -21,6 +21,8 @@ public class Console {
             return "";
 //            return n.toHexString();
         }
+
+        return "";
     }
 
     public static void println(String output, Object... args) {
