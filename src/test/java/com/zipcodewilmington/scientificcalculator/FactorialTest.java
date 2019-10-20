@@ -20,8 +20,8 @@ public class FactorialTest {
     public void factorialTest1() {
         // given
         Factorial result = new Factorial();
-        Double inputValue = 5;
-        Double expected = 1;
+        double inputValue = 5;
+        double expected = 1;
             for(int i = 1; i <= inputValue;i++){
                 expected = expected * i;
             }
@@ -37,7 +37,7 @@ public class FactorialTest {
     public void factorialTest2() {
         // given
         Factorial result = new Factorial();
-        Integer inputValue = 10;
+        double inputValue = 10;
         double expected = 1;
         for(int i = 1; i <= inputValue;i++){
             expected = expected * i;
@@ -54,7 +54,7 @@ public class FactorialTest {
     public void factorialTest3() {
         // given
         Factorial result = new Factorial();
-        Integer inputValue = 1;
+        double inputValue = 1;
         double expected = 1;
         for(int i = 1; i <= inputValue;i++){
             expected = expected * i;
