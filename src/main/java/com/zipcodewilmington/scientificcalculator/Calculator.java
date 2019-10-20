@@ -212,6 +212,7 @@ public class Calculator {
             case "mrc":
                 this.lastInput = this.display;
                 this.display = this.memory.memoryRecall();
+                Console.println(this.display.toString());
                 break;
             case "last":
                 this.display = this.lastInput;
