@@ -16,13 +16,17 @@ public class Console {
     public static String printNum(Double outNum, Calculator.dMode mode) {
         if (mode == Calculator.dMode.DECIMAL) {
             return Double.toString(outNum);
-        } else if (mode == Calculator.dMode.HEXADECIMAL){
-            double n = outNum.doubleValue();
-            return "";
-//            return n.toHexString();
+        } else if (mode == Calculator.dMode.BINARY) {
+            Integer approx = outNum.intValue();
+            return Integer.toBinaryString(approx);
+        } else if (mode == Calculator.dMode.OCTAL) {
+            Integer approx = outNum.intValue();
+            return Integer.toOctalString(approx);
+        } else if (mode == Calculator.dMode.HEXADECIMAL) {
+            return Double.toHexString(outNum);
         }
 
-        return "";
+        return ""; // this can't happen
     }
 
     public static void println(String output, Object... args) {
@@ -35,7 +39,7 @@ public class Console {
 
         String input = scanner.nextLine().toLowerCase(); //get input from user
 
-        return Console.cleanInput(input);
+        return Console.cleanInput(input); // clean it (remove anything but numbers and commands/operators) and return
     }
 
     public static Double getNumber() {
