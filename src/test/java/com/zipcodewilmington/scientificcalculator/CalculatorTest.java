@@ -7,10 +7,36 @@ import static org.junit.Assert.*;
 
 public class CalculatorTest {
     private Calculator calculator;
+
     @Before
     public void setUp() throws Exception {
         this.calculator = new Calculator();
 
+    }
+
+    @Test
+    public void manTest() {
+        for (String op : Calculator.BINARYOPERATORS) {
+            String expected = Calculator.MANUAL.get(op);
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
+        for (String op : Calculator.UNARYOPERATORS) {
+            String expected = Calculator.MANUAL.get(op);
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
+        for (String op : Calculator.COMMANDS) {
+            String expected = Calculator.MANUAL.get(op);
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
+        String[] bogusInputs = {"","blargh","4.5"};
+        for (String op : bogusInputs) {
+            String expected = "Command not found";
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
     }
 
     @Test
