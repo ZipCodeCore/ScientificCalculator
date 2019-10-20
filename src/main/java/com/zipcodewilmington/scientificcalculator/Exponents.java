@@ -3,7 +3,7 @@ import java.lang.Math ;
 
 public class Exponents {
 
-    public static Double ExponentsMethod(Double baseNum, Double exp1) {
+    public static Double variableExponent(Double baseNum, Double exp1) {
         Double output = Math.pow(baseNum, exp1);
         Console.println( "\n" + output);
         return output;
