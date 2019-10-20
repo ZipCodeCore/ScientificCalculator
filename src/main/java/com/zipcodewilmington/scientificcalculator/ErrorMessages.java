@@ -12,7 +12,6 @@ public class ErrorMessages {
             Console.println("You cannot find the square root of a negative number.");
 
         }
-
         return null;
     }
 
@@ -20,5 +19,13 @@ public class ErrorMessages {
         Console.println("Invalid option. Please try again.");
     }
 
+    public static String noInverseZero(Double a)
+    {
+        if (a == 0)
+        {
+           Console.println("You cannot divide by 0. \n");
+            Intro.intro();
+        }
+    }
 
 }
