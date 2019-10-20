@@ -21,7 +21,7 @@ public class Intro {
                             "3. Multiply \n" +
                             "4. Divide \n");
 
-         /*   if (s1.equalsIgnoreCase("1")) {
+            if (s1.equalsIgnoreCase("1")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
                 Arithmetic.addition(d, d2);
@@ -36,14 +36,14 @@ public class Intro {
             } else if (s1.equalsIgnoreCase("3")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
-                Arithmetic.multiply(d, d2);
+                Arithmetic.multiplication(d, d2);
                 Intro.intro();
 
             } else if (s1.equalsIgnoreCase("4")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
-                ErrorMessages.errorMessage(d2, s1);
-                Arithmetic.divide(d, d2);
+                //ErrorMessages.errorMessage(d2, s1);
+                Arithmetic.division(d, d2);
                 Intro.intro();
 
             }
@@ -72,12 +72,12 @@ public class Intro {
             } else if (s1.equalsIgnoreCase("2")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
-                Exponents.squareRoot(d);
-                Intro.intro()
+                Exponents.sqrt(d);
+                Intro.intro();
             } else if (s1.equalsIgnoreCase("3")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
-                Exponents.exponent(d, d2);
+                Exponents.variableExponent(d, d2);
                 Intro.intro();
             }
         } else if (s.equalsIgnoreCase("4")) {
@@ -86,7 +86,7 @@ public class Intro {
         } else {
             ErrorMessages.invalidSelection();
             Intro.intro();
-       */ }
-        return null;
+
+            } return null;
+        }
     }
-}
