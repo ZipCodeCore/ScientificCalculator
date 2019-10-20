@@ -20,7 +20,7 @@ public class ScientificCalculator {
             if (x == 0) {
                 x = Console.getDoubleInput("Square: ");
             }
-            x = Console.getDoubleInput(x + " * ");
+            x = Console.getDoubleInput(x + " * " + x);
             this.setDoubleResult(x * x);
             this.setStringResult(Double.toString(x*x));
 
@@ -38,7 +38,7 @@ public class ScientificCalculator {
                 x = Console.getDoubleInput("Sqaure Root: ");
             }
 
-            x = Console.getDoubleInput(x + " ^ ");
+            x = Console.getDoubleInput("√" + x);
             this.setDoubleResult(Math.sqrt(x));
             this.setStringResult(Double.toString(Math.sqrt(x)));
 
@@ -52,13 +52,17 @@ public class ScientificCalculator {
 
     public void inverse(Double x){
         try {
-            if (x == 0) {
+            if (x > 0) {
                 x = Console.getDoubleInput("Inverse: ");
             }
 
-            Double y = Console.getDoubleInput(x + " * ");
-            this.setDoubleResult(x * y);
-            this.setStringResult(Double.toString(x * y));
+            while(x == 0){
+                x = Console.getDoubleInput("Please enter a non-zero denominator: ");
+            }
+
+            x = Console.getDoubleInput(1 + " / " + x);
+            this.setDoubleResult(1 / x);
+            this.setStringResult(Double.toString(1 / x));
 
         }
         //for non double inputs
@@ -79,6 +83,7 @@ public class ScientificCalculator {
                 x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
 
+            x = Console.getDoubleInput("-" + x);
             this.setDoubleResult(x * -1);
             this.setStringResult(Double.toString(x * -1));
 
@@ -99,6 +104,7 @@ public class ScientificCalculator {
                 x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
 
+            x = Console.getDoubleInput("sin(" + x + ")");
             this.setDoubleResult(Math.sin(x));
             this.setStringResult(Double.toString(Math.sin(x)));
 
@@ -120,6 +126,7 @@ public class ScientificCalculator {
                 x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
 
+            x = Console.getDoubleInput("cos(" + x + ")");
             this.setDoubleResult(Math.cos(x));
             this.setStringResult(Double.toString(Math.cos(x)));
 
@@ -140,20 +147,19 @@ public class ScientificCalculator {
                 x = Console.getDoubleInput("Tangent: ");
             }
 
-            while(x == 0){
+            while (x == 0) {
                 x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
 
-                this.setDoubleResult(Math.tan(x));
-                this.setStringResult(Double.toString(Math.tan(x)));
-
-            }
-            //for non double inputs
-            catch (Exception e) {
-                this.setDoubleResult(null);
-                this.setStringResult("ERROR");
-            }
-
+            x = Console.getDoubleInput("tan(" + x + ")");
+            this.setDoubleResult(Math.tan(x));
+            this.setStringResult(Double.toString(Math.tan(x)));
+        }
+        //for non double inputs
+        catch(Exception e){
+            this.setDoubleResult(null);
+            this.setStringResult("ERROR");
+        }
     }
 
     public void inverseSine(Double x){
@@ -166,13 +172,14 @@ public class ScientificCalculator {
 
 
             if (x > 0) {
-                x = Console.getDoubleInput("Inverse Sine: ");
+                x = Console.getDoubleInput("Inverse Sin: ");
             }
 
             while(x == 0){
                 x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
 
+            x = Console.getDoubleInput("sin-1(" + x + ")");
             this.setDoubleResult(Math.toDegrees(Math.asin(sin)));
             this.setStringResult(Double.toString(Math.toDegrees(Math.asin(sin))));
         }
@@ -183,29 +190,30 @@ public class ScientificCalculator {
     }
 
     public void inverseCosine(Double x){
-            try {
+        try {
 
-                double degrees = x;
-                double radians = Math.toRadians(degrees);
-                double cos;
+            double degrees = x;
+            double radians = Math.toRadians(degrees);
+            double cos;
 
-                cos = Math.cos(radians);
+            cos = Math.cos(radians);
 
-                if (x > 0) {
-                    x = Console.getDoubleInput("Inverse Cosine: ");
-                }
-
-                while(x == 0){
-                    x = Console.getDoubleInput("Please enter a non-zero denominator: ");
-                }
-
-                this.setDoubleResult(Math.toDegrees(Math.acos(cos)));
-                this.setStringResult(Double.toString(Math.toDegrees(Math.acos(cos))));
+            if (x > 0) {
+                x = Console.getDoubleInput("Inverse Cosin: ");
             }
-            //for non double inputs and division by zero.
-            catch(Exception e){
-                this.setStringResult("ERROR");
+
+            while(x == 0){
+                x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
+
+            x = Console.getDoubleInput("cos-1(" + x + ")");
+            this.setDoubleResult(Math.toDegrees(Math.acos(cos)));
+            this.setStringResult(Double.toString(Math.toDegrees(Math.acos(cos))));
+        }
+        //for non double inputs and division by zero.
+        catch(Exception e){
+            this.setStringResult("ERROR");
+        }
 
     }
 
@@ -226,6 +234,7 @@ public class ScientificCalculator {
                 x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
 
+            x = Console.getDoubleInput("tan-1(" + x + ")");
             this.setDoubleResult(Math.toDegrees(Math.atan(tan)));
             this.setStringResult(Double.toString(Math.toDegrees(Math.atan(tan))));
         }
@@ -262,7 +271,6 @@ public class ScientificCalculator {
         }
     }
 
-
     //Getters and Setters for class fields
 
     public double getDoubleResult() {
@@ -280,8 +288,4 @@ public class ScientificCalculator {
     public void setStringResult(String stringResult) {
         this.stringResult = stringResult;
     }
-
-
-
-
 }
