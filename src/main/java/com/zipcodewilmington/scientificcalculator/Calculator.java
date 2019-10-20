@@ -230,7 +230,7 @@ public class Calculator {
                 break;
             case "stats":
                 Console.println("Statistics Mode: enter data, 'q' to analyze");
-                Statistics1Var stats = new Statistics1Var(); // create stats object
+                Statistics1Var stats = new Statistics1Var(displayMode); // create stats object
 
                 Double[] input = Console.getDoubleList(); // get new data
 
@@ -262,7 +262,7 @@ public class Calculator {
     }
 
     public String handleOperator(String operator) {
-        Console.println("%s (%f)", operator, this.display);
+        Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
         Double result = 0.0;
         switch (operator) {
             case "sin":
@@ -347,44 +347,44 @@ public class Calculator {
 
                 break;
         }
-        Console.println(Double.toString(this.display));
+        Console.println(Console.printNum(this.display, this.displayMode));
         return Double.toString(display);
     }
 
     public String handleBinaryOperator(String operator, Double secondInput) {
         switch (operator) {
             case "+" :
-                Console.println("%s + %s", Double.toString(this.display), Double.toString(secondInput));
+                Console.println("%s + %s", Console.printNum(this.display, this.displayMode), Console.printNum(secondInput, this.displayMode));
                 this.lastInput = this.display;
                 display += secondInput;
                 break;
             case "-" :
-                Console.println("%s - %s", Double.toString(this.display), Double.toString(secondInput));
+                Console.println("%s - %s", Console.printNum(this.display, this.displayMode), Console.printNum(secondInput, this.displayMode));
                 this.lastInput = this.display;
                 display -= secondInput;
                 break;
             case "/" :
-                Console.println("%s / %s", Double.toString(this.display), Double.toString(secondInput));
+                Console.println("%s / %s", Console.printNum(this.display, this.displayMode), Console.printNum(secondInput, this.displayMode));
                 this.lastInput = this.display;
                 display /= secondInput;
                 break;
             case "*" :
-                Console.println("%s * %s", Double.toString(this.display), Double.toString(secondInput));
+                Console.println("%s * %s", Console.printNum(this.display, this.displayMode), Console.printNum(secondInput, this.displayMode));
                 this.lastInput = this.display;
                 display *= secondInput;
                 break;
             case "^" :
-                Console.println("%s ^ %s", Double.toString(this.display), Double.toString(secondInput));
+                Console.println("%s ^ %s", Console.printNum(this.display, this.displayMode), Console.printNum(secondInput, this.displayMode));
                 this.lastInput = this.display;
                 display = Math.pow(display, secondInput);
                 break;
             case "logb" :
-                Console.println("log_%s(%s)", Double.toString(secondInput), Double.toString(this.display));
+                Console.println("log_%s(%s)", Console.printNum(this.display, this.displayMode), Console.printNum(secondInput, this.displayMode));
                 this.lastInput = this.display;
                 display = Math.log(display) / Math.log(secondInput);
                 break;
         }
-        Console.println(Double.toString(this.display));
+        Console.println(Console.printNum(this.display, this.displayMode));
         return "";
     }
 }
