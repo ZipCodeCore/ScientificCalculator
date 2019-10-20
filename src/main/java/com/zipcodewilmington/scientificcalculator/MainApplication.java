@@ -7,7 +7,12 @@ import java.lang.Math;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
+
+
     public static void main(String[] args) {
+        String[] need2Values = new String[5];
+        need2Values[] = {"add", "sub", "multi", "div", "exp"};
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hey welcome to the calculator");
 
@@ -23,8 +28,13 @@ public class MainApplication {
         Integer userValue = Integer.parseInt(userValueAsString);
 
         System.out.println("Choose your Operator");
-        String userOperatorAsString =  scanner.nextLine();
-        Integer userOperator = Integer.parseInt(userOperatorAsString);
+        String userOperator =  scanner.nextLine();
+
+        if(need2Values[].includes(userOperator)){
+            System.out.println("Enter your second value");
+            String userValue2AsString =  scanner.nextLine();
+            Integer userValue2 = Integer.parseInt(userValue2AsString);
+        }
 
 
 

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LogarithmTest {
+public class InverseNaturalLogarithmTest {
 
     @Before
     public void setUp() throws Exception {
@@ -17,28 +17,27 @@ public class LogarithmTest {
     }
 
     @Test
-    public void LogarithmTest1() {
+    public void inverseNaturalLogarithmTest1() {
         // given
-        Logarithm result = new Logarithm();
+        InverseNaturalLogarithm result = new InverseNaturalLogarithm();
         Integer inputValue = 1;
-        double expected = Math.log(inputValue);
+        double expected = Math.exp(inputValue);
 
         // when
-        double actual = result.logarithm(inputValue);
+        double actual = result.inverseNaturalLogarithm(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
     }
-
     @Test
-    public void LogarithmTest2() {
+    public void inverseNaturalLogarithmTest2() {
         // given
-        Logarithm result = new Logarithm();
+        InverseNaturalLogarithm result = new InverseNaturalLogarithm();
         Integer inputValue = 45;
-        double expected = Math.log(inputValue);
+        double expected = Math.exp(inputValue);
 
         // when
-        double actual = result.logarithm(inputValue);
+        double actual = result.inverseNaturalLogarithm(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
