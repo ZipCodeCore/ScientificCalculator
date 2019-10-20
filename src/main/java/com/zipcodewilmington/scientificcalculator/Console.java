@@ -25,6 +25,7 @@ public class Console {
         } else if (mode == Calculator.dMode.HEXADECIMAL) {
             return Double.toHexString(outNum);
         }
+
         return ""; // this can't happen
     }
 
