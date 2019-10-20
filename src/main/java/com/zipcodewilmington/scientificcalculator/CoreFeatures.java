@@ -29,71 +29,55 @@ public class CoreFeatures {
      * */
 
     public double addition (double x, double y) {
-        double result = 0;
 
-        result = (x + y);
-
-        return result;
+        return (x + y);
     }
 
     public double subtraction (double x, double y) {
-        double result = 0;
 
-        result = (x - y);
-
-        return result;
+        return (x - y);
     }
 
     public double multiplication (double x, double y) {
-        double result = 0;
 
-        result = (x * y);
-
-        return result;
+        return (x * y);
     }
 
     public double division (double x, double y) {
-        double result = 0;
 
-        result = (x / y);
-
-        return result;
+        return (x / y);
     }
 
     public double exponentiation(double x, double y){
-        double result = 0;
 
-        result = Math.pow(x, y);
-
-        return result;
+        return Math.pow(x, y);
     }
 
     public double square(double x){
-        double result = 0;
 
-        result = Math.pow(x, 2);
-
-        return result;
+        return Math.pow(x, 2);
     }
 
     public double squareRoot(double x){
-        double result = 0;
 
-        result = Math.sqrt(x);
-
-        return result;
+        return Math.sqrt(x);
     }
 
     public double inverse(double x){
-        double result = 0;
 
-        result = (1/x);
-
-        return result;
+        return (1/x);
     }
 
     public double getX() {
         return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 
     public void setX(double x) {

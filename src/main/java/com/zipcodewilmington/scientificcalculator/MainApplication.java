@@ -26,18 +26,7 @@ public class MainApplication {
         double y;
 
         while(turnOn){
-            toDo = Console.getIntegerInput("What sup bitch! what do you want \n" +
-                    "Choose your option: \n" +
-                    "1 - Addition \n" +
-                    "2 - Subtraction \n" +
-                    "3 - Multiplication \n" +
-                    "4 - Division \n" +
-                    "5 - Exponential \n" +
-                    "6 - Square \n" +
-                    "7 - Square Root \n" +
-                    "8 - Inverse \n" +
-                    "9 - Scientific Calculator \n" +
-                    "10 - Turn off Calculator \n");
+            toDo = Console.corePrompt();
 
             switch (toDo) {
                 case 1 :
@@ -94,13 +83,16 @@ public class MainApplication {
                     Console.getStringInput("");
                     break;
                 case 9 :
+                    ///////SWITCH TO SCIENTIFIC CALCULATOR/////////
+                    //////////////////////////////////////////////
 
                     break;
                 case 10 :
                     turnOn = false;
                     break;
                 default :
-                    System.out.println("Not an option");
+                    System.out.println("Not an option\nPlease try again\n");
+                    Console.getStringInput("");
                     break;
 
             }
