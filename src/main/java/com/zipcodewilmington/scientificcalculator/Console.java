@@ -15,13 +15,6 @@ public class Console {
         print(output + "\n", args);
     }
 
-    public static String getStringInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
-        println(prompt);
-        String userInput = scanner.nextLine();
-        return userInput;
-    }
-
     public static Integer getIntegerInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
@@ -29,10 +22,12 @@ public class Console {
         return userInput;
     }
 
+
     public static Double getDoubleInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
         Double userInput = Double.valueOf(scanner.nextLine());
         return userInput;
     }
+
 }
