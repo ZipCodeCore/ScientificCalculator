@@ -29,6 +29,7 @@ public class Calculator {
     public static String sqrt(double x) {
         return String.valueOf(Math.sqrt(x));
     }
+    public static String exp(double x, double y) { return String.valueOf(Math.pow(x,y)); }
 
     public static String inverse(double x) {
         return divide(1, x);

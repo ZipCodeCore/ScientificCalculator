@@ -21,20 +21,9 @@ public class MainApplication {
             // get operation from user input
             currentOperation = Console.getStringInput("Enter your operation: ");
 
-
             executeOperation(currentOperation);
-            // if valid operation,
-                // determine # of params to prompt user for
-                // or some other function (clear, mc, m+, m)
-            // if invalid operation or "help",
-                // return list of valid operations
-                // continue (reset while loop)
-            // if math operation
-                // prompt user for params
-                // display params, operation, and result
-            // if mem operation
-                // complete operation
-            //
+            //check if currentState = "Err"
+                // if true, lock calculator until currentState reset
         } // end while
 
 
@@ -50,8 +39,8 @@ public class MainApplication {
     public static void setDisplay() {
         Console.clear();
         Console.println("CLI Scientific Calculator");
-        Console.println("Value: \t\t" + currentState);
-        Console.println("prev Operation:\t" + currentOperation + "\n");
+        Console.println("Value:\t\t\t\t" + currentState);
+        Console.println("Previous operation:\t" + currentOperation + "\n");
         // if help bool true, display more
     }
 
@@ -77,6 +66,7 @@ public class MainApplication {
         else if (operation.equals("help")) {
             Console.println("set, clear, exit, help");
             Console.println("add, subtract, multiply, divide, inverse, invert sign");
+            Console.println("m+, mc, mrc");
         }
     }
 
@@ -124,6 +114,11 @@ public class MainApplication {
         else if (operation.equals("invert sign")) {
             currentState = Calculator.invertSign(x);
         }
+        else if (operation.equals("exp")) {
+            Console.println("f(y) = " + currentState + "^y");
+            y = Console.getDoubleInput("y = ");
+            currentState = Calculator.exp(x, y);
+        }
     }
 
     public static void executeSciOperation(String operation) {
@@ -142,9 +137,7 @@ public class MainApplication {
             Console.println(currentMemory + " recalled from memory");
             currentState = String.valueOf(currentMemory);
         }
-//        else if (operation.equals("m")) {
-//            Console.println("Stored in memory: " + currentMemory);
-//        }
+
     }
 
 }
