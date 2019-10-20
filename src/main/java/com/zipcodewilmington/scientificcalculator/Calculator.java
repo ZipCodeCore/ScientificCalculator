@@ -3,7 +3,6 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.SortedMap;
 
 public class Calculator {
     Scanner scanner = new Scanner(System.in);
@@ -21,7 +20,6 @@ public class Calculator {
 
     public Calculator() {
     }
-
     public void runCalculator() {
         boolean returnToMainMenu = true;
         while (returnToMainMenu) {
@@ -63,6 +61,11 @@ public class Calculator {
                 System.out.println("Choose your Operator\nType \"cmd\" for commands.");
                 userOperator = scanner.nextLine();
             }
+
+                if(userOperator.equals("return")){
+                    break;
+                }
+
             if(userOperator.equals("return")){
                 break;
             }
