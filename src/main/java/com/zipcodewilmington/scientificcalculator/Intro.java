@@ -45,7 +45,7 @@ public class Intro {
                 //ErrorMessages.errorMessage(d2, s1);
                 Arithmetic.division(d, d2);
                 Intro.intro();
-/*
+
             }
         } else if (s.equalsIgnoreCase("2")) {
             String s1 = Console.getStringInput(
@@ -72,12 +72,12 @@ public class Intro {
             } else if (s1.equalsIgnoreCase("2")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
-                Exponents.squareRoot(d);
-                Intro.intro()
+                Exponents.sqrt(d);
+                Intro.intro();
             } else if (s1.equalsIgnoreCase("3")) {
                 Double d = Console.getDoubleInput("Enter a double.");
                 Double d2 = Console.getDoubleInput("Enter another double.");
-                Exponents.exponent(d, d2);
+                Exponents.variableExponent(d, d2);
                 Intro.intro();
             }
         } else if (s.equalsIgnoreCase("4")) {
@@ -86,8 +86,7 @@ public class Intro {
         } else {
             ErrorMessages.invalidSelection();
             Intro.intro();
-       */
-            }
-        }return null;
+
+            } return null;
+        }
     }
-}
