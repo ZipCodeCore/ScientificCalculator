@@ -16,13 +16,14 @@ public class BasicCalculator {
     public void add(Double x){
         try {
 
-            if (x == 0) {                                              //Checks if there's already a number to work with
+            //Checks if there's already a number to work with
+            if (x == 0) {
                 x = Console.getDoubleInput("First number: ");
             }
 
             Double y = Console.getDoubleInput(x + " + ");
             this.setDoubleResult(x + y);
-            this.setStringResult(Double.toString(x+y));
+            this.setStringResult(Double.toString(x + y));
 
         }
         //for non-double inputs

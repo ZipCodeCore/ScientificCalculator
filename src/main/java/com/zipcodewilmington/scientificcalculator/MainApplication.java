@@ -11,11 +11,13 @@ public class MainApplication {
         String currentString = "";
 
         //creating instances of classes
-        BasicCalculator basicCalc = new BasicCalculator();
         Console console = new Console();
+        BasicCalculator basicCalc = new BasicCalculator();
+        ScientificCalculator sciencecalc = new ScientificCalculator();
+        MemoryAndSettings memoryandSettings = new MemoryAndSettings();
         Display display = new Display();
 
-        String s = "add";
+        String s = "";
 
         console.print("Welcome to my calculator!\n" +
                         "Type 'help' for list of commands.\n" +
@@ -50,6 +52,22 @@ public class MainApplication {
                     break;
 
 
+                case "M+":
+                    memoryandSettings.rememberthis();
+                    break;
+
+                case "MRC":
+                    memoryandSettings.forgetthis();
+                    break;
+
+                case "MC":
+                    memoryandSettings.recallthis();
+                    break;
+
+                case "settings":
+
+                    break;
+
                 case "exit":
                     s = "exit";
                     break;
@@ -70,15 +88,5 @@ public class MainApplication {
 
         }
         System.exit(0);
-        /*
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
-
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
-         */
     }
 }

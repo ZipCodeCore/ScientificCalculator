@@ -9,23 +9,47 @@ public class MemoryAndSettings {
     private String bodh;
     private String radordeg;
     private String[] displaytype = {"binary", "octal","decimal","hexadecimal"};
+    private int currenttypeindex;
 
     //constructor
     public MemoryAndSettings() {
         rememberedNum = 0.0;
         rememberedStr = "0";
-        bodh = "decimal";
+        currenttypeindex = 2;
+        bodh = displaytype[currenttypeindex];
         radordeg = "rad";
     }
 
     //methods
 
     //for setting the type (binary, octal, decimal, hexadecimal)
-    public void switchDisplayMode(){
-
+    public void nextDisplayMode(){
+        if(currenttypeindex >= 3){
+            currenttypeindex = 0;
+        }
+        else{
+            currenttypeindex++;
+        }
+        bodh = displaytype[currenttypeindex];
+        Console.print("Current type is " + bodh);
     }
 
     public void switchDisplayMode(String type){
+        if (type == "binary"){
+            currenttypeindex = 0;
+        }
+        else if(type == "octal"){
+            currenttypeindex = 1;
+        }
+        else if(type == "hexadecimal"){
+            currenttypeindex = 3;
+        }
+        else{
+            currenttypeindex = 2;
+            Console.print("Automatically set to decimal.");
+        }
+        bodh = displaytype[currenttypeindex];
+        Console.print("Current type is " + bodh);
 
     }
 
@@ -33,11 +57,23 @@ public class MemoryAndSettings {
 
     //for setting the units (radians or degrees)
     public void switchUnitsMode(){
-
+        if (radordeg == "radians"){
+            radordeg = "degrees";
+        }
+        else{
+            radordeg = "radians";
+        }
+        Console.print("Set units to " + radordeg);
     }
 
     public void switchUnitsMode(String type){
-
+        if (type == "degrees"){
+            radordeg = "degrees";
+        }
+        else if(type == "radians"){
+            radordeg = "radians";
+        }
+        Console.print("Set units to " + radordeg);
     }
 
     //--------------------------------------------
