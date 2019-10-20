@@ -14,8 +14,9 @@ public class Statistics1Var {
     private Double var;
     private Integer n;
     private String output;
+    private Calculator.dMode displayMode;
 
-    public Statistics1Var() {
+    public Statistics1Var(Calculator.dMode dMode) {
 
         this.data = new Double[]{};
         this.mean = null;
@@ -24,6 +25,7 @@ public class Statistics1Var {
         this.max = null;
         this.stdDev = null;
         this.var = null;
+        this.displayMode = dMode;
         this.n = 0;
         this.output = "No data entered";
     }
@@ -65,11 +67,19 @@ public class Statistics1Var {
         return max;
     }
 
+    public Calculator.dMode getDisplayMode() {
+        return displayMode;
+    }
+
     // Setter
 
     public void setData(Double[] data) {
         this.data = data;
         this.calculateStatistics();
+    }
+
+    public void setDisplayMode(Calculator.dMode displayMode) {
+        this.displayMode = displayMode;
     }
 
     // Core logic
@@ -84,13 +94,13 @@ public class Statistics1Var {
         this.stdDev = this.calcStdDev();
         this.var = this.calcVar();
         this.output = "\n1-Variable Statistics:\n" +
-                "n: " + Integer.toString(this.n.intValue()) + "\n" +
-                "Mean: " + Double.toString(this.mean) +"\n" +
-                "Median: " + Double.toString(this.median) +"\n" +
-                "Min: " + Double.toString(this.min) +"\n" +
-                "Max: " + Double.toString(this.max) +"\n" +
-                "Sample Std Dev: " + Double.toString(this.stdDev) +"\n" +
-                "Sample Var: " + Double.toString(this.var);
+                "n: " + Console.printNum(new Double (this.n.doubleValue()), displayMode) + "\n" +
+                "Mean: " + Console.printNum(this.mean, displayMode) +"\n" +
+                "Median: " + Console.printNum(this.median, displayMode) +"\n" +
+                "Min: " + Console.printNum(this.min, displayMode) +"\n" +
+                "Max: " + Console.printNum(this.max, displayMode) +"\n" +
+                "Sample Std Dev: " + Console.printNum(this.stdDev, displayMode) +"\n" +
+                "Sample Var: " + Console.printNum(this.var, displayMode);
     }
 
     public Double calcMean() {

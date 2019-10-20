@@ -36,7 +36,7 @@ public class Statistics1VarTest {
         Double expected;
         Double actual;
         for (int i = 0; i < dataArr.length; i++) {
-            stats = new Statistics1Var();
+            stats = new Statistics1Var(Calculator.dMode.DECIMAL);
             stats.setData(dataArr[i]);
             expected = results[i][1];
             actual = stats.calcMean();
@@ -50,7 +50,7 @@ public class Statistics1VarTest {
         Double expected;
         Double actual;
         for (int i = 0; i < dataArr.length; i++) {
-            stats = new Statistics1Var();
+            stats = new Statistics1Var(Calculator.dMode.DECIMAL);
             stats.setData(dataArr[i]);
             expected = results[i][2];
             actual = stats.calcMedian();
@@ -64,7 +64,7 @@ public class Statistics1VarTest {
         Double expected;
         Double actual;
         for (int i = 0; i < dataArr.length; i++) {
-            stats = new Statistics1Var();
+            stats = new Statistics1Var(Calculator.dMode.DECIMAL);
             stats.setData(dataArr[i]);
             expected = results[i][3];
             actual = stats.calcMin();
@@ -78,7 +78,7 @@ public class Statistics1VarTest {
         Double expected;
         Double actual;
         for (int i = 0; i < dataArr.length; i++) {
-            stats = new Statistics1Var();
+            stats = new Statistics1Var(Calculator.dMode.DECIMAL);
             stats.setData(dataArr[i]);
             expected = results[i][4];
             actual = stats.calcMax();
@@ -92,7 +92,7 @@ public class Statistics1VarTest {
         Double expected;
         Double actual;
         for (int i = 0; i < dataArr.length; i++) {
-            stats = new Statistics1Var();
+            stats = new Statistics1Var(Calculator.dMode.DECIMAL);
             stats.setData(dataArr[i]);
             expected = results[i][5];
             actual = stats.calcStdDev();
@@ -106,7 +106,7 @@ public class Statistics1VarTest {
         Double expected;
         Double actual;
         for (int i = 0; i < dataArr.length; i++) {
-            stats = new Statistics1Var();
+            stats = new Statistics1Var(Calculator.dMode.DECIMAL);
             stats.setData(dataArr[i]);
             expected = results[i][6];
             actual = stats.calcVar();
@@ -120,12 +120,12 @@ public class Statistics1VarTest {
         String expected;
         String actual;
         for (int i = 0; i < dataArr.length; i++) {
-            stats = new Statistics1Var();
+            stats = new Statistics1Var(Calculator.dMode.DECIMAL);
             stats.setData(dataArr[i]);
             stats.calculateStatistics();
 
             expected = "\n1-Variable Statistics:\n" +
-                    "n: " + Integer.toString(results[i][0].intValue()) + "\n" +
+                    "n: " + Integer.toString(results[i][0].intValue()) + ".0\n" +
                     "Mean: " + Double.toString(results[i][1]) +"\n" +
                     "Median: " + Double.toString(results[i][2]) +"\n" +
                     "Min: " + Double.toString(results[i][3]) +"\n" +
