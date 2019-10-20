@@ -230,58 +230,115 @@ public class CalculatorTest {
 
 
     @Test
-    public void testHandleOperator_inv() {
+    public void HandleUnaryTest() {
+        //test for square root
+        calculator.setDisplay(4.0);
+        calculator.handleOperator("sqrt");
+        assertTrue(2.0 ==  calculator.getDisplay().doubleValue());
 
+        calculator.setDisplay(16.0);
+        calculator.handleOperator("sqrt");
+        assertTrue(4.0 ==  calculator.getDisplay().doubleValue());
+
+        calculator.setDisplay(64.0);
+        calculator.handleOperator("sqrt");
+        assertTrue(8.0 ==  calculator.getDisplay().doubleValue());
+
+
+        // square a number test
+        calculator.setDisplay(5.0);
+        calculator.handleOperator("sq");
+        assertTrue(25.0 ==  calculator.getDisplay().doubleValue());
+
+        calculator.setDisplay(-5.0);
+        calculator.handleOperator("sq");
+        assertTrue(25.0 ==  calculator.getDisplay().doubleValue());
+
+        calculator.setDisplay(-5.5);
+        calculator.handleOperator("sq");
+        assertTrue(30.25 ==  calculator.getDisplay().doubleValue());
+
+
+        //inverse log test
+        calculator.setDisplay(6.0);
+        calculator.handleOperator("10^");
+        assertTrue(1000000.0 ==  calculator.getDisplay().doubleValue());
+
+        calculator.setDisplay(8.0);
+        calculator.handleOperator("10^");
+        assertTrue(100000000.0 ==  calculator.getDisplay().doubleValue());
+
+        calculator.setDisplay(2.0);
+        calculator.handleOperator("10^");
+        assertTrue(100.0 ==  calculator.getDisplay().doubleValue());
+
+
+        //log test
+        calculator.setDisplay(4.0);
+        calculator.handleOperator("log");
+        assertTrue(1.3862943611198906 ==  calculator.getDisplay().doubleValue());
 
         calculator.setDisplay(5.0);
+        calculator.handleOperator("log");
+        assertTrue(1.6094379124341003 ==  calculator.getDisplay().doubleValue());
 
+        calculator.setDisplay(500.0);
+        calculator.handleOperator("log");
+        assertTrue(6.214608098422191 ==  calculator.getDisplay().doubleValue());
+
+
+        //natural log test
+        calculator.setDisplay(3.0);
+        calculator.handleOperator("ln");
+        assertTrue(1.3862943611198906 ==  calculator.getDisplay().doubleValue());
+
+        calculator.setDisplay(5000.0);
+        calculator.handleOperator("ln");
+        assertTrue(8.517393171418904 ==  calculator.getDisplay().doubleValue());
+
+        calculator.setDisplay(0.5);
+        calculator.handleOperator("ln");
+        assertTrue(0.4054651081081644 ==  calculator.getDisplay().doubleValue());
+
+
+        //Inverse operator tests
+        calculator.setDisplay(5.0);
         calculator.handleOperator("inv");
-
         assertTrue(1.0/5.0 ==  calculator.getDisplay().doubleValue());
 
-    }
-    @Test
-    public void testHandleOperator_sign() {
+        calculator.setDisplay(5.2);
+        calculator.handleOperator("inv");
+        assertTrue(1.0/5.2 ==  calculator.getDisplay().doubleValue());
 
+        calculator.setDisplay(9.1111233);
+        calculator.handleOperator("inv");
+        assertTrue(1/9.1111233 ==  calculator.getDisplay().doubleValue());
 
+        //Change sign tests
         calculator.setDisplay(1.0);
-
         calculator.handleOperator("sign");
-
         assertTrue(-1.0 ==  calculator.getDisplay().doubleValue());
 
-    }
-    @Test
-    public void testHandleOperator_sign2() {
-
-
-        calculator.setDisplay(-1.0);
-
+        calculator.setDisplay(-7.4);
         calculator.handleOperator("sign");
+        assertTrue(7.4 ==  calculator.getDisplay().doubleValue());
 
-        assertTrue(1.0 ==  calculator.getDisplay().doubleValue());
+        calculator.setDisplay(-9.9);
+        calculator.handleOperator("sign");
+        assertTrue(9.9 ==  calculator.getDisplay().doubleValue());
 
-    }
-    @Test
-    public void testHandleOperator_Factorial_1() {
-
-
+        //Factorial tests and test error message if non-integer
         calculator.setDisplay(4.0);
-
         calculator.handleOperator("!");
-
         assertTrue(24.0 ==  calculator.getDisplay().doubleValue());
 
-    }
-    @Test
-    public void testHandleOperator_Factorial_2() {
-
-
+        calculator.handleOperator("!");
         calculator.setDisplay(4.3);
-
-
-
         assertEquals("ERR", calculator.handleOperator("!"));
+
+        calculator.handleOperator("!");
+        calculator.setDisplay(-4.0);
+        assertEquals(-24.0, calculator.handleOperator("!"));
 
     }
 
