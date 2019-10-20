@@ -9,6 +9,7 @@ public class MainApplication {
         //initial setup of fields
         Double currentDouble = 0.00;
         String currentString = "";
+
         //creating instances of classes
         BasicCalculator basicCalc = new BasicCalculator();
         Console console = new Console();
