@@ -50,6 +50,10 @@ public class CoreMethods {
     public double calcPosNeg(double a) {
         return a * -1;
     }
+
 }
+
+
+
 
 
