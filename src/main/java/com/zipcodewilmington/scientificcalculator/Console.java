@@ -15,10 +15,10 @@ public class Console {
         print(output + "\n", args);
     }
 
-    public static String getStringInput(String prompt) {
+    public static Integer getIntegerInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
-        String userInput = scanner.nextLine();
+        Integer userInput = Integer.valueOf(scanner.nextLine());
         return userInput;
     }
 

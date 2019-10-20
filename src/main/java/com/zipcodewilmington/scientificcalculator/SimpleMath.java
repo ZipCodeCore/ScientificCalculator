@@ -23,7 +23,7 @@ public class SimpleMath {
 
 
     //Simple Operations
-    public double add(double num1, double num2) {
+    public Double add(double num1, double num2) {
         return num1 + num2;
     }
     public Double subtract(double num1, double num2) {
@@ -35,9 +35,5 @@ public class SimpleMath {
     public Double division(double num1, double num2){
         return num1 / num2;
     }
-
-
-
-
 
 }

@@ -2,6 +2,7 @@ package com.zipcodewilmington.scientific_calculator;
 import com.zipcodewilmington.scientificcalculator.SimpleMath;
 import org.junit.Assert;
 
+
 public class TestSimpleMath {
 
     @org.junit.Before

@@ -8,59 +8,70 @@ public class MainApplication {
 
 
     public static void main(String[] args) {
+        SimpleMath simpleMath = new SimpleMath();
 
         double result = 1.0;
 
-        Console.println("Welcome to my calculator!");
-        String operation = Console.getStringInput("Enter the operation you would like to perform.");
+        Console.println("Welcome to my calculator!\n" +
+                "1 for addition \n2 for subtraction\n3 for multiplication\n4 for division\n" +
+                "5 for squaring \n6 for exponent\n7 for square root\n8 for inverse\n" +
+                "9 for invert\n10 for logarithms\n11 for sine\n12 for cosine\n13 tan for tangent\n");
+
+        Integer operation = Console.getIntegerInput("Enter the operation you would like to perform.");
         Double num1 = Console.getDoubleInput("Enter your first number.");
 
         switch(operation) {
-            case "+":
+            case 1:
                 Double num2 = Console.getDoubleInput("Enter your second.");
-                return System.out.println(num1 + " / " + num2 + " = " + result);
+                result = simpleMath.add(num1, num2);
+                System.out.println(num1 + " + " + num2 + " = " + result);
                 break;
-            case "-":
-                Double num2 = Console.getDoubleInput("Enter your second number.");
-                return System.out.println(num1 + " - " + num2 + " = " + result);
+            case 2:
+                num2 = Console.getDoubleInput("Enter your second number.");
+                result = simpleMath.subtract(num1, num2);
+                System.out.println(num1 + " - " + num2 + " = " + result);
                 break;
-            case "x":
-                Double num2 = Console.getDoubleInput("Enter your second number.");
-                return System.out.println(num1 + " x " + num2 + " = " + result);
+            case 3:
+                num2 = Console.getDoubleInput("Enter your second number.");
+                result = simpleMath.multiplication(num1, num2);
+                System.out.println(num1 + " x " + num2 + " = " + result);
                 break;
-            case "/":
-                Double num2 = Console.getDoubleInput("Enter your second number.");
-                return System.out.println(num1 + " / " + num2 + " = " + result);
+            case 4:
+                num2 = Console.getDoubleInput("Enter your second number.");
+                result = simpleMath.division(num1, num2);
+                System.out.println(num1 + " / " + num2 + " = " + result);
                 break;
-            case "sq":
-                return System.out.println(num1 + " squared is " + result);
+            case 5:
+                System.out.println(num1 + " squared is " + result);
                 break;
-            case "exp":
-                return System.out.println(num1 + " to the power of " + num2 + " = " + result);
+            case 6:
+                num2 = Console.getDoubleInput("Enter your second number.");
+                //simpleMath.exponent(num1, num2);
+                System.out.println(num1 + " to the power of " + num2 + " = " + result);
                 break;
-            case "sqrt":
-                return System.out.println("The square root of " + num1 + " is " + result);
+            case 7:
+                System.out.println("The square root of " + num1 + " is " + result);
                 break;
-            case "inverse":
-                return System.out.println("The inverse of " + num1 + " is " + result);
+            case 8:
+                System.out.println("The inverse of " + num1 + " is " + result);
                 break;
-            case "log":
-                return System.out.println("The inverse of " + num1 + " is " + result);
+            case 9:
+                System.out.println("The logarithm of " + num1 + " is " + result);
                 break;
-            case "sine":
-                return System.out.println("The sine of " + num1 + " is " + result);
+            case 10:
+                System.out.println("The sine of " + num1 + " is " + result);
                 break;
-            case "cosine":
-                return System.out.println("The cosine of " + num1 + " is " + result);
+            case 11:
+                System.out.println("The cosine of " + num1 + " is " + result);
                 break;
-            case "tangent":
-                return System.out.println("The tangent of " + num1 + " is " + result);
+            case 12:
+                System.out.println("The tangent of " + num1 + " is " + result);
                 break;
             default:
-                return System.out.println("Your input was incorrect please type one of the following:\n" +
-                        "+ for addition \n- for subtraction\nx for multiplication\n/ for division\n" +
-                        "sq for squaring \nexp for exponent\nsqrt for squart root\ninv for inverse\n" +
-                        "inv for invert\nlog for logarithms\nsin for sine\ncos for cosine\ntan for tangent\n");
+                System.out.println("Your input was incorrect please type one of the following:\n" +
+                        "1 for addition \n2 for subtraction\n3 for multiplication\n4 for division\n" +
+                        "5 for squaring \n6 for exponent\n7 for square root\n8 for inverse\n" +
+                        "9 for invert\n10 for logarithms\n11 for sine\n12 for cosine\ntan for tangent\n");
                 break;
 
 
@@ -71,9 +82,7 @@ public class MainApplication {
         //Double num1 = Console.getDoubleInput("Enter your first number.");
         //Double num2 = Console.getDoubleInput("Enter a double.");
 
-        Console.println("The user input %s as a string", operation);
-        Console.println("The user input %s as a integer", num1);
-        Console.println("The user input %s as a d", num2);
+
 
 
 
