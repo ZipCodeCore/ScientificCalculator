@@ -56,7 +56,7 @@ public class TrigFunctionsTest {
         assertEquals(true, trig.inDegreeMode());
 
         Double testVal = Math.random() * 2 * Math.PI;
-        assertEquals( Math.sin(Math.toDegrees(testVal)), trig.sin( testVal ), 0);
+        assertEquals( Math.sin(Math.toRadians(testVal)), trig.sin( testVal ), 0);
     }
 
     @Test
