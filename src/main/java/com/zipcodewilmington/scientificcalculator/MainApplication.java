@@ -122,6 +122,8 @@ public class MainApplication {
     }
 
     public static void executeSciOperation(String operation) {
+        double x = Double.valueOf(currentState);
+
         // m+ currentMemory = currentState
         if (operation.equals("m+")) {
             Console.println(currentState + " saved to memory");
@@ -137,7 +139,27 @@ public class MainApplication {
             Console.println(currentMemory + " recalled from memory");
             currentState = String.valueOf(currentMemory);
         }
-
+//        else if (operation.equals("m")) {
+//            Console.println("Stored in memory: " + currentMemory);
+//        }
+        else if (operation.equals("sine")){
+            currentState = SciCalculator.sine(x);
+        }
+        else if (operation.equals("cosine")){
+            currentState = SciCalculator.cosine(x);
+        }
+        else if (operation.equals("tangent")){
+            currentState = SciCalculator.tangent(x);
+        }
+        else if (operation.equals("csc")){
+            currentState = SciCalculator.csc(x);
+        }
+        else if (operation.equals("sec")){
+            currentState = SciCalculator.sec(x);
+        }
+        else if (operation.equals("cotan")){
+            currentState = SciCalculator.cotan(x);
+        }
     }
 
 }
