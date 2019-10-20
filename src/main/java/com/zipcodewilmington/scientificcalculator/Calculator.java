@@ -78,17 +78,17 @@ public class Calculator {
                 switch (userOperator) {
                     case "add":
                         Addition add = new Addition();
-                        double sum = add.add(userValue1, userValue2);
+                        Double sum = add.add(userValue1, userValue2);
                         System.out.println(userValue1 + " + " + userValue2 + " = " + sum);
                         break;
                     case "subtract":
                         Subtraction subtract = new Subtraction();
-                        double difference = subtract.subtract(userValue1, userValue2);
+                        Double difference = subtract.subtract(userValue1, userValue2);
                         System.out.println(userValue1 + " - " + userValue2 + " = " + difference);
                         break;
                     case "multiply":
                         Multiplication multiply = new Multiplication();
-                        double product = multiply.multiply(userValue1, userValue2);
+                        Double product = multiply.multiply(userValue1, userValue2);
                         System.out.println(userValue1 + " * " + userValue2 + " = " + product);
                         break;
                     case "divide":
@@ -100,7 +100,7 @@ public class Calculator {
                         break;
                     case "exponent":
                         Exponent exponent = new Exponent();
-                        double powerOf = exponent.exponent(userValue1, userValue2);
+                        Double powerOf = exponent.exponent(userValue1, userValue2);
                         System.out.println(userValue1 + " ^ " + userValue2 + " = " + powerOf);
                         break;
                 }
@@ -111,12 +111,36 @@ public class Calculator {
                         break;
                     case "square":
                         Squared squared = new Squared();
-                        double powerOf = squared.squared(userValue1);
+                        Double powerOf = squared.squared(userValue1);
                         System.out.println(userValue1 + " ^2 = " + powerOf);
                         break;
+                    case "square root":
+                        Sqrt sqrt = new Sqrt();
+                        Double squareRoot = sqrt.sqrt(userValue1);
+                        if (squareRoot != null)
+                            System.out.println("√" + userValue1);
+                        break;
+                    case "factorial":
+                        Factorial factorial = new Factorial();
+                        Double facto = factorial.factorial(userValue1);
+                        if (factorial != null){
+                            System.out.println("!" + userValue1 + " = " + facto);
+                        break;
+                        }
+                    case "inverse":
+                        Inverse inverse = new Inverse();
+                        Double inversed = inverse.inverse(userValue1);
+                        if(inverse != null)
+                            System.out.println("1/" + userValue1 " = " + inversed);
+                        break;
+                    case "invert":
+                        Invert invert = new Invert();
+                        Double inverted = invert.invert(userValue1);
+                        System.out.println(userValue1 + " inverted = " inverted);
+                        break;
+                        case 
                 }
-            }System.out.println("Choose your Operator\nType \"cmd\" for commands.");
-            userOperator = scanner.nextLine();
+            }
         }
     }
 }

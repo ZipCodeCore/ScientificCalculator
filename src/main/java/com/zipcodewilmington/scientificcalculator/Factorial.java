@@ -5,7 +5,7 @@ public class Factorial {
 
     }
 
-    public Double factorial(Integer value1){
+    public Double factorial(Double value1){
         double facto = 1;
         if(value1 instanceof Integer && value1 > 0){
             for(int i = 1; i <= value1; i++){

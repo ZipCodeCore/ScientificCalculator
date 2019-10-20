@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class PositiveToNegativeTest {
+public class InvertTest {
 
     @Before
     public void setUp() throws Exception {
@@ -19,7 +19,7 @@ public class PositiveToNegativeTest {
     @Test
     public void multiplicationTest1() {
         // given
-        PositiveToNegative result = new PositiveToNegative();
+        Invert result = new Invert();
         double inputValue = 2;
         double expected = -1 * inputValue;
 
@@ -33,7 +33,7 @@ public class PositiveToNegativeTest {
     @Test
     public void multiplicationTest2() {
         // given
-        PositiveToNegative product = new PositiveToNegative();
+        Invert product = new Invert();
         double inputValue = 17;
         double expected = -1 * inputValue;
 
