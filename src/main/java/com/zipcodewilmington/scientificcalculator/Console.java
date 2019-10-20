@@ -41,8 +41,12 @@ public class Console {
 
     public static Double getDoubleInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
-        print(prompt);
-        Double userInput = scanner.nextDouble();
-        return userInput;
+        String userInput = "";
+        do {
+            print(prompt);
+            userInput = scanner.nextLine();
+        } while (!userInput.matches("[0-9]+"));
+
+        return Double.valueOf(userInput);
     }
 }
