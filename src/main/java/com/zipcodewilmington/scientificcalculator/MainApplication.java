@@ -13,14 +13,13 @@ public class MainApplication {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Console console = new Console();
-        //welcome the user, and use PROPER ENGLISH!!
-        System.out.println("Hey! Welcome to the calculator");
+        //welcome the user
+        System.out.println("Hey! Welcome to the calculator!\nWould you care for a drink?\n");
 
         //ask the user for a value
         System.out.println("Enter your value");
         String userValueAsString = scanner.nextLine();
-        Double userValue1 = console.getDoubleInput(userValueAsString);
+        Double userValue1 = Double.parseDouble(userValueAsString);
 
         //ask the user for a operator
         //should eventually test to see if they've entered a proper input
@@ -30,7 +29,7 @@ public class MainApplication {
 
 
         //create an array of each operation that requires two values
-        String[] need2Values = {"add", "subtract", "multiply", "divide", "exponent"};
+        String[] need2Values = {"add", "subtract", "multiply", "divided", "exponent"};
         //turn that array into a string
         List<String> need2ValuesList = Arrays.asList(need2Values);
 
@@ -38,8 +37,8 @@ public class MainApplication {
         if (need2ValuesList.contains(userOperator)) {
             //ask for a second value
             System.out.println("Enter your second value");
-            String userValue2AsString = scanner.nextLine();
-            Integer userValue2 = Integer.parseInt(userValue2AsString);
+            String userValue2AsString = scanner.nextLine();;
+            Double  userValue2 = Double.parseDouble(userValue2AsString);
 
             //run the need2value operators INSIDE the if statement
             switch (userOperator) {
@@ -49,7 +48,7 @@ public class MainApplication {
                     break;
                 case "subtract":
                     double difference = userValue1 - userValue2;
-                    System.out.println(userValue1 + " + " + userValue2 + " = " + difference);
+                    System.out.println(userValue1 + " - " + userValue2 + " = " + difference);
                     break;
             }
         }
