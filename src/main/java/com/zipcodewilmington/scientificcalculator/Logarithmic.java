@@ -3,6 +3,6 @@ import java.lang.Math;
 
 public class Logarithmic {
 
-    //public static Double 
+    //public static Double
 
 }

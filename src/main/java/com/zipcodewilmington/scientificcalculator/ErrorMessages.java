@@ -26,6 +26,7 @@ public class ErrorMessages {
            Console.println("You cannot divide by 0. \n");
             Intro.intro();
         }
+        return null;
     }
 
 }

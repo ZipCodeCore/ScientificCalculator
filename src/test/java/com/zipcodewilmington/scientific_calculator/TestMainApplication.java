@@ -32,6 +32,32 @@ public class TestMainApplication {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void inverseNumTest()
+    {
+        Double expected = 0.25;
+        Double actual= Inversion.inverseNum(4D);
+        Assert.assertEquals(expected, actual);
+    }
+
+
+
+    @Test
+    public void inverseNumTest3()
+    {
+        Double expected = 4D;
+        Double actual= Inversion.inverseNum(0.25);
+        Assert.assertEquals(expected, actual);
+    }
+
+    /*@Test
+    public void inverseNumTest2() {
+        Double expected = 0.125;
+        Double actual = Inversion.inverseNum(8D);
+        Precision
+        Assert.assertEquals(expected, actual);
+    }*/
+
 
     @Test
     public void additionTest1(){
