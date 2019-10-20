@@ -114,7 +114,7 @@ public class ScientificCalculator {
 
     public void inverseSine(Double x){
         try {
-            double radians = x;
+            double degrees = x;
             double radians = Math.toRadians(degrees);
             double sin;
 
