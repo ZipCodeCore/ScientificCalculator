@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 
-import static junit.framework.TestCase.assertEquals;
 
 public class BasicCalcTests {
 
@@ -46,7 +45,7 @@ public class BasicCalcTests {
 
         calc.subtract( 690045.875, 438294.54);
 
-        Assert.assertEquals(251751.335,calc.getDoubleResult() , 1e-8);
+        Assert.assertEquals(251751.335,calc.getDoubleResult() , .1);
     }
 
     @Test
@@ -54,16 +53,16 @@ public class BasicCalcTests {
 
         calc.subtract( 100045.875, 438294.54);
 
-        Assert.assertEquals(538340.415,calc.getDoubleResult() , 0);
+        Assert.assertEquals(-338248.665,calc.getDoubleResult() , .1);
 
     }
 
     @Test
     public void subtractTest3(){
 
-        calc.subtract(100045.875, 438294.54);
+        calc.subtract(86045.875, 38294.54);
 
-        Assert.assertEquals(538340.415,calc.getDoubleResult() , 0);
+        Assert.assertEquals(47751.335,calc.getDoubleResult() , .1);
     }
 
     @Test
@@ -71,7 +70,7 @@ public class BasicCalcTests {
 
         calc.multiply( 5.5, 5.5);
 
-        Assert.assertEquals(30.25,calc.getDoubleResult() , 0);
+        Assert.assertEquals(30.25,calc.getDoubleResult() , 0.1);
 
     }
 
@@ -80,7 +79,7 @@ public class BasicCalcTests {
 
         calc.multiply( (double) 786, (double) 384);
 
-        Assert.assertEquals(301824,calc.getDoubleResult() , 0);
+        Assert.assertEquals(301824,calc.getDoubleResult() , .1);
 
     }
 
@@ -89,7 +88,7 @@ public class BasicCalcTests {
 
         calc.multiply( 4083.6, 3834.7);
 
-        Assert.assertEquals(15659380.9,calc.getDoubleResult() , 1e-2 );
+        Assert.assertEquals(15659380.9,calc.getDoubleResult() , .1 );
     }
 
     @Test
@@ -97,7 +96,7 @@ public class BasicCalcTests {
 
         calc.divide( 40.6, 34.7);
 
-        Assert.assertEquals(1.17002882,calc.getDoubleResult() , 0);
+        Assert.assertEquals(1.17002882,calc.getDoubleResult() , .1);
 
     }
 
@@ -105,14 +104,14 @@ public class BasicCalcTests {
     public void divideTest2(){
         calc.divide((double) 25, (double) 5);
 
-        Assert.assertEquals(5,calc.getDoubleResult() , 0);
+        Assert.assertEquals(5,calc.getDoubleResult() , .1);
     }
 
     @Test
     public void divideTest3(){
         calc.divide( 386442.6, 29742.2);
 
-        Assert.assertEquals(12.9930738,calc.getDoubleResult() , 0);
+        Assert.assertEquals(12.9930738,calc.getDoubleResult() , 0.1);
     }
 
 }
