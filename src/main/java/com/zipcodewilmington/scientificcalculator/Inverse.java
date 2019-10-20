@@ -1,7 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Inverse {
-    private double value1;
 
     public Inverse(){
     }

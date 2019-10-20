@@ -146,7 +146,7 @@ public class Calculator {
                         case "9":
                             Inverse inverse = new Inverse();
                             Double inversed = inverse.inverse(userValue1);
-                            if (inverse != null)
+                            if (inversed != null)
                                 System.out.println("1/" + userValue1 + " = " + inversed);
                             break;
                         case "10":
