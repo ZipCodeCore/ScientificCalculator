@@ -15,6 +15,7 @@ public class MainApplication {
         BasicCalculator basicCalc = new BasicCalculator();
         //ScientificCalculator sciencecalc = new ScientificCalculator();
         MemoryAndSettings memoryandSettings = new MemoryAndSettings();
+        GetInputs getInputs = new GetInputs();
         Console console = new Console();
 
         String s = "";
@@ -24,13 +25,13 @@ public class MainApplication {
                         "What would you like to do?");
 
         while (s !="exit") {
+
             s = console.getStringInput("");
 
             switch (s) {
                 case "add":
-                    if (currentDouble == 0) {
-                        currentDouble = Console.getDoubleInput("First number: ");
-                    }
+
+                    currentDouble = getInputs.getx(currentDouble);
                     y = Console.getDoubleInput(currentDouble + " + ");
 
                     basicCalc.add(currentDouble, y);
@@ -81,6 +82,33 @@ public class MainApplication {
                     console.print(basicCalc.getStringResult());//place holder for display
                     break;
 
+                case "Trig":
+
+                    break;
+
+                case "Inverse":
+
+                    break;
+
+                case "exponent":
+
+                    break;
+
+                case "square":
+
+                    break;
+
+                case "sqrt":
+
+                    break;
+
+                case "inverse":
+
+                    break;
+
+                case "!":
+
+                    break;
 
                 case "M+":
                     memoryandSettings.rememberthis(currentDouble);
@@ -120,7 +148,5 @@ public class MainApplication {
         }
         System.exit(0);
     }
-
-
 
 }
