@@ -65,8 +65,13 @@ public class Calculator {
 
             //ask the user for a value
             System.out.println("Enter your value");
-            String userValueAsString = scanner.nextLine();
-            Double userValue1 = Double.parseDouble(userValueAsString);
+            if(userOperator.equals("factorial")){
+                String userValueAsString = scanner.nextLine();
+                Integer factorialValue = Integer.parseInt(userValueAsString);
+            } else {
+                String userValueAsString = scanner.nextLine();
+                Double userValue1 = Double.parseDouble(userValueAsString);
+            }
 
             if (need2ValuesList.contains(userOperator)) {
                 //ask for a second value
@@ -192,7 +197,6 @@ public class Calculator {
                             System.out.println("ln(" + uservalue1 + ") = " + naturalLog);
                         }
                         break;*/
-
                     }
                 }
             }

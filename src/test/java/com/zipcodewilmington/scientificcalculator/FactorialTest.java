@@ -20,14 +20,14 @@ public class FactorialTest {
     public void factorialTest1() {
         // given
         Factorial result = new Factorial();
-        Integer inputValue = 5;
-        double expected = 1;
+        Double inputValue = 5;
+        Double expected = 1;
             for(int i = 1; i <= inputValue;i++){
                 expected = expected * i;
             }
 
         // when
-        double actual = result.factorial(inputValue);
+        Double actual = result.factorial(inputValue);
 
         // then
         assertEquals(expected, actual, 0);

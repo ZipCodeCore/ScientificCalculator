@@ -24,7 +24,7 @@ public class InvertTest {
         double expected = -1 * inputValue;
 
         // when
-        double actual = result.positiveToNegative(inputValue);
+        double actual = result.invert(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
@@ -38,7 +38,7 @@ public class InvertTest {
         double expected = -1 * inputValue;
 
         // when
-        double actual = product.positiveToNegative(inputValue);
+        double actual = product.invert(inputValue);
 
         // then
         assertEquals(expected, actual, .00);
