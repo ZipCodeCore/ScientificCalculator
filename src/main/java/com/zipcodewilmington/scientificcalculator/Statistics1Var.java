@@ -50,7 +50,7 @@ public class Statistics1Var {
     }
 
     public String getOutput() {
-        return output;
+        return output + "\n\nReturning to normal mode";
     }
 
     public Double getMean() {
@@ -76,22 +76,21 @@ public class Statistics1Var {
 
     public void calculateStatistics() {
 
+        this.n = data.length;
         this.mean = this.calcMean();
         this.median = this.calcMedian();
         this.min = this.calcMin();
         this.max = this.calcMax();
-        this.stdDev = null;
-        this.var = null;
-        this.n = data.length;
-        this.output = "1-Variable Statistics:\n" +
+        this.stdDev = this.calcStdDev();
+        this.var = this.calcVar();
+        this.output = "\n1-Variable Statistics:\n" +
                 "n: " + Integer.toString(this.n.intValue()) + "\n" +
                 "Mean: " + Double.toString(this.mean) +"\n" +
                 "Median: " + Double.toString(this.median) +"\n" +
                 "Min: " + Double.toString(this.min) +"\n" +
-                "Max: " + Double.toString(this.max) +"\n";
-//                "Std Dev: " + Double.toString(this.stdDev) +"\n" +
-//                "Var: " + Double.toString(this.var);
-
+                "Max: " + Double.toString(this.max) +"\n" +
+                "Sample Std Dev: " + Double.toString(this.stdDev) +"\n" +
+                "Sample Var: " + Double.toString(this.var);
     }
 
     public Double calcMean() {
@@ -124,5 +123,23 @@ public class Statistics1Var {
     public Double calcMax() {
         Arrays.sort(data);
         return data[data.length-1];
+    }
+
+    public Double calcStdDev() {
+        Double mean = this.calcMean();
+        Integer n = this.n;
+        Double SE = 0.0;
+
+        for (Double datum : this.data) {
+            SE += Math.pow(datum - mean,2);
+        }
+        Double MSE = SE/(n-1);
+        Double RMSE = Math.pow(MSE,.5);
+
+        return RMSE;
+    }
+
+    public Double calcVar() {
+        return Math.pow(this.calcStdDev(),2);
     }
 }

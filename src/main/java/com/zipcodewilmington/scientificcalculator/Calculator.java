@@ -2,6 +2,11 @@ package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Arrays;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.OptionalDouble;
+
+
 public class Calculator {
 
     private Boolean running;
@@ -10,11 +15,13 @@ public class Calculator {
     public static final String[] UNARYOPERATORS = {"sqrt", "sq",
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
-    public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "clear", "deg", "rad", "quit", "q", "?", "help", "stats"};// still need display modes
+    public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^", "logb"};
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "last", "clear", "deg", "rad", "stats", "quit", "q", "?", "help", "man"};// still need display modes
 
     private Memory memory;
     private TrigFunctions trig;
+
+    public static Map<String, String> MANUAL = new HashMap<>();
 
 
     public Calculator() {
@@ -23,6 +30,42 @@ public class Calculator {
         this.display = 0.0;
         this.memory = new Memory();
         this.trig = new TrigFunctions();
+
+        MANUAL.put("+", "Addition (binary operator): Enter a number, then +, then another number");
+        MANUAL.put("-", "Subtraction (binary operator): Enter a number, then -, then another number");
+        MANUAL.put("*", "Multiplication (binary operator): Enter a number, then *, then another number");
+        MANUAL.put("/", "Division (binary operator): Enter a number, then /, then another number");
+        MANUAL.put("logb", "Logarithm, base b (binary operator): Enter a number, then logb, then the desired base");
+        MANUAL.put("^", "Exponentiation (binary operator): Enter a base, then ^, then an exponent");
+        MANUAL.put("sin", "Sine (unary operator): Enter a number, then sin. Select unit mode with deg or rad");
+        MANUAL.put("cos", "Cosine (unary operator): Enter a number, then cos. Select unit mode with deg or rad");
+        MANUAL.put("tan", "Tangent (unary operator): Enter a number, then tan. Select unit mode with deg or rad");
+        MANUAL.put("asin", "Inverse Sine (unary operator): Enter a number, then asin. Select unit mode with deg or rad");
+        MANUAL.put("acos", "Inverse Cosine (unary operator): Enter a number, then acos. Select unit mode with deg or rad");
+        MANUAL.put("atan", "Inverse Tangent (unary operator): Enter a number, then atan. Select unit mode with deg or rad");
+        MANUAL.put("rad", "Select unit mode: radians");
+        MANUAL.put("deg", "Select unit mode: degrees");
+        MANUAL.put("sq", "Square (unary operator): Enter a number, then sq");
+        MANUAL.put("sqrt", "Square root (unary operator): Enter a number, then sqrt");
+        MANUAL.put("exp", "Natural (base e) exponentiation (unary operator): Enter a number, then exp");
+        MANUAL.put("10^", "Base-10 exponentiation (unary operator): Enter a number, then 10^");
+        MANUAL.put("ln", "Natural (base e) logarithm (unary operator): Enter a number, then ln");
+        MANUAL.put("log", "Base-10 logarithm (unary operator): Enter a number, then log");
+        MANUAL.put("!", "Factorial (unary operator): Enter an integer, then !");
+        MANUAL.put("inv", "Inversion/reciprocal (unary operator): Enter a number, then inv");
+        MANUAL.put("sign", "Change sign (unary operator): Enter a number, then sign");
+        MANUAL.put("m+", "Memory add: store the most recent result in memory");
+        MANUAL.put("mr", "Memory recall: recall stored value from memory (also: 'mrc')");
+        MANUAL.put("mrc", "Memory recall: recall stored value from memory (also: 'mr')");
+        MANUAL.put("mc", "Memory clear: clear stored value from memory");
+        MANUAL.put("last", "Return second-to-last result to the display");
+        MANUAL.put("clear", "Clear calculator display and storage (not memory)");
+        MANUAL.put("stats", "Statistical analysis mode - enter data set and get 1-variable descriptive statistics");
+        MANUAL.put("?", "Help: a list of commands (also 'help')");
+        MANUAL.put("help", "Help: a list of commands (also '?')");
+        MANUAL.put("quit", "Quit (also 'q')");
+        MANUAL.put("q", "Quit (also 'quit')");
+        MANUAL.put("man", "Manual - you're using it. Kinda meta");
     }
 
     // Getters
@@ -65,6 +108,8 @@ public class Calculator {
 
     public void run() {
         this.running = true;
+
+        Console.println("Calculator on: normal mode. ?/help for help, q to quit");
         inputLoop();
     }
 
@@ -74,6 +119,15 @@ public class Calculator {
         Console.println("Available operators:");
         Console.println(String.join(", ",Calculator.BINARYOPERATORS));
         Console.println(String.join(", ",Calculator.UNARYOPERATORS));
+        Console.println("Use 'man' for further help");
+    }
+
+    public String man(String command) {
+        if (Arrays.asList(Calculator.COMMANDS).contains(command) || Arrays.asList(Calculator.UNARYOPERATORS).contains(command) || Arrays.asList(Calculator.BINARYOPERATORS).contains(command)) {
+            return this.MANUAL.get(command);
+        } else {
+            return "Command not found";
+        }
     }
 
     // Input Methods
@@ -101,7 +155,7 @@ public class Calculator {
     }
 
     public String handleCommands(String command) {
-        Console.println("%s (command)", command);
+        //Console.println("%s (command)", command);
         switch (command) {
             case "q" :
             case "quit" :
@@ -124,18 +178,29 @@ public class Calculator {
                 break;
             case "mr":
             case "mrc":
-                this.lastInput = display;
-                display = memory.memoryRecall();
+                this.lastInput = this.display;
+                this.display = this.memory.memoryRecall();
+                break;
+            case "last":
+                this.display = this.lastInput;
+                this.lastInput = 0.0;
                 break;
             case "?":
             case "help":
                 this.showHelp();
                 break;
+            case "man":
+                Console.println("Command or Operator? ");
+                String manInput = Console.getInput();
+                String helpContents = this.man(manInput);
+                Console.println(helpContents);
+                break;
             case "stats":
+                Console.println("Statistics Mode: enter data, 'q' to analyze");
                 Statistics1Var stats = new Statistics1Var(); // create stats object
-                Console.println("in");
+
                 Double[] input = Console.getDoubleList(); // get new data
-                Console.println("out");
+
                 if (input.length > 0) {
                     stats.setData(input); // apply the data
                     stats.calculateStatistics(); // calculate the statistics
@@ -149,7 +214,6 @@ public class Calculator {
         return "";
     }
 
-    /*,  "!"};*/
     public String handleOperator(String operator) {
         Console.println("%s (%f)", operator, this.display);
         Double result = 0.0;
@@ -224,7 +288,6 @@ public class Calculator {
         return Double.toString(display);
     }
 
-    /* "+", "-", "/", "*", "^" */
     public String handleBinaryOperator(String operator) {
         Double input = Console.getNumber();
 
@@ -253,6 +316,11 @@ public class Calculator {
                 Console.println("%s ^ %s", Double.toString(this.display), Double.toString(input));
                 this.lastInput = this.display;
                 display = Math.pow(display, input);
+                break;
+            case "logb" :
+                Console.println("log_%s(%s)", Double.toString(input), Double.toString(this.display));
+                this.lastInput = this.display;
+                display = Math.log(display) / Math.log(input);
                 break;
         }
 

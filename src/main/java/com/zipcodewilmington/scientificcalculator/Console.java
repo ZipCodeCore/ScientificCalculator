@@ -18,6 +18,7 @@ public class Console {
     }
 
     public static String getInput() {
+        Console.print("> ");
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine().toLowerCase(); //get input from user

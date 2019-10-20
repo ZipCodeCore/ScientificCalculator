@@ -7,10 +7,36 @@ import static org.junit.Assert.*;
 
 public class CalculatorTest {
     private Calculator calculator;
+
     @Before
     public void setUp() throws Exception {
         this.calculator = new Calculator();
 
+    }
+
+    @Test
+    public void manTest() {
+        for (String op : Calculator.BINARYOPERATORS) {
+            String expected = Calculator.MANUAL.get(op);
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
+        for (String op : Calculator.UNARYOPERATORS) {
+            String expected = Calculator.MANUAL.get(op);
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
+        for (String op : Calculator.COMMANDS) {
+            String expected = Calculator.MANUAL.get(op);
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
+        String[] bogusInputs = {"","blargh","4.5"};
+        for (String op : bogusInputs) {
+            String expected = "Command not found";
+            String actual = calculator.man(op);
+            assertTrue(actual.equals(expected));
+        }
     }
 
     @Test
@@ -44,6 +70,20 @@ public class CalculatorTest {
             assertTrue(calculator.getLastInput() == 0.0);
         }
     }
+
+    @Test
+    public void lastTest() {
+        Double[] options = {Double.NEGATIVE_INFINITY,-2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
+
+        for (Double n : options) {
+            calculator.setDisplay(n * 2.21);
+            calculator.setLastInput(n);
+            calculator.handleCommands("last");
+            assertTrue(calculator.getDisplay() == n);
+            assertTrue(calculator.getLastInput() == 0.0);
+        }
+    }
+
 
     @Test
     public void inputLoop() {
@@ -133,4 +173,5 @@ public class CalculatorTest {
         assertTrue(1.0 ==  calculator.getDisplay().doubleValue());
 
     }
+
 }
