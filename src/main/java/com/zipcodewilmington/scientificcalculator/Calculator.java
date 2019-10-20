@@ -15,7 +15,9 @@ public class Calculator {
                                         "sin", "cos", "tan", "asin", "acos", "atan",
                                         "exp", "10^", "log", "ln", "!", "inv", "sign"};
     public static final String[] BINARYOPERATORS = {"+", "-", "/", "*", "^", "logb"};
-    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "last", "clear", "deg", "rad", "mode", "bin", "oct", "dec", "hex", "stats", "quit", "q", "?", "help", "man"};// still need display modes
+    public static final String[] COMMANDS = {"m+", "mc", "mrc", "mr", "last", "clear",
+                                        "deg", "rad", "mode", "bin", "oct", "dec", "hex",
+                                        "stats", "quit", "q", "?", "help", "man"};
 
     private Memory memory;
     private TrigFunctions trig;
@@ -165,7 +167,8 @@ public class Calculator {
             if (input.matches("-?\\d+(\\.\\d+)?")) { //regEx to check whether it's a number or not
                 this.lastInput = this.display;
                 this.display = Double.valueOf(input);
-                Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput));
+                //Console.println("%s (%s)", Double.toString(this.display), Double.toString(this.lastInput)); // debugging
+                Console.println(Console.printNum(this.display, this.displayMode));
             } else if (Arrays.asList(Calculator.COMMANDS).contains(input)){
                 handleCommands(input);
             } else if (Arrays.asList(Calculator.UNARYOPERATORS).contains(input)) {
