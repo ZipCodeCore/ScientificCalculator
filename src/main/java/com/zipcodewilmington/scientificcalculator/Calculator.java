@@ -174,7 +174,7 @@ public class Calculator {
             } else if (Arrays.asList(Calculator.UNARYOPERATORS).contains(input)) {
                 handleOperator(input);
             } else if (Arrays.asList(Calculator.BINARYOPERATORS).contains(input)) {
-                handleBinaryOperator(input, Console.getNumber());
+                handleBinaryOperator(input, Console.getNumber(memory));
             } else { //error
                 this.throwError();
             }
