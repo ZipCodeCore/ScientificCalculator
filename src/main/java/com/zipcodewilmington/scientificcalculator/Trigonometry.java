@@ -3,13 +3,6 @@ import java.lang.Math;
 
 public class Trigonometry {
 
-
-    public static Double sum(Double a, Double b) {
-        Double c = a + b;
-        return c;
-
-    }
-
     public static Double tangent(Double a) {
         Double output = Math.tan(a);
         return output;
