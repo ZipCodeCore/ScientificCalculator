@@ -136,7 +136,7 @@ public class Calculator {
                             Sqrt sqrt = new Sqrt();
                             Double squareRoot = sqrt.sqrt(userValue1);
                             if (squareRoot != null)
-                                System.out.println("√" + userValue1);
+                                System.out.println("√" + userValue1 + " = " + squareRoot);
                             break;
                         case "8":
                             Factorial factorial = new Factorial();
@@ -205,7 +205,7 @@ public class Calculator {
                         case "19":
                             InverseNaturalLogarithm inverseNaturalLogarithm = new InverseNaturalLogarithm();
                             Double inverseNatLog = inverseNaturalLogarithm.inverseNaturalLogarithm(userValue1);
-                            System.out.println("(e^" + userValue1 + " = " + inverseNatLog);
+                            System.out.println("e^" + userValue1 + " = " + inverseNatLog);
                             break;
                     }
                 }
