@@ -155,13 +155,11 @@ public class ScientificCalculator {
             this.setDoubleResult(Math.tan(x));
             this.setStringResult(Double.toString(Math.tan(x)));
         }
-
-
-            //for non double inputs
-            catch(Exception e){
-                this.setDoubleResult(null);
-                this.setStringResult("ERROR");
-            }
+        //for non double inputs
+        catch(Exception e){
+            this.setDoubleResult(null);
+            this.setStringResult("ERROR");
+        }
     }
 
     public void inverseSine(Double x){
@@ -192,30 +190,30 @@ public class ScientificCalculator {
     }
 
     public void inverseCosine(Double x){
-            try {
+        try {
 
-                double degrees = x;
-                double radians = Math.toRadians(degrees);
-                double cos;
+            double degrees = x;
+            double radians = Math.toRadians(degrees);
+            double cos;
 
-                cos = Math.cos(radians);
+            cos = Math.cos(radians);
 
-                if (x > 0) {
-                    x = Console.getDoubleInput("Inverse Cosin: ");
-                }
-
-                while(x == 0){
-                    x = Console.getDoubleInput("Please enter a non-zero denominator: ");
-                }
-
-                x = Console.getDoubleInput("cos-1(" + x + ")");
-                this.setDoubleResult(Math.toDegrees(Math.acos(cos)));
-                this.setStringResult(Double.toString(Math.toDegrees(Math.acos(cos))));
+            if (x > 0) {
+                x = Console.getDoubleInput("Inverse Cosin: ");
             }
-            //for non double inputs and division by zero.
-            catch(Exception e){
-                this.setStringResult("ERROR");
+
+            while(x == 0){
+                x = Console.getDoubleInput("Please enter a non-zero denominator: ");
             }
+
+            x = Console.getDoubleInput("cos-1(" + x + ")");
+            this.setDoubleResult(Math.toDegrees(Math.acos(cos)));
+            this.setStringResult(Double.toString(Math.toDegrees(Math.acos(cos))));
+        }
+        //for non double inputs and division by zero.
+        catch(Exception e){
+            this.setStringResult("ERROR");
+        }
 
     }
 
@@ -273,7 +271,6 @@ public class ScientificCalculator {
         }
     }
 
-
     //Getters and Setters for class fields
 
     public double getDoubleResult() {
@@ -291,8 +288,4 @@ public class ScientificCalculator {
     public void setStringResult(String stringResult) {
         this.stringResult = stringResult;
     }
-
-
-
-
 }
