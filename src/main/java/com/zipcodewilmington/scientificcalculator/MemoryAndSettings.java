@@ -79,12 +79,14 @@ public class MemoryAndSettings {
     //--------------------------------------------
 
     //for M+, MC, and MRC functions
-    public void rememberthis(){
-
+    public void rememberthis(Double m){
+        rememberedNum = m;
+        rememberedStr = Double.toString(m);
     }
 
     public void forgetthis(){
-
+        rememberedNum = 0.0;
+        rememberedStr = "0";
     }
     public void recallthis(){
 
@@ -92,20 +94,12 @@ public class MemoryAndSettings {
 
     //--------------------------------------------
 
-    //getters and setters
+    //getters
     public String getBodh() {
         return bodh;
     }
 
     public String getRadordeg() {
         return radordeg;
-    }
-
-    public void setBodh(String bodh) {
-        this.bodh = bodh;
-    }
-
-    public void setRadordeg(String radordeg) {
-        this.radordeg = radordeg;
     }
 }
