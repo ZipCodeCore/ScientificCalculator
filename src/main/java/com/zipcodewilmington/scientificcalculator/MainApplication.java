@@ -14,8 +14,7 @@ public class MainApplication {
     public static void main(String[] args) {
         boolean turnOn = true;
         //make a list of basic commands for calulator
-        String[] basicCommands = {"run calculator", "clear display", "print current number", "switch trig units",
-                "switch display mode", "erase memory", "turn off"};
+        String[] basicCommands = {"run calculator", "turn off"};
         //turn that array into a string
         List<String> basicCommandsList = Arrays.asList(basicCommands);
         //call the scanner
