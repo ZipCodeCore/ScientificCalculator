@@ -209,9 +209,9 @@ public class CalculatorTest {
 
         calculator.setDisplay(4.3);
 
-        calculator.handleOperator("!");
 
-        assertTrue(24.0 ==  calculator.getDisplay().doubleValue());
+
+        assertEquals("ERR", calculator.handleOperator("!"));
 
     }
 
