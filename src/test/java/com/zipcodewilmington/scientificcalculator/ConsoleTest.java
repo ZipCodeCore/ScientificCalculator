@@ -7,7 +7,6 @@ import static org.junit.Assert.*;
 public class ConsoleTest {
 
     @Test
-
     public void printNumTest() {
         Calculator calculator = new Calculator();
         calculator.setDisplayMode(Calculator.dMode.BINARY);
@@ -44,17 +43,17 @@ public class ConsoleTest {
 
         calculator.setDisplayMode(Calculator.dMode.HEXADECIMAL);
         calculator.setDisplay(64.0);
-        expected = "40";
+        expected = "0x1.0p6";
         actual = Console.printNum(calculator.getDisplay(),calculator.getDisplayMode());
         assertTrue(expected.equals(actual));
 
         calculator.setDisplay(13.0);
-        expected = "D";
+        expected = "0x1.ap3";
         actual = Console.printNum(calculator.getDisplay(),calculator.getDisplayMode());
         assertTrue(expected.equals(actual));
 
         calculator.setDisplay(13.3);
-        expected = "D";
+        expected = "0x1.a99999999999ap3";
         actual = Console.printNum(calculator.getDisplay(),calculator.getDisplayMode());
         assertTrue(expected.equals(actual));
 
