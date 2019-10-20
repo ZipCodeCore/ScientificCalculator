@@ -16,7 +16,7 @@ public class ScientificCalculator {
     //Scientific Operator functions
     public void square(Double x){
         try {
-            if (x == 0) {
+            if (x >= 0) {
                 this.setDoubleResult(x * x);
                 this.setStringResult(Double.toString(x * x));
             }
@@ -30,7 +30,7 @@ public class ScientificCalculator {
 
     public void squareRoot(Double x){
         try {
-            if (x == 0) {
+            if (x >= 0) {
                 this.setDoubleResult(Math.sqrt(x));
                 this.setStringResult(Double.toString(Math.sqrt(x)));
             }
@@ -180,7 +180,7 @@ public class ScientificCalculator {
 
             int i, fact = 1;
 
-            if (x == 0) {
+            if (x >= 0) {
                 for (i = 0; i <= x; i++) {
 
                     fact = fact * i;
