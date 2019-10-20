@@ -11,6 +11,8 @@ public class MemoryAndSettings {
     private String[] displaytype = {"binary", "octal","decimal","hexadecimal"};
     private int currenttypeindex;
 
+
+
     //constructor
     public MemoryAndSettings() {
         rememberedNum = 0.0;
@@ -82,24 +84,40 @@ public class MemoryAndSettings {
     public void rememberthis(Double m){
         rememberedNum = m;
         rememberedStr = Double.toString(m);
+        Console.print(m + " was committed to memory.");
     }
 
     public void forgetthis(){
+        Console.println(rememberedNum + " was forgotten.");
         rememberedNum = 0.0;
         rememberedStr = "0";
-    }
-    public void recallthis(){
 
     }
 
     //--------------------------------------------
 
-    //getters
+    //getters and Setters
     public String getBodh() {
         return bodh;
     }
 
     public String getRadordeg() {
         return radordeg;
+    }
+
+    public Double getRememberedNum() {
+        return rememberedNum;
+    }
+
+    public String getRememberedStr() {
+        return rememberedStr;
+    }
+
+    public void setRememberedNum(Double rememberedNum) {
+        this.rememberedNum = rememberedNum;
+    }
+
+    public void setRememberedStr(String rememberedStr) {
+        this.rememberedStr = rememberedStr;
     }
 }

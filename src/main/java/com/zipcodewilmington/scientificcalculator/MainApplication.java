@@ -53,7 +53,7 @@ public class MainApplication {
 
 
                 case "M+":
-                    memoryandSettings.rememberthis();
+                    memoryandSettings.rememberthis(currentDouble);
                     break;
 
                 case "MRC":
@@ -61,7 +61,8 @@ public class MainApplication {
                     break;
 
                 case "MC":
-                    memoryandSettings.recallthis();
+                    memoryandSettings.setRememberedNum(0.0);
+                    memoryandSettings.setRememberedStr("0");
                     break;
 
                 case "settings":
@@ -84,7 +85,7 @@ public class MainApplication {
             }
 
             //currently empty method
-            display.updatedisplay();
+            //display.updatedisplay();
 
         }
         System.exit(0);
