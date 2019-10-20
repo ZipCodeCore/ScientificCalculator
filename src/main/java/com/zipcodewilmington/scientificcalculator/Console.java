@@ -13,6 +13,16 @@ public class Console {
         System.out.printf(output, args);
     }
 
+    public static String printNum(Double outNum, Calculator.dMode mode) {
+        if (mode == Calculator.dMode.DECIMAL) {
+            return Double.toString(outNum);
+        } else if (mode == Calculator.dMode.HEXADECIMAL){
+            double n = outNum.doubleValue();
+            return "";
+//            return n.toHexString();
+        }
+    }
+
     public static void println(String output, Object... args) {
         print(output + "\n", args);
     }
