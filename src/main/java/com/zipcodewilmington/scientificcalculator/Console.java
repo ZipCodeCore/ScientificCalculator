@@ -42,13 +42,13 @@ public class Console {
         return Console.cleanInput(input); // clean it (remove anything but numbers and commands/operators) and return
     }
 
-    public static Double getNumber() {
+    public static Double getNumber(Memory memory) {
         String input = getInput();
         while (true) {
             if (input.matches("-?\\d+(\\.\\d+)?")) break;
-            /*else if (input.matches("mrc") || input.matches("mr")){
-              return this.memory.memoryRecall();
-            }*/
+            else if (input.equals("mrc") || input.equals("mr")){
+                return memory.memoryRecall();
+            }
             else {
                 println("Enter a number");
                 input = getInput();
