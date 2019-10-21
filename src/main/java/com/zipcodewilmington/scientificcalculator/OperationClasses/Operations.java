@@ -62,7 +62,7 @@ static Double num2;
                 currentNum = DisplayMode.convertInputToSelectedMode(currentNum);
                 currentNum = Trigonometry.tangent(currentNum);
                 Console.println("\n");
-                Console.println("" + DisplayMode.convertOutputToSelectedMode(currentNum));
+                DisplayMode.convertOutputToSelectedMode(currentNum);
                 Console.println(DisplayMode.convertToSelectedMode(currentNum));
                 MainMenu.mainMenu(currentNum);
                 break;
@@ -98,9 +98,11 @@ static Double num2;
                 break;
             case 7:
                 DisplayMode.rotateInputBetweenRadsDegs();
+                Submenu.trigonometryMenu(currentNum);
                 break;
             case 8:
                 DisplayMode.rotateOutputBetweenRadsDegs();
+                Submenu.trigonometryMenu(currentNum);
                 break;
             case 9:
                 String trigInputMode = Console.getStringInput("Type radians or degrees to switch your input mode to that type.");

@@ -63,41 +63,59 @@ public class DisplayMode {
 
     public static void rotateInputBetweenRadsDegs() {
         if (trigInputMode.equals("Degrees")) {
+            Console.println("Trig input mode rotated to Radians.");
             trigInputMode = "Radians";
-        } else trigInputMode = "Degrees";
+        } else if (trigInputMode.equals("Radians")) {
+            Console.println("Trig input mode rotated to Degrees.");
+            trigInputMode = "Degrees";
+        }
     }
 
     public static void switchInputBetweenRadsDegs(String userModeSelection) {
         if (userModeSelection.equals("Degrees")) {
+            Console.println("Trig input mode switched to Degrees.");
             trigInputMode = "Degrees";
-        } else trigInputMode = "Radians";
+        } else {
+            Console.println("Trig input mode switched to Radians.");
+            trigInputMode = "Radians";
+        }
     }
 
     public static void rotateOutputBetweenRadsDegs() {
         if (trigOutputMode.equals("Degrees")) {
+            Console.println("Trig output mode rotated to Radians.");
             trigOutputMode = "Radians";
-        } else trigOutputMode = "Degrees";
+        } else if (trigOutputMode.equals("Radians")) {
+            Console.println("Trig output mode rotated to Degrees.");
+            trigOutputMode = "Degrees";
+        }
     }
 
     public static void switchOutputBetweenRadsDegs(String userModeSelection) {
-        if (userModeSelection.equals("Degrees")) {
+        if (userModeSelection.equals("Radians")) {
+            Console.println("Trig output mode switched to Radians.");
+            trigOutputMode = "Radians";
+        } else {
+            Console.println("Trig output mode switched to Degrees.");
             trigOutputMode = "Degrees";
-        } else trigOutputMode = "Radians";
+        }
     }
 
     public static Double convertInputToSelectedMode(Double input) {
         if (trigInputMode.equals("Radians")) {
             return Math.toRadians(input);
-        } else
+        } else {
             return Math.toDegrees(input);
+        }
     }
 
     public static Double convertOutputToSelectedMode(Double result) {
         String s = "";
         if (trigOutputMode.equals("Radians")) {
             return Math.toRadians(result);
-        } else
+        } else {
             return Math.toDegrees(result);
+        }
     }
 
 }
