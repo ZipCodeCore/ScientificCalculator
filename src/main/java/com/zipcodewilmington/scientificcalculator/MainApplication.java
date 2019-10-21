@@ -82,49 +82,69 @@ public class MainApplication {
                     console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
-                case "Sine":
+                case "sine":
                     currentDouble = getInputs.getx(currentDouble,"sine of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.sine(currentDouble);
                     console.println(sciencecalc.getStringResult());
                     break;
 
-                case "Cosine":
+                case "cosine":
                     currentDouble = getInputs.getx(currentDouble,"cosine of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.cosine(currentDouble);
                     console.println(sciencecalc.getStringResult());
                     break;
 
-                case "Tangent":
+                case "tangent":
                     currentDouble = getInputs.getx(currentDouble,"tangent of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.tangent(currentDouble);
                     console.println(sciencecalc.getStringResult());
                     break;
 
-                case "InverseSine":
+                case "inversesine":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Sine of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.inverseSine(currentDouble);
                     console.println(sciencecalc.getStringResult());
                     break;
 
-                case "InverseCosine":
+                case "inversecosine":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Cosine of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.inverseCosine(currentDouble);
                     console.println(sciencecalc.getStringResult());
                     break;
 
-                case "InverseTangent":
+                case "inversetangent":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Tangent of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.inverseTangent(currentDouble);
                     console.println(sciencecalc.getStringResult());
                     break;
-                case "exponent":
 
+                case "log":
+
+                    break;
+
+                case "ln":
+
+                    break;
+
+                case "inverselog":
+
+                    break;
+
+                case "inverseln":
+
+                    break;
+
+                case "exponent":
+                    currentDouble = getInputs.getx(currentDouble, "First number: ");
+                    currentString = Double.toString(currentDouble);
+                    y = getInputs.gety(currentString + " + ");
+                    sciencecalc.exponent(currentDouble, y);
                     console.println(sciencecalc.getStringResult());
 
                     break;
