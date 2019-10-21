@@ -1,5 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import com.zipcodewilmington.scientificcalculator.MenuClasses.Submenu;
+
 public class ErrorMessages {
 
     public static String errorMessage(Double d, Double d2, Integer s1) {

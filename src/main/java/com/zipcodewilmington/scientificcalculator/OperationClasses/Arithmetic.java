@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator.OperationClasses;
 
 public class Arithmetic {
 

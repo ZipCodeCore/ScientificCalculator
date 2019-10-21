@@ -1,6 +1,6 @@
 package com.zipcodewilmington.scientific_calculator;
 
-import com.zipcodewilmington.scientificcalculator.Arithmetic;
+import com.zipcodewilmington.scientificcalculator.OperationClasses.Arithmetic;
 import org.junit.Assert;
 import org.junit.Test;
 

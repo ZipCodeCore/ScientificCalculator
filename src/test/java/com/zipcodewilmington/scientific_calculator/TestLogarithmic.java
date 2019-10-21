@@ -1,7 +1,6 @@
 package com.zipcodewilmington.scientific_calculator;
 
-import com.zipcodewilmington.scientificcalculator.Logarithmic;
-import org.apache.commons.math3.util.Precision;
+import com.zipcodewilmington.scientificcalculator.OperationClasses.Logarithmic;
 import org.junit.Assert;
 import org.junit.Test;
 

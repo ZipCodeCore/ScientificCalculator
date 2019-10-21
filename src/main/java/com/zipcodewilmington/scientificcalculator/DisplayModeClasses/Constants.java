@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator.DisplayModeClasses;
 
 public class Constants {
 

@@ -1,4 +1,8 @@
-package com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator.MenuClasses;
+
+import com.zipcodewilmington.scientificcalculator.Console;
+import com.zipcodewilmington.scientificcalculator.DisplayModeClasses.DisplayMode;
+import com.zipcodewilmington.scientificcalculator.Memory;
 
 public class MainMenu {
 

@@ -1,6 +1,6 @@
-package com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator.DisplayModeClasses;
 
-import java.math.BigInteger;
+import com.zipcodewilmington.scientificcalculator.Console;
 
 public class DisplayMode {
 

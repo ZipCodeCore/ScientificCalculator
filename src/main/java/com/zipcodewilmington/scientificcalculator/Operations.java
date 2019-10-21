@@ -1,5 +1,10 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import com.zipcodewilmington.scientificcalculator.DisplayModeClasses.DisplayMode;
+import com.zipcodewilmington.scientificcalculator.MenuClasses.MainMenu;
+import com.zipcodewilmington.scientificcalculator.MenuClasses.Submenu;
+import com.zipcodewilmington.scientificcalculator.OperationClasses.*;
+
 public class Operations {
     static Double num1;
     static Double num2;
