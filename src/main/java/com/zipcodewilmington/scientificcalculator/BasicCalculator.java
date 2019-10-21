@@ -80,7 +80,8 @@ public class BasicCalculator {
     }
 
     public void setDoubleResult(Double doubleResult) {
-        this.doubleResult = doubleResult;
+        double number = (Math.round(doubleResult * 1000.0))/1000.0;
+        this.doubleResult = number;
     }
 
     public String getStringResult() {
