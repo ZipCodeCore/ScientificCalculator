@@ -1,6 +1,4 @@
 package com.zipcodewilmington.scientificcalculator;
-import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Created by leon on 2/9/18.
@@ -194,8 +192,12 @@ public class MainApplication {
         }
         else if (operation.equals("log1p")) { //**Fix these
             currentState = SciCalculator.log1p(x);
-        } else if (operation.equals("factorial")) {
+        }
+        else if (operation.equals("factorial")) {
             currentState = SciCalculator.factorial(x);
+        }
+        else if (operation.equals("date") || operation.equals("time")){
+            ExtraFeature.dateAndTime();
         }
     }
     public static void executeExtraFeatures(String operation) throws Exception {

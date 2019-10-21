@@ -120,6 +120,42 @@ public class TestSciCalculator
         String actual = cotan(60, true);
         Assert.assertEquals(expected, actual);
     }
+
+    public void testlog1() {
+        String expected = "0.6931471805599453";
+        String actual = log(2);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void testLog2(){
+        String expected = "-Infinity";
+        String actual = log(0);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void testLog3(){
+        String expected = "NaN";
+        String actual = log(-1);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void testLog101(){
+        String expected = "2.0";
+        String actual = log10(100);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void testLog102(){
+        String expected = "NaN";
+        String actual = log10(-1);
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void testLog103(){
+        String expected = "-Infinity";
+        String actual = log10(0);
+        Assert.assertEquals(expected,actual);
+    }
     @Test
     public void testFactorial1() {
         String expected = "24.0";
