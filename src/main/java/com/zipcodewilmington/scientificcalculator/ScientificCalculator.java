@@ -152,14 +152,9 @@ public class ScientificCalculator {
 
     public void inverseTangent(Double x){
         try {
-            double degrees = x;
-            double radians = Math.toRadians(degrees);
-            double tan;
 
-            tan = Math.tan(radians);
-
-            this.setDoubleResult(Math.toDegrees(Math.atan(tan)));
-            this.setStringResult(Double.toString(Math.toDegrees(Math.atan(tan))));
+            this.setDoubleResult(Math.atan(x));
+            this.setStringResult(Double.toString(Math.atan(x)));
 
         }
         //for non double inputs and division by zero.
