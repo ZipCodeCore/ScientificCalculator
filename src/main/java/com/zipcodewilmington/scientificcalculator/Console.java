@@ -25,7 +25,7 @@ public class Console extends Calculator {
         return scanner.nextLine();
     }
 
-    private static Integer getIntegerInput(String prompt) {
+    static Integer getIntegerInput(String prompt) {
         return getDoubleInput(prompt).intValue();
     }
 

@@ -36,11 +36,11 @@ public class ToTheMoon {
             System.out.println("Enter your value");
             speedString = Console.getStringInput(":");
         }
-        int speed = Console.getDoubleInput(speedString).intValue();;
+        double speed = Double.parseDouble(speedString);
 
         switch (mphKmh){
             case "kmh":
-                int timeToMoon = speed / 384000;
+                double timeToMoon = speed / 384000;
                 System.out.println("You will get to the moon in " + timeToMoon + "hours!");
                 break;
             case "mph":
