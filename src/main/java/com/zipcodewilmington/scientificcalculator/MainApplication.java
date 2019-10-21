@@ -34,7 +34,7 @@ public class MainApplication {
                 } else {
                     System.out.println("ERROR: Invalid command.\n");
                 }
-                System.out.println("What would you like to do?\nType \"cmd\" for commands.");
+                System.out.println("What would you like to do?");
                 userCommand = scanner.nextLine();
             }
 
