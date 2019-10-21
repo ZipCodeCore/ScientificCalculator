@@ -29,7 +29,7 @@ public class ScientificFunctions {
     public static double toDegrees(double rad) {
         return(Math.toDegrees(rad));
     }
-    public static int factorial(int n) {
+    public static double factorial(double n) {
         int res = 1, i;
         for(i =2; i<=n; i++)
             res *=i;

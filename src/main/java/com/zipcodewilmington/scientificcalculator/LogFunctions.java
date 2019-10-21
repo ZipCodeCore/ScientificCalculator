@@ -13,7 +13,7 @@ public class LogFunctions {
         return Math.log(num1);
     }
 
-    public Double inverseNatutalLog(double num1) {
+    public Double inverseNaturalLog(double num1) {
         return Math.pow(2.71828182846, num1);
     }
 }

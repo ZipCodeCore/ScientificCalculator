@@ -13,6 +13,8 @@ public class SwitchDisplay {
     public String toHex(int num1){
         return Integer.toHexString(num1);
     }
+
+
 }
 
 

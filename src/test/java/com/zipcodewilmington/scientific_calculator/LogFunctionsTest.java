@@ -3,6 +3,7 @@ import com.zipcodewilmington.scientificcalculator.LogFunctions;
 import org.junit.Assert;
 
 public class LogFunctionsTest {
+
     @org.junit.Before
     public void setUp() throws Exception {
     }
@@ -36,9 +37,9 @@ public class LogFunctionsTest {
     @org.junit.Test
     public void testLogFunctionsInverseNaturalLog() {
         LogFunctions invNatLog1 = new LogFunctions();
-        Assert.assertEquals(1.10517091808, invNatLog1.inverseNatutalLog(0.1), 0.01);
-        Assert.assertEquals(1.34985880758, invNatLog1.inverseNatutalLog(0.3), 0.01);
-        Assert.assertEquals(1202604.28416, invNatLog1.inverseNatutalLog(14), 0.01);
-        Assert.assertEquals(11.0231763806, invNatLog1.inverseNatutalLog(2.4), 0.01);
+        Assert.assertEquals(1.10517091808, invNatLog1.inverseNaturalLog(0.1), 0.01);
+        Assert.assertEquals(1.34985880758, invNatLog1.inverseNaturalLog(0.3), 0.01);
+        Assert.assertEquals(1202604.28416, invNatLog1.inverseNaturalLog(14), 0.01);
+        Assert.assertEquals(11.0231763806, invNatLog1.inverseNaturalLog(2.4), 0.01);
     }
 }

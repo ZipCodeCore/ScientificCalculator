@@ -15,6 +15,13 @@ public class Console {
         print(output + "\n", args);
     }
 
+    public static String getStringInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        String userInput = scanner.nextLine();
+        return userInput;
+    }
+
     public static Integer getIntegerInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
