@@ -339,31 +339,31 @@ public class ScientificCalcTests {
 
     }
 
-//    @Test
-//    public void exponentTest1(){
-//
-//        sCalc.exponent((double) 10);
-//
-//        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
-//
-//    }
-//
-//    @Test
-//    public void exponentTest2(){
-//
-//        sCalc.exponent((double) 10);
-//
-//        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
-//
-//    }
-//
-//    @Test
-//    public void exponentTest3(){
-//
-//        sCalc.exponent((double) 10);
-//
-//        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
-//
-//    }
+    @Test
+    public void exponentTest1(){
+
+        sCalc.exponent((double) 10,(double) 2);
+
+        Assert.assertEquals(100,sCalc.getDoubleResult() , 0);
+
+    }
+
+    @Test
+    public void exponentTest2(){
+
+        sCalc.exponent((double) 10, (double) 0);
+
+        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
+
+    }
+
+    @Test
+    public void exponentTest3(){
+
+        sCalc.exponent((double) 0, (double)( 6));
+
+        Assert.assertEquals(0,sCalc.getDoubleResult() , 0);
+
+    }
 
 }

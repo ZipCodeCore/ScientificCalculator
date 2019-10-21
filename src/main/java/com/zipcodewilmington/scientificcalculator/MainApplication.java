@@ -126,23 +126,23 @@ public class MainApplication {
                     currentString = sciencecalc.getStringResult();
                     break;
 
-                case "ln":
+                case "log10":
                     currentDouble = getInputs.getx(currentDouble,"natural log of: ");
-                    sciencecalc.logLn(currentDouble);
+                    sciencecalc.log10(currentDouble);
                     currentDouble = sciencecalc.getDoubleResult();
                     currentString = sciencecalc.getStringResult();
                     break;
 
                 case "inverselog":
                     currentDouble = getInputs.getx(currentDouble,"inverse log of: ");
-                    sciencecalc.inverseLog(currentDouble);
+                    sciencecalc.inverselog(currentDouble);
                     currentDouble = sciencecalc.getDoubleResult();
                     currentString = sciencecalc.getStringResult();
                     break;
 
-                case "inverseln":
+                case "inverselog10":
                     currentDouble = getInputs.getx(currentDouble,"inverse natural log of: ");
-                    //sciencecalc.inverseNaturalLog(currentDouble);
+                    sciencecalc.inverseLog10(currentDouble);
                     currentDouble = sciencecalc.getDoubleResult();
                     currentString = sciencecalc.getStringResult();
                     break;
