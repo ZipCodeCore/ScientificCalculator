@@ -312,4 +312,58 @@ public class ScientificCalcTests {
 
     }
 
+    @Test
+    public void logTest1(){
+
+        sCalc.log((double) 10);
+
+        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
+
+    }
+
+    @Test
+    public void logTest2(){
+
+        sCalc.log((double) 25);
+
+        Assert.assertEquals(1.39794000867,sCalc.getDoubleResult() , 0);
+
+    }
+
+    @Test
+    public void logTest3(){
+
+        sCalc.log((double) 5);
+
+        Assert.assertEquals(0.69897000433,sCalc.getDoubleResult() , 0);
+
+    }
+
+    @Test
+    public void exponentTest1(){
+
+        sCalc.exponent((double) 10);
+
+        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
+
+    }
+
+    @Test
+    public void exponentTest2(){
+
+        sCalc.exponent((double) 10);
+
+        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
+
+    }
+
+    @Test
+    public void exponentTest3(){
+
+        sCalc.exponent((double) 10);
+
+        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
+
+    }
+
 }
