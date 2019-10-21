@@ -210,6 +210,7 @@ public class MainApplication {
 
                 case "exit":
                     s = "exit";
+                    currentString = "";
                     break;
 
                 default:
@@ -225,6 +226,10 @@ public class MainApplication {
 
 
             }
+
+            //
+
+            
             console.println(currentString);
 
         }

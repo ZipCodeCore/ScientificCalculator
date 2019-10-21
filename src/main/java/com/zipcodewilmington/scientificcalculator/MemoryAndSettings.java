@@ -19,38 +19,38 @@ public class MemoryAndSettings {
         rememberedStr = "0";
         currenttypeindex = 2;
         bodh = displaytype[currenttypeindex];
-        radordeg = "rad";
+        radordeg = "radians";
     }
 
     //methods
 
     //for setting the type (binary, octal, decimal, hexadecimal)
     public void switchDisplayMode(){
-        if(currenttypeindex >= 3){
-            currenttypeindex = 0;
+        if(this.currenttypeindex >= 3){
+            this.currenttypeindex = 0;
         }
         else{
-            currenttypeindex++;
+            this.currenttypeindex++;
         }
-        bodh = displaytype[currenttypeindex];
-        Console.print("Current type is " + bodh);
+        this.bodh = this.displaytype[currenttypeindex];
+        Console.println("Current type is " + bodh);
     }
 
     public void switchDisplayMode(String type){
-        if (type == "binary"){
-            currenttypeindex = 0;
+        if (type.equals("binary")){
+            this.currenttypeindex = 0;
         }
-        else if(type == "octal"){
-            currenttypeindex = 1;
+        else if(type.equals("octal")){
+            this.currenttypeindex = 1;
         }
-        else if(type == "decimal"){
-            currenttypeindex = 2;
+        else if(type.equals("decimal")){
+            this.currenttypeindex = 2;
         }
-        else if(type == "hexadecimal"){
-            currenttypeindex = 3;
+        else if(type.equals("hexadecimal")){
+            this.currenttypeindex = 3;
         }
-        bodh = displaytype[currenttypeindex];
-        Console.print("Current type is " + bodh);
+        this.bodh = this.displaytype[currenttypeindex];
+        Console.println("Current type is " + bodh);
 
     }
 
@@ -58,23 +58,26 @@ public class MemoryAndSettings {
 
     //for setting the units (radians or degrees)
     public void switchUnitsMode(){
-        if (radordeg == "radians"){
-            radordeg = "degrees";
+        if (radordeg.equals("radians")){
+            this.setRadordeg("degrees");
         }
         else{
-            radordeg = "radians";
+            this.setRadordeg("radians");
         }
-        Console.print("Set units to " + radordeg);
+        Console.println("Set units to " + radordeg);
     }
 
     public void switchUnitsMode(String type){
-        if (type == "degrees"){
-            radordeg = "degrees";
+        if (type.equals("degrees")){
+            this.setRadordeg("degrees");
         }
-        else if(type == "radians"){
-            radordeg = "radians";
+        else if(type.equals("radians")){
+            this.setRadordeg("radians");
         }
-        Console.print("Set units to " + radordeg);
+        else{
+            Console.println("We're having some trouble.");
+        }
+        Console.println("Set units to " + radordeg);
     }
 
     //--------------------------------------------
@@ -160,9 +163,11 @@ public class MemoryAndSettings {
     public String getBodh() {
         return bodh;
     }
-
     public String getRadordeg() {
         return radordeg;
+    }
+    public void setRadordeg(String x){
+        this.radordeg = x;
     }
 
     public Double getRememberedNum() {
