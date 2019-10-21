@@ -204,10 +204,14 @@ public class ScientificCalculator {
 
     public void inverseSine(Double x){
         try {
-
-            this.setDoubleResult((Math.asin(x)));
-            this.setStringResult(Double.toString(Math.asin(x)));
-
+            if(error.checkForOutsideRange(x, -1., 1.)){
+                this.setDoubleResult((double) 0);
+                this.setStringResult("ERROR");
+            }
+            else {
+                this.setDoubleResult((Math.asin(x)));
+                this.setStringResult(Double.toString(Math.asin(x)));
+            }
         }
         //for non double inputs and division by zero.
         catch(Exception e){
@@ -218,10 +222,14 @@ public class ScientificCalculator {
 
     public void inverseCosine(Double x){
         try {
-
-            this.setDoubleResult(Math.acos(x));
-            this.setStringResult(Double.toString(Math.acos(x)));
-
+            if(error.checkForOutsideRange(x, -1., 1.)){
+                this.setDoubleResult((double) 0);
+                this.setStringResult("ERROR");
+            }
+            else {
+                this.setDoubleResult(Math.acos(x));
+                this.setStringResult(Double.toString(Math.acos(x)));
+            }
         }
         //for non double inputs and division by zero.
         catch(Exception e){
@@ -258,8 +266,6 @@ public class ScientificCalculator {
                 this.setDoubleResult(x * fact);
                 this.setStringResult(Double.toString(x * fact));
             }
-
-
         }
         //for non double inputs
         catch(Exception e){

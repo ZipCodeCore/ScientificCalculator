@@ -68,10 +68,6 @@ public class MainApplication {
                     currentString = Double.toString(currentDouble);
                     y = getInputs.gety(currentString + " / ");
 
-                    while(y == 0){
-                        y = Console.getDoubleInput("Please enter a non-zero denominator: ");
-                    }
-
                     basicCalc.divide(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
@@ -98,21 +94,21 @@ public class MainApplication {
                     currentString = sciencecalc.getStringResult();
                     break;
 
-                case "inversesine":
+                case "arcsine":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Sine of: ");
                     sciencecalc.inverseSine(currentDouble);
                     currentDouble = sciencecalc.getDoubleResult();
                     currentString = sciencecalc.getStringResult();
                     break;
 
-                case "inversecosine":
+                case "arccosine":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Cosine of: ");
                     sciencecalc.inverseCosine(currentDouble);
                     currentDouble = sciencecalc.getDoubleResult();
                     currentString = sciencecalc.getStringResult();
                     break;
 
-                case "inversetangent":
+                case "arctangent":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Tangent of: ");
                     sciencecalc.inverseTangent(currentDouble);
                     currentDouble = sciencecalc.getDoubleResult();

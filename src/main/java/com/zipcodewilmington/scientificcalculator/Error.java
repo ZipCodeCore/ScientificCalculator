@@ -41,5 +41,10 @@ public class Error {
         }
     }
 
-    public boolean checkForRange(Double x, )
+    public boolean checkForOutsideRange(Double input, Double lowerlimit, Double higherlimit){
+        if(input < lowerlimit || input > higherlimit){
+            return true;
+        }
+        return false;
+    }
 }
