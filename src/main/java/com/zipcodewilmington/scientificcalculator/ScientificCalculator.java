@@ -63,10 +63,14 @@ public class ScientificCalculator {
     //natural log
     public void log(Double x){
         try {
-
-            this.setDoubleResult(Math.log(x));
-            this.setStringResult(Double.toString(Math.log(x)));
-
+            if(x < 0) { //checks for a negative input
+                this.setDoubleResult((double) 0);
+                this.setStringResult("ERROR");
+            }
+            else {
+                this.setDoubleResult(Math.log(x));
+                this.setStringResult(Double.toString(Math.log(x)));
+            }
         }
         //for non double inputs
         catch(Exception e){
@@ -74,7 +78,7 @@ public class ScientificCalculator {
         }
     }
 
-    //inverse natual log
+    //inverse natural log
     public void inverselog(Double x){
         try {
             this.setDoubleResult(Math.exp(x));

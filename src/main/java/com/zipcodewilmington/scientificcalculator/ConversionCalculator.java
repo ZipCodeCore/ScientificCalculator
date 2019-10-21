@@ -29,11 +29,39 @@ public class ConversionCalculator {
         }
     }
 
+    public void binaryToInt(String x){
+        try {
+            Integer y = Integer.parseInt(x,2);
+
+            this.setStringResult(y.toString());
+        }
+
+        //for non-double inputs
+        catch(Exception e){
+            this.setDoubleResult((double) 0);
+            this.setStringResult("ERROR");
+        }
+    }
+
     public void octal(int x){
         try {
 
             //this.setDoubleResult(Math.pow(x));
             this.setStringResult(Integer.toOctalString(x));
+        }
+
+        //for non-double inputs
+        catch(Exception e){
+            this.setDoubleResult((double) 0);
+            this.setStringResult("ERROR");
+        }
+    }
+
+    public void octalToInt(String x){
+        try {
+            Integer y = Integer.parseInt(x,8);
+
+            this.setStringResult(y.toString());
         }
 
         //for non-double inputs
@@ -71,6 +99,20 @@ public class ConversionCalculator {
         }
     }
 
+    public void hexadecimalToInt(String x){
+        try {
+            Integer y = Integer.parseInt(x,16);
+
+            this.setStringResult(y.toString());
+        }
+
+        //for non-double inputs
+        catch(Exception e){
+            this.setDoubleResult((double) 0);
+            this.setStringResult("ERROR");
+        }
+    }
+
 
 
 
@@ -93,5 +135,7 @@ public class ConversionCalculator {
     public void setStringResult(String stringResult) {
         this.stringResult = stringResult;
     }
+
+
 
 }
