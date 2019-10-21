@@ -59,8 +59,10 @@ static Double num2;
 
         switch (selection) {
             case 1:
+                currentNum = DisplayMode.convertInputToSelectedMode(currentNum);
                 currentNum = Trigonometry.tangent(currentNum);
                 Console.println("\n");
+                Console.println("" + DisplayMode.convertOutputToSelectedMode(currentNum));
                 Console.println(DisplayMode.convertToSelectedMode(currentNum));
                 MainMenu.mainMenu(currentNum);
                 break;
@@ -95,9 +97,23 @@ static Double num2;
                 MainMenu.mainMenu(currentNum);
                 break;
             case 7:
-                Submenu.trigonometryMenu(currentNum);
+                DisplayMode.rotateInputBetweenRadsDegs();
                 break;
             case 8:
+                DisplayMode.rotateOutputBetweenRadsDegs();
+                break;
+            case 9:
+                String trigInputMode = Console.getStringInput("Type radians or degrees to switch your input mode to that type.");
+                DisplayMode.switchInputBetweenRadsDegs(trigInputMode);
+                break;
+            case 10:
+                String trigOutputMode = Console.getStringInput("Type radians or degrees to switch your output mode to that type.");
+                DisplayMode.switchOutputBetweenRadsDegs(trigOutputMode);
+                break;
+            case 11:
+                Submenu.trigonometryMenu(currentNum);
+                break;
+            case 12:
                 MainMenu.mainMenu(currentNum);
                 break;
             default:
