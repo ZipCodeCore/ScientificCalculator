@@ -40,12 +40,12 @@ public class ToTheMoon {
 
         switch (mphKmh){
             case "kmh":
-                double timeToMoon = speed / 384000;
-                System.out.println("You will get to the moon in " + timeToMoon + "hours!");
+                double timeToMoon = 384000 / speed;
+                System.out.println("You will get to the moon in " + Math.round(timeToMoon) + " hours!");
                 break;
             case "mph":
-                timeToMoon = speed / 225623;
-                System.out.println("You will get to the moon in " + timeToMoon + "hours!");
+                timeToMoon = 225623 / speed;
+                System.out.println("You will get to the moon in " + Math.round(timeToMoon) + " hours!");
                 break;
             default:
                 System.out.println("Sorry. You're not going to the moon. You were just dreaming.");
