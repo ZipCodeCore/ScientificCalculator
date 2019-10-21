@@ -227,7 +227,18 @@ public class MainApplication {
 
             }
 
-            //
+
+            switch (memoryandSettings.getBodh()) {
+                case "binary":
+                    break;
+                case "octal":
+                    break;
+                case "decimal":
+                    break;
+                case "hexadecimal":
+                    break;
+        }
+
 
 
             console.println(currentString);
