@@ -6,6 +6,7 @@ package com.zipcodewilmington.scientificcalculator;
 public class MainApplication {
 
     public static void main(String[] args) {
+
         SimpleMath simpleMath = new SimpleMath();
 
         double result = 1.0;
@@ -19,9 +20,6 @@ public class MainApplication {
         Double num1 = Console.getDoubleInput("Enter your first number.");
 
         switch(operation) {
-            case 0:
-
-
             case 1:
                 Double num2 = Console.getDoubleInput("Enter your second.");
                 result = simpleMath.add(num1, num2);
@@ -105,6 +103,8 @@ public class MainApplication {
                 break;
         }
 
+
     }
 
 }
+

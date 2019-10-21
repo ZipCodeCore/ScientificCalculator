@@ -4,7 +4,6 @@ import static java.lang.Math.sqrt;
 
 public class SimpleMath {
 
-
     //Simple Operations
     public Double add(double num1, double num2) {
         return num1 + num2;
