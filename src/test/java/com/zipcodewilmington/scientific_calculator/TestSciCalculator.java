@@ -120,4 +120,22 @@ public class TestSciCalculator
         String actual = cotan(60);
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testFactorial1() {
+        String expected = "24.0";
+        String actual = factorial(-4);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testFactorial2() {
+        String expected = "-6.0";
+        String actual = factorial(-3);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testFactorial3() {
+        String expected = "720.0";
+        String actual = factorial(6);
+        Assert.assertEquals(expected, actual);
+    }
 }
