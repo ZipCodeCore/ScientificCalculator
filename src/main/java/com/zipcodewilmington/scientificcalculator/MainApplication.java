@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by leon on 2/9/18.
  */
-public class MainApplication {
+public class MainApplication extends InputChecker {
 
 
     public static void main(String[] args) {

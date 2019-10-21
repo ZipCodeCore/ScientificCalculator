@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class InputCheckerTest {
+public class InputCheckerTest extends InputChecker {
 
     @Before
     public void setUp() throws Exception {
