@@ -1,5 +1,9 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import org.w3c.dom.ls.LSOutput;
+
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /**
@@ -21,7 +25,7 @@ public class Console extends Calculator {
         return scanner.nextLine();
     }
 
-    public static Integer getIntegerInput(String prompt) {
+    private static Integer getIntegerInput(String prompt) {
         return getDoubleInput(prompt).intValue();
     }
 
@@ -165,25 +169,25 @@ public class Console extends Calculator {
         }
     }
 
-    static String degreesRadians(){
+    static String degreesRadians() {
         System.out.println("Would you like you answer in Radians or Degrees?");
         System.out.println("\"1\" - Radians");
         System.out.println("\"2\" - Degrees");
-        Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        while(true)
-            switch (userInput){
+        String userInput = Console.getStringInput(":");
+        while (true)
+            switch (userInput) {
                 case "1":
                     return "Radians";
                 case "2":
                     return "Degrees";
                 default:
                     System.out.println("ERROR: Please enter \"1\" for Radians or \"2\" for Degrees.");
-                    scanner = new Scanner(System.in);
-                    userInput = scanner.nextLine();
+                    userInput = Console.getStringInput(":");
             }
     }
 }
+
+
 
 
 

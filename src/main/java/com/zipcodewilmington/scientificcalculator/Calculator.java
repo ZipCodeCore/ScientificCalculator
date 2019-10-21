@@ -2,8 +2,12 @@ package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+
 
 class Calculator extends MainApplication {
+    private Scanner scanner = new Scanner(System.in);
+
     //create an array that includes all of the available operators
     private String[] operators = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
             "10", "11", "12", "13,", "14", "15", "16",
@@ -19,7 +23,7 @@ class Calculator extends MainApplication {
         while (true) {
             //ask the user for a operator
             System.out.println("Choose your Operator\nType \"cmd\" for commands.");
-            String userOperator = Console.getStringInput(": ");
+            String userOperator = Console.getStringInput(":");
 
             while (!operatorsList.contains(userOperator)) {
                 //provide a list of commands
@@ -61,35 +65,30 @@ class Calculator extends MainApplication {
             }
 
 
-                //ask the user for a value
+            //ask the user for a value
+            System.out.println("Enter your value");
+            String userValue = Console.getStringInput(":");
+            boolean correctInput;
+            //run a while loop that checks if a proper number was entered
+            while(true) {
+                correctInput = InputChecker.isNumeric(userValue);
+                if(correctInput) break;
                 System.out.println("Enter your value");
-                Double userValue = Console.getDoubleInput(":");
-                String userValueAsString = userValue.toString();
-                boolean correctInput;
+                userValue = Console.getStringInput(":");
+            }
+            double userValue1 = Double.parseDouble(userValue);
+            if (need2ValuesList.contains(userOperator)) {
+                //ask for a second value
+                System.out.println("Enter your second value");
+                userValue = Console.getStringInput(":");
                 //run a while loop that checks if a proper number was entered
-                while (true) {
-                    correctInput = InputChecker.isNumeric(userValueAsString);
-                    if (correctInput) break;
-                    System.out.println("Enter your value");
-                    userValue = Console.getDoubleInput(":");
-                    userValueAsString = userValue.toString();
-
-                }
-                double userValue1 = Double.parseDouble(userValueAsString);
-
-                if (need2ValuesList.contains(userOperator)) {
-                    //ask for a second value
+                while(true) {
+                    correctInput = InputChecker.isNumeric(userValue);
+                    if(correctInput) break;
                     System.out.println("Enter your second value");
-                    double userValue2 = Console.getDoubleInput(":");
-                    String userValue2AsString = Double.toString(userValue2);
-                    //run a while loop that checks if a proper number was entered
-                    while(true) {
-                        correctInput = InputChecker.isNumeric(userValue2AsString);
-                        if(correctInput) break;
-                        System.out.println("Enter your second value");
-                        userValue = Console.getDoubleInput(":");
-                        userValue2AsString = userValue.toString();
-                    }
+                    userValue = Console.getStringInput(":");
+                }
+                double userValue2 = Double.parseDouble(userValue);
 
                     //run the need2value operators INSIDE the if statement
                     switch (userOperator) {
@@ -232,3 +231,5 @@ class Calculator extends MainApplication {
             }
         }
     }
+
+
