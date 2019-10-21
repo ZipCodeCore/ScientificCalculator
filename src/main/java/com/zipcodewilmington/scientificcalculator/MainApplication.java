@@ -172,6 +172,19 @@ public class MainApplication {
             Console.println(currentMemory + " recalled from memory");
             currentState = String.valueOf(currentMemory);
         }
+        else if (operation.equals("sine")) {
+            currentState = SciCalculator.sine(x, unitModeRadians);
+        } else if (operation.equals("cosine")) {
+            currentState = SciCalculator.cosine(x, unitModeRadians);
+        } else if (operation.equals("tangent")) {
+            currentState = SciCalculator.tangent(x, unitModeRadians);
+        } else if (operation.equals("csc")) {
+            currentState = SciCalculator.csc(x, unitModeRadians);
+        } else if (operation.equals("sec")) {
+            currentState = SciCalculator.sec(x, unitModeRadians);
+        } else if (operation.equals("cotan")) {
+            currentState = SciCalculator.cotan(x, unitModeRadians);
+        }
         else if (operation.equals("log")) { //**Fix these
             currentState = SciCalculator.log(x);
         }
@@ -183,23 +196,5 @@ public class MainApplication {
         } else if (operation.equals("factorial")) {
             currentState = SciCalculator.factorial(x);
         }
-        executeTrigFunc(operation, x);
     }
-    public static void executeTrigFunc(String operation, double x) {
-        x = SciCalculator.switchUnits(x, unitModeRadians);
-        if (operation.equals("sine")) {
-            currentState = SciCalculator.sine(x);
-        } else if (operation.equals("cosine")) {
-            currentState = SciCalculator.cosine(x);
-        } else if (operation.equals("tangent")) {
-            currentState = SciCalculator.tangent(x);
-        } else if (operation.equals("csc")) {
-            currentState = SciCalculator.csc(x);
-        } else if (operation.equals("sec")) {
-            currentState = SciCalculator.sec(x);
-        } else if (operation.equals("cotan")) {
-            currentState = SciCalculator.cotan(x);
-        }
-    }
-
 }
