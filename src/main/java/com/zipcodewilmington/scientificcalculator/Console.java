@@ -39,8 +39,8 @@ public class Console {
     /////Prompt Functions///
     /////////////////////////
     public static int corePrompt(){
-        int response = Console.getIntegerInput("What sup bitch! what do you want \n" +
-                "Choose your option: \n" +
+        int response = Console.getIntegerInput("What would you like to do? \n" +
+                "Choose your # option: \n" +
                 "1 - Addition \n" +
                 "2 - Subtraction \n" +
                 "3 - Multiplication \n" +
@@ -55,8 +55,8 @@ public class Console {
         return response;
     }
     public static int scientificPrompt(){
-        int response = Console.getIntegerInput("What sup bitch! what do you want \n" +
-                "Choose your option: \n" +
+        int response = Console.getIntegerInput("What would you like to do? \n" +
+                "Choose your # option: \n" +
                 "1 - Sine \n" +
                 "2 - Cosine \n" +
                 "3 - Tangent \n" +
@@ -87,4 +87,86 @@ public class Console {
         }
         return mode;
     }
+    public static double promptAdd(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+        double y;
+
+        x = Console.getDoubleInput("What is your X value?");
+        y = Console.getDoubleInput("What is your Y value?");
+        Console.print(x + " + " + y + " = ");
+        return basic.addition(x,y);
+    }
+
+    public static double promptSubtract(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+        double y;
+
+        x = Console.getDoubleInput("What is your X value?");
+        y = Console.getDoubleInput("What is your Y value?");
+        Console.print(x + " - " + y + " = ");
+        return basic.subtraction(x,y);
+    }
+
+    public static double promptMultiply(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+        double y;
+
+        x = Console.getDoubleInput("What is your X value?");
+        y = Console.getDoubleInput("What is your Y value?");
+        Console.print(x + " * " + y + " = ");
+        return basic.multiplication(x,y);
+    }
+
+    public static double promptDivide(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+        double y;
+
+        x = Console.getDoubleInput("What is your X value?");
+        y = Console.getDoubleInput("What is your Y value?");
+        Console.print(x + "/" + y + " = ");
+        return basic.division(x,y);
+    }
+
+    public static double promptExponent(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+        double y;
+
+        x = Console.getDoubleInput("What is your X value?");
+        y = Console.getDoubleInput("What is your Y value?");
+        Console.print(x + " ^" + y + " = ");
+        return basic.exponentiation(x, y);
+    }
+
+    public static double promptSquare(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+
+        x = Console.getDoubleInput("What is your X value?");
+        Console.print(x + " ^2" + " = ");
+        return basic.square(x);
+    }
+
+    public static double promptSquareRoot(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+
+        x = Console.getDoubleInput("What is your X value?");
+        Console.print("SquareRoot(" + x + ")" +" = ");
+        return basic.squareRoot(x);
+    }
+
+    public static double promptInverse(){
+        CoreFeatures basic = new CoreFeatures();
+        double x;
+
+        x = Console.getDoubleInput("What is your X value?");
+        Console.print("1/" + x + " = ");
+        return basic.inverse(x);
+    }
+
 }
