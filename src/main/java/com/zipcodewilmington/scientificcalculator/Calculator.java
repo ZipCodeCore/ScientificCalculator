@@ -16,13 +16,12 @@ class Calculator {
     private String[] need2Values = {"1", "2", "3", "4", "5"};
     //turn that array into a string
     private List<String> need2ValuesList = Arrays.asList(need2Values);
-    private Integer pageNumber = 1;
 
     void runCalculator() {
         while (true) {
             //ask the user for a operator
             System.out.println("Choose your Operator\nType \"cmd\" for commands.");
-            String userOperator = scanner.nextLine();
+            String userOperator = Console.getStringInput(": ");
 
             while (!operatorsList.contains(userOperator)) {
                 //provide a list of commands
@@ -57,7 +56,7 @@ class Calculator {
                     System.out.println("ERROR: Invalid command\n");
                 }
                 System.out.println("Choose your Operator\nType \"cmd\" for commands.");
-                userOperator = scanner.nextLine();
+                userOperator = Console.getStringInput(": ");
             }
             if(userOperator.equals("return")){
                 break;

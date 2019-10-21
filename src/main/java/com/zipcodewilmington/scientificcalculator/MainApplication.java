@@ -26,7 +26,7 @@ public class MainApplication {
             System.out.println("What would you like to do?");
             System.out.println("\"1\" - Run the Calculator");
             System.out.println("\"2\" - Turn off the Calculator");
-            String userCommand = scanner.nextLine();
+            String userCommand = Console.getStringInput(": ");
 
             while (!basicCommandsList.contains(userCommand)) {
                 if (basicCommandsList.contains(userCommand)) {
@@ -35,7 +35,7 @@ public class MainApplication {
                     System.out.println("ERROR: Invalid command.\n");
                 }
                 System.out.println("What would you like to do?");
-                userCommand = scanner.nextLine();
+                userCommand = Console.getStringInput(": ");
             }
 
             switch (userCommand) {
