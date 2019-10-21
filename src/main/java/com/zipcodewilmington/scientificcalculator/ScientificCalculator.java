@@ -56,6 +56,7 @@ public class ScientificCalculator {
         }
     }
 
+    //natural log
     public void log(Double x){
         try {
 
@@ -69,76 +70,57 @@ public class ScientificCalculator {
         }
     }
 
-    // natural log
-    public void logLn(Double x){
-        try {
-
-            this.setDoubleResult(Math.log1p(x));
-            this.setStringResult(Double.toString(Math.log1p(x)));
-
-
-        }
-        //for non double inputs
-        catch(Exception e){
-            this.setStringResult("ERROR");
-        }
-    }
-
     //inverse natual log
-    public void inverselogLn(Double x){
+    public void inverselog(Double x){
         try {
-
-            double y = Math.log(x);
-
-            this.setDoubleResult(Math.exp(y));
-            this.setStringResult(Double.toString(Math.exp(y)));
-
-
+            this.setDoubleResult(Math.exp(x));
+            this.setStringResult(Double.toString(Math.exp(x)));
         }
         //for non double inputs
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
 
     public void log10(Double x){
         try {
-
             this.setDoubleResult(Math.log10(x));
             this.setStringResult(Double.toString(Math.log10(x)));
-
         }
         //for non double inputs
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
 
     public void inverseLog10(Double x){
         try {
-
-            double y = Math.log(x)/Math.log(10.0);
-
-            this.setDoubleResult(Math.pow(10.0, y));
-            this.setStringResult(Double.toString(Math.pow(10.0, y)));
-
-
+            this.setDoubleResult(Math.pow(10.0, x));
+            this.setStringResult(Double.toString(Math.pow(10.0, x)));
         }
         //for non double inputs
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
 
     public void inverse(Double x){
         try {
-
-            this.setDoubleResult(1 / x);
-            this.setStringResult(Double.toString(1 / x));
-
+            if(x == 0){
+                this.setDoubleResult(null);
+                this.setStringResult("ERROR");
+            }
+            else {
+                this.setDoubleResult(1 / x);
+                this.setStringResult(Double.toString(1 / x));
+            }
         }
         //for non double inputs
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
@@ -152,6 +134,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
@@ -209,6 +192,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
@@ -222,6 +206,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
 
@@ -236,6 +221,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
