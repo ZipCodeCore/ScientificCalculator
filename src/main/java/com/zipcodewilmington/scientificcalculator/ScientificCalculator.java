@@ -256,15 +256,21 @@ public class ScientificCalculator {
     public void factorial(Double x){
         try {
 
-            int i, fact = 1;
+            if(x < 0){
+                this.setDoubleResult((double) 0);
+                this.setStringResult("ERROR");
+            }
+            else {
+                int i, fact = 1;
 
-            for (i = 1; i < x; i++) {
+                for (i = 1; i < x; i++) {
 
-                fact = fact * i;
+                    fact = fact * i;
 
 
-                this.setDoubleResult(x * fact);
-                this.setStringResult(Double.toString(x * fact));
+                    this.setDoubleResult(x * fact);
+                    this.setStringResult(Double.toString(x * fact));
+                }
             }
         }
         //for non double inputs

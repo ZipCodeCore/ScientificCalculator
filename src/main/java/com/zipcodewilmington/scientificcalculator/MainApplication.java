@@ -229,7 +229,7 @@ public class MainApplication {
 
             //
 
-            
+
             console.println(currentString);
 
         }
