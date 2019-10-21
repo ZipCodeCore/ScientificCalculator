@@ -14,6 +14,20 @@ public class ScientificCalculator {
     }
 
     //Scientific Operator functions
+    public void exponent(Double x, Double y){
+        try {
+
+            this.setDoubleResult(Math.pow(x, y));
+            this.setStringResult(Double.toString(Math.pow(x,y)));
+        }
+
+        //for non-double inputs
+        catch(Exception e){
+            this.setDoubleResult(null);
+            this.setStringResult("ERROR");
+        }
+    }
+
     public void square(Double x){
         try {
 
@@ -38,6 +52,19 @@ public class ScientificCalculator {
         //for non double inputs
         catch(Exception e){
             this.setDoubleResult(null);
+            this.setStringResult("ERROR");
+        }
+    }
+
+    public void log(Double x){
+        try {
+
+            this.setDoubleResult(Math.log(x));
+            this.setStringResult(Double.toString(Math.log(x)));
+
+        }
+        //for non double inputs
+        catch(Exception e){
             this.setStringResult("ERROR");
         }
     }
@@ -114,14 +141,9 @@ public class ScientificCalculator {
 
     public void inverseSine(Double x){
         try {
-            double degrees = x;
-            double radians = Math.toRadians(degrees);
-            double sin;
 
-            sin = Math.sin(radians);
-
-            this.setDoubleResult(Math.toDegrees(Math.asin(sin)));
-            this.setStringResult(Double.toString(Math.toDegrees(Math.asin(sin))));
+            this.setDoubleResult((Math.asin(x)));
+            this.setStringResult(Double.toString(Math.asin(x)));
 
         }
         //for non double inputs and division by zero.
@@ -133,14 +155,8 @@ public class ScientificCalculator {
     public void inverseCosine(Double x){
         try {
 
-            double degrees = x;
-            double radians = Math.toRadians(degrees);
-            double cos;
-
-            cos = Math.cos(radians);
-
-            this.setDoubleResult(Math.toDegrees(Math.acos(cos)));
-            this.setStringResult(Double.toString(Math.toDegrees(Math.acos(cos))));
+            this.setDoubleResult(Math.acos(x));
+            this.setStringResult(Double.toString(Math.acos(x)));
 
         }
         //for non double inputs and division by zero.
@@ -152,14 +168,9 @@ public class ScientificCalculator {
 
     public void inverseTangent(Double x){
         try {
-            double degrees = x;
-            double radians = Math.toRadians(degrees);
-            double tan;
 
-            tan = Math.tan(radians);
-
-            this.setDoubleResult(Math.toDegrees(Math.atan(tan)));
-            this.setStringResult(Double.toString(Math.toDegrees(Math.atan(tan))));
+            this.setDoubleResult(Math.atan(x));
+            this.setStringResult(Double.toString(Math.atan(x)));
 
         }
         //for non double inputs and division by zero.
