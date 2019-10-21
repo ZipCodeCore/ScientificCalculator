@@ -1,4 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Created by leon on 2/9/18.
@@ -134,6 +136,7 @@ public class MainApplication {
             y = Console.getDoubleInput("y = ");
             currentState = Calculator.exp(x, y);
         }
+
     }
 
     public static void executeSciOperation(String operation) {
@@ -170,6 +173,17 @@ public class MainApplication {
         }
         else if (operation.equals("cotan")){
             currentState = SciCalculator.cotan(x);
+        }
+        else if (operation.equals("log")) { //**Fix these
+            currentState = SciCalculator.log(x);
+        }
+        else if (operation.equals("log10")) { //**Fix these
+            currentState = SciCalculator.log(x);
+        }
+        else if (operation.equals("log1p")) { //**Fix these
+            currentState = SciCalculator.log(x);
+        } else if (operation.equals("factorial")) {
+            currentState = SciCalculator.factorial(x);
         }
     }
 
