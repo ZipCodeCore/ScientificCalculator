@@ -262,58 +262,70 @@ public class Calculator {
     }
 
     public String handleOperator(String operator) {
-        Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
         Double result = 0.0;
         switch (operator) {
             case "sin":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = this.trig.sin(this.display);
                 this.display = result;
                 break;
             case "cos":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = this.trig.cos(this.display);
                 this.display = result;
                 break;
             case "tan":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = this.trig.tan(this.display);
                 this.display = result;
                 break;
             case "asin":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = this.trig.arcSin(this.display);
                 this.display = result;
                 break;
             case "acos":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = this.trig.arcCos(this.display);
                 this.display = result;
                 break;
             case "atan":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = this.trig.arcTan(this.display);
                 this.display = result;
                 break;
             case "sqrt":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = Math.sqrt(this.display);
                 this.display = result;
                 break;
             case "sq":
+                Console.println("(%s)^%s", Console.printNum(this.display, this.displayMode), operator);
                 result = this.display * this.display;
                 this.display = result;
                 break;
             case "exp":
+                Console.println("e^%s", Console.printNum(this.display, this.displayMode));
                 result = Math.exp(this.display);
                 this.display = result;
                 break;
             case "10^":
+                Console.println("10^%s", Console.printNum(this.display, this.displayMode));
                 result = Math.pow(10, this.display);
                 this.display = result;
                 break;
             case "log":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = Math.log(this.display);
                 this.display = result;
                 break;
             case "ln":
+                Console.println("%s (%s)", operator, Console.printNum(this.display, this.displayMode));
                 result = Math.log1p(this.display);
                 this.display = result;
                 break;
             case "!":
+                Console.println("%s!", Console.printNum(this.display, this.displayMode));
                 if (this.display.equals(Math.floor(this.display)) && this.display > 0.0) {
                     result = 1.0;
                     for (Double i = 2.0; i <= this.display; i++) {
@@ -327,12 +339,13 @@ public class Calculator {
                 }
                 break;
             case "inv":
+                Console.println("1/%s", Console.printNum(this.display, this.displayMode));
                 result = (1.0 / this.display);
                 this.display = result;
                 break;
             case "sign":
+                Console.println("-(%s)", Console.printNum(this.display, this.displayMode));
                 this.display *=  -1.0;
-
                 break;
         }
         Console.println(Console.printNum(this.display, this.displayMode));
