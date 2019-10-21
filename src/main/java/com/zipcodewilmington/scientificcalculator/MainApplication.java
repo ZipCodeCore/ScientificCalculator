@@ -7,7 +7,12 @@ public class MainApplication {
     private static String[] coreFunctions = {"set", "clear", "exit", "help"};
     private static String[] coreMath = {"add", "subtract", "multiply", "divide"};
 //    private static String[] sciMath = {};
+    private static String helpText = "valid operations:\n\tset, clear, exit, help\n\tadd, subtract, multiply," +
+        " divide, \n\tinverse, invert sign, square, sqrt, exp\n\tsine, cosine, tangent, csc, sec, cot" +
+        "\n\tm+, mc, mrc\n\tdisp, disp bin, disp oct, disp dec, disp hex";
+
     private static boolean calcOn = true;
+    private static boolean showHelpText = false;
 
     private static String currentState = "0";
     private static String currentOperation = "none";
@@ -19,13 +24,14 @@ public class MainApplication {
 
         while (calcOn == true) {
             setDisplay();
+            if (showHelpText) {
+                Console.println(helpText);
+                showHelpText = false;
+            }
             // get operation from user input
             currentOperation = Console.getStringInput("Enter your operation: ");
             checkErrorInState();
             executeOperation(currentOperation);
-
-            //check if currentState = "Err"
-                // if true, lock calculator until currentState reset
         } // end while
 
 
@@ -48,18 +54,21 @@ public class MainApplication {
     }
 
     public static void setDisplay() {
-        String value = SciCalculator.convertNumberToMode(currentState, currentDisplayMode);
+        String value;
+        if (currentState != "Err") {
+            value = SciCalculator.convertNumberToMode(currentState, currentDisplayMode);
+        } else {
+            value = "Err";
+        }
         Console.clear();
         Console.println("CLI Scientific Calculator");
         Console.println("Mode: \t\t\t\t" + currentDisplayMode);
         Console.println("Value:\t\t\t\t" + value);
         Console.println("Previous operation:\t" + currentOperation + "\n");
-        // if help bool true, display more
     }
 
     public static void executeOperation(String operation) {
-//        setDisplay(); //reset display so operation is displayed properly
-        // set clear add subtract multiply divide square sqrt inverse invert_sign
+        checkErrorInState();
         executeCoreOperation(operation);
         executeMathOperation(operation);
         executeSciOperation(operation);
@@ -77,11 +86,7 @@ public class MainApplication {
             calcOn = false;
         }
         else if (operation.equals("help")) {
-            Console.println("\tset, clear, exit, help");
-            Console.println("\tadd, subtract, multiply, divide, \n\t" +
-                    "inverse, invert sign, square, sqrt, exp");
-            Console.println("\tm+, mc, mrc");
-            Console.println("\tdisp, disp bin, disp oct, disp dec, disp hex");
+            showHelpText = true;
         }
         else if (operation.contains("disp")) {
             currentDisplayMode = SciCalculator.switchDisplayMode(currentDisplayMode, operation);
@@ -89,16 +94,8 @@ public class MainApplication {
     }
 
     public static void executeMathOperation(String operation) {
-        double x;
+        double x = Double.valueOf(currentState);
         double y;
-
-//        if (currentState.matches("[0-9]+")) {
-        x = Double.valueOf(currentState);
-//        }
-//        else {
-//            Console.println("invalid number input, try again");
-//            x = Console.getDoubleInput("Enter a number, x = ");
-//        }
 
         if (operation.equals("add")) {
             Console.println("f(y) = " + currentState + " + y");
@@ -144,24 +141,18 @@ public class MainApplication {
         double x;
         x = Double.valueOf(currentState);
 
-        // m+ currentMemory = currentState
         if (operation.equals("m+")) {
             Console.println(currentState + " saved to memory");
             currentMemory = Double.valueOf(currentState);
         }
-        // mc currentMemory = 0
         else if (operation.equals("mc")) {
             Console.println("memory reset to zero");
             currentMemory = 0;
         }
-        // mrc currentState = currentMemory
         else if (operation.equals("mrc")) {
             Console.println(currentMemory + " recalled from memory");
             currentState = String.valueOf(currentMemory);
         }
-//        else if (operation.equals("m")) {
-//            Console.println("Stored in memory: " + currentMemory);
-//        }
         else if (operation.equals("sine")){
             currentState = SciCalculator.sine(x);
         }
