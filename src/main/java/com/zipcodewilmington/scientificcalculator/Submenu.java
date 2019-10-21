@@ -65,5 +65,18 @@ public class Submenu {
         return null;
     }
 
+    public static Integer miscMenu() {
+
+        Integer input2 = Console.getIntegerInput(
+                "Pick an operation by entering a number and pressing enter. \n" +
+                        "1. Absolute Value \n"
+                        //"2.  \n" +
+                        //"3.  \n"
+                        );
+
+        Operations.performMiscOperation(input2);
+
+        return null;
+    }
 
 }
