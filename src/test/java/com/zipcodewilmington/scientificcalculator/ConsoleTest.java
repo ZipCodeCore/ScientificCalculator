@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class ConsoleTest {
 
-    Console result = new Console();
+    private Console result = new Console();
 
     @Test
     public void additionTest1() {
@@ -487,7 +487,7 @@ public class ConsoleTest {
         double actual = result.tangent(inputValue);
         assertEquals(expected, actual, .00000);
     }
-/*
+/*unable to figure out ln(x)
     @Test
     public void naturalLogarithmTest1() {
         double inputValue = -180;
