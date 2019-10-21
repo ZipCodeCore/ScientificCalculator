@@ -44,7 +44,6 @@ public class Operations {
 
         }
 
-
     }
 
     public static void performTrigonometryOperation (Integer selection) {
