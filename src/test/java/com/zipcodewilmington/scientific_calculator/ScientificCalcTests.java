@@ -366,4 +366,84 @@ public class ScientificCalcTests {
 
     }
 
+    @Test
+    public void inverselogTest1(){
+
+        sCalc.inverselog((double) 10);
+
+        Assert.assertEquals(22026.4658,sCalc.getDoubleResult() , 0.1);
+
+    }
+
+    @Test
+    public void inverselogTest2(){
+
+        sCalc.inverselog((double) 15);
+
+        Assert.assertEquals(3269017.37,sCalc.getDoubleResult() , .1);
+
+    }
+
+    @Test
+    public void inverselogTest3(){
+
+        sCalc.inverselog((double) 5);
+
+        Assert.assertEquals(148.413,sCalc.getDoubleResult() , .1);
+
+    }
+    @Test
+    public void log10Test1(){
+
+        sCalc.log10((double) 5);
+
+        Assert.assertEquals(0.6989700043360187,sCalc.getDoubleResult() , .1);
+
+    }
+
+    @Test
+    public void log10Test2(){
+
+        sCalc.log10((double) 10);
+
+        Assert.assertEquals(1,sCalc.getDoubleResult() , .1);
+
+    }
+
+    @Test
+    public void log10Test3(){
+
+        sCalc.log10((double) 15);
+
+        Assert.assertEquals(1.1760912590556811,sCalc.getDoubleResult() , .1);
+
+    }
+
+    @Test
+    public void inverseLog10Test1(){
+
+        sCalc.inverseLog10((double) 5);
+
+        Assert.assertEquals(100000,sCalc.getDoubleResult() , .1);
+
+    }
+
+    @Test
+    public void inverseLog10Test2(){
+
+        sCalc.inverseLog10((double) 1);
+
+        Assert.assertEquals(10,sCalc.getDoubleResult() , .1);
+
+    }
+
+    @Test
+    public void inverseLog10Test3(){
+
+        sCalc.inverseLog10((double) 8);
+
+        Assert.assertEquals(100000000,sCalc.getDoubleResult() , .1);
+
+    }
+
 }
