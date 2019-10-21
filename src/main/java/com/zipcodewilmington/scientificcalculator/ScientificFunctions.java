@@ -39,8 +39,9 @@ public class ScientificFunctions {
     public static double toDegrees(double rad) {
         return(Math.toDegrees(rad));
     }
-    public double switchUnits (double num1) {
-        if (degrees = false) {
+
+    public double switchUnits (double num1, int setter) {
+        if (setter == 1) {
             double num2 = toDegrees(num1);
             return num2;
         } else {

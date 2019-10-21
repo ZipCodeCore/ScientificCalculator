@@ -18,14 +18,14 @@ public class SwitchDisplay {
         return Integer.toHexString(num1);
     }
 
-    public String toDisplay(double num1) {
+    public String toDisplay(double num1, int setter) {
 
         int num2 = (int) Math.round(num1);
-        if (binary = false) {
+        if (setter == 1) {
             return toBinary(num2);
-        } else if (octal = false) {
+        } else if (setter == 2) {
             return toOctal(num2);
-        } else if (hex = false) {
+        } else if (setter == 3) {
             return toHex(num2);
         } else {
             return String.valueOf(num1);
