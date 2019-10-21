@@ -38,8 +38,6 @@ public class MainApplication {
                     basicCalc.add(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
-
-                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "subtract":
@@ -51,7 +49,6 @@ public class MainApplication {
                     basicCalc.subtract(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
-                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "multiply":
@@ -63,7 +60,6 @@ public class MainApplication {
                     basicCalc.multiply(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
-                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "divide":
@@ -79,65 +75,76 @@ public class MainApplication {
                     basicCalc.divide(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
-                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "sine":
                     currentDouble = getInputs.getx(currentDouble,"sine of: ");
-                    currentString = Double.toString(currentDouble);
                     sciencecalc.sine(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "cosine":
                     currentDouble = getInputs.getx(currentDouble,"cosine of: ");
-                    currentString = Double.toString(currentDouble);
                     sciencecalc.cosine(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "tangent":
                     currentDouble = getInputs.getx(currentDouble,"tangent of: ");
-                    currentString = Double.toString(currentDouble);
                     sciencecalc.tangent(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "inversesine":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Sine of: ");
-                    currentString = Double.toString(currentDouble);
                     sciencecalc.inverseSine(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "inversecosine":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Cosine of: ");
-                    currentString = Double.toString(currentDouble);
                     sciencecalc.inverseCosine(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "inversetangent":
                     currentDouble = getInputs.getx(currentDouble,"Inverse Tangent of: ");
-                    currentString = Double.toString(currentDouble);
                     sciencecalc.inverseTangent(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "log":
-
+                    currentDouble = getInputs.getx(currentDouble,"log of: ");
+                    sciencecalc.log(currentDouble);
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "ln":
-
+                    currentDouble = getInputs.getx(currentDouble,"natural log of: ");
+                    sciencecalc.logLn(currentDouble);
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "inverselog":
-
+                    currentDouble = getInputs.getx(currentDouble,"inverse log of: ");
+                    sciencecalc.inverseLog(currentDouble);
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "inverseln":
-
+                    currentDouble = getInputs.getx(currentDouble,"inverse natural log of: ");
+                    //sciencecalc.inverseNaturalLog(currentDouble);
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "exponent":
@@ -145,7 +152,8 @@ public class MainApplication {
                     currentString = Double.toString(currentDouble);
                     y = getInputs.gety(currentString + " + ");
                     sciencecalc.exponent(currentDouble, y);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
 
                     break;
 
@@ -153,28 +161,32 @@ public class MainApplication {
                     currentDouble = getInputs.getx(currentDouble,"Square of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.square(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "sqrt":
                     currentDouble = getInputs.getx(currentDouble,"Square root of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.squareRoot(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "inverse":
                     currentDouble = getInputs.getx(currentDouble,"Inverse of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.inverse(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "!":
                     currentDouble = getInputs.getx(currentDouble,"Factorial of: ");
                     currentString = Double.toString(currentDouble);
                     sciencecalc.factorial(currentDouble);
-                    console.println(sciencecalc.getStringResult());
+                    currentDouble = sciencecalc.getDoubleResult();
+                    currentString = sciencecalc.getStringResult();
                     break;
 
                 case "M+":
@@ -214,8 +226,10 @@ public class MainApplication {
                     }
                     break;
 
-            }
 
+
+            }
+            console.println(currentString);
             //currently empty method
             //Console.updatedisplay();
 
