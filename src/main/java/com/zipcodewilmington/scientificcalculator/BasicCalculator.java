@@ -6,6 +6,9 @@ public class BasicCalculator {
     private Double doubleResult;
     private String stringResult;
 
+    //initializing an error class
+    Error error = new Error();
+
     //Constructor
     public BasicCalculator(){
         doubleResult = null;
@@ -55,7 +58,7 @@ public class BasicCalculator {
 
     public void divide(Double x, Double y){
         try {
-            if (y == 0){
+            if (error.IsthisBadValue(x, 0.0)){
                 this.setDoubleResult(null);
                 this.setStringResult("ERROR");
             }
@@ -63,9 +66,8 @@ public class BasicCalculator {
                 this.setDoubleResult(x / y);
                 this.setStringResult(Double.toString(x / y));
             }
-
         }
-        //for non double inputs and division by zero.
+        //for non double inputs.
         catch(Exception e){
             this.setDoubleResult(null);
             this.setStringResult("ERROR");

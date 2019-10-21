@@ -175,7 +175,6 @@ public class ScientificCalculator {
 
     public void tangent(Double x) {
         try {
-
             this.setDoubleResult(Math.tan(x));
             this.setStringResult(Double.toString(Math.tan(x)));
 
