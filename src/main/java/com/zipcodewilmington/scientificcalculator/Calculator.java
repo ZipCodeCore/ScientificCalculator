@@ -65,14 +65,16 @@ class Calculator {
 
                 //ask the user for a value
                 System.out.println("Enter your value");
-                String userValueAsString = scanner.nextLine();
+                Double userValue = Console.getDoubleInput(":");
+                String userValueAsString = userValue.toString();
                 boolean correctInput;
                 //run a while loop that checks if a proper number was entered
                 while (true) {
                     correctInput = InputChecker.isNumeric(userValueAsString);
                     if (correctInput) break;
                     System.out.println("Enter your value");
-                    userValueAsString = scanner.nextLine();
+                    userValue = Console.getDoubleInput(":");
+                    userValueAsString = userValue.toString();
 
                 }
                 double userValue1 = Double.parseDouble(userValueAsString);
@@ -80,15 +82,16 @@ class Calculator {
                 if (need2ValuesList.contains(userOperator)) {
                     //ask for a second value
                     System.out.println("Enter your second value");
-                    String userValue2AsString = scanner.nextLine();
+                    double userValue2 = Console.getDoubleInput(":");
+                    String userValue2AsString = Double.toString(userValue2);;
                     //run a while loop that checks if a proper number was entered
                     while(true) {
-                        correctInput = InputChecker.isNumeric(userValueAsString);
+                        correctInput = InputChecker.isNumeric(userValue2AsString);
                         if(correctInput) break;
                         System.out.println("Enter your second value");
-                        userValueAsString = scanner.nextLine();
+                        userValue = Console.getDoubleInput(":");
+                        userValue2AsString = userValue.toString();
                     }
-                    double userValue2 = Double.parseDouble(userValue2AsString);
 
                     //run the need2value operators INSIDE the if statement
                     switch (userOperator) {
@@ -216,12 +219,10 @@ class Calculator {
                                 System.out.println("10^" + userValue1 + " = " + inverseLog + "\n");
                             break;
                         case "19":
-                            System.out.println("OuT Of OrDEr!$$!#");
-                            /*Console naturalLogarithm = new Console();
+                            Console naturalLogarithm = new Console();
                             Double naturalLog = naturalLogarithm.naturalLogarithm(userValue1);
                             if(naturalLog != null)
                                 System.out.println("ln(" + userValue1 + ") = " + naturalLog + "\n");
-                             */
                             break;
                         case "20":
                             Console inverseNaturalLogarithm = new Console();

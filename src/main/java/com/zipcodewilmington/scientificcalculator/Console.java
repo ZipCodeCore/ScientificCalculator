@@ -124,7 +124,7 @@ public class Console {
             System.out.println("ERROR: Please enter a number larger than 0.");
             return null;
         } else {
-            return Math.log(value);
+            return Math.log10(value);
         }
     }
 
@@ -156,15 +156,15 @@ public class Console {
             return Math.tan(value);
         }
     }
-/*
+
     Double naturalLogarithm(double value) {
         if (value <= 0) {
             System.out.println("ERROR: Please enter a number larger than 0.");
             return null;
         } else {
-            return (-Math.log(1 - value)) / value;
+            return Math.log(value);
         }
-    }*/
+    }
 
     static String degreesRadians(){
         System.out.println("Would you like you answer in Radians or Degrees?");

@@ -379,7 +379,7 @@ public class ConsoleTest {
     @Test
     public void LogarithmTest1() {
         double inputValue = 1;
-        double expected = Math.log(inputValue);
+        double expected = Math.log10(inputValue);
         double actual = result.logarithm(inputValue);
         assertEquals(expected, actual, .00);
     }
@@ -387,7 +387,7 @@ public class ConsoleTest {
     @Test
     public void LogarithmTest2() {
         double inputValue = 45;
-        double expected = Math.log(inputValue);
+        double expected = Math.log10(inputValue);
         double actual = result.logarithm(inputValue);
         assertEquals(expected, actual, .00);
     }
@@ -395,7 +395,7 @@ public class ConsoleTest {
     @Test
     public void LogarithmTest3() {
         double inputValue = 180;
-        double expected = Math.log(inputValue);
+        double expected = Math.log10(inputValue);
         double actual = result.logarithm(inputValue);
         assertEquals(expected, actual, .00);
     }
@@ -487,28 +487,27 @@ public class ConsoleTest {
         double actual = result.tangent(inputValue);
         assertEquals(expected, actual, .00000);
     }
-/*unable to figure out ln(x)
     @Test
     public void naturalLogarithmTest1() {
-        double inputValue = -180;
-        double expected = (-Math.log(1 - inputValue)) / inputValue;
-        double actual = result.tangent(inputValue);
+        double inputValue = 7;
+        double expected = Math.log(inputValue);
+        double actual = result.naturalLogarithm(inputValue);
         assertEquals(expected, actual, .00000);
     }
 
     @Test
     public void naturalLogarithmTest2() {
-        double inputValue = 0;
-        double expected = (-Math.log(1 - inputValue)) / inputValue;
-        double actual = result.tangent(inputValue);
+        double inputValue = 3;
+        double expected = Math.log(inputValue);
+        double actual = result.naturalLogarithm(inputValue);
         assertEquals(expected, actual, .00000);
     }
 
     @Test
     public void naturalLogarithmTest3() {
         double inputValue = 1;
-        double expected = (-Math.log(1 - inputValue)) / inputValue;
-        double actual = result.tangent(inputValue);
+        double expected = Math.log(inputValue);
+        double actual = result.naturalLogarithm(inputValue);
         assertEquals(expected, actual, .00000);
-    }*/
+    }
 }
