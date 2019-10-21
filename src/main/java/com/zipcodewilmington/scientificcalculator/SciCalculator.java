@@ -11,18 +11,16 @@ public class SciCalculator {
     public static String log10(double x){ return String.valueOf(Math.log10(x)); } //**Fix these
     public static String log1p(double x){ return String.valueOf(Math.log1p(x)); }//** Fix these
     public static String factorial(double x){ //Fix for negative input
-        double total = x;
-        if(x <0){
-            total = 0;
-        }
-        else if (x ==0){
+        double total = Math.abs(x);
+        double sign = Math.pow(x / total, total);
+        if (x == 0) {
             total = 1;
-        }else {
-            for (int i = 1; i < x; i++) {
+        } else {
+            for (int i = 1; i < Math.abs(x); i++) {
                 total *= i;
             }
         }
-        return String.valueOf(total);
+        return String.valueOf(total * sign);
         }
 
     public static String switchDisplayMode(String currentMode, String operation) {
