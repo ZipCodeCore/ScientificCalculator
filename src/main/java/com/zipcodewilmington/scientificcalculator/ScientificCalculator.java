@@ -14,11 +14,11 @@ public class ScientificCalculator {
     }
 
     //Scientific Operator functions
-    public void exponent(Double x){
+    public void exponent(Double x, Double y){
         try {
 
-            this.setDoubleResult(Math.exp(x));
-            this.setStringResult(Double.toString(Math.exp(x)));
+            this.setDoubleResult(Math.pow(x, y));
+            this.setStringResult(Double.toString(Math.pow(x,y)));
         }
 
         //for non-double inputs
