@@ -9,7 +9,7 @@ public class MainApplication {
 
         boolean turnOn = true;
 
-        Console.println("Welcome to my calculator!");
+        Console.println("\nWelcome to my calculator!");
       /*  String s = Console.getStringInput("Enter a string");
         Integer i = Console.getIntegerInput("Enter an integer");
         Double d = Console.getDoubleInput("Enter your number:.");
@@ -22,7 +22,7 @@ public class MainApplication {
         while (turnOn) {
             try {
                 CoreMethods basic = new CoreMethods();
-                double inputValue = Console.getDoubleInput("\n\nWhat can I help you with Today? \nChoose: \n1 - Addition \n"
+                double inputValue = Console.getDoubleInput("_______________________________ \n\nWhat can I help you with Today? \nChoose: \n1 - Addition \n"
                         + "2 - Subtraction \n" + "3 - Multiply  \n" + "4 - Division \n" + "5 - Square \n" + "6 - Power \n" +
                         "7 - Square Root \n" + "8 - Inverse \n" +"9 - Neg or Pos \n" + "10 - Turn off !");
 
@@ -99,4 +99,3 @@ public class MainApplication {
     }
 }
 
-//branch kai
