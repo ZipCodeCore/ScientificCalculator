@@ -222,7 +222,7 @@ public class MainApplication {
                         currentDouble = Double.valueOf(s);
                         currentString = Double.toString(currentDouble);
                     } catch (Exception e) {
-                        console.print("I do not understand.");
+                        console.println("I do not understand.");
                     }
                     break;
 
@@ -230,8 +230,6 @@ public class MainApplication {
 
             }
             console.println(currentString);
-            //currently empty method
-            //Console.updatedisplay();
 
         }
         System.exit(0);

@@ -103,7 +103,7 @@ public class MemoryAndSettings {
         while (x != "back") {
 
             x = Console.getStringInput("What do you want to change?\n" +
-                    "(Type 'help' for a list of commands");
+                    "(Type 'help' for a list of commands)\n");
 
             switch (x) {
                 case "help":
@@ -147,6 +147,7 @@ public class MemoryAndSettings {
                     break;
 
                 case "back":
+                    x = "back";
                     break;
 
                 default:
