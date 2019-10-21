@@ -22,7 +22,7 @@ public class MainApplication {
 
         console.print("Welcome to my calculator!\n" +
                         "Type 'help' for list of commands.\n" +
-                        "What would you like to do?");
+                        "What would you like to do?\n");
 
         while (s !="exit") {
 
@@ -32,41 +32,45 @@ public class MainApplication {
                 case "add":
 
                     currentDouble = getInputs.getx(currentDouble, "First number: ");
-                    y = getInputs.gety(" + ");
+                    currentString = Double.toString(currentDouble);
+                    y = getInputs.gety(currentString + " + ");
 
                     basicCalc.add(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
 
-                    console.print(basicCalc.getStringResult());//place holder for display
+                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "subtract":
 
                     currentDouble = getInputs.getx(currentDouble,"First number: ");
-                    y = getInputs.gety(" - ");
+                    currentString = Double.toString(currentDouble);
+                    y = getInputs.gety(currentString + " - ");
 
                     basicCalc.subtract(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
-                    console.print(basicCalc.getStringResult());//place holder for display
+                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "multiply":
 
                     currentDouble = getInputs.getx(currentDouble,"First Number: ");
-                    y = getInputs.gety(" * ");
+                    currentString = Double.toString(currentDouble);
+                    y = getInputs.gety(currentString + " * ");
 
                     basicCalc.multiply(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
-                    console.print(basicCalc.getStringResult());//place holder for display
+                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
                 case "divide":
 
                     currentDouble = getInputs.getx(currentDouble,"First number");
-                    y = getInputs.gety(" / ");
+                    currentString = Double.toString(currentDouble);
+                    y = getInputs.gety(currentString + " / ");
 
                     while(y == 0){
                         y = Console.getDoubleInput("Please enter a non-zero denominator: ");
@@ -75,47 +79,102 @@ public class MainApplication {
                     basicCalc.divide(currentDouble, y);
                     currentDouble = basicCalc.getDoubleResult();
                     currentString = basicCalc.getStringResult();
-                    console.print(basicCalc.getStringResult());//place holder for display
+                    console.println(basicCalc.getStringResult());//place holder for display
                     break;
 
-                case "Sine":
+                case "sine":
                     currentDouble = getInputs.getx(currentDouble,"sine of: ");
+                    currentString = Double.toString(currentDouble);
                     sciencecalc.sine(currentDouble);
+                    console.println(sciencecalc.getStringResult());
                     break;
 
-                case "Cosine":
+                case "cosine":
                     currentDouble = getInputs.getx(currentDouble,"cosine of: ");
+                    currentString = Double.toString(currentDouble);
                     sciencecalc.cosine(currentDouble);
+                    console.println(sciencecalc.getStringResult());
                     break;
 
-                case "Tangent":
+                case "tangent":
                     currentDouble = getInputs.getx(currentDouble,"tangent of: ");
+                    currentString = Double.toString(currentDouble);
                     sciencecalc.tangent(currentDouble);
+                    console.println(sciencecalc.getStringResult());
                     break;
 
-                case "InverseSine":
-                    currentDouble = getInputs.getx(currentDouble,"Inverse of: ");
-                    sciencecalc.inverse(currentDouble);
+                case "inversesine":
+                    currentDouble = getInputs.getx(currentDouble,"Inverse Sine of: ");
+                    currentString = Double.toString(currentDouble);
+                    sciencecalc.inverseSine(currentDouble);
+                    console.println(sciencecalc.getStringResult());
+                    break;
+
+                case "inversecosine":
+                    currentDouble = getInputs.getx(currentDouble,"Inverse Cosine of: ");
+                    currentString = Double.toString(currentDouble);
+                    sciencecalc.inverseCosine(currentDouble);
+                    console.println(sciencecalc.getStringResult());
+                    break;
+
+                case "inversetangent":
+                    currentDouble = getInputs.getx(currentDouble,"Inverse Tangent of: ");
+                    currentString = Double.toString(currentDouble);
+                    sciencecalc.inverseTangent(currentDouble);
+                    console.println(sciencecalc.getStringResult());
+                    break;
+
+                case "log":
+
+                    break;
+
+                case "ln":
+
+                    break;
+
+                case "inverselog":
+
+                    break;
+
+                case "inverseln":
+
                     break;
 
                 case "exponent":
+                    currentDouble = getInputs.getx(currentDouble, "First number: ");
+                    currentString = Double.toString(currentDouble);
+                    y = getInputs.gety(currentString + " + ");
+                    sciencecalc.exponent(currentDouble, y);
+                    console.println(sciencecalc.getStringResult());
 
                     break;
 
                 case "square":
-
+                    currentDouble = getInputs.getx(currentDouble,"Square of: ");
+                    currentString = Double.toString(currentDouble);
+                    sciencecalc.square(currentDouble);
+                    console.println(sciencecalc.getStringResult());
                     break;
 
                 case "sqrt":
-
+                    currentDouble = getInputs.getx(currentDouble,"Square root of: ");
+                    currentString = Double.toString(currentDouble);
+                    sciencecalc.squareRoot(currentDouble);
+                    console.println(sciencecalc.getStringResult());
                     break;
 
                 case "inverse":
-
+                    currentDouble = getInputs.getx(currentDouble,"Inverse of: ");
+                    currentString = Double.toString(currentDouble);
+                    sciencecalc.inverse(currentDouble);
+                    console.println(sciencecalc.getStringResult());
                     break;
 
                 case "!":
-
+                    currentDouble = getInputs.getx(currentDouble,"Factorial of: ");
+                    currentString = Double.toString(currentDouble);
+                    sciencecalc.factorial(currentDouble);
+                    console.println(sciencecalc.getStringResult());
                     break;
 
                 case "M+":
@@ -125,6 +184,7 @@ public class MainApplication {
                 case "MRC":
                     currentDouble = memoryandSettings.getRememberedNum();
                     currentString = Double.toString(currentDouble);
+                    console.println(currentDouble + " was recalled.");
                     break;
 
                 case "MC":
@@ -135,6 +195,11 @@ public class MainApplication {
                     memoryandSettings.select();
                     break;
 
+                case "clear":
+                    currentDouble = 0.0;
+                    currentString = "0";
+                    break;
+
                 case "exit":
                     s = "exit";
                     break;
@@ -143,6 +208,7 @@ public class MainApplication {
 
                     try {
                         currentDouble = Double.valueOf(s);
+                        currentString = Double.toString(currentDouble);
                     } catch (Exception e) {
                         console.print("I do not understand.");
                     }
