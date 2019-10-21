@@ -19,6 +19,7 @@ public class BasicCalculator {
             this.setDoubleResult(x + y);
             this.setStringResult(Double.toString(x + y));
         }
+
         //for non-double inputs
         catch(Exception e){
             this.setDoubleResult(null);
@@ -47,18 +48,26 @@ public class BasicCalculator {
         }
         //for non double inputs
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }
 
     public void divide(Double x, Double y){
         try {
-            this.setDoubleResult(x / y);
-            this.setStringResult(Double.toString(x / y));
+            if (y == 0){
+                this.setDoubleResult(null);
+                this.setStringResult("ERROR");
+            }
+            else {
+                this.setDoubleResult(x / y);
+                this.setStringResult(Double.toString(x / y));
+            }
 
         }
         //for non double inputs and division by zero.
         catch(Exception e){
+            this.setDoubleResult(null);
             this.setStringResult("ERROR");
         }
     }

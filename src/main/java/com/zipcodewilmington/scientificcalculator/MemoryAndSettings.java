@@ -5,9 +5,9 @@ public class MemoryAndSettings {
     //fields
     private Double rememberedNum;
     private String rememberedStr;
-
     private String bodh;
     private String radordeg;
+
     private String[] displaytype = {"binary", "octal","decimal","hexadecimal"};
     private int currenttypeindex;
 
@@ -25,7 +25,7 @@ public class MemoryAndSettings {
     //methods
 
     //for setting the type (binary, octal, decimal, hexadecimal)
-    public void nextDisplayMode(){
+    public void switchDisplayMode(){
         if(currenttypeindex >= 3){
             currenttypeindex = 0;
         }
@@ -43,12 +43,11 @@ public class MemoryAndSettings {
         else if(type == "octal"){
             currenttypeindex = 1;
         }
+        else if(type == "decimal"){
+            currenttypeindex = 2;
+        }
         else if(type == "hexadecimal"){
             currenttypeindex = 3;
-        }
-        else{
-            currenttypeindex = 2;
-            Console.print("Automatically set to decimal.");
         }
         bodh = displaytype[currenttypeindex];
         Console.print("Current type is " + bodh);
@@ -95,6 +94,66 @@ public class MemoryAndSettings {
     }
 
     //--------------------------------------------
+
+    //method for the settings menu
+    public void select() {
+
+        String x = "";
+
+        while (x != "back") {
+
+            x = Console.getStringInput("What do you want to change?\n" +
+                    "(Type 'help' for a list of commands");
+
+            switch (x) {
+                case "help":
+                    Console.print("switch units:  cycles between radians and degrees\n" +
+                            "(unit): changes to type specified.  Replace (unit) with either 'radians' or 'degrees'\n" +
+                            "switch type:  Cycles between displaying results in binary, octal, decimal, and hexadecimal\n " +
+                            "(type): changes to specified type. Replace (unit) with: 'binary', 'octal, 'decimal, or 'hex'\n" +
+                            "back: exits settings");
+                    break;
+
+                case "switch units":
+                    this.switchUnitsMode();
+                    break;
+
+                case "radians":
+                    this.switchUnitsMode(x);
+                    break;
+
+                case "degrees":
+                    this.switchUnitsMode(x);
+                    break;
+
+                case "switch type":
+                    this.switchDisplayMode();
+                    break;
+
+                case "binary":
+                    this.switchDisplayMode(x);
+                    break;
+
+                case "octal":
+                    this.switchDisplayMode(x);
+                    break;
+
+                case "decimal":
+                    this.switchDisplayMode(x);
+                    break;
+
+                case "hex":
+                    this.switchDisplayMode(x);
+                    break;
+
+                case "back":
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }
 
     //getters and Setters
     public String getBodh() {

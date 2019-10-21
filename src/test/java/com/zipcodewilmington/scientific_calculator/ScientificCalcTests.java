@@ -16,7 +16,7 @@ public class ScientificCalcTests {
     }
 
     @Test
-    public void squareTest(){
+    public void squareTest1(){
 
         sCalc.square((double) 100);
 
@@ -56,7 +56,7 @@ public class ScientificCalcTests {
 
         sCalc.squareRoot((double) 500);
 
-        Assert.assertEquals(22.36067977,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(22.36067977,sCalc.getDoubleResult() , .1);
 
     }
 
@@ -65,7 +65,7 @@ public class ScientificCalcTests {
 
         sCalc.squareRoot((double) 1000);
 
-        Assert.assertEquals(31.6227766,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(31.6227766,sCalc.getDoubleResult() , .1);
 
     }
 
@@ -128,7 +128,7 @@ public class ScientificCalcTests {
 
         sCalc.sine((double) 10);
 
-        Assert.assertEquals(.17364817,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(-0.5440211108893698,sCalc.getDoubleResult() , .1);
 
     }
 
@@ -137,16 +137,16 @@ public class ScientificCalcTests {
 
         sCalc.sine((double) 100);
 
-        Assert.assertEquals(.984807753,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(-0.50636564111,sCalc.getDoubleResult() , .1);
 
     }
 
     @Test
     public void sineTest3(){
 
-        sCalc.sine((double) 1000);
+        sCalc.sine((double) 50);
 
-        Assert.assertEquals(-.98480775,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(-0.2623748537,sCalc.getDoubleResult() , .1);
 
     }
 
@@ -155,25 +155,25 @@ public class ScientificCalcTests {
 
         sCalc.cosine((double) 10);
 
-        Assert.assertEquals(.984807753,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(-0.83907152907,sCalc.getDoubleResult() , .1);
 
     }
 
     @Test
     public void cosineTest2(){
 
-        sCalc.cosine((double) 100);
+        sCalc.cosine((double) 50);
 
-        Assert.assertEquals(-.173648177,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.96496602849,sCalc.getDoubleResult() , .1);
 
     }
 
     @Test
     public void cosineTest3(){
 
-        sCalc.cosine((double) 1000);
+        sCalc.cosine((double) 100);
 
-        Assert.assertEquals(.173648177,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.86231887228,sCalc.getDoubleResult() , .1);
 
     }
 
@@ -182,106 +182,106 @@ public class ScientificCalcTests {
 
         sCalc.tangent((double) 10);
 
-        Assert.assertEquals(.17632698,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.64836082745,sCalc.getDoubleResult() , .1);
 
     }
 
     @Test
     public void tangentTest2(){
 
-        sCalc.tangent((double) 100);
+        sCalc.tangent((double) 50);
 
-        Assert.assertEquals(-5.67128181,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(-0.27190061199,sCalc.getDoubleResult() , .1);
 
     }
 
     @Test
     public void tangentTest3(){
 
-        sCalc.tangent((double) 1000);
+        sCalc.tangent((double) 100);
 
-        Assert.assertEquals(-5.6712818,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(-0.58721391515,sCalc.getDoubleResult() , 0.1);
 
     }
 
     @Test
     public void inverseSineTest1(){
 
-        sCalc.inverseSine((double) 100);
+        sCalc.inverseSine((double) 1);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(1.57079633,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseSineTest2(){
 
-        sCalc.inverseSine((double) 100);
+        sCalc.inverseSine((double) .5);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.52359878,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseSineTest3(){
 
-        sCalc.inverseSine((double) 100);
+        sCalc.inverseSine((double) .8);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.92729522,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseCosineTest1(){
 
-        sCalc.inverseCosine((double) 100);
+        sCalc.inverseCosine((double) 1);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseCosineTest2(){
 
-        sCalc.inverseCosine((double) 100);
+        sCalc.inverseCosine((double) .5);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(1,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseCosineTest3(){
 
-        sCalc.inverseCosine((double) 100);
+        sCalc.inverseCosine((double) .8);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(.6,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseTangentTest1(){
 
-        sCalc.inverseTangent((double) 100);
+        sCalc.inverseTangent((double) .8);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.67474094,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseTangentTest2(){
 
-        sCalc.inverseTangent((double) 100);
+        sCalc.inverseTangent((double) 1);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.78539816,sCalc.getDoubleResult() , 0);
 
     }
 
     @Test
     public void inverseTangentTest3(){
 
-        sCalc.inverseTangent((double) 100);
+        sCalc.inverseTangent((double) .6);
 
-        Assert.assertEquals(10000,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(0.5404195,sCalc.getDoubleResult() , 0);
 
     }
 
