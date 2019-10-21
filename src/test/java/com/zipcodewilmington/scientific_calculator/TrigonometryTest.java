@@ -63,7 +63,7 @@ public class TrigonometryTest {
     }
     @Test
     public void cosineTest3() {
-        Double expected = -0.4480736161291702 ;
+        Double expected = -0.4480736161291701 ;
         Double actual = Trigonometry.cosine(90.0);
         Assert.assertEquals(expected, actual);
     }
