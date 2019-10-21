@@ -74,27 +74,27 @@ public class DisplayMode {
     }
 
     public static void rotateOutputBetweenRadsDegs() {
-        if (trigInputMode.equals("Degrees")) {
-            trigInputMode = "Radians";
-        } else trigInputMode = "Degrees";
+        if (trigOutputMode.equals("Degrees")) {
+            trigOutputMode = "Radians";
+        } else trigOutputMode = "Degrees";
     }
 
     public static void switchOutputBetweenRadsDegs(String userModeSelection) {
         if (userModeSelection.equals("Degrees")) {
-            trigInputMode = "Degrees";
-        } else trigInputMode = "Radians";
+            trigOutputMode = "Degrees";
+        } else trigOutputMode = "Radians";
     }
 
-    public static Double convertInputToSelectedMode2(Double input) {
+    public static Double convertInputToSelectedMode(Double input) {
         if (trigInputMode.equals("Radians")) {
             return Math.toRadians(input);
         } else
             return Math.toDegrees(input);
     }
 
-    public static Double convertOutputToSelectedMode2(Double result) {
+    public static Double convertOutputToSelectedMode(Double result) {
         String s = "";
-        if (trigInputMode.equals("Radians")) {
+        if (trigOutputMode.equals("Radians")) {
             return Math.toRadians(result);
         } else
             return Math.toDegrees(result);

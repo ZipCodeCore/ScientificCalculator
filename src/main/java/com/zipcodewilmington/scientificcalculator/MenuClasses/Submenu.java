@@ -24,15 +24,19 @@ public class Submenu {
     public static void trigonometryMenu(Double currentNum) {
 
         Integer input2 = Console.getIntegerInput(
-                "Pick an operation by entering a number and pressing enter. \n" +
-                        "1. Tangent \n" +
-                        "2. Sine \n" +
-                        "3. Cosine \n" +
-                        "4. Inverse Tangent \n" +
-                        "5. Inverse Cosine \n" +
-                        "6. Inverse Sine \n" +
-                        "7. Return to Trig Menu \n" +
-                        "8. Return to Main Menu \n");
+                "Pick an operation by entering a number and pressing enter.\n" +
+                        "1. Tangent\n" +
+                        "2. Sine\n" +
+                        "3. Cosine\n" +
+                        "4. Inverse Tangent\n" +
+                        "5. Inverse Cosine\n" +
+                        "6. Inverse Sine\n" +
+                        "7. Rotate Input Mode\n" +
+                        "8. Rotate Output Mode\n" +
+                        "9. Pick Input Mode\n" +
+                        "10. Pick Output Mode\n" +
+                        "11. Return to Trig Menu\n" +
+                        "12. Return to Main Menu\n");
 
         Operations.performTrigonometryOperation(input2, currentNum);
 
