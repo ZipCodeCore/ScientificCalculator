@@ -10,8 +10,8 @@ public class ScientificFunctions {
         return(Math.sin(b));
     }
     public static double cos(double a) {
-        a = Math.toRadians(a);
-        return(Math.cos(a));
+        double b = Math.toRadians(a);
+        return(Math.cos(b));
     }
     public static double tan(double a) {
         double b = Math.toRadians(a);
@@ -48,4 +48,5 @@ public class ScientificFunctions {
             return num1;
         }
     }
+
 }

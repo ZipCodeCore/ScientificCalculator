@@ -55,15 +55,6 @@ public class MainApplication {
                     Console.println(  "1 = Radians\n" +
                                               "2 = Degrees\n");
                     choice3 = Console.getIntegerInput("");
-                    /*if (choice3 == 1) {
-                        scientificFunctions.degrees = true;
-                        scientificFunctions.degrees = false;
-                    } else if (choice3 == 2) {
-                        scientificFunctions.radians = false;
-                        scientificFunctions.degrees = true;
-                    } else {
-                        Console.println("You have entered something incorrectly");
-                    }*/
                 } while (choice3 != 1 && choice3 != 2);
 
             } else if (choice == 3) {
