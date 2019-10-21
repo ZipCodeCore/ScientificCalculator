@@ -1,6 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Statistics1Var {

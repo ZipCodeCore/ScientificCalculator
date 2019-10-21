@@ -332,14 +332,13 @@ public class CalculatorTest {
         calculator.handleOperator("!");
         assertTrue(24.0 ==  calculator.getDisplay().doubleValue());
 
-        calculator.handleOperator("!");
         calculator.setDisplay(4.3);
-        assertEquals("ERR", calculator.handleOperator("!"));
+        calculator.handleOperator("!");
+        assertEquals(0,Double.compare(Double.NaN, calculator.getDisplay()));
 
-        /*calculator.handleOperator("!");
         calculator.setDisplay(-4.0);
-        assertEquals(-24.0, calculator.handleOperator("!"));
-*/
+        calculator.handleOperator("!");
+        assertEquals(0,Double.compare(Double.NaN, calculator.getDisplay()));
     }
 
 }

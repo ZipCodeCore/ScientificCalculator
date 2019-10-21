@@ -314,29 +314,17 @@ public class Calculator {
                 this.display = result;
                 break;
             case "!":
-                if ((this.display.equals(Math.floor(this.display))) && !this.display.equals(0.0)
-                        && this.display > 0.0) {
-                            result = 1.0;
-                        for (Double i = 2.0; i <= this.display; i++) {
-                            result *= i;
-
-                        }
-                        this.display = result;
-                    } else if (this.display.equals(0.0)) {
-                        this.display = 1.0;
-
-                    } else if (this.display < 0.0) {
-                        result = -1.0;
-                        for (Double i = 2.0; i <= this.display; i++) {
-                            result *= i;
-                        }
-                    } else {
-                        String error = new String("ERR");
-                        throwError();
-                        return error;
+                if (this.display.equals(Math.floor(this.display)) && this.display > 0.0) {
+                    result = 1.0;
+                    for (Double i = 2.0; i <= this.display; i++) {
+                        result *= i;
                     }
-
-
+                    this.display = result;
+                } else if (this.display.equals(0.0)) {
+                    this.display = 1.0;
+                } else {
+                    this.display = Double.NaN;
+                }
                 break;
             case "inv":
                 result = (1.0 / this.display);
