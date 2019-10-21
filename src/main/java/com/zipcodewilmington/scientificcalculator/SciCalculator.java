@@ -11,6 +11,7 @@ public class SciCalculator {
     public static String log10(double x){ return String.valueOf(Math.log10(x)); } //**Fix these
     public static String log1p(double x){ return String.valueOf(Math.log1p(x)); }//** Fix these
     public static String factorial(double x){
+        x = Math.round(x);
         double total = Math.abs(x);
         double sign = Math.pow(x / total, total); //(±1)^n, n=|±x|
         if (x == 0) {

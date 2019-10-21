@@ -139,6 +139,12 @@ public class TestSciCalculator
         Assert.assertEquals(expected, actual);
     }
     @Test
+    public void testFactorial4() {
+        String expected = "24.0";
+        String actual = factorial(4.2);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
     public void testSwitchDisplayMode1() {
         String expected = "octal";
         String actual = switchDisplayMode("binary", "disp");
