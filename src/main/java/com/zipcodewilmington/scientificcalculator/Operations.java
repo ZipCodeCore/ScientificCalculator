@@ -136,11 +136,13 @@ public class Operations {
         switch (selection) {
             case 1:
                 num1 = Console.getDoubleInput("Enter a number.");
-                //Inversion.methodName(num1);
+                Inversion.changeSign(num1);
                 MainMenu.mainMenu();
                 break;
             case 2:
-                Submenu.inversionMenu();
+                num1 = Console.getDoubleInput("Enter a number.");
+                Inversion.inverseNum(num1);
+                MainMenu.mainMenu();
                 break;
             case 3:
                 MainMenu.mainMenu();
@@ -157,15 +159,17 @@ public class Operations {
         switch (selection) {
             case 1:
                 num1 = Console.getDoubleInput("Enter a number.");
-                //Inversion.methodName(num1);
+                Logarithmic.naturalLog(num1);
                 MainMenu.mainMenu();
                 break;
             case 2:
+                num1 = Console.getDoubleInput("Enter a number.");
+                Logarithmic.logBaseTen(num1);
                 MainMenu.mainMenu();
                 break;
             default:
                 Console.println("Invalid selection. Please try again.");
-                //Submenu.logarithmMenu();
+                Submenu.logarithmsMenu();
         }
 
     }

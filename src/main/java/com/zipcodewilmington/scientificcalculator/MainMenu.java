@@ -10,7 +10,7 @@ public class MainMenu {
 
 
         input = Console.getIntegerInput(
-                "What would you like to do? Input a number and press enter. \n" +
+                "\nWhat would you like to do? Input a number and press enter. \n" +
                         "1. Arithmetic \n" +
                         "2. Trigonometry \n" +
                         "3. Exponents \n" +
@@ -33,7 +33,7 @@ public class MainMenu {
                 Submenu.exponentsMenu();
                 break;
             case 4:
-                //Submenu.logarithmsMenu();
+                Submenu.logarithmsMenu();
                 break;
             case 5:
                 Submenu.inversionMenu();

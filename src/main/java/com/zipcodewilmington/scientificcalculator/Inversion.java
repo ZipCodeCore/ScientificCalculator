@@ -11,7 +11,7 @@ public class Inversion {
 
     public static Double inverseNum (Double a)
     {
-        //ErrorMessages.noInverseZero(a);
+        ErrorMessages.noInverseZero(a);
         Double output = 1 / a;
         Console.println( "\n" + output);
         return output;

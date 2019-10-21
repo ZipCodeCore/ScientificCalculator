@@ -2,7 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class Submenu {
 
-    public static Integer arithmeticMenu() {
+    public static void arithmeticMenu() {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -15,10 +15,10 @@ public class Submenu {
 
         Operations.performArithmeticOperation(input2);
 
-        return null;
+
     }
 
-    public static Integer trigonometryMenu() {
+    public static void trigonometryMenu() {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -33,10 +33,10 @@ public class Submenu {
 
         Operations.performTrigonometryOperation(input2);
 
-        return null;
+
     }
 
-    public static Integer exponentsMenu() {
+    public static void exponentsMenu() {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -49,23 +49,23 @@ public class Submenu {
 
         Operations.performExponentOperation(input2);
 
-        return null;
+
     }
 
-    public static Integer inversionMenu() {
+    public static void inversionMenu() {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
                         "1. Invert Sign \n" +
-                        "2. Return to Inversion Menu \n" +
+                        "2. 1 / x \n" +
                         "3. Return to Main Menu \n");
 
         Operations.performInversionOperation(input2);
 
-        return null;
+
     }
 
-    public static Integer miscMenu() {
+    public static void miscMenu() {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -76,7 +76,17 @@ public class Submenu {
 
         Operations.performMiscOperation(input2);
 
-        return null;
+
+    }
+
+    public static void logarithmsMenu() {
+        Integer input2 = Console.getIntegerInput(
+                "Pick an operation by entering a number and pressing enter. \n" +
+                        "1. Natural Log \n" +
+                        "2. Log Base 10 \n"
+                //"3.  \n"
+        );
+        Operations.performLogarithmOperation(input2);
     }
 
 }
