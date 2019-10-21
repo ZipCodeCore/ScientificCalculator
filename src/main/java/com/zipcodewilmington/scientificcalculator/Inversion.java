@@ -5,7 +5,6 @@ public class Inversion {
     public static Double changeSign (Double a)
     {
         Double output = a * (-1);
-        Console.println( "\n" + output);
         return output;
     }
 
@@ -13,7 +12,6 @@ public class Inversion {
     {
         ErrorMessages.noInverseZero(a);
         Double output = 1 / a;
-        Console.println( "\n" + output);
         return output;
     }
 }
