@@ -8,7 +8,7 @@ public class ErrorMessages {
 
         if(d2 == 0 && s1 == 4) {
                 Console.println("You cannot divide by 0. \n");
-                Submenu.arithmeticMenu();
+                Submenu.arithmeticMenu(d);
 
         } else if (d <0) {
             Console.println("You cannot find the square root of a negative number.");
@@ -26,7 +26,7 @@ public class ErrorMessages {
         if (a == 0)
         {
            Console.println("You cannot divide by 0. \n");
-            Submenu.inversionMenu();
+            Submenu.inversionMenu(a);
         }
 
     }

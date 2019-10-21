@@ -1,11 +1,11 @@
 package com.zipcodewilmington.scientificcalculator.MenuClasses;
 
 import com.zipcodewilmington.scientificcalculator.Console;
-import com.zipcodewilmington.scientificcalculator.Operations;
+import com.zipcodewilmington.scientificcalculator.OperationClasses.Operations;
 
 public class Submenu {
 
-    public static void arithmeticMenu() {
+    public static void arithmeticMenu(Double currentNum) {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -16,12 +16,12 @@ public class Submenu {
                         "5. Return to Arithmetic Menu \n" +
                         "6. Return to Main Menu \n");
 
-        Operations.performArithmeticOperation(input2);
+        Operations.performArithmeticOperation(input2, currentNum);
 
 
     }
 
-    public static void trigonometryMenu() {
+    public static void trigonometryMenu(Double currentNum) {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -34,12 +34,12 @@ public class Submenu {
                         "7. Return to Trig Menu \n" +
                         "8. Return to Main Menu \n");
 
-        Operations.performTrigonometryOperation(input2);
+        Operations.performTrigonometryOperation(input2, currentNum);
 
 
     }
 
-    public static void exponentsMenu() {
+    public static void exponentsMenu(Double currentNum) {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -50,12 +50,12 @@ public class Submenu {
                         "4. Return to Exponent Menu \n" +
                         "5. Return to Main Menu \n");
 
-        Operations.performExponentOperation(input2);
+        Operations.performExponentOperation(input2, currentNum);
 
 
     }
 
-    public static void inversionMenu() {
+    public static void inversionMenu(Double currentNum) {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -63,12 +63,12 @@ public class Submenu {
                         "2. 1 / x \n" +
                         "3. Return to Main Menu \n");
 
-        Operations.performInversionOperation(input2);
+        Operations.performInversionOperation(input2, currentNum);
 
 
     }
 
-    public static void miscMenu() {
+    public static void miscMenu(Double currentNum) {
 
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
@@ -77,19 +77,19 @@ public class Submenu {
                         //"3.  \n"
                         );
 
-        Operations.performMiscOperation(input2);
+        Operations.performMiscOperation(input2, currentNum);
 
 
     }
 
-    public static void logarithmsMenu() {
+    public static void logarithmsMenu(Double currentNum) {
         Integer input2 = Console.getIntegerInput(
                 "Pick an operation by entering a number and pressing enter. \n" +
                         "1. Natural Log \n" +
                         "2. Log Base 10 \n"
                 //"3.  \n"
         );
-        Operations.performLogarithmOperation(input2);
+        Operations.performLogarithmOperation(input2, currentNum);
     }
 
 }
