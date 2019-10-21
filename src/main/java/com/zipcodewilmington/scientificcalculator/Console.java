@@ -43,7 +43,8 @@ public class Console {
             print(prompt);
             userInput = scanner.nextLine();
             check = userInput.matches("^-?\\d+(\\.\\d*)?$");
-        } while (check == false);
+
+        } while (!check);
 
         return Double.valueOf(userInput);
     }

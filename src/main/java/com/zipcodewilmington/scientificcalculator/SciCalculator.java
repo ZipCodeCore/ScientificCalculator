@@ -10,9 +10,9 @@ public class SciCalculator {
     public static String log(double x){ return String.valueOf(Math.log(x)); }//**Fix these
     public static String log10(double x){ return String.valueOf(Math.log10(x)); } //**Fix these
     public static String log1p(double x){ return String.valueOf(Math.log1p(x)); }//** Fix these
-    public static String factorial(double x){ //Fix for negative input
+    public static String factorial(double x){
         double total = Math.abs(x);
-        double sign = Math.pow(x / total, total);
+        double sign = Math.pow(x / total, total); //(±1)^n, n=|±x|
         if (x == 0) {
             total = 1;
         } else {

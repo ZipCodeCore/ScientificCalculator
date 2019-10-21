@@ -6,8 +6,8 @@ import java.util.HashMap;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
-    private static String[] coreFunctions = {"set", "clear", "exit", "help"};
-    private static String[] coreMath = {"add", "subtract", "multiply", "divide"};
+//    private static String[] coreFunctions = {"set", "clear", "exit", "help"};
+//    private static String[] coreMath = {"add", "subtract", "multiply", "divide"};
 //    private static String[] sciMath = {};
     private static String helpText = "valid operations:\n\tset, clear, exit, help\n\tadd, subtract, multiply," +
         " divide, \n\tinverse, invert sign, square, sqrt, exp\n\tsine, cosine, tangent, csc, sec, cot" +
@@ -49,8 +49,8 @@ public class MainApplication {
     public static void checkErrorInState() {
         if (currentState.equals("Err")) {
             setDisplay();
-            Console.println("You must clear the error before continuing");
-            Console.println("choose a new value to reset the number in the display");
+            Console.println("\n\tYou must clear the error before continuing");
+            Console.println("\tChoose a new value to reset the number in the display");
             currentState = String.valueOf(Console.getDoubleInput("Please enter a valid number: "));
         }
     }

@@ -138,4 +138,70 @@ public class TestSciCalculator
         String actual = factorial(6);
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void testSwitchDisplayMode1() {
+        String expected = "octal";
+        String actual = switchDisplayMode("binary", "disp");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testSwitchDisplayMode2() {
+        String expected = "binary";
+        String actual = switchDisplayMode("hexadecimal", "disp");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testSwitchDisplayMode3() {
+        String expected = "octal";
+        String actual = switchDisplayMode("decimal", "disp oct");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testSwitchDisplayMode4() {
+        String expected = "hexadecimal";
+        String actual = switchDisplayMode("decimal", "disp hex");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testSwitchDisplayMode5() {
+        String expected = "decimal";
+        String actual = switchDisplayMode("binary", "disp dec");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testConvertNumberToMode1() {
+        String expected = "11111111111111111111111100010110";
+        String actual = convertNumberToMode("-234.4", "binary");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testConvertNumberToMode2() {
+        String expected = "-234.4";
+        String actual = convertNumberToMode("-234.4", "decimal");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testConvertNumberToMode3() {
+        String expected = "ffffffff";
+        String actual = convertNumberToMode("-1", "hexadecimal");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testConvertNumberToMode4() {
+        String expected = "27";
+        String actual = convertNumberToMode("23", "octal");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testConvertNumberToMode5() {
+        String expected = "1100100";
+        String actual = convertNumberToMode("100", "binary");
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testConvertNumberToMode6() {
+        String expected = "22";
+        String actual = convertNumberToMode("34", "hexadecimal");
+        Assert.assertEquals(expected, actual);
+    }
 }
