@@ -107,5 +107,7 @@ public class TrigonometryTest {
         Double actual = Math.acos(-0.5);
         Assert.assertEquals(expected, actual);
     }
+
+
 }
 
