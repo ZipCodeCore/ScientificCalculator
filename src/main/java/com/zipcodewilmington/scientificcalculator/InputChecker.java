@@ -1,6 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
-public class InputChecker {
+public class InputChecker extends Calculator {
     static boolean isNumeric(String str) {
         try {
             Double.parseDouble(str);
