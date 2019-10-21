@@ -29,4 +29,7 @@ public class Console {
     public static Double getDoubleInput(String prompt) {
         return Double.parseDouble(getStringInput(prompt));
     }
+
+
+
 }

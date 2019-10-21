@@ -12,29 +12,26 @@ public class MainApplication {
 
     public static void main(String[] args) {
         boolean turnOn = true;
-        //make a list of basic commands for calulator
-
-        String[] basicCommands = {"1", "2", "3"};
-
+        //make a list of basic commands for calculator
+        String[] basicCommands = {"1", "2"};
         //turn that array into a string
         List<String> basicCommandsList = Arrays.asList(basicCommands);
         //call the scanner
         Scanner scanner = new Scanner(System.in);
         //welcome the user
+        Console console = new Console();
 
 
 
         while (turnOn) {
             System.out.println("Hello! Welcome to the calculator main menu!\nWould you care for a drink?\n\n");
-            System.out.println("What would you like to do?\nType \"cmd\" for commands.");
+            System.out.println("What would you like to do?");
+            System.out.println("\"1\" - Run the Calculator");
+            System.out.println("\"2\" - Turn off the Calculator");
             String userCommand = scanner.nextLine();
 
             while (!basicCommandsList.contains(userCommand)) {
-                if (userCommand.equals("cmd")) {
-                    System.out.println("\"1\" - Run the Calculator");
-                    System.out.println("\"2\" - Switch between trig numerics");
-                    System.out.println("\"3\" - Turn Off the Calculator");
-                } else if (basicCommandsList.contains(userCommand)) {
+                if (basicCommandsList.contains(userCommand)) {
                     break;
                 } else {
                     System.out.println("ERROR: Invalid command.\n");
@@ -49,10 +46,6 @@ public class MainApplication {
                     calculator.runCalculator();
                     break;
                 case "2":
-                    DegreesToRadians degreesRadians = new DegreesToRadians();
-                    degreesRadians.degreesToRadians();
-                    break;
-                case "3":
                     turnOn = false;
                     break;
             }
