@@ -170,5 +170,19 @@ public class Operations {
 
     }
 
+    public static void performMiscOperation (Integer selection) {
+
+        switch (selection) {
+            case 1:
+                num1 = Console.getDoubleInput("Enter a number.");
+                Misc.absVal(num1);
+                MainMenu.mainMenu();
+                break;
+            default:
+                Console.println("Invalid selection. Please try again.");
+                Submenu.miscMenu();
+        }
+    }
+
 
 }

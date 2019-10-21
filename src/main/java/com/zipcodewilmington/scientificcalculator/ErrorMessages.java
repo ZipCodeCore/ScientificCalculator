@@ -24,7 +24,7 @@ public class ErrorMessages {
         if (a == 0)
         {
            Console.println("You cannot divide by 0. \n");
-            Intro.intro();
+            //Intro.intro();
         }
         return null;
     }
