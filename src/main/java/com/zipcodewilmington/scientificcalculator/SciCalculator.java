@@ -74,21 +74,14 @@ public class SciCalculator {
     }
 
     //Method to Convert degrees to radians and vice-versa
-    public static String switchUnits(String number, String mode) {
+    public static Double switchUnits(Double number, Boolean mode) {
         Double num = Double.valueOf(number);
-        String convertedUnit = "";
-        if (mode.equals("degrees")) {
-            convertedUnit = String.valueOf(Math.toRadians(num));
-        }
-        else if (mode.equals("radian")) {
-            convertedUnit = String.valueOf(Math.toDegrees(num));
+        Double convertedUnit;
+        if (mode) {
+            convertedUnit = Math.toRadians(num);
+        } else {
+            convertedUnit = Math.toDegrees(num);
         }
     return convertedUnit;
     }
-// if input contains disp:
-    // if input is disp bin
-    // if input is disp oct
-    // if input is disp dec
-    // if input is disp hex
-    // else disp = next disp
 }

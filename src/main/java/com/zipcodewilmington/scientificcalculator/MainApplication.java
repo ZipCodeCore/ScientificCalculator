@@ -10,7 +10,7 @@ public class MainApplication {
 //    private static String[] coreMath = {"add", "subtract", "multiply", "divide"};
 //    private static String[] sciMath = {};
     private static String helpText = "valid operations:\n\tset, clear, exit, help\n\tadd, subtract, multiply," +
-        " divide, \n\tinverse, invert sign, square, sqrt, exp\n\tsine, cosine, tangent, csc, sec, cot" +
+        " divide, \n\tinverse, invert sign, square, sqrt, exp\n\tsine, cosine, tangent, csc, sec, cot, \n\tlog, log1p, log10, unit" +
         "\n\tm+, mc, mrc\n\tdisp, disp bin, disp oct, disp dec, disp hex";
 
     private static boolean calcOn = true;
@@ -20,6 +20,7 @@ public class MainApplication {
     private static String currentOperation = "none";
     private static double currentMemory = 0;
     private static String currentDisplayMode = "decimal";
+    private static Boolean unitModeRadians = true; //false = degrees
 
     public static void main(String[] args) {
         startUpMessage(); // prints welcome message to console and awaits input
@@ -32,8 +33,8 @@ public class MainApplication {
             }
             // get operation from user input
             currentOperation = Console.getStringInput("Enter your operation: ");
-            checkErrorInState();
             executeOperation(currentOperation);
+            checkErrorInState();
         } // end while
 
 
@@ -47,7 +48,8 @@ public class MainApplication {
     }
 
     public static void checkErrorInState() {
-        if (currentState.equals("Err")) {
+        if (currentState.equals("Err") || currentState.contains("Infinity")) {
+            currentState = "Err";
             setDisplay();
             Console.println("\n\tYou must clear the error before continuing");
             Console.println("\tChoose a new value to reset the number in the display");
@@ -64,9 +66,20 @@ public class MainApplication {
         }
         Console.clear();
         Console.println("CLI Scientific Calculator");
+        Console.println("unit_mode = " + checkUnitMode(unitModeRadians));
         Console.println("Mode: \t\t\t\t" + currentDisplayMode);
         Console.println("Value:\t\t\t\t" + value);
         Console.println("Previous operation:\t" + currentOperation + "\n");
+    }
+
+    public static String checkUnitMode(boolean mode) {
+        String unit_mode;
+        if (mode) {
+            unit_mode = "rad";
+        } else {
+            unit_mode = "deg";
+        }
+        return unit_mode;
     }
 
     public static void executeOperation(String operation) {
@@ -92,6 +105,9 @@ public class MainApplication {
         }
         else if (operation.contains("disp")) {
             currentDisplayMode = SciCalculator.switchDisplayMode(currentDisplayMode, operation);
+        }
+        else if (operation.equals("unit")) {
+            unitModeRadians = !unitModeRadians;
         }
     }
 
@@ -156,34 +172,33 @@ public class MainApplication {
             Console.println(currentMemory + " recalled from memory");
             currentState = String.valueOf(currentMemory);
         }
-        else if (operation.equals("sine")){
-            currentState = SciCalculator.sine(x);
-        }
-        else if (operation.equals("cosine")){
-            currentState = SciCalculator.cosine(x);
-        }
-        else if (operation.equals("tangent")){
-            currentState = SciCalculator.tangent(x);
-        }
-        else if (operation.equals("csc")){
-            currentState = SciCalculator.csc(x);
-        }
-        else if (operation.equals("sec")){
-            currentState = SciCalculator.sec(x);
-        }
-        else if (operation.equals("cotan")){
-            currentState = SciCalculator.cotan(x);
-        }
         else if (operation.equals("log")) { //**Fix these
             currentState = SciCalculator.log(x);
         }
         else if (operation.equals("log10")) { //**Fix these
-            currentState = SciCalculator.log(x);
+            currentState = SciCalculator.log10(x);
         }
         else if (operation.equals("log1p")) { //**Fix these
-            currentState = SciCalculator.log(x);
+            currentState = SciCalculator.log1p(x);
         } else if (operation.equals("factorial")) {
             currentState = SciCalculator.factorial(x);
+        }
+        executeTrigFunc(operation, x);
+    }
+    public static void executeTrigFunc(String operation, double x) {
+        x = SciCalculator.switchUnits(x, unitModeRadians);
+        if (operation.equals("sine")) {
+            currentState = SciCalculator.sine(x);
+        } else if (operation.equals("cosine")) {
+            currentState = SciCalculator.cosine(x);
+        } else if (operation.equals("tangent")) {
+            currentState = SciCalculator.tangent(x);
+        } else if (operation.equals("csc")) {
+            currentState = SciCalculator.csc(x);
+        } else if (operation.equals("sec")) {
+            currentState = SciCalculator.sec(x);
+        } else if (operation.equals("cotan")) {
+            currentState = SciCalculator.cotan(x);
         }
     }
 
