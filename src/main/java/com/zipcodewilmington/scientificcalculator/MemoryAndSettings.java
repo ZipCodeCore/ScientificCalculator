@@ -83,7 +83,7 @@ public class MemoryAndSettings {
     public void rememberthis(Double m){
         rememberedNum = m;
         rememberedStr = Double.toString(m);
-        Console.print(m + " was committed to memory.");
+        Console.println(m + " was committed to memory.");
     }
 
     public void forgetthis(){
@@ -107,7 +107,7 @@ public class MemoryAndSettings {
 
             switch (x) {
                 case "help":
-                    Console.print("switch units:  cycles between radians and degrees\n" +
+                    Console.println("switch units:  cycles between radians and degrees\n" +
                             "(unit): changes to type specified.  Replace (unit) with either 'radians' or 'degrees'\n" +
                             "switch type:  Cycles between displaying results in binary, octal, decimal, and hexadecimal\n " +
                             "(type): changes to specified type. Replace (unit) with: 'binary', 'octal, 'decimal, or 'hex'\n" +
