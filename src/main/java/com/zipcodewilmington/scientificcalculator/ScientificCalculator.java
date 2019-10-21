@@ -69,6 +69,35 @@ public class ScientificCalculator {
         }
     }
 
+    public void logLn(Double x){
+        try {
+
+            this.setDoubleResult(Math.log1p(x));
+            this.setStringResult(Double.toString(Math.log1p(x)));
+
+        }
+        //for non double inputs
+        catch(Exception e){
+            this.setStringResult("ERROR");
+        }
+    }
+
+    public void inverseLog(Double x){
+        try {
+
+            this.setDoubleResult(Math.log10(x));
+            this.setStringResult(Double.toString(Math.log10(x)));
+
+        }
+        //for non double inputs
+        catch(Exception e){
+            this.setStringResult("ERROR");
+        }
+    }
+
+
+
+
     public void inverse(Double x){
         try {
 
