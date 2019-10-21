@@ -2,15 +2,13 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class MainMenu {
 
-
-    public static String mainMenu() {
-
-        Integer input;
+    static Integer input;
 
 
+    public static void mainMenu() {
 
         input = Console.getIntegerInput(
-                "\nWhat would you like to do? Input a number and press enter. \n" +
+                "\nWhat would you like to do? Input a number and press enter.\n\n" +
                         "1. Arithmetic \n" +
                         "2. Trigonometry \n" +
                         "3. Exponents \n" +
@@ -20,7 +18,16 @@ public class MainMenu {
                         "7. M+ \n" +
                         "8. MRC \n" +
                         "9. MC \n" +
-                        "10. Exit \n");
+                        "10. Rotate Display Mode \n" +
+                        "11. Pick Display Mode \n" +
+                        "12. Exit \n");
+
+        MainMenu.getSubMenu(input);
+    }
+
+
+
+    public static void getSubMenu(Integer input) {
 
         switch (input) {
             case 1:
@@ -54,15 +61,24 @@ public class MainMenu {
                 MainMenu.mainMenu();
                 break;
             case 10:
+                DisplayMode.switchDisplayMode();
+                MainMenu.mainMenu();
+                break;
+            case 11:
+                String modeInput = Console.getStringInput("Enter a display currentMode.");
+                DisplayMode.switchDisplayMode(modeInput);
+                MainMenu.mainMenu();
+                break;
+            case 12:
                 Console.println("Bye!");
                 System.exit(0);
                 break;
             default:
-                Console.println("\n Invalid selection. Please try again.");
+                Console.println("\nInvalid selection. Please try again.");
                 MainMenu.mainMenu();
         }
 
-        return null;
     }
 
-}
+    }
+
