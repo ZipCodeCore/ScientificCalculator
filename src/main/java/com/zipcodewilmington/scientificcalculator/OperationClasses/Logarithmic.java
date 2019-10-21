@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator.OperationClasses;
 import java.lang.Math;
 
 public class Logarithmic {
