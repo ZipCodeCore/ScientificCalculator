@@ -45,4 +45,36 @@ public class ScientificFeatures {
                 Log     Inverse Log     Ln      Inverse Natural Log
      */
 
+    public double log (double x){
+
+        return Math.log10(x);
+    }
+
+    public double inverseLog (double x){
+
+        return Math.pow(10, x);
+    }
+
+    public double ln (double x){
+
+        return (Math.log(x));
+    }
+
+    public double inverseNaturalLog (double x){
+
+        return Math.exp(x);
+    }
+    public double factorial(double num){
+        double fact = 1;
+        for(int i = 1; i <= num; i++){
+            fact = fact * i;
+        }
+        return fact;
+    }
+
+    public double switchMode(double answer){
+        return answer * (Math.PI/180);
+    }
+
+
 }

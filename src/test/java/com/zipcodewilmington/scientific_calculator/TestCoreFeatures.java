@@ -18,10 +18,10 @@ public class TestCoreFeatures {
     }
 
     /*
-    * TEST CORE FEATURE METHODS
-    * ADDITION  SUBTRACTION     MULTIPLICATION  DIVISION    EXPONENTIAL
-    * SQUARE    SQUARE ROOT      INVERSE
-    * */
+     * TEST CORE FEATURE METHODS
+     * ADDITION  SUBTRACTION     MULTIPLICATION  DIVISION    EXPONENTIAL
+     * SQUARE    SQUARE ROOT      INVERSE
+     * */
 
     @org.junit.Test
     public void TestAddition() {
@@ -108,6 +108,10 @@ public class TestCoreFeatures {
         //////TEST
         assertEquals(.125, a.inverse(8), 0);
         assertEquals( .05, a.inverse(20), 0);
+
+    }
+    @org.junit.Test
+    public void chungtest(){
 
     }
 }
