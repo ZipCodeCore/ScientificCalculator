@@ -2,21 +2,28 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class SciCalculator {
     public static String sine(double x){ return String.valueOf(Math.sin(x)); }
-    public static String cosine(double x){
-        return String.valueOf(Math.cos(x));
-    }
-    public static String tangent(double x){
-        return String.valueOf(Math.tan(x));
-    }
-    public static String csc(double x){
-        return String.valueOf(Math.asin(x));
-    }
-    public static String sec(double x){
-        return String.valueOf(Math.acos(x));
-    }
-    public static String cotan(double x){
-        return String.valueOf(Math.atan(x));
-    }
+    public static String cosine(double x){ return String.valueOf(Math.cos(x)); }
+    public static String tangent(double x){ return String.valueOf(Math.tan(x)); }
+    public static String csc(double x){ return String.valueOf(Math.asin(x)); }
+    public static String sec(double x){ return String.valueOf(Math.acos(x)); }
+    public static String cotan(double x){ return String.valueOf(Math.atan(x)); }
+    public static String log(double x){ return String.valueOf(Math.log(x)); }//**Fix these
+    public static String log10(double x){ return String.valueOf(Math.log10(x)); } //**Fix these
+    public static String log1p(double x){ return String.valueOf(Math.log1p(x)); }//** Fix these
+    public static String factorial(double x){ //Fix for negative input
+        double total = x;
+        if(x <0){
+            total = 0;
+        }
+        else if (x ==0){
+            total = 1;
+        }else {
+            for (int i = 1; i < x; i++) {
+                total *= i;
+            }
+        }
+        return String.valueOf(total);
+        }
 
     public static String switchDisplayMode(String currentMode, String operation) {
         String mode = "";
