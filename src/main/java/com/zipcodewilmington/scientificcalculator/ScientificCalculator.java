@@ -88,8 +88,10 @@ public class ScientificCalculator {
     public void inverselogLn(Double x){
         try {
 
-            this.setDoubleResult(Math.exp(x));
-            this.setStringResult(Double.toString(Math.exp(x)));
+            double y = Math.log(x);
+
+            this.setDoubleResult(Math.exp(y));
+            this.setStringResult(Double.toString(Math.exp(y)));
 
 
         }
