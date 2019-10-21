@@ -9,15 +9,11 @@ public class MainApplication {
 
         Integer operation;
         Integer choice;
-        Integer choice2;
-        Double result;
+        Integer choice2 = 1;
+        Integer choice3;
+        String result;
         Double num1 = 1.0;
-        Boolean binary;
-        Boolean octal;
-        Boolean hex;
-        Boolean decimal;
-        Boolean degrees;
-        Boolean radians;
+
 
 
         SimpleMath simpleMath = new SimpleMath();
@@ -43,30 +39,33 @@ public class MainApplication {
                                             "2 = Octal\n" +
                                             "3 = Decimal\n" +
                                             "4 = Hex\n");
+
                     choice2 = Console.getIntegerInput("");
-                    if (choice2 == 1) {
-                        binary = true;
-                        octal = false;
-                        decimal = false;
-                        hex = false;
-                    } else if (choice2 == 2) {
-                        binary = false;
-                        octal = true;
-                        decimal = false;
-                        hex = false;
-                    } else if (choice2 == 3) {
-                        binary = false;
-                        octal = false;
-                        decimal = true;
-                        hex = false;
-                    } else if (choice2 == 4) {
-                        binary = false;
-                        octal = false;
-                        decimal = false;
-                        hex = true;
-                    } else {
-                        choice2 = 5;
-                        Console.println("You have entered something incorrectly");
+
+                    switch (choice2) {
+
+                        case 1:
+                            switchDisplay.binary = true;
+                            switchDisplay.octal = false;
+                            switchDisplay.hex = false;
+                            break;
+                        case 2:
+                            switchDisplay.binary = false;
+                            switchDisplay.octal = true;
+                            switchDisplay.hex = false;
+                            break;
+                        case 3:
+                            switchDisplay.binary = false;
+                            switchDisplay.octal = false;
+                            switchDisplay.hex = false;
+                            break;
+                        case 4:
+                            switchDisplay.binary = false;
+                            switchDisplay.octal = false;
+                            switchDisplay.hex = true;
+                        default:
+                            choice2 = 5;
+                            Console.println("You have entered something incorrectly");
                     }
                 } while (choice2 != 1 && choice2 != 2 && choice2 != 3 && choice2 != 4);
 
@@ -76,20 +75,19 @@ public class MainApplication {
                 do {
                     Console.println(  "1 = Radians\n" +
                                               "2 = Degrees\n");
-                    choice2 = Console.getIntegerInput("");
-                    if (choice2 == 1) {
-                        radians = true;
-                        degrees = false;
-                    } else if (choice2 == 2) {
-                        radians = false;
-                        degrees = true;
+                    choice3 = Console.getIntegerInput("");
+                    if (choice3 == 1) {
+                        scientificFunctions.degrees = true;
+                        scientificFunctions.degrees = false;
+                    } else if (choice3 == 2) {
+                        scientificFunctions.radians = false;
+                        scientificFunctions.degrees = true;
                     } else {
                         Console.println("You have entered something incorrectly");
                     }
-                } while (choice2 != 1 && choice2 != 2);
+                } while (choice3 != 1 && choice3 != 2);
 
             } else if (choice == 3) {
-
                 Console.println("SHUTTING DOOOWWNNNNNN!!!!!!");
 
             } else if (choice == 4) {
@@ -104,7 +102,7 @@ public class MainApplication {
                         "15 for cosine                          16 for tangent\n" +
                         "17 for arcsine                         18 for arccosine\n" +
                         "19 for arctangent                      20 for factorial\n" +
-                        "Any other number for HELLLPPPPPPP");
+                        "Any other number for HELLLPPPPPPP\n\n\n");
 
                 do {
 
@@ -116,43 +114,43 @@ public class MainApplication {
                     switch (operation) {
                         case 1:
                             Double num2 = Console.getDoubleInput("Enter your second number.");
-                            result = simpleMath.add(num1, num2);
+                            result = switchDisplay.toDisplay(simpleMath.add(num1, num2));
                             System.out.println(num1 + " + " + num2 + " = " + result);
                             break;
                         case 2:
                             num2 = Console.getDoubleInput("Enter your second number.");
-                            result = simpleMath.subtract(num1, num2);
+                            result = switchDisplay.toDisplay(simpleMath.subtract(num1, num2));
                             System.out.println(num1 + " - " + num2 + " = " + result);
                             break;
                         case 3:
                             num2 = Console.getDoubleInput("Enter your second number.");
-                            result = simpleMath.multiplication(num1, num2);
+                            result = switchDisplay.toDisplay(simpleMath.multiplication(num1, num2));
                             System.out.println(num1 + " x " + num2 + " = " + result);
                             break;
                         case 4:
                             num2 = Console.getDoubleInput("Enter your second number.");
                             if (num2 != 0) {
-                                result = simpleMath.division(num1, num2);
+                                result = switchDisplay.toDisplay(simpleMath.division(num1, num2));
                                 System.out.println(num1 + " / " + num2 + " = " + result);
                             } else {
                                 System.out.println("ERrER EeRRrRROO--OOOrrRR!?!?!");
                             }
                             break;
                         case 5:
-                            result = simpleMath.square(num1);
+                            result = switchDisplay.toDisplay(simpleMath.square(num1));
                             System.out.println(num1 + " squared is " + result);
                             break;
                         case 6:
                             num2 = Console.getDoubleInput("Enter your second number.");
-                            result = simpleMath.expo(num1, num2);
+                            result = switchDisplay.toDisplay(simpleMath.expo(num1, num2));
                             System.out.println(num1 + " to the power of " + num2 + " = " + result);
                             break;
                         case 7:
-                            result = simpleMath.squareRoot(num1);
+                            result = switchDisplay.toDisplay(simpleMath.squareRoot(num1));
                             System.out.println("The square root of " + num1 + " is " + result);
                             break;
                         case 8:
-                            result = simpleMath.inverse(num1);
+                            result = switchDisplay.toDisplay(simpleMath.inverse(num1));
                             if (num1 != 0) {
                                 System.out.println("The inverse of " + num1 + " is " + result);
                             } else {
@@ -160,7 +158,7 @@ public class MainApplication {
                             }
                             break;
                         case 9:
-                            result = simpleMath.invertSign(num1);
+                            result = switchDisplay.toDisplay(simpleMath.invertSign(num1));
                             if (num1 != 0) {
                                 System.out.println("The invert of " + num1 + " is " + result);
                             } else {
@@ -168,46 +166,46 @@ public class MainApplication {
                             }
                             break;
                         case 10:
-                            result = logFunctions.log(num1);
+                            result = switchDisplay.toDisplay(logFunctions.log(num1));
                             System.out.println("The logarithm of " + num1 + " is " + result);
                             break;
                         case 11:
-                            result = logFunctions.naturalLog(num1);
+                            result = switchDisplay.toDisplay(logFunctions.naturalLog(num1));
                             System.out.println("The natural logarithm of " + num1 + " is " + result);
                             break;
                         case 12:
-                            result = logFunctions.inverseLog(num1);
+                            result = switchDisplay.toDisplay(logFunctions.inverseLog(num1));
                             System.out.println("The inverse logarithm of " + num1 + " is " + result);
                             break;
                         case 13:
-                            result = logFunctions.inverseNaturalLog(num1);
+                            result = switchDisplay.toDisplay(logFunctions.inverseNaturalLog(num1));
                             System.out.println("The inverse natural logarithm of " + num1 + " is " + result);
                         case 14:
-                            result = scientificFunctions.sin(num1);
+                            result = switchDisplay.toDisplay(scientificFunctions.sin(scientificFunctions.switchUnits(num1)));
                             System.out.println("The sine of " + num1 + " is " + result);
                             break;
                         case 15:
-                            result = scientificFunctions.cos(num1);
+                            result = switchDisplay.toDisplay(scientificFunctions.cos(scientificFunctions.switchUnits(num1)));
                             System.out.println("The cosine of " + num1 + " is " + result);
                             break;
                         case 16:
-                            result = scientificFunctions.tan(num1);
+                            result = switchDisplay.toDisplay(scientificFunctions.tan(scientificFunctions.switchUnits(num1)));
                             System.out.println("The tangent of " + num1 + " is " + result);
                             break;
                         case 17:
-                            result = scientificFunctions.asin(num1);
+                            result = switchDisplay.toDisplay(scientificFunctions.asin(scientificFunctions.switchUnits(num1)));
                             System.out.println("The arcsine of " + num1 + " is " + result);
                             break;
                         case 18:
-                            result = scientificFunctions.acos(num1);
+                            result = switchDisplay.toDisplay(scientificFunctions.acos(scientificFunctions.switchUnits(num1)));
                             System.out.println("The arccosine of " + num1 + " is " + result);
                             break;
                         case 19:
-                            result = scientificFunctions.atan(num1);
+                            result = switchDisplay.toDisplay(scientificFunctions.atan(scientificFunctions.switchUnits(num1)));
                             System.out.println("The arctangent of " + num1 + " is " + result);
                             break;
                         case 20:
-                            result = scientificFunctions.factorial(num1);
+                            result = switchDisplay.toDisplay(scientificFunctions.factorial(num1));
                             System.out.println("The factorial of " + num1 + " is " + result);
                             break;
                         default:
@@ -222,7 +220,8 @@ public class MainApplication {
                                     "13 for inverse natural logarithms      14 for sine\n" +
                                     "15 for cosine                          16 for tangent\n" +
                                     "17 for arcsine                         18 for arccosine\n" +
-                                    "19 for arctangent                      20 for factorial\n");
+                                    "19 for arctangent                      20 for factorial\n" +
+                                    "Any other number for HELLLPPPPPPP");
                             break;
                     }
 
