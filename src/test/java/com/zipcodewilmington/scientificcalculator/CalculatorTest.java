@@ -40,7 +40,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void getAndSetLastInput() {
+    public void getAndSetLastInputTest() {
         Double[] options = {Double.NEGATIVE_INFINITY,-2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
         for (Double n : options) {
             calculator.setLastInput(n);
@@ -50,7 +50,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void getAndSetDisplay() {
+    public void getAndSetDisplayTest() {
         Double[] options = {Double.NEGATIVE_INFINITY,-2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
         for (Double n : options) {
             calculator.setDisplay(n);
@@ -59,7 +59,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void clearCalculator() {
+    public void clearCalculatorTest() {
         Double[] options = {Double.NEGATIVE_INFINITY,-2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
 
         for (Double n : options) {
@@ -105,11 +105,11 @@ public class CalculatorTest {
     }
 
     @Test
-    public void inputLoop() {
+    public void inputLoopTest() {
     }
 
     @Test
-    public void trigOperators() {
+    public void trigOperatorsTest() {
         Double[] options = {Double.NEGATIVE_INFINITY, -2.3, 0.0, 4.7, 89359.009384, Double.POSITIVE_INFINITY };
         Double expected;
         Double actual;
@@ -155,11 +155,8 @@ public class CalculatorTest {
             actual = calculator.getDisplay();
 
             assertTrue(0 == Double.compare(actual,expected));
-
         }
-
     }
-
 
     @Test
     public void handleBinaryOperatorTest() {

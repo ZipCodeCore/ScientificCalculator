@@ -19,7 +19,7 @@ public class MemoryTest {
     @Test
     //Test if memory plus method changes the objects state
 
-    public void Memory_state1() {
+    public void Memory_stateTest1() {
         Double expected = 25d;
 
         Memory myMemory = new Memory();
@@ -32,7 +32,7 @@ public class MemoryTest {
     @Test
     //Test if memory plus method changes the objects state more than once
 
-    public void Memory_state2() {
+    public void Memory_stateTest2() {
         Double expected = 32d;
 
         Memory myMemory = new Memory();
@@ -45,7 +45,7 @@ public class MemoryTest {
     @Test
     //An assertnotequals Test if memory plus method changes the objects state
 
-    public void Memory_state3() {
+    public void Memory_stateTest3() {
         Double expected = 25d;
 
         Memory myMemory = new Memory();
@@ -58,7 +58,7 @@ public class MemoryTest {
     @Test
     //Test if memory reset method changes the objects state back to 0.0
 
-    public void Memory_Reset1() {
+    public void Memory_ResetTest1() {
         Double expected = 0.0d;
 
         Memory myMemory = new Memory();
@@ -71,7 +71,7 @@ public class MemoryTest {
     @Test
     //Test if memory reset method changes the objects state more than once
 
-    public void Memory_Reset2() {
+    public void Memory_ResetTest2() {
         Double expected = 0.0d;
 
         Memory myMemory = new Memory();
@@ -86,7 +86,7 @@ public class MemoryTest {
     @Test
     //assertnotequals Test if memory reset method changes the objects state
 
-    public void Memory_Reset3() {
+    public void Memory_ResetTest3() {
         Double expected = 32d;
 
         Memory myMemory = new Memory();

@@ -76,34 +76,34 @@ public class ConsoleTest {
     }
 
     @Test
-    public void cleanInputErrors() {
+    public void cleanInputErrorsTest() {
         assertEquals("ERR",Console.cleanInput("blargh"));
         assertEquals("ERR",Console.cleanInput("blargh"));
     }
 
     @Test
-    public void cleanInputNumbers() {
+    public void cleanInputNumbersTest() {
         assertEquals("2.45",Console.cleanInput("2.45"));
         assertEquals("-2.45",Console.cleanInput("-2.45"));
         assertEquals("7",Console.cleanInput("7"));
     }
 
     @Test
-    public void cleanInputOperators() {
+    public void cleanInputOperatorsTest() {
         for (String operator : Calculator.UNARYOPERATORS) {
             assertEquals(operator,Console.cleanInput(operator));
         }
     }
 
     @Test
-    public void cleanInputBinaryOperators() {
+    public void cleanInputBinaryOperatorsTest() {
         for (String operator : Calculator.BINARYOPERATORS) {
             assertEquals(operator,Console.cleanInput(operator));
         }
     }
 
     @Test
-    public void cleanInputCommands() {
+    public void cleanInputCommandsTest() {
         for (String command : Calculator.COMMANDS) {
             assertEquals(command,Console.cleanInput(command));
         }
