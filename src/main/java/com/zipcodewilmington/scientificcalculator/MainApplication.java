@@ -5,8 +5,6 @@ package com.zipcodewilmington.scientificcalculator;
  */
 public class MainApplication {
 
-
-
     public static void main(String[] args) {
         SimpleMath simpleMath = new SimpleMath();
 
@@ -21,6 +19,9 @@ public class MainApplication {
         Double num1 = Console.getDoubleInput("Enter your first number.");
 
         switch(operation) {
+            case 0:
+
+
             case 1:
                 Double num2 = Console.getDoubleInput("Enter your second.");
                 result = simpleMath.add(num1, num2);
@@ -38,8 +39,12 @@ public class MainApplication {
                 break;
             case 4:
                 num2 = Console.getDoubleInput("Enter your second number.");
-                result = simpleMath.division(num1, num2);
-                System.out.println(num1 + " / " + num2 + " = " + result);
+                if (num2 != 0) {
+                    result = simpleMath.division(num1, num2);
+                    System.out.println(num1 + " / " + num2 + " = " + result);
+                } else {
+                    System.out.println("ERrER EeRRrRROO--OOOrrRR!?!?!");
+                }
                 break;
             case 5:
                 result = simpleMath.square(num1);
@@ -56,11 +61,20 @@ public class MainApplication {
                 break;
             case 8:
                 result = simpleMath.inverse(num1);
-                System.out.println("The inverse of " + num1 + " is " + result);
+                if (num1 != 0) {
+                    System.out.println("The inverse of " + num1 + " is " + result);
+                } else {
+                    System.out.println("ERrER EeRRrRROO--OOOrrRR!?!?!");
+                }
                 break;
             case 9:
                 result = simpleMath.invertSign(num1);
-                System.out.println("The invert of " + num1 + " is " + result);
+                if (num1 != 0) {
+                    System.out.println("The invert of " + num1 + " is " + result);
+                } else {
+                    System.out.println("ERrER EeRRrRROO--OOOrrRR!?!?!");
+                }
+                break;
             case 10:
                 System.out.println("The logarithm of " + num1 + " is " + result);
                 break;
@@ -89,18 +103,7 @@ public class MainApplication {
                         "9 for invert\n10 for logarithms\n11 for sine\n12 for cosine\n13 tan for tangent\n" +
                         "14 for arcsine\n15 for arccosine\n16 for arctangent");
                 break;
-
-
-
         }
-
-
-        //Double num1 = Console.getDoubleInput("Enter your first number.");
-        //Double num2 = Console.getDoubleInput("Enter a double.");
-
-
-
-
 
     }
 
