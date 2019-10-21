@@ -18,7 +18,6 @@ public class ConversionCalculator {
     //(binary, octal, decimal, hexadecimal)
     public void binary(int x){
         try {
-
             this.setStringResult(Integer.toBinaryString(x));
         }
 

@@ -163,10 +163,8 @@ public class ScientificCalculator {
 
     public void cosine(Double x){
         try {
-
             this.setDoubleResult(Math.cos(x));
             this.setStringResult(Double.toString(Math.cos(x)));
-
         }
         //for non double inputs
         catch (Exception e) {

@@ -25,4 +25,19 @@ public class Error {
             return false;
         }
     }
+
+    public boolean checkForMultiples(Double input, Double not_this){ //not_this MUST be a positive value
+        while(input < 0){
+            input += not_this;
+        }
+        while(input > not_this){
+            input -= not_this;
+        }
+        if(input == not_this){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
