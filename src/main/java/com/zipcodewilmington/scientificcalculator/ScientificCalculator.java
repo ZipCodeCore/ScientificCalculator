@@ -7,6 +7,9 @@ public class ScientificCalculator {
     private Double doubleResult;
     private String stringResult;
 
+    //initializing an error class
+    Error error = new Error();
+
     //Constructor
     public ScientificCalculator(){
         doubleResult = 0.0;
@@ -16,7 +19,6 @@ public class ScientificCalculator {
     //Scientific Operator functions
     public void exponent(Double x, Double y){
         try {
-
             this.setDoubleResult(Math.pow(x, y));
             this.setStringResult(Double.toString(Math.pow(x,y)));
         }
@@ -93,8 +95,14 @@ public class ScientificCalculator {
 
     public void log10(Double x){
         try {
-            this.setDoubleResult(Math.log10(x));
-            this.setStringResult(Double.toString(Math.log10(x)));
+            if(x < 0) { //checks for a negative input
+                this.setDoubleResult((double) 0);
+                this.setStringResult("ERROR");
+            }
+            else {
+                this.setDoubleResult(Math.log10(x));
+                this.setStringResult(Double.toString(Math.log10(x)));
+            }
         }
         //for non double inputs
         catch(Exception e){
@@ -177,8 +185,14 @@ public class ScientificCalculator {
 
     public void tangent(Double x) {
         try {
-            this.setDoubleResult(Math.tan(x));
-            this.setStringResult(Double.toString(Math.tan(x)));
+            if(error.checkForBadTrigValues(x, (Math.PI/2))){
+                this.setDoubleResult((double) 0);
+                this.setStringResult("ERROR");
+            }
+            else {
+                this.setDoubleResult(Math.tan(x));
+                this.setStringResult(Double.toString(Math.tan(x)));
+            }
 
         }
         //for non double inputs

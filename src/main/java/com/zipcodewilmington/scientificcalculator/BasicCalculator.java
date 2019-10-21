@@ -58,7 +58,7 @@ public class BasicCalculator {
 
     public void divide(Double x, Double y){
         try {
-            if (error.IsthisBadValue(x, 0.0)){
+            if (error.IsBadValue(x, 0.0)){
                 this.setDoubleResult(null);
                 this.setStringResult("ERROR");
             }

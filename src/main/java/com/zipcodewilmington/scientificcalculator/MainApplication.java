@@ -150,7 +150,7 @@ public class MainApplication {
                 case "exponent":
                     currentDouble = getInputs.getx(currentDouble, "First number: ");
                     currentString = Double.toString(currentDouble);
-                    y = getInputs.gety(currentString + " + ");
+                    y = getInputs.gety(currentString + " to the power of: ");
                     sciencecalc.exponent(currentDouble, y);
                     currentDouble = sciencecalc.getDoubleResult();
                     currentString = sciencecalc.getStringResult();
