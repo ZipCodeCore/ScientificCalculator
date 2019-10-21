@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 /**
@@ -164,6 +165,25 @@ public class Console {
             return (-Math.log(1 - value)) / value;
         }
     }*/
+
+    static String degreesRadians(){
+        System.out.println("Would you like you answer in Radians or Degrees?");
+        System.out.println("\"1\" - Radians");
+        System.out.println("\"2\" - Degrees");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        while(true)
+            switch (userInput){
+                case "1":
+                    return "Radians";
+                case "2":
+                    return "Degrees";
+                default:
+                    System.out.println("ERROR: Please enter \"1\" for Radians or \"2\" for Degrees.");
+                    scanner = new Scanner(System.in);
+                    userInput = scanner.nextLine();
+            }
+    }
 }
 
 

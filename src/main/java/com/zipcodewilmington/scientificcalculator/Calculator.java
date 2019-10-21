@@ -153,32 +153,56 @@ class Calculator {
                         case "11":
                             Console sine = new Console();
                             Double sin = sine.sine(userValue1);
-                            System.out.println("sin(" + userValue1 + ") = " + sin + "\n");
+                            String trigFunction = Console.degreesRadians();
+                            if(trigFunction.equals("Radians"))
+                                System.out.println("sin(" + userValue1 + ") = " + Math.toRadians(sin) + "\n");
+                            else
+                                System.out.println("sin(" + userValue1 + ") = " + Math.toDegrees(sin) + "\n");
                             break;
                         case "12":
                             Console cosine = new Console();
                             Double cos = cosine.cosine(userValue1);
-                            System.out.println("cos(" + userValue1 + ") = " + cos + "\n");
+                            trigFunction = Console.degreesRadians();
+                            if(trigFunction.equals("Radians"))
+                                System.out.println("sin(" + userValue1 + ") = " + Math.toRadians(cos) + "\n");
+                            else
+                                System.out.println("cos(" + userValue1 + ") = " + Math.toDegrees(cos) + "\n");
                             break;
                         case "13":
                             Console tangent = new Console();
                             Double tan = tangent.tangent(userValue1);
-                            System.out.println("tan(" + userValue1 + ") = " + tan + "\n");
+                            trigFunction = Console.degreesRadians();
+                            if(trigFunction.equals("Radians"))
+                                System.out.println("tan(" + userValue1 + ") = " + Math.toRadians(tan) + "\n");
+                            else
+                                System.out.println("tan(" + userValue1 + ") = " + Math.toDegrees(tan) + "\n");
                             break;
                         case "14":
                             Console inverseSine = new Console();
                             Double inverseSin = inverseSine.inverseSine(userValue1);
-                            System.out.println("sin(" + userValue1 + ")^-1 = " + inverseSin + "\n");
+                            trigFunction = Console.degreesRadians();
+                            if(trigFunction.equals("Radians"))
+                                System.out.println("sin(" + userValue1 + ")^-1 = " + Math.toRadians(inverseSin) + "\n");
+                            else
+                                System.out.println("sin(" + userValue1 + ")^-1 = " + Math.toDegrees(inverseSin) + "\n");
                             break;
                         case "15":
                             Console inverseCosine = new Console();
                             Double inverseCos = inverseCosine.inverseCosine(userValue1);
-                            System.out.println("cos(" + userValue1 + ")^-1 = " + inverseCos + "\n");
+                            trigFunction = Console.degreesRadians();
+                            if(trigFunction.equals("Radians"))
+                                System.out.println("cos(" + userValue1 + ")^-1 = " + Math.toRadians(inverseCos) + "\n");
+                            else
+                                System.out.println("cos(" + userValue1 + ")^-1 = " + Math.toDegrees(inverseCos) + "\n");
                             break;
                         case "16":
                             Console inverseTangent = new Console();
                             Double inverseTan = inverseTangent.inverseTangent(userValue1);
-                            System.out.println("tan(" + userValue1 + ")^-1 = " + inverseTan + "\n");
+                            trigFunction = Console.degreesRadians();
+                            if(trigFunction.equals("Radians"))
+                                System.out.println("tan(" + userValue1 + ")^-1 = " + Math.toRadians(inverseTan) + "\n");
+                            else
+                                System.out.println("tan(" + userValue1 + ")^-1 = " + Math.toDegrees(inverseTan) + "\n");
                             break;
                         case "17":
                             Console logarithm = new Console();
