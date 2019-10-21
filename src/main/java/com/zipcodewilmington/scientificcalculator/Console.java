@@ -1,6 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 /**
@@ -8,7 +7,7 @@ import java.util.Scanner;
  */
 public class Console {
 
-    public static void print(String output, Object... args) {
+    private static void print(String output, Object... args) {
         System.out.printf(output, args);
     }
 
@@ -16,7 +15,7 @@ public class Console {
         print(output + "\n", args);
     }
 
-    public static String getStringInput(String prompt) {
+    static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         print(prompt);
         return scanner.nextLine();
@@ -26,7 +25,7 @@ public class Console {
         return getDoubleInput(prompt).intValue();
     }
 
-    public static Double getDoubleInput(String prompt) {
+    static Double getDoubleInput(String prompt) {
         return Double.parseDouble(getStringInput(prompt));
     }
 

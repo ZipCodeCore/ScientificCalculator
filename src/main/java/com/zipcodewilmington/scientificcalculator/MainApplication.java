@@ -2,7 +2,6 @@ package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by leon on 2/9/18.
@@ -16,8 +15,6 @@ public class MainApplication {
         String[] basicCommands = {"1", "2"};
         //turn that array into a string
         List<String> basicCommandsList = Arrays.asList(basicCommands);
-        //call the scanner
-        Scanner scanner = new Scanner(System.in);
 
 
 

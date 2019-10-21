@@ -2,10 +2,8 @@ package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 class Calculator {
-    private Scanner scanner = new Scanner(System.in);
     //create an array that includes all of the available operators
     private String[] operators = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
             "10", "11", "12", "13,", "14", "15", "16",
@@ -83,7 +81,7 @@ class Calculator {
                     //ask for a second value
                     System.out.println("Enter your second value");
                     double userValue2 = Console.getDoubleInput(":");
-                    String userValue2AsString = Double.toString(userValue2);;
+                    String userValue2AsString = Double.toString(userValue2);
                     //run a while loop that checks if a proper number was entered
                     while(true) {
                         correctInput = InputChecker.isNumeric(userValue2AsString);
