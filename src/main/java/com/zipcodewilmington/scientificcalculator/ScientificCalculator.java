@@ -9,7 +9,7 @@ public class ScientificCalculator {
 
     //Constructor
     public ScientificCalculator(){
-        doubleResult = null;
+        doubleResult = 0.0;
         stringResult = "0";
     }
 
@@ -23,7 +23,7 @@ public class ScientificCalculator {
 
         //for non-double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -37,21 +37,25 @@ public class ScientificCalculator {
 
         //for non-double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
 
     public void squareRoot(Double x){
         try {
-
-            this.setDoubleResult(Math.sqrt(x));
-            this.setStringResult(Double.toString(Math.sqrt(x)));
-
+            if(x < 0) { //checks for a non-complex root
+                this.setDoubleResult((double) 0);
+                this.setStringResult("ERROR");
+            }
+            else{
+                this.setDoubleResult(Math.sqrt(x));
+                this.setStringResult(Double.toString(Math.sqrt(x)));
+            }
         }
         //for non double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -78,7 +82,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -90,7 +94,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -102,7 +106,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -110,7 +114,7 @@ public class ScientificCalculator {
     public void inverse(Double x){
         try {
             if(x == 0){
-                this.setDoubleResult(null);
+                this.setDoubleResult((double) 0);
                 this.setStringResult("ERROR");
             }
             else {
@@ -120,7 +124,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -134,7 +138,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -148,7 +152,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch (Exception e) {
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -162,7 +166,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch (Exception e) {
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
 
@@ -178,7 +182,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -192,7 +196,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -206,7 +210,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
 
@@ -221,7 +225,7 @@ public class ScientificCalculator {
         }
         //for non double inputs and division by zero.
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }
@@ -244,7 +248,7 @@ public class ScientificCalculator {
         }
         //for non double inputs
         catch(Exception e){
-            this.setDoubleResult(null);
+            this.setDoubleResult((double) 0);
             this.setStringResult("ERROR");
         }
     }

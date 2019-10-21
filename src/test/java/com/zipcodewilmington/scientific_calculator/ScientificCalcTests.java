@@ -45,9 +45,9 @@ public class ScientificCalcTests {
     @Test
     public void squareRootTest1(){
 
-        sCalc.squareRoot((double) 100);
+        sCalc.squareRoot((double)(-1));
 
-        Assert.assertEquals(10,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals("ERROR", sCalc.getStringResult());
 
     }
 
@@ -342,9 +342,9 @@ public class ScientificCalcTests {
     @Test
     public void exponentTest1(){
 
-        sCalc.exponent((double) 10,(double) 2);
+        sCalc.exponent((double) 10, 2.1);
 
-        Assert.assertEquals(100,sCalc.getDoubleResult() , 0);
+        Assert.assertEquals(125.893,sCalc.getDoubleResult() , 0);
 
     }
 
