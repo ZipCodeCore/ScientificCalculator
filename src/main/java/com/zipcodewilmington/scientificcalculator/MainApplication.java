@@ -18,8 +18,6 @@ public class MainApplication {
         List<String> basicCommandsList = Arrays.asList(basicCommands);
         //call the scanner
         Scanner scanner = new Scanner(System.in);
-        //welcome the user
-        Console console = new Console();
 
 
 

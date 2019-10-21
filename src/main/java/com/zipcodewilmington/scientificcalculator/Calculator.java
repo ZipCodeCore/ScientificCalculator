@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -20,9 +21,10 @@ class Calculator {
 
     void runCalculator() {
         while (true) {
+            //ask the user for a operator
             System.out.println("Choose your Operator\nType \"cmd\" for commands.");
             String userOperator = scanner.nextLine();
-            //ask the user for a operator
+
             while (!operatorsList.contains(userOperator)) {
                 //provide a list of commands
                 if (userOperator.equals("cmd")) {
@@ -93,29 +95,29 @@ class Calculator {
                     //run the need2value operators INSIDE the if statement
                     switch (userOperator) {
                         case "1":
-                            Addition add = new Addition();
+                            Console add = new Console();
                             double sum = add.add(userValue1, userValue2);
                             System.out.println(userValue1 + " + " + userValue2 + " = " + sum + "\n");
                             break;
                         case "2":
-                            Subtraction subtract = new Subtraction();
+                            Console subtract = new Console();
                             Double difference = subtract.subtract(userValue1, userValue2);
                             System.out.println(userValue1 + " - " + userValue2 + " = " + difference + "\n");
                             break;
                         case "3":
-                            Multiplication multiply = new Multiplication();
+                            Console multiply = new Console();
                             Double product = multiply.multiply(userValue1, userValue2);
                             System.out.println(userValue1 + " * " + userValue2 + " = " + product + "\n");
                             break;
                         case "4":
-                            Division divide = new Division();
+                            Console divide = new Console();
                             Double quotient = divide.divide(userValue1, userValue2);
                             if (quotient != null) {
                                 System.out.println(userValue1 + " / " + userValue2 + " = " + quotient + "\n");
                             }
                             break;
                         case "5":
-                            Exponent exponent = new Exponent();
+                            Console exponent = new Console();
                             Double powerOf = exponent.exponent(userValue1, userValue2);
                             System.out.println(userValue1 + " ^ " + userValue2 + " = " + powerOf + "\n");
                             break;
@@ -123,86 +125,87 @@ class Calculator {
                 } else if (!need2ValuesList.contains(userOperator)) {
                     switch (userOperator) {
                         case "6":
-                            Squared squared = new Squared();
+                            Console squared = new Console();
                             Double powerOf = squared.squared(userValue1);
                             System.out.println(userValue1 + " ^2 = " + powerOf + "\n");
                             break;
                         case "7":
-                            Sqrt sqrt = new Sqrt();
+                            Console sqrt = new Console();
                             Double squareRoot = sqrt.sqrt(userValue1);
                             if (squareRoot != null)
                                 System.out.println("√" + userValue1 + " = " + squareRoot + "\n");
                             break;
                         case "8":
-                            Factorial factorial = new Factorial();
+                            Console factorial = new Console();
                             Double facto = factorial.factorial(userValue1);
                             System.out.println("!" + userValue1 + " = " + facto + "\n");
                             break;
                         case "9":
-                            Inverse inverse = new Inverse();
+                            Console inverse = new Console();
                             Double inversed = inverse.inverse(userValue1);
                             if (inversed != null)
                                 System.out.println("1/" + userValue1 + " = " + inversed + "\n");
                             break;
                         case "10":
-                            Invert invert = new Invert();
+                            Console invert = new Console();
                             Double inverted = invert.invert(userValue1);
                             System.out.println(userValue1 + " inverted = " + inverted + "\n");
                             break;
                         case "11":
-                            Sine sine = new Sine();
+                            Console sine = new Console();
                             Double sin = sine.sine(userValue1);
                             System.out.println("sin(" + userValue1 + ") = " + sin + "\n");
                             break;
                         case "12":
-                            Cosine cosine = new Cosine();
+                            Console cosine = new Console();
                             Double cos = cosine.cosine(userValue1);
                             System.out.println("cos(" + userValue1 + ") = " + cos + "\n");
                             break;
                         case "13":
-                            Tangent tangent = new Tangent();
+                            Console tangent = new Console();
                             Double tan = tangent.tangent(userValue1);
                             System.out.println("tan(" + userValue1 + ") = " + tan + "\n");
                             break;
                         case "14":
-                            InverseSine inverseSine = new InverseSine();
+                            Console inverseSine = new Console();
                             Double inverseSin = inverseSine.inverseSine(userValue1);
                             System.out.println("sin(" + userValue1 + ")^-1 = " + inverseSin + "\n");
                             break;
                         case "15":
-                            InverseCosine inverseCosine = new InverseCosine();
+                            Console inverseCosine = new Console();
                             Double inverseCos = inverseCosine.inverseCosine(userValue1);
                             System.out.println("cos(" + userValue1 + ")^-1 = " + inverseCos + "\n");
                             break;
                         case "16":
-                            InverseTangent inverseTangent = new InverseTangent();
+                            Console inverseTangent = new Console();
                             Double inverseTan = inverseTangent.inverseTangent(userValue1);
                             System.out.println("tan(" + userValue1 + ")^-1 = " + inverseTan + "\n");
                             break;
                         case "17":
-                            Logarithm logarithm = new Logarithm();
+                            Console logarithm = new Console();
                             Double log = logarithm.logarithm(userValue1);
                             if (log != null)
                                 System.out.println("Log(" + userValue1 + ") = " + log + "\n");
                             break;
                         case "18":
-                            InverseLogarithm inverseLogarithm = new InverseLogarithm();
+                            Console inverseLogarithm = new Console();
                             Double inverseLog = inverseLogarithm.inverseLogarithm(userValue1);
                             if (inverseLog != null)
                                 System.out.println("10^" + userValue1 + " = " + inverseLog + "\n");
                             break;
                         case "19":
-                            NaturalLogarithm naturalLogarithm = new NaturalLogarithm();
+                            System.out.println("OuT Of OrDEr!$$!#");
+                            /*Console naturalLogarithm = new Console();
                             Double naturalLog = naturalLogarithm.naturalLogarithm(userValue1);
                             if(naturalLog != null)
                                 System.out.println("ln(" + userValue1 + ") = " + naturalLog + "\n");
+                             */
                             break;
                         case "20":
-                            InverseNaturalLogarithm inverseNaturalLogarithm = new InverseNaturalLogarithm();
+                            Console inverseNaturalLogarithm = new Console();
                             Double inverseNatLog = inverseNaturalLogarithm.inverseNaturalLogarithm(userValue1);
                             System.out.println("e^" + userValue1 + " = " + inverseNatLog + "\n");
                             break;
-
                     }
                 }
             }
