@@ -11,7 +11,7 @@ public class MainApplication {
 //    private static String[] sciMath = {};
     private static String helpText = "valid operations:\n\tset, clear, exit, help\n\tadd, subtract, multiply," +
         " divide, \n\tinverse, invert sign, square, sqrt, exp\n\tsine, cosine, tangent, csc, sec, cot, \n\tlog, log1p, log10, unit" +
-        "\n\tm+, mc, mrc\n\tdisp, disp bin, disp oct, disp dec, disp hex";
+        "\n\tm+, mc, mrc\n\tdisp, disp bin, disp oct, disp dec, disp \n\tscrabble";
 
     private static boolean calcOn = true;
     private static boolean showHelpText = false;
@@ -22,7 +22,7 @@ public class MainApplication {
     private static String currentDisplayMode = "decimal";
     private static Boolean unitModeRadians = true; //false = degrees
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         startUpMessage(); // prints welcome message to console and awaits input
 
         while (calcOn == true) {
@@ -82,11 +82,12 @@ public class MainApplication {
         return unit_mode;
     }
 
-    public static void executeOperation(String operation) {
+    public static void executeOperation(String operation) throws Exception {
         checkErrorInState();
         executeCoreOperation(operation);
         executeMathOperation(operation);
         executeSciOperation(operation);
+        executeExtraFeatures(operation);
     }
 
     public static void executeCoreOperation(String operation) {
@@ -195,6 +196,14 @@ public class MainApplication {
             currentState = SciCalculator.log1p(x);
         } else if (operation.equals("factorial")) {
             currentState = SciCalculator.factorial(x);
+        }
+    }
+    public static void executeExtraFeatures(String operation) throws Exception {
+        if (operation.equals("scrabble")) {
+            String query = Console.getStringInput("type up to seven letters to return best scoring scrabble words: ");
+            String response = ExtraFeature.getBestScoringWords(query.toUpperCase());
+            Console.println(response);
+            Console.getStringInput("press enter to return to calculator");
         }
     }
 }
