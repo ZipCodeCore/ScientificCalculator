@@ -67,32 +67,42 @@ static Double num2;
                 MainMenu.mainMenu(currentNum);
                 break;
             case 2:
+                currentNum = DisplayMode.convertInputToSelectedMode(currentNum);
                 currentNum = Trigonometry.sine(currentNum);
                 Console.println("\n");
+                DisplayMode.convertOutputToSelectedMode(currentNum);
                 Console.println(DisplayMode.convertToSelectedMode(currentNum));
                 MainMenu.mainMenu(currentNum);
                 break;
             case 3:
+                currentNum = DisplayMode.convertInputToSelectedMode(currentNum);
                 currentNum = Trigonometry.cosine(currentNum);
                 Console.println("\n");
+                DisplayMode.convertOutputToSelectedMode(currentNum);
                 Console.println(DisplayMode.convertToSelectedMode(currentNum));
                 MainMenu.mainMenu(currentNum);
                 break;
             case 4:
+                currentNum = DisplayMode.convertInputToSelectedMode(currentNum);
                 currentNum = Trigonometry.atangent(currentNum);
                 Console.println("\n");
+                DisplayMode.convertOutputToSelectedMode(currentNum);
                 Console.println(DisplayMode.convertToSelectedMode(currentNum));
                 MainMenu.mainMenu(currentNum);
                 break;
             case 5:
+                currentNum = DisplayMode.convertInputToSelectedMode(currentNum);
                 currentNum = Trigonometry.acos(currentNum);
                 Console.println("\n");
+                DisplayMode.convertOutputToSelectedMode(currentNum);
                 Console.println(DisplayMode.convertToSelectedMode(currentNum));
                 MainMenu.mainMenu(currentNum);
                 break;
             case 6:
+                currentNum = DisplayMode.convertInputToSelectedMode(currentNum);
                 currentNum = Trigonometry.asin(currentNum);
                 Console.println("\n");
+                DisplayMode.convertOutputToSelectedMode(currentNum);
                 Console.println(DisplayMode.convertToSelectedMode(currentNum));
                 MainMenu.mainMenu(currentNum);
                 break;
