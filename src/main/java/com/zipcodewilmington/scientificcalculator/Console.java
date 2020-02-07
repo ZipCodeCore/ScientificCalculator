@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * Created by leon on 2/9/18.
  */
+@SuppressWarnings("resource")
 public class Console {
 
     public static void print(String output, Object... args) {
@@ -16,7 +17,7 @@ public class Console {
     }
 
     public static String getStringInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
         println(prompt);
         String userInput = scanner.nextLine();
         return userInput;
