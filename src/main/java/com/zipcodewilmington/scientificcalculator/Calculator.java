@@ -50,10 +50,7 @@ public class Calculator {
         return (Math.cos(var1));
     }
 
-    public double tangent(double var1) {
-        return (Math.tan(var1));
-
-    }
+    public double tangent(double var1) { return (Math.tan(var1)); }
 
     public double InverseSin(double var1) {
         return (Math.asin(var1));
@@ -73,11 +70,11 @@ public class Calculator {
         return (Math.log10(var1));
     }
 
-    public double tenToThe(double var1) {
+    public double invLog(double var1) {
         return (Math.pow(10,var1));
     }
 
-    public double Ex(double var1) {
+    public double invNatLog(double var1) {
         return (Math.exp(var1));
     }
 
@@ -91,12 +88,16 @@ public class Calculator {
             factorial = factorial * i;
         }
         return factorial;
-
     }
 
-    public int DecimalToOther(int var1, int radix){
-        Integer.toString(var1, radix);
-        return var1;
+    public String  DecimalToOther(int var1, int radix){
+        return Integer.toString(var1, radix);
+    }
+    public double toRadians(double var1) {
+        return Math.toRadians(var1);
+    }
+    public double toDegrees(double var1) {
+        return Math.toDegrees(var1);
     }
 
 
