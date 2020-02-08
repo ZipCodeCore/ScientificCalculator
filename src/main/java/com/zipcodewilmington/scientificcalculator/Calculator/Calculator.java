@@ -29,6 +29,10 @@ public class Calculator
 		this(0, 0, true, DisplayMode.DECIMAL, TrigDisplayMode.DEGREES);
 	}
 	
+	public Calculator(int displayVal) {
+		this(displayVal, 0, true, DisplayMode.DECIMAL, TrigDisplayMode.DEGREES);
+	}
+	
 	public Calculator(int displayVal, int storedVal, boolean allowNegatives, DisplayMode numMode, TrigDisplayMode trigMode) {
 		this.displayValue = displayVal;
 		this.storedValue = storedVal;

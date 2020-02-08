@@ -1,27 +1,10 @@
 package com.zipcodewilmington.scientificcalculator.Utilities;
 
+import java.util.Scanner;
+
+@SuppressWarnings("resource")
 public class Util 
 {
-	public static int add(int num1, int num2) {
-		return num1 + num2;
-	}
-	
-	public static int sub(int left, int right) {
-		return left - right;
-	}
-	
-	public static int mult(int num1, int num2) {
-		return num1 * num2;
-	}
-	
-	public static float div(float numerator, float denominator) {
-		return numerator / denominator;
-	}
-	
-	public static int div(int numerator, int denominator) {
-		return (int)div((float)numerator, (float)denominator);
-	}
-	
 	public static float square(float num) {
 		return num * num;
 	}
@@ -33,27 +16,7 @@ public class Util
 	public static int squareRoot(int num) {
 		return (int)squareRoot((float)num);
 	}
-	
-	public static double varExp(double base, double exp) {
-		return Math.pow(base, exp);
-	}
-	
-	public static int varExp(int base, int exp) {
-		return (int)Math.pow((double)base, (double)exp);
-	}
-	
-	public static int inverse(int toInverse) {
-		return div(1, toInverse);
-	}
-	
-	public static int flipSign(int num) {
-		return -num;
-	}
-	
-	public static String returnErr() {
-		return "Err";
-	}
-	
+
 	public static float sine(float num) {
 		return (float) Math.sin(num);
 	}
@@ -93,5 +56,44 @@ public class Util
 	public static int factorial(int n) 
     {   	
     	return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
-    } 
+    }
+
+	public static Double getDoubleInput(String prompt) {
+		Scanner scanner = new Scanner(System.in);
+	    Util.println(prompt);
+	    String userInput = scanner.nextLine();
+	    try {
+	    	return Double.parseDouble(userInput); 
+	    } catch (NumberFormatException e) { e.printStackTrace(); }
+	    return 0.0;
+	}
+
+	public static Integer getIntegerInput(String prompt) {
+		Scanner scanner = new Scanner(System.in);
+	    Util.println(prompt);
+	    String userInput = scanner.nextLine();
+	    try {
+	    	return Integer.parseInt(userInput); 
+	    } catch (NumberFormatException e) { e.printStackTrace(); }
+	    return 0;
+	}
+
+	public static String getStringInput(String prompt) {
+		Scanner scanner = new Scanner(System.in);
+	    Util.println(prompt);
+	    String userInput = scanner.nextLine();
+	    return userInput;
+	}
+
+	public static void print(String output, Object... args) {
+	    System.out.printf(output, args);
+	}
+
+	public static void println(String output, Object... args) {
+	    print(output + "\n", args);
+	}
+
+	public static void prln(String print) {
+		System.out.println(print);
+	} 
 }

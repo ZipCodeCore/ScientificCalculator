@@ -50,7 +50,7 @@ public class DisplayModeCommands
 	}
 	
 	public static ArrayList<String> prompt() {
-		String input = Console.getStringInput("Enter a DISPLAY MODE to continue: ");
+		String input = Util.getStringInput("Enter a DISPLAY MODE to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
         for (String s : splited) {
@@ -60,7 +60,7 @@ public class DisplayModeCommands
 	}
 	
 	public static void fullPrompt() {
-		String input = Console.getStringInput("Enter a DISPLAY MODE to continue: ");
+		String input = Util.getStringInput("Enter a DISPLAY MODE to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
         for (String s : splited) {
@@ -77,29 +77,29 @@ public class DisplayModeCommands
 		{
 			case BINARY:
 				MainApplication.calc.setDisplayMode(DisplayMode.BINARY);
-				Console.prln("Calculator switched to BINARY mode.");
+				Util.prln("Calculator switched to BINARY mode.");
 				ConsoleCommands.run(Command.DISPLAY, null);
 				return;
 			case DECIMAL:
 				MainApplication.calc.setDisplayMode(DisplayMode.DECIMAL);
-				Console.prln("Calculator switched to DECIMAL mode.");
+				Util.prln("Calculator switched to DECIMAL mode.");
 				ConsoleCommands.run(Command.DISPLAY, null);
 				return;
 			case HEXADECIMAL:
 				MainApplication.calc.setDisplayMode(DisplayMode.HEXADECIMAL);
-				Console.prln("Calculator switched to HEXADECIMAL mode.");
+				Util.prln("Calculator switched to HEXADECIMAL mode.");
 				ConsoleCommands.run(Command.DISPLAY, null);
 				return;
 			case OCTAL:
 				MainApplication.calc.setDisplayMode(DisplayMode.OCTAL);
-				Console.prln("Calculator switched to OCTAL mode.");
+				Util.prln("Calculator switched to OCTAL mode.");
 				ConsoleCommands.run(Command.DISPLAY, null);
 				return;
 			case RETURN:
 				ConsoleCommands.fullPrompt();
 				return;
 			case HELP:
-				Console.prln("Printing a list of all available commands in this menu: ");
+				Util.prln("Printing a list of all available commands in this menu: ");
 				ArrayList<String> uniques = new ArrayList<>();
 				for (Entry<String, Mode> i : commandMap.entrySet()) {
 					if (!uniques.contains(i.getKey().toUpperCase())) {
@@ -108,7 +108,7 @@ public class DisplayModeCommands
 				}
 				Collections.sort(uniques);
 				for (String s : uniques) {
-					Console.prln(s);
+					Util.prln(s);
 				}
 				fullPrompt();
 				return;

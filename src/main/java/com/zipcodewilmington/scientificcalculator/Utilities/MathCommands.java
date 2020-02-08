@@ -84,7 +84,7 @@ public class MathCommands
 	}
 	
 	public static ArrayList<String> prompt() {		
-		String input = Console.getStringInput("Enter a MATH COMMAND to continue: ");
+		String input = Util.getStringInput("Enter a MATH COMMAND to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
         for (String s : splited) {
@@ -98,7 +98,7 @@ public class MathCommands
 			ConsoleCommands.errorPrompt();
 			return;
 		}
-		String input = Console.getStringInput("Enter a MATH COMMAND to continue: ");
+		String input = Util.getStringInput("Enter a MATH COMMAND to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
         for (String s : splited) {
@@ -123,11 +123,11 @@ public class MathCommands
 					reprompt();
 				} catch (NumberFormatException e) {
 					//e.printStackTrace();
-					Console.prln("That's not a number...");
+					Util.prln("That's not a number...");
 				}
 			}
 			else {
-				Console.prln("Not enough arguments!");
+				Util.prln("Not enough arguments!");
 			}
 			fullPrompt();
 			return;
@@ -143,11 +143,11 @@ public class MathCommands
 					reprompt();
 				} catch (NumberFormatException e) {
 					//e.printStackTrace();
-					Console.prln("That's not a number...");
+					Util.prln("That's not a number...");
 				}
 			}
 			else {
-				Console.prln("Not enough arguments!");
+				Util.prln("Not enough arguments!");
 			}
 			fullPrompt();
 			return;
@@ -160,7 +160,7 @@ public class MathCommands
 			reprompt();
 			return;	
 		case HELP:
-			Console.prln("Printing a list of all available commands in this menu: ");
+			Util.prln("Printing a list of all available commands in this menu: ");
 			ArrayList<String> uniques = new ArrayList<>();
 			for (Entry<String, Command> i : commandMap.entrySet()) {
 				if (!uniques.contains(i.getKey().toUpperCase())) {
@@ -169,7 +169,7 @@ public class MathCommands
 			}
 			Collections.sort(uniques);
 			for (String s : uniques) {
-				Console.prln(s);
+				Util.prln(s);
 			}
 			fullPrompt();
 			return;
@@ -198,11 +198,11 @@ public class MathCommands
 					reprompt();
 				} catch (NumberFormatException e) {
 					//e.printStackTrace();
-					Console.prln("That's not a number...");
+					Util.prln("That's not a number...");
 				}
 			}
 			else {
-				Console.prln("Not enough arguments!");
+				Util.prln("Not enough arguments!");
 			}
 			fullPrompt();
 			return;
@@ -214,15 +214,15 @@ public class MathCommands
 					int lower = Integer.parseInt(args.get(1));
 					int higher = Integer.parseInt(args.get(2));
 					int rand = ThreadLocalRandom.current().nextInt(lower, higher + 1);
-					Console.prln("Randomly generated number (" + lower + "-" + higher + "): " + rand);
+					Util.prln("Randomly generated number (" + lower + "-" + higher + "): " + rand);
 					fullPrompt();
 				} catch (NumberFormatException e) {
 					//e.printStackTrace();
-					Console.prln("That's not a number...");
+					Util.prln("That's not a number...");
 				}
 			}
 			else {
-				Console.prln("Wrong amount of arguments! Expecting 2 numbers, lower and upper bound (inclusive).");
+				Util.prln("Wrong amount of arguments! Expecting 2 numbers, lower and upper bound (inclusive).");
 			}
 			fullPrompt();
 			return;
@@ -248,11 +248,11 @@ public class MathCommands
 					reprompt();
 				} catch (NumberFormatException e) {
 					//e.printStackTrace();
-					Console.prln("That's not a number...");
+					Util.prln("That's not a number...");
 				}
 			}
 			else {
-				Console.prln("Not enough arguments!");
+				Util.prln("Not enough arguments!");
 			}
 			fullPrompt();
 			return;
@@ -267,11 +267,11 @@ public class MathCommands
 					reprompt();
 				} catch (NumberFormatException e) {
 					//e.printStackTrace();
-					Console.prln("That's not a number...");
+					Util.prln("That's not a number...");
 				}
 			}
 			else {
-				Console.prln("Not enough arguments!");
+				Util.prln("Not enough arguments!");
 			}
 			fullPrompt();
 			return;
@@ -282,7 +282,7 @@ public class MathCommands
 	}
 	
 	private static void reprompt() {
-		Console.prln("Value: " + MainApplication.calc.getDisplay());
+		Util.prln("Value: " + MainApplication.calc.getDisplay());
 		fullPrompt();
 		return;	
 	}

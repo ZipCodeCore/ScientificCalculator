@@ -41,7 +41,7 @@ public class ConsoleCommands
 		}
 		
 		// Otherwise, get some input for a console command
-		String input = Console.getStringInput("Enter a CONSOLE COMMAND to continue: ");
+		String input = Util.getStringInput("Enter a CONSOLE COMMAND to continue: ");
 		
 		// Split the input into an array of seperate strings (this splits by spaces)
         String[] splited = input.split("\\s+");
@@ -67,7 +67,7 @@ public class ConsoleCommands
 			run(commandMap.get(args.get(0)), args);
 		}
 		else if (args.size() > 1 && args.get(0).equals("best") && args.get(1).equals("programmer")) {
-			Console.prln("Nobles");
+			Util.prln("Nobles");
 			fullPrompt();
 		}
 		else {
@@ -93,7 +93,7 @@ public class ConsoleCommands
 				inptCmd = "Enter a CONSOLE COMMAND to continue: ";
 				break;
 		}
-		String input = Console.getStringInput(inptCmd);
+		String input = Util.getStringInput(inptCmd);
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
         for (String s : splited) {
@@ -103,9 +103,9 @@ public class ConsoleCommands
 	}
 	
 	public static void errorPrompt() {
-		String input = Console.getStringInput("Error Mode - Please Clear the Display: ");		
+		String input = Util.getStringInput("Error Mode - Please Clear the Display: ");		
         while (!input.toLowerCase().equals("clear")) {
-        	input = Console.getStringInput("Error Mode - Please Clear the Display: ");
+        	input = Util.getStringInput("Error Mode - Please Clear the Display: ");
         }
         run(Command.CLEAR, null);
 	}
@@ -115,7 +115,7 @@ public class ConsoleCommands
 			errorPrompt();
 			return;
 		}
-		String input = Console.getStringInput("Enter a MATH COMMAND to continue: ");
+		String input = Util.getStringInput("Enter a MATH COMMAND to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
         for (String s : splited) {
@@ -132,7 +132,7 @@ public class ConsoleCommands
 			errorPrompt();
 			return;
 		}
-		String input = Console.getStringInput("Enter a DISPLAY MODE to continue: ");
+		String input = Util.getStringInput("Enter a DISPLAY MODE to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
         for (String s : splited) {
@@ -148,7 +148,7 @@ public class ConsoleCommands
 		switch (cmd) 
 		{		
 			case BAD_COMMAND:
-				Console.prln("Bad command! Please enter a valid command, or enter 'Help' to view a list of all commands.");
+				Util.prln("Bad command! Please enter a valid command, or enter 'Help' to view a list of all commands.");
 				fullPrompt();
 				return;
 			case CLEAR:
@@ -156,7 +156,7 @@ public class ConsoleCommands
 				run(Command.DISPLAY, null);
 				return;
 			case HELP:
-				Console.prln("Printing a list of all available commands: ");
+				Util.prln("Printing a list of all available commands: ");
 				ArrayList<String> uniques = new ArrayList<>();
 				for (Entry<String, Command> i : commandMap.entrySet()) {
 					if (!uniques.contains(i.getKey().toUpperCase())) {
@@ -165,21 +165,21 @@ public class ConsoleCommands
 				}
 				Collections.sort(uniques);
 				for (String s : uniques) {
-					Console.prln(s);
+					Util.prln(s);
 				}
 				fullPrompt();
 				return;
 			case INFO:
-				Console.prln("This calculator was made by Aarti, Adam, and Matt! We hope you find it useful.");
+				Util.prln("This calculator was made by Aarti, Adam, and Matt! We hope you find it useful.");
 				fullPrompt();
 				return;
 			case RECALL:
-				Console.prln("Stored Memory Value: " + MainApplication.calc.getStoredVal());
+				Util.prln("Stored Memory Value: " + MainApplication.calc.getStoredVal());
 				fullPrompt(); 
 				return;
 			case RESET:
 				MainApplication.calc.totalReset();
-				Console.prln("Reset all calculator values! Display mode is now DECIMAL/DEGREES.");
+				Util.prln("Reset all calculator values! Display mode is now DECIMAL/DEGREES.");
 				run(Command.DISPLAY, null); 
 				return;
 			case STORE:
@@ -187,29 +187,29 @@ public class ConsoleCommands
 					try {
 						int inc = Integer.parseInt(args.get(1));					
 						MainApplication.calc.incStoredVal(inc);
-						Console.prln("Stored " + inc + " in memory");
+						Util.prln("Stored " + inc + " in memory");
 					} catch (NumberFormatException e) { 
 						//e.printStackTrace(); 
-						Console.prln("That's not a number...");
+						Util.prln("That's not a number...");
 					}
 				}
 				else {
-					Console.prln("Nothing to store. Please enter a second argument!");
+					Util.prln("Nothing to store. Please enter a second argument!");
 				}
 				fullPrompt();
 				return;
 			case SWITCH_DISP_TRIG:
 				MainApplication.calc.toggleTrigMode();
-				Console.prln("Trig Mode switched to " + MainApplication.calc.getTrigModeStr());
+				Util.prln("Trig Mode switched to " + MainApplication.calc.getTrigModeStr());
 				fullPrompt(); 
 				return;
 			case TOGGLE_NEGATIVE:
 				MainApplication.calc.toggleAllowNegatives();
 				if (MainApplication.calc.allowingNegative()) {
-					Console.prln("Calculator is allowing negative numbers again.");
+					Util.prln("Calculator is allowing negative numbers again.");
 				}
 				else {
-					Console.prln("Calculator will no longer show negative numbers.");
+					Util.prln("Calculator will no longer show negative numbers.");
 				}				
 				fullPrompt(); 
 				return;
@@ -217,7 +217,7 @@ public class ConsoleCommands
 				System.exit(0);
 				return;
 			case DISPLAY:
-				Console.prln("Value: " + MainApplication.calc.getDisplay());
+				Util.prln("Value: " + MainApplication.calc.getDisplay());
 				fullPrompt();
 				return;	
 			case MATH:
