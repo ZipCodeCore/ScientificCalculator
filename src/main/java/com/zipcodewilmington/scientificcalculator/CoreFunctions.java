@@ -59,9 +59,4 @@ public class CoreFunctions {
         return null;
     }
 
-    public void Clear() {
-
-    }
-
-
 }
