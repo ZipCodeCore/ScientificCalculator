@@ -15,13 +15,13 @@ public class TestMainApplication {
     @Test
     public void testAdd1(){
         Basic calculator = new Basic;
-        Assert.assertEquals(5, calculator.add(2, 3));
+        Assert.assertEquals(5, calculator.add(2, 3), 0);
     }
 
     @Test
     public void testAdd2(){
         Basic calculator = new Basic();
-        Assert.assertEquals(15, calculator.add(7, 8));
+        Assert.assertEquals(15, calculator.add(7, 8), 0);
     }
 /*
     @Test
