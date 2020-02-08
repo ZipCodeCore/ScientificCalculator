@@ -5,13 +5,22 @@ package com.zipcodewilmington.scientificcalculator;
  */
 public class MainApplication {
     public static void main(String[] args) {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("What operation do you want to do?");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
+        //Without this object instance, no methods below would run. THIS IS CRUCIAL.
+        CoreFunctions coreFunctions = new CoreFunctions();
 
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
+        Console.println("Welcome to my calculator!");
+        Double number1 = Console.getDoubleInput("What number do you want to start with? :  ");
+            coreFunctions.IsANumber(number1);
+
+        String operator = Console.getStringInput("Please enter a second number : ");
+
+        Double number2 = Console.getDoubleInput("Please enter a second number : ");
+
+
+        Console.println("The user input %s as the first number.", number1);
+        Console.println("The user input %s as the operator", operator);
+        Console.println("The user input %s as the second number.", number2);
+
+
     }
 }
