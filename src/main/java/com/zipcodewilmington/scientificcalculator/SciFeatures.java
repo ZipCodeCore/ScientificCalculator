@@ -9,9 +9,9 @@ public class SciFeatures {
     public SciFeatures(){
     }
 
-    String unitsMode;
-    String displayMode;
-    ArrayList<Double> memory;
+    private String unitsMode;
+    private String displayMode;
+    private ArrayList<Double>  memory = new ArrayList<>();
 
     public void setDisplayMode(String a) {
         this.displayMode = a;
