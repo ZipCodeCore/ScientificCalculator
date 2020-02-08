@@ -1,14 +1,14 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Calculator {
-    Double currentValue = 0.0;
+    Double currentValue;
     Double memory;
     Double currentDisplay;
     boolean appropriateInput;
     Double answer;
 
-    public Calculator() {
-
+    public Calculator(Double newCurrentValue) {
+        currentValue = newCurrentValue;
     }
 
     public Double getCurrentValue() {

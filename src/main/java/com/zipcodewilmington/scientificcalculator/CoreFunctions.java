@@ -58,4 +58,4 @@ public class CoreFunctions {
     public Double Inverse() {
         return null;
     }
-
+}
