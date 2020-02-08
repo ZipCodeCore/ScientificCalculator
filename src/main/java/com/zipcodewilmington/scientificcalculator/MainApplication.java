@@ -6,13 +6,21 @@ public class MainApplication {
     public static void main(String[] args) {
         //Without this object instance, no methods below would run. THIS IS CRUCIAL.
         CoreFunctions coreFunctions = new CoreFunctions();
-        Calculator calc = new Calculator();
-
+        Calculator calc = new Calculator(0.0);
+        Console console = new Console();
         Console.println("Welcome to our calculator!");
-        String calculatorChoice = Console.pickCalculator();
-        String number1 = Console.getFirstInput();
-        String operator = Console.getOperatorInput();
-        String number2 = Console.getSecondInput();
+        String calculatorChoice = console.pickCalculator();
+
+        console.calcChoice(calculatorChoice);
+
+
+
+
+        String number1 = console.getFirstInput();
+        String operator = console.getOperatorInput();
+        String number2 = console.getSecondInput();
+
+
 
 
 

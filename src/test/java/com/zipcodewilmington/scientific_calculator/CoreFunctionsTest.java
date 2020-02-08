@@ -4,7 +4,8 @@ import com.zipcodewilmington.scientificcalculator.CoreFunctions;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ScientificFunctions ScientificFunctions = new ScientificFunctions();
+public class coreFunctionsTest {
+    ScientificFunctions ScientificFunctions = new ScientificFunctions();
 
     @Test
     public void positiveintegerAdderTest(){
