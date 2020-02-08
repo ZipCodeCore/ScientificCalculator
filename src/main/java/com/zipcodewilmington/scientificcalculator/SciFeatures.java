@@ -13,6 +13,12 @@ public class SciFeatures {
     String displayMode;
     ArrayList<Double> memory;
 
+    public void setDisplayMode(String a) {
+        this.displayMode = a;
+    }
+    public String getDisplayMode(){
+        return this.displayMode;
+    }
 
     public void switchDisplayMode() {
         if (displayMode.equals("binary")) {
@@ -80,7 +86,7 @@ public class SciFeatures {
     }
 
     public double log(double a) {
-        return Math.log10(a);
+        return log10(a);
     }
 
     public double inverseLog(double a) {
@@ -88,6 +94,16 @@ public class SciFeatures {
     }
 
     public double naturalLog(double a) {
-        return Math.log(a);
+        return log(a);
+    }
+
+
+
+    public int factorial(int a) {
+        int sum = 1;
+        for (int i = 2; i <= a; i++){
+            sum *= i;
+        }
+        return sum;
     }
 }
