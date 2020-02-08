@@ -1,3 +1,5 @@
+package com.zipcodewilmington.scientificcalculator;
+
 public class Basic{
     public float add(){
         return sum;
