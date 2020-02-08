@@ -71,8 +71,23 @@ public class SciFeatures {
             unitsMode = "Radians";
         }
         else {
-            displayMode = "Degrees";
+            unitsMode = "Degrees";
         }
     }
 
+    public void switchUnitsMode(String mode){
+        unitsMode = mode;
+    }
+
+    public double log(double a) {
+        return Math.log10(a);
+    }
+
+    public double inverseLog(double a) {
+        return exp(a);
+    }
+
+    public double naturalLog(double a) {
+        return Math.log(a);
+    }
 }
