@@ -1,21 +1,26 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Sci {
-    public String switchDisplayMode(){
+    public String switchDisplayModeToBinary(Integer a){
         String displayMode = "";
-        return displayMode;
+        String converted = Integer.toString(a,2);
+
+        return converted;
         //binary,octal,decimal,hexadecimal
     }
 
-    public void memPlus(){
+    float memNum = 0;
+    public void memPlus(float a){
+        memNum = a;
 
         }
-        public void memCLear(){
+        public void memClear(){ //needs work
+
 
 
         }
         public float recall(){
-            float memNum = 0;
+
             return memNum;
         }
     public float sine(float a){
