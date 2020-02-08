@@ -88,4 +88,28 @@ public class TestCalculator
 		assertEquals(3, (int)calc.getDisplayVal());
 	}
 
+	@Test
+	public void TestSquare() {
+		Calculator calc = new Calculator();
+		calc.add(9);
+		calc.square();
+		assertEquals(81, (int)calc.getDisplayVal());
+	}
+
+	@Test
+	public void TestPow() {
+		Calculator calc = new Calculator();
+		calc.add(3);
+		calc.pow(3);
+		assertEquals(27, (int)calc.getDisplayVal());
+	}
+
+	@Test
+	public void FlipSignTest() {
+		Calculator calc = new Calculator();
+		calc.add(5);
+		calc.flipSign();
+		assertEquals(-5, (int)calc.getDisplayVal());
+	}
+
 }
