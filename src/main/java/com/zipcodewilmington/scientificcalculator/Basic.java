@@ -1,5 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.stream.IntStream;
+
 public class Basic{
     public float add(float a, float b){
         float sum = a+b;
