@@ -2,6 +2,8 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class Operations {
 
+    // For Merging Purposes
+
     // CORE FEATURES
     //====================================================
 
