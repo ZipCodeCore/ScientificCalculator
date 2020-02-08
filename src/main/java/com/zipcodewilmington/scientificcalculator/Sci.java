@@ -2,6 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class Sci {
     public String switchDisplayMode(){
+
         return displayMode;
         //binary,octal,decimal,hexadecimal
     }
@@ -52,7 +53,7 @@ public class Sci {
         return log;
     }
     public float inverseLogarithm(float a){
-        float invLog = (float) 1 / Math.log10(a);
+        float invLog = (float) (1 / Math.log10(a));
         return invLog;
     }
     public float naturalLogarithm(float a){
@@ -63,8 +64,8 @@ public class Sci {
         float invNatLog = (float) (1/Math.log(a));
         return invNatLog;
     }
-    public Integer factorial(float a){
-        float fact = 0;
+    public Integer factorial(Integer a){
+        Integer fact = a;
         for (int i = 0; i< a;a++){
             fact *= a-1;
         }
