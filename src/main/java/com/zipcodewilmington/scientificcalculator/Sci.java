@@ -1,12 +1,35 @@
 package com.zipcodewilmington.scientificcalculator;
 
+//converts currently-displayed number to binary
 public class Sci {
     public String switchDisplayModeToBinary(Integer a){
         String displayMode = "";
         String converted = Integer.toString(a,2);
 
         return converted;
-        //binary,octal,decimal,hexadecimal
+
+    }
+    public String switchDisplayModeToHexadecimal(Integer a){
+        String displayMode = "";
+        String converted = Integer.toString(a,16);
+
+
+        return converted;
+
+    }
+    public String switchDisplayModeToOctal(Integer a){
+        String displayMode = "";
+        String converted = Integer.toString(a,8);
+
+        return converted;
+
+    }
+    public String switchDisplayModeToDecimal(Integer a){
+        String displayMode = "";
+        String converted = Integer.toString(a,10);
+
+        return converted;
+
     }
 
     float memNum = 0;
@@ -14,7 +37,7 @@ public class Sci {
         memNum = a;
 
         }
-        public void memClear(){ //needs work
+        public void memClear(){                                         //needs work
 
 
 
@@ -47,13 +70,33 @@ public class Sci {
         float invTan = (float) Math.atan(a);
         return invTan;
     }
-    public String switchUnitsModeRotate(){
-        String unitsMode = "";
-        return unitsMode;
+    String unitsMode = "Radians";
+    public float switchUnitsModeRotate(float a){
+        float converted = 0;
+        if (unitsMode.equals("Radians")) {
+            unitsMode = "Degrees";
+            converted = (float) Math.toDegrees(a);
+        } else {
+            unitsMode = "Radians";
+            converted = (float) Math.toRadians(a);
+        }
+        return converted;
         //degrees,radians
     }
-    public String switchUnitsModeString(String unitsModeInput){
-        return unitsModeInput;
+
+    public float switchUnitsModeString(String unitsModeInput, float a){
+        float converted = 0;
+        if (unitsModeInput.equals("Degrees")){
+            converted = (float) Math.toDegrees(a);
+            return converted;
+        } else if (unitsModeInput.equals("Radians")){
+            converted = (float) Math.toRadians(a);
+            return converted;
+        } else {
+            System.out.println("Invalid unit type, try again.");
+            return converted;
+        }
+
     }
     public float logarithm(float a){
         float log = (float) Math.log10(a);
