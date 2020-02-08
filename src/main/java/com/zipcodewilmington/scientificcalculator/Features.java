@@ -50,5 +50,7 @@ public class Features{
     public double clear() {
         return 0;
     }
+
+
 }
 
