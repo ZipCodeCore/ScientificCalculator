@@ -51,25 +51,59 @@ public class TestMainApplication {
     }
 
     @Test
-    public void testAdd2(){
+    public void testDivideByZero(){
 
     }
 
     @Test
-    public void testAdd2(){
+    public void testSquare1(){
 
     }
 
     @Test
-    public void testAdd2(){
+    public void testSquare2(){
 
     }
 
     @Test
-    public void testAdd2(){
+    public void testSquareRoot1(){
 
     }
 
+    @Test
+    public void testSquareRoot2(){
+
+    }
+
+    @Test
+    public void testInverse1(){
+
+    }
+
+    @Test
+    public void testInverse2(){
+
+    }
+
+    @Test
+    public void testPosToNeg1(){
+
+    }
+
+    @Test
+    public void testPosToNeg2(){
+
+    }
+
+    @Test
+    public void test(){
+
+    }
+
+    @Test
+    public void test(){
+
+    }
 
 
 }
