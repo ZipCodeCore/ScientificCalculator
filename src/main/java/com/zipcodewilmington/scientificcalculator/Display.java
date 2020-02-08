@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientific_calculator;
+package com.zipcodewilmington.scientificcalculator;
 
 public class Display {
     public boolean checkState = true;
