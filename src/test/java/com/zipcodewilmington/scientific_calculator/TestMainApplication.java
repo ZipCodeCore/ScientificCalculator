@@ -1,18 +1,20 @@
 package com.zipcodewilmington.scientific_calculator;
 
 import com.zipcodewilmington.scientificcalculator.CoreFunctions;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * Created by leon on 2/9/18.
  */
 public class TestMainApplication {
-    CoreFunctions mathTests = new CoreFunctions();
-}
-@Test
-public class adderTest{
+    CoreFunctions coreFunctions = new CoreFunctions();
 
-    int assumed = 3;
-    int actual = mathTests.add();
-    assertEquals( assumed, actual);
+    @Test
+    public void adderTest(){
+        int assumed = 3;
+        int actual = coreFunctions.Add(1 ,2);
+        Assert.assertEquals( assumed, actual);
+    }
 }
+
