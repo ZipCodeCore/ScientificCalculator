@@ -8,11 +8,18 @@ import static org.junit.Assert.assertEquals;
 public class OperationsTest {
 
     @Test
-    public void addTest(){
+    public void addTestLarge() {
+        //add big numbers
         Operations a = new Operations();
         long expected = 1000000000;
         long actual = Operations.add(500000000, 500000000);
         assertEquals(expected, actual);
-
+    }
+    @Test
+    public  void addTestNeg(){
+        //add negative numbers
+        long expected = -1000000000;
+        long actual = Operations.add(-500000000, -500000000);
+        assertEquals(expected, actual);
     }
 }
