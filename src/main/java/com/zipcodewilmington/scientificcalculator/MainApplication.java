@@ -16,11 +16,7 @@ public class MainApplication {
             s = Console.getStringInput("Please select an option");
             switch (s) {
                 case "1":
-//                    s = Console.getStringInput("First number to add");
-//                    String num1 = s;
-//                    s = Console.getStringInput("Second number to add");
-//                    String num2 = s;
-//                    System.out.println(Addition(num1, num2));
+
                     s = Console.getStringInput(" Enter in following format \n a a a a \n Press enter when done");
                     String sumString = s;
                     System.out.println((Addition(sumString));
@@ -38,14 +34,5 @@ public class MainApplication {
             System.out.println("Please enter a valid response");
         }
 
-       //Integer i = Console.getIntegerInput("1 - Basic | 2 - Scientific | 3 - Exit");
-//        Double d = Console.getDoubleInput("Enter a double.");
-//
-//        Console.println("The user input %s as a string", s);
-//        Console.println("The user input %s as a integer", i);
-//        Console.println("The user input %s as a d", d);
-//        System.out.printf("%-10s %-10s %-10s", "1 - Add |", "2 - Subtract |" , "3 - Multiply \n");
-//        System.out.printf("%-10s %-10s %-10s", "4 - Divide |", "5 - Square |" , "6 - Square Root \n");
-//        System.out.printf("%-10s %-10s %-10s", "7 - Exponent |", "8 - Inverse |" , "9 - Inverse Sign");
-    }
+
 }
