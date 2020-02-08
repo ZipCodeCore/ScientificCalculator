@@ -85,12 +85,15 @@ public class Calculator {
 
 
     public double factorial(double var1) {
-        double factorial = 1;
-        for (int i = 2; i <= var1; i++) {
-            factorial = factorial * i;
-        }
-        return factorial;
+        if (var1 < 0) {return (Double.NaN);}
+            else {
+            double factorial = 1;
 
+                for (int i = 2; i <= var1; i++) {
+                    factorial = factorial * i;
+                }
+                return factorial;
+            }
     }
 
     public String  DecimalToOther(int var1, int radix){
@@ -101,6 +104,13 @@ public class Calculator {
     }
     public double toDegrees(double var1) {
         return Math.toDegrees(var1);
+    }
+    public double secretof73 (double var1) {
+        double divisor = var1;
+        var1 = ((((var1 * 10001) /137)/var1));
+        return var1;
+
+
     }
 
 }
