@@ -184,19 +184,8 @@ public class ConsoleCommands
 				run(Command.DISPLAY, null); 
 				return;
 			case STORE:
-				if (args.size() > 1) {
-					try {
-						float inc = Float.parseFloat(args.get(1));					
-						MainApplication.calc.incStoredVal(inc);
-						Util.prln("Stored " + inc + " in memory");
-					} catch (NumberFormatException e) { 
-						//e.printStackTrace(); 
-						Util.prln("That's not a number...");
-					}
-				}
-				else {
-					Util.prln("Nothing to store. Please enter a second argument!");
-				}
+				MainApplication.calc.incStoredVal(MainApplication.calc.getDisplayVal());
+				Util.prln("Stored " + MainApplication.calc.getDisplayVal() + " in memory");
 				fullPrompt();
 				return;
 			case SWITCH_DISP_TRIG:
