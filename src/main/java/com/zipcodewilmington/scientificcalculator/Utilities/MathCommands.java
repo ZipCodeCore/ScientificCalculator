@@ -33,7 +33,8 @@ public class MathCommands
 		INV_LOG,
 		NATURAL_LOG,
 		INV_NAT_LOG,
-		RANDOM_NUM
+		RANDOM_NUM,
+		CLEAR
 	}
 
 	static {
@@ -59,11 +60,17 @@ public class MathCommands
 		commandMap.put("Square", Command.SQUARE);
 		commandMap.put("Inverse", Command.INVERSE);
 		commandMap.put("Varexp", Command.VAR_EXP);
+		commandMap.put("Power", Command.VAR_EXP);
+		commandMap.put("Pow", Command.VAR_EXP);
+		commandMap.put("Exponent", Command.VAR_EXP);
+		commandMap.put("Exp", Command.VAR_EXP);
 		commandMap.put("Signflip", Command.FLIP_SIGN);
+		commandMap.put("Flipsign", Command.FLIP_SIGN);
 		commandMap.put("Help", Command.HELP);
 		commandMap.put("Return", Command.RETURN);
 		commandMap.put("Factorial", Command.FACTORIAL);
 		commandMap.put("Random", Command.RANDOM_NUM);
+		commandMap.put("Clear", Command.CLEAR);
 		// Fill map with all the above commands, but in lower case and upper case (ie CLEAR/Clear/clear all will work)
 		for (Entry<String, Command> i : commandMap.entrySet()) {
 			tempMap.put(i.getKey().toLowerCase(), i.getValue());
@@ -274,6 +281,10 @@ public class MathCommands
 				Util.prln("Not enough arguments!");
 			}
 			fullPrompt();
+			return;
+		case CLEAR:
+			MainApplication.calc.clearDisplay();
+			reprompt();
 			return;
 		default:
 			fullPrompt();
