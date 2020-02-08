@@ -9,6 +9,7 @@ import static org.junit.Assert.assertNotEquals;
 /**
  * Created by leon on 2/9/18.
  */
+
 public class TestMainApplication {
 
     /*@Test
@@ -21,7 +22,7 @@ public class TestMainApplication {
     }*/
 
     @Test
-    public void numTest(){
+    public void numTest() {
 
     }
 }
