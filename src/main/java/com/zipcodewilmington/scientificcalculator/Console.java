@@ -62,8 +62,7 @@ public class Console {
         if(nextOperand.equals("+")){
             // call add method
             MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
-            //return Operations.add(MainApplication.firstDouble, MainApplication.secondDouble);
-            return 0;
+            return opp.add(MainApplication.firstDouble, MainApplication.secondDouble);
         }else if(nextOperand.equals("-")){
             //call subtraction method
             MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
