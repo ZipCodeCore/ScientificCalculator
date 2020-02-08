@@ -12,12 +12,14 @@ public class TestMainApplication {
 
     @Test
     public void testAdd1(){
-
+        Basic calculator = new Basic;
+        assertEquals("11", calculator.Addition("5 6"));
     }
 
     @Test
     public void testAdd2(){
-
+        Basic calculator = new Basic();
+        assertEquals("15", calculator.Addition("1 2 3 4 5"));
     }
 
     @Test
@@ -37,6 +39,11 @@ public class TestMainApplication {
 
     @Test
     public void testMultiply2(){
+
+    }
+
+    @Test
+    public void testMultiplyByZero(){
 
     }
 
@@ -96,14 +103,103 @@ public class TestMainApplication {
     }
 
     @Test
-    public void test(){
+    public void testSine1(){
 
     }
 
     @Test
-    public void test(){
+    public void testTestSine2(){
 
     }
 
+    @Test
+    public void testCosine1(){
+
+    }
+
+    @Test
+    public void testCosine2(){
+
+    }
+
+    @Test
+    public void testTangent1(){
+
+    }
+
+    @Test
+    public void testTangent2(){
+
+    }
+
+    @Test
+    public void testArcsine1(){
+
+    }
+
+    @Test
+    public void testArcsine2(){
+
+    }
+
+    @Test
+    public void testArccosine1(){
+
+    }
+
+    @Test
+    public void testArccosine2(){
+
+    }
+
+    @Test
+    public void testArctangent1(){
+
+    }
+
+    @Test
+    public void testArctangent2(){
+
+    }
+
+    @Test
+    public void testLog1(){
+
+    }
+
+    @Test
+    public void testLog2(){
+
+    }
+
+    @Test
+    public void testInverseLog1(){
+
+    }
+
+    @Test
+    public void testInverseLog2(){
+
+    }
+
+    @Test
+    public void testNaturalLog1(){
+
+    }
+
+    @Test
+    public void testNaturalLog2(){
+
+    }
+
+    @Test
+    public void testEPower1(){
+
+    }
+
+    @Test
+    public void testEPower2(){
+
+    }
 
 }
