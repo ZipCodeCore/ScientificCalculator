@@ -38,14 +38,32 @@ public class ScientificCalc {
 
     // Log
     public double log (double num1) {
-        return Math.log(num1);
+        return Math.log10(num1);
     }
 
     // Inverse Logarithm
+    public double inverseLog (double num1) {
+        return Math.exp(num1);
+    }
 
     // Natural Log
+    public double naturalLog (double num1) {
+        return Math.log(num1);
+    }
 
     // Inverse Natural Log
+    /* public double inverseNaturalLog (double num1) {
+        return Math.pow(10, num1);
+    }
+    */
 
     // Factorial
+    public int factorial (int num1) {
+        int sum = 1;
+        for (int i = 2; i <= num1  ; i++) {
+            sum *= i;
+        }
+        return sum;
+    }
+
 }
