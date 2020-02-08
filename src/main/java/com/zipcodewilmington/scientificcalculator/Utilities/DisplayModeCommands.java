@@ -20,29 +20,9 @@ public class DisplayModeCommands
 		HELP
 	}
 
-	static {
-		commandMap = new HashMap<>();
-		Map<String, Mode> tempMap = new HashMap<>();
-		commandMap.put("Binary", Mode.BINARY);
-		commandMap.put("Octal", Mode.OCTAL);
-		commandMap.put("Decimal", Mode.DECIMAL);
-		commandMap.put("Hexadecimal", Mode.HEXADECIMAL);
-		commandMap.put("Return", Mode.RETURN);
-		commandMap.put("Help", Mode.HELP);
-
-		// Fill map with all the above commands, but in lower case and upper case (ie CLEAR/Clear/clear all will work)
-		for (Entry<String, Mode> i : commandMap.entrySet()) {
-			tempMap.put(i.getKey().toLowerCase(), i.getValue());
-			tempMap.put(i.getKey().toUpperCase(), i.getValue());
-		}
-		for (Entry<String, Mode> i : tempMap.entrySet()) {
-			commandMap.put(i.getKey(), i.getValue());
-		}
-	}
-	
 	public static void runCommand(ArrayList<String> args) {
-		if (commandMap != null && commandMap.containsKey(args.get(0))) {
-			run(commandMap.get(args.get(0)));
+		if (commandMap != null && commandMap.containsKey(args.get(0).toLowerCase())) {
+			run(commandMap.get(args.get(0).toLowerCase()));
 		}
 		else {
 			run(Mode.RETURN);
@@ -101,10 +81,8 @@ public class DisplayModeCommands
 			case HELP:
 				Util.prln("Printing a list of all available commands in this menu: ");
 				ArrayList<String> uniques = new ArrayList<>();
-				for (Entry<String, Mode> i : commandMap.entrySet()) {
-					if (!uniques.contains(i.getKey().toUpperCase())) {
-						uniques.add(i.getKey().toUpperCase());
-					}
+				for (Entry<String, Mode> i : commandMap.entrySet()) {				
+					uniques.add(i.getKey().toUpperCase());				
 				}
 				Collections.sort(uniques);
 				for (String s : uniques) {
@@ -116,6 +94,16 @@ public class DisplayModeCommands
 				fullPrompt();
 				return;
 		}
+	}
+	
+	static {
+		commandMap = new HashMap<>();
+		commandMap.put("binary", Mode.BINARY);
+		commandMap.put("octal", Mode.OCTAL);
+		commandMap.put("decimal", Mode.DECIMAL);
+		commandMap.put("hexadecimal", Mode.HEXADECIMAL);
+		commandMap.put("return", Mode.RETURN);
+		commandMap.put("help", Mode.HELP);
 	}
 	
 }

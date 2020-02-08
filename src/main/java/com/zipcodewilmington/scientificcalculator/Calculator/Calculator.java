@@ -8,7 +8,6 @@ public class Calculator
 	private float storedValue;
 	private boolean allowNegative;
 	private boolean isError;
-	private boolean displayingStoredVal;
 	private DisplayMode numMode;
 	private TrigDisplayMode trigMode;
 	private String display;
@@ -38,7 +37,6 @@ public class Calculator
 		this.storedValue = storedVal;
 		this.allowNegative = allowNegatives;
 		this.isError = false;
-		this.displayingStoredVal = false;
 		this.display = "";
 		this.trigMode = trigMode;
 		this.numMode = numMode;		
@@ -51,14 +49,7 @@ public class Calculator
 			return;
 		}
 		
-		float numToDisplay;
-		if (this.displayingStoredVal) {
-			numToDisplay = this.storedValue;
-		}
-		else {
-			numToDisplay = this.displayValue;
-		}
-		
+		float numToDisplay = this.displayValue;
 		switch (this.numMode) {
 			case BINARY:
 				this.display = "" + Integer.toBinaryString((int)numToDisplay);
@@ -71,11 +62,11 @@ public class Calculator
 				return;
 		}
 		
-		if (!this.allowNegative && numToDisplay < 0) {
-			numToDisplay = 0;
+		if (!this.allowNegative && numToDisplay < 0.0f) {
+			numToDisplay = 0.0f;
 		}
 		
-		this.display = "" + numToDisplay;
+		this.display = "" + (float)numToDisplay;
 	}
 	
 	
@@ -191,6 +182,20 @@ public class Calculator
 			this.displayValue = Util.toRadians(this.displayValue);
 		}		
 	}
+	
+	public void log() {
+		this.displayValue = Util.log(this.displayValue);
+		if (this.trigMode == TrigDisplayMode.RADIANS) {
+			this.displayValue = Util.toRadians(this.displayValue);
+		}	
+	}
+	
+	public void invNatLog() {
+		this.displayValue = Util.inverseNaturalLog(this.displayValue);
+		if (this.trigMode == TrigDisplayMode.RADIANS) {
+			this.displayValue = Util.toRadians(this.displayValue);
+		}
+	}
 	// END MATH ///////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
@@ -278,8 +283,8 @@ public class Calculator
 		this.storedValue = newStoredVal;		
 	}
 	
-	public void incStoredVal(int incrementAmt) {
-		this.storedValue += incrementAmt;		
+	public void incStoredVal(float inc) {
+		this.storedValue += inc;		
 	}
 	
 	public void setDisplayMode(DisplayMode newMode) {

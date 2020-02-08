@@ -45,18 +45,29 @@ public class Util
 		return (float) Math.toRadians(num);
 	}
 	
-	public static double log(double num) {
-		return Math.log(num);
+	public static float log(float num) {
+		return (float) Math.log(num);
 	}
 	
-	public static double inverseNaturalLog(double num) {
-		return Math.expm1(num) + 1;
+	public static float inverseNaturalLog(float num) {
+		return (float) (Math.expm1(num) + 1);
 	}
 	
 	public static int factorial(int n) 
     {   	
 		return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
     }
+	
+	public static Float getFloatInput(String prompt) {
+		Scanner scanner = new Scanner(System.in);
+	    Util.println(prompt);
+	    String userInput = scanner.nextLine();
+	    try {
+	    	return Float.parseFloat(userInput); 
+	    } catch (NumberFormatException e) { e.printStackTrace(); }
+	    return 0.0f;
+	}
+
 
 	public static Double getDoubleInput(String prompt) {
 		Scanner scanner = new Scanner(System.in);

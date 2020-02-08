@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
 
-import com.zipcodewilmington.scientificcalculator.Application.*;
+import com.zipcodewilmington.scientificcalculator.Application.MainApplication;
 
 public class MathCommands 
 {
@@ -34,56 +34,21 @@ public class MathCommands
 		NATURAL_LOG,
 		INV_NAT_LOG,
 		RANDOM_NUM,
-		CLEAR
-	}
-
-	static {
-		commandMap = new HashMap<>();
-		Map<String, Command> tempMap = new HashMap<>();
-		commandMap.put("Sin", Command.SINE);
-		commandMap.put("Cos", Command.COSINE);
-		commandMap.put("Tan", Command.TANGENT);
-		commandMap.put("Arcsin", Command.INV_SINE);
-		commandMap.put("Arccos", Command.INV_COSINE);
-		commandMap.put("Arctan", Command.INV_TANGENT);
-		commandMap.put("Log", Command.LOG);
-		commandMap.put("InvLog", Command.INV_LOG);
-		commandMap.put("NaturalLog", Command.NATURAL_LOG);
-		commandMap.put("InvNatLog", Command.INV_NAT_LOG);
-		commandMap.put("Add", Command.ADD);
-		commandMap.put("Subtract", Command.SUBTRACT);
-		commandMap.put("Minus", Command.SUBTRACT);
-		commandMap.put("Mult", Command.MULTIPLY);
-		commandMap.put("Multiply", Command.MULTIPLY);
-		commandMap.put("Divide", Command.DIVIDE);
-		commandMap.put("Sqrt", Command.SQRT);
-		commandMap.put("Square", Command.SQUARE);
-		commandMap.put("Inverse", Command.INVERSE);
-		commandMap.put("Varexp", Command.VAR_EXP);
-		commandMap.put("Power", Command.VAR_EXP);
-		commandMap.put("Pow", Command.VAR_EXP);
-		commandMap.put("Exponent", Command.VAR_EXP);
-		commandMap.put("Exp", Command.VAR_EXP);
-		commandMap.put("Signflip", Command.FLIP_SIGN);
-		commandMap.put("Flipsign", Command.FLIP_SIGN);
-		commandMap.put("Help", Command.HELP);
-		commandMap.put("Return", Command.RETURN);
-		commandMap.put("Factorial", Command.FACTORIAL);
-		commandMap.put("Random", Command.RANDOM_NUM);
-		commandMap.put("Clear", Command.CLEAR);
-		// Fill map with all the above commands, but in lower case and upper case (ie CLEAR/Clear/clear all will work)
-		for (Entry<String, Command> i : commandMap.entrySet()) {
-			tempMap.put(i.getKey().toLowerCase(), i.getValue());
-			tempMap.put(i.getKey().toUpperCase(), i.getValue());
-		}
-		for (Entry<String, Command> i : tempMap.entrySet()) {
-			commandMap.put(i.getKey(), i.getValue());
-		}
+		CLEAR,
+		TOGGLE_NEGATIVE,
+		DISPLAY
 	}
 	
+	public static boolean commandExists(String cmd) {
+		if (commandMap != null && commandMap.containsKey(cmd.toLowerCase())) {
+			return true;
+		}
+		return false;
+	}
+
 	public static void runCommand(ArrayList<String> args) {
-		if (commandMap != null && commandMap.containsKey(args.get(0))) {
-			run(commandMap.get(args.get(0)), args);
+		if (commandMap != null && commandMap.containsKey(args.get(0).toLowerCase())) {
+			run(commandMap.get(args.get(0).toLowerCase()), args);
 		}
 		else {
 			run(Command.RETURN, args);
@@ -116,15 +81,22 @@ public class MathCommands
         }
         MathCommands.runCommand(argus);
 	}
+	
+	
+	private static void reprompt() {
+		Util.prln("Value: " + MainApplication.calc.getDisplay());
+		fullPrompt();
+		return;	
+	}
 
 	public static void run(Command cmd, ArrayList<String> args) {
 		switch (cmd) {
 		case ADD:
 			if (args.size() > 1) {
-				int sum = 0;
+				float sum = 0;
 				try {
 					for (int i = 1; i < args.size(); i++) {						
-						sum += Integer.parseInt(args.get(i));
+						sum += Float.parseFloat(args.get(i));
 					}
 					MainApplication.calc.add(sum);			
 					reprompt();
@@ -138,13 +110,15 @@ public class MathCommands
 			}
 			fullPrompt();
 			return;
-		case COSINE:
-			//TODO
+		case COSINE:					
+			MainApplication.calc.cosine();			
+			reprompt();		
+			return;
 		case DIVIDE:
 			if (args.size() > 1) {
 				try {
 					for (int i = 1; i < args.size(); i++) {						
-						int denom = Integer.parseInt(args.get(i));
+						float denom = Float.parseFloat(args.get(i));
 						MainApplication.calc.div(denom);
 					}		
 					reprompt();
@@ -169,10 +143,8 @@ public class MathCommands
 		case HELP:
 			Util.prln("Printing a list of all available commands in this menu: ");
 			ArrayList<String> uniques = new ArrayList<>();
-			for (Entry<String, Command> i : commandMap.entrySet()) {
-				if (!uniques.contains(i.getKey().toUpperCase())) {
-					uniques.add(i.getKey().toUpperCase());
-				}
+			for (Entry<String, Command> i : commandMap.entrySet()) {				
+				uniques.add(i.getKey().toUpperCase());				
 			}
 			Collections.sort(uniques);
 			for (String s : uniques) {
@@ -185,22 +157,30 @@ public class MathCommands
 			reprompt();
 			break;
 		case INV_COSINE:
-			//TODO
-		case INV_LOG:
-			//TODO
+			MainApplication.calc.invCosine();			
+			reprompt();		
+			return;
 		case INV_NAT_LOG:
-			//TODO
+			MainApplication.calc.invNatLog();			
+			reprompt();		
+			return;
 		case INV_SINE:
-			//TODO
+			MainApplication.calc.invSine();			
+			reprompt();		
+			return;
 		case INV_TANGENT:
-			//TODO
+			MainApplication.calc.invTangent();			
+			reprompt();		
+			return;
 		case LOG:
-			//TODO
+			MainApplication.calc.log();			
+			reprompt();		
+			return;
 		case MULTIPLY:
 			if (args.size() > 1) {
 				try {
 					for (int i = 1; i < args.size(); i++) {						
-						MainApplication.calc.mult(Integer.parseInt(args.get(i)));							
+						MainApplication.calc.mult(Float.parseFloat(args.get(i)));							
 					}		
 					reprompt();
 				} catch (NumberFormatException e) {
@@ -213,8 +193,6 @@ public class MathCommands
 			}
 			fullPrompt();
 			return;
-		case NATURAL_LOG:
-			//TODO
 		case RANDOM_NUM:
 			if (args.size() > 2 && args.size() < 4) {
 				try {
@@ -225,7 +203,7 @@ public class MathCommands
 					fullPrompt();
 				} catch (NumberFormatException e) {
 					//e.printStackTrace();
-					Util.prln("That's not a number...");
+					Util.prln("Only integers accepted as arguments.");
 				}
 			}
 			else {
@@ -237,7 +215,9 @@ public class MathCommands
 			ConsoleCommands.fullPrompt();
 			return;
 		case SINE:
-			//TODO
+			MainApplication.calc.sine();			
+			reprompt();		
+			return;
 		case SQRT:
 			MainApplication.calc.sqRt();
 			reprompt();
@@ -250,7 +230,7 @@ public class MathCommands
 			if (args.size() > 1) {
 				try {
 					for (int i = 1; i < args.size(); i++) {						
-						MainApplication.calc.subtract(Integer.parseInt(args.get(i)));							
+						MainApplication.calc.subtract(Float.parseFloat(args.get(i)));							
 					}		
 					reprompt();
 				} catch (NumberFormatException e) {
@@ -264,12 +244,14 @@ public class MathCommands
 			fullPrompt();
 			return;
 		case TANGENT:
-			//TODO
+			MainApplication.calc.tangent();			
+			reprompt();		
+			return;
 		case VAR_EXP:
 			if (args.size() > 1) {
 				try {
 					for (int i = 1; i < args.size(); i++) {						
-						MainApplication.calc.pow(Integer.parseInt(args.get(i)));							
+						MainApplication.calc.pow(Float.parseFloat(args.get(i)));								
 					}		
 					reprompt();
 				} catch (NumberFormatException e) {
@@ -286,16 +268,66 @@ public class MathCommands
 			MainApplication.calc.clearDisplay();
 			reprompt();
 			return;
+		case TOGGLE_NEGATIVE:
+			MainApplication.calc.toggleAllowNegatives();
+			if (MainApplication.calc.allowingNegative()) {
+				Util.prln("Calculator is allowing negative numbers again.");
+			}
+			else {
+				Util.prln("Calculator will no longer show negative numbers.");
+			}				
+			reprompt(); 
+			return;
+		case DISPLAY:
+			Util.prln("Value: " + MainApplication.calc.getDisplay());
+			fullPrompt();
+			return;	
+		case INV_LOG:
+			//TODO
+		case NATURAL_LOG:
+			//TODO
 		default:
 			fullPrompt();
 			return;		
 		}
 	}
+
 	
-	private static void reprompt() {
-		Util.prln("Value: " + MainApplication.calc.getDisplay());
-		fullPrompt();
-		return;	
+	static {
+		commandMap = new HashMap<>();
+		commandMap.put("sin", Command.SINE);
+		commandMap.put("cos", Command.COSINE);
+		commandMap.put("tan", Command.TANGENT);
+		commandMap.put("arcsin", Command.INV_SINE);
+		commandMap.put("arccos", Command.INV_COSINE);
+		commandMap.put("arctan", Command.INV_TANGENT);
+		commandMap.put("log", Command.LOG);
+		commandMap.put("invlog", Command.INV_LOG);
+		commandMap.put("naturallog", Command.NATURAL_LOG);
+		commandMap.put("invnatlog", Command.INV_NAT_LOG);
+		commandMap.put("add", Command.ADD);
+		commandMap.put("subtract", Command.SUBTRACT);
+		commandMap.put("minus", Command.SUBTRACT);
+		commandMap.put("mult", Command.MULTIPLY);
+		commandMap.put("multiply", Command.MULTIPLY);
+		commandMap.put("divide", Command.DIVIDE);
+		commandMap.put("sqrt", Command.SQRT);
+		commandMap.put("square", Command.SQUARE);
+		commandMap.put("inverse", Command.INVERSE);
+		commandMap.put("varexp", Command.VAR_EXP);
+		commandMap.put("power", Command.VAR_EXP);
+		commandMap.put("pow", Command.VAR_EXP);
+		commandMap.put("exponent", Command.VAR_EXP);
+		commandMap.put("exp", Command.VAR_EXP);
+		commandMap.put("signflip", Command.FLIP_SIGN);
+		commandMap.put("flipsign", Command.FLIP_SIGN);
+		commandMap.put("help", Command.HELP);
+		commandMap.put("return", Command.RETURN);
+		commandMap.put("factorial", Command.FACTORIAL);
+		commandMap.put("random", Command.RANDOM_NUM);
+		commandMap.put("clear", Command.CLEAR);		
+		commandMap.put("togglenegative", Command.TOGGLE_NEGATIVE);
+		commandMap.put("display", Command.DISPLAY);
 	}
 	
 }

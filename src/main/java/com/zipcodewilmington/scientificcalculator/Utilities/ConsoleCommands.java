@@ -3,7 +3,7 @@ package com.zipcodewilmington.scientificcalculator.Utilities;
 import java.util.*;
 import java.util.Map.Entry;
 
-import com.zipcodewilmington.scientificcalculator.Application.*;
+import com.zipcodewilmington.scientificcalculator.Application.MainApplication;
 
 public class ConsoleCommands 
 {
@@ -63,10 +63,13 @@ public class ConsoleCommands
 	}
 
 	public static void runCommand(ArrayList<String> args) {		
-		if (commandMap != null && commandMap.containsKey(args.get(0))) {
-			run(commandMap.get(args.get(0)), args);
+		if (commandMap != null && commandMap.containsKey(args.get(0).toLowerCase())) {
+			run(commandMap.get(args.get(0).toLowerCase()), args);
 		}
-		else if (args.size() > 1 && args.get(0).equals("best") && args.get(1).equals("programmer")) {
+		else if (MathCommands.commandExists(args.get(0).toLowerCase())) {
+			MathCommands.runCommand(args);
+		}
+		else if (args.size() > 1 && args.get(0).toLowerCase().equals("best") && args.get(1).toLowerCase().equals("programmer")) {
 			Util.prln("Nobles");
 			fullPrompt();
 		}
@@ -156,12 +159,10 @@ public class ConsoleCommands
 				run(Command.DISPLAY, null);
 				return;
 			case HELP:
-				Util.prln("Printing a list of all available commands: ");
+				Util.prln("Printing a list of all available commands in this menu: ");
 				ArrayList<String> uniques = new ArrayList<>();
-				for (Entry<String, Command> i : commandMap.entrySet()) {
-					if (!uniques.contains(i.getKey().toUpperCase())) {
-						uniques.add(i.getKey().toUpperCase());
-					}
+				for (Entry<String, Command> i : commandMap.entrySet()) {				
+					uniques.add(i.getKey().toUpperCase());				
 				}
 				Collections.sort(uniques);
 				for (String s : uniques) {
@@ -185,7 +186,7 @@ public class ConsoleCommands
 			case STORE:
 				if (args.size() > 1) {
 					try {
-						int inc = Integer.parseInt(args.get(1));					
+						float inc = Float.parseFloat(args.get(1));					
 						MainApplication.calc.incStoredVal(inc);
 						Util.prln("Stored " + inc + " in memory");
 					} catch (NumberFormatException e) { 
@@ -234,28 +235,18 @@ public class ConsoleCommands
 	
 	static {
 		commandMap = new HashMap<>();
-		Map<String, Command> tempMap = new HashMap<>();
-		commandMap.put("Clear", Command.CLEAR);
-		commandMap.put("Help", Command.HELP);
-		commandMap.put("Info", Command.INFO);
-		commandMap.put("Math", Command.MATH);
-		commandMap.put("Recall", Command.RECALL);
-		commandMap.put("Reset", Command.RESET);
-		commandMap.put("Store", Command.STORE);
-		commandMap.put("Switchmode", Command.SWITCH_DISP);
-		commandMap.put("Switchtrig", Command.SWITCH_DISP_TRIG);
-		commandMap.put("Togglenegative", Command.TOGGLE_NEGATIVE);
-		commandMap.put("Display", Command.DISPLAY);
-		commandMap.put("Exit", Command.EXIT);
-		
-		// Fill map with all the above commands, but in lower case and upper case (ie CLEAR/Clear/clear all will work)
-		for (Entry<String, Command> i : commandMap.entrySet()) {
-			tempMap.put(i.getKey().toLowerCase(), i.getValue());
-			tempMap.put(i.getKey().toUpperCase(), i.getValue());
-		}
-		for (Entry<String, Command> i : tempMap.entrySet()) {
-			commandMap.put(i.getKey(), i.getValue());
-		}
+		commandMap.put("clear", Command.CLEAR);
+		commandMap.put("help", Command.HELP);
+		commandMap.put("info", Command.INFO);
+		commandMap.put("math", Command.MATH);
+		commandMap.put("recall", Command.RECALL);
+		commandMap.put("reset", Command.RESET);
+		commandMap.put("store", Command.STORE);
+		commandMap.put("switchmode", Command.SWITCH_DISP);
+		commandMap.put("switchtrig", Command.SWITCH_DISP_TRIG);
+		commandMap.put("togglenegative", Command.TOGGLE_NEGATIVE);
+		commandMap.put("display", Command.DISPLAY);
+		commandMap.put("exit", Command.EXIT);
 	}
 	
 }
