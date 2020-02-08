@@ -1,21 +1,21 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Memory {
-    private Double value;
+    private static Double value;
 
     public Memory() {
         value = 0.0;
     }
 
-    public Double getMemory() {
+    public static Double getMemory() {
         return value;
     }
 
-    public void setMemory(Double input) {
-        this.value = input;
+    public static void setMemory(Double input) {
+        value = input;
     }
 
-    public void resetMemory() {
-        this.value = 0.0;
+    public static void resetMemory() {
+        value = 0.0;
     }
 }
