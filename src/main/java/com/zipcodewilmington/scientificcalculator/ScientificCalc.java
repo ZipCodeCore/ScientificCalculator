@@ -42,4 +42,10 @@ public class ScientificCalc {
     }
 
     // Inverse Logarithm
+
+    // Natural Log
+
+    // Inverse Natural Log
+
+    // Factorial
 }

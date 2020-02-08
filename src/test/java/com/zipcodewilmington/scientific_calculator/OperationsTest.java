@@ -7,19 +7,131 @@ import static org.junit.Assert.assertEquals;
 
 public class OperationsTest {
 
+    Operations operations = new Operations();
+
+    // Addition Tests
     @Test
-    public void addTestLarge() {
-        //add big numbers
-        Operations a = new Operations();
-        long expected = 1000000000;
-        long actual = Operations.add(500000000, 500000000);
-        assertEquals(expected, actual);
+    public void addPosNums() {
+        double expected = 50;
+        double actual = operations.add(23, 27);
+        assertEquals(expected, actual, 0.01);
     }
+
     @Test
-    public  void addTestNeg(){
-        //add negative numbers
-        long expected = -1000000000;
-        long actual = Operations.add(-500000000, -500000000);
-        assertEquals(expected, actual);
+    public  void addNegNums(){
+        double expected = -70;
+        double actual = operations.add(-50, -20);
+        assertEquals(expected, actual, 0.01);
     }
+
+    // Subtraction Tests
+    @Test
+    public void subtractPosNums() {
+        double expected = 23;
+        double actual = operations.subtract(50, 27);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void subtractNegNums() {
+        double expected = -30;
+        double actual = operations.subtract(-50, -20);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Multiplication Tests
+    @Test
+    public void multiplyPosNums() {
+        double expected = 27;
+        double actual = operations.multiply(9, 3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void multiplyNegNums() {
+        double expected = 27;
+        double actual = operations.multiply(-9, -3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Division Tests
+    @Test
+    public void dividePosNums() {
+        double expected = 3;
+        double actual = operations.divide(9, 3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void divideNegNums() {
+        double expected = -3;
+        double actual = operations.divide(9, -3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Number Squared Test
+    @Test
+    public void squarePosNums() {
+        double expected = 9;
+        double actual = operations.square(3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void squareNegNums() {
+        double expected = 9;
+        double actual = operations.square(-3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Square Root of Numbers
+    @Test
+    public void squareRootPosNums() {
+        double expected = 9;
+        double actual = operations.squareRoot(81);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Square Root Negative Numbers Test Case ???
+
+    // Exponent Tests
+    @Test
+    public void exponentNums() {
+        double expected = 8;
+        double actual = operations.exponent(2, 3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Need To Parse All User Inputs as Doubles
+    @Test
+    public void exponentNegNums() {
+        double expected = 1/8.0;
+        double actual = operations.exponent(2, -3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Inverse
+    @Test
+    public void inverseNums() {
+        double expected = 1/8.0;
+        double actual = operations.inverse(8);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    // Switch Signs
+    @Test
+    public void switchSigns() {
+        double expected = -8;
+        double actual = operations.switchSign(8);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void switchSignsPosToNeg() {
+        double expected = -8;
+        double actual = operations.switchSign(8);
+        assertEquals(expected, actual, 0.01);
+    }
+
+
 }
