@@ -4,8 +4,8 @@ import com.zipcodewilmington.scientificcalculator.Utilities.Util;
 
 public class Calculator 
 {
-	private float trueVal;
-	private float storedVal;
+	private float displayValue;
+	private float storedValue;
 	private boolean allowNegative;
 	private boolean isError;
 	private boolean displayingStoredVal;
@@ -30,8 +30,8 @@ public class Calculator
 	}
 	
 	public Calculator(int displayVal, int storedVal, boolean allowNegatives, DisplayMode numMode, TrigDisplayMode trigMode) {
-		this.trueVal = displayVal;
-		this.storedVal = storedVal;
+		this.displayValue = displayVal;
+		this.storedValue = storedVal;
 		this.allowNegative = allowNegatives;
 		this.isError = false;
 		this.displayingStoredVal = false;
@@ -50,10 +50,10 @@ public class Calculator
 		
 		float numToDisplay;
 		if (this.displayingStoredVal) {
-			numToDisplay = this.storedVal;
+			numToDisplay = this.storedValue;
 		}
 		else {
-			numToDisplay = this.trueVal;
+			numToDisplay = this.displayValue;
 		}
 		
 		switch (this.numMode) {
@@ -77,102 +77,102 @@ public class Calculator
 	
 	
 	public void clearDisplay() {
-		this.trueVal = 0;
+		this.displayValue = 0;
 		this.isError = false;
 		this.allowNegative = true;
 		updateDisplay();
 	}
 	
 	public void clearMemory() {
-		this.storedVal = 0;
+		this.storedValue = 0;
 	}
 
 	
 	// MATH ////////////////////////////////////////////////////////////////////////////////////////////////
 	public void add(float val) {
-		this.trueVal += val;
+		this.displayValue += val;
 		updateDisplay();
 	}
 	
 	public void subtract(float val) {
-		this.trueVal -= val;
+		this.displayValue -= val;
 		updateDisplay();
 	}
 	
 	public void mult(float val) {
-		this.trueVal *= val;
+		this.displayValue *= val;
 		updateDisplay();
 	}
 	
 	public void div(float num) {
-		this.trueVal /= num;
+		this.displayValue /= num;
 		updateDisplay();
 	}
 	
 	public void sqRt() {
-		this.trueVal = Util.squareRoot(this.trueVal);
+		this.displayValue = Util.squareRoot(this.displayValue);
 		updateDisplay();
 	}
 	
 	public void square() {
-		this.trueVal = Util.square(this.trueVal);
+		this.displayValue = Util.square(this.displayValue);
 		updateDisplay();
 	}
 
 	public void pow(float exponent) {
-		this.trueVal = (float) Math.pow(this.trueVal, exponent);
+		this.displayValue = (float) Math.pow(this.displayValue, exponent);
 		updateDisplay();
 	}
 	
 	public void inverse() {
-		this.trueVal = 1.0f / this.trueVal;
+		this.displayValue = 1.0f / this.displayValue;
 		updateDisplay();
 	}
 	
 	public void flipSign() {
-		this.trueVal = -this.trueVal;
+		this.displayValue = -this.displayValue;
 		updateDisplay();
 	}
 	
 	public void sine() {
-		this.trueVal = Util.sine(this.trueVal);
+		this.displayValue = Util.sine(this.displayValue);
 		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.trueVal = Util.toRadians(this.trueVal);
+			this.displayValue = Util.toRadians(this.displayValue);
 		}
 	}
 	
 	public void cosine() {
-		this.trueVal = Util.cosine(this.trueVal);
+		this.displayValue = Util.cosine(this.displayValue);
 		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.trueVal = Util.toRadians(this.trueVal);
+			this.displayValue = Util.toRadians(this.displayValue);
 		}
 	}
 	
 	public void tangent() {
-		this.trueVal = Util.tangent(this.trueVal);
+		this.displayValue = Util.tangent(this.displayValue);
 		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.trueVal = Util.toRadians(this.trueVal);
+			this.displayValue = Util.toRadians(this.displayValue);
 		}
 	}
 	
 	public void invSine() {
-		this.trueVal = Util.invSine(this.trueVal);
+		this.displayValue = Util.invSine(this.displayValue);
 		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.trueVal = Util.toRadians(this.trueVal);
+			this.displayValue = Util.toRadians(this.displayValue);
 		}
 	}
 	
 	public void invCosine() {
-		this.trueVal = Util.invCosine(this.trueVal);
+		this.displayValue = Util.invCosine(this.displayValue);
 		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.trueVal = Util.toRadians(this.trueVal);
+			this.displayValue = Util.toRadians(this.displayValue);
 		}
 	}
 	
 	public void invTangent() {
-		this.trueVal = Util.invTangent(this.trueVal);
+		this.displayValue = Util.invTangent(this.displayValue);
 		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.trueVal = Util.toRadians(this.trueVal);
+			this.displayValue = Util.toRadians(this.displayValue);
 		}
 	}
 	// END MATH ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -184,8 +184,8 @@ public class Calculator
 	}
 	
 	public float getDisplayVal() {
-		if (this.trueVal > 0.0f || this.allowNegative) {
-			return this.trueVal;
+		if (this.displayValue > 0.0f || this.allowNegative) {
+			return this.displayValue;
 		}
 		else {
 			return 0.0f;
@@ -193,7 +193,7 @@ public class Calculator
 	}
 	
 	public float getStoredVal() {
-		return this.storedVal;
+		return this.storedValue;
 	}
 	
 	public boolean isInErrorMode() {
@@ -242,7 +242,7 @@ public class Calculator
 	
 	// SETTERS ///////////////////////////////////////////////////////////////////////////////////////////////
 	public void setDisplayVal(int val) {
-		this.trueVal = val;
+		this.displayValue = val;
 		updateDisplay();
 	}
 	
@@ -262,11 +262,11 @@ public class Calculator
 	}
 	
 	public void setStoredVal(int newStoredVal) {
-		this.storedVal = newStoredVal;
+		this.storedValue = newStoredVal;
 	}
 	
 	public void incStoredVal(int incrementAmt) {
-		this.storedVal += incrementAmt;
+		this.storedValue += incrementAmt;
 	}
 	
 	public void setDisplayMode(DisplayMode newMode) {
