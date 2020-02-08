@@ -13,8 +13,7 @@ public class MainApplication {
     public static void main(String[] args) {
         
     	Console.println("Welcome to my calculator!");
-        String input = Console.getStringInput("Enter a command to continue: ");
-        ConsoleCommands.runCommand(input);
+        ConsoleCommands.fullPrompt();
     }
     
     static {
