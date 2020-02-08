@@ -52,24 +52,30 @@ public class Console {
         }
     }
 
-    public static int getOperand(String prompt){
+    public static double getOperand(String prompt){
 
         scanner = new Scanner(System.in);
         println(prompt);
         String nextOperand = scanner.nextLine();
+        Operations opp = new Operations();
 
         if(nextOperand.equals("+")){
             // call add method
+            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+            //return Operations.add(MainApplication.firstDouble, MainApplication.secondDouble);
             return 0;
         }else if(nextOperand.equals("-")){
             //call subtraction method
-            return 1;
+            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+            return opp.subtract(MainApplication.firstDouble, MainApplication.secondDouble);
         }else if(nextOperand.equals("*")){
             //call multiply method
-            return 2;
+            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+            return opp.multiply(MainApplication.firstDouble, MainApplication.secondDouble);
         }else if(nextOperand.equals("/")){
             //call division method
-            return 3;
+            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+            return opp.divide(MainApplication.firstDouble, MainApplication.secondDouble);
         }else if(nextOperand.equals("x^2")){
             //call square method
             return 4;
