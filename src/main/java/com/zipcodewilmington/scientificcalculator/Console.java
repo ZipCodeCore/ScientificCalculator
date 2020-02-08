@@ -15,18 +15,26 @@ public class Console {
         print(output + "\n", args);
     }
 
-    public static String getStringInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
-        println(prompt);
-        String userInput = scanner.nextLine();
-        return userInput;
-    }
+//    public static String getStringInput(String prompt) {
+//        Scanner scanner = new Scanner(System.in);
+//        println(prompt);
+//        String userInput = scanner.nextLine();
+//        return userInput;
+//    }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+        Scanner intScanner = new Scanner(System.in);
+        println(prompt);
+        if(intScanner.hasNextInt()){
+            int in = intScanner.nextInt();
+            println(prompt);
+        }
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        double userInput = scanner.nextInt();
+        return userInput;
     }
 }
