@@ -52,8 +52,9 @@ public class Console {
         }
     }
 
-    public static double getOperand(String prompt){
+    public static void getOperand(String prompt){
 
+        Display display = new Display();
         scanner = new Scanner(System.in);
         println(prompt);
         String nextOperand = scanner.nextLine();
@@ -61,40 +62,144 @@ public class Console {
 
         if(nextOperand.equals("+")){
             // call add method
-            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
-            return opp.add(MainApplication.firstDouble, MainApplication.secondDouble);
+            if(!Display.error) {
+                MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+                if(Display.checkState){
+                    Display.currentTotal = (opp.add(MainApplication.firstDouble, MainApplication.secondDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.add(Display.total, MainApplication.secondDouble));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
         }else if(nextOperand.equals("-")){
             //call subtraction method
-            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
-            return opp.subtract(MainApplication.firstDouble, MainApplication.secondDouble);
+            if(!Display.error){
+                MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+                if(Display.checkState){
+                    Display.currentTotal = (opp.subtract(MainApplication.firstDouble, MainApplication.secondDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.subtract(Display.total, MainApplication.secondDouble));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
         }else if(nextOperand.equals("*")){
             //call multiply method
-            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
-            return opp.multiply(MainApplication.firstDouble, MainApplication.secondDouble);
+            if(!Display.error) {
+                MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+                if(Display.checkState){
+                    Display.currentTotal = (opp.multiply(MainApplication.firstDouble, MainApplication.secondDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.multiply(Display.total, MainApplication.secondDouble));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
         }else if(nextOperand.equals("/")){
             //call division method
-            MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
-            return opp.divide(MainApplication.firstDouble, MainApplication.secondDouble);
-        }else if(nextOperand.equals("x^2")){
+            if(!Display.error) {
+                MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+                if(Display.checkState){
+                    Display.currentTotal = (opp.divide(MainApplication.firstDouble, MainApplication.secondDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.divide(Display.total, MainApplication.secondDouble));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
+        }else if(nextOperand.equalsIgnoreCase("x^2")){
             //call square method
-            return 4;
-        }else if(nextOperand.equals("sqrt")){
+            if(!Display.error) {
+                if(Display.checkState){
+                    Display.currentTotal = (opp.square(MainApplication.firstDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.square(Display.total));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
+        }else if(nextOperand.equalsIgnoreCase("sqrt")){
             //call square root method
-            return 5;
-        }else if(nextOperand.equals("x^x")){
+            if(!Display.error) {
+                if(Display.checkState){
+                    Display.currentTotal = (opp.squareRoot(MainApplication.firstDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.squareRoot(Display.total));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
+        }else if(nextOperand.equalsIgnoreCase("x^x")){
             //call power method
-            return 6;
-        }else if(nextOperand.equals("1/x")){
+            if(!Display.error) {
+                MainApplication.secondDouble = Console.getDoubleInput("Please enter a number:");
+                if(Display.checkState){
+                    Display.currentTotal = (opp.exponent(MainApplication.firstDouble, MainApplication.secondDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.exponent(Display.total, MainApplication.secondDouble));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
+        }else if(nextOperand.equalsIgnoreCase("1/x")){
             //call inverse method
-            return 7;
-        }else if(nextOperand.equals("=")){
-            //call equal method
-            return 8;
-        }else if(nextOperand.equals("off")){
+            if(!Display.error) {
+                if(Display.checkState){
+                    Display.currentTotal = (opp.inverse(MainApplication.firstDouble));
+                    display.displayCurrentValue();
+                    Display.total = Display.currentTotal;
+                    Display.checkState = false;
+                }else {
+                    Display.currentTotal = (opp.inverse(Display.total));
+                    display.displayValue(Display.currentTotal);
+                    Display.total = Display.currentTotal;
+                }
+            }else {
+                display.displayErr();
+            }
+        }else if(nextOperand.equalsIgnoreCase("c")){
+            display.clearDisplay();
+        }else if(nextOperand.equalsIgnoreCase("off")){
             //call close method
-            return 7;
+            display.clearDisplay();
         }else{
-            return getOperand(prompt);
+            getDoubleInput(prompt);
         }
     }
 }

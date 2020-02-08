@@ -1,38 +1,32 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Display {
-    public boolean checkState = true;
-    double currentNum;
-    double nextNum;
-    boolean error;
+    public static boolean checkState = true;
+    public static double total = 0;
+    public static double currentTotal = 0;
+    public static boolean error;
 
     public void displayValue(double input){
 
-        if (checkState) {
-            currentNum = 0;
-            System.out.println(currentNum);
-            checkState = false;
-        } else {
-            System.out.println(input);
-        }
-        currentNum = input;
-
+        System.out.println(input);
     }
 
     public void displayCurrentValue() {
-        System.out.println(currentNum);
+        System.out.println(currentTotal);
 
     }
 
     public void clearDisplay() {
         checkState = true;
-        displayValue(0);
+        total = 0;
+        currentTotal = 0;
+        displayValue(total);
         error = false;
 
     }
     public void changeNumberDisplay(double nextInput) {
-        currentNum = nextInput;
-        System.out.println(currentNum);
+        total = nextInput;
+        System.out.println(total);
     }
     public void displayErr() {
         //if math calculations don't work, display 'Err')

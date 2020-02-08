@@ -17,8 +17,7 @@ public class MainApplication {
         String name = Console.getStringInput("Please enter your name!");
         Console.println(name);
         firstDouble = Console.getDoubleInput("Please enter a number:");
-        //Console.println(""+firstDouble);
-        String operandPrompt = "Choose an operand: + , - , * , / , x^2 , sqrt , x^x , 1/x, =, off";
+        String operandPrompt = "Choose an operand: + , - , * , / , x^2 , sqrt , x^x , 1/x, c";
         while(on) {
             Console.getOperand(operandPrompt);
         }
