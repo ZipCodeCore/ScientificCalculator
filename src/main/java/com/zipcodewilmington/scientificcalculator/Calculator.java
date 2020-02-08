@@ -67,9 +67,7 @@ public class Calculator {
         return (Math.atan(var1));
     }
 
-    public double log(double var1) {
-        return (Math.log(var1));
-    }
+    public double log(double var1) { return (Math.log(var1));}
 
     public double log10X(double var1) {
         return (Math.log10(var1));
@@ -101,15 +99,6 @@ public class Calculator {
         return var1;
     }
 
-    public int BinToDec( int var1 ){
-        return var1;
-    }
-    public int OctToDec( int var1 ){
-        return var1;
-    }
-    public int HexToODec( int var1 ){
-        return var1;
-    }
 
 }
 
