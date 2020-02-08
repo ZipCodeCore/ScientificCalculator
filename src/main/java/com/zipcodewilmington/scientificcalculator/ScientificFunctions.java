@@ -2,7 +2,11 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class ScientificFunctions {
 
-    public boolean IsANumber(Double input) {
+    public ScientificFunctions(){
+
+    }
+
+    public boolean isaNumber(Double input) {
         return true;
     }
 
@@ -10,22 +14,22 @@ public class ScientificFunctions {
         private String number1;
         double convertedNumber = Double.parseDouble(number1);
     }*/
-    public Double Add(Double a, Double b) {
+    public Double add(Double a, Double b) {
         Double sum = a + b;
         return sum;
     }
 
-    public Double Subtract(Double a, Double b) {
+    public Double subtract(Double a, Double b) {
         Double sum = a - b;
         return sum;
     }
 
-    public Double Multiply(Double a, Double b) {
+    public Double multiply(Double a, Double b) {
         Double sum = a * b;
         return sum;
     }
 
-    public Double Divide(Double a, Double b) {
+    public Double divide(Double a, Double b) {
         if (b == 0){
             // tell user division by 0 is not allowed and to re enter input
         }
@@ -35,17 +39,17 @@ public class ScientificFunctions {
         }
     }
 
-    public Double SquareRoot(Double a) {
+    public Double squareRoot(Double a) {
         Double sum = Math.sqrt(a);
         return sum;
     }
 
-    public Double Square(Double a) {
+    public Double square(Double a) {
         Double sum = a*a;
         return sum;
     }
     // Add all inverses?  Multiplicative/additive/
-    public Double Inverse(Double a) {
+    public Double inverse(Double a) {
         Double sum = (1/a);
         return sum;
     }
@@ -64,12 +68,10 @@ public class ScientificFunctions {
             Double value = Math.abs(a);
         }
         else{
-            value = value - (value*2);
+            Double value = value - (value*2);
         }
         return value;
     }
-
-
 
     // returns sine
     public Double sine(Double input){
@@ -126,9 +128,15 @@ public class ScientificFunctions {
         Double number = input;
         return Math.log10(number);
     }
-
+    // calc inverse log
     public Double inverseLog(Double input){
         Double number = Math.pow(10, input);
+        return number;
+    }
+
+    // calc inverse natural log
+    public Double inverseNaturalLog(Double input){
+        Double number = Math.pow(Math.E, input);
         return number;
     }
 
