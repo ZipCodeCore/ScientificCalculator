@@ -2,7 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class Sci {
     public String switchDisplayMode(){
-
+        String displayMode = "";
         return displayMode;
         //binary,octal,decimal,hexadecimal
     }
@@ -15,6 +15,7 @@ public class Sci {
 
         }
         public float recall(){
+            float memNum = 0;
             return memNum;
         }
     public float sine(float a){
@@ -42,7 +43,8 @@ public class Sci {
         return invTan;
     }
     public String switchUnitsModeRotate(){
-        return unitsMode();
+        String unitsMode = "";
+        return unitsMode;
         //degrees,radians
     }
     public String switchUnitsModeString(String unitsModeInput){
@@ -57,7 +59,7 @@ public class Sci {
         return invLog;
     }
     public float naturalLogarithm(float a){
-        float naturalLogarithm = (float) Math.log(a);
+        float natLog = (float) Math.log(a);
         return natLog;
     }
     public float inverseNaturalLogarithm(float a){
