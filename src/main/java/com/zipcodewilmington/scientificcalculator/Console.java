@@ -21,20 +21,25 @@ public class Console {
         String userInput = scanner.nextLine();
         return userInput;
     }
-
+    public static Integer getIntInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Integer userInput = scanner.nextInt();
+        return userInput;
+    }
 
 
 
     //public static Double getDoubleInput(String prompt) {
-       // return null;
+    // return null;
     //}
 
     public static void BasicMenu(){
 
-            System.out.printf("%-10s %-10s %-10s", "1 - Add |", "2 - Subtract |", "3 - Multiply \n");
-            System.out.printf("%-10s %-10s %-10s", "4 - Divide |", "5 - Square |", "6 - Square Root \n");
-            System.out.printf("%-10s %-10s %-10s", "7 - Exponent |", "8 - Inverse |", "9 - Pos <--> Neg \n");
-            ForAllMenus();
+        System.out.printf("%-10s %-10s %-10s", "1 - Add |", "2 - Subtract |", "3 - Multiply \n");
+        System.out.printf("%-10s %-10s %-10s", "4 - Divide |", "5 - Square |", "6 - Square Root \n");
+        System.out.printf("%-10s %-10s %-10s", "7 - Exponent |", "8 - Inverse |", "9 - Pos <--> Neg \n");
+        ForAllMenus();
     }
     public static void SciMenu(){
         System.out.println("Display");

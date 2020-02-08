@@ -16,12 +16,13 @@ public class MainApplication {
 
             s = Console.getStringInput("Please select an option");
             if(s.equals("1")){
-                Integer curInt = 0;
-                Integer pastInt = 0;
-                curInt = Console.getIntInput("Please enter a number\nEnter x when done");
-                while(curInt != -0){
-                    System.out.println(curInt);
-                    Addition(pastInt, curInt);
+                int curInt = 0;
+                int pastInt = 0;
+                s = Console.getStringInput("Please enter a number\nEnter x when done");
+                while(!s.equals("x")){
+                    System.out.print("Please enter a number\nEnter x when done");
+                    curInt = Integer.parseInt(s);
+                    System.out.println(Addition(pastInt, curInt));
                     pastInt = curInt;
 
                 }
