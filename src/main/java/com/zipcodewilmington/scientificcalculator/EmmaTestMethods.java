@@ -8,11 +8,8 @@ public class EmmaTestMethods {
     public int b;
     public String result;
 
-    public static String Addition(String x) {
-        int[] intArray = stringArrayToIntArray(x);
-        int sum = IntStream.of(intArray).sum();
-        String result = String.valueOf(sum);
-        return result;
+    public static Integer Addition(int x, int y) {
+        return x + y;
     }
 
 
