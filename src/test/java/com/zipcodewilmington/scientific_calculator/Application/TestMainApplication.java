@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientific_calculator;
+package com.zipcodewilmington.scientific_calculator.Application;
 
 import org.junit.*;
 

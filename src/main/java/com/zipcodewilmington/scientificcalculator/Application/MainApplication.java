@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator.Application;
 
 /**
  * Created by leon on 2/9/18.
@@ -9,6 +9,8 @@ public class MainApplication {
         String s = Console.getStringInput("Enter a string");
         Integer i = Console.getIntegerInput("Enter an integer");
         Double d = Console.getDoubleInput("Enter a double.");
+        
+        
 
         Console.println("The user input %s as a string", s);
         Console.println("The user input %s as a integer", i);
