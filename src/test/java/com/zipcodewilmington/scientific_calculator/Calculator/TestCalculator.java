@@ -1,6 +1,7 @@
 package com.zipcodewilmington.scientific_calculator.Calculator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
@@ -61,6 +62,30 @@ public class TestCalculator
 		assertEquals(-100, (int)calc.getDisplayVal());
 	}
 	
-	
+	@Test
+	public void TestDisplayModes() {
+		Calculator calc = new Calculator();
+		calc.add(4);
+		calc.setDisplayMode(DisplayMode.BINARY);
+		assertEquals("100", calc.getDisplay());
+		calc.setDisplayMode(DisplayMode.DECIMAL);
+		assertNotEquals("100", calc.getDisplay());
+	}
+
+	@Test
+	public void TestTrigModes() {
+		Calculator calc = new Calculator();
+		calc.add(180);
+		calc.setTrigMode(TrigDisplayMode.RADIANS);
+		assertEquals("3.141592653589793", calc.getDisplay());
+	}
+
+	@Test
+	public void TestSqrt() {
+		Calculator calc = new Calculator();
+		calc.add(9);
+		calc.sqRt();
+		assertEquals(3, (int)calc.getDisplayVal());
+	}
 
 }

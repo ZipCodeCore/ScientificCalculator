@@ -61,6 +61,11 @@ public class Calculator
 				this.display = "" + Integer.toOctalString((int)numToDisplay);
 				return;
 		}
+
+		if (this.trigMode == TrigDisplayMode.RADIANS) {
+			this.display = "" + Math.toRadians(numToDisplay);
+			return;
+		}
 		
 		if (!this.allowNegative && numToDisplay < 0.0f) {
 			numToDisplay = 0.0f;
@@ -288,11 +293,13 @@ public class Calculator
 	}
 	
 	public void setDisplayMode(DisplayMode newMode) {
-		this.numMode = newMode;		
+		this.numMode = newMode;
+		updateDisplay();
 	}
 	
 	public void setTrigMode(TrigDisplayMode newMode) {
-		this.trigMode = newMode;		
+		this.trigMode = newMode;
+		updateDisplay();
 	}
 	
 	public void toggleAllowNegatives() {
