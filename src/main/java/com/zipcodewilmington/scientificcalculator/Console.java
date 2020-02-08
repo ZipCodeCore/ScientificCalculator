@@ -23,9 +23,7 @@ public class Console {
     }
 
 
-//   public static Integer getIntegerInput(String prompt) {
-//
-//   }
+
 
     //public static Double getDoubleInput(String prompt) {
        // return null;
@@ -53,7 +51,7 @@ public class Console {
         System.out.println("**********");
         System.out.println("Clear");
         System.out.println("**********");
-        System.out.printf("%-10s %-10s", "d - Error |", "e - Display | \n");
+        System.out.printf("%-10s %-10s", "d - Error |", "e - Display \n");
         System.out.println("**********");
         System.out.println("Back - f");
         System.out.println("**********");
@@ -61,5 +59,13 @@ public class Console {
         System.out.println("**********");
         System.out.println("Exit - h");
         System.out.println("**********");
+    }
+
+    public static void ExitCalc(){
+        System.exit(0);
+    }
+
+    public static void GoToMainMenu(){
+        System.exit(0);
     }
 }
