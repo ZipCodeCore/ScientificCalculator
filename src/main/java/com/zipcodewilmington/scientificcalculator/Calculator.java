@@ -75,17 +75,14 @@ public class Calculator {
         return (Math.log10(var1));
     }
 
-    public double tenToThe(double var1) {
+    public double invLog(double var1) {
         return (Math.pow(10,var1));
     }
 
-    public double Ex(double var1) {
+    public double invNatLog(double var1) {
         return (Math.exp(var1));
     }
 
-    public double Ln(double var1) {
-        return (-Math.log(1 - var1) / var1);
-    }
 
     public double factorial(double var1) {
         double factorial = 1;
@@ -96,19 +93,14 @@ public class Calculator {
 
     }
 
-    public int DecimalToOther(int var1, int radix){
-        Integer.toString(var1, radix);
-        return var1;
+    public String  DecimalToOther(int var1, int radix){
+        return Integer.toString(var1, radix);
     }
-
-    public int BinToDec( int var1 ){
-        return var1;
+    public double toRadians(double var1) {
+        return Math.toRadians(var1);
     }
-    public int OctToDec( int var1 ){
-        return var1;
-    }
-    public int HexToODec( int var1 ){
-        return var1;
+    public double toDegrees(double var1) {
+        return Math.toDegrees(var1);
     }
 
 }
