@@ -15,20 +15,22 @@ public class Console {
         print(output + "\n", args);
     }
 
-//    public static String getStringInput(String prompt) {
-//        Scanner scanner = new Scanner(System.in);
-//        println(prompt);
-//        String userInput = scanner.nextLine();
-//        return userInput;
-//    }
+    public static String getStringInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        String userInput = scanner.nextLine();
+        return userInput;
+   }
 
     public static Integer getIntegerInput(String prompt) {
         Scanner intScanner = new Scanner(System.in);
         println(prompt);
-        if(intScanner.hasNextInt()){
-            int in = intScanner.nextInt();
-            println(prompt);
+        while(!intScanner.hasNextInt()){
+            intScanner.next();
+            println("Invalid Input! Please enter an Integer.");
         }
+        int intInput = intScanner.nextInt();
+        return intInput;
     }
 
     public static Double getDoubleInput(String prompt) {
