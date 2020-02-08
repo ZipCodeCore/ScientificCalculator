@@ -2,6 +2,53 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class ScientificFunctions {
 
+    public boolean IsANumber(Double input) {
+        return true;
+    }
+
+    /*public class convertToDouble {
+        private String number1;
+        double convertedNumber = Double.parseDouble(number1);
+    }*/
+    public Double Add(Double a, Double b) {
+        Double sum = a + b;
+        return sum;
+    }
+
+    public Double Subtract(Double a, Double b) {
+        Double sum = a - b;
+        return sum;
+    }
+
+    public Double Multiply(Double a, Double b) {
+        Double sum = a * b;
+        return sum;
+    }
+
+    public Double Divide(Double a, Double b) {
+        Double sum = a / b;
+        return sum;
+    }
+
+    public Double SquareRoot(Double a) {
+        Double sum = Math.sqrt(a);
+        return sum;
+    }
+
+    public Double Square(Double a, Double b) {
+        Double sum = a - b;
+        return sum;
+    }
+
+    public Double Inverse() {
+        return null;
+    }
+
+    public void Clear() {
+
+    }
+
+
     // returns sine
     public double sine(double input){
         double number = input;
@@ -51,6 +98,5 @@ public class ScientificFunctions {
         double number = input;
         return Math.log(number);
     }
-
 
 }
