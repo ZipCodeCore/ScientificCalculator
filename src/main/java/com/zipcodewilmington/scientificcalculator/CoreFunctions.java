@@ -5,10 +5,17 @@ import com.sun.tools.javac.util.StringUtils;
 
 public class CoreFunctions {
 
+    Double display;
+
     //This is a constructor for CLass
     public CoreFunctions() {
 
     }
+
+    /*public double displayScreen() {
+        display = 0.0;
+        return display;
+    }*/
 
     public boolean IsANumber(Double input) {
         return true;
@@ -23,32 +30,32 @@ public class CoreFunctions {
         return sum;
     }
 
-    public Double Subtract() {
-        return null;
+    public Double Subtract(Double a, Double b) {
+        Double sum = a - b;
+        return sum;
     }
 
-    public Double Multiply() {
-        return null;
+    public Double Multiply(Double a, Double b) {
+        Double sum = a * b;
+        return sum;
     }
 
-    public Double Divide() {
-        return null;
+    public Double Divide(Double a, Double b) {
+        Double sum = a / b;
+        return sum;
     }
 
-    public Double SquareRoot() {
-        return null;
+    public Double SquareRoot(Double a) {
+        Double sum = Math.sqrt(a);
+        return sum;
     }
 
-    public Double Square() {
-        return null;
+    public Double Square(Double a, Double b) {
+        Double sum = a - b;
+        return sum;
     }
 
     public Double Inverse() {
         return null;
     }
 
-    public void Clear() {
-
-    }
-
-}
