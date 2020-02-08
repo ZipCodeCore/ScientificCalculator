@@ -1,6 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
-
+import static com.zipcodewilmington.scientificcalculator.EmmaTestMethods.*;
 import static com.zipcodewilmington.scientificcalculator.Console.*;
 
 
@@ -14,10 +14,22 @@ public class MainApplication {
         if(s.equals("1")) {
             BasicMenu();
             s = Console.getStringInput("Please select an option");
+            switch (s) {
+                case "1":
+//                    s = Console.getStringInput("First number to add");
+//                    String num1 = s;
+//                    s = Console.getStringInput("Second number to add");
+//                    String num2 = s;
+//                    System.out.println(Addition(num1, num2));
+                    s = Console.getStringInput(" Enter in following format \n a a a a \n Press enter when done");
+                    String sumString = s;
+                    System.out.println((Addition(sumString));
+            }
         }
         else if(s.equals("2")) {
             SciMenu();
             s = Console.getStringInput("Please select an option");
+
         }
         else if(s.equals("3")) {
             System.exit(0);
