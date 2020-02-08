@@ -32,8 +32,8 @@ public class Sci {
 
     }
 
-    float memNum = 0;
-    public void memPlus(float a){
+    double memNum = 0;
+    public void memPlus(double a){
         memNum = a;
 
         }
@@ -42,55 +42,55 @@ public class Sci {
 
 
         }
-        public float recall(){
+        public double recall(){
 
             return memNum;
         }
-    public float sine(float a){
-        float sin = (float) Math.sin(a);
+    public double sine(double a){
+        double sin = (double) Math.sin(a);
         return sin;
     }
-    public float cosine(float a){
-        float cos = (float) Math.cos(a);
+    public double cosine(double a){
+        double cos = (double) Math.cos(a);
         return cos;
     }
-    public float tangent(float a){
-        float tan = (float) Math.tan(a);
+    public double tangent(double a){
+        double tan = (double) Math.tan(a);
         return tan;
     }
-    public float inverseSine(float a){
-        float invSin = (float) Math.asin(a);
+    public double inverseSine(double a){
+        double invSin = (double) Math.asin(a);
         return invSin;
     }
-    public float inverseCosine(float a){
-        float invCos = (float) Math.acos(a);
+    public double inverseCosine(double a){
+        double invCos = (double) Math.acos(a);
         return invCos;
     }
-    public float inverseTangent(float a){
-        float invTan = (float) Math.atan(a);
+    public double inverseTangent(double a){
+        double invTan = (double) Math.atan(a);
         return invTan;
     }
     String unitsMode = "Radians";
-    public float switchUnitsModeRotate(float a){
-        float converted = 0;
+    public double switchUnitsModeRotate(double a){
+        double converted = 0;
         if (unitsMode.equals("Radians")) {
             unitsMode = "Degrees";
-            converted = (float) Math.toDegrees(a);
+            converted = (double) Math.toDegrees(a);
         } else {
             unitsMode = "Radians";
-            converted = (float) Math.toRadians(a);
+            converted = (double) Math.toRadians(a);
         }
         return converted;
         //degrees,radians
     }
 
-    public float switchUnitsModeString(String unitsModeInput, float a){
-        float converted = 0;
+    public double switchUnitsModeString(String unitsModeInput, double a){
+        double converted = 0;
         if (unitsModeInput.equals("Degrees")){
-            converted = (float) Math.toDegrees(a);
+            converted = (double) Math.toDegrees(a);
             return converted;
         } else if (unitsModeInput.equals("Radians")){
-            converted = (float) Math.toRadians(a);
+            converted = (double) Math.toRadians(a);
             return converted;
         } else {
             System.out.println("Invalid unit type, try again.");
@@ -98,20 +98,20 @@ public class Sci {
         }
 
     }
-    public float logarithm(float a){
-        float log = (float) Math.log10(a);
+    public double logarithm(double a){
+        double log = (double) Math.log10(a);
         return log;
     }
-    public float inverseLogarithm(float a){
-        float invLog = (float) (1 / Math.log10(a));
+    public double inverseLogarithm(double a){
+        double invLog = (double) (1 / Math.log10(a));
         return invLog;
     }
-    public float naturalLogarithm(float a){
-        float natLog = (float) Math.log(a);
+    public double naturalLogarithm(double a){
+        double natLog = (double) Math.log(a);
         return natLog;
     }
-    public float inverseNaturalLogarithm(float a){
-        float invNatLog = (float) (1/Math.log(a));
+    public double inverseNaturalLogarithm(double a){
+        double invNatLog = (double) (1/Math.log(a));
         return invNatLog;
     }
     public Integer factorial(Integer a){
