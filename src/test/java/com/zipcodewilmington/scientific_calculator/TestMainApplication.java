@@ -12,12 +12,14 @@ public class TestMainApplication {
 
     @Test
     public void testAdd1(){
-
+        Basic calculator = new Basic;
+        assertEquals("11", calculator.Addition("5 6"));
     }
 
     @Test
     public void testAdd2(){
-
+        Basic calculator = new Basic();
+        assertEquals("15", calculator.Addition("1 2 3 4 5"));
     }
 
     @Test
@@ -37,6 +39,11 @@ public class TestMainApplication {
 
     @Test
     public void testMultiply2(){
+
+    }
+
+    @Test
+    public void testMultiplyByZero(){
 
     }
 
