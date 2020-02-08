@@ -100,6 +100,10 @@ public class Calculator {
         return Math.toDegrees(var1);
     }
 
-
+    public double secretof73 (double var1) {
+        double divisor = var1;
+        var1 = ((((var1 * 10001) /137)/var1));
+        return var1;
+    }
 }
 
