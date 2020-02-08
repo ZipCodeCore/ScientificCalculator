@@ -14,7 +14,7 @@ public class TestMainApplication {
 
     @Test
     public void testAdd1(){
-        Basic calculator = new Basic;
+        Basic calculator = new Basic();
         Assert.assertEquals(5, calculator.add(2, 3), 0);
     }
 
