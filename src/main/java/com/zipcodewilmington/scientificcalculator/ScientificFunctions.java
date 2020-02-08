@@ -29,7 +29,7 @@ public class ScientificFunctions {
         return sum;
     }
 
-    public Double divide(Double a, Double b) {
+    public Double divide(Double a, Double b){
         if (b == 0){
             // tell user division by 0 is not allowed and to re enter input
         }
@@ -37,6 +37,7 @@ public class ScientificFunctions {
             Double sum = a / b;
             return sum;
         }
+        return null;
     }
 
     public Double squareRoot(Double a) {
@@ -66,11 +67,12 @@ public class ScientificFunctions {
     public Double changeSign(Double a){
         if(a < 0){
             Double value = Math.abs(a);
+            return value;
         }
         else{
-            Double value = value - (value*2);
+            Double value = a - (a*2);
+            return value;
         }
-        return value;
     }
 
     // returns sine
@@ -139,5 +141,15 @@ public class ScientificFunctions {
         Double number = Math.pow(Math.E, input);
         return number;
     }
+
+    // calculate factorial
+    public Integer factorial(Integer input){
+        Integer number = 1;
+        for(int i = 2; i <= input; i++){
+            number = number * i;
+        }
+        return number;
+
+}
 
 }
