@@ -1,3 +1,5 @@
+package com.zipcodewilmington.scientificcalculator;
+
 public class Basic{
     public float add(float a, float b){
         float sum = a+b;
@@ -40,7 +42,7 @@ public class Basic{
         if (a > 0){
             opposite = a - (2 * Math.abs(a));
         } else if(a < 0){
-            opposite = a + (2 * Math.abs(b));
+            opposite = a + (2 * Math.abs(a));
         } else {
             opposite = 0;
         }

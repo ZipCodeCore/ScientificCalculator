@@ -1,3 +1,5 @@
+package com.zipcodewilmington.scientificcalculator;
+
 public class Sci {
     public String switchDisplayMode(){
         return displayMode;
