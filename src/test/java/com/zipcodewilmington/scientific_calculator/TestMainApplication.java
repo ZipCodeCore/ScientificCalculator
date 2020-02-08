@@ -96,14 +96,103 @@ public class TestMainApplication {
     }
 
     @Test
-    public void test(){
+    public void testSine1(){
 
     }
 
     @Test
-    public void test(){
+    public void testTestSine2(){
 
     }
 
+    @Test
+    public void testCosine1(){
+
+    }
+
+    @Test
+    public void testCosine2(){
+
+    }
+
+    @Test
+    public void testTangent1(){
+
+    }
+
+    @Test
+    public void testTangent2(){
+
+    }
+
+    @Test
+    public void testArcsine1(){
+
+    }
+
+    @Test
+    public void testArcsine2(){
+
+    }
+
+    @Test
+    public void testArccosine1(){
+
+    }
+
+    @Test
+    public void testArccosine2(){
+
+    }
+
+    @Test
+    public void testArctangent1(){
+
+    }
+
+    @Test
+    public void testArctangent2(){
+
+    }
+
+    @Test
+    public void testLog1(){
+
+    }
+
+    @Test
+    public void testLog2(){
+
+    }
+
+    @Test
+    public void testInverseLog1(){
+
+    }
+
+    @Test
+    public void testInverseLog2(){
+
+    }
+
+    @Test
+    public void testNaturalLog1(){
+
+    }
+
+    @Test
+    public void testNaturalLog2(){
+
+    }
+
+    @Test
+    public void testEPower1(){
+
+    }
+
+    @Test
+    public void testEPower2(){
+
+    }
 
 }
