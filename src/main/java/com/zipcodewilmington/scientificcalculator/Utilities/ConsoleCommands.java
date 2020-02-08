@@ -28,36 +28,41 @@ public class ConsoleCommands
 	public enum MenuType {
 		CONSOLE,
 		MATH,
-		DISPLAY
+		DISPLAY,
+		ERROR
 	}
 	
-	static {
-		commandMap = new HashMap<>();
-		Map<String, Command> tempMap = new HashMap<>();
-		commandMap.put("Clear", Command.CLEAR);
-		commandMap.put("Help", Command.HELP);
-		commandMap.put("Info", Command.INFO);
-		commandMap.put("Math", Command.MATH);
-		commandMap.put("Recall", Command.RECALL);
-		commandMap.put("Reset", Command.RESET);
-		commandMap.put("Store", Command.STORE);
-		commandMap.put("Switchmode", Command.SWITCH_DISP);
-		commandMap.put("Switchtrig", Command.SWITCH_DISP_TRIG);
-		commandMap.put("Togglenegative", Command.TOGGLE_NEGATIVE);
-		commandMap.put("Display", Command.DISPLAY);
-		commandMap.put("Exit", Command.EXIT);
+	public static void fullPrompt() {
 		
-		// Fill map with all the above commands, but in lower case and upper case (ie CLEAR/Clear/clear all will work)
-		for (Entry<String, Command> i : commandMap.entrySet()) {
-			tempMap.put(i.getKey().toLowerCase(), i.getValue());
-			tempMap.put(i.getKey().toUpperCase(), i.getValue());
+		// If in error mode, we are forcing a clear of the display
+		if (MainApplication.calc.isInErrorMode()) {
+			errorPrompt();
+			return;
 		}
-		for (Entry<String, Command> i : tempMap.entrySet()) {
-			commandMap.put(i.getKey(), i.getValue());
-		}
+		
+		// Otherwise, get some input for a console command
+		String input = Console.getStringInput("Enter a CONSOLE COMMAND to continue: ");
+		
+		// Split the input into an array of seperate strings (this splits by spaces)
+        String[] splited = input.split("\\s+");
+        
+        // Save the strings to an arraylist so we can pass it around more easily
+        ArrayList<String> argus = new ArrayList<>();
+        for (String s : splited) {
+        	argus.add(s);
+        }
+        
+        // Loop to check for input
+        // If input is not entered, this waits for more
+        while (argus.size() < 1) {
+        	argus = prompt(MenuType.CONSOLE);
+        }
+        
+        // Once we have at least 1 string of input, run a command
+        runCommand(argus);
 	}
-	
-	public static void runCommand(ArrayList<String> args) {
+
+	public static void runCommand(ArrayList<String> args) {		
 		if (commandMap != null && commandMap.containsKey(args.get(0))) {
 			run(commandMap.get(args.get(0)), args);
 		}
@@ -82,6 +87,8 @@ public class ConsoleCommands
 			case MATH:
 				inptCmd = "Enter a MATH COMMAND to continue: ";
 				break;
+			case ERROR:
+				inptCmd = "Error Mode - Please Clear the Display: ";
 			default:
 				inptCmd = "Enter a CONSOLE COMMAND to continue: ";
 				break;
@@ -95,20 +102,19 @@ public class ConsoleCommands
         return argus;
 	}
 	
-	public static void fullPrompt() {
-		String input = Console.getStringInput("Enter a CONSOLE COMMAND to continue: ");
-        String[] splited = input.split("\\s+");
-        ArrayList<String> argus = new ArrayList<>();
-        for (String s : splited) {
-        	argus.add(s);
+	public static void errorPrompt() {
+		String input = Console.getStringInput("Error Mode - Please Clear the Display: ");		
+        while (!input.toLowerCase().equals("clear")) {
+        	input = Console.getStringInput("Error Mode - Please Clear the Display: ");
         }
-        while (argus.size() < 1) {
-        	argus = ConsoleCommands.prompt(MenuType.CONSOLE);
-        }
-        ConsoleCommands.runCommand(argus);
+        run(Command.CLEAR, null);
 	}
 
 	public static void promptMath() {
+		if (MainApplication.calc.isInErrorMode()) {
+			errorPrompt();
+			return;
+		}
 		String input = Console.getStringInput("Enter a MATH COMMAND to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
@@ -116,12 +122,16 @@ public class ConsoleCommands
         	argus.add(s);
         }
         while (argus.size() < 1) {
-        	argus = ConsoleCommands.prompt(MenuType.MATH);
+        	argus = prompt(MenuType.MATH);
         }
-        ConsoleCommands.runCommand(argus);
+        runCommand(argus);
 	}
 	
 	public static void promptDispSwitch() {
+		if (MainApplication.calc.isInErrorMode()) {
+			errorPrompt();
+			return;
+		}
 		String input = Console.getStringInput("Enter a DISPLAY MODE to continue: ");
         String[] splited = input.split("\\s+");
         ArrayList<String> argus = new ArrayList<>();
@@ -129,9 +139,9 @@ public class ConsoleCommands
         	argus.add(s);
         }
         while (argus.size() < 1) {
-        	argus = ConsoleCommands.prompt(MenuType.DISPLAY);
+        	argus = prompt(MenuType.DISPLAY);
         }
-        ConsoleCommands.runCommand(argus);
+        runCommand(argus);
 	}
 	
 	public static void run(Command cmd, ArrayList<String> args) {
@@ -211,7 +221,7 @@ public class ConsoleCommands
 				fullPrompt();
 				return;	
 			case MATH:
-				//TODO
+				MathCommands.fullPrompt();
 				return;
 			case SWITCH_DISP:
 				DisplayModeCommands.fullPrompt();
@@ -219,6 +229,32 @@ public class ConsoleCommands
 			default:
 				run(Command.BAD_COMMAND, null);
 				return;
+		}
+	}
+	
+	static {
+		commandMap = new HashMap<>();
+		Map<String, Command> tempMap = new HashMap<>();
+		commandMap.put("Clear", Command.CLEAR);
+		commandMap.put("Help", Command.HELP);
+		commandMap.put("Info", Command.INFO);
+		commandMap.put("Math", Command.MATH);
+		commandMap.put("Recall", Command.RECALL);
+		commandMap.put("Reset", Command.RESET);
+		commandMap.put("Store", Command.STORE);
+		commandMap.put("Switchmode", Command.SWITCH_DISP);
+		commandMap.put("Switchtrig", Command.SWITCH_DISP_TRIG);
+		commandMap.put("Togglenegative", Command.TOGGLE_NEGATIVE);
+		commandMap.put("Display", Command.DISPLAY);
+		commandMap.put("Exit", Command.EXIT);
+		
+		// Fill map with all the above commands, but in lower case and upper case (ie CLEAR/Clear/clear all will work)
+		for (Entry<String, Command> i : commandMap.entrySet()) {
+			tempMap.put(i.getKey().toLowerCase(), i.getValue());
+			tempMap.put(i.getKey().toUpperCase(), i.getValue());
+		}
+		for (Entry<String, Command> i : tempMap.entrySet()) {
+			commandMap.put(i.getKey(), i.getValue());
 		}
 	}
 	

@@ -19,9 +19,7 @@ public class DisplayModeCommands
 		RETURN,
 		HELP
 	}
-	
-	
-	
+
 	static {
 		commandMap = new HashMap<>();
 		Map<String, Mode> tempMap = new HashMap<>();

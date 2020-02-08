@@ -109,6 +109,11 @@ public class Calculator
 	}
 	
 	public void div(float num) {
+		if (num == 0) {
+			this.isError = true;
+			updateDisplay();
+			return;
+		}
 		this.displayValue /= num;		
 	}
 	
@@ -125,11 +130,20 @@ public class Calculator
 	}
 	
 	public void inverse() {
+		if (this.displayValue == 0.0f) {
+			this.isError = true;
+			updateDisplay();
+			return;
+		}
 		this.displayValue = 1.0f / this.displayValue;		
 	}
 	
 	public void flipSign() {
 		this.displayValue = -this.displayValue;		
+	}
+	
+	public void factorial() {
+		this.displayValue = Util.factorial((int) this.displayValue);
 	}
 	
 	public void sine() {
