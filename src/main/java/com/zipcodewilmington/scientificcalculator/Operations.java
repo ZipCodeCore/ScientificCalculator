@@ -2,14 +2,12 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class Operations {
 
-    // For Merging Purposes
-
     // CORE FEATURES
     //====================================================
 
     // Addition
-    public static long add(long a, long b){
-        return a + b;
+    public double add (double num1, double num2){
+        return num1 + num2;
     }
 
     //Subtraction
