@@ -63,7 +63,7 @@ Each operation should automatically update the display
   - Ln (natural logarithm)
   - e<sup>x</sup> (inverse natural logarithm)
 - Factorial function  
-
+//
 
 ### Custom Features
 
