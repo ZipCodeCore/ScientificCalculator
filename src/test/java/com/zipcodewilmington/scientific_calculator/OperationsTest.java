@@ -22,4 +22,18 @@ public class OperationsTest {
         long actual = Operations.add(-500000000, -500000000);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void subtractTest(){
+        long expected = 2000000000;
+        long actual = Operations.subtract(1000000000, -1000000000);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void multiplyTest(){
+        long expected = 2000000000;
+        long actual = Operations.multiply(40000, 50000);
+        assertEquals(expected,  actual);
+    }
 }

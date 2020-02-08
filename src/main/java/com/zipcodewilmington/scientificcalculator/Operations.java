@@ -6,4 +6,13 @@ public class Operations {
         return a + b;
     }
 
+    public static long subtract(long a, long b){
+        return a - b;
+    }
+
+    public static long multiply(long a, long b){
+
+        return a * b;
+    }
+
 }
