@@ -1,9 +1,10 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Sci {
-    public String switchDisplayModeToBinary(float a){
+    public String switchDisplayModeToBinary(Integer a){
         String displayMode = "";
-        String converted = "";
+        String converted = Integer.toString(a,2);
+
         return converted;
         //binary,octal,decimal,hexadecimal
     }
