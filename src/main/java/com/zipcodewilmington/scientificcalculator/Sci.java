@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+//converts currently-displayed number to binary
 public class Sci {
     public String switchDisplayModeToBinary(Integer a){
         String displayMode = "";
