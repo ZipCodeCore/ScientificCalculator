@@ -49,7 +49,7 @@ public class Console {
 
 
 
-    public String pickCalculator() {
+    public static String pickCalculator() {
         return getDoubleInput("Please choose basic or scientific calculator: ");
 
     }
