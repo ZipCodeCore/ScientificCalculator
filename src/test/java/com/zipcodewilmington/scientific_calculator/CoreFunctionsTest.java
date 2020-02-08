@@ -5,27 +5,94 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CoreFunctionsTest {
-    CoreFunctions coreFunctions = new CoreFunctions();
+   public CoreFunctions coreFunctions = new CoreFunctions();
 
     @Test
     public void positiveintegerAdderTest(){
-        int assumed = 2;
-        int actual = coreFunctions.Add(1 ,1);
+        Double assumed = 2.;
+        Double actual = coreFunctions.Add(1. ,1.);
         Assert.assertEquals( assumed, actual);
     }
 
     @Test
     public void NegativeIntegerAdderTest(){
-        int assumed = -10;
-        int actual = coreFunctions.Add(0 ,-10);
+        Double assumed = -10.;
+        Double actual = coreFunctions.Add(0. ,-10.);
         Assert.assertEquals( assumed, actual);
     }
 
     @Test
-    public void adderTest3(){
-        int assumed = 3;
-        int actual = coreFunctions.Add(1 ,2);
+    public void SubtractionTestPositiveReturn(){
+        Double assumed = 1.;
+        Double actual = coreFunctions.Subtract(3. ,2.);
+        Assert.assertEquals( assumed, actual);
+
+    }
+
+    @Test
+    public void SubtractionTestZeroReturn(){
+        Double assumed = 1.;
+        Double actual = coreFunctions.Subtract(3. ,3.);
         Assert.assertEquals( assumed, actual);
     }
+
+    @Test
+    public void SubtractionTestNegativeReturn(){
+        Double assumed = -1.;
+        Double actual = coreFunctions.Subtract(3. ,4.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+    @Test
+    public void MultiplicationPositiveReturn(){
+        Double assumed = 9.;
+        Double actual = coreFunctions.Multiply(3. ,3.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+    @Test
+    public void MultiplicationZeroReturn(){
+        Double assumed = 0.;
+        Double actual = coreFunctions.Subtract(0. ,3.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+    @Test
+    public void MultiplicationNegativeReturn(){
+        Double assumed = -9.;
+        Double actual = coreFunctions.Subtract(-3. ,3.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+    @Test
+    public void MultiplicationBothNegativeNumbers(){
+        Double assumed = 9.;
+        Double actual = coreFunctions.Subtract(-3. ,-3.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+    @Test
+    public void DivisionPositiveReturnWholeNumber(){
+        Double assumed = 5.;
+        Double actual = coreFunctions.Subtract(10. ,2.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+    @Test
+    public void DivisionPositiveReturnDecimal(){
+        Double assumed = 5.;
+        Double actual = coreFunctions.Subtract(10. ,2.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+    @Test
+    public void DivisionPositiveReturnDecimal(){
+        Double assumed = 1.5;
+        Double actual = coreFunctions.Subtract(3 ,2.);
+        Assert.assertEquals( assumed, actual);
+    }
+
+
+
 }
 

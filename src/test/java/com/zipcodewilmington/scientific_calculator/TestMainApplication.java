@@ -9,12 +9,14 @@ import org.junit.Test;
  */
 public class TestMainApplication {
     CoreFunctions coreFunctions = new CoreFunctions();
-
+/*
     @Test
     public void adderTest(){
         int assumed = 3;
         int actual = coreFunctions.Add(1 ,2);
         Assert.assertEquals( assumed, actual);
     }
+    */
+
 }
 

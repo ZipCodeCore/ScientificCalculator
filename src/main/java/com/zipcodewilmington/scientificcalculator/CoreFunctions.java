@@ -6,7 +6,7 @@ import com.sun.tools.javac.util.StringUtils;
 public class CoreFunctions {
 
     //This is a constructor for CLass
-     CoreFunctions() {
+    public CoreFunctions() {
 
     }
 
