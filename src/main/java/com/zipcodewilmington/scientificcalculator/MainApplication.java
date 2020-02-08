@@ -5,20 +5,23 @@ package com.zipcodewilmington.scientificcalculator;
  */
 public class MainApplication {
 
+    public static int firstInt;
+    public static int secondInt;
+    public static double firstDouble;
+    public static double secondDouble;
+    public static boolean on = true;
+
     public static void main(String[] args) {
-        int firstInt;
-        int secondInt;
-        double   firstDouble;
-        double   secondDouble;
-        String answer = "";
 
         Console.println("Welcome to my calculator!");
         String name = Console.getStringInput("Please enter your name!");
         Console.println(name);
         firstDouble = Console.getDoubleInput("Please enter a number:");
         //Console.println(""+firstDouble);
-        
-
-
+        String operandPrompt = "Choose an operand: + , - , * , / , x^2 , sqrt , x^x , 1/x, =, off";
+        while(on) {
+            Console.getOperand(operandPrompt);
+        }
     }
 }
+
