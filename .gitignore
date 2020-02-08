@@ -149,7 +149,7 @@ fabric.properties
 .project
 .classpath
 .settings
-
+.DS_store
 
 #maven build target
 target/
