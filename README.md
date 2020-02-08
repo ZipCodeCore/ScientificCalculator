@@ -1,6 +1,6 @@
 # ScientificCalculator (maven) ZCW
 
-
+## James
 ## Description
 
 In this project your team will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
@@ -63,7 +63,7 @@ Each operation should automatically update the display
   - Ln (natural logarithm)
   - e<sup>x</sup> (inverse natural logarithm)
 - Factorial function  
-
+//
 
 ### Custom Features
 
