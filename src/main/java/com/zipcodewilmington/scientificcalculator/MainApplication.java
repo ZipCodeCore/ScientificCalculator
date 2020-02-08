@@ -16,20 +16,24 @@ public class MainApplication {
 
             String operator = "";
 
-            //Ask for first Integer or Double
+            //Ask for Integer or Double
             String s = Console.getStringInput("Please type A for Integer or B for Double");
             while(!s.equals("A")  && !s.equals("B")){
                 Console.println("your input was " + s);
                 s = Console.getStringInput("Invalid Input! Please type A for Integer or B for Double");
             }
 
+//            public static int getNum() {
+//                return null;
+//            }
+
             //Update Variables
             if (s.equals("A")) {
                i = Console.getIntegerInput("Enter an integer");
-               //Console.println( i);
-            } else d = Console.getDoubleInput("Enter a double.");
+               Console.println(i+ "");
+            } else if (s.equals("B")) d = Console.getDoubleInput("Enter a double.");
 
-            //Ask for first operator
+            //Ask for operation
             operator = Console.getStringInput("Please type | A for Add | S for Subtract | M for Multiply | D for Divide");
             while(!operator.equals("A")  && !operator.equals("S")  && !operator.equals("M")  && !operator.equals("D")){
                 Console.println("your input was " + operator);
@@ -38,14 +42,15 @@ public class MainApplication {
 
             if (operator.equals("A")) {
                 //Add
-                Console.println("Display:",i, operator);
+
+                Console.println("Your operator is +");
             } else if (operator.equals("S")) {
                 //Subtract
                 Console.println("Your operator is -");
             } else if (operator.equals("M")) {
                 //Multiply
                 Console.println("Your operator is *");
-            } else {
+            } else if (operator.equals("D")){
                 //Divide
                 Console.println("Your operator is /");
             }
