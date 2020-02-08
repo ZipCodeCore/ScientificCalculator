@@ -6,6 +6,7 @@ import java.util.Scanner;
  * Created by leon on 2/9/18.
  */
 public class Console {
+    int total = 0;
 
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
@@ -16,27 +17,47 @@ public class Console {
     }
 
     public static String getStringInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner strScanner = new Scanner(System.in);
         println(prompt);
-        String userInput = scanner.nextLine();
-        return userInput;
-   }
+        String strInput = strScanner.nextLine();
+        return strInput;
+    }
+
+    public static String evalMenuOption(String m){
+            if (m.equals("A")) {
+                println("your string is " + m);
+            } else if (m.equals("B")) {
+                println("your string is " + m);
+            } else {
+                println("Invalid Input! Please type A for Integer or B for Double");
+                println("your string is " + m);
+            }
+            return m;
+    }
+
+
 
     public static Integer getIntegerInput(String prompt) {
         Scanner intScanner = new Scanner(System.in);
         println(prompt);
-        while(!intScanner.hasNextInt()){
+        while (!intScanner.hasNextInt()) {
             intScanner.next();
             println("Invalid Input! Please enter an Integer.");
         }
         int intInput = intScanner.nextInt();
+
         return intInput;
     }
 
-    public static Double getDoubleInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
+    public static double getDoubleInput(String prompt) {
+        Scanner doubleScanner = new Scanner(System.in);
         println(prompt);
-        double userInput = scanner.nextInt();
-        return userInput;
+        while (!doubleScanner.hasNextDouble()) {
+            doubleScanner.next();
+            println("Invalid Input! Please enter a Double.");
+        }
+        double doubleInput = doubleScanner.nextDouble();
+
+        return doubleInput;
     }
 }

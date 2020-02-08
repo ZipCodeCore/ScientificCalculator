@@ -5,16 +5,53 @@ package com.zipcodewilmington.scientificcalculator;
  */
 public class MainApplication {
     public static void main(String[] args) {
+        //Greeting
+        Console.println("Welcome to my calculator!");
         while (true){
-            Console.println("Welcome to my calculator!");
 
-            String s = Console.getStringInput("Enter a string");
-            Integer i = Console.getIntegerInput("Enter an integer");
-            Double d = Console.getDoubleInput("Enter a double.");
+            //Variables
+            int i = 0;
+            double d = 0;
 
-            Console.println("The user input %s as a string", s);
-            Console.println("The user input %s as a integer", i);
-            Console.println("The user input %s as a d", d);
+
+            String operator = "";
+
+            //Ask for first Integer or Double
+            String s = Console.getStringInput("Please type A for Integer or B for Double");
+            while(!s.equals("A")  && !s.equals("B")){
+                Console.println("your input was " + s);
+                s = Console.getStringInput("Invalid Input! Please type A for Integer or B for Double");
+            }
+
+            //Update Variables
+            if (s.equals("A")) {
+               i = Console.getIntegerInput("Enter an integer");
+               //Console.println( i);
+            } else d = Console.getDoubleInput("Enter a double.");
+
+            //Ask for first operator
+            operator = Console.getStringInput("Please type | A for Add | S for Subtract | M for Multiply | D for Divide");
+            while(!operator.equals("A")  && !operator.equals("S")  && !operator.equals("M")  && !operator.equals("D")){
+                Console.println("your input was " + operator);
+                operator = Console.getStringInput("Invalid Input! Please type | A for Add | S for Subtract | M for Multiply | D for Divide");
+            }
+
+            if (operator.equals("A")) {
+                //Add
+                Console.println("Display:",i, operator);
+            } else if (operator.equals("S")) {
+                //Subtract
+                Console.println("Your operator is -");
+            } else if (operator.equals("M")) {
+                //Multiply
+                Console.println("Your operator is *");
+            } else {
+                //Divide
+                Console.println("Your operator is /");
+            }
+
+            Console.println("Display:", i, operator);
+            Console.println("Display:", d,operator);
         }
     }
 
