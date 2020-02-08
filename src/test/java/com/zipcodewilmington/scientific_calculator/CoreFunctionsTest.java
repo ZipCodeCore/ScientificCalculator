@@ -1,10 +1,14 @@
 package com.zipcodewilmington.scientific_calculator;
 
 import com.zipcodewilmington.scientificcalculator.CoreFunctions;
+import com.zipcodewilmington.scientificcalculator.ScientificFunctions;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class coreFunctionsTest {
+
+
+public class CoreFunctionsTest {
+
     ScientificFunctions ScientificFunctions = new ScientificFunctions();
 
     @Test
@@ -31,7 +35,7 @@ public class coreFunctionsTest {
 
     @Test
     public void SubtractionTestZeroReturn(){
-        Double assumed = 1.;
+        Double assumed = 0.;
         Double actual = ScientificFunctions.subtract(3. ,3.);
         Assert.assertEquals( assumed, actual);
     }
@@ -80,26 +84,38 @@ public class coreFunctionsTest {
 
     @Test
     public void DivisionPositiveReturnDecimal(){
-        Double assumed = 5.;
-        Double actual = ScientificFunctions.divide(10. ,2.);
+        Double assumed = 1.5;
+        Double actual = ScientificFunctions.divide(3. ,2.);
+        Assert.assertEquals( assumed, actual);
+    }
+    @Test
+    public void squareRootReturnPositiveWholeNumber(){
+        Double assumed = 3.;
+        Double actual = ScientificFunctions.squareRoot(9. );
         Assert.assertEquals( assumed, actual);
     }
 
     @Test
-    public void DivisionPositiveReturnDecimal(){
-        Double assumed = 1.5;
-        Double actual = ScientificFunctions.divide(3 ,2.);
+    public void squareRootReturnPositiveDecimal(){
+        Double assumed = 3.1622776601683795;
+        Double actual = ScientificFunctions.squareRoot(10. );
         Assert.assertEquals( assumed, actual);
     }
+/*
+    @Test
+    public void squareRootReturnZero(){
+        String assumed = "Whatever logic my boys put";
+        Double actual = ScientificFunctions.squareRoot(10. );
+        Assert.assertEquals( assumed, actual);
+    }*/
 
 /*
-@Test
-public void degree(){
-        Double assumed = 1.5;
-        Double actual = ScientificFunctions.divide(3 ,2.);
+    @Test
+    public void squareRootReturnNegative(){
+        String assumed = "Whatever logic my boys put";
+        Double actual = ScientificFunctions.squareRoot(10. );
         Assert.assertEquals( assumed, actual);
-        }
+    }*/
 
-*/
+
 }
-

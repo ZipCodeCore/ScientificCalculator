@@ -48,19 +48,19 @@ public class Console {
     }
 
 
-
     public  String pickCalculator() {
         return getDoubleInput("Please choose basic or scientific calculator: ");
 
     }
 
     public void calcChoice(String calculatorChoice) {
-        System.out.println("1) Addition\n" +
+        System.out.println("Please choose an option from the below Menu;\n" +
+                "1) Addition\n" +
                 "2) Subtraction\n" +
-                "3) Multiplication\n + " +
+                "3) Multiplication\n" +
                 "4) Divide \n");
         if(calculatorChoice.equals("scientific")){
-            System.out.println("5) Squarer\n" +
+            System.out.println("5) Square\n" +
                     "6) degree\n" +
                     "7) natural log\n" +
                     "8) base log\n" +
