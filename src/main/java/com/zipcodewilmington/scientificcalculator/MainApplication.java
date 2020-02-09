@@ -503,8 +503,25 @@ public class MainApplication {
                                         }
                                     } else if (op.equals("!")) {
                                         int factor = Math.toIntExact(Math.round(i));
-                                        Console.println("New Value is: " + sf.factorial(factor));
-                                        i = Double.valueOf(sf.factorial(factor));
+                                        if (sf.displayMode.equalsIgnoreCase("decimal")){
+                                            Console.println("New Value is: " + sf.factorial(factor));
+                                            i = (double) sf.factorial(factor);
+                                        }
+                                        else if (sf.displayMode.equalsIgnoreCase("binary")){
+                                            int j = (int) Math.round(sf.factorial(factor));
+                                            String str = toBinaryString(j);
+                                            Console.println("New Value is: " + str);
+                                        }
+                                        else if (sf.displayMode.equalsIgnoreCase("hexadecimal")){
+                                            int j = (int) Math.round(sf.factorial(factor));
+                                            String str = toHexString(j);
+                                            Console.println("New Value is: " + str);
+                                        }
+                                        else if (sf.displayMode.equalsIgnoreCase("octal")){
+                                            int j = (int) Math.round(sf.factorial(factor));
+                                            String str = toOctalString(j);
+                                            Console.println("New Value is: " + str);
+                                        }
                                     } else {
                                         Console.println("Err");
                                     }
