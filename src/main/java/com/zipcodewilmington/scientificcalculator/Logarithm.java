@@ -10,10 +10,10 @@ public class Logarithm {
 
     }
 
-    public static double Log(Double x) {
+    public static Double Log(Double x) {
 
         if (x<=0)
-           return 0;
+           return 0.0;
 
         return Math.log10(x);
 
@@ -34,7 +34,7 @@ public class Logarithm {
 
     }
 
-    public static double InvNLog(Double x) {
+    public static Double InvNLog(Double x) {
 
         return (Math.pow(Math.exp(1.0), x));
 
