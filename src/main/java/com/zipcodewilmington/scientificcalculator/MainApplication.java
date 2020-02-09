@@ -119,7 +119,7 @@ public class MainApplication {
                         break;
                     case 10:
                         if(!Display.error) {
-                            currentTotal = sci.sin(total);
+                            currentTotal = sci.sine(total);
                             display.displayValue(currentTotal);
                             total = currentTotal;
                         }else{
@@ -128,7 +128,7 @@ public class MainApplication {
                         break;
                     case 11:
                         if(!Display.error) {
-                            currentTotal = sci.cos(total);
+                            currentTotal = sci.cose(total);
                             display.displayValue(currentTotal);
                             total = currentTotal;
                         }else{
@@ -137,7 +137,7 @@ public class MainApplication {
                         break;
                     case 12:
                         if(!Display.error) {
-                            currentTotal = sci.tan(total);
+                            currentTotal = sci.tangent(total);
                             display.displayValue(currentTotal);
                             total = currentTotal;
                         }else{

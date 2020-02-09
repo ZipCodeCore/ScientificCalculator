@@ -7,17 +7,17 @@ public class ScientificCalc {
     // Trig Functions
 
     // Sine
-    public double sin (double num1) {
+    public double sine (double num1) {
         return sin( num1 );
     }
 
     // Cosine
-    public double cos (double num1) {
+    public double cose (double num1) {
         return cos( num1 );
     }
 
     // Tangent
-    public double tan (double num1) {
+    public double tangent (double num1) {
         return tan( num1 );
     }
 
