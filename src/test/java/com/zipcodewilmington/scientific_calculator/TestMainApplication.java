@@ -207,20 +207,36 @@ public class TestMainApplication {
     public void test22() {
         Calculator c1 = new Calculator();
         assertEquals("10", c1.DecimalToOther(2, 2));
+        assertEquals("1111100", c1.DecimalToOther(124, 2));
+        assertEquals("0", c1.DecimalToOther(0, 2));
+        assertEquals("10000000001", c1.DecimalToOther(1025, 2));
+        assertEquals("1010011101", c1.DecimalToOther(669, 2));
     }
     @Test
     public void test23() {
         Calculator c1 = new Calculator();
         assertEquals(3.14, c1.toRadians(180), 0.01);
+        assertEquals(4.451, c1.toRadians(255), 0.01);
+        assertEquals(0.261, c1.toRadians(15), 0.01);
+        assertEquals(-1.571, c1.toRadians(-90), 0.01);
+        assertEquals(0, c1.toRadians(0), 0.01);
     }
     @Test
     public void test24() {
         Calculator c1 = new Calculator();
         assertEquals(180.00, c1.toDegrees(Math.PI), 0.001);
+        assertEquals(515.662, c1.toDegrees(9), 0.001);
+        assertEquals(0.00, c1.toDegrees(0), 0.001);
+        assertEquals(572.958, c1.toDegrees(10), 0.001);
+        assertEquals(20626.480624, c1.toDegrees(360), 0.001);
     }
     @Test
     public void test25() {
         Calculator c1 = new Calculator();
         assertEquals(73.00, c1.secretof73(8419), 0.001);
+        assertEquals(73.00, c1.secretof73(52), 0.001);
+        assertEquals(73.00, c1.secretof73(1492), 0.001);
+        assertEquals(73.00, c1.secretof73(813), 0.001);
+        assertEquals(73.00, c1.secretof73(2468), 0.001);
     }
 }
