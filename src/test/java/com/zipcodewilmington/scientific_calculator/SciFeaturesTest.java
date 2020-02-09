@@ -41,7 +41,7 @@ public class SciFeaturesTest {
     @Test
     public void memoryTest(){
         test.storeMemory(2);
-        assertEquals(2, test.memoryRecall());
+        assertEquals(2, test.memoryRecall(), 0.01);
     }
 
 }

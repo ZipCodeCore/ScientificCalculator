@@ -7,12 +7,14 @@ import static java.lang.Math.*;
 
 public class SciFeatures {
 
+
     public SciFeatures(){
     }
 
     private String unitsMode;
     private String displayMode;
-    private Stack s;
+
+    public double p;
 
     public void setDisplayMode(String a) {
         this.displayMode = a;
@@ -40,17 +42,15 @@ public class SciFeatures {
     }
 
     public void storeMemory(double a) {
-        s.push(a);
+        this.p = a;
     }
 
     public void clearMemory() {
-        if (s.empty() == false) {
-            s.pop();
-        }
+        this.p = Double.NaN;
     }
 
     public double memoryRecall(){
-        return (double) s.peek();
+        return this.p;
     }
 
     public double sine(double a) {
