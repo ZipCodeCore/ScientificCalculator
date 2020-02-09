@@ -22,31 +22,39 @@ public class Display {
     }
     public void changeNumberDisplay() {
 
-        String output;
+        int intTotal = (int) Math.round(MainApplication.total);
         switch (displayMode){
             case 0:
-                System.out.println(MainApplication.total);
+                System.out.println(intTotal);
                 displayMode++;
                 break;
             case 1:
-                output = Double.toHexString(MainApplication.total);
-                System.out.println(output);
+                System.out.println(ScientificCalc.Hexadecimal(intTotal));
                 displayMode++;
                 break;
             case 2:
-
-                output = Integer.toBinaryString(MainApplication.total);
-                System.out.println(output);
+                System.out.println(ScientificCalc.Octal(intTotal));
                 displayMode++;
                 break;
             case 3:
-
+                System.out.println(ScientificCalc.Binary(intTotal));
+                displayMode = 0;
                 break;
         }
     }
 
     public void changeNumberDisplay(String mode) {
 
+        int intTotal = (int) Math.round(MainApplication.total);
+        if(mode.equalsIgnoreCase("hexa")){
+            System.out.println(ScientificCalc.Hexadecimal(intTotal));
+        }else if(mode.equalsIgnoreCase("binary")) {
+            System.out.println(ScientificCalc.Binary(intTotal));
+        }else if(mode.equalsIgnoreCase("octal")){
+            System.out.println(ScientificCalc.Octal(intTotal));
+        }else{
+            System.out.println(intTotal);
+        }
     }
 
     public static void displayErr() {
