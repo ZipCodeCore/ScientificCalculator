@@ -21,4 +21,15 @@ public class Operation {
                 return false;
         }
     }
+
+    public static Boolean isBinary(String op)
+    {
+        if("+".equalsIgnoreCase(op) || "-".equalsIgnoreCase(op) || "*".equalsIgnoreCase(op) ||
+                "/".equalsIgnoreCase(op) || "exp".equalsIgnoreCase(op)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
