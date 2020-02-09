@@ -48,5 +48,17 @@ public class InputErrorHandler {
         listOfValid.add("dec"); //
         listOfValid.add("hex"); //
         listOfValid.add("rad"); //
+        listOfValid.add("log");
+        listOfValid.add("invlog");
+        listOfValid.add("nlog");
+        listOfValid.add("invnlog");
+        listOfValid.add("!");
+        listOfValid.add("fib");
+        listOfValid.add("mtf");
+        listOfValid.add("ftm");
+        listOfValid.add("ptk");
+        listOfValid.add("ktp");
+        listOfValid.add("ftc");
+        listOfValid.add("ctf");
     }
 }

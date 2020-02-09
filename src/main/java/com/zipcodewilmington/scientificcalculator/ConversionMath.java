@@ -5,7 +5,6 @@ public class ConversionMath {
     public static Double feetToMeters (Double numberOne) {
         return numberOne / 3.2810;
     }
-
     public static Double metersToFeet (Double numberOne) {
         return  numberOne *  3.28084;
     }
@@ -18,7 +17,7 @@ public class ConversionMath {
     public static Double fahrenheitToCelsius (Double numberOne) {
         return ((numberOne - 32) * 5 / 9);
     }
-        public static Double celsiusToFahrenheit (Double numberOne) {
+    public static Double celsiusToFahrenheit (Double numberOne) {
             return ((numberOne * 9 / 5) + 32);
         }
 

@@ -10,21 +10,21 @@ public class OtherFunctions {
         x = 0.0;
     }
 
-    public static int Fact(int x){
+    public static Double Fact(Double x){
 
         if (x<0)
-            return 0;
+            return 0.0;
 
         if (x == 0 || x == 1)
-            return 1;
+            return 1.0;
 
         return x*Fact(x-1);
     }
 
-    public static int Fibon(int x) {
+    public static Double Fibon(Double x) {
 
         if (x<0)
-            return 0;
+            return 0.0;
 
         if (0<=x && x<=1)
             return x;
