@@ -44,4 +44,91 @@ public class SciFeaturesTest {
         assertEquals(2, test.memoryRecall(), 0.01);
     }
 
+    @Test
+    public void sinTest(){
+        assertEquals(Math.sin(90), test.sine(90), 0.01);
+    }
+    @Test
+    public void cosTest(){
+        assertEquals(Math.cos(90), test.cosine(90), 0.01);
+    }
+    @Test
+    public void tanTest(){
+        assertEquals(Math.tan(45), test.tangent(45), 0.01);
+    }
+    @Test
+    public void invSinTest(){
+        assertEquals(Math.asin(15), test.sineInverse(15), 0.01);
+    }
+    @Test
+    public void invCosTest(){
+        assertEquals(Math.acos(15), test.cosineInverse(15), 0.01);
+    }
+    @Test
+    public void invTanTest(){
+        assertEquals(Math.atan(15), test.tangentInverse(15), 0.01);
+    }
+    @Test
+    public void sinTest1(){
+        assertEquals(Math.sin(45), test.sine(45), 0.01);
+    }
+    @Test
+    public void cosTest1(){
+        assertEquals(Math.cos(45), test.cosine(45), 0.01);
+    }
+    @Test
+    public void tanTest1(){
+        assertEquals(Math.tan(15), test.tangent(15), 0.01);
+    }
+    @Test
+    public void invSinTest1(){
+        assertEquals(Math.asin(30), test.sineInverse(30), 0.01);
+    }
+    @Test
+    public void invCosTest1(){
+        assertEquals(Math.acos(30), test.cosineInverse(30), 0.01);
+    }
+    @Test
+    public void invTanTest1(){
+        assertEquals(Math.atan(30), test.tangentInverse(30), 0.01);
+    }
+    @Test
+    public void unitModeTest(){
+        test.unitsMode = "Degrees";
+        test.switchUnitsMode();
+        assertEquals("Radians", test.unitsMode);
+    }
+    @Test
+    public void unitModeTest1(){
+        test.unitsMode = "Radians";
+        test.switchUnitsMode();
+        assertEquals("Degrees", test.unitsMode);
+    }
+    @Test
+    public void unitModeInpTest(){
+        test.switchUnitsMode("Degrees");
+        assertEquals("Degrees", test.unitsMode);
+    }
+    @Test
+    public void unitModeInpTest1(){
+        test.switchUnitsMode("Radians");
+        assertEquals("Radians", test.unitsMode);
+    }
+    @Test
+    public void logTest(){
+        assertEquals(3, test.logarithm(1000), 0.01);
+    }
+    @Test
+    public void logTest1(){
+        assertEquals(4, test.logarithm(10000), 0.01);
+    }
+    @Test
+    public void invLogTest(){
+        assertEquals(10, test.inverseLog(1), 0.01);
+    }
+    @Test
+    public void invLogTest1(){
+        assertEquals(100, test.inverseLog(2), 0.01);
+    }
+
 }

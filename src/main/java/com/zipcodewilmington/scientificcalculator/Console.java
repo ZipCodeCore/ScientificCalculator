@@ -20,7 +20,7 @@ public class Console {
         Scanner username = new Scanner(System.in);
         println (prompt);
         String user = username.nextLine();
-        System.out.println("Hello " + user + " !");
+        System.out.println("Hello " + user + "!");
         return user;
     }
 
