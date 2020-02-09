@@ -36,7 +36,9 @@ public class MathCommands
 		RANDOM_NUM,
 		CLEAR,
 		TOGGLE_NEGATIVE,
-		DISPLAY
+		DISPLAY,
+		EXIT,
+		RANDOM_FLOAT
 	}
 	
 	public static boolean commandExists(String cmd) {
@@ -165,7 +167,7 @@ public class MathCommands
 			reprompt();		
 			return;
 		case INV_SINE:
-			MainApplication.calc.invSine();			
+			MainApplication.calc.invSin();			
 			reprompt();		
 			return;
 		case INV_TANGENT:
@@ -195,27 +197,32 @@ public class MathCommands
 			return;
 		case RANDOM_NUM:
 			if (args.size() > 2 && args.size() < 4) {
-				try {
-					int lower = Integer.parseInt(args.get(1));
-					int higher = Integer.parseInt(args.get(2));
-					int rand = ThreadLocalRandom.current().nextInt(lower, higher + 1);
-					Util.prln("Randomly generated number (" + lower + "-" + higher + "): " + rand);
-					fullPrompt();
-				} catch (NumberFormatException e) {
-					//e.printStackTrace();
-					Util.prln("Only integers accepted as arguments.");
+				handleRandomNum(args, new ArrayList<Integer>());
+			}
+			else if (args.size() > 2) {
+				ArrayList<Integer> excluded = new ArrayList<>();
+				for (int i = 3; i < args.size(); i++) {
+					try {
+						excluded.add(Integer.parseInt(args.get(i)));
+					} catch (NumberFormatException e) { Util.prln("Expects extra numbers as additional arguments. Numbers after the initial bound arguments will be excluded from random generation."); }
 				}
+				handleRandomNum(args, excluded);
 			}
 			else {
-				Util.prln("Wrong amount of arguments! Expecting 2 numbers, lower and upper bound (inclusive).");
+				Util.prln("Wrong amount of arguments! Expecting at least 2 numbers - lower and upper bound (inclusive). \n You may also include extra numbers to exclude from random generation.");
 			}
+			fullPrompt();
+			return;
+		case RANDOM_FLOAT:
+			float rand = ThreadLocalRandom.current().nextFloat();
+			Util.prln("Randomly generated float (0-1): " + rand);
 			fullPrompt();
 			return;
 		case RETURN:
 			ConsoleCommands.fullPrompt();
 			return;
 		case SINE:
-			MainApplication.calc.sine();			
+			MainApplication.calc.sin();			
 			reprompt();		
 			return;
 		case SQRT:
@@ -286,13 +293,56 @@ public class MathCommands
 			//TODO
 		case NATURAL_LOG:
 			//TODO
+		case EXIT:
+			System.exit(0);
 		default:
 			fullPrompt();
 			return;		
 		}
 	}
-
 	
+	private static void handleRandomNum(ArrayList<String> args, ArrayList<Integer> excludedNums) {
+		int lower;
+		int higher;
+		int timeOut = 1000;
+		boolean generated = false;
+		try {
+			lower = Integer.parseInt(args.get(1));
+			try {
+				higher = Integer.parseInt(args.get(2));
+				generated = true;
+			} catch (NumberFormatException e) {
+				Util.prln("Only integers accepted as arguments.");
+				lower = 1;
+				higher = 100;
+				generated = false;
+			}					
+		} catch (NumberFormatException e) {					
+			Util.prln("Only integers accepted as arguments.");
+			lower = 1;
+			higher = 100;
+			generated = false;
+		}
+		if (generated) {
+			int rand = ThreadLocalRandom.current().nextInt(lower, higher + 1);
+			while (excludedNums.contains(rand) && timeOut > 0) { 
+				rand = ThreadLocalRandom.current().nextInt(lower, higher + 1);
+				timeOut--;
+			}
+			Util.prln("Randomly generated number (" + lower + "-" + higher + "): " + rand);
+			fullPrompt();
+		}
+		else {
+			int rand = ThreadLocalRandom.current().nextInt(lower, higher + 1);
+			while (excludedNums.contains(rand) && timeOut > 0) { 
+				rand = ThreadLocalRandom.current().nextInt(lower, higher + 1);
+				timeOut--;
+			}
+			Util.prln("Randomly generated number (1-100)[default]: " + rand);
+			fullPrompt();
+		}	
+	}
+
 	static {
 		commandMap = new HashMap<>();
 		commandMap.put("sin", Command.SINE);
@@ -302,8 +352,6 @@ public class MathCommands
 		commandMap.put("arccos", Command.INV_COSINE);
 		commandMap.put("arctan", Command.INV_TANGENT);
 		commandMap.put("log", Command.LOG);
-		commandMap.put("invlog", Command.INV_LOG);
-		commandMap.put("naturallog", Command.NATURAL_LOG);
 		commandMap.put("invnatlog", Command.INV_NAT_LOG);
 		commandMap.put("add", Command.ADD);
 		commandMap.put("subtract", Command.SUBTRACT);
@@ -328,6 +376,12 @@ public class MathCommands
 		commandMap.put("clear", Command.CLEAR);		
 		commandMap.put("togglenegative", Command.TOGGLE_NEGATIVE);
 		commandMap.put("display", Command.DISPLAY);
+		commandMap.put("exit", Command.EXIT);
+		commandMap.put("randomfloat", Command.RANDOM_FLOAT);
+		
+		// TODO
+		//commandMap.put("invlog", Command.INV_LOG);
+		//commandMap.put("naturallog", Command.NATURAL_LOG);
 	}
 	
 }

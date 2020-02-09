@@ -69,6 +69,9 @@ public class ConsoleCommands
 		else if (MathCommands.commandExists(args.get(0).toLowerCase())) {
 			MathCommands.runCommand(args);
 		}
+		else if (DisplayModeCommands.commandExists(args.get(0).toLowerCase())) {
+			DisplayModeCommands.runCommand(args);
+		}
 		else if (args.size() > 1 && args.get(0).toLowerCase().equals("best") && args.get(1).toLowerCase().equals("programmer")) {
 			Util.prln("Nobles");
 			fullPrompt();

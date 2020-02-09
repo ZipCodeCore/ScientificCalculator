@@ -19,6 +19,13 @@ public class DisplayModeCommands
 		RETURN,
 		HELP
 	}
+	
+	public static boolean commandExists(String cmd) {
+		if (commandMap != null && commandMap.containsKey(cmd.toLowerCase())) {
+			return true;
+		}
+		return false;
+	}
 
 	public static void runCommand(ArrayList<String> args) {
 		if (commandMap != null && commandMap.containsKey(args.get(0).toLowerCase())) {
