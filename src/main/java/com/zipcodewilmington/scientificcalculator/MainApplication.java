@@ -13,7 +13,7 @@ public class MainApplication {
         /////Print Starting Display
         Console.println("Your current total is %.2f", user.displayVal);
 
-        //Start Program
+        //Start Program 1st Round
         while (true){
             //Stores Operation and then clears operation on loop
             String operator = "";
@@ -51,7 +51,46 @@ public class MainApplication {
                 Console.println("Your current total is %.2f", user.displayVal);
             }
 
+            //Start Program 1st Round
+            while (true){
+                //Stores Operation and then clears operation on loop
+                String nextOperator = "";
+
+                //Ask for operation and print to console
+                nextOperator = AskNumber.getOperation();
+                Console.println("You selected ", nextOperator);
+
+                if (nextOperator.equalsIgnoreCase("Add")) {
+                    user.secondVal = AskNumber.askDouble();
+                    user.displayVal = MathMethods.add(user.displayVal,user.secondVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("Subtract")) {
+                    user.secondVal = AskNumber.askDouble();
+                    user.displayVal = MathMethods.subtract(user.displayVal,user.secondVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("Multiply")) {
+                    user.secondVal = AskNumber.askDouble();
+                    user.displayVal = MathMethods.multiplication(user.displayVal,user.secondVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("Divide")) {
+                    user.secondVal = AskNumber.askDouble();
+                    while (user.secondVal == 0){
+                        Console.println("Your result will produce an Error! Please provide a new number");
+                        user.secondVal = AskNumber.askDouble();
+                    }
+                    user.displayVal = MathMethods.division(user.displayVal,user.secondVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("Remainder")) {
+                    user.secondVal = AskNumber.askDouble();
+                    user.displayVal = MathMethods.remainder(user.displayVal,user.secondVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                }
+
+            }
+
         }
+
+
     }
 
 }
