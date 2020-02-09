@@ -1,6 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
 import javax.swing.*;
+import java.io.DataInput;
 
 public class Display {
     private int displayWidth;
@@ -24,9 +25,7 @@ public class Display {
 
     public void setDisplay(Double inputValue)
     {
-        if (inputValue == Double.NaN ||
-                inputValue == Double.POSITIVE_INFINITY ||
-                inputValue == Double.NEGATIVE_INFINITY)
+        if (inputValue.isNaN() || inputValue.isInfinite())
         {
             error = true;
         }
@@ -141,6 +140,8 @@ public class Display {
     public void clear() {
         currentValue = 0.0;
         error = false;
+        isRadians = false;
+        mode = Modes.DEC;
         update();
         // Send a command to input to remove last operation and last value input
     }
@@ -161,4 +162,16 @@ public class Display {
             return currentValue;
         }
     }
+
+    public void toggleRadians()
+    {
+        isRadians = !isRadians;
+    }
+
+    public Boolean getIsRadians()
+    {
+        return isRadians;
+    }
+
+    // Make a toggle to switch from normal notation to scientific notation
 }

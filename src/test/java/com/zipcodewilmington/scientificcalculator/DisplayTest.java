@@ -168,6 +168,46 @@ public class DisplayTest {
     }
 
     @Test
+    public void TestToggleRadians()
+    {
+        Boolean expected = true;
+        Display TestDisplay = new Display();
+        TestDisplay.toggleRadians();
+        Boolean actual = TestDisplay.getIsRadians();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestToggleRadiansFourHundredTimes()
+    {
+        Boolean expected = false;
+        Display TestDisplay = new Display();
+        for(int i = 0; i < 400; i++)
+        {
+            TestDisplay.toggleRadians();
+        }
+        Boolean actual = TestDisplay.getIsRadians();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestDisplayRadians()
+    {
+        String expected =
+                        "╔════════════════════════════════════════════════╗\n" +
+                        "║  RAD                                           ║\n" +
+                        "║                                             90 ║\n" +
+                        "║                                                ║\n" +
+                        "╚════════════════════════════════════════════════╝\n";
+        Display TestDisplay = new Display();
+        TestDisplay.setDisplay(90.0);
+        TestDisplay.toggleRadians();
+        String actual = TestDisplay.update();
+    }
+
+    @Test
     public void TestNaNDisplaysError ()
     {
         String expected =
@@ -207,7 +247,7 @@ public class DisplayTest {
                         "╔════════════════════════════════════════════════╗\n" +
                         "║                                                ║\n" +
                         "║  100000000000000000000000000000000000000000000 ║\n" +
-                        "║                                                ║\n" +
+                        "║  BIN                                           ║\n" +
                         "╚════════════════════════════════════════════════╝\n";
         Display TestDisplay = new Display();
         TestDisplay.setDisplay(140737488355328.0);
@@ -215,5 +255,40 @@ public class DisplayTest {
         String actual = TestDisplay.update();
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestMaxDisplaySizeTwo()
+    {
+        String expected =
+                "╔════════════════════════════════════════════════╗\n" +
+                        "║                                                ║\n" +
+                        "║  9.9999999999999999999999999999999999999999999 ║\n" +
+                        "║                                                ║\n" +
+                        "╚════════════════════════════════════════════════╝\n";
+
+        Display TestDisplay = new Display();
+        TestDisplay.setDisplay(9.9999999999999999999999999999999999999999999);
+        String actual = TestDisplay.update();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TextDisplayPi()
+    {
+        String expected =
+                            "╔════════════════════════════════════════════════╗\n" +
+                            "║                                                ║\n" +
+                            "║                              3.141592653589793 ║\n" +
+                            "║                                                ║\n" +
+                            "╚════════════════════════════════════════════════╝\n";
+
+        Display TestDisplay = new Display();
+        TestDisplay.setDisplay(Math.PI);
+        String actual = TestDisplay.update();
+
+        assertEquals(expected, actual);
+
     }
 }
