@@ -72,6 +72,10 @@ public class SciFeatures {
         return atan(a);
     }
 
+    public double toRadian(double a){
+        return toRadians(a);
+    }
+
     public void switchUnitsMode() {
         if (unitsMode.equals("Degrees")) {
             unitsMode = "Radians";
@@ -85,7 +89,7 @@ public class SciFeatures {
         unitsMode = mode;
     }
 
-    public double log(double a) {
+    public double logarithm(double a) {
         return log10(a);
     }
 
@@ -94,7 +98,11 @@ public class SciFeatures {
     }
 
     public double naturalLog(double a) {
-        return log(a);
+        return Math.log(a);
+    }
+
+    public double inverseNaturalLog(double a){
+        return Math.pow(10, a);
     }
 
 
@@ -106,4 +114,6 @@ public class SciFeatures {
         }
         return sum;
     }
+
+    public String
 }
