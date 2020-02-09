@@ -1,5 +1,73 @@
 package com.zipcodewilmington.scientificcalculator;
+import java.util.Scanner;
 
+public class Calculator {
+
+    public Double operator;
+    public Double firstOption;
+    public Double secondOption;
+
+    public Calculator() {
+
+    }
+
+    public Double getInputFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        Double userInput = scanner.nextDouble();
+        return userInput;
+    }
+
+    public void setFirstInput(Double input){
+        firstOption = input;
+    }
+
+    public void setSecondOptionInput(Double input){
+       secondOption = input;
+    }
+
+    public void setOperator(Double input){
+        operator = input;
+    }
+
+    public Double chooseCalc() {
+        return null;
+    }
+
+    public Double getFirstNumber() {
+        return firstOption;
+    }
+
+    public Double getSecondNumber() {
+        return secondOption;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 public class Calculator {
     Double currentValue;
     Double memory;
@@ -15,10 +83,12 @@ public class Calculator {
         return currentValue;
     }
 
-    /*public Double convertToDouble() {
+    */
+/*public Double convertToDouble() {
         String number1 = Double.parseDouble();
         return answer;
-    }*/
+    }*//*
+
 
     public boolean checkIfAppropriate(boolean isAppropriate) {
         if (appropriateInput) {
@@ -28,13 +98,15 @@ public class Calculator {
         }
     }
 
-    /*public getCurrentAnswer() {
+    */
+/*public getCurrentAnswer() {
 
-    }*/
+    }*//*
+
 
     public Double updateCurrentValue() {
         currentValue = answer;
         return currentValue;
     }
 
-}
+}*/
