@@ -2,7 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class Utilities {
     public static double switchFtoC(double a) {
-        double far2cel = (a - 32) * (5 / 9);
+        double far2cel = ((a - 32) / 1.8);
         return far2cel;
         }
 
@@ -12,7 +12,7 @@ public class Utilities {
         }
 
     public static double switchFtoK(double a){
-        double far2kel = (a - 32) * (5 / 9) + 273;
+        double far2kel = (a - 32) / 1.8 + 273;
         return far2kel;
         }
 
