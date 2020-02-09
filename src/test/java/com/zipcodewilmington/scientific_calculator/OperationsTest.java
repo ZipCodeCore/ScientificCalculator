@@ -163,8 +163,8 @@ public class OperationsTest {
     // Switch Signs
     @Test
     public void switchSigns() {
-        double expected = -8;
-        double actual = operations.switchSign(8);
+        double expected = 8;
+        double actual = operations.switchSign(-8);
         assertEquals(expected, actual, 0.01);
     }
 
