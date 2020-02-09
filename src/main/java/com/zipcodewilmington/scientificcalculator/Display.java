@@ -4,7 +4,7 @@ public class Display {
     private Double currentValue;
     private String currentOperation;
     private Boolean error;
-    private enum Modes { BINARY, OCTAL, DEC, HEX }
+    public enum Modes { BINARY, OCTAL, DEC, HEX }
     private Modes mode;
 
     public Display()
@@ -25,7 +25,7 @@ public class Display {
         return currentValue;
     }
 
-    public String Update()
+    public String update()
     {
         String output = "";
 
@@ -35,10 +35,12 @@ public class Display {
         else if(mode == Modes.BINARY)
         {
             output = Integer.toBinaryString(currentValue.intValue());
+            currentValue = Double.parseDouble(output);
         }
         else if(mode == Modes.OCTAL)
         {
             output = Integer.toOctalString(currentValue.intValue());
+            currentValue = Double.parseDouble(output);
         }
         else if(mode == Modes.DEC)
         {
@@ -54,23 +56,29 @@ public class Display {
         else if(mode == Modes.HEX)
         {
             output = Integer.toHexString(currentValue.intValue());
+            currentValue = Double.parseDouble(output);
         }
 
         Console.println("%s", output);
         return output;
     }
 
-    public void Clear() {
-        currentValue = 0.0;
-        Update();
+    public void setMode(Modes newMode)
+    {
+        mode = newMode;
     }
 
-    public Double InvSign()
+    public void clear() {
+        currentValue = 0.0;
+        update();
+    }
+
+    public Double invSign()
     {
         return currentValue * -1.0;
     }
 
-    public Double AbsoluteValue()
+    public Double absoluteValue()
     {
         if(currentValue < 0)
         {
