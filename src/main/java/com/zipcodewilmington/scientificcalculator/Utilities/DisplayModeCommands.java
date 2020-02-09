@@ -31,6 +31,12 @@ public class DisplayModeCommands
 		if (commandMap != null && commandMap.containsKey(args.get(0).toLowerCase())) {
 			run(commandMap.get(args.get(0).toLowerCase()));
 		}
+		else if (MathCommands.commandExists(args.get(0).toLowerCase())) {
+			MathCommands.runCommand(args);
+		}
+		else if (DisplayModeCommands.commandExists(args.get(0).toLowerCase())) {
+			DisplayModeCommands.runCommand(args);
+		}
 		else {
 			run(Mode.RETURN);
 		}

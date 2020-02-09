@@ -31,6 +31,13 @@ public class ConsoleCommands
 		DISPLAY,
 		ERROR
 	}
+
+	public static boolean commandExists(String cmd) {
+		if (commandMap != null && commandMap.containsKey(cmd.toLowerCase())) {
+			return true;
+		}
+		return false;
+	}
 	
 	public static void fullPrompt() {
 		

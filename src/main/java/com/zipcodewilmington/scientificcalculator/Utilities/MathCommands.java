@@ -52,6 +52,12 @@ public class MathCommands
 		if (commandMap != null && commandMap.containsKey(args.get(0).toLowerCase())) {
 			run(commandMap.get(args.get(0).toLowerCase()), args);
 		}
+		else if (ConsoleCommands.commandExists(args.get(0).toLowerCase())) {
+			ConsoleCommands.runCommand(args);
+		}
+		else if (DisplayModeCommands.commandExists(args.get(0).toLowerCase())) {
+			DisplayModeCommands.runCommand(args);
+		}
 		else {
 			run(Command.RETURN, args);
 		}
