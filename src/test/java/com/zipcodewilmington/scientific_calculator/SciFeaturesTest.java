@@ -130,5 +130,28 @@ public class SciFeaturesTest {
     public void invLogTest1(){
         assertEquals(100, test.inverseLog(2), 0.01);
     }
-
+    @Test
+    public void natLogTest(){
+        assertEquals(Math.log(3), test.naturalLog(3), 0.01);
+    }
+    @Test
+    public void natLogTest1(){
+        assertEquals(Math.log(10), test.naturalLog(10), 0.01);
+    }
+    @Test
+    public void invNatLogTest(){
+        assertEquals(Math.exp(5), test.inverseNaturalLog(5), 0.01);
+    }
+    @Test
+    public void invNatLogTest1(){
+        assertEquals(Math.exp(2.5), test.inverseNaturalLog(2.5), 0.01);
+    }
+    @Test
+    public void factorialTest(){
+        assertEquals(24, test.factorial(4), 0.01);
+    }
+    @Test
+    public void factorialTest1(){
+        assertEquals(5040, test.factorial(7), 0.01);
+    }
 }
