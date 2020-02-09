@@ -1,6 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import java.util.ArrayList;
+
+import java.util.Stack;
 
 import static java.lang.Math.*;
 
@@ -11,7 +12,7 @@ public class SciFeatures {
 
     private String unitsMode;
     private String displayMode;
-    private ArrayList<Double>  memory = new ArrayList<>();
+    private Stack s;
 
     public void setDisplayMode(String a) {
         this.displayMode = a;
@@ -32,20 +33,24 @@ public class SciFeatures {
         }
     }
 
+
+
     public void switchDisplayMode(String mode) {
         displayMode = mode;
     }
 
     public void storeMemory(double a) {
-        memory.set(0, a);
+        s.push(a);
     }
 
     public void clearMemory() {
-        memory.set(0, null);
+        if (s.empty() == false) {
+            s.pop();
+        }
     }
 
-    public double memoryRecall() {
-        return memory.get(0);
+    public double memoryRecall(){
+        return (double) s.peek();
     }
 
     public double sine(double a) {
@@ -115,5 +120,5 @@ public class SciFeatures {
         return sum;
     }
 
-    public String
+
 }
