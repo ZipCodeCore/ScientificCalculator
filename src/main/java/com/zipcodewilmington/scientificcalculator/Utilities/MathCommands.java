@@ -96,16 +96,14 @@ public class MathCommands
 		case ADD:
 			if (args.size() > 1) {
 				float sum = 0;
-				try {
-					for (int i = 1; i < args.size(); i++) {						
+				for (int i = 1; i < args.size(); i++) {	
+					try {
 						sum += Float.parseFloat(args.get(i));
-					}
-					MainApplication.calc.add(sum);			
-					reprompt();
-				} catch (NumberFormatException e) {
-					//e.printStackTrace();
-					Util.prln("That's not a number...");
+					} catch (NumberFormatException e) {}
 				}
+				MainApplication.calc.add(sum);			
+				reprompt();	
+				return;
 			}
 			else {
 				Util.prln("Not enough arguments!");
@@ -117,17 +115,15 @@ public class MathCommands
 			reprompt();		
 			return;
 		case DIVIDE:
-			if (args.size() > 1) {
-				try {
-					for (int i = 1; i < args.size(); i++) {						
-						float denom = Float.parseFloat(args.get(i));
+			if (args.size() > 1) {				
+				for (int i = 1; i < args.size(); i++) {						
+					try {
+						float denom = Float.parseFloat(args.get(i));			
 						MainApplication.calc.div(denom);
-					}		
-					reprompt();
-				} catch (NumberFormatException e) {
-					//e.printStackTrace();
-					Util.prln("That's not a number...");
-				}
+					} catch (NumberFormatException e) { }					
+				} 
+				reprompt();
+				return;
 			}
 			else {
 				Util.prln("Not enough arguments!");
@@ -180,15 +176,13 @@ public class MathCommands
 			return;
 		case MULTIPLY:
 			if (args.size() > 1) {
-				try {
-					for (int i = 1; i < args.size(); i++) {						
+				for (int i = 1; i < args.size(); i++) {						
+					try {
 						MainApplication.calc.mult(Float.parseFloat(args.get(i)));							
-					}		
-					reprompt();
-				} catch (NumberFormatException e) {
-					//e.printStackTrace();
-					Util.prln("That's not a number...");
+					} catch (NumberFormatException e) { }
 				}
+				reprompt();
+				return;
 			}
 			else {
 				Util.prln("Not enough arguments!");
@@ -235,15 +229,13 @@ public class MathCommands
 			break;
 		case SUBTRACT:
 			if (args.size() > 1) {
-				try {
-					for (int i = 1; i < args.size(); i++) {						
+				for (int i = 1; i < args.size(); i++) {						
+					try {
 						MainApplication.calc.subtract(Float.parseFloat(args.get(i)));							
-					}		
-					reprompt();
-				} catch (NumberFormatException e) {
-					//e.printStackTrace();
-					Util.prln("That's not a number...");
-				}
+					} catch (NumberFormatException e) { }
+				}		
+				reprompt();
+				return;
 			}
 			else {
 				Util.prln("Not enough arguments!");
@@ -256,15 +248,13 @@ public class MathCommands
 			return;
 		case VAR_EXP:
 			if (args.size() > 1) {
-				try {
-					for (int i = 1; i < args.size(); i++) {						
+				for (int i = 1; i < args.size(); i++) {						
+					try {
 						MainApplication.calc.pow(Float.parseFloat(args.get(i)));								
-					}		
-					reprompt();
-				} catch (NumberFormatException e) {
-					//e.printStackTrace();
-					Util.prln("That's not a number...");
-				}
+					} catch (NumberFormatException e) { }
+				}		
+				reprompt();
+				return;
 			}
 			else {
 				Util.prln("Not enough arguments!");
