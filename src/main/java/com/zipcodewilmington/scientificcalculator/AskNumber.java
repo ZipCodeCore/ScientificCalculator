@@ -14,10 +14,10 @@ public class AskNumber {
     public static String getOperation() {
         String operator = "";
         String operation = "";
-        operator =Console.getStringInput("Please type one of the following \nAdd  Subtract  Multiply  Divide  Remainder");
-        while(!operator.equalsIgnoreCase("Add")  && !operator.equalsIgnoreCase("Subtract")  && !operator.equalsIgnoreCase("Multiply")  && !operator.equalsIgnoreCase("Divide") && !operator.equalsIgnoreCase("Remainder")){
+        operator = Console.getStringInput("What would you like to do?\nPlease type one of the following \nAdd  Subtract  Multiply  Divide  Remainder Clear");
+        while(!operator.equalsIgnoreCase("Add")  && !operator.equalsIgnoreCase("Subtract")  && !operator.equalsIgnoreCase("Multiply")  && !operator.equalsIgnoreCase("Divide") && !operator.equalsIgnoreCase("Remainder") && !operator.equalsIgnoreCase("Clear")){
             Console.println("You selected " + operator);
-            operator = Console.getStringInput("Invalid Input! Please type one of the following \nAdd  Subtract  Multiply  Divide  Remainder");
+            operator = Console.getStringInput("Invalid Input! Please type one of the following \nAdd  Subtract  Multiply  Divide  Remainder Clear");
         }
         return operator;
     }
