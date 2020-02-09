@@ -33,9 +33,8 @@ public class Operations {
     }
 
     // Square Root of Number
-    public double squareRoot (double num1) {
-        return sqrt(num1);
-    }
+    public double squareRoot (double num1) { return sqrt(num1); }
+
 
     // Exponent
     public double exponent (double num1, double num2) {
