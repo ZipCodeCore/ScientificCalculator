@@ -41,22 +41,15 @@ public class Sci {
             memoryStatus = "not stored";
         }
     }
-    public static String memPlus(double a){
+    public static String memPlus(double a) {
         memNum = a;
         String converted = Double.toString(memNum);
         return converted;
-<<<<<<< HEAD
-        }
-=======
     }
-    public void memClear(){                                         //needs work
->>>>>>> cbea784ea84d22770b8a18b289a6fa37f42b38a8
 
-        public void memClear(){                                         //needs work
+    public void memClear(){                                         //needs work
         memoryStatus = "not stored";
 
-
-<<<<<<< HEAD
         }
         public double recall(){
             return memNum;
@@ -64,15 +57,6 @@ public class Sci {
         }
     public static double sine(double a){
         double sin = (double) Math.sin(a);
-=======
-    }
-    public float recall(float x){
-        return x;
-        //return memNum;
-    }
-    public static float sine(float a){
-        float sin = (float) Math.sin(a);
->>>>>>> cbea784ea84d22770b8a18b289a6fa37f42b38a8
         return sin;
     }
     public static double cosine(double a){
