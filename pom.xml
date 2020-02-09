@@ -11,7 +11,11 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+<<<<<<< HEAD
             <version>RELEASE</version>
+=======
+            <version>4.12</version>
+>>>>>>> fb9393f6415e572d2b4750a4662a151dc5895047
             <scope>test</scope>
         </dependency>
     </dependencies>
