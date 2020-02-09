@@ -91,7 +91,7 @@ public class ScientificFunctions {
         return Math.tan(number);
     }
     // inverse sine
-    public Double inverseSine(Double input){
+    public static Double inverseSine(Double input){
         Double number = input;
         return Math.asin(number);
     }
