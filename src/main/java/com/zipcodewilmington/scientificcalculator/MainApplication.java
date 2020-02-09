@@ -82,7 +82,7 @@ public class MainApplication {
                                         i = 0.0;
                                     } else if (op.equals("end")) {
                                         check = false;
-                                        r = 2;
+                                        r++;
                                     } else {
                                         Console.println("Err");
                                     }
@@ -308,20 +308,26 @@ public class MainApplication {
                                         i = 0.0;
                                     } else if (op.equals("end")) {
                                         check = false;
-                                        r = 2;
+                                        r++;
                                     } else if (op.equals("display()")) {
                                         int t = 1;
                                         do {
                                             try {
                                                 String imp = Console.getOperationInput("Type binary, octal, decimal, hexadecimal");
                                                 if (imp.equalsIgnoreCase("binary")) {
+                                                    Console.println("The display is now binary.");
                                                     sf.switchDisplayMode("binary");
                                                 } else if (imp.equalsIgnoreCase("octal")) {
+                                                    Console.println("The display is now octal.");
                                                     sf.switchDisplayMode("octal");
                                                 } else if (imp.equalsIgnoreCase("decimal")) {
+                                                    Console.println("The display is now decimal.");
                                                     sf.switchDisplayMode("decimal");
                                                 } else if (imp.equalsIgnoreCase("hexadecimal")) {
+                                                    Console.println("The display is now hexadecimal.");
                                                     sf.switchDisplayMode("hexadecimal");
+                                                } else {
+                                                    Console.println("Invalid entry.  \nWhy are you the way that you are?\nDo it right next time >:(");
                                                 }
                                                 t++;
                                             } catch (Exception e) {
@@ -329,7 +335,22 @@ public class MainApplication {
                                             }
                                         } while (t == 1);
                                     } else if (op.equals("display")) {
-                                        sf.switchDisplayMode();
+                                        if (sf.displayMode.equalsIgnoreCase("binary")){
+                                            Console.println("The display is now octal.");
+                                            sf.switchDisplayMode();
+                                        }
+                                        else if (sf.displayMode.equalsIgnoreCase("octal")){
+                                            Console.println("The display is now decimal.");
+                                            sf.switchDisplayMode();
+                                        }
+                                        else if (sf.displayMode.equalsIgnoreCase("decimal")){
+                                            Console.println("The display is now hexadecimal.");
+                                            sf.switchDisplayMode();
+                                        }
+                                        else {
+                                            Console.println("The display is now binary.");
+                                            sf.switchDisplayMode();
+                                        }
                                     } else if (op.equals("M+")) {
                                         sf.storeMemory(i);
                                     } else if (op.equals("MC")) {
@@ -400,9 +421,11 @@ public class MainApplication {
                                             try {
                                                 String useful = Console.getOperationInput("Enter degrees or radians");
                                                 if (useful.equalsIgnoreCase("degrees")){
+                                                    Console.println("The mode is now Radians.");
                                                     sf.switchUnitsMode("Degrees");
                                                 }
                                                 else if (useful.equalsIgnoreCase("radians")) {
+                                                    Console.println("The mode is now Degrees.");
                                                     sf.switchUnitsMode("Radians");
                                                 }
                                                 p++;
@@ -411,7 +434,14 @@ public class MainApplication {
                                             }
                                         } while (p == 1);
                                     } else if (op.equals("units")){
-                                        sf.switchUnitsMode();
+                                        if (sf.unitsMode.equalsIgnoreCase("Degrees")){
+                                            Console.println("The mode is now Radians.");
+                                            sf.switchUnitsMode();;
+                                        }
+                                        else {
+                                            Console.println("The mode is now Degrees.");
+                                            sf.switchUnitsMode();
+                                        }
                                     }
                                     else if (op.equals("log")) {
                                         if (i <= 0) {
