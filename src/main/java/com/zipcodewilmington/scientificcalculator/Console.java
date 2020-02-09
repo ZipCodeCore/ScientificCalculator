@@ -29,11 +29,20 @@ public class Console {
         return "Hello there " + userInput + "!";
     }
 
-    public static Integer getIntegerInput() {
+    public static int getIntegerInput(String prompt) {
+
+        int userInput;
 
         scanner = new Scanner(System.in);
-        Integer userInput = scanner.nextInt();
-        return userInput;
+        println(prompt);
+        String nextNum = scanner.nextLine();
+
+        try{
+            userInput = Integer.parseInt(nextNum);
+            return userInput;
+        }catch (Exception e) {
+            return Console.getIntegerInput(prompt);
+        }
     }
 
     public static Double getDoubleInput(String prompt) {
@@ -48,7 +57,7 @@ public class Console {
             userInput = Double.parseDouble(nextNum);
             return userInput;
         }catch (Exception e) {
-            return Console.getDoubleInput("Please enter a number:");
+            return Console.getDoubleInput(prompt);
         }
     }
 
@@ -96,6 +105,14 @@ public class Console {
             return 18;
         }else if(nextOperand.equalsIgnoreCase("invLn")){
             return 19;
+        }else if(nextOperand.equalsIgnoreCase("!")){
+            return 20;
+        }else if(nextOperand.equalsIgnoreCase("m+")){
+            return 21;
+        }else if(nextOperand.equalsIgnoreCase("mc")){
+            return 22;
+        }else if(nextOperand.equalsIgnoreCase("mrc")){
+            return 23;
         }else if(nextOperand.equalsIgnoreCase("c")){
             return 0;
         }else if(nextOperand.equalsIgnoreCase("off")){
