@@ -1,7 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Scanner;
-import static com.zipcodewilmington.scientificcalculator.MainApplication.*;
+import static com.zipcodewilmington.scientificcalculator.Utilities.*;
 import static com.zipcodewilmington.scientificcalculator.Basic.*;
 import static com.zipcodewilmington.scientificcalculator.Sci.*;
 import static com.zipcodewilmington.scientificcalculator.Sci.factorial;
@@ -195,7 +195,7 @@ public class Console {
         } else if (s.equals("9")) {
             //sign change
             double curInt = 0;
-            s = Console.getStringInput("Please enter a number");
+            s = Console.getStringInput("Please enter a positive or negative number");
             curInt = Double.parseDouble(s);
             System.out.println(signChange(curInt));
             BasicMenu();
@@ -230,7 +230,7 @@ public class Console {
         System.out.println("Mode Change - 4");
         System.out.println("Log Functions - 5");
         System.out.println("Factorial Functions - 6");
-        System.out.println("Utilities - 6");
+        System.out.println("Utilities - 7");
         ForAllMenus();
 
        String s = Console.getStringInput("Please select an option");
@@ -364,7 +364,7 @@ public class Console {
         RotateDisplay();
 
     }
-    public static void Memory(){
+    public static void Memory() {
         System.out.println("M+ - 1");
         System.out.println("MC - 2");
         System.out.println("MRC - 3");
@@ -379,12 +379,24 @@ public class Console {
             System.out.println(memPlus(curInt));
             Memory();
 
-        }
-        else if (s.equals("2")) {
+        } else if (s.equals("2")) {
             //MC
+
+            memClear();
+            Memory();
         }
+
         else if (s.equals("3")) {
             //MRC
+            checkMemStatus();
+            if (memoryStatus.equals("stored")) {
+                System.out.println(memNum);
+                Memory();
+            } else {
+                System.out.println("no memory stored");
+                Memory();
+            }
+
         }
         else if (s.equals("a")) {
             //Clear Error
@@ -553,8 +565,8 @@ public class Console {
 
     }
     public static void LogFunctions(){
-        System.out.println("Log - 1");
-        System.out.println("Inverse Log - 2");
+        System.out.println("Log10 - 1");
+        System.out.println("10^x - 2");
         System.out.println("Ln - 3");
         System.out.println("e^x - 4");
         ForAllMenus();
@@ -641,6 +653,10 @@ public class Console {
     public static void Utilities(){
         System.out.println("Temp (F to C) - 1");
         System.out.println("Temp (C to F) - 2");
+        System.out.println("Temp (F to K) - 3");
+        System.out.println("Temp (K to F) - 4");
+        System.out.println("Temp (C to K) - 5");
+        System.out.println("Temp (K to C) - 6");
         ForAllMenus();
 
         String s = Console.getStringInput("Please select an option");
@@ -649,7 +665,7 @@ public class Console {
             double curInt = 0;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
-            System.out.println(sine(curInt));
+            System.out.println(switchFtoC(curInt));
             Utilities();
         }
         else if (s.equals("2")) {
@@ -657,7 +673,39 @@ public class Console {
             double curInt = 0;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
-            System.out.println(cosine(curInt));
+            System.out.println(switchCtoF(curInt));
+            Utilities();
+        }
+        else if (s.equals("3")) {
+            //F to K
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchFtoK(curInt));
+            Utilities();
+        }
+        else if (s.equals("4")) {
+            //K to F
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchKtoF(curInt));
+            Utilities();
+        }
+        else if (s.equals("5")) {
+            //C to K
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchCtoK(curInt));
+            Utilities();
+        }
+        else if (s.equals("6")) {
+            //K to C
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchKtoC(curInt));
             Utilities();
         }
         else if (s.equals("a")) {
