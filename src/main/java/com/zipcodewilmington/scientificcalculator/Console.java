@@ -340,7 +340,7 @@ public class Console {
         RotateDisplay();
 
     }
-    public static void Memory(){
+    public static void Memory() {
         System.out.println("M+ - 1");
         System.out.println("MC - 2");
         System.out.println("MRC - 3");
@@ -355,12 +355,24 @@ public class Console {
             System.out.println(memPlus(curInt));
             Memory();
 
-        }
-        else if (s.equals("2")) {
+        } else if (s.equals("2")) {
             //MC
+
+            memClear();
+            Memory();
         }
+
         else if (s.equals("3")) {
             //MRC
+            checkMemStatus();
+            if (memoryStatus.equals("stored")) {
+                System.out.println(memNum);
+                Memory();
+            } else {
+                System.out.println("no memory stored");
+                Memory();
+            }
+
         }
         else if (s.equals("a")) {
             //Clear Error

@@ -34,27 +34,46 @@ public class Sci {
 
     static double memNum;
     static String memoryStatus = "not stored";
-    public void memStatus(){
+    public static void checkMemStatus(){
         if (memNum == 0 || memNum > 0 || memNum < 0){
             memoryStatus = "stored";
         } else {
             memoryStatus = "not stored";
         }
     }
-    public static String memPlus(double a) {
-        memNum = a;
-        String converted = Double.toString(memNum);
-        return converted;
+    public static double memPlus(double a) {
+        checkMemStatus();
+        if (memoryStatus.equals("stored")){
+            memNum += a;
+        } else {
+            memNum = a;
+        }
+
+        return memNum;
     }
 
-    public void memClear(){
+    public static void memClear(){
         memoryStatus = "not stored";
 
+
         }
-        public double recall(){
-            return memNum;
-            //return memNum;
+
+    public static String noMem() {
+        return "no memory stored";
+    }
+
+    public static double yesMem(){
+        return memNum;
         }
+
+    public static void recall() {
+        checkMemStatus();
+        if (memoryStatus.equals("not stored")) {
+            noMem();
+        } else {
+            yesMem();
+        }
+    }
     public static double sine(double a){
         double sin = (double) Math.sin(a);
         return sin;
