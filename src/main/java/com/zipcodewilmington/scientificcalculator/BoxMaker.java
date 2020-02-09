@@ -20,7 +20,7 @@ public class BoxMaker {
 
     public void setWidth(int newWidth)
     {
-        if(newWidth > 0 && newWidth < 151)
+        if(newWidth > 3 && newWidth < 151)
         {
             width = newWidth;
         }

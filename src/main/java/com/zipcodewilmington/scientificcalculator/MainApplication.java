@@ -7,6 +7,8 @@ package com.zipcodewilmington.scientificcalculator;
 public class MainApplication {
     public static void main(String[] args) {
         Console.println("Welcome to Mr. Math!");
+        Console.println("To see a valid list of commands, type 'menu' at any time");
+        Console.println("When you are finish with Mr. Math, feel free to quit by entering ':q'");
   //      String s = Console.getStringInput("Enter a string");
   //      Integer i = Console.getIntegerInput("Enter an integer");
   //      Double d = Console.getDoubleInput("Enter a double.");
@@ -16,14 +18,20 @@ public class MainApplication {
   //      Console.println("The user input %s as a d", d);
 
         Display display = new Display();
-        Prompt menu = new Prompt();
+        Prompt user = new Prompt();
         String userInput = "";
-        String message;
+
         do {
             display.update();
             userInput = Console.getStringInput(" ");
-            menu.input(userInput);
-            message = menu.getMessage();
+            if(userInput.equalsIgnoreCase("menu"))
+            {
+                Console.print(Menu.callMenu());
+            }
+            else if(!ValidOperations.isValid(userInput))
+            {
+                Console.println("Invalid input.  Check 'menu' for valid commands.");
+            }
         } while(!userInput.equals(":q"));
     }
 }
