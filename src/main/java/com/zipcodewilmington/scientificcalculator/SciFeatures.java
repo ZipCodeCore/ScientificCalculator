@@ -11,8 +11,8 @@ public class SciFeatures {
     public SciFeatures(){
     }
 
-    private String unitsMode;
-    private String displayMode;
+    public String unitsMode;
+    public String displayMode;
 
     public double p;
 
@@ -77,8 +77,8 @@ public class SciFeatures {
         return atan(a);
     }
 
-    public double toRadian(double a){
-        return toRadians(a);
+    public double toDegree(double a){
+        return toDegrees(a);
     }
 
     public void switchUnitsMode() {
@@ -99,7 +99,7 @@ public class SciFeatures {
     }
 
     public double inverseLog(double a) {
-        return exp(a);
+        return Math.pow(10, a);
     }
 
     public double naturalLog(double a) {
@@ -107,7 +107,7 @@ public class SciFeatures {
     }
 
     public double inverseNaturalLog(double a){
-        return Math.pow(10, a);
+        return exp(a);
     }
 
 
