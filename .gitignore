@@ -14,6 +14,7 @@
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+.DS_Store
 
 # Gradle:
 .idea/**/gradle.xml
@@ -149,7 +150,7 @@ fabric.properties
 .project
 .classpath
 .settings
-
+.DS_Store
 
 #maven build target
 target/
