@@ -1,61 +1,62 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import static java.lang.Math.*;
+
 public class ScientificCalc {
 
     // Trig Functions
 
     // Sine
     public double sin (double num1) {
-        return Math.sin( num1 );
+        return sin( num1 );
     }
 
     // Cosine
     public double cos (double num1) {
-        return Math.cos( num1 );
+        return cos( num1 );
     }
 
     // Tangent
     public double tan (double num1) {
-        return Math.tan( num1 );
+        return tan( num1 );
     }
 
     // Inverse Sine
     public double inverseSin (double num1) {
-        return Math.asin( num1 );
+        return asin( num1 );
     }
 
     // Inverse Cosine
     public double  inverseCos(double num1) {
-        return Math.acos( num1 );
+        return acos( num1 );
     }
 
     // Inverse Tangent
     public double inverseTan (double num1) {
-        return Math.atan( num1 );
+        return atan( num1 );
     }
 
     // Logarithmic Functions
 
     // Log
-    public double log (double num1) {
-        return Math.log10(num1);
+    public double logarithm (double num1) {
+        return log10(num1);
     }
 
     // Inverse Logarithm
     public double inverseLog (double num1) {
-        return Math.exp(num1);
+        return exp(num1);
     }
 
     // Natural Log
     public double naturalLog (double num1) {
-        return Math.log(num1);
+        return log(num1);
     }
 
     // Inverse Natural Log
-    /* public double inverseNaturalLog (double num1) {
+     public double inverseNaturalLog (double num1) {
         return Math.pow(10, num1);
     }
-    */
 
     // Factorial
     public int factorial (int num1) {
@@ -64,6 +65,75 @@ public class ScientificCalc {
             sum *= i;
         }
         return sum;
+    }
+
+    // Switch Between Radians and Degrees
+    public double toRadians (double num1) {
+        return toRadians (num1);
+    }
+
+    // Switch Between Radians and Degrees
+    public double toDegrees (double num1) {
+        return toDegrees (num1);
+    }
+
+    // Units Mode
+    public String unitsMode;
+
+    public void switchUnitsMode(){
+        if (unitsMode.equals("Degrees")) {
+            unitsMode = "Radians";
+        }
+        else {
+            unitsMode = "Degrees";
+        }
+    }
+
+    public void switchUnitsMode (String mode) {
+        unitsMode = mode;
+    }
+
+    // Display Mode
+    public String displayMode;
+
+    public void setDisplayMode(String disp) {
+        this.displayMode = disp;
+    }
+    public String getDisplayMode(){
+        return this.displayMode;
+    }
+
+    public void switchDisplayMode() {
+        if (displayMode.equals("binary")) {
+            displayMode = "octal";
+        } else if (displayMode.equals("octal")) {
+            displayMode = "decimal";
+        } else if (displayMode.equals("decimal")) {
+            displayMode = "hexadecimal";
+        } else {
+            displayMode = "binary";
+        }
+    }
+
+    public void switchDisplayMode(String mode) {
+        displayMode = mode;
+    }
+
+    public double a;
+
+    // Store Memory
+    public void storeMemory(double mem) {
+        this.a = mem;
+    }
+
+    // Clear Memory
+    public void clearMemory() {
+        this.a = Double.NaN;
+    }
+
+    // Recall Memory
+    public double memoryRecall(){
+        return this.a;
     }
 
 }
