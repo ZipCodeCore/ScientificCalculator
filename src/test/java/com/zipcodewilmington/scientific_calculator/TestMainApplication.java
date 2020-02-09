@@ -136,7 +136,7 @@ public class TestMainApplication {
     @Test
     public void testSine1(){
         Sci calculator = new Sci();
-        Assert.assertEquals(1, calculator.sine(90), 0);
+        Assert.assertEquals(1, calculator.sine(Math.PI), 0);
     }
 
     @Test
