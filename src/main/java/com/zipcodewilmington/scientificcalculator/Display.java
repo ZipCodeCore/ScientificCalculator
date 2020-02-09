@@ -1,6 +1,10 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import javax.swing.*;
+
 public class Display {
+    private int displayWidth;
+    private BoxMaker displayBox;
     private Double currentValue;
     private String currentOperation;
     private Boolean error;
@@ -12,6 +16,8 @@ public class Display {
         currentValue = 0.0;
         mode = Modes.DEC;
         error = false;
+        displayWidth = 50;
+        displayBox = new BoxMaker();
         // currentOperation
     }
 
@@ -59,7 +65,7 @@ public class Display {
             currentValue = Double.parseDouble(output);
         }
 
-        Console.println("%s", output);
+        Console.println("%s", displayBox.draw(output));
         return output;
     }
 
