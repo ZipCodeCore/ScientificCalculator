@@ -210,7 +210,7 @@ public class TestMainApplication {
     @Test
     public void testInverseLog1(){
         Sci calculator = new Sci();
-        Assert.assertEquals(2, calculator.inverseLogarithm(100), 0.01);
+        Assert.assertEquals(1000, calculator.inverseLogarithm(10, 3), 0.01);
     }
 
     @Test

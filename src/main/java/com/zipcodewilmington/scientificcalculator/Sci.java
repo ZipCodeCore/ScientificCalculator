@@ -47,7 +47,7 @@ public class Sci {
         return converted;
     }
 
-    public void memClear(){                                         //needs work
+    public void memClear(){
         memoryStatus = "not stored";
 
         }
