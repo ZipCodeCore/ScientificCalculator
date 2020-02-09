@@ -50,7 +50,10 @@ public class Calculator {
         return (Math.cos(var1));
     }
 
-    public double tangent(double var1) { return (Math.tan(var1)); }
+    public double tangent(double var1) {
+        return (Math.tan(var1));
+
+    }
 
     public double InverseSin(double var1) {
         return (Math.asin(var1));
@@ -64,7 +67,9 @@ public class Calculator {
         return (Math.atan(var1));
     }
 
-    public double log(double var1) { return (Math.log(var1));}
+    public double log(double var1) {
+        return (Math.log(var1));
+    }
 
     public double log10X(double var1) {
         return (Math.log10(var1));
@@ -78,19 +83,20 @@ public class Calculator {
         return (Math.exp(var1));
     }
 
-    public double Ln(double var1) {
-        return (-Math.log(1 - var1) / var1);
-    }
 
     public double factorial(double var1) {
-        double factorial = 1;
-        for (int i = 2; i <= var1; i++) {
-            factorial = factorial * i;
-        }
-        return factorial;
+        if (var1 < 0) {return (Double.NaN);}
+            else {
+            double factorial = 1;
+
+                for (int i = 2; i <= var1; i++) {
+                    factorial = factorial * i;
+                }
+                return factorial;
+            }
     }
 
-    public String DecimalToOther(int var1, int radix){
+    public String  DecimalToOther(int var1, int radix){
         return Integer.toString(var1, radix);
     }
     public double toRadians(double var1) {
@@ -101,15 +107,9 @@ public class Calculator {
     }
 
     public double secretof73 (double var1) {
-        double divisor = var1;
-        var1 = ((((var1 * 10001) /137)/var1));
+        var1 = ((((var1 * 10001) / 137) / var1));
         return var1;
     }
-
-    public int OtherToDecimal(String var1, int radix){
-        return Integer.parseInt(var1, radix);
-    }
-
     public boolean isPrime(double n) {
         if (n <= 1 || n != (int)n) {
             return false;
