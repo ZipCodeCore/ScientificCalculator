@@ -16,12 +16,26 @@ public class OperationsTest {
         double actual = operations.add(23, 27);
         assertEquals(expected, actual, 0.01);
     }
+    @Test
+    public void addPosNums1() {
+        double expected = 80;
+        double actual = operations.add(75, 5);
+        assertEquals(expected,actual, 0.01);
+    }
 
     @Test
     public  void addNegNums(){
         double expected = -70;
         double actual = operations.add(-50, -20);
         assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void addNegNums1() {
+        double expected = -3;
+        double actual = operations.add(-10, 7);
+        assertEquals(expected, actual, 0.01);
+
     }
 
     // Subtraction Tests
@@ -78,9 +92,23 @@ public class OperationsTest {
     }
 
     @Test
+    public void squarePosNums1() {
+        double expected = 64;
+        double actual = operations.square(8);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
     public void squareNegNums() {
         double expected = 9;
         double actual = operations.square(-3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void squareNegNums1() {
+        double expected = 16;
+        double actual = operations.square(-4);
         assertEquals(expected, actual, 0.01);
     }
 
@@ -92,6 +120,13 @@ public class OperationsTest {
         assertEquals(expected, actual, 0.01);
     }
 
+    @Test
+    public void squareRootPosNums1() {
+        double expected = 10;
+        double actual = operations.squareRoot(100);
+        assertEquals(expected, actual, 0.01);
+    }
+
     // Square Root Negative Numbers Test Case ???
 
     // Exponent Tests
@@ -99,6 +134,13 @@ public class OperationsTest {
     public void exponentNums() {
         double expected = 8;
         double actual = operations.exponent(2, 3);
+        assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void exponentNums1() {
+        double expected = 9;
+        double actual = operations.exponent(3, 2);
         assertEquals(expected, actual, 0.01);
     }
 
