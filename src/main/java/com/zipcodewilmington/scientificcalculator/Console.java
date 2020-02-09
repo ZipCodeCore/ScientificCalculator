@@ -6,7 +6,6 @@ import java.util.Scanner;
  * Created by leon on 2/9/18.
  */
 public class Console {
-    int total = 0;
 
     public static void print(String output, Object... args) {
         System.out.printf(output, args);

@@ -32,6 +32,45 @@ public class MathMethods {
         return result4;
     }
 
+    public static double square(double a) {
+        double result6 = a * a;
+        return result6;
+    }
+
+    public static double squareRoot(double a) {
+        double result7 = Math.sqrt(a);
+        return result7;
+    }
+
+    public static double variExpo(double a, double b) {
+        double result7 = a * b;
+        return result7;
+    }
+
+    public static double invert(double a) {
+        double result8 = a * -1;
+        return result8;
+    }
+    public static double sine(double a) {
+        double result9 = Math.sin(a);
+        return result9;
+    }
+    public static double cosine(double a) {
+        double result10 = Math.cos(a);
+        return result10;
+    }
+    public static double tangent(double a) {
+        double result11 = Math.tan(a);
+        return result11;
+    }
+
+    public static double absolute(double a) {
+        double result5 = Math.abs(a);
+        return result5;
+    }
+
+
+
 //    public static double absolute(double a, double b) {
 //        double result5 = math.abs();
 //        return result5;
