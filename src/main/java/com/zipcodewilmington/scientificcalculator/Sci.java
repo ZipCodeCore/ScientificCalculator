@@ -54,6 +54,7 @@ public class Sci {
 
     public static void memClear(){
         memoryStatus = "not stored";
+        memNum = 0;
 
 
         }
