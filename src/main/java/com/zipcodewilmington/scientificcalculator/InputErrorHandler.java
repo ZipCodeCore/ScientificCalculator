@@ -8,23 +8,6 @@ public class InputErrorHandler {
 
     public InputErrorHandler()
     {
-        listOfValid.add("c");
-        listOfValid.add("m+");
-        listOfValid.add("m");
-        listOfValid.add("mc");
-        listOfValid.add("inv");
-        listOfValid.add("+");
-        listOfValid.add("-");
-        listOfValid.add("*");
-        listOfValid.add("/");
-        listOfValid.add("exp");
-        listOfValid.add("sq");
-        listOfValid.add("sqrt");
-        listOfValid.add("mode");
-        listOfValid.add("bin");
-        listOfValid.add("oct");
-        listOfValid.add("dec");
-        listOfValid.add("hex");
     }
 
     public static Boolean validOp(String op)
@@ -44,5 +27,26 @@ public class InputErrorHandler {
         }
 
         return isANumber;
+    }
+
+    static {
+        listOfValid.add("c"); //
+        listOfValid.add("m+"); //
+        listOfValid.add("m"); //
+        listOfValid.add("mc"); //
+        listOfValid.add("inv"); //
+        listOfValid.add("+");
+        listOfValid.add("-");
+        listOfValid.add("*");
+        listOfValid.add("/");
+        listOfValid.add("exp");
+        listOfValid.add("sq"); //
+        listOfValid.add("sqrt"); //
+        listOfValid.add("mode"); //
+        listOfValid.add("bin"); //
+        listOfValid.add("oct"); //
+        listOfValid.add("dec"); //
+        listOfValid.add("hex"); //
+        listOfValid.add("rad"); //
     }
 }

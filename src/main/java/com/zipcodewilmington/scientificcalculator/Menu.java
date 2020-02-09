@@ -11,8 +11,8 @@ public class Menu
 
         return menuBox.draw(
                 String.format("%-100s", "c           | Resets the display to 0"),
-                String.format("%-100s", "m           | Store display to memory"),
-                String.format("%-100s", "m+          | Recall stored memory as user input"),
+                String.format("%-100s", "m           | Remember display"),
+                String.format("%-100s", "m+          | Store memory"),
                 String.format("%-100s", "mc          | Reset memory to 0"),
                 String.format("%-100s", "inv         | Invert the sign of the display value"),
                 String.format("%-100s", "bin         | Set mode to binary"),
@@ -27,11 +27,6 @@ public class Menu
                 String.format("%-100s", "exp         | Display value to power of next input"),
                 String.format("%-100s", "sq          | Display value multiplied by itself"),
                 String.format("%-100s", "sqrt        | Square root of display value"),
-                String.format("%-100s", "mode        | Cycle mode"),
-                String.format("%-100s", "bin         | Switch to binary"),
-                String.format("%-100s", "oct         | Switch to octal"),
-                String.format("%-100s", "dec         | Switch to decimal"),
-                String.format("%-100s", "hex         | Switch to hex"),
                 String.format("%-100s", "rad         | Use Radians for Trigonometry"),
                 String.format("%-100s", "sin         | Sine of display value"),
                 String.format("%-100s", "cos         | Cosine of display value"),

@@ -1,28 +1,24 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Operation {
-
-    public Operation() {
-    }
-
-    public static Double perform(String op, Double... value) {
-        Double calculation = 0.0;
-
-        if ("+".equals(op)) {
-            calculation = BasicMath.addition(value[0], value[1]);
-        } else if ("-".equals(op)) {
-            calculation = BasicMath.addition(value[0], value[1]);
-        } else if ("*".equals(op)) {
-            calculation = BasicMath.addition(value[0], value[1]);
-        } else if ("/".equals(op)) {
-            calculation = BasicMath.addition(value[0], value[1]);
+    public static Boolean isSetting(String op) {
+        if ("c".equals(op) || "m".equals(op) || "m+".equals(op) ||
+                "mc".equals(op) || "rad".equals(op)) {
+            return true;
+        } else {
+            return false;
         }
-
-        return calculation;
     }
 
-    public static Boolean isUnary(String currentOperation)
+    public static Boolean isUnary(String op)
     {
-   //     if(currentOperation == "c" || currentOperation == "m")
+        if ("inv".equals(op) || "bin".equals(op) || "oct".equals(op) || "dec".equals(op) || "hex".equals(op) ||
+                "mode".equals(op) || "sq".equals(op) || "sqrt".equals(op) || "sin".equals(op) || "cos".equals(op) ||
+                "tan".equals(op) || "invsin".equals(op) || "invcos".equals(op) || "invtan".equals(op) || "log".equals(op) ||
+                "nlog".equals(op) || "invlog".equals(op) || "invnlog".equals(op) || "!".equals(op) || "fib".equals(op)) {
+            return true;
+        } else {
+                return false;
+        }
     }
 }

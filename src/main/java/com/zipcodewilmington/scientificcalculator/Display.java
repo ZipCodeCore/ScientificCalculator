@@ -71,11 +71,12 @@ public class Display {
             radianLine = " ";
         }
 
+
+        // This needs to be fixed
         if(mode == Modes.BINARY)
         {
             baseLine = String.format("%-46s", "BIN");
-            valueLine = Integer.toBinaryString(currentValue.intValue()) + " ";
-            currentValue = Double.parseDouble(valueLine);
+            valueLine = Integer.toBinaryString(currentValue.intValue()) + " ";currentValue = Double.parseDouble(valueLine);
         }
         else if(mode == Modes.OCTAL)
         {
@@ -142,7 +143,6 @@ public class Display {
         error = false;
         isRadians = false;
         mode = Modes.DEC;
-        update();
         // Send a command to input to remove last operation and last value input
     }
 

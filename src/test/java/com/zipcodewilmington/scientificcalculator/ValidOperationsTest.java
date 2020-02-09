@@ -44,4 +44,12 @@ public class ValidOperationsTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void TestClear()
+    {
+        Boolean expected = true;
+        ValidOperations TestValidOperations = new ValidOperations();
+        Boolean actual = TestValidOperations.isValid("c");
+    }
 }

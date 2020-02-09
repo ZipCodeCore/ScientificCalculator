@@ -25,12 +25,7 @@ public class BasicMath {
     public static Double squareroot (Double numberOne){
         return (Math.sqrt(numberOne));
     }
-    public static Double inverse(Double numberOne){
-        return 1/numberOne;
-    }
-
-
-    }
+}
 
 
 

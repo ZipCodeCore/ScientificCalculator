@@ -85,4 +85,14 @@ public class InputErrorHandlerTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void TestInputErrorHandlerClear()
+    {
+        Boolean expected = true;
+        InputErrorHandler TestInputErrorHandler = new InputErrorHandler();
+        Boolean actual = TestInputErrorHandler.validOp("c");
+
+        assertEquals(expected, actual);
+    }
 }
