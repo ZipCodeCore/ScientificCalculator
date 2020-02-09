@@ -6,7 +6,6 @@ package com.zipcodewilmington.scientificcalculator;
  */
 public class MainApplication {
     public static void main(String[] args) {
-        BoxMaker display = new BoxMaker(100);
         Console.println("Welcome to my calculator!");
         String s = Console.getStringInput("Enter a string");
         Integer i = Console.getIntegerInput("Enter an integer");

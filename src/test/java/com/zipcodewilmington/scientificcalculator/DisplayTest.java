@@ -1,6 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 
 import static org.junit.Assert.*;
 
@@ -32,7 +33,12 @@ public class DisplayTest {
     @Test
     public void TestUpdateBinaryEight()
     {
-        String expected = "1000";
+        String expected =
+                    "╔════════════════════════════════════════════════╗\n" +
+                    "║                                                ║\n" +
+                    "║                                           1000 ║\n" +
+                    "║  BIN                                           ║\n" +
+                    "╚════════════════════════════════════════════════╝\n";
         Display TestDisplay = new Display();
         TestDisplay.setDisplay(8.0);
         TestDisplay.setMode(Display.Modes.BINARY);
@@ -44,7 +50,12 @@ public class DisplayTest {
     @Test
     public void TestUpdateBinaryTwentyPointFive()
     {
-        String expected = "10100";
+        String expected =
+                    "╔════════════════════════════════════════════════╗\n" +
+                    "║                                                ║\n" +
+                    "║                                          10100 ║\n" +
+                    "║  BIN                                           ║\n" +
+                    "╚════════════════════════════════════════════════╝\n";
         Display TestDisplay = new Display();
         TestDisplay.setDisplay(20.5);
         TestDisplay.setMode(Display.Modes.BINARY);
@@ -106,5 +117,81 @@ public class DisplayTest {
         Double actual = TestDisplay.absoluteValue();
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestSetModeOCT()
+    {
+        Display.Modes expected = Display.Modes.OCTAL;
+        Display TestDisplay = new Display();
+        TestDisplay.setMode(Display.Modes.OCTAL);
+        Display.Modes actual = TestDisplay.getMode();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestSetModeBINARY()
+    {
+        Display.Modes expected = Display.Modes.BINARY;
+        Display TestDisplay = new Display();
+        TestDisplay.setMode(Display.Modes.BINARY);
+        Display.Modes actual = TestDisplay.getMode();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestSetModeDEC()
+    {
+        Display.Modes expected = Display.Modes.DEC;
+        Display TestDisplay = new Display();
+        TestDisplay.setMode(Display.Modes.DEC);
+        Display.Modes actual = TestDisplay.getMode();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestSetModeCycleFiveTimes()
+    {
+        Display.Modes expected = Display.Modes.BINARY;
+        Display TestDisplay = new Display();
+        TestDisplay.setMode();
+        TestDisplay.setMode();
+        TestDisplay.setMode();
+        TestDisplay.setMode();
+        TestDisplay.setMode();
+        Display.Modes actual = TestDisplay.getMode();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestNaNDisplaysError ()
+    {
+        String expected =
+                "╔════════════════════════════════════════════════╗\n" +
+                "║  ERR                                           ║\n" +
+                "║                                            ERR ║\n" +
+                "║  ERR                                           ║\n" +
+                "╚════════════════════════════════════════════════╝\n";
+        Display TestDisplay = new Display();
+        TestDisplay.setDisplay(6.0/0.0);
+        String actual = TestDisplay.update();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestNullDisplaysError()
+    {
+
+    }
+
+    @Test
+    public void TestClearVoidsError()
+    {
+
     }
 }

@@ -6,10 +6,11 @@ public class Display {
     private int displayWidth;
     private BoxMaker displayBox;
     private Double currentValue;
-    private String currentOperation;
+//    private String currentOperation;  Moving to input
     public enum Modes { BINARY, OCTAL, DEC, HEX }
     private Modes mode;
     private Boolean isRadians;
+    Boolean error;
 
     public Display()
     {
@@ -18,12 +19,21 @@ public class Display {
         displayWidth = 50;
         displayBox = new BoxMaker(displayWidth);
         isRadians = false;
-        currentOperation = "";
+//        currentOperation = "";
+        error = false;
     }
 
     public void setDisplay(Double inputValue)
     {
-        currentValue = inputValue;
+        if (inputValue == Double.NaN ||
+                inputValue == Double.POSITIVE_INFINITY ||
+                inputValue == Double.NEGATIVE_INFINITY)
+        {
+            error = true;
+        }
+        else {
+            currentValue = inputValue;
+        }
     }
 
     public Double getDisplay()
@@ -45,7 +55,7 @@ public class Display {
         String valueLine = "";
         String baseLine = "";
 
-        if(currentValue == Double.NaN || currentValue == null)
+        if(error)
         {
             radianLine = String.format("%-46s", "ERR");
             valueLine = "ERR ";
@@ -101,6 +111,29 @@ public class Display {
     public void setMode(Modes newMode)
     {
         mode = newMode;
+    }
+
+    public void setMode() {
+        switch (mode)
+        {
+            case DEC:
+                setMode(Modes.BINARY);
+                break;
+            case BINARY:
+                setMode(Modes.OCTAL);
+                break;
+            case OCTAL:
+                setMode(Modes.HEX);
+                break;
+            case HEX:
+                setMode(Modes.DEC);
+                break;
+        }
+    }
+
+    public Modes getMode()
+    {
+        return mode;
     }
 
     public void clear() {
