@@ -90,7 +90,7 @@ public class Calculator {
         return factorial;
     }
 
-    public String  DecimalToOther(int var1, int radix){
+    public String DecimalToOther(int var1, int radix){
         return Integer.toString(var1, radix);
     }
     public double toRadians(double var1) {
@@ -105,5 +105,23 @@ public class Calculator {
         var1 = ((((var1 * 10001) /137)/var1));
         return var1;
     }
+
+    public int OtherToDecimal(String var1, int radix){
+        return Integer.parseInt(var1, radix);
+    }
+
+    public boolean isPrime(double n) {
+        if (n <= 1 || n != (int)n) {
+            return false;
+        }
+
+        for (int i = 2; i < Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
 
