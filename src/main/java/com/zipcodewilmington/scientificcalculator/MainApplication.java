@@ -63,7 +63,7 @@ public class MainApplication {
                 } else if (nextOperator.equalsIgnoreCase("SquareRoot")) {
                     user.displayVal = MathMethods.squareRoot(user.displayVal);
                     Console.println("Your current total is %.2f", user.displayVal);
-                } else if (operator.equalsIgnoreCase("VariableExpo")) {
+                } else if (nextOperator.equalsIgnoreCase("VariableExpo")) {
                     user.secondVal = AskNumber.askDouble();
                     user.displayVal = MathMethods.variExpo(user.displayVal,user.secondVal);
                     Console.println("Your current total is %.2f", user.displayVal);
@@ -71,10 +71,7 @@ public class MainApplication {
                     user.clearDisplayVal();
                     break;
                 }
-
             }
-
         }
-
     }
 }
