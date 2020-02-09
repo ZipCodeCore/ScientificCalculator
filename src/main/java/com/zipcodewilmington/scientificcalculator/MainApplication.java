@@ -6,10 +6,11 @@ import static java.lang.Integer.*;
  */
 public class MainApplication {
 
+    public static double total = 0;
+
     public static void main(String[] args) {
         
         double input;
-        double total = 0;
         double currentTotal = 0;
         int operand;
         Display display = new Display();
@@ -17,7 +18,7 @@ public class MainApplication {
         ScientificCalc sci = new ScientificCalc();
         boolean on = true;
 
-        Console.println("Welcome to my calculator!");
+        Console.println("Welcome to Mav!");
         String name = Console.getStringInput("Please enter your name!");
         Console.println(name);
         String operandPrompt = "Choose an operand: + , - , * , / , x^2 , sqrt , x^x , 1/x, c, off";
@@ -206,6 +207,42 @@ public class MainApplication {
                             display.displayErr();
                         }
                         break;
+                    case 20:
+                        if(!Display.error) {
+                            currentTotal = sci.factorial(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+//                    case 21:
+//                        if(!Display.error) {
+//                            currentTotal = sci.inverseNaturalLog(total);
+//                            display.displayValue(currentTotal);
+//                            total = currentTotal;
+//                        }else{
+//                            display.displayErr();
+//                        }
+//                        break;
+//                    case 22:
+//                        if(!Display.error) {
+//                            currentTotal = sci.inverseNaturalLog(total);
+//                            display.displayValue(currentTotal);
+//                            total = currentTotal;
+//                        }else{
+//                            display.displayErr();
+//                        }
+//                        break;
+//                    case 23:
+//                        if(!Display.error) {
+//                            currentTotal = sci.inverseNaturalLog(total);
+//                            display.displayValue(currentTotal);
+//                            total = currentTotal;
+//                        }else{
+//                            display.displayErr();
+//                        }
+//                        break;
                 }
 
             }

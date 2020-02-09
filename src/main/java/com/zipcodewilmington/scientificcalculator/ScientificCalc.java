@@ -59,9 +59,11 @@ public class ScientificCalc {
     }
 
     // Factorial
-    public int factorial (int num1) {
-        int sum = 1;
-        for (int i = 2; i <= num1  ; i++) {
+    public double factorial (double num1) {
+
+        int intNum1 = (int) Math.round(num1);
+        double sum = 1.0;
+        for (int i = 2; i <= intNum1  ; i++) {
             sum *= i;
         }
         return sum;
