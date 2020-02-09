@@ -55,7 +55,7 @@ public class Calculator
 				this.display = "" + Integer.toBinaryString((int)numToDisplay);
 				return;
 			case HEXADECIMAL:
-				this.display = "" + Float.toHexString(numToDisplay);
+				this.display = "" + Integer.toHexString((int)numToDisplay);
 				return;
 			case OCTAL:
 				this.display = "" + Integer.toOctalString((int)numToDisplay);
@@ -143,63 +143,44 @@ public class Calculator
 	}
 	
 	public void factorial() {
-		this.displayValue = Util.factorial((int) this.displayValue);
+		if (this.displayValue < 13) {
+			this.displayValue = Util.factorial((int) this.displayValue);
+		}
+		else {
+			this.displayValue = Float.MAX_VALUE;
+		}
 	}
 	
-	public void sine() {
-		this.displayValue = Util.sine(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}		
+	public void sin() {
+		this.displayValue = Util.sine(this.displayValue);			
 	}
 	
 	public void cosine() {
-		this.displayValue = Util.cosine(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}		
+		this.displayValue = Util.cosine(this.displayValue);			
 	}
 	
 	public void tangent() {
-		this.displayValue = Util.tangent(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}		
+		this.displayValue = Util.tangent(this.displayValue);			
 	}
 	
-	public void invSine() {
-		this.displayValue = Util.invSine(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}		
+	public void invSin() {
+		this.displayValue = Util.invSine(this.displayValue);		
 	}
 	
 	public void invCosine() {
 		this.displayValue = Util.invCosine(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}		
 	}
 	
 	public void invTangent() {
 		this.displayValue = Util.invTangent(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}		
 	}
 	
 	public void log() {
 		this.displayValue = Util.log(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}	
 	}
 	
 	public void invNatLog() {
 		this.displayValue = Util.inverseNaturalLog(this.displayValue);
-		if (this.trigMode == TrigDisplayMode.RADIANS) {
-			this.displayValue = Util.toRadians(this.displayValue);
-		}
 	}
 	// END MATH ///////////////////////////////////////////////////////////////////////////////////////////////
 	
