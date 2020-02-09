@@ -1,5 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import static java.lang.Math.*;
+
 public class Operations {
 
     // CORE FEATURES
@@ -32,12 +34,12 @@ public class Operations {
 
     // Square Root of Number
     public double squareRoot (double num1) {
-        return Math.sqrt(num1);
+        return sqrt(num1);
     }
 
     // Exponent
     public double exponent (double num1, double num2) {
-        return Math.pow (num1, num2);
+        return pow (num1, num2);
     }
 
     // Inverse

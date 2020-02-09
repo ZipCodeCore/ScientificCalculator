@@ -24,7 +24,6 @@ public class Console {
         scanner = new Scanner(System.in);
         println(prompt);
         String userInput = scanner.nextLine();
-
         return "Hello there " + userInput + "!";
     }
 
@@ -32,7 +31,6 @@ public class Console {
 
         scanner = new Scanner(System.in);
         Integer userInput = scanner.nextInt();
-
         return userInput;
     }
 
@@ -203,3 +201,6 @@ public class Console {
         }
     }
 }
+
+
+
