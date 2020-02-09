@@ -354,22 +354,25 @@ public class Console {
             curInt = Float.parseFloat(s);
             System.out.println(memPlus(curInt));
             Memory();
+            memoryStatus = "stored";
 
         } else if (s.equals("2")) {
             //MC
 
             memClear();
             Memory();
+            memoryStatus = "not stored";
+
         }
 
         else if (s.equals("3")) {
             //MRC
-            checkMemStatus();
+
             if (memoryStatus.equals("stored")) {
                 System.out.println(memNum);
                 Memory();
             } else {
-                System.out.println("no memory stored");
+                System.out.println("No memory stored!");
                 Memory();
             }
 
