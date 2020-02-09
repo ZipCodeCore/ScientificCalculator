@@ -105,12 +105,22 @@ public class Calculator {
     public double toDegrees(double var1) {
         return Math.toDegrees(var1);
     }
+
     public double secretof73 (double var1) {
-        double divisor = var1;
-        var1 = ((((var1 * 10001) /137)/var1));
+        var1 = ((((var1 * 10001) / 137) / var1));
         return var1;
+    }
+    public boolean isPrime(double n) {
+        if (n <= 1 || n != (int)n) {
+            return false;
+        }
 
-
+        for (int i = 2; i < Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
