@@ -1,6 +1,7 @@
 package com.zipcodewilmington.scientific_calculator;
 
 import com.zipcodewilmington.scientificcalculator.BasicMath;
+import jdk.nashorn.internal.objects.Global;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -110,9 +111,18 @@ public class TestBasicMath {
         Double actual;
         Double expected = 6.2;
         actual = divisionTest.division(12.4,2.0);
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, .0001);
+
     }
     @Test
+    public void TestDivisionZero() {
+        BasicMath divisionTest = new BasicMath();
+        Double actual;
+        Double expected = Global.Infinity;
+        actual = divisionTest.division(12.4, 0.0);
+        assertEquals(expected, actual, .0001);
+    }
+        @Test
     public void TestExponentSixTwo()
     {
         BasicMath exponentTest = new BasicMath();
@@ -147,6 +157,15 @@ public class TestBasicMath {
         Double actual;
         Double expected = 2.0;
         actual = squarerootTest.squareroot(4.0);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void TestSquareRootNegative()
+    {
+        BasicMath squarerootTest = new BasicMath();
+        Double actual;
+        Double expected = Double.NaN;
+        actual = squarerootTest.squareroot(-4.0);
         assertEquals(expected, actual);
     }
 }
