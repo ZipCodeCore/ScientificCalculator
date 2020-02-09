@@ -1,7 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Scanner;
-
+import static com.zipcodewilmington.scientificcalculator.Utilities.*;
 import static com.zipcodewilmington.scientificcalculator.Basic.*;
 import static com.zipcodewilmington.scientificcalculator.Sci.*;
 import static com.zipcodewilmington.scientificcalculator.Sci.factorial;
@@ -27,7 +27,27 @@ public class Console {
     }
 
 
+    public static void RunCalc(){
+        Console.println("Welcome to my calculator!");
+        String s = Console.getStringInput("1 - Basic | 2 - Scientific | 3 - Exit");
 
+
+        if (s.equals("1")) {
+            BasicMenu();
+        }
+
+        else if (s.equals("2")) {
+            SciMenuHome();
+        }
+
+        else if (s.equals("xxx")) {
+            System.exit(0);
+        }
+        else {
+            System.out.println("Please enter a valid response");
+            RunCalc();
+        }
+    }
 
 
     public static void BasicMenu() {
@@ -189,7 +209,7 @@ public class Console {
             BasicMenu();
         } else if ((s.equals("c")) || ((s.equals("d")))) {
             //Back
-            Greeting();
+            RunCalc();
 
         } else if (s.equals("e")) {
             //Exit
@@ -210,6 +230,7 @@ public class Console {
         System.out.println("Mode Change - 4");
         System.out.println("Log Functions - 5");
         System.out.println("Factorial Functions - 6");
+        System.out.println("Utilities - 7");
         ForAllMenus();
 
        String s = Console.getStringInput("Please select an option");
@@ -237,7 +258,10 @@ public class Console {
             System.out.println(factorial(curInt));
             SciMenuHome();
         }
-//End Factorial Function
+        else if (s.equals("7")) {
+            Utilities();
+        }
+
         else if (s.equals("a")) {
             //Clear Error
             s = "";
@@ -250,12 +274,12 @@ public class Console {
         }
         else if (s.equals("c")) {
             //Back
-            Greeting();
+            RunCalc();
 
         }
         else if (s.equals("d")) {
             //Main Menu
-            Greeting();
+            RunCalc();
 
         }
         else if (s.equals("e")) {
@@ -325,7 +349,7 @@ public class Console {
         }
         else if (s.equals("d")) {
             //Main Menu
-            Greeting();
+            RunCalc();
 
         }
         else if (s.equals("e")) {
@@ -394,7 +418,7 @@ public class Console {
         }
         else if (s.equals("d")) {
             //Main Menu
-            Greeting();
+            RunCalc();
 
         }
         else if (s.equals("e")) {
@@ -481,7 +505,7 @@ public class Console {
 
         } else if (s.equals("d")) {
             //Main Menu
-            Greeting();
+            RunCalc();
 
         } else if (s.equals("e")) {
             //Exit
@@ -528,7 +552,7 @@ public class Console {
         }
         else if (s.equals("d")) {
             //Main Menu
-            Greeting();
+            RunCalc();
 
         }
         else if (s.equals("e")) {
@@ -603,7 +627,7 @@ public class Console {
         }
         else if (s.equals("d")) {
             //Main Menu
-           Greeting();
+           RunCalc();
 
         }
         else if (s.equals("e")) {
@@ -629,10 +653,92 @@ public class Console {
         System.exit(0);
     }
 
-    public static String Greeting() {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("1 - Basic | 2 - Scientific | 3 - Exit");
-        return s;
+    public static void Utilities(){
+        System.out.println("Temp (F to C) - 1");
+        System.out.println("Temp (C to F) - 2");
+        System.out.println("Temp (F to K) - 3");
+        System.out.println("Temp (K to F) - 4");
+        System.out.println("Temp (C to K) - 5");
+        System.out.println("Temp (K to C) - 6");
+        ForAllMenus();
+
+        String s = Console.getStringInput("Please select an option");
+        if (s.equals("1")) {
+            //F to C
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchFtoC(curInt));
+            Utilities();
+        }
+        else if (s.equals("2")) {
+            //C to F
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchCtoF(curInt));
+            Utilities();
+        }
+        else if (s.equals("3")) {
+            //F to K
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchFtoK(curInt));
+            Utilities();
+        }
+        else if (s.equals("4")) {
+            //K to F
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchKtoF(curInt));
+            Utilities();
+        }
+        else if (s.equals("5")) {
+            //C to K
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchCtoK(curInt));
+            Utilities();
+        }
+        else if (s.equals("6")) {
+            //K to C
+            double curInt = 0;
+            s = Console.getStringInput("Please enter a number");
+            curInt = Double.parseDouble(s);
+            System.out.println(switchKtoC(curInt));
+            Utilities();
+        }
+        else if (s.equals("a")) {
+            //Clear Error
+            s = "";
+        }
+        else if (s.equals("b")) {
+            //Clear Display
+            s = "";
+        }
+        else if (s.equals("c")) {
+            //Back
+            SciMenuHome();
+
+        }
+        else if (s.equals("d")) {
+            //Main Menu
+            RunCalc();
+
+        }
+        else if (s.equals("e")) {
+            //Exit
+            ExitCalc();
+        }
+        else {
+            System.out.println("Please enter a valid response");
+            Utilities();
+
+        }
+        SciMenuHome();
     }
 
 
