@@ -16,15 +16,13 @@ public class Display {
 
     public void clearDisplay() {
         checkState = true;
-        total = 0;
-        currentTotal = 0;
-        displayValue(total);
+        displayValue(0);
         error = false;
 
     }
     public void changeNumberDisplay(double nextInput) {
-        total = nextInput;
-        System.out.println(total);
+//        total = nextInput;
+//        System.out.println(total);
     }
     public void displayErr() {
         //if math calculations don't work, display 'Err')
