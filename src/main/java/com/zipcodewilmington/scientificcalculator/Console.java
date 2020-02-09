@@ -536,6 +536,7 @@ public class Console {
         if (s.equals("1")) {
             //log
             float curInt = 0;
+
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(logarithm(curInt));
@@ -545,9 +546,18 @@ public class Console {
         else if (s.equals("2")) {
             //inverse log
             float curInt = 0;
+            float pastInt = 0;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
-            System.out.println(inverseLogarithm(curInt));
+
+            if (pastInt == 0) {
+                System.out.println(curInt);
+            } else {
+                System.out.println(inverseLogarithm(pastInt, curInt));
+            }
+
+            pastInt = curInt;
+
             LogFunctions(s);
             s = Console.getStringInput("Please select an option");
         }
