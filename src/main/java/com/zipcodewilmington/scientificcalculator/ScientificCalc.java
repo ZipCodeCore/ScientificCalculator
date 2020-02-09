@@ -78,6 +78,63 @@ public class ScientificCalc {
         return toDegrees (num1);
     }
 
+    // Units Mode
+   public String unitsMode;
 
+   public void switchUnitsMode(){
+       if (unitsMode.equals("Degrees")) {
+           unitsMode = "Radians";
+       }
+       else {
+           unitsMode = "Degrees";
+       }
+   }
+
+   public void switchUnitsMode (String mode) {
+       unitsMode = mode;
+   }
+
+   // Display Mode
+   public String displayMode;
+
+   public void setDisplayMode(String disp) {
+       this.displayMode = disp;
+   }
+   public String getDisplayMode(){
+       return this.displayMode;
+   }
+
+   public void switchDisplayMode() {
+       if (displayMode.equals("binary")) {
+           displayMode = "octal";
+       } else if (displayMode.equals("octal")) {
+           displayMode = "decimal";
+       } else if (displayMode.equals("decimal")) {
+           displayMode = "hexadecimal";
+       } else {
+           displayMode = "binary";
+       }
+   }
+
+   public void switchDisplayMode(String mode) {
+       displayMode = mode;
+   }
+
+   public double a;
+
+   // Store Memory
+   public void storeMemory(double mem) {
+       this.a = mem;
+   }
+
+   // Clear Memory
+   public void clearMemory() {
+       this.a = Double.NaN;
+   }
+
+   // Recall Memory
+   public double memoryRecall(){
+       return this.a;
+   }
 
 }
