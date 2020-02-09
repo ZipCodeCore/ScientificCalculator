@@ -4,59 +4,53 @@ package com.zipcodewilmington.scientificcalculator;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
+
     public static void main(String[] args) {
-        //Greeting
-        Console.println("Welcome to my calculator!");
+        //New User
+        Calculator user = new Calculator(0,0,0,0);
+        Console.println("Simple Calculator!");
+
+        /////Print Starting Display
+        Console.println("Your current total is %.2f", user.displayVal);
+
+        //Start Program
         while (true){
-
-            //Variables
-            int i = 0;
-            double d = 0;
-
-
+            //Stores Operation and then clears operation on loop
             String operator = "";
 
-            //Ask for Integer or Double
-            String s = Console.getStringInput("Please type A for Integer or B for Double");
-            while(!s.equals("A")  && !s.equals("B")){
-                Console.println("your input was " + s);
-                s = Console.getStringInput("Invalid Input! Please type A for Integer or B for Double");
+            //Asks for first value and stores it in user totalVal
+            user.firstVal = AskNumber.askDouble();
+
+            //Push first value to display and print display
+            user.displayVal = user.firstVal;
+            Console.println("Your current total is %.2f", user.displayVal);
+
+            //Ask for operation and print to console
+            operator = AskNumber.getOperation();
+            Console.println("You selected " + operator);
+
+            if (operator.equalsIgnoreCase("Add")) {
+                user.secondVal = AskNumber.askDouble();
+                user.displayVal = MathMethods.add(user.firstVal,user.secondVal);
+                Console.println("Your current total is %.2f", user.displayVal);
+            } else if (operator.equalsIgnoreCase("Subtract")) {
+                user.secondVal = AskNumber.askDouble();
+                user.displayVal = MathMethods.subtract(user.firstVal,user.secondVal);
+                Console.println("Your current total is %.2f", user.displayVal);
+            } else if (operator.equalsIgnoreCase("Multiply")) {
+                user.secondVal = AskNumber.askDouble();
+                user.displayVal = MathMethods.multiplication(user.firstVal,user.secondVal);
+                Console.println("Your current total is %.2f", user.displayVal);
+            } else if (operator.equalsIgnoreCase("Divide")) {
+                user.secondVal = AskNumber.askDouble();
+                user.displayVal = MathMethods.division(user.firstVal,user.secondVal);
+                Console.println("Your current total is %.2f", user.displayVal);
+            } else if (operator.equalsIgnoreCase("Remainder")) {
+                user.secondVal = AskNumber.askDouble();
+                user.displayVal = MathMethods.remainder(user.firstVal,user.secondVal);
+                Console.println("Your current total is %.2f", user.displayVal);
             }
 
-//            public static int getNum() {
-//                return null;
-//            }
-
-            //Update Variables
-            if (s.equals("A")) {
-               i = Console.getIntegerInput("Enter an integer");
-               Console.println(i+ "");
-            } else if (s.equals("B")) d = Console.getDoubleInput("Enter a double.");
-
-            //Ask for operation
-            operator = Console.getStringInput("Please type | A for Add | S for Subtract | M for Multiply | D for Divide");
-            while(!operator.equals("A")  && !operator.equals("S")  && !operator.equals("M")  && !operator.equals("D")){
-                Console.println("your input was " + operator);
-                operator = Console.getStringInput("Invalid Input! Please type | A for Add | S for Subtract | M for Multiply | D for Divide");
-            }
-
-            if (operator.equals("A")) {
-                //Add
-
-                Console.println("Your operator is +");
-            } else if (operator.equals("S")) {
-                //Subtract
-                Console.println("Your operator is -");
-            } else if (operator.equals("M")) {
-                //Multiply
-                Console.println("Your operator is *");
-            } else if (operator.equals("D")){
-                //Divide
-                Console.println("Your operator is /");
-            }
-
-            Console.println("Display:", i, operator);
-            Console.println("Display:", d,operator);
         }
     }
 

@@ -60,4 +60,16 @@ public class Console {
 
         return doubleInput;
     }
+
+    public static double doAdd(){
+       double result = 0;
+
+        return result;
+    }
+
+
+
+
+
+
 }
