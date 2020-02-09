@@ -13,7 +13,7 @@ public class ScientificTests {
     @Test
     public void sinRadians() {
         double expected = 0;
-        double actual = scientific.sin(0);
+        double actual = scientific.sine(0);
         assertEquals(expected, actual, 0.01);
     }
 
@@ -30,7 +30,7 @@ public class ScientificTests {
     @Test
     public void cosRadians() {
         double expected = 1;
-        double actual = scientific.cos(0);
+        double actual = scientific.cose(0);
         assertEquals(expected, actual, 0.01);
     }
 
@@ -47,7 +47,7 @@ public class ScientificTests {
     @Test
     public void tanRadians() {
         double expected = 0;
-        double actual = scientific.tan(0);
+        double actual = scientific.tangent(0);
         assertEquals(expected, actual, 0.01);
     }
 
