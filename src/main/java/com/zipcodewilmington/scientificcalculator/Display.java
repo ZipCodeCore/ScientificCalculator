@@ -2,9 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class Display {
     public boolean checkState = true;
-    public static double total = 0;
-    public static double currentTotal = 0;
-    public static boolean error;
+    public static boolean error = false;
 
     public void displayValue(double input){
 

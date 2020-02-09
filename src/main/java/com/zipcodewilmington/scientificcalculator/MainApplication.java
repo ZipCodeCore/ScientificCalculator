@@ -7,8 +7,7 @@ import static java.lang.Integer.*;
 public class MainApplication {
 
     public static void main(String[] args) {
-
-
+        
         double input;
         double total = 0;
         double currentTotal = 0;
@@ -37,46 +36,77 @@ public class MainApplication {
                         display.clearDisplay();
                         break;
                     case 1:
-                        currentTotal = opp.add(total, Console.getDoubleInput("Please enter a number:"));
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.add(total, Console.getDoubleInput("Please enter a number:"));
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
                     case 2:
-                        currentTotal = opp.subtract(total, Console.getDoubleInput("Please enter a number:"));
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.subtract(total, Console.getDoubleInput("Please enter a number:"));
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
                     case 3:
-                        currentTotal = opp.multiply(total, Console.getDoubleInput("Please enter a number:"));
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.multiply(total, Console.getDoubleInput("Please enter a number:"));
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
                     case 4:
-                        currentTotal = opp.divide(total, Console.getDoubleInput("Please enter a number:"));
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.divide(total, Console.getDoubleInput("Please enter a number:"));
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
                     case 5:
-                        currentTotal = opp.square(total);
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.square(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
                     case 6:
-                        currentTotal = opp.squareRoot(total);
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.squareRoot(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
                     case 7:
-                        currentTotal = opp.exponent(total, Console.getDoubleInput("Please enter a number:"));
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.exponent(total, Console.getDoubleInput("Please enter a number:"));
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
                     case 8:
-                        currentTotal = opp.inverse(total);
-                        display.displayValue(currentTotal);
-                        total = currentTotal;
+                        if(!Display.error) {
+                            currentTotal = opp.inverse(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
                         break;
-
                 }
 
             }
