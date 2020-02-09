@@ -3,18 +3,19 @@ package com.zipcodewilmington.scientificcalculator;
 
 import static com.zipcodewilmington.scientificcalculator.Console.*;
 import static com.zipcodewilmington.scientificcalculator.Basic.*;
-
+import static com.zipcodewilmington.scientificcalculator.Sci.*;
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
     public static void main(String[] args) {
-       String s = Greeting();
+        String s = Greeting();
         if (s.equals("1")) {
             BasicMenu();
 //Basic Menu
             s = Console.getStringInput("Please select an option");
             if (s.equals("1")) {
+                //+
                 double curInt = 0;
                 double pastInt = 0;
 
@@ -24,12 +25,14 @@ public class MainApplication {
                         break;
                     }
                     curInt = Double.parseDouble(s);
+
                     System.out.println(add(pastInt, curInt));
                     pastInt = curInt;
 
                 }
 
             } else if (s.equals("2")) {
+                //-
                 double curInt = 0;
                 double pastInt = 0;
 
@@ -39,11 +42,12 @@ public class MainApplication {
                         break;
                     }
                     curInt = Double.parseDouble(s);
-                    System.out.println(Subtraction(pastInt, curInt));
+                    System.out.println(subtract(pastInt, curInt));
                     pastInt = curInt;
 
                 }
             } else if (s.equals("3")) {
+                //*
                 double curInt = 0;
                 double pastInt = 0;
 
@@ -53,11 +57,12 @@ public class MainApplication {
                         break;
                     }
                     curInt = Double.parseDouble(s);
-                    System.out.println(Multiply(pastInt, curInt));
+                    System.out.println(multiply(pastInt, curInt));
                     pastInt = curInt;
 
                 }
             } else if (s.equals("4")) {
+                //divide
                 double curInt = 0;
                 double pastInt = 0;
 
@@ -67,39 +72,26 @@ public class MainApplication {
                         break;
                     }
                     curInt = Double.parseDouble(s);
-                    System.out.println(Divide(pastInt, curInt));
+                    System.out.println(divide(pastInt, curInt));
                     pastInt = curInt;
 
                 }
             } else if (s.equals("5")) {
+                //square
                 double curInt = 0;
-                double pastInt = 0;
+                s = Console.getStringInput("Please enter a number");
+                curInt = Double.parseDouble(s);
+                System.out.println(square(curInt));
 
-                while (!s.equals("x")) {
-                    s = Console.getStringInput("Please enter a number\nEnter x when done");
-                    if (s.equals("x")) {
-                        break;
-                    }
-                    curInt = Double.parseDouble(s);
-                    System.out.println(Square(pastInt, curInt));
-                    pastInt = curInt;
-
-                }
             } else if (s.equals("6")) {
+                //square root
                 double curInt = 0;
-                double pastInt = 0;
+                s = Console.getStringInput("Please enter a number");
+                curInt = Double.parseDouble(s);
+                System.out.println(squareRoot(curInt));
 
-                while (!s.equals("x")) {
-                    s = Console.getStringInput("Please enter a number\nEnter x when done");
-                    if (s.equals("x")) {
-                        break;
-                    }
-                    curInt = Double.parseDouble(s);
-                    System.out.println(Square_Root(pastInt, curInt));
-                    pastInt = curInt;
-
-                }
             } else if (s.equals("7")) {
+                //exponent
                 double curInt = 0;
                 double pastInt = 0;
 
@@ -109,313 +101,323 @@ public class MainApplication {
                         break;
                     }
                     curInt = Double.parseDouble(s);
-                    System.out.println(Exponent(pastInt, curInt));
+                    System.out.println(exponent(pastInt, curInt));
                     pastInt = curInt;
 
                 }
             } else if (s.equals("8")) {
+                //inverse
                 double curInt = 0;
-                double pastInt = 0;
+                s = Console.getStringInput("Please enter a number");
+                curInt = Double.parseDouble(s);
+                System.out.println(inverse(curInt));
 
-                while (!s.equals("x")) {
-                    s = Console.getStringInput("Please enter a number\nEnter x when done");
-                    if (s.equals("x")) {
-                        break;
-                    }
-                    curInt = Double.parseDouble(s);
-                    System.out.println(Inverse(pastInt, curInt));
-                    pastInt = curInt;
-
-                }
             } else if (s.equals("9")) {
+                //sign change
                 double curInt = 0;
-                double pastInt = 0;
+                s = Console.getStringInput("Please enter a number");
+                curInt = Double.parseDouble(s);
+                System.out.println(signChange(curInt));
 
-                while (!s.equals("x")) {
-                    s = Console.getStringInput("Please enter a number\nEnter x when done");
-                    if (s.equals("x")) {
-                        break;
-                    }
-                    curInt = Double.parseDouble(s);
-                    System.out.println(Pos_Neg(pastInt, curInt));
-                    pastInt = curInt;
-
-                }
-            }
-            else if (s.equals("a")) {
+            } else if (s.equals("a")) {
                 //Clear Error
                 s = "";
-            }
-            else if (s.equals("b")) {
+            } else if (s.equals("b")) {
                 //Clear Display
                 s = "";
-            }
-            else if (s.equals("c")) {
+            } else if ((s.equals("c")) || ((s.equals("d")))) {
                 //Back
                 Greeting();
-            }
-            else if (s.equals("d")) {
-                //Main Menu
-                Greeting();
-            }
-            else if (s.equals("e")) {
+            } else if (s.equals("e")) {
                 //Exit
                 ExitCalc();
-            }
-            else {
+            } else {
                 System.out.println("Please enter a valid response");
             }
             //End Basic
-        }
+        }//end greeting option 1 (basic)
 
 //Start Scientific
         else if (s.equals("2")) {
             SciMenuHome();
             s = Console.getStringInput("Please select an option");
- //Start Rotate Display
-            if(s.equals("1")) {
+            //Start Rotate Display
+            if (s.equals("1")) {
                 RotateDisplay();
                 s = Console.getStringInput("Please select an option");
-                    if(s.equals("1")) {
-                        //bin
-                    }
-                    else if(s.equals("2")){
-                        //oct
-                    }
-                    else if(s.equals("3")){
-                        //dec
-                    }
-                    else if(s.equals("4")){
-                        //hex
-                    }
-                    else if (s.equals("a")) {
-                        //Clear Error
-                        s = "";
-                    }
-                    else if (s.equals("b")) {
-                        //Clear Display
-                        s = "";
-                    }
-                    else if (s.equals("c")) {
-                        //Back
-                        SciMenuHome();
-                    }
-                    else if (s.equals("d")) {
-                        //Main Menu
-                        Greeting();
-                    }
-                    else if (s.equals("e")) {
-                        //Exit
-                        ExitCalc();
-                    }
-                    else {
-                        System.out.println("Please enter a valid response");
-                    }
-            }
-//End Rotate Display
-//Start Memory
-            else if(s.equals("2")) {
-                Memory();
-                s = Console.getStringInput("Please select an option");
-                if(s.equals("1")) {
-                    //M+
-                }
-                else if(s.equals("2")){
-                    //MC
-                }
-                else if(s.equals("3")){
-                    //MRC
-                }
-                else if (s.equals("a")) {
+                if (s.equals("1")) {
+                    //bin
+                    int curInt = 0;
+
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Integer.parseInt(s);
+
+                    System.out.println(switchDisplayModeToBinary(curInt));
+
+                } else if (s.equals("2")) {
+                    //oct
+                    int curInt = 0;
+
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Integer.parseInt(s);
+
+                    System.out.println(switchDisplayModeToOctal(curInt));
+                } else if (s.equals("3")) {
+                    //dec
+                    int curInt = 0;
+
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Integer.parseInt(s);
+
+                    System.out.println(switchDisplayModeToDecimal(curInt));
+                } else if (s.equals("4")) {
+                    //hex
+                    int curInt = 0;
+
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Integer.parseInt(s);
+
+                    System.out.println(switchDisplayModeToHexadecimal(curInt));
+                } else if (s.equals("a")) {
                     //Clear Error
                     s = "";
-                }
-                else if (s.equals("b")) {
+                } else if (s.equals("b")) {
                     //Clear Display
                     s = "";
-                }
-                else if (s.equals("c")) {
+                } else if (s.equals("c")) {
                     //Back
                     SciMenuHome();
-                }
-                else if (s.equals("d")) {
+                } else if (s.equals("d")) {
                     //Main Menu
                     Greeting();
-                }
-                else if (s.equals("e")) {
+                } else if (s.equals("e")) {
                     //Exit
                     ExitCalc();
+                } else {
+                    System.out.println("Please enter a valid response");
                 }
-                else {
+            }
+
+//End Rotate Display
+//Start Memory
+            else if (s.equals("2")) {
+                Memory();
+                s = Console.getStringInput("Please select an option");
+                if (s.equals("1")) {
+                    //M+
+                    float curInt = 0;
+
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+
+                    System.out.println(memPlus(curInt));
+                } else if (s.equals("2")) {
+                    //MC
+                } else if (s.equals("3")) {
+                    //MRC
+                } else if (s.equals("a")) {
+                    //Clear Error
+                    s = "";
+                } else if (s.equals("b")) {
+                    //Clear Display
+                    s = "";
+                } else if (s.equals("c")) {
+                    //Back
+                    SciMenuHome();
+                } else if (s.equals("d")) {
+                    //Main Menu
+                    Greeting();
+                } else if (s.equals("e")) {
+                    //Exit
+                    ExitCalc();
+                } else {
                     System.out.println("Please enter a valid response");
                 }
             }
 //End Memory
 //Start Trig
-            else if(s.equals("3")) {
+            else if (s.equals("3")) {
                 TrigFunctions();
                 s = Console.getStringInput("Please select an option");
-                if(s.equals("1")) {
+                if (s.equals("1")) {
                     //sin
-                }
-                else if(s.equals("2")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(sine(curInt));
+                } else if (s.equals("2")) {
                     //cos
-                }
-                else if(s.equals("3")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(cosine(curInt));
+                } else if (s.equals("3")) {
                     //tan
-                }
-                else if(s.equals("4")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(tangent(curInt));
+                } else if (s.equals("4")) {
                     //arcsin
-                }
-                else if(s.equals("5")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(inverseSine(curInt));
+                } else if (s.equals("5")) {
                     //arccos
-                }
-                else if(s.equals("6")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(inverseCosine(curInt));
+                } else if (s.equals("6")) {
                     //arctan
-                }
-                else if (s.equals("a")) {
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(inverseTangent(curInt));
+                } else if (s.equals("a")) {
                     //Clear Error
                     s = "";
-                }
-                else if (s.equals("b")) {
+                } else if (s.equals("b")) {
                     //Clear Display
                     s = "";
-                }
-                else if (s.equals("c")) {
+                } else if (s.equals("c")) {
                     //Back
                     SciMenuHome();
-                }
-                else if (s.equals("d")) {
+                } else if (s.equals("d")) {
                     //Main Menu
                     Greeting();
-                }
-                else if (s.equals("e")) {
+                } else if (s.equals("e")) {
                     //Exit
                     ExitCalc();
-                }
-                else {
+                } else {
                     System.out.println("Please enter a valid response");
                 }
             }
 //End Trig
 //Start Mode Change
-            else if(s.equals("4")) {
+            else if (s.equals("4")) {
                 ModeChange();
                 s = Console.getStringInput("Please select an option");
-                if(s.equals("1")) {
+                if (s.equals("1")) {
                     //deg
-                }
-                else if(s.equals("2")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(inverseTangent(curInt));
+                } else if (s.equals("2")) {
                     //rad
-                }
-                else if (s.equals("a")) {
+                } else if (s.equals("a")) {
                     //Clear Error
                     s = "";
-                }
-                else if (s.equals("b")) {
+                } else if (s.equals("b")) {
                     //Clear Display
                     s = "";
-                }
-                else if (s.equals("c")) {
+                } else if (s.equals("c")) {
                     //Back
                     SciMenuHome();
-                }
-                else if (s.equals("d")) {
+                } else if (s.equals("d")) {
                     //Main Menu
                     Greeting();
-                }
-                else if (s.equals("e")) {
+                } else if (s.equals("e")) {
                     //Exit
                     ExitCalc();
-                }
-                else {
+                } else {
                     System.out.println("Please enter a valid response");
                 }
             }
 //End Mode Change
 //Start Log Function
-            else if(s.equals("5")) {
+            else if (s.equals("5")) {
                 LogFunctions();
                 s = Console.getStringInput("Please select an option");
-                if(s.equals("1")) {
+                if (s.equals("1")) {
                     //log
-                }
-                else if(s.equals("2")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(logarithm(curInt));
+                } else if (s.equals("2")) {
                     //inverse log
-                }
-                else if(s.equals("3")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(inverseLogarithm(curInt));
+                } else if (s.equals("3")) {
                     //ln
-                }
-                else if(s.equals("4")){
+                    float curInt = 0;
+                    s = Console.getStringInput("Please enter a number");
+                    curInt = Float.parseFloat(s);
+                    System.out.println(naturalLogarithm(curInt));
+                } else if (s.equals("4")) {
                     //e^x
-                }
-                else if (s.equals("a")) {
+                } else if (s.equals("a")) {
                     //Clear Error
                     s = "";
-                }
-                else if (s.equals("b")) {
+                } else if (s.equals("b")) {
                     //Clear Display
                     s = "";
-                }
-                else if (s.equals("c")) {
+                } else if (s.equals("c")) {
                     //Back
                     SciMenuHome();
-                }
-                else if (s.equals("d")) {
+                } else if (s.equals("d")) {
                     //Main Menu
                     Greeting();
-                }
-                else if (s.equals("e")) {
+                } else if (s.equals("e")) {
                     //Exit
                     ExitCalc();
-                }
-                else {
+                } else {
                     System.out.println("Please enter a valid response");
                 }
             }
 //End Log Function
 //Start Factorial Function
-            else if(s.equals("6")) {
+            else if (s.equals("6")) {
                 //Factorial Functions
+                int curInt = 0;
+                s = Console.getStringInput("Please enter a number");
+                curInt = Integer.parseInt(s);
+                System.out.println(factorial(curInt));
             }
 //End Factorial Function
             else if (s.equals("a")) {
                 //Clear Error
                 s = "";
-            }
-            else if (s.equals("b")) {
+            } else if (s.equals("b")) {
                 //Clear Display
                 s = "";
-            }
-            else if (s.equals("c")) {
+            } else if (s.equals("c")) {
                 //Back
                 Greeting();
-            }
-            else if (s.equals("d")) {
+            } else if (s.equals("d")) {
                 //Main Menu
                 Greeting();
-            }
-            else if (s.equals("e")) {
+            } else if (s.equals("e")) {
                 //Exit
                 ExitCalc();
-            }
-            else {
+            } else {
                 System.out.println("Please enter a valid response");
             }
         }
+
 //End Scientific
+
         else if (s.equals("3")) {
             System.exit(0);
-        }
-        else {
+        } else {
             System.out.println("Please enter a valid response");
         }
+
         Greeting();
+
         s = Console.getStringInput("Please select an option");
-    }
+
+    } //void main
+} //main app
 
 
-}
+
+
 
 
 
