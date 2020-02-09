@@ -136,63 +136,73 @@ public class TestMainApplication {
     @Test
     public void testSine1(){
         Sci calculator = new Sci();
-        Assert.assertEquals(1, calculator.sine(Math.PI), 0);
+        Assert.assertEquals(1, calculator.sine(Math.PI/2), 0);
     }
 
     @Test
     public void testTestSine2(){
         Sci calculator = new Sci();
-        Assert.assertEquals(1, calculator.sine(45), 0);
+        Assert.assertEquals(-1, calculator.sine(Math.PI*3/2), 0);
     }
 
     @Test
     public void testCosine1(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(0, calculator.cosine(Math.PI/2), 0);
     }
 
     @Test
     public void testCosine2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(-1, calculator.cosine(Math.PI), 0);
     }
 
     @Test
     public void testTangent1(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(0, calculator.tangent(Math.PI), 0);
     }
 
     @Test
     public void testTangent2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(0, calculator.tangent(Math.PI*2), 0);
     }
 
     @Test
     public void testArcsine1(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(Math.PI/2, calculator.inverseSine(1), 0);
     }
 
     @Test
     public void testArcsine2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(Math.PI/2, calculator.inverseSine(1), 0);
     }
 
     @Test
     public void testArccosine1(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(0, calculator.inverseCosine(1), 0);
     }
 
     @Test
     public void testArccosine2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(0, calculator.inverseCosine(1), 0);
     }
 
     @Test
     public void testArctangent1(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(Math.PI/4, calculator.inverseTangent(1), 0);
     }
 
     @Test
     public void testArctangent2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(Math.PI/4, calculator.inverseTangent(1), 0);
     }
 
     @Test
@@ -210,33 +220,37 @@ public class TestMainApplication {
     @Test
     public void testInverseLog1(){
         Sci calculator = new Sci();
-        Assert.assertEquals(2, calculator.inverseLogarithm(100), 0.01);
+        Assert.assertEquals(1000, calculator.inverseLogarithm(10, 3), 0.01);
     }
 
     @Test
     public void testInverseLog2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(8, calculator.inverseLogarithm(2, 3), 0.01);
     }
 
     @Test
     public void testNaturalLog1(){
         Sci calculator = new Sci();
-        Assert.assertEquals(1, calculator.naturalLogarithm(5), 0.01);
+        Assert.assertEquals(1, calculator.naturalLogarithm(Math.E), 0.01);
     }
 
     @Test
     public void testNaturalLog2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(0, calculator.naturalLogarithm(1), 0.01);
     }
 
     @Test
     public void testEPower1(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(1, calculator.inverseNaturalLogarithm(Math.E, 0), 0.01);
     }
 
     @Test
     public void testEPower2(){
-
+        Sci calculator = new Sci();
+        Assert.assertEquals(Math.E, calculator.inverseNaturalLogarithm(Math.E, 1), 0.01);
     }
 
 }
