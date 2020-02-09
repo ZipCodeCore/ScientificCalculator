@@ -75,7 +75,7 @@ public class DisplayTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+/*   @Test
     public void TestInvSign() {
         Double expected = -47.6;
         Display TestDisplay = new Display();
@@ -84,6 +84,16 @@ public class DisplayTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void TestInvSignAgain() {
+        Double expected = 105.9;
+        Display TestDisplay = new Display();
+        TestDisplay.setDisplay(-105.9);
+        Double actual = TestDisplay.invSign();
+
+        assertEquals(expected, actual);
+    } */
 
     @Test
     public void TestAbsoluteValueOfTen()

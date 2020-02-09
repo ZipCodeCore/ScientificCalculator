@@ -76,13 +76,12 @@ public class Display {
         if(mode == Modes.BINARY)
         {
             baseLine = String.format("%-46s", "BIN");
-            valueLine = Integer.toBinaryString(currentValue.intValue()) + " ";currentValue = Double.parseDouble(valueLine);
+            valueLine = Integer.toBinaryString(currentValue.intValue()) + " ";
         }
         else if(mode == Modes.OCTAL)
         {
             baseLine = String.format("%-46s", "OCTAL");
             valueLine = Integer.toOctalString(currentValue.intValue()) + " ";
-            currentValue = Double.parseDouble(valueLine);
         }
         else if(mode == Modes.DEC)
         {
@@ -99,7 +98,6 @@ public class Display {
         {
             baseLine = String.format("%-46s", "HEX");
             valueLine = Integer.toHexString(currentValue.intValue()) + " ";
-            currentValue = Double.parseDouble(valueLine);
         }
 
         output = displayBox.draw(radianLine, valueLine, baseLine);
@@ -146,9 +144,9 @@ public class Display {
         // Send a command to input to remove last operation and last value input
     }
 
-    public Double invSign()
+    public void invSign()
     {
-        return currentValue * -1.0;
+        currentValue *= -1.0;
     }
 
     public Double absoluteValue()
