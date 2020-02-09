@@ -24,7 +24,7 @@ public class Display {
 //        total = nextInput;
 //        System.out.println(total);
     }
-    public void displayErr() {
+    public static void displayErr() {
         //if math calculations don't work, display 'Err')
         error = true;
         System.out.println("Err. Clear screen.");
