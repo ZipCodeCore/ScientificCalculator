@@ -175,7 +175,7 @@ public class Console {
         } else if (s.equals("9")) {
             //sign change
             double curInt = 0;
-            s = Console.getStringInput("Please enter a number");
+            s = Console.getStringInput("Please enter a positive or negative number");
             curInt = Double.parseDouble(s);
             System.out.println(signChange(curInt));
             BasicMenu();
@@ -541,8 +541,8 @@ public class Console {
 
     }
     public static void LogFunctions(){
-        System.out.println("Log - 1");
-        System.out.println("Inverse Log - 2");
+        System.out.println("Log10 - 1");
+        System.out.println("10^x - 2");
         System.out.println("Ln - 3");
         System.out.println("e^x - 4");
         ForAllMenus();
