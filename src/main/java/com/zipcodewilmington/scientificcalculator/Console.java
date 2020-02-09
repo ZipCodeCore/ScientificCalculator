@@ -58,7 +58,7 @@ public class Console {
         String s = Console.getStringInput("Please select an option");
         if (s.equals("1")) {
             //+
-            double curInt = 0;
+            double curInt;
             double pastInt = 0;
 
             while (!s.equals("x")) {
@@ -81,7 +81,7 @@ public class Console {
 
         else if (s.equals("2")) {
             //-
-            double curInt = 0;
+            double curInt;
             double pastInt = 0;
 
             while (!s.equals("x")) {
@@ -103,7 +103,7 @@ public class Console {
         }
         else if (s.equals("3")) {
             //*
-            double curInt = 0;
+            double curInt;
             double pastInt = 0;
 
             while (!s.equals("x")) {
@@ -125,7 +125,7 @@ public class Console {
         }
         else if (s.equals("4")) {
             //divide
-            double curInt = 0;
+            double curInt;
             double pastInt = 0;
 
             while (!s.equals("x")) {
@@ -147,7 +147,7 @@ public class Console {
         }
         else if (s.equals("5")) {
             //square
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(square(curInt));
@@ -155,7 +155,7 @@ public class Console {
         }
         else if (s.equals("6")) {
             //square root
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(squareRoot(curInt));
@@ -163,7 +163,7 @@ public class Console {
         }
         else if (s.equals("7")) {
             //exponent
-            double curInt = 0;
+            double curInt;
             double pastInt = 0;
 
             while (!s.equals("x")) {
@@ -187,14 +187,14 @@ public class Console {
         }
         else if (s.equals("8")) {
             //inverse
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(inverse(curInt));
 
         } else if (s.equals("9")) {
             //sign change
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a positive or negative number");
             curInt = Double.parseDouble(s);
             System.out.println(signChange(curInt));
@@ -252,7 +252,7 @@ public class Console {
         }
         else if (s.equals("6")) {
             //Factorial Functions
-            int curInt = 0;
+            int curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Integer.parseInt(s);
             System.out.println(factorial(curInt));
@@ -373,7 +373,7 @@ public class Console {
         String s = Console.getStringInput("Please select an option");
         if (s.equals("1")) {
             //M+
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(memPlus(curInt));
@@ -444,7 +444,7 @@ public class Console {
         String s = Console.getStringInput("Please select an option");
         if (s.equals("1")) {
             //sin
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(sine(curInt));
@@ -453,7 +453,7 @@ public class Console {
         }
         else if (s.equals("2")) {
             //cos
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(cosine(curInt));
@@ -461,7 +461,7 @@ public class Console {
         }
         else if (s.equals("3")) {
             //tan
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(tangent(curInt));
@@ -469,7 +469,7 @@ public class Console {
         }
         else if (s.equals("4")) {
             //arcsin
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(inverseSine(curInt));
@@ -477,7 +477,7 @@ public class Console {
         }
         else if (s.equals("5")) {
             //arccos
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(inverseCosine(curInt));
@@ -485,7 +485,7 @@ public class Console {
         }
         else if (s.equals("6")) {
             //arctan
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(inverseTangent(curInt));
@@ -525,14 +525,14 @@ public class Console {
         String s = Console.getStringInput("Please select an option");
         if (s.equals("1")) {
             //deg
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             ModeChange();
         }
         else if (s.equals("2")) {
             //rad
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             ModeChange();
@@ -577,7 +577,7 @@ public class Console {
         String s = Console.getStringInput("Please select an option");
         if (s.equals("1")) {
             //log
-            float curInt = 0;
+            float curInt;
 
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
@@ -586,7 +586,7 @@ public class Console {
         }
         else if (s.equals("2")) {
             //inverse log
-            float curInt = 0;
+            float curInt;
             float pastInt = 0;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
@@ -603,7 +603,7 @@ public class Console {
         }
         else if (s.equals("3")) {
             //ln
-            float curInt = 0;
+            float curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Float.parseFloat(s);
             System.out.println(naturalLogarithm(curInt));
@@ -665,7 +665,7 @@ public class Console {
         String s = Console.getStringInput("Please select an option");
         if (s.equals("1")) {
             //F to C
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(switchFtoC(curInt));
@@ -673,7 +673,7 @@ public class Console {
         }
         else if (s.equals("2")) {
             //C to F
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(switchCtoF(curInt));
@@ -681,7 +681,7 @@ public class Console {
         }
         else if (s.equals("3")) {
             //F to K
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(switchFtoK(curInt));
@@ -689,7 +689,7 @@ public class Console {
         }
         else if (s.equals("4")) {
             //K to F
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(switchKtoF(curInt));
@@ -697,7 +697,7 @@ public class Console {
         }
         else if (s.equals("5")) {
             //C to K
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(switchCtoK(curInt));
@@ -705,7 +705,7 @@ public class Console {
         }
         else if (s.equals("6")) {
             //K to C
-            double curInt = 0;
+            double curInt;
             s = Console.getStringInput("Please enter a number");
             curInt = Double.parseDouble(s);
             System.out.println(switchKtoC(curInt));
