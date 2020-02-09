@@ -18,7 +18,10 @@ public class BoxMaker {
 
     public void setWidth(int newWidth)
     {
-        width = newWidth;
+        if(newWidth > 0 && newWidth < 151)
+        {
+            width = newWidth;
+        }
     }
 
     public String draw(String ... input) {

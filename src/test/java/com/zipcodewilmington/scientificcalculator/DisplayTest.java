@@ -184,14 +184,36 @@ public class DisplayTest {
     }
 
     @Test
-    public void TestNullDisplaysError()
+    public void TestClearVoidsError()
     {
+        String expected =
+                        "╔════════════════════════════════════════════════╗\n" +
+                        "║                                                ║\n" +
+                        "║                                              0 ║\n" +
+                        "║                                                ║\n" +
+                        "╚════════════════════════════════════════════════╝\n";
+        Display TestDisplay = new Display();
+        TestDisplay.setDisplay(6.0/0.0);
+        TestDisplay.clear();
+        String actual = TestDisplay.update();
 
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void TestClearVoidsError()
+    public void TestMaxDisplaySize()
     {
+        String expected =
+                        "╔════════════════════════════════════════════════╗\n" +
+                        "║                                                ║\n" +
+                        "║  100000000000000000000000000000000000000000000 ║\n" +
+                        "║                                                ║\n" +
+                        "╚════════════════════════════════════════════════╝\n";
+        Display TestDisplay = new Display();
+        TestDisplay.setDisplay(140737488355328.0);
+        TestDisplay.setMode(Display.Modes.BINARY);
+        String actual = TestDisplay.update();
 
+        assertEquals(expected, actual);
     }
 }

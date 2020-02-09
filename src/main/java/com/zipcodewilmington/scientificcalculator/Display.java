@@ -19,7 +19,6 @@ public class Display {
         displayWidth = 50;
         displayBox = new BoxMaker(displayWidth);
         isRadians = false;
-//        currentOperation = "";
         error = false;
     }
 
@@ -129,6 +128,9 @@ public class Display {
                 setMode(Modes.DEC);
                 break;
         }
+
+        // Considering updating currentVal here, but makes math more difficult
+        // since Math assumes decimal math.
     }
 
     public Modes getMode()
@@ -138,7 +140,9 @@ public class Display {
 
     public void clear() {
         currentValue = 0.0;
+        error = false;
         update();
+        // Send a command to input to remove last operation and last value input
     }
 
     public Double invSign()
