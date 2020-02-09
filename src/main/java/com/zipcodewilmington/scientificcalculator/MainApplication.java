@@ -5,20 +5,17 @@ import sun.util.calendar.CalendarUtils;
 
 public class MainApplication {
     public static void main(String[] args) {
-        /*//This allows us to use all methods from the 'Calculator.java' class.
-
-        System.out.println("Please choose 'basic' or 'scientific' calculator: ");
-        //the method below calls the 'getInputFromUser' method on the 'calc' object created on line 9.
-        Double input = calc.getInputFromUser();
-        //the below line calls the 'checkBasicsOrScience' method and stores the user input as 'newInput'
-        //because of the parameter that exists in the method.
-        calc.checkBasicOrScience(input);*/
+        Double currentValue = 0.0;
         boolean t = true;
         while (t) {
 
             Calculator calc = new Calculator();
             User user = new User(0.);
             ScientificFunctions func = new ScientificFunctions();
+            // The lines below this were posibbly going to be used for getting the current value. I am still working on
+            // the idea as a whole.
+            //Double currentValue = calc.getAns();
+            //System.out.println("Current Value: " + currentValue);
 
 
             int y = 2;
@@ -57,9 +54,10 @@ public class MainApplication {
                                 "16) tan\n" +
                                 "17) inverseCosine\n" +
                                 "18) inverseTangent\n" +
-                                "19) radian\n" +
-                                "20) factorial\n" +
-                                "21) fibonacci\n");
+                                "19) inverseSine\n" +
+                                "20) radian\n" +
+                                "21) factorial\n" +
+                                "22) fibonacci\n");
 
                         y = 1;
                     } else {
@@ -70,18 +68,8 @@ public class MainApplication {
                 }
             } while (y == 2);
 
-//This is to error handle 1-4 ===============
-/*            int test = 2;
-            do {
-                try {
-                    Double operator = calc.getInputFromUser();
-                    test = 1;
-                } catch (Exception e) {
-                    System.out.println("Sorry, bad input");
-                }
-            } while (test == 2);*/
-
-// end process ===================================
+/*We need to also error handle the options to pick the menus. We decided that these would not be done now and we
+    would save that for the absolute last issue. */
             int test = 2;
             do {
                 try {
@@ -371,7 +359,7 @@ public class MainApplication {
                                 System.out.println("Sorry, bad input");
                             }
                         } while (x == 2);
-                        Double ans = ScientificFunctions.radian(calc.getFirstNumber());
+                        Double ans = ScientificFunctions.inverseSine(calc.getFirstNumber());
                         calc.setAns(ans);
                     } else if (operator.equals(20.)) {
                         int x = 2;
@@ -385,9 +373,23 @@ public class MainApplication {
                                 System.out.println("Sorry, bad input");
                             }
                         } while (x == 2);
-                        Double ans = ScientificFunctions.factorial(calc.getFirstNumber());
+                        Double ans = ScientificFunctions.radian(calc.getFirstNumber());
                         calc.setAns(ans);
                     } else if (operator.equals(21.)) {
+                        int x = 2;
+                        do {
+                            try {
+                                System.out.println("Enter your number");
+                                Double firstNum = calc.getInputFromUser();
+                                calc.setFirstInput(firstNum);
+                                x = 1;
+                            } catch (Exception e) {
+                                System.out.println("Sorry, bad input");
+                            }
+                        } while (x == 2);
+                        Double ans = ScientificFunctions.factorial(calc.getFirstNumber());
+                        calc.setAns(ans);
+                    } else if (operator.equals(22.)) {
                         String ans = ScientificFunctions.fibonacci(calc.getFirstNumber());
                     } else {
                         //System.out.println("Error");
@@ -397,9 +399,9 @@ public class MainApplication {
                     System.out.println("Sorry, bad input. Please enter a valid choice(number): ");
                 }
             } while (test == 2);
+
+
             System.out.println("Your answer is " + calc.getAns() + "");
-
-
             System.out.println("If you wish to convert your number to hexadecimal(1), Octal(2), or Binary(3), " +
                     "please enter the corresponding number. You may also press 0 to reset the calculator.");
             int q = 2;
@@ -417,8 +419,8 @@ public class MainApplication {
                     else if (temp.equals(3.)) {
                         System.out.println("Your Binary answer for " + calc.getAns() + " is "
                                 + ScientificFunctions.Binary(calc.getAns().intValue()));
-                    } else {
-
+                    } else if (temp.equals(0.)){
+                        Runtime.getRuntime().exec("clear");
                     } q++;
                 } catch (Exception e) {
                     System.out.println("Sorry, bad input. Please enter a valid choice(number): ");
