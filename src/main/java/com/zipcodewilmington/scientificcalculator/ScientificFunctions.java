@@ -165,4 +165,13 @@ public class ScientificFunctions {
         return str;
     }
 
+    public static String Hexadecimal(Integer input) {
+        return Integer.toHexString(input);
+    }
+    public static String Octal(Integer input) {
+        return Integer.toOctalString(input);
+    }
+    public static String Binary(Integer input) {
+        return Integer.toBinaryString(input);
+    }
 }
