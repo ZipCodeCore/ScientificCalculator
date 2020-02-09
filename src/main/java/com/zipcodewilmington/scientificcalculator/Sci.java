@@ -33,9 +33,9 @@ public class Sci {
     }
 
 
-    public static String memPlus(float a){
-        float memNum = a;
-        String converted = Float.toString(memNum);
+    public static String memPlus(double a){
+        double memNum = a;
+        String converted = Double.toString(memNum);
         return converted;
         }
         public void memClear(){                                         //needs work
@@ -43,56 +43,56 @@ public class Sci {
 
 
         }
-        public float recall(float x){
+        public double recall(double x){
             return x;
             //return memNum;
         }
-    public static float sine(float a){
-        float sin = (float) Math.sin(a);
+    public static double sine(double a){
+        double sin = (double) Math.sin(a);
         return sin;
     }
-    public static float cosine(float a){
-        float cos = (float) Math.cos(a);
+    public static double cosine(double a){
+        double cos = (double) Math.cos(a);
         return cos;
     }
-    public static float tangent(float a){
-        float tan = (float) Math.tan(a);
+    public static double tangent(double a){
+        double tan = (double) Math.tan(a);
         return tan;
     }
-    public static float inverseSine(float a){
-        float invSin = (float) Math.asin(a);
+    public static double inverseSine(double a){
+        double invSin = (double) Math.asin(a);
         return invSin;
     }
-    public static float inverseCosine(float a){
-        float invCos = (float) Math.acos(a);
+    public static double inverseCosine(double a){
+        double invCos = (double) Math.acos(a);
         return invCos;
     }
-    public static float inverseTangent(float a){
-        float invTan = (float) Math.atan(a);
+    public static double inverseTangent(double a){
+        double invTan = (double) Math.atan(a);
         return invTan;
     }
 
-    public static float switchUnitsModeRotate(float a){
+    public static double switchUnitsModeRotate(double a){
         String unitsMode = "Radians";
-        float converted = 0;
+        double converted = 0;
         if (unitsMode.equals("Radians")) {
             unitsMode = "Degrees";
-            converted = (float) Math.toDegrees(a);
+            converted = (double) Math.toDegrees(a);
         } else {
             unitsMode = "Radians";
-            converted = (float) Math.toRadians(a);
+            converted = (double) Math.toRadians(a);
         }
         return converted;
         //degrees,radians
     }
 
-    public float switchUnitsModeString(String unitsModeInput, float a){
-        float converted = 0;
+    public double switchUnitsModeString(String unitsModeInput, double a){
+        double converted = 0;
         if (unitsModeInput.equals("Degrees")){
-            converted = (float) Math.toDegrees(a);
+            converted = (double) Math.toDegrees(a);
             return converted;
         } else if (unitsModeInput.equals("Radians")){
-            converted = (float) Math.toRadians(a);
+            converted = (double) Math.toRadians(a);
             return converted;
         } else {
             System.out.println("Invalid unit type, try again.");
@@ -100,20 +100,20 @@ public class Sci {
         }
 
     }
-    public static float logarithm(float a){
-        float log = (float) Math.log10(a);
+    public static double logarithm(double a){
+        double log = (double) Math.log10(a);
         return log;
     }
-    public static float inverseLogarithm(float a){
-        float invLog = (float) (1 / Math.log10(a));
+    public static double inverseLogarithm(double a, double b){
+        double invLog = (double) (Math.pow(a, b));
         return invLog;
     }
-    public static float naturalLogarithm(float a){
-        float natLog = (float) Math.log(a);
+    public static double naturalLogarithm(double a){
+        double natLog = (double) Math.log(a);
         return natLog;
     }
-    public float inverseNaturalLogarithm(float a){
-        float invNatLog = (float) (1/Math.log(a));
+    public double inverseNaturalLogarithm(double a, double b){
+        double invNatLog = (double) (Math.pow(a, b));
         return invNatLog;
     }
     public static Integer factorial(Integer a){
