@@ -70,10 +70,32 @@ public class Console {
             return 5;
         }else if(nextOperand.equalsIgnoreCase("sqrt")){
             return 6;
-        }else if(nextOperand.equalsIgnoreCase("x^x")){
+        }else if(nextOperand.equalsIgnoreCase("x^n")){
             return 7;
         }else if(nextOperand.equalsIgnoreCase("1/x")){
             return 8;
+        }else if(nextOperand.equalsIgnoreCase("+/-")){
+            return 9;
+        }else if(nextOperand.equalsIgnoreCase("sin")){
+            return 10;
+        }else if(nextOperand.equalsIgnoreCase("cos")){
+            return 11;
+        }else if(nextOperand.equalsIgnoreCase("tan")){
+            return 12;
+        }else if(nextOperand.equalsIgnoreCase("invSin")){
+            return 13;
+        }else if(nextOperand.equalsIgnoreCase("invCos")){
+            return 14;
+        }else if(nextOperand.equalsIgnoreCase("invTan")){
+            return 15;
+        }else if(nextOperand.equalsIgnoreCase("log")){
+            return 16;
+        }else if(nextOperand.equalsIgnoreCase("invLog")){
+            return 17;
+        }else if(nextOperand.equalsIgnoreCase("Ln")){
+            return 18;
+        }else if(nextOperand.equalsIgnoreCase("invLn")){
+            return 19;
         }else if(nextOperand.equalsIgnoreCase("c")){
             return 0;
         }else if(nextOperand.equalsIgnoreCase("off")){

@@ -54,7 +54,7 @@ public class ScientificCalc {
     }
 
     // Inverse Natural Log
-     public double inverseNaturalLog (double num1) {
+    public double inverseNaturalLog (double num1) {
         return Math.pow(10, num1);
     }
 
@@ -135,6 +135,6 @@ public class ScientificCalc {
    // Recall Memory
    public double memoryRecall(){
        return this.a;
-   }
+   }*/
 
 }

@@ -14,7 +14,7 @@ public class MainApplication {
         int operand;
         Display display = new Display();
         Operations opp = new Operations();
-        double firstDouble;
+        ScientificCalc sci = new ScientificCalc();
         boolean on = true;
 
         Console.println("Welcome to my calculator!");
@@ -101,6 +101,105 @@ public class MainApplication {
                     case 8:
                         if(!Display.error) {
                             currentTotal = opp.inverse(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 9:
+                        if(!Display.error) {
+                            currentTotal = opp.switchSign(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 10:
+                        if(!Display.error) {
+                            currentTotal = sci.sin(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 11:
+                        if(!Display.error) {
+                            currentTotal = sci.cos(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 12:
+                        if(!Display.error) {
+                            currentTotal = sci.tan(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 13:
+                        if(!Display.error) {
+                            currentTotal = sci.inverseSin(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 14:
+                        if(!Display.error) {
+                            currentTotal = sci.inverseCos(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 15:
+                        if(!Display.error) {
+                            currentTotal = sci.inverseTan(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 16:
+                        if(!Display.error) {
+                            currentTotal = sci.logarithm(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 17:
+                        if(!Display.error) {
+                            currentTotal = sci.inverseLog(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 18:
+                        if(!Display.error) {
+                            currentTotal = sci.naturalLog(total);
+                            display.displayValue(currentTotal);
+                            total = currentTotal;
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 19:
+                        if(!Display.error) {
+                            currentTotal = sci.inverseNaturalLog(total);
                             display.displayValue(currentTotal);
                             total = currentTotal;
                         }else{
