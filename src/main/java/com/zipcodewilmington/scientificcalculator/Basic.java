@@ -1,44 +1,44 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Basic{
-    public float add(float a, float b){
-        float sum = a+b;
+    public static double add(double a, double b){
+        double sum = a+b;
         return sum;
     }
-    public float subtract(float a, float b){
-        float difference = a-b;
+    public static double subtract(double a, double b){
+        double difference = a-b;
         return difference;
 
     }
-    public float multiply(float a, float b){
-        float product = a*b;
+    public static double multiply(double a, double b){
+        double product = a*b;
         return product;
     }
 
-    public float divide(float a, float b){
-        float quotient = a/b;
+    public static double divide(double a, double b){
+        double quotient = a/b;
         return quotient;
     }
 
-    public float square(float a){
-        float squareResult = (float) Math.pow(a,2);
+    public static double square(double a){
+        double squareResult = (double) Math.pow(a,2);
         return squareResult;
 
     }
-    public float squareRoot(float a){
-        float squareRootResult = (float) Math.sqrt(a);
+    public static double squareRoot(double a){
+        double squareRootResult = (double) Math.sqrt(a);
         return squareRootResult;
     }
-    public float exponent(float a, float b){
-        float exponentResult = (float) Math.pow(a,b);
+    public static double exponent(double a, double b){
+        double exponentResult = (double) Math.pow(a,b);
         return exponentResult;
     }
-    public float inverse(float a){
-        float inverseResult = 1/a;
+    public static double inverse(double a){
+        double inverseResult = 1/a;
         return inverseResult;
     }
-    public float signChange(float a){
-        float opposite = 0;
+    public static double signChange(double a){
+        double opposite = 0;
         if (a > 0){
             opposite = a - (2 * Math.abs(a));
         } else if(a < 0){
