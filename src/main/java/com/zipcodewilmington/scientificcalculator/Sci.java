@@ -32,19 +32,27 @@ public class Sci {
 
     }
 
-
-    public static String memPlus(double a){
-        double memNum = a;
+    static double memNum;
+    static String memoryStatus = "not stored";
+    public void memStatus(){
+        if (memNum == 0 || memNum > 0 || memNum < 0){
+            memoryStatus = "stored";
+        } else {
+            memoryStatus = "not stored";
+        }
+    }
+    public static String memPlus(double a) {
+        memNum = a;
         String converted = Double.toString(memNum);
         return converted;
+    }
+
+    public void memClear(){
+        memoryStatus = "not stored";
+
         }
-        public void memClear(){                                         //needs work
-
-
-
-        }
-        public double recall(double x){
-            return x;
+        public double recall(){
+            return memNum;
             //return memNum;
         }
     public static double sine(double a){
@@ -126,4 +134,3 @@ public class Sci {
         return fact;
     }
 }
-
