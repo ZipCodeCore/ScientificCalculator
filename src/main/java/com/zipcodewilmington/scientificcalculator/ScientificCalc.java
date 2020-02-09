@@ -45,7 +45,7 @@ public class ScientificCalc {
 
     // Inverse Logarithm
     public double inverseLog (double num1) {
-        return exp(num1);
+        return pow(10,num1);
     }
 
     // Natural Log
@@ -55,7 +55,7 @@ public class ScientificCalc {
 
     // Inverse Natural Log
     public double inverseNaturalLog (double num1) {
-        return Math.pow(10, num1);
+        return exp(num1);
     }
 
     // Factorial
@@ -69,10 +69,24 @@ public class ScientificCalc {
         return sum;
     }
 
-    // Degrees to Radians
+    // Monthly Interest Calc
+    public double yearlyInterest (double principal, double interestRate) {
+        double amount = principal * (1 + (interestRate/100)) - principal;
+        return amount;
+    }
 
-    public static double radian(double num1){
-        return toRadians(num1);
+    // First input is take in a principal amount and then the rate is a percentage
+    // IsPrime
+    public boolean isPrime(double num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (double i = 2; i <= sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // Radians to Degrees
