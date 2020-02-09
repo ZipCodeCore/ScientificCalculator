@@ -15,7 +15,10 @@ public class Operation {
         if ("inv".equals(op) || "bin".equals(op) || "oct".equals(op) || "dec".equals(op) || "hex".equals(op) ||
                 "mode".equals(op) || "sq".equals(op) || "sqrt".equals(op) || "sin".equals(op) || "cos".equals(op) ||
                 "tan".equals(op) || "invsin".equals(op) || "invcos".equals(op) || "invtan".equals(op) || "log".equals(op) ||
-                "nlog".equals(op) || "invlog".equals(op) || "invnlog".equals(op) || "!".equals(op) || "fib".equals(op)) {
+                "nlog".equals(op) || "invlog".equals(op) || "invnlog".equals(op) || "!".equals(op) || "fib".equals(op) ||
+                "ftm".equalsIgnoreCase(op) || "mtf".equalsIgnoreCase(op) || "ptk".equalsIgnoreCase(op) ||
+                "ktp".equalsIgnoreCase(op) || "ftc".equalsIgnoreCase(op) || "ctf".equalsIgnoreCase(op))
+        {
             return true;
         } else {
                 return false;
@@ -24,8 +27,8 @@ public class Operation {
 
     public static Boolean isBinary(String op)
     {
-        if("+".equalsIgnoreCase(op) || "-".equalsIgnoreCase(op) || "*".equalsIgnoreCase(op) ||
-                "/".equalsIgnoreCase(op) || "exp".equalsIgnoreCase(op)) {
+        if("+".equals(op) || "-".equals(op) || "*".equals(op) ||
+                "/".equals(op) || "exp".equals(op)) {
             return true;
         }
         else {

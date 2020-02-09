@@ -108,9 +108,8 @@ public class Prompt {
             {
                 display.setDisplay(BasicMath.multiplication(display.getDisplay(), secondValue));
             } else if(s.equalsIgnoreCase("/"))
-            {
                 display.setDisplay(BasicMath.division(display.getDisplay(), secondValue));
-            } else if(s.equalsIgnoreCase("exp"))
+            else if(s.equalsIgnoreCase("exp"))
             {
                 display.setDisplay(BasicMath.exponent(display.getDisplay(), secondValue));
             }
