@@ -124,8 +124,8 @@ public class ScientificTests {
     // Inverse Log
     @Test
     public void inverseLog () {
-        double expected = 1;
-        double actual = scientific.inverseLog(0);
+        double expected = 100;
+        double actual = scientific.inverseLog(2);
         assertEquals(expected, actual, 0.01);
     }
 
@@ -138,7 +138,12 @@ public class ScientificTests {
      }
 
      // Inverse Natural Log
-
+    @Test
+    public void inverseNaturalLog() {
+        double expected = 1;
+        double actual = scientific.inverseNaturalLog(0);
+        assertEquals(expected, actual, 0.01);
+    }
 
      // Factorial
      @Test
@@ -147,5 +152,13 @@ public class ScientificTests {
         double actual = scientific.factorial(5);
         assertEquals(expected, actual, 0.01);
      }
+
+     // Simple Yearly Interest Calc
+    @Test
+    public void yearlyInterest () {
+        double expected = 50;
+        double actual = scientific.yearlyInterest(1000, 5);
+        assertEquals(expected, actual, 0.01);
+    }
 
 }
