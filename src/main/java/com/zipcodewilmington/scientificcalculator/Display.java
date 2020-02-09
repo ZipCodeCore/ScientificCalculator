@@ -7,18 +7,18 @@ public class Display {
     private BoxMaker displayBox;
     private Double currentValue;
     private String currentOperation;
-    private Boolean error;
     public enum Modes { BINARY, OCTAL, DEC, HEX }
     private Modes mode;
+    private Boolean isRadians;
 
     public Display()
     {
         currentValue = 0.0;
         mode = Modes.DEC;
-        error = false;
         displayWidth = 50;
-        displayBox = new BoxMaker();
-        // currentOperation
+        displayBox = new BoxMaker(displayWidth);
+        isRadians = false;
+        currentOperation = "";
     }
 
     public void setDisplay(Double inputValue)
@@ -31,41 +31,70 @@ public class Display {
         return currentValue;
     }
 
+    // Future implimentation, running out of time to format correctly with DEG/RAD and
+    // BINARY/OCTAL/HEX left-justification on display
+    public void setDisplayWidth(int newWidth)
+    {
+        displayWidth = newWidth;
+    }
+
     public String update()
     {
-        String output = "";
+        String output;
+        String radianLine = "";
+        String valueLine = "";
+        String baseLine = "";
 
-        if(error) {
-            output = "ERR";
-        }
-        else if(mode == Modes.BINARY)
+        if(currentValue == Double.NaN || currentValue == null)
         {
-            output = Integer.toBinaryString(currentValue.intValue());
-            currentValue = Double.parseDouble(output);
+            radianLine = String.format("%-46s", "ERR");
+            valueLine = "ERR ";
+            baseLine = String.format("%-46s","ERR");
+            output = displayBox.draw(radianLine, valueLine, baseLine);
+            return output;
+        }
+
+        if(isRadians == true)
+        {
+            radianLine = String.format("%-46s", "RAD");
+        }
+        else
+        {
+            radianLine = " ";
+        }
+
+        if(mode == Modes.BINARY)
+        {
+            baseLine = String.format("%-46s", "BIN");
+            valueLine = Integer.toBinaryString(currentValue.intValue()) + " ";
+            currentValue = Double.parseDouble(valueLine);
         }
         else if(mode == Modes.OCTAL)
         {
-            output = Integer.toOctalString(currentValue.intValue());
-            currentValue = Double.parseDouble(output);
+            baseLine = String.format("%-46s", "OCTAL");
+            valueLine = Integer.toOctalString(currentValue.intValue()) + " ";
+            currentValue = Double.parseDouble(valueLine);
         }
         else if(mode == Modes.DEC)
         {
             if(currentValue % 1 == 0) // No decimal
             {
-                output = Integer.toString(currentValue.intValue());
+                valueLine = Integer.toString(currentValue.intValue()) + " ";
             }
             else
             {
-                output = Double.toString(currentValue);
+                valueLine = Double.toString(currentValue) + " ";
             }
         }
         else if(mode == Modes.HEX)
         {
-            output = Integer.toHexString(currentValue.intValue());
-            currentValue = Double.parseDouble(output);
+            baseLine = String.format("%-46s", "HEX");
+            valueLine = Integer.toHexString(currentValue.intValue()) + " ";
+            currentValue = Double.parseDouble(valueLine);
         }
 
-        Console.println("%s", displayBox.draw(output));
+        output = displayBox.draw(radianLine, valueLine, baseLine);
+        Console.println("%s", output);
         return output;
     }
 

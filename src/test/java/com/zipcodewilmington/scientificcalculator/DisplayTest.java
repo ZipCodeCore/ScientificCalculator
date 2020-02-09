@@ -5,11 +5,24 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DisplayTest {
+/* Goal format:
+╔════════════════════════════════════════════════╗
+║                                                ║
+║                                          10100 ║
+║  BIN                                           ║
+╚════════════════════════════════════════════════╝
+
+ */
 
     @Test
     public void TestUpdateInitValue()
     {
-        String expected = "0";
+        String expected =
+                                "╔════════════════════════════════════════════════╗\n" +
+                                "║                                                ║\n" +
+                                "║                                              0 ║\n" +
+                                "║                                                ║\n" +
+                                "╚════════════════════════════════════════════════╝\n";
         Display TestDisplay = new Display();
         String actual = TestDisplay.update();
 
