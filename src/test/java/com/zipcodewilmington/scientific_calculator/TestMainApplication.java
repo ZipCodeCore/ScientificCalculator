@@ -1,10 +1,7 @@
 package com.zipcodewilmington.scientific_calculator;
 
 import com.sun.corba.se.impl.interceptors.PICurrent;
-import com.zipcodewilmington.scientificcalculator.Basic;
-import com.zipcodewilmington.scientificcalculator.Sci;
-import com.zipcodewilmington.scientificcalculator.Console;
-import com.zipcodewilmington.scientificcalculator.MainApplication;
+import com.zipcodewilmington.scientificcalculator.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -256,12 +253,13 @@ public class TestMainApplication {
         Sci calculator = new Sci();
         assertEquals(Math.E, calculator.inverseNaturalLogarithm(Math.E, 1), 0.01);
     }
-/*
+
     @Test
-    public void mainApp(){
-        MainApplication mainMenu = new MainApplication();
-        assertEquals("1", mainMenu.main("1"));
+    public void testF2C(){
+        Utilities calculator = new Utilities();
+        assertEquals(100, calculator.switchFtoC(212), 0.1);
     }
 
- */
+
+
 }
