@@ -89,6 +89,12 @@ public class ScientificCalc {
         return true;
     }
 
+    // Degrees to Radians
+
+    public static double radian(double num1){
+        return toRadians(num1);
+    }
+
     // Radians to Degrees
     public static double degree(double num1){
         return toDegrees(num1);
