@@ -1,7 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Display {
-    public static boolean checkState = true;
+    public boolean checkState = true;
     public static double total = 0;
     public static double currentTotal = 0;
     public static boolean error;
@@ -11,8 +11,8 @@ public class Display {
         System.out.println(input);
     }
 
-    public void displayCurrentValue() {
-        System.out.println(currentTotal);
+    public void displayCurrentValue(double input) {
+        System.out.println(input);
 
     }
 
