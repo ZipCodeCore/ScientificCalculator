@@ -36,7 +36,7 @@ public class TestBasicMath {
     }
 // Subtraction test cases
     @Test
-    public void TestSubtractionThirtyFifteen()
+    public void TestSubtractionWholes()
     {
      BasicMath subtractionTest = new BasicMath();
      Double actual;
@@ -75,7 +75,7 @@ public class TestBasicMath {
     }
     // Multiplication test cases
     @Test
-    public void TestMultiplicationWholes()
+    public void TestMultiplicationWholes1()
     {
         BasicMath multiplicationTest = new BasicMath();
         Double actual;
@@ -88,10 +88,10 @@ public class TestBasicMath {
     {
         BasicMath multiplicationTest = new BasicMath();
         Double actual;
-        Double expected = 18.480000000000004;
+        Double expected = 18.48;
         // fix this rounding error
         actual = multiplicationTest.multiplication(8.4,2.2);
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, .0001);
     }
     // Division Test Cases
     @Test
