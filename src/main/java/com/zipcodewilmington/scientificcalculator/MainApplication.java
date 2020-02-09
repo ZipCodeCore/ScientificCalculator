@@ -12,23 +12,7 @@ public class MainApplication {
 
 
 
-           String s = Greeting();
-            if (s.equals("1")) {
-                BasicMenu();
-            }
-
-            else if (s.equals("2")) {
-                SciMenuHome();
-            }
-
-            else if (s.equals("xxx")) {
-                System.exit(0);
-            }
-            else {
-                System.out.println("Please enter a valid response");
-                Greeting();
-            }
-
+RunCalc();
 
     } //void main
 } //main app
