@@ -117,7 +117,7 @@ public class ScientificTests {
     @Test
     public void log () {
         double expected = 0;
-        double actual = scientific.log(1);
+        double actual = scientific.logarithm(1);
         assertEquals(expected, actual, 0.01);
     }
 

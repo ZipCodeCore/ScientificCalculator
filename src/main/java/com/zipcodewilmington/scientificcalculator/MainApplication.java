@@ -1,11 +1,13 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import static java.lang.Integer.*;
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
 
     public static void main(String[] args) {
+
 
         double input;
         double total = 0;
