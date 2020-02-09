@@ -22,7 +22,7 @@ public class MainApplication {
         int r = 1;
         do {
             try {
-                Double calcDouble = Console.getDoubleInput("Press 1 for base calculator and 2 for scientific calculator. ");
+                Double calcDouble = Console.getDoubleInput("Press 1 for base calculator, 2 for scientific calculator, or 3 for shapes!");
 
                 if (calcDouble == 1) {
                     Console.println("Current number is :" + display);
@@ -128,7 +128,7 @@ public class MainApplication {
                                     i = f.exponent(i,i1);
                                 } else if (op.equals("^2")) {
                                     Console.println("New Value is: " + f.square(i));
-                                    i = f.square(i)
+                                    i = f.square(i);
                                 } else if (op.equals("sqrt")) {
                                     if (i < 0) {
                                         Console.println("Err");
@@ -229,13 +229,18 @@ public class MainApplication {
                                     }
                                 }
                                 else if (op.equals("invCosine")){
-                                    if (sf.unitsMode == "Degrees"){
-                                        Console.println("New Value is: " +sf.cosineInverse(i));
-                                        i = sf.cosineInverse(i);
+                                    if (i < -1 || i > 1){
+                                        Console.println("Err");
                                     }
-                                    else {
-                                        Console.println("New Value is: " +sf.cosineInverse(Math.toRadians(i)));
-                                        i = sf.cosineInverse(Math.toRadians(i));
+                                    else{
+                                        if (sf.unitsMode == "Degrees") {
+                                            Console.println("New Value is: " + sf.cosineInverse(i));
+                                            i = sf.cosineInverse(i);
+                                        } else {
+                                            Console.println("New Value is: " + sf.cosineInverse(Math.toRadians(i)));
+                                            i = sf.cosineInverse(Math.toRadians(i));
+                                        }
+
                                     }
                                 }
                                 else if (op.equals("invTangent")){
