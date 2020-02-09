@@ -28,9 +28,7 @@ public class BasicMath {
     public static Double inverse(Double numberOne){
         return 1/numberOne;
     }
-
-
-    }
+}
 
 
 

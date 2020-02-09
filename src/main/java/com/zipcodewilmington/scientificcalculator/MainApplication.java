@@ -5,14 +5,13 @@ package com.zipcodewilmington.scientificcalculator;
  * James, Sandy and Zanetta version
  */
 public class MainApplication {
-    public static void main(String[] args) {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
+    private static Prompt prompt = new Prompt();
 
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
+    public static void main(String[] args) {
+        Console.println("Welcome to Mr. Math!");
+        Console.println("To see a valid list of commands, type 'menu' at any time");
+        Console.println("When you are finish with Mr. Math, feel free to quit by entering ':q'");
+
+        prompt.start();
     }
 }

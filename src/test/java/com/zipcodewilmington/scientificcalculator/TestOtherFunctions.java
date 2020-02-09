@@ -11,9 +11,9 @@ public class TestOtherFunctions {
     public void FactNegativeOne() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=0;
-        actual= OtherFunctions.Fact(-1);
+        Double actual;
+        Double expected=0.0;
+        actual= OtherFunctions.Fact(-1.0);
         assertEquals(expected,actual);
 
     }
@@ -22,9 +22,9 @@ public class TestOtherFunctions {
     public void FactZero() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=1;
-        actual= OtherFunctions.Fact(1);
+        Double actual;
+        Double expected= 1.0;
+        actual = OtherFunctions.Fact(1.0);
         assertEquals(expected,actual);
 
     }
@@ -33,9 +33,9 @@ public class TestOtherFunctions {
     public void FactOne() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=1;
-        actual= OtherFunctions.Fact(1);
+        Double actual;
+        Double expected=1.0;
+        actual= OtherFunctions.Fact(1.0);
         assertEquals(expected,actual);
 
     }
@@ -44,9 +44,9 @@ public class TestOtherFunctions {
     public void FactFive() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=120;
-        actual= OtherFunctions.Fact(5);
+        Double actual;
+        Double expected=120.0;
+        actual= OtherFunctions.Fact(5.0);
         assertEquals(expected,actual);
 
     }
@@ -57,9 +57,9 @@ public class TestOtherFunctions {
     public void FibonNegativeOne() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected = 0;
-        actual = OtherFunctions.Fibon(-1);
+        Double actual;
+        Double expected = 0.0;
+        actual = OtherFunctions.Fibon(-1.0);
         assertEquals(expected, actual);
 
     }
@@ -68,9 +68,9 @@ public class TestOtherFunctions {
     public void FibonZero() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=0;
-        actual= OtherFunctions.Fibon(0);
+        Double actual;
+        Double expected=0.0;
+        actual= OtherFunctions.Fibon(0.0);
         assertEquals(expected,actual);
 
     }
@@ -79,9 +79,9 @@ public class TestOtherFunctions {
     public void FibonOne() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=1;
-        actual= OtherFunctions.Fibon(1);
+        Double actual;
+        Double expected=1.0;
+        actual= OtherFunctions.Fibon(1.0);
         assertEquals(expected,actual);
 
     }
@@ -90,9 +90,9 @@ public class TestOtherFunctions {
     public void FibonTwo() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=1;
-        actual= OtherFunctions.Fibon(2);
+        Double actual;
+        Double expected=1.0;
+        actual= OtherFunctions.Fibon(2.0);
         assertEquals(expected,actual);
 
     }
@@ -101,9 +101,9 @@ public class TestOtherFunctions {
     public void FibonThree() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=2;
-        actual= OtherFunctions.Fibon(3);
+        Double actual;
+        Double expected=2.0;
+        actual= OtherFunctions.Fibon(3.0);
         assertEquals(expected,actual);
 
     }
@@ -112,9 +112,9 @@ public class TestOtherFunctions {
     public void FibonTen() {
 
         OtherFunctions OtherFunctionsTest = new OtherFunctions();
-        int actual;
-        int expected=55;
-        actual= OtherFunctions.Fibon(10);
+        Double actual;
+        Double expected=55.0;
+        actual= OtherFunctions.Fibon(10.0);
         assertEquals(expected,actual);
 
     }

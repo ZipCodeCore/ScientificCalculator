@@ -1,6 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
 import javax.swing.*;
+import java.io.DataInput;
 
 public class Display {
     private int displayWidth;
@@ -24,9 +25,7 @@ public class Display {
 
     public void setDisplay(Double inputValue)
     {
-        if (inputValue == Double.NaN ||
-                inputValue == Double.POSITIVE_INFINITY ||
-                inputValue == Double.NEGATIVE_INFINITY)
+        if (inputValue.isNaN() || inputValue.isInfinite())
         {
             error = true;
         }
@@ -47,59 +46,43 @@ public class Display {
         displayWidth = newWidth;
     }
 
-    public String update()
-    {
-        String output;
+    public String update() {
+        String output = "";
         String radianLine = "";
         String valueLine = "";
         String baseLine = "";
 
-        if(error)
-        {
+        if (error) {
             radianLine = String.format("%-46s", "ERR");
             valueLine = "ERR ";
-            baseLine = String.format("%-46s","ERR");
+            baseLine = String.format("%-46s", "ERR");
             output = displayBox.draw(radianLine, valueLine, baseLine);
-            return output;
-        }
-
-        if(isRadians == true)
-        {
-            radianLine = String.format("%-46s", "RAD");
-        }
-        else
-        {
-            radianLine = " ";
-        }
-
-        if(mode == Modes.BINARY)
-        {
-            baseLine = String.format("%-46s", "BIN");
-            valueLine = Integer.toBinaryString(currentValue.intValue()) + " ";
-            currentValue = Double.parseDouble(valueLine);
-        }
-        else if(mode == Modes.OCTAL)
-        {
-            baseLine = String.format("%-46s", "OCTAL");
-            valueLine = Integer.toOctalString(currentValue.intValue()) + " ";
-            currentValue = Double.parseDouble(valueLine);
-        }
-        else if(mode == Modes.DEC)
-        {
-            if(currentValue % 1 == 0) // No decimal
-            {
-                valueLine = Integer.toString(currentValue.intValue()) + " ";
+        } else {
+            if (isRadians == true) {
+                radianLine = String.format("%-46s", "RAD");
+            } else {
+                radianLine = " ";
             }
-            else
-            {
-                valueLine = Double.toString(currentValue) + " ";
+
+
+            // This needs to be fixed
+            if (mode == Modes.BINARY) {
+                baseLine = String.format("%-46s", "BIN");
+                valueLine = Integer.toBinaryString(currentValue.intValue()) + " ";
+            } else if (mode == Modes.OCTAL) {
+                baseLine = String.format("%-46s", "OCTAL");
+                valueLine = Integer.toOctalString(currentValue.intValue()) + " ";
+            } else if (mode == Modes.DEC) {
+                if (currentValue % 1 == 0) // No decimal
+                {
+                    valueLine = Integer.toString(currentValue.intValue()) + " ";
+                } else {
+                    valueLine = Double.toString(currentValue) + " ";
+                }
+            } else if (mode == Modes.HEX) {
+                baseLine = String.format("%-46s", "HEX");
+                valueLine = Integer.toHexString(currentValue.intValue()) + " ";
             }
-        }
-        else if(mode == Modes.HEX)
-        {
-            baseLine = String.format("%-46s", "HEX");
-            valueLine = Integer.toHexString(currentValue.intValue()) + " ";
-            currentValue = Double.parseDouble(valueLine);
         }
 
         output = displayBox.draw(radianLine, valueLine, baseLine);
@@ -141,13 +124,14 @@ public class Display {
     public void clear() {
         currentValue = 0.0;
         error = false;
-        update();
+        isRadians = false;
+        mode = Modes.DEC;
         // Send a command to input to remove last operation and last value input
     }
 
-    public Double invSign()
+    public void invSign()
     {
-        return currentValue * -1.0;
+        currentValue *= -1.0;
     }
 
     public Double absoluteValue()
@@ -161,4 +145,20 @@ public class Display {
             return currentValue;
         }
     }
+
+    public void toggleRadians()
+    {
+        isRadians = !isRadians;
+    }
+
+    public Boolean getIsRadians()
+    {
+        return isRadians;
+    }
+
+    public Boolean getErr() {
+        return error;
+    }
+
+    // Make a toggle to switch from normal notation to scientific notation
 }
