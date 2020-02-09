@@ -44,9 +44,38 @@ public class TestBasicMath {
      actual = subtractionTest.subtraction(30.0,15.0);
      assertEquals(expected, actual);
     }
+    @Test
+    public void TestSubtractionNegatives()
+    {
+        BasicMath subtractionTest = new BasicMath();
+        Double actual;
+        Double expected = 25.0;
+        actual = subtractionTest.subtraction(17.0,-8.0);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestSubtractionDecimal()
+    {
+        BasicMath subtractionTest = new BasicMath();
+        Double actual;
+        Double expected = 5.9;
+        actual = subtractionTest.subtraction(12.4,6.5);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void TestSubtractionGreater()
+    {
+        BasicMath subtractionTest = new BasicMath();
+        Double actual;
+        Double expected = -11.8;
+        actual = subtractionTest.subtraction(4.7,16.5);
+        assertEquals(expected, actual);
+    }
     // Multiplication test cases
     @Test
-    public void TestMultiplicationThreeFive()
+    public void TestMultiplicationWholes()
     {
         BasicMath multiplicationTest = new BasicMath();
         Double actual;
@@ -54,14 +83,33 @@ public class TestBasicMath {
         actual = multiplicationTest.multiplication(3.0,5.0);
         assertEquals(expected, actual);
     }
+    @Test
+    public void TestMultiplicationDecimals()
+    {
+        BasicMath multiplicationTest = new BasicMath();
+        Double actual;
+        Double expected = 18.480000000000004;
+        // fix this rounding error
+        actual = multiplicationTest.multiplication(8.4,2.2);
+        assertEquals(expected, actual);
+    }
     // Division Test Cases
     @Test
-    public void TestDivisionSixTwo()
+    public void TestDivisionWholes()
     {
         BasicMath divisionTest = new BasicMath();
         Double actual;
         Double expected = 3.0;
         actual = divisionTest.division(6.0,2.0);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void TestDivisionDecimals()
+    {
+        BasicMath divisionTest = new BasicMath();
+        Double actual;
+        Double expected = 6.2;
+        actual = divisionTest.division(12.4,2.0);
         assertEquals(expected, actual);
     }
     @Test
@@ -90,6 +138,15 @@ public class TestBasicMath {
         Double actual;
         Double expected = 5.0;
         actual = squarerootTest.squareroot(25.0);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void TestSquareRootFour()
+    {
+        BasicMath squarerootTest = new BasicMath();
+        Double actual;
+        Double expected = 2.0;
+        actual = squarerootTest.squareroot(4.0);
         assertEquals(expected, actual);
     }
 }
