@@ -43,12 +43,6 @@ public class InputErrorHandler {
             isANumber = false;
         }
 
-        if (isANumber)
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
+        return isANumber;
     }
 }

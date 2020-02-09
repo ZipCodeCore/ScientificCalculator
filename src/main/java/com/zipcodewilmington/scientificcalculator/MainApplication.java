@@ -35,7 +35,12 @@ public class MainApplication {
             }
             else if(InputErrorHandler.validOp(userInput))
             {
-
+                String currentOperation = userInput;
+                if(Operation.isUnary(currentOperation))
+                {
+                    display.setDisplay(Operation.perform(currentOperation, display.getDisplay()));
+                }
+ //               display.setDisplay(Operation.perform(currentOperation, display.getDisplay(), secondInput));
             }
             // If number, change display value
             // Is it menu?  List menu
