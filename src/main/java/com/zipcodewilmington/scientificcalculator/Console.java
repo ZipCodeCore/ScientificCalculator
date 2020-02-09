@@ -113,6 +113,14 @@ public class Console {
             return 22;
         }else if(nextOperand.equalsIgnoreCase("mrc")){
             return 23;
+        }else if(nextOperand.equalsIgnoreCase("switch")){
+            return 24;
+        }else if(nextOperand.equalsIgnoreCase("switch x")){
+            return 25;
+        }else if(nextOperand.equalsIgnoreCase("rd")){
+            return 26;
+        }else if(nextOperand.equalsIgnoreCase("rd x")){
+            return 27;
         }else if(nextOperand.equalsIgnoreCase("c")){
             return 0;
         }else if(nextOperand.equalsIgnoreCase("off")){

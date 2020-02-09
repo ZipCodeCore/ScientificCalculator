@@ -7,11 +7,10 @@ import static java.lang.Integer.*;
 public class MainApplication {
 
     public static double total = 0;
-
+    public static double currentTotal = 0;
     public static void main(String[] args) {
         
         double input;
-        double currentTotal = 0;
         int operand;
         Display display = new Display();
         Operations opp = new Operations();
@@ -26,6 +25,7 @@ public class MainApplication {
             if(display.checkState){
                 input = Console.getDoubleInput("Please enter a number:");
                 total = input;
+                currentTotal = input;
                 display.checkState = false;
             }else {
                 operand = Console.getOperand(operandPrompt);
@@ -216,33 +216,57 @@ public class MainApplication {
                             display.displayErr();
                         }
                         break;
-//                    case 21:
-//                        if(!Display.error) {
-//                            currentTotal = sci.inverseNaturalLog(total);
-//                            display.displayValue(currentTotal);
-//                            total = currentTotal;
-//                        }else{
-//                            display.displayErr();
-//                        }
-//                        break;
-//                    case 22:
-//                        if(!Display.error) {
-//                            currentTotal = sci.inverseNaturalLog(total);
-//                            display.displayValue(currentTotal);
-//                            total = currentTotal;
-//                        }else{
-//                            display.displayErr();
-//                        }
-//                        break;
-//                    case 23:
-//                        if(!Display.error) {
-//                            currentTotal = sci.inverseNaturalLog(total);
-//                            display.displayValue(currentTotal);
-//                            total = currentTotal;
-//                        }else{
-//                            display.displayErr();
-//                        }
-//                        break;
+                    case 21:
+                        if(!Display.error) {
+                            ScientificCalc.memoryAddDouble();
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 22:
+                        if(!Display.error) {
+                            ScientificCalc.memoryReset();
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 23:
+                        if(!Display.error) {
+                            display.displayValue(ScientificCalc.memDouble);
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 24:
+                        if(!Display.error) {
+                            display.changeNumberDisplay();
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 25:
+                        if(!Display.error) {
+                            String mode = Console.getStringInput("Enter mode: (Deci, Hexa, Binary, Octal");
+                            display.changeNumberDisplay(mode);
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 26:
+                        if(!Display.error) {
+                            display.changeUnitDisplay();
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
+                    case 27:
+                        if(!Display.error) {
+                            String unit = Console.getStringInput("Enter mod: rad, deg");
+                            display.changeUnitDisplay(unit);
+                        }else{
+                            display.displayErr();
+                        }
+                        break;
                 }
 
             }

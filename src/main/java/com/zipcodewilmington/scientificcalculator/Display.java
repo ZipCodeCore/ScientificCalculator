@@ -1,9 +1,12 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import sun.applet.Main;
+
 public class Display {
     public boolean checkState = true;
     public static boolean error = false;
     public int displayMode = 0;
+    public int unitMode = 0;
     public void displayValue(double input){
 
         System.out.println(input);
@@ -52,8 +55,35 @@ public class Display {
             System.out.println(ScientificCalc.Binary(intTotal));
         }else if(mode.equalsIgnoreCase("octal")){
             System.out.println(ScientificCalc.Octal(intTotal));
-        }else{
+        }else if(mode.equalsIgnoreCase("deci")){
             System.out.println(intTotal);
+        }else{
+            Display.displayErr();
+        }
+    }
+
+    public void changeUnitDisplay(){
+
+        switch (unitMode){
+            case 0:
+                System.out.println(ScientificCalc.radian(MainApplication.total));
+                unitMode++;
+                break;
+            case 1:
+                System.out.println(ScientificCalc.degree(MainApplication.total));
+                unitMode = 0;
+                break;
+        }
+    }
+
+    public void changeUnitDisplay(String unit){
+
+        if(unit.equalsIgnoreCase("rad")){
+            System.out.println(ScientificCalc.radian(MainApplication.total));
+        }else if(unit.equalsIgnoreCase("deg")){
+            System.out.println(ScientificCalc.degree(MainApplication.total));
+        }else {
+            Display.displayErr();
         }
     }
 

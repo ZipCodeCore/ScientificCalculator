@@ -4,8 +4,8 @@ import static java.lang.Math.*;
 
 public class ScientificCalc {
 
+    public static double memDouble;
     // Trig Functions
-
     // Sine
     public double sine (double num1) {
         return sin( num1 );
@@ -71,12 +71,12 @@ public class ScientificCalc {
 
     // Degrees to Radians
 
-    public Double radian(Double num1){
+    public static double radian(double num1){
         return toRadians(num1);
     }
 
     // Radians to Degrees
-    public Double degree(Double num1){
+    public static double degree(double num1){
         return toDegrees(num1);
     }
 
@@ -91,4 +91,20 @@ public class ScientificCalc {
         return Integer.toBinaryString(input);
     }
 
+    public static void memoryAddDouble(){
+
+        memDouble = MainApplication.currentTotal;
+
+    }
+
+    public static void memoryReset(){
+
+        memDouble = 0;
+
+    }
+
+    public static double getMemoryDouble(){
+
+        return memDouble;
+    }
 }
