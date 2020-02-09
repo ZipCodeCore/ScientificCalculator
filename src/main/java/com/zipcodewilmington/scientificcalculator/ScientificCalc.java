@@ -67,4 +67,16 @@ public class ScientificCalc {
         return sum;
     }
 
+    // Degrees to Radians
+
+    public Double radian(Double num1){
+        return toRadians(num1);
+    }
+
+    // Radians to Degrees
+    public Double degree(Double num1){
+        return toDegrees(num1);
+    }
+
+
 }
