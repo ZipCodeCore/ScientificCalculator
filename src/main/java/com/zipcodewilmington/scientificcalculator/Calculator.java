@@ -6,9 +6,20 @@ public class Calculator {
     public Double operator;
     public Double firstOption;
     public Double secondOption;
+    public Double ans;
+    public String stringAns;
 
     public Calculator() {
 
+    }
+
+    public Double setAns(Double ans) {
+        this.ans = ans;
+        return ans;
+    }
+
+    public Double getAns() {
+        return this.ans;
     }
 
     public Double getInputFromUser() {
@@ -42,8 +53,6 @@ public class Calculator {
     }
 
 }
-
-
 
 
 

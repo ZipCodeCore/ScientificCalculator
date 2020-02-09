@@ -15,7 +15,5 @@ public class User {
         Double userInput = scanner.nextDouble();
         return userInput;
     }
-
-
 }
 
