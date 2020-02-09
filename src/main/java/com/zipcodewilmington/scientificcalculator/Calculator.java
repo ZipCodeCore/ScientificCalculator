@@ -8,14 +8,6 @@ public class Calculator {
     double savedVal ;
     double displayVal ;
 
-    public double getSavedVal() {
-        return savedVal;
-    }
-
-    public double getDisplayVal() {
-        return displayVal;
-    }
-
     public Calculator(double firstValIn, double secondValIn, double displayValIn, double savedValIn) {
         this.firstVal = firstValIn;
         this.secondVal = secondValIn;
@@ -33,9 +25,22 @@ public class Calculator {
         this.displayVal = doubleScanner.nextDouble();
     }
 
+    public double getDisplayVal() {
+        return displayVal;
+    }
+
     public void clearDisplayVal() {
         this.displayVal = 0;
         Console.println("Your current total is %.2f", displayVal);
+    }
+
+    public double setSavedVal(double a) {
+        savedVal = a;
+        return savedVal;
+    }
+
+    public double getSavedVal() {
+        return savedVal;
     }
 
 }

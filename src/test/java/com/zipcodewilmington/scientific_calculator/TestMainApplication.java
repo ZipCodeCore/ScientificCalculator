@@ -14,7 +14,7 @@ public class TestMainApplication {
     MathMethods test = new MathMethods();
     @Test
     public void addTest1() {
-        assertEquals(25, test.add(5, 5), 0.01);
+        assertEquals(10, test.add(5, 5), 0.01);
     }
     @Test
     public void addTest2() {

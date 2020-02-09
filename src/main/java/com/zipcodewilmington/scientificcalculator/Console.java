@@ -34,20 +34,6 @@ public class Console {
             return m;
     }
 
-
-
-    public static Integer getIntegerInput(String prompt) {
-        Scanner intScanner = new Scanner(System.in);
-        println(prompt);
-        while (!intScanner.hasNextInt()) {
-            intScanner.next();
-            println("Invalid Input! Please enter an Integer.");
-        }
-        int intInput = intScanner.nextInt();
-
-        return intInput;
-    }
-
     public static double getDoubleInput(String prompt) {
         Scanner doubleScanner = new Scanner(System.in);
         println(prompt);
@@ -59,16 +45,4 @@ public class Console {
 
         return doubleInput;
     }
-
-    public static double doAdd(){
-       double result = 0;
-
-        return result;
-    }
-
-
-
-
-
-
 }
