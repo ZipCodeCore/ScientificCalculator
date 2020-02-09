@@ -116,6 +116,7 @@ public class Sci {
     public static double inverseLogarithm(double a, double b){
         double invLog = (double) (Math.pow(a, b));
         return invLog;
+        //Request for first input to be 10
     }
     public static double naturalLogarithm(double a){
         double natLog = (double) Math.log(a);
@@ -124,6 +125,7 @@ public class Sci {
     public double inverseNaturalLogarithm(double a, double b){
         double invNatLog = (double) (Math.pow(a, b));
         return invNatLog;
+        //Request for the first input to be the number e
     }
     public static Integer factorial(Integer a){
         Integer fact = a;
