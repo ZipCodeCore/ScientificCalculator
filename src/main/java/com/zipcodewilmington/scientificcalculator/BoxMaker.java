@@ -1,5 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.ArrayList;
+
 public class BoxMaker {
     private int width;
 
@@ -28,13 +30,12 @@ public class BoxMaker {
         StringBuilder output = new StringBuilder();
 
         output.append("╔");
-        for(int i = 0; i < width - 2; i++) {
+        for (int i = 0; i < width - 2; i++) {
             output.append("═");
         }
         output.append("╗\n");
 
-        for (String element : input)
-        {
+        for (String element : input) {
             String line = "";
             StringBuilder lineFormat = new StringBuilder();
             lineFormat.append("%");
@@ -48,7 +49,7 @@ public class BoxMaker {
         }
 
         output.append("╚");
-        for(int i = 0; i < width - 2; i++) {
+        for (int i = 0; i < width - 2; i++) {
             output.append("═");
         }
         output.append("╝\n");
