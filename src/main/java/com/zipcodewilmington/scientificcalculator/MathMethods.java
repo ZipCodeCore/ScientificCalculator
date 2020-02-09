@@ -32,6 +32,16 @@ public class MathMethods {
         return result4;
     }
 
+//    public static double absolute(double a, double b) {
+//        double result5 = math.abs();
+//        return result5;
+//    }
+
+//    public static double Sine(Math.sin(input a))
+//    //Math.cos()
+//    public static double Cosine {
+//        cos(double angle)
+
 
 /*
     //The Java Math Class
