@@ -26,6 +26,25 @@ public class Menu
                 String.format("%-100s", "/           | Divides display value by next input"),
                 String.format("%-100s", "exp         | Display value to power of next input"),
                 String.format("%-100s", "sq          | Display value multiplied by itself"),
-                String.format("%-100s", "sqrt        | Square root of display value"));
+                String.format("%-100s", "sqrt        | Square root of display value"),
+                String.format("%-100s", "mode        | Cycle mode"),
+                String.format("%-100s", "bin         | Switch to binary"),
+                String.format("%-100s", "oct         | Switch to octal"),
+                String.format("%-100s", "dec         | Switch to decimal"),
+                String.format("%-100s", "hex         | Switch to hex"),
+                String.format("%-100s", "rad         | Use Radians for Trigonometry"),
+                String.format("%-100s", "sin         | Sine of display value"),
+                String.format("%-100s", "cos         | Cosine of display value"),
+                String.format("%-100s", "tan         | Tangent of display value"),
+                String.format("%-100s", "invsin      | Inverse sine of display value"),
+                String.format("%-100s", "invcos      | Inverse cosine of display value"),
+                String.format("%-100s", "invtan      | Inverse tangent of display value"),
+                String.format("%-100s", "log         | Log of display value"),
+                String.format("%-100s", "invlog      | Inverse log of display value"),
+                String.format("%-100s", "nlog        | N-log of display value"),
+                String.format("%-100s", "invnlog     | Inverse N-log of display value"),
+                String.format("%-100s", "!           | Factorial of display value"),
+                String.format("%-100s", "fib         | Fibonacci of display value"));
+
     }
 }

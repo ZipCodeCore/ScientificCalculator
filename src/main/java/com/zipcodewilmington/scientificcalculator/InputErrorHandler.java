@@ -3,11 +3,10 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValidOperations
-{
+public class InputErrorHandler {
     private static List<String> listOfValid = new ArrayList<String>();
 
-    public ValidOperations()
+    public InputErrorHandler()
     {
         listOfValid.add("c");
         listOfValid.add("m+");
@@ -26,23 +25,30 @@ public class ValidOperations
         listOfValid.add("oct");
         listOfValid.add("dec");
         listOfValid.add("hex");
-        listOfValid.add("rad");
-        listOfValid.add("log");
-        listOfValid.add("invlog");
-        listOfValid.add("nlog");
-        listOfValid.add("invnlog");
-        listOfValid.add("sin");
-        listOfValid.add("cos");
-        listOfValid.add("tan");
-        listOfValid.add("invsin");
-        listOfValid.add("invcos");
-        listOfValid.add("invtan");
-        listOfValid.add("!");
-        listOfValid.add("fib");
     }
 
-    public static Boolean isValid(String op)
+    public static Boolean validOp(String op)
     {
         return listOfValid.contains(op);
+    }
+
+    public static Boolean validNumber(String in)
+    {
+        Boolean isANumber = true;
+
+        try
+        {
+            Double num = Double.parseDouble(in);
+        } catch (NumberFormatException error) {
+            isANumber = false;
+        }
+
+        if (isANumber)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
     }
 }

@@ -24,14 +24,22 @@ public class MainApplication {
         do {
             display.update();
             userInput = Console.getStringInput(" ");
-            if(userInput.equalsIgnoreCase("menu"))
+
+            if (userInput.equals("menu"))
             {
                 Console.print(Menu.callMenu());
             }
-            else if(!ValidOperations.isValid(userInput))
+            else if(InputErrorHandler.validNumber(userInput))
             {
-                Console.println("Invalid input.  Check 'menu' for valid commands.");
+                display.setDisplay(Double.parseDouble(userInput));
             }
+            else if(InputErrorHandler.validOp(userInput))
+            {
+
+            }
+            // If number, change display value
+            // Is it menu?  List menu
+            // Call actual operations
         } while(!userInput.equals(":q"));
     }
 }
