@@ -43,7 +43,7 @@ public class MathMethods {
     }
 
     public static double variExpo(double a, double b) {
-        double result7 = a * b;
+        double result7 = Math.pow(a, b);
         return result7;
     }
 
