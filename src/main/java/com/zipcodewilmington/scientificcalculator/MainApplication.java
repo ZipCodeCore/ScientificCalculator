@@ -85,6 +85,8 @@ public class MainApplication {
                                 System.out.println("Enter your first number");
                                 Double firstNum = calc.getInputFromUser();
                                 calc.setFirstInput(firstNum);
+                                    String storedFirstNum = calc.getFirstNumber().toString();
+
                                 System.out.println("Enter your Second Number");
                                 Double secondNum = calc.getInputFromUser();
                                 calc.setSecondOptionInput(secondNum);
@@ -419,11 +421,12 @@ public class MainApplication {
                 }
             } while (test == 2);
 
-            if (calc.getCalcChoice() <=21.) {
+            if (calc.getCalcChoice() <= 21.) {
                 System.out.println("Your answer is " + calc.getAns() + "");
-            }
+
             System.out.println("If you wish to convert your number to hexadecimal(1), Octal(2), or Binary(3), " +
                     "please enter the corresponding number. You may also press 0 to reset the calculator.");
+            }
             int q = 2;
             do {
                 try {
