@@ -17,10 +17,9 @@ public class MainApplication {
         ScientificCalc sci = new ScientificCalc();
         boolean on = true;
 
-        Console.println("Welcome to Mav!");
-        String name = Console.getStringInput("Please enter your name!");
-        Console.println(name);
+        Console.println("Welcome to MAV!");
         while (on){
+
             if(display.checkState){
                 display.update(0);
                 input = Console.getDoubleInput("Please enter a number:");
@@ -42,7 +41,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 2:
@@ -51,7 +50,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 3:
@@ -60,16 +59,22 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 4:
                         if(!Display.error) {
-                            currentTotal = opp.divide(total, Console.getDoubleInput("Please enter a number:"));
-                            display.update(currentTotal);
-                            total = currentTotal;
+                            double secondInput = Console.getDoubleInput("Please enter a number:");
+                            if(secondInput == 0){
+                                display.displayErr();
+                                break;
+                            }else {
+                                currentTotal = opp.divide(total, secondInput);
+                                display.update(currentTotal);
+                                total = currentTotal;
+                            }
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 5:
@@ -78,7 +83,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 6:
@@ -87,7 +92,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 7:
@@ -96,7 +101,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 8:
@@ -105,7 +110,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 9:
@@ -114,7 +119,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 10:
@@ -123,7 +128,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 11:
@@ -132,7 +137,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 12:
@@ -141,7 +146,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 13:
@@ -150,7 +155,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 14:
@@ -159,7 +164,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 15:
@@ -168,7 +173,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 16:
@@ -177,7 +182,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 17:
@@ -186,7 +191,7 @@ public class MainApplication {
                             display.update( currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 18:
@@ -195,7 +200,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 19:
@@ -204,7 +209,7 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 20:
@@ -213,35 +218,35 @@ public class MainApplication {
                             display.update(currentTotal);
                             total = currentTotal;
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 21:
                         if(!Display.error) {
                             ScientificCalc.memoryAddDouble();
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 22:
                         if(!Display.error) {
                             ScientificCalc.memoryReset();
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 23:
                         if(!Display.error) {
                             display.update(ScientificCalc.getMemoryDouble());
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 24:
                         if(!Display.error) {
                             display.changeNumberDisplay();
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 25:
@@ -249,14 +254,14 @@ public class MainApplication {
                             String mode = Console.getStringInput("Enter mode: (Deci, Hexa, Binary, Octal");
                             display.changeNumberDisplay(mode);
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 26:
                         if(!Display.error) {
                             display.changeUnitDisplay();
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 27:
@@ -264,18 +269,18 @@ public class MainApplication {
                             String unit = Console.getStringInput("Enter mod: rad, deg");
                             display.changeUnitDisplay(unit);
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 28:
                         if(!Display.error) {
                             if(sci.isPrime(total)){
-                                System.out.println("It's a prime!");
+                                display.update("It's a prime!");
                             }else {
-                                System.out.println("It's not a prime!");
+                                display.update("It's not a prime!");
                             }
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                     case 29:
@@ -285,7 +290,7 @@ public class MainApplication {
                             double yearInterest = sci.yearlyInterest(principal, interest);
                             display.update(yearInterest);
                         }else{
-                            Display.displayErr();
+                            display.displayErr();
                         }
                         break;
                 }

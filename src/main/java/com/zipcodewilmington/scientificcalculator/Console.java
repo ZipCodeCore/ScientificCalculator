@@ -1,9 +1,5 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import sun.applet.Main;
-
-import javax.swing.plaf.synth.SynthTextAreaUI;
-import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -48,6 +44,7 @@ public class Console {
     public static Double getDoubleInput(String prompt) {
 
         double userInput;
+        Display dis = new Display();
 
         scanner = new Scanner(System.in);
         println(prompt);
@@ -55,10 +52,12 @@ public class Console {
 
         try{
             userInput = Double.parseDouble(nextNum);
+            dis.update(userInput);
             return userInput;
         }catch (Exception e) {
             return Console.getDoubleInput(prompt);
         }
+
     }
 
     public static int getOperand(String prompt){
@@ -130,6 +129,7 @@ public class Console {
         }else if(nextOperand.equalsIgnoreCase("off")){
             return 100;
         }else{
+            if(Display.error) System.out.println("Please clear before continuing!");
             return getOperand(prompt);
         }
     }
