@@ -20,15 +20,15 @@ public class MainApplication {
         Console.println("Welcome to Mav!");
         String name = Console.getStringInput("Please enter your name!");
         Console.println(name);
-        String operandPrompt = "Choose an operand: + , - , * , / , x^2 , sqrt , x^n , 1/x, c, off";
         while (on){
             if(display.checkState){
+                display.update(0);
                 input = Console.getDoubleInput("Please enter a number:");
                 total = input;
                 currentTotal = input;
                 display.checkState = false;
             }else {
-                operand = Console.getOperand(operandPrompt);
+                operand = Console.getOperand("Enter an operator:");
                 switch (operand){
                     case 100:
                         on = false;
@@ -39,7 +39,7 @@ public class MainApplication {
                     case 1:
                         if(!Display.error) {
                             currentTotal = opp.add(total, Console.getDoubleInput("Please enter a number:"));
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -48,7 +48,7 @@ public class MainApplication {
                     case 2:
                         if(!Display.error) {
                             currentTotal = opp.subtract(total, Console.getDoubleInput("Please enter a number:"));
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -57,7 +57,7 @@ public class MainApplication {
                     case 3:
                         if(!Display.error) {
                             currentTotal = opp.multiply(total, Console.getDoubleInput("Please enter a number:"));
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -66,7 +66,7 @@ public class MainApplication {
                     case 4:
                         if(!Display.error) {
                             currentTotal = opp.divide(total, Console.getDoubleInput("Please enter a number:"));
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -75,7 +75,7 @@ public class MainApplication {
                     case 5:
                         if(!Display.error) {
                             currentTotal = opp.square(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -84,7 +84,7 @@ public class MainApplication {
                     case 6:
                         if(!Display.error) {
                             currentTotal = opp.squareRoot(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -93,7 +93,7 @@ public class MainApplication {
                     case 7:
                         if(!Display.error) {
                             currentTotal = opp.exponent(total, Console.getDoubleInput("Please enter a number:"));
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -102,7 +102,7 @@ public class MainApplication {
                     case 8:
                         if(!Display.error) {
                             currentTotal = opp.inverse(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -111,7 +111,7 @@ public class MainApplication {
                     case 9:
                         if(!Display.error) {
                             currentTotal = opp.switchSign(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -120,7 +120,7 @@ public class MainApplication {
                     case 10:
                         if(!Display.error) {
                             currentTotal = sci.sine(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -129,7 +129,7 @@ public class MainApplication {
                     case 11:
                         if(!Display.error) {
                             currentTotal = sci.cose(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -138,7 +138,7 @@ public class MainApplication {
                     case 12:
                         if(!Display.error) {
                             currentTotal = sci.tangent(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -147,7 +147,7 @@ public class MainApplication {
                     case 13:
                         if(!Display.error) {
                             currentTotal = sci.inverseSin(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -156,7 +156,7 @@ public class MainApplication {
                     case 14:
                         if(!Display.error) {
                             currentTotal = sci.inverseCos(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -165,7 +165,7 @@ public class MainApplication {
                     case 15:
                         if(!Display.error) {
                             currentTotal = sci.inverseTan(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -174,7 +174,7 @@ public class MainApplication {
                     case 16:
                         if(!Display.error) {
                             currentTotal = sci.logarithm(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -183,7 +183,7 @@ public class MainApplication {
                     case 17:
                         if(!Display.error) {
                             currentTotal = sci.inverseLog(total);
-                            display.displayValue(currentTotal);
+                            display.update( currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -192,7 +192,7 @@ public class MainApplication {
                     case 18:
                         if(!Display.error) {
                             currentTotal = sci.naturalLog(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -201,7 +201,7 @@ public class MainApplication {
                     case 19:
                         if(!Display.error) {
                             currentTotal = sci.inverseNaturalLog(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -210,7 +210,7 @@ public class MainApplication {
                     case 20:
                         if(!Display.error) {
                             currentTotal = sci.factorial(total);
-                            display.displayValue(currentTotal);
+                            display.update(currentTotal);
                             total = currentTotal;
                         }else{
                             Display.displayErr();
@@ -232,7 +232,7 @@ public class MainApplication {
                         break;
                     case 23:
                         if(!Display.error) {
-                            display.displayValue(ScientificCalc.getMemoryDouble());
+                            display.update(ScientificCalc.getMemoryDouble());
                         }else{
                             Display.displayErr();
                         }
@@ -283,7 +283,7 @@ public class MainApplication {
                             double principal = Console.getDoubleInput("Enter principal:");
                             double interest = Console.getDoubleInput("Enter interest:");
                             double yearInterest = sci.yearlyInterest(principal, interest);
-                            display.displayValue(yearInterest);
+                            display.update(yearInterest);
                         }else{
                             Display.displayErr();
                         }
