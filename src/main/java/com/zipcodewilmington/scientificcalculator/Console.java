@@ -121,6 +121,10 @@ public class Console {
             return 26;
         }else if(nextOperand.equalsIgnoreCase("rd x")){
             return 27;
+        }else if(nextOperand.equalsIgnoreCase("prime")){
+            return 28;
+        }else if(nextOperand.equalsIgnoreCase("year%")){
+            return 29;
         }else if(nextOperand.equalsIgnoreCase("c")){
             return 0;
         }else if(nextOperand.equalsIgnoreCase("off")){
