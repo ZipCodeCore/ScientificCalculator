@@ -16,8 +16,8 @@ public class MainApplication {
         sf.displayMode = "decimal";
         sf.unitsMode = "Degrees";
 
-
-        Console.println("Welcome to my calculator!");
+        Console.println("Designed by Chris, Maurice, and Ujjwal.");
+        Console.println("Welcome to the surprisely working calculator!");
 
         String s = Console.getStringInput("Please enter your name?");
         boolean eternal = true;
