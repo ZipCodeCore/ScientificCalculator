@@ -19,6 +19,9 @@ public class Calculator {
     }
 
     public double divide(double var1, double var2) {
+        if(var1==0 && var2 ==0){
+            return Double.NaN;
+        }
         return var1 / var2;
     }
 

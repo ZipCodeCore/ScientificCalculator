@@ -33,7 +33,7 @@ public class Console {
             try {
                 return Double.valueOf(scanner.nextLine());
             } catch (Exception e) {
-                print("Input invalid, please enter again:");
+                print("Input invalid, please enter again: ");
             }
         }
     }
