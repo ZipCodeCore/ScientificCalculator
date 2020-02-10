@@ -6,7 +6,7 @@ public class AskNumber {
 
     public static double askDouble() {
         double d = 0;
-        d = Console.getDoubleInput("Enter a double.");
+        d = Console.getDoubleInput("Enter a number.");
         return d;
     }
 

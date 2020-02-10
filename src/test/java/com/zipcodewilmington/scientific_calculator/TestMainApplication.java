@@ -4,9 +4,7 @@ package com.zipcodewilmington.scientific_calculator;
  * Created by leon on 2/9/18.
  */
 
-import com.zipcodewilmington.scientificcalculator.Console;
 import com.zipcodewilmington.scientificcalculator.MathMethods;
-import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
