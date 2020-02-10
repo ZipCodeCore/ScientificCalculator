@@ -67,6 +67,29 @@ public class MainApplication {
                     user.secondVal = AskNumber.askDouble();
                     user.displayVal = MathMethods.variExpo(user.displayVal,user.secondVal);
                     Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("Inverse")) {
+                    user.displayVal = MathMethods.inverse(user.displayVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("-Num")) {
+                    user.displayVal = MathMethods.invert(user.displayVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("M+")) {
+                    user.savedVal = user.displayVal;
+                    Console.println("You saved " + user.savedVal + " in memory.");
+                } else if (nextOperator.equalsIgnoreCase("MC")) {
+                    user.savedVal = 0;
+                    Console.println("Memory reset.");
+                } else if (nextOperator.equalsIgnoreCase("MRC")) {
+                    Console.println("Your saved number is " + user.savedVal);
+                } else if (nextOperator.equalsIgnoreCase("Sine")) {
+                    user.displayVal = MathMethods.sine(user.displayVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("Cosine")) {
+                    user.displayVal = MathMethods.cosine(user.displayVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
+                } else if (nextOperator.equalsIgnoreCase("Tangent")) {
+                    user.displayVal = MathMethods.tan(user.displayVal);
+                    Console.println("Your current total is %.2f", user.displayVal);
                 } else if (nextOperator.equalsIgnoreCase("Clear")) {
                     user.clearDisplayVal();
                     break;

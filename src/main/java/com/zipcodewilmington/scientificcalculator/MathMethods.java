@@ -47,6 +47,11 @@ public class MathMethods {
         return result7;
     }
 
+    public static double inverse(double a) {
+        double result = 1/a;
+        return result;
+    }
+
     public static double invert(double a) {
         double result8 = a * -1;
         return result8;
@@ -59,7 +64,7 @@ public class MathMethods {
         double result10 = Math.cos(a);
         return result10;
     }
-    public static double tangent(double a) {
+    public static double tan(double a) {
         double result11 = Math.tan(a);
         return result11;
     }

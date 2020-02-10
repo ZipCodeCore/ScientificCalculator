@@ -23,6 +23,7 @@ public class Calculator {
             Console.println("Invalid Input! Please enter a Double.");
         }
         this.displayVal = doubleScanner.nextDouble();
+        this.firstVal = this.displayVal;
     }
 
     public double getDisplayVal() {
@@ -34,9 +35,8 @@ public class Calculator {
         Console.println("Your current total is %.2f", displayVal);
     }
 
-    public double setSavedVal(double a) {
-        savedVal = a;
-        return savedVal;
+    public void setSavedVal(double a) {
+        this.savedVal = a;
     }
 
     public double getSavedVal() {

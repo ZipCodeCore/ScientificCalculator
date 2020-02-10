@@ -14,10 +14,11 @@ public class AskNumber {
 
     public static String getOperation() {
         String operator = "";
-        operator = Console.getStringInput("What would you like to do?\nPlease type one of the following \nAdd  Subtract  Multiply  Divide  Remainder  Square  SquareRoot VariableExpo\nClear");
-        while(!operator.equalsIgnoreCase("Add")  && !operator.equalsIgnoreCase("Subtract")  && !operator.equalsIgnoreCase("Multiply")  && !operator.equalsIgnoreCase("Divide") && !operator.equalsIgnoreCase("Remainder") && !operator.equalsIgnoreCase("Square") && !operator.equalsIgnoreCase("SquareRoot") && !operator.equalsIgnoreCase("VariableExpo") && !operator.equalsIgnoreCase("Clear")){
+        String menu = "\nPlease type one of the following \nAdd  Subtract  Multiply  Divide  Remainder  Square  SquareRoot  VariableExpo\nInverse  -Num  M+  MC  MRC  Sine  Cosine  Tangent  Clear";
+        operator = Console.getStringInput("What would you like to do?" + menu);
+        while(!operator.equalsIgnoreCase("Add")  && !operator.equalsIgnoreCase("Subtract")  && !operator.equalsIgnoreCase("Multiply")  && !operator.equalsIgnoreCase("Divide") && !operator.equalsIgnoreCase("Remainder") && !operator.equalsIgnoreCase("Square") && !operator.equalsIgnoreCase("SquareRoot") && !operator.equalsIgnoreCase("VariableExpo") && !operator.equalsIgnoreCase("Inverse") && !operator.equalsIgnoreCase("-Num") && !operator.equalsIgnoreCase("M+") && !operator.equalsIgnoreCase("MC") && !operator.equalsIgnoreCase("MRC") && !operator.equalsIgnoreCase("Sine") && !operator.equalsIgnoreCase("Cosine") && !operator.equalsIgnoreCase("Tangent") && !operator.equalsIgnoreCase("Clear")){
             Console.println("You selected " + operator);
-            operator = Console.getStringInput("Invalid Input! Please type one of the following \nAdd  Subtract  Multiply  Divide  Remainder  Square  SquareRoot VariableExpo Clear");
+            operator = Console.getStringInput("Invalid Input! Please type one of the following" + menu);
         }
         return operator;
     }
