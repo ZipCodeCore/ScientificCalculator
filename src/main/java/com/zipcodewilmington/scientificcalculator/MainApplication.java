@@ -74,11 +74,14 @@ public class MainApplication {
             do {
                 try {
                     Double operator = calc.getInputFromUser();
+                    calc.setCalcChoice(operator);
 
                     if (operator.equals(1.)) {
                         int x = 2;
+
                         do {
                             try {
+
                                 System.out.println("Enter your first number");
                                 Double firstNum = calc.getInputFromUser();
                                 calc.setFirstInput(firstNum);
@@ -390,7 +393,23 @@ public class MainApplication {
                         Double ans = ScientificFunctions.factorial(calc.getFirstNumber());
                         calc.setAns(ans);
                     } else if (operator.equals(22.)) {
-                        String ans = ScientificFunctions.fibonacci(calc.getFirstNumber());
+
+                        int x = 2;
+                        do {
+                            try {
+                                System.out.println("Enter your number");
+                                Double firstNum = calc.getInputFromUser();
+                                calc.setFirstInput(firstNum);
+                                x = 1;
+
+                               System.out.println(ScientificFunctions.fibonacci(calc.getFirstNumber()));
+                            } catch (Exception e) {
+                                System.out.println("Sorry, bad input");
+                            }
+                        } while (x == 2);
+
+
+
                     } else {
                         //System.out.println("Error");
                     }
@@ -400,8 +419,9 @@ public class MainApplication {
                 }
             } while (test == 2);
 
-
-            System.out.println("Your answer is " + calc.getAns() + "");
+            if (calc.getCalcChoice() <=21.) {
+                System.out.println("Your answer is " + calc.getAns() + "");
+            }
             System.out.println("If you wish to convert your number to hexadecimal(1), Octal(2), or Binary(3), " +
                     "please enter the corresponding number. You may also press 0 to reset the calculator.");
             int q = 2;

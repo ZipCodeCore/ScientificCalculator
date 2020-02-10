@@ -8,10 +8,21 @@ public class Calculator {
     public Double secondOption;
     public Double ans;
     public Double history;
+    public Double calcChoice;
 
     public Calculator() {
 
     }
+
+    public Double setCalcChoice(Double choice) {
+        this.calcChoice = choice;
+        return choice;
+    }
+
+    public Double getCalcChoice() {
+        return this.calcChoice;
+    }
+
 
     public Double setAns(Double ans) {
         this.ans = ans;
