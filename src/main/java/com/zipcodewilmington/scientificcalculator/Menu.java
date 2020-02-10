@@ -39,7 +39,12 @@ public class Menu
                 String.format("%-100s", "nlog        | N-log of display value"),
                 String.format("%-100s", "invnlog     | Inverse N-log of display value"),
                 String.format("%-100s", "!           | Factorial of display value"),
-                String.format("%-100s", "fib         | Fibonacci of display value"));
-
+                String.format("%-100s", "fib         | Fibonacci of display value"),
+                String.format("%-100s", "mtf         | Meters to feet"),
+                String.format("%-100s", "ftm         | Feet to meters"),
+                String.format("%-100s", "ktp         | Kilograms to pounds"),
+                String.format("%-100s", "ptk         | Pounds to kilograms"),
+                String.format("%-100s", "ctf         | Celsius to Farenheit"),
+                String.format("%-100s", "ftc         | Farenheit to Celsius"));
     }
 }
