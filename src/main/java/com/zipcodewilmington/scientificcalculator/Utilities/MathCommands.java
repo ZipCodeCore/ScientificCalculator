@@ -309,10 +309,10 @@ public class MathCommands
 	}
 
 	// Copied from my boy Dijkstra
-	private static Double handleExpression(ArrayList<String> args) {
+	public static Double handleExpression(ArrayList<String> args) {
 		Stack<String> ops  = new Stack<String>(); Stack<Double> vals = new Stack<Double>();
-		for (int i = 0; i < args.size(); i++) {
-			String s = args.get(i);
+		for (int i = 0; i < args.size();) {
+			String s = args.remove(i);
 			if (s.equals("(")) {}
 			else if (s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/") || s.equals("sqrt")) { ops.push(s); }
 			else if (s.equals(")")) {
