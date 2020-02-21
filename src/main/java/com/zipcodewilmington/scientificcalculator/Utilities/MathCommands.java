@@ -8,7 +8,7 @@ import com.zipcodewilmington.scientificcalculator.Application.MainApplication;
 
 public class MathCommands 
 {
-	private static Map<String, Command> commandMap = new HashMap<>();
+	private static Map<String, Command> commandMap = new HashMap<String, Command>();
 	
 	public enum Command {
 		ADD,
@@ -38,7 +38,8 @@ public class MathCommands
 		TOGGLE_NEGATIVE,
 		DISPLAY,
 		EXIT,
-		RANDOM_FLOAT
+		RANDOM_FLOAT,
+		EXPRESSION
 	}
 	
 	public static boolean commandExists(String cmd) {
@@ -291,10 +292,45 @@ public class MathCommands
 			//TODO
 		case EXIT:
 			System.exit(0);
+		case EXPRESSION:
+			if (args.size() > 1) {
+				args.remove(0);
+			}
+			Double result = handleExpression(args);
+			System.out.println("Result: " + result);
+			fullPrompt();
+			return;
 		default:
 			fullPrompt();
 			return;		
 		}
+	}
+
+	private static Double handleExpression(ArrayList<String> args) {
+		Stack<String> ops  = new Stack<String>();
+		Stack<Double> vals = new Stack<Double>();
+
+		for (int i = 0; i < args.size(); i++) {
+			String s = args.remove(i);
+			if      (s.equals("("))               ;
+			else if (s.equals("+"))    ops.push(s);
+			else if (s.equals("-"))    ops.push(s);
+			else if (s.equals("*"))    ops.push(s);
+			else if (s.equals("/"))    ops.push(s);
+			else if (s.equals("sqrt")) ops.push(s);
+			else if (s.equals(")")) {
+				String op = ops.pop();
+				double v = vals.pop();
+				if      (op.equals("+"))    v = vals.pop() + v;
+				else if (op.equals("-"))    v = vals.pop() - v;
+				else if (op.equals("*"))    v = vals.pop() * v;
+				else if (op.equals("/"))    v = vals.pop() / v;
+				else if (op.equals("sqrt")) v = Math.sqrt(v);
+				vals.push(v);
+			}
+			else vals.push(Double.parseDouble(s));
+		}
+		return vals.pop();
 	}
 	
 	private static void handleRandomNum(ArrayList<String> args, ArrayList<Integer> excludedNums) {
@@ -374,7 +410,9 @@ public class MathCommands
 		commandMap.put("display", Command.DISPLAY);
 		commandMap.put("exit", Command.EXIT);
 		commandMap.put("randomfloat", Command.RANDOM_FLOAT);
-		
+		commandMap.put("expression", Command.EXPRESSION);
+
+
 		// TODO
 		//commandMap.put("invlog", Command.INV_LOG);
 		//commandMap.put("naturallog", Command.NATURAL_LOG);
