@@ -7,7 +7,7 @@ import com.zipcodewilmington.scientificcalculator.Application.MainApplication;
 
 public class ConsoleCommands 
 {
-	private static Map<String, Command> commandMap = new HashMap<>();
+	private static Map<String, Command> commandMap = new HashMap<String, Command>();
 	
 	public enum Command {
 		CLEAR,

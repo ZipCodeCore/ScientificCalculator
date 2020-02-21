@@ -9,7 +9,7 @@ import com.zipcodewilmington.scientificcalculator.Utilities.ConsoleCommands.Comm
 
 public class DisplayModeCommands 
 {
-	private static Map<String, Mode> commandMap = new HashMap<>();
+	private static Map<String, Mode> commandMap = new HashMap<String, Mode>();
 	
 	public enum Mode {
 		BINARY,
