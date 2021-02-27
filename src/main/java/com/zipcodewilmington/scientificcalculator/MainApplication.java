@@ -7,11 +7,20 @@ public class MainApplication {
     public static void main(String[] args) {
         Console.println("Welcome to my calculator!");
         //String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter a number or value from memory");
         //Double d = Console.getDoubleInput("Enter a double.");
+        Integer i = Console.getIntegerInput("Please enter your first number or enter \"Memory\" for your stored value");
+
+        Console.println("Please enter the operation you would like to perform:");
+        Console.println("Current Number:                           %s\n",i);
+        Console.println("Add      Subtract      Multiply      Divide ");
+        Console.println("Square   Square Root   Exponential   Inverse");
+        Console.println("Sine     Cosine        Tangent              ");
+        Console.println("Sine-1   Cosine-1      Tangent-1              ");
+        String j = Console.getStringInput();
 
         //Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
         //Console.println("The user input %s as a d", d);
+        //Console.println("The user input %s as a integer", i);
+
     }
 }

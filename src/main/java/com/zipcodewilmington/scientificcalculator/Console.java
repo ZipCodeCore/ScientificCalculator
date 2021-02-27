@@ -21,12 +21,23 @@ public class Console {
         String userInput = scanner.nextLine();
         return userInput;
     }
+    public static String getStringInput() {
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        return userInput;
+    }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Integer userInput = scanner.nextInt();
+        return userInput;
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Double userInput = scanner.nextDouble();
+        return userInput;
     }
 }
