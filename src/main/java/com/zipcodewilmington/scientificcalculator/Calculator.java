@@ -28,8 +28,10 @@ public class Calculator {
         double ans = Math.atan(x);
         return ans;
     }
+
+    //THIS IS PROBLY WRONG
     public int factorial(int x){
-        int ans = 0;
+        int ans = 1;
         for(int i=1;i<=x;i++){
             ans*=i;
         }
