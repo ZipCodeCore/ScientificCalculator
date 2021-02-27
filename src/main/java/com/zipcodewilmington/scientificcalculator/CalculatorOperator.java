@@ -23,18 +23,18 @@ public class CalculatorOperator {
         return division;
     }
 
-    public static int square (int a) {
-        int square = (int) Math.pow(a,2);
+    public static double square (double a) {
+        double square = Math.pow(a,2);
         return square;
     }
 
-    public static double squareRoot (int a) {
-        int squareRoot = (int) Math.sqrt(a);
+    public static double squareRoot (double a) {
+        double squareRoot = Math.sqrt(a);
         return squareRoot;
     }
 
-    public static int exponents (int a, int b) {
-        int exponent = (int) Math.pow(a,b);
+    public static double exponents (double a, double b) {
+        double exponent = Math.pow(a,b);
         return exponent;
     }
 
@@ -43,8 +43,8 @@ public class CalculatorOperator {
         return multiplicativeInverse;
     }
 
-    public static int additiveInverse (int a) {
-        int additiveInverse = a * -1;
+    public static double additiveInverse (double a) {
+        double additiveInverse = a * -1;
         return additiveInverse;
     }
 
