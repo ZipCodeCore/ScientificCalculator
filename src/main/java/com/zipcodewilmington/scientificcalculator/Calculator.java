@@ -4,78 +4,128 @@ public class Calculator {
     public Calculator() {
     }
 
-    public static double sine(int x){
+    public void drawScreen(double d){
+        Console.println("");
+        Console.println("|------------------------------------------------|");
+        Console.println("| Current Number:                            %s |",d);
+        Console.println("|------------------------------------------------|");
+        Console.println("| Add      Subtract      Multiply      Divide    |");
+        Console.println("| Square   Square Root   Exponential   Inverse   |");
+        Console.println("| Log      Log-1         Ln            Ln-1      |");
+        Console.println("| Sine     Cosine        Tangent       Factorial |");
+        Console.println("| Sine-1   Cosine-1      Tangent-1               |");
+        Console.println("|------------------------------------------------|");
+    }
+
+    public double performOperation(String op, double num){
+        double returnAns;
+
+        if(op.equalsIgnoreCase("sine")){
+            returnAns = this.sine(num);
+        }
+        else if(op.equalsIgnoreCase("cosine")){
+            returnAns = this.cosine(num);
+        }
+        else if(op.equalsIgnoreCase("tangent")){
+            returnAns = this.tangent(num);
+        }
+        else if(op.equalsIgnoreCase("sine-1")){
+            returnAns = this.inverseSine(num);
+        }
+        else if(op.equalsIgnoreCase("cosine-1")){
+            returnAns = this.inverseCosine(num);
+        }
+        else if(op.equalsIgnoreCase("tangent-1")){
+            returnAns = this.inverseTangent(num);
+        }
+        else if(op.equalsIgnoreCase("factorial")){
+            returnAns = this.factorial(num);
+        }
+        else if(op.equalsIgnoreCase("log")){
+            returnAns = this.log(num);
+        }
+        /*
+        else if(op.equalsIgnoreCase("log-1")){
+            returnAns = this.inverseLog(num);
+        }
+        */
+        else if(op.equalsIgnoreCase("ln")){
+            returnAns = this.naturalLog(num);
+        }
+        //below is placeholder
+        else {
+            returnAns = 69;
+        }
+        return returnAns;
+    }
+
+    private double sine(double x){
         double ans = Math.sin(x);
         return ans;
     }
-    public static double sine(double x){
-        double ans = Math.sin(x);
-        return ans;
-    }
-    public static double cosine(int x){
+
+    private double cosine(double x){
         double ans = Math.cos(x);
         return ans;
     }
-    public static double cosine(double x){
-        double ans = Math.cos(x);
-        return ans;
-    }
-    public static double tangent(int x){
+
+    private double tangent(double x){
         double ans = Math.tan(x);
         return ans;
     }
-    public static double tangent(double x){
-        double ans = Math.tan(x);
-        return ans;
-    }
-    public static double inverseSine(int x){
+
+    private double inverseSine(double x){
         double ans = Math.asin(x);
         return ans;
     }
-    public static double inverseSine(double x){
-        double ans = Math.asin(x);
-        return ans;
-    }
-    public static double inverseCosine(int x){
+
+    private double inverseCosine(double x){
         double ans = Math.acos(x);
         return ans;
     }
-    public static double inverseCosine(double x){
-        double ans = Math.acos(x);
-        return ans;
-    }
-    public static double inverseTangent(int x){
-        double ans = Math.atan(x);
-        return ans;
-    }
-    public static double inverseTangent(double x){
+
+    private double inverseTangent(double x){
         double ans = Math.atan(x);
         return ans;
     }
 
-    public static double toRadians(int x){
+    private double toRadians(double x){
         double ans = Math.toRadians(x);
         return ans;
     }
-    public static double toRadians(double x){
-        double ans = Math.toRadians(x);
-        return ans;
-    }
-    public static double toDegrees(int x){
-        double ans = Math.toDegrees(x);
-        return ans;
-    }
-    public static double toDegrees(double x){
+
+    private double toDegrees(double x){
         double ans = Math.toDegrees(x);
         return ans;
     }
 
-    public static int factorial(int x){
-        int ans = 1;
+    private double factorial(double x){
+        double ans = 1;
         for(int i=1;i<=x;i++){
-            ans*=i;
+            ans *= i;
         }
         return ans;
+    }
+
+    private double log(double x){
+        double ans = Math.log10(x);
+        return ans;
+    }
+
+    /* Figure out inverse log function
+    private double inverseLog(double x){
+        double ans = Math.log(x);
+        return ans;
+    }
+    */
+
+    private double naturalLog(double x){
+        double ans = Math.log(x);
+        return ans;
+    }
+
+    private String err(){
+        return "Err";
     }
 
 }

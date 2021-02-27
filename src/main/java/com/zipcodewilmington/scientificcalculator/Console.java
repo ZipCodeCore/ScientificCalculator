@@ -21,11 +21,6 @@ public class Console {
         String userInput = scanner.nextLine();
         return userInput;
     }
-    public static String getStringInput() {
-        Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        return userInput;
-    }
 
     public static Integer getIntegerInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
