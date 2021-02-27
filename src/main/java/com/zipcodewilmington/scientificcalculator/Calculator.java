@@ -7,20 +7,58 @@ public class Calculator {
     public void drawScreen(double d){
         Console.println("");
         Console.println("|------------------------------------------------|");
-        Console.println("| Current Number:                            %s |",d);
+        Console.println("|Clear                                    Memory |");
+        Console.println("|------------------------------------------------|");
+        Console.println("| Current Number:                            %s  |",d);
         Console.println("|------------------------------------------------|");
         Console.println("| Add      Subtract      Multiply      Divide    |");
         Console.println("| Square   Square Root   Exponential   Inverse   |");
         Console.println("| Log      Log-1         Ln            Ln-1      |");
         Console.println("| Sine     Cosine        Tangent       Factorial |");
-        Console.println("| Sine-1   Cosine-1      Tangent-1               |");
+        Console.println("| Sine-1   Cosine-1      Tangent-1     Invert    |");
         Console.println("|------------------------------------------------|");
+    }
+    public double performOperation(String op, double num1, double num2){
+        double returnAns;
+
+        if(op.equalsIgnoreCase("add")){
+            returnAns = this.addition(num1,num2);
+        }
+        else if(op.equalsIgnoreCase("subtract")){
+            returnAns = this.subtraction(num1,num2);
+        }
+        else if(op.equalsIgnoreCase("multiply")){
+            returnAns = this.multiply(num1, num2);
+        }
+        else if(op.equalsIgnoreCase("divide")){
+            returnAns = this.divide(num1, num2);
+        }
+        else if(op.equalsIgnoreCase("exponential")){
+            returnAns = this.exponential(num1, num2);
+        }
+        //below is placeholder
+        else {
+            returnAns = 69;
+        }
+        return returnAns;
     }
 
     public double performOperation(String op, double num){
         double returnAns;
 
-        if(op.equalsIgnoreCase("sine")){
+        if(op.equalsIgnoreCase("square")){
+            returnAns = this.square(num);
+        }
+        else if(op.equalsIgnoreCase("square root")){
+            returnAns = this.squareRoot(num);
+        }
+        else if(op.equalsIgnoreCase("inverse")){
+            returnAns = this.inverse(num);
+        }
+        else if(op.equalsIgnoreCase("invert")){
+            returnAns = this.invert(num);
+        }
+        else if(op.equalsIgnoreCase("sine")){
             returnAns = this.sine(num);
         }
         else if(op.equalsIgnoreCase("cosine")){
@@ -58,6 +96,52 @@ public class Calculator {
             returnAns = 69;
         }
         return returnAns;
+    }
+
+    //two variable operations
+    private double addition(double x,double y){
+        double ans = x + y;
+        return ans;
+    }
+
+    private double subtraction(double x,double y){
+        double ans = x - y;
+        return ans;
+    }
+
+    private double multiply(double x,double y){
+        double ans = x * y;
+        return ans;
+    }
+
+    //NEED TO FIX DIVIDE BY ZERO
+    private double divide(double x,double y){
+        double ans = x / y;
+        return ans;
+    }
+
+    private double exponential(double x,double y){
+        double ans = Math.pow(x,y);
+        return ans;
+    }
+
+    //one variable operations
+    private double square(double x){
+        double ans = Math.pow(x,2);
+        return ans;
+    }
+    private double squareRoot(double x){
+        double ans = Math.sqrt(x);
+        return ans;
+    }
+
+    private double inverse(double x){
+        double ans = (1 / x);
+        return ans;
+    }
+    private double invert(double x){
+        double ans = (x * -1);
+        return ans;
     }
 
     private double sine(double x){
