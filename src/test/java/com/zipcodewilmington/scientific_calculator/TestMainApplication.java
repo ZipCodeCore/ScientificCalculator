@@ -19,12 +19,17 @@ public class TestMainApplication {
     }
      */
 
-    @Test
+    @Test //Log base 10 method test
     public void getLog10() {
         MainApplication newLog = new MainApplication(0.0,10.0);
         assertEquals(1.0, newLog.logarithm((Math.log10(0.0)),10.0), 0.0000001);
     }
-    @Test
+    @Test //Log base 10 method Err test
+    public void getLog101() {
+        MainApplication newLog = new MainApplication(0.0,10.0);
+        assertEquals(1.0, newLog.logarithm((Math.log10(0.0)),10.0), 0.0000001);
+    }
+    @Test //Inverted log 
     public void getInvLog10() {
         MainApplication newLog = new MainApplication(0.0,5.0);
         assertEquals(100000.0, newLog.invLog((Math.log10(0.0)),5.0), 0.0000001);
@@ -39,4 +44,5 @@ public class TestMainApplication {
         MainApplication newLog = new MainApplication(0.0, 5.0);
         assertEquals(148.4131591, newLog.invNatLog((Math.log(0.0)), 5.0), 0.0000001);
     }
+
 }
