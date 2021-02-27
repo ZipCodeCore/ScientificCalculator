@@ -99,92 +99,94 @@ public class Calculator {
     }
 
     //two variable operations
-    private double addition(double x,double y){
+    public double addition(double x,double y){
         double ans = x + y;
         return ans;
     }
 
-    private double subtraction(double x,double y){
+    public double subtraction(double x,double y){
         double ans = x - y;
         return ans;
     }
 
-    private double multiply(double x,double y){
+    public double multiply(double x,double y){
         double ans = x * y;
         return ans;
     }
 
     //NEED TO FIX DIVIDE BY ZERO
-    private double divide(double x,double y){
+    public double divide(double x,double y){
         double ans = x / y;
         return ans;
     }
 
-    private double exponential(double x,double y){
+    public double exponential(double x,double y){
         double ans = Math.pow(x,y);
         return ans;
     }
 
     //one variable operations
-    private double square(double x){
+    public double square(double x){
         double ans = Math.pow(x,2);
         return ans;
     }
-    private double squareRoot(double x){
+
+    public double squareRoot(double x){
         double ans = Math.sqrt(x);
         return ans;
     }
 
-    private double inverse(double x){
+    public double inverse(double x){
         double ans = (1 / x);
         return ans;
     }
-    private double invert(double x){
+
+    public double invert(double x){
         double ans = (x * -1);
         return ans;
     }
 
-    private double sine(double x){
+    public double sine(double x){
         double ans = Math.sin(x);
         return ans;
     }
 
-    private double cosine(double x){
+    public double cosine(double x){
         double ans = Math.cos(x);
         return ans;
     }
 
-    private double tangent(double x){
+    public double tangent(double x){
         double ans = Math.tan(x);
         return ans;
     }
 
-    private double inverseSine(double x){
+    public double inverseSine(double x){
         double ans = Math.asin(x);
         return ans;
     }
 
-    private double inverseCosine(double x){
+    public double inverseCosine(double x){
         double ans = Math.acos(x);
         return ans;
     }
 
-    private double inverseTangent(double x){
+    public double inverseTangent(double x){
         double ans = Math.atan(x);
         return ans;
     }
 
-    private double toRadians(double x){
+    public double toRadians(double x){
         double ans = Math.toRadians(x);
         return ans;
     }
 
-    private double toDegrees(double x){
+    public double toDegrees(double x){
         double ans = Math.toDegrees(x);
         return ans;
     }
 
-    private double factorial(double x){
+    public double factorial(double x){
         double ans = 1;
         for(int i=1;i<=x;i++){
             ans *= i;
@@ -192,22 +194,22 @@ public class Calculator {
         return ans;
     }
 
-    private double log(double x){
+    public double log(double x){
         double ans = Math.log10(x);
         return ans;
     }
 
-    private double inverseLog(double x){
+    public double inverseLog(double x){
         double ans = Math.pow(10,x);
         return ans;
     }
 
-    private double naturalLog(double x){
+    public double naturalLog(double x){
         double ans = Math.log(x);
         return ans;
     }
 
-    private double inverseNaturalLog(double x){
+    public double inverseNaturalLog(double x){
         double ans = Math.exp(x);
         return ans;
     }
