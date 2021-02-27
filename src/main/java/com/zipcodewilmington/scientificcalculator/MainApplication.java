@@ -5,16 +5,44 @@ package com.zipcodewilmington.scientificcalculator;
  */
 public class MainApplication {
     public static void main(String[] args) {
+        double y;
+        double ans;
+
         Console.println("Welcome to my calculator!");
 
-        Double firstNum = Console.getDoubleInput("Please enter your first number or enter \"Memory\" for your stored value");
+        y = Console.getDoubleInput("Please enter your first number or enter \"Memory\" for your stored value");
 
         Calculator myCalc = new Calculator();
-        myCalc.drawScreen(firstNum);
 
-        String op = Console.getStringInput("Please enter the operation you would like to perform:");
-        double ans = myCalc.performOperation(op,firstNum);
-        myCalc.drawScreen(ans);
+        myCalc.drawScreen(Double.toString(y));
+
+        while(true) {
+
+            String op = Console.getStringInput("Please enter the operation you would like to perform:");
+            if (op.equalsIgnoreCase("clear")) {
+                ans = 0;
+                myCalc.drawScreen(Double.toString(ans));
+            } else if (op.equalsIgnoreCase("add") || op.equalsIgnoreCase("subtract") || op.equalsIgnoreCase("multiply") || op.equalsIgnoreCase("exponential")) {
+                double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
+                ans = myCalc.performOperation(op, y, secondNum);
+                myCalc.drawScreen(Double.toString(ans));
+            } else if  (op.equalsIgnoreCase("divide")){
+                double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
+                if (secondNum == 0) {
+                    String error = "Can't divide by zero";
+                    myCalc.drawScreen(error);
+                }
+                else {
+                    ans = myCalc.performOperation(op, y, secondNum);
+                    myCalc.drawScreen(Double.toString(ans));
+                }
+            }
+            else {
+                ans = myCalc.performOperation(op, y);
+                myCalc.drawScreen(Double.toString(ans));
+            }
+
+        }
 
 
 
