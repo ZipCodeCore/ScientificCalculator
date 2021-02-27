@@ -44,13 +44,14 @@ public class Calculator {
         else if(op.equalsIgnoreCase("log")){
             returnAns = this.log(num);
         }
-        /*
         else if(op.equalsIgnoreCase("log-1")){
             returnAns = this.inverseLog(num);
         }
-        */
         else if(op.equalsIgnoreCase("ln")){
             returnAns = this.naturalLog(num);
+        }
+        else if(op.equalsIgnoreCase("ln-1")){
+            returnAns = this.inverseNaturalLog(num);
         }
         //below is placeholder
         else {
@@ -112,15 +113,18 @@ public class Calculator {
         return ans;
     }
 
-    /* Figure out inverse log function
     private double inverseLog(double x){
-        double ans = Math.log(x);
+        double ans = Math.pow(10,x);
         return ans;
     }
-    */
 
     private double naturalLog(double x){
         double ans = Math.log(x);
+        return ans;
+    }
+
+    private double inverseNaturalLog(double x){
+        double ans = Math.exp(x);
         return ans;
     }
 
