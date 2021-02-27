@@ -1,6 +1,7 @@
 package com.zipcodewilmington.scientific_calculator;
 
 import com.zipcodewilmington.scientificcalculator.CalculatorOperator;
+import com.zipcodewilmington.scientificcalculator.MainApplication;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -53,4 +54,14 @@ public class TestMainApplication {
     public void additiveInverseTest() {
         Assertions.assertEquals(4 , CalculatorOperator.additiveInverse(-4));
     }
+
+    @Test
+    public void calculatorTest() {
+        Assertions.assertEquals(5.2 , MainApplication.calculator("+", 2.2, 3.0));
+        Assertions.assertEquals(-1 , MainApplication.calculator("-", 2.0, 3.0));
+        Assertions.assertEquals(6 , MainApplication.calculator("*", 2.0, 3.0));
+        Assertions.assertEquals(4 , MainApplication.calculator("/", 12, 3));
+    }
+
+
 }
