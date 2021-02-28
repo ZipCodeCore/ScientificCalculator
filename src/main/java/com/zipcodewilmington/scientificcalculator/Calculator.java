@@ -218,4 +218,16 @@ public class Calculator {
         return "Err";
     }
 
+    //Conversions
+    public double convertBinary(double x) {
+        double ans = double.toBinaryString(x);
+        return ans;
+    }
+
+    public double convertHex(double x) {
+        double ans = double.toHexString(x);
+        return ans;
+    }
+
+
 }

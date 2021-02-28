@@ -167,4 +167,9 @@ public class TestMainApplication {
         assertEquals(Double.valueOf(4.0), myCalc.addition(2,2), 0.00001);
     }
 
+    @org.junit.Test
+    public void testConvertBinary() {
+        Calculator myCalc = new Calculator();
+        assertEquals(Double.valueOf(10), myCalc.convertBinary(2));
+    }
 }
