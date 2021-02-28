@@ -458,6 +458,67 @@ public class MainApplication {
         return startLoop;
     }
 
+
+    // ADVANCED FUNCTIONS
+
+    // Invert sign
+    public double getSignInversion(double num1)
+    {
+        double newNum = num1 * -1;
+        System.out.println(newNum);
+        return newNum;
+    }
+
+    // O as input exception
+    public double getSignInversion0(double num1) {
+        System.out.println(num1);
+        return 0.0;
+    }
+
+    // Compute square
+    public double getSquare(double num1)
+    {
+        double newNum = num1 * num1;
+        System.out.println(newNum);
+        return newNum;
+    }
+
+    // Square Root
+    public double getSquareRoot(double num1)
+    {
+        if (num1 >= 0) {
+            double newNum = Math.sqrt(num1);
+            System.out.println(newNum);
+            return newNum;
+        } else {
+            System.out.println("Invalid number");
+            return num1;
+        }
+
+    }
+
+    // Exponentiation
+    public double getExponentiation(double num1, double num2)
+    {
+        double newNum = Math.pow(num1, num2);
+        System.out.println(newNum);
+        return newNum;
+    }
+
+    // Inverse (1/x)
+    public double getInverse(double num1)
+    {
+        if (num1 != 0) {
+            double newNum = 1 / num1;
+            System.out.println(newNum);
+            return newNum;
+        } else {
+            System.out.println("Err");
+            return num1;
+        }
+
+    }
+
     //'Rock,Paper,Scissors' game.
     public static void playGame() {
         boolean gameOn = true;
@@ -556,5 +617,7 @@ public class MainApplication {
         }
 
     }
+
 }
+
 

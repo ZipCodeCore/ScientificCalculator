@@ -284,8 +284,56 @@ public class TestMainApplication {
         assertEquals(6.0, addMemTest.recallMemoryValue(), 1e-15);
     }
 
+    @Test
+    public void testGetSignInversion() {
+        MainApplication getSignInversion1 = new MainApplication();
+        assertEquals(-2.0, getSignInversion1.getSignInversion(2.0), 0.1);
+        assertEquals(25.0, getSignInversion1.getSignInversion(-25.0), 0.1);
+        assertEquals(-0.125, getSignInversion1.getSignInversion(0.125), 0.1);
+    }
 
+    @Test
+    public void testGetSignInversion0() {
+        MainApplication getSignInversion0 = new MainApplication();
+        assertEquals(0.0, getSignInversion0.getSignInversion0(0.0), 0.1);
+    }
 
+    @Test
+    public void testGetSquare() {
+        MainApplication getSquare1 = new MainApplication();
+        assertEquals(4.0, getSquare1.getSquare(2.0), 0.1);
+        assertEquals(9.0, getSquare1.getSquare(-3.0), 0.1);
+        assertEquals(0.0625, getSquare1.getSquare(-0.25), 0.1);
+        assertEquals(0.0, getSquare1.getSquare(0.0), 0.1);
+    }
 
+    @Test
+    public void testGetSquareRoot() {
+        MainApplication getSquareRoot1 = new MainApplication();
+        assertEquals(4.0, getSquareRoot1.getSquareRoot(16.0), 0.1);
+        assertEquals(0.0, getSquareRoot1.getSquareRoot(0.0), 0.1);
+    }
+
+    @Test
+    public void testGetExponentiation() {
+        MainApplication getExponentiation1 = new MainApplication();
+        assertEquals(8.0, getExponentiation1.getExponentiation(2.0, 3.0), 0.1);
+        assertEquals(-8.0, getExponentiation1.getExponentiation(-2.0, 3.0), 0.1);
+        assertEquals(0.125, getExponentiation1.getExponentiation(2.0, -3.0), 0.1);
+        assertEquals(0.0, getExponentiation1.getExponentiation(0.0, 2.0), 0.1);
+        assertEquals(2.0, getExponentiation1.getExponentiation(4.0, 0.5), 0.1);
+        assertEquals(0.5, getExponentiation1.getExponentiation(4.0, -0.5), 0.1);
+        assertEquals(1.0, getExponentiation1.getExponentiation(1.0, 0.0), 0.1);
+        assertEquals(0.0, getExponentiation1.getExponentiation(0.0, 1.0), 0.1);
+     }
+
+     @Test
+    public void testGetInverse() {
+        MainApplication getInverse1 = new MainApplication();
+        assertEquals(0.25, getInverse1.getInverse(4.0), 0.1);
+        assertEquals(-0.25, getInverse1.getInverse(-4.0), 0.1);
+        assertEquals(0.0, getInverse1.getInverse(0.0), 0.1);
+
+     }
 }
 
