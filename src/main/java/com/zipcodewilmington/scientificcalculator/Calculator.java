@@ -5,16 +5,17 @@ public class Calculator {
     public void drawScreen(String d){
         Console.println("");
         Console.println("|------------------------------------------------|");
-        Console.println("|Quit      Clear                          Memory |");
+        Console.println("|Quit     Clear     Set     M+     MC     MRC    |");
         Console.println("|------------------------------------------------|");
-        Console.println("| Current Number: %s                             |",d);
+        Console.println(" Current Number: %s                               ",d);
         Console.println("|------------------------------------------------|");
         Console.println("| Add      Subtract      Multiply      Divide    |");
         Console.println("| Square   Square Root   Exponential   Inverse   |");
         Console.println("| Log      Log-1         Ln            Ln-1      |");
         Console.println("| Sine     Cosine        Tangent       Factorial |");
         Console.println("| Sine-1   Cosine-1      Tangent-1     Invert    |");
-        Console.println("| cToF     fToC                                  |");
+        Console.println("| cToF     fToC          LBtoKG        KGtoLB    |");
+        Console.println("|          radToDeg      degToRad                |");
         Console.println("|------------------------------------------------|");
     }
     public double performOperation(String op, double num1, double num2){
@@ -97,7 +98,33 @@ public class Calculator {
     }
 
     //Conversion conditionals
-    public double switchDisplayMode(String convert, double num) {
+    public double displayMode(double x, String y) {
+        double returnAns;
+        if (y.equalsIgnoreCase("switch display binary")) {
+            returnAns = this.convertBinary(x);
+        } else if (y.equalsIgnoreCase("switch display hexadecimal")) {
+            returnAns = this.convertHex(x);
+        } else if (y.equalsIgnoreCase("switch display octal")) {
+            returnAns = this.convertOctal(x);
+        } else if (y.equalsIgnoreCase("switch display decimal")) {
+            returnAns = x;
+        } else {
+            //catches Switch Display
+            if (x) {
+                returnAns = this.convertBinary(x);
+            } else if (y == this.convertBinary(x)) {
+                returnAns = this.convertOctal(x);
+            } else if (y == this.convertOctal(x)) {
+                returnAns = this.convertHex(x);
+            } else {
+                //catches if it's Hex
+                returnAns = x;
+            }
+            return returnAns;
+        }
+    }
+    /*public double switchDisplayMode(String convert, double num) {
+
         double returnans;
         if (convert.equalsIgnoreCase("Switch Display binary")){
             returnans = this.convertBinary(num);
@@ -129,7 +156,7 @@ public class Calculator {
             }
             return returnans;
         }
-    }
+    }*/
 
     //store, recall, and clear memory
     public double memoryUsage(String inputStr, double x) {
@@ -277,25 +304,26 @@ public class Calculator {
     }
 
     //Conversions
+
     public String convertBinary(double x) {
-        String ans = double.toBinaryString(x);
-        return ans;
+            String ans = double.toBinaryString(x);
+            return ans;
     }
 
     public String convertHex(double x) {
-        String ans = double.toHexString(x);
-        return ans;
+            String ans = double.toHexString(x);
+            return ans;
     }
 
     public String convertOctal(double x) {
-        String ans = double.toOctalString(x);
-        return ans;
+            String ans = double.toOctalString(x);
+            return ans;
     }
 
-    public double convertDecimal(String x) {
-        double ans = String.parseInt(x);
+    /*public double convertDecimal(String x, Integer radix) {
+        double ans = Integer.parseInt(x, radix);
         return ans;
-    }
+    }*/
 
     public double calcMemory(double x) {
         double memory = x;
