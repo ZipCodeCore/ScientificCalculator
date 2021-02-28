@@ -3,6 +3,9 @@ package com.zipcodewilmington.scientificcalculator;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
+
+    private String currentMode = "binary";
+    private String currentUnit = "degrees";
     private static double currentValue = 0.0; // Current Value
     private static double memoryValue = 0.0;  // Value Stored in Memory
     private static String currentMode = "binary";
@@ -11,6 +14,7 @@ public class MainApplication {
     //private String currentUnit = "degrees";
 
     public static void main(String[] args) {
+
         Console.println("Welcome to my calculator!");
         Console.println("What operation would you like to perform?");
         Console.println("ARITHMETIC OPERATIONS: 1-Add 2-Subtract 3-Multiple 4-Divide");
@@ -225,6 +229,122 @@ public class MainApplication {
 
     //UNIT CHANGES
 
+
+    }
+    //DISPLAY CHANGES
+
+    public void getMode() {
+        System.out.println(currentMode);
+    }
+    //public void setMode(String newMode){currentMode = newMode;}
+
+    public String switchDisplayMode(){
+        if (currentMode.equals("binary")) {
+            currentMode = "octal";
+            System.out.println("octal");
+        } else if (currentMode.equals("octal")) {
+            currentMode = "decimal";
+            System.out.println("decimal");
+        } else if (currentMode.equals("decimal")) {
+            currentMode = "hexadecimal";
+            System.out.println("hexadecimal");
+        } else if (currentMode.equals("hexadecimal")) {
+            currentMode = "binary";
+            System.out.println("binary");
+        } else System.out.println("Err");
+
+        return currentMode;
+    }
+
+    public String switchDisplayMode(String mode) {
+        if (mode.equals("binary")) {
+            currentMode = "binary";
+        } else if (mode.equals("octal")) {
+            currentMode = "octal";
+        } else if (mode.equals("decimal")) {
+            currentMode = "decimal";
+        } else if (mode.equals("hexadecimal")) {
+            currentMode = "hexadecimal";
+        } else mode = "Err";
+        System.out.println(mode);
+        return mode;
+    }
+
+    //UNIT CHANGES
+
+    public void getUnit() {
+        System.out.println(currentUnit);
+    }
+
+    public String switchUnitsMode(){
+        if (currentUnit.equals("degrees")) {
+            currentUnit = "radians";
+            System.out.println("radians");
+        } else if (currentUnit.equals("radians")) {
+            currentUnit = "degrees";
+            System.out.println("degrees");
+        } else System.out.println("Err");
+
+        return currentUnit;
+    }
+
+    public String switchUnitsMode(String mode) {
+        if (mode.equals("degrees")) {
+            currentUnit = "degrees";
+        } else if (mode.equals("radians")) {
+            currentUnit = "radians";
+        } else mode = "Err";
+        System.out.println(mode);
+        return mode;
+    }
+    // TRIG FUNCTIONS
+    public static double getSin (double a){
+
+        double b=Math.toRadians(a);
+
+        return (Math.sin(b));
+    }
+
+
+    public static double getCos(double a){
+
+        double b=Math.toRadians(a);
+        System.out.println(Math.cos(b));
+        return (Math.cos(b));
+    }
+
+    public static double getTan(double a){
+
+        double b=Math.toRadians(a);
+
+        return (Math.tan(b));
+    }
+
+    public static double getAsinPi(double a) {
+
+        return (Math.asin(a));
+    }
+    public static double getAsin(double a) {
+
+        double b=Math.toRadians(a);
+
+        return (Math.asin(b));
+    }
+
+    public static double getAcos (double a){
+
+        double b=Math.toRadians(a);
+
+        return (Math.acos(b));
+    }
+
+    public static double getAtan (double a){
+
+        return (Math.atan(a));
+    }
+
+
+}
 
     public static void getUnit() {
         System.out.println(currentUnit);

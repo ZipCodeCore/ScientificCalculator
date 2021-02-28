@@ -1,5 +1,10 @@
 package com.zipcodewilmington.scientific_calculator;
 import static org.junit.Assert.assertEquals;
+import com.zipcodewilmington.scientificcalculator.MainApplication;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import javax.naming.NameNotFoundException;
 import static org.junit.Assert.assertNotEquals;
 import com.zipcodewilmington.scientificcalculator.MainApplication;
 import org.junit.Test;
@@ -96,6 +101,7 @@ public class TestMainApplication {
     }
 
 
+
     @Test
     public void displayTest() {
         MainApplication displaytester = new MainApplication();
@@ -132,6 +138,50 @@ public class TestMainApplication {
         assertEquals("degrees", unitChanger1.switchUnitsMode("degrees"));
     }
 
+    @Test
+    public void sinTest() {
+        MainApplication sinTest1 = new MainApplication();
+        assertEquals(-1, sinTest1.getSin(270.0),0.000000001);
+        assertEquals(0.5, sinTest1.getSin(30.0),0.000000001);
+        assertEquals(1.0, sinTest1.getSin(90.0),0.000000001);
+        //assertEquals(Float.NaN, sinTest1.getSin(30.0),0.000000001);
+    }
+    @Test
+    public void cosTest() {
+        MainApplication cosTest1 = new MainApplication();
+        assertEquals(0.866025,cosTest1.getCos(30.0),0.000001);
+    }
+    @Test
+    public void tanTest() {
+        MainApplication tanTest1 = new MainApplication();
+        assertEquals(0,tanTest1.getTan(0.0),0.001);
+    }
+    @Test
+    public void asinpiTest(){
+        MainApplication asinTest1 = new MainApplication();
+        assertEquals(Float.NaN,asinTest1.getAsinPi(Math.PI),0.000001);
+        assertEquals(Float.NaN,asinTest1.getAsinPi(Double.NEGATIVE_INFINITY),0.000001);
+    }
+    @Test
+    public void asinTest(){
+        MainApplication asinTest1 = new MainApplication();
+        assertEquals(0.0,asinTest1.getAsin(0.0),0.000001);
+    }
+    @Test
+    public void acosTest(){
+        MainApplication acosTest1 = new MainApplication();
+        assertEquals(1.5533,acosTest1.getAcos(1.0),0.001);
+
+    }
+    @Test
+    public void atanTest(){
+        MainApplication atanTest1 = new MainApplication();
+        assertEquals(0.0,atanTest1.getAtan(0.0), 0.01);
+    }
+
+}
+
+
 
     @Test
     public void findFactorial() {
@@ -166,3 +216,4 @@ public class TestMainApplication {
 
 
 }
+
