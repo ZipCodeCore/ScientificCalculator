@@ -170,6 +170,32 @@ public class TestMainApplication {
     @org.junit.Test
     public void testConvertBinary() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(10), myCalc.convertBinary(2));
+        assertEquals("10110", myCalc.convertBinary(22)); //Decimal
+        assertEquals("10110", myCalc.convertBinary("16")); //Hex
+        assertEquals("10110", myCalc.convertBinary("26")); //Octal
+    }
+
+    @org.junit.Test
+    public void testConvertHex() {
+        Calculator myCalc = new Calculator();
+        assertEquals("2B", myCalc.convertHex(43)); //Decimal
+        assertEquals("2B", myCalc.convertHex("53")); //Octal
+        assertEquals("2B", myCalc.convertHex("101011")); //Binary
+    }
+
+    @org.junit.Test
+    public void testConvertOctal() {
+        Calculator myCalc = new Calculator();
+        assertEquals("14", myCalc.convertOctal(12)); //Decimal
+        assertEquals("14", myCalc.convertOctal("C")); //Hex
+        assertEquals("14", myCalc.convertOctal("1100")); //Binary
+    }
+
+    @org.junit.Test
+    public void testConvertDecimal() {
+        Calculator myCalc = new Calculator();
+        assertEquals(94, myCalc.convertDecimal("5E")); //Hex
+        assertEquals(94, myCalc.convertDecimal("136")); //Octal
+        assertEquals(94, myCalc.convertDecimal("1011110")); //Binary
     }
 }

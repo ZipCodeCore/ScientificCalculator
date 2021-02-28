@@ -253,23 +253,23 @@ public class Calculator {
     }
 
     //Conversions
-    public double convertBinary(double x) {
-        double ans = double.toBinaryString(x);
+    public String convertBinary(double x) {
+        String ans = double.toBinaryString(x);
         return ans;
     }
 
-    public double convertHex(double x) {
-        double ans = double.toHexString(x);
+    public String convertHex(double x) {
+        String ans = double.toHexString(x);
         return ans;
     }
 
-    public double convertOctal(double x) {
-        double ans = double.toOctalString(x);
+    public String convertOctal(double x) {
+        String ans = double.toOctalString(x);
         return ans;
     }
 
-    public double convertDecimal(double x) {
-        double ans = double.parseInt(x);
+    public double convertDecimal(String x) {
+        double ans = String.parseInt(x);
         return ans;
     }
 }
