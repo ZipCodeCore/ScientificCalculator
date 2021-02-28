@@ -1,4 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
+
+import com.sun.codemodel.internal.JWhileLoop;
+
 /**
  * Created by leon on 2/9/18.
  */
@@ -8,33 +11,89 @@ public class MainApplication {
     private static String currentUnit = "degrees";
     private static double currentValue = 0.0; // Current Value
     private static double memoryValue = 0.0;  // Value Stored in Memory
+    private static String displayValue = ""; //String.valueOf(currentValue)
+
 
     public static void main(String[] args) {
 
         Console.println("Welcome to my calculator!");
         Console.println("What operation would you like to perform?");
-        Console.println("ARITHMETIC OPERATIONS: 1-Add 2-Subtract 3-Multiple 4-Divide");
-        Console.println("ADVANCED OPERATIONS: 5-Square 6-Square Root 7-Exponentiation 8-Inverse 9-Change Sign 10-Factorial");
-        Console.println("TRIG FUNCTIONS: 11-Sine 12-Cosine 13-Tangent");
-        Console.println("INVERSE TRIG FUNCTIONS: 14-Inverse Sine 15-Inverse Cosine 16-Inverse Tangent");
-        Console.println("SWITCH TRIG UNITS: 17-Switch Trig Units 18-Select Trig Units");
-        Console.println("LOGARITHMIC FUNCTIONS: 18-Log 19-Inverse Log 20-Natural Log 21-Inverse Natural Log");
-        Console.println("MEMORY FUNCTIONS: 22-Clear memory 23-Add value to memory 24-Recall memory");
-        Console.println("DISPLAY CHANGES: 25-Switch Display Mode 26-Choose Display Mode");
-        Console.println("99-EXIT CALCULATOR");
 
         while (startLoop) {
+            Console.println("SYSTEM OPERATIONS: 0-Clear Display");
+            Console.println("ARITHMETIC OPERATIONS: 1-Add 2-Subtract 3-Multiple 4-Divide");
+            Console.println("ADVANCED OPERATIONS: 5-Square 6-Square Root 7-Exponentiation 8-Inverse 9-Change Sign 10-Factorial");
+            Console.println("TRIG FUNCTIONS: 11-Sine 12-Cosine 13-Tangent");
+            Console.println("INVERSE TRIG FUNCTIONS: 14-Inverse Sine 15-Inverse Cosine 16-Inverse Tangent");
+            Console.println("SWITCH TRIG UNITS: 17-Switch Trig Units 18-Select Trig Units");
+            Console.println("LOGARITHMIC FUNCTIONS: 19-Log 20-Inverse Log 21-Natural Log 22-Inverse Natural Log");
+            Console.println("MEMORY FUNCTIONS: 23-Clear memory 24-Add value to memory 25-Recall memory");
+            Console.println("DISPLAY CHANGES: 26-Switch Display Mode 27-Choose Display Mode");
+            Console.println("99-EXIT CALCULATOR");
+
             Integer choice = Console.getIntegerInput("Enter the number of the operation you want to perform.");
+
             switch (choice) {
-                //case 1:
-                //    findSum();
-                //    break;
-                // case 2: findDifference(); break;
-                // case 3: findProduct(); break;
-                // case 4: findQuotient(); break;
+                case 0:
+                    clearDisplay();
+                    System.out.println(displayValue);
+                case 1:
+                    userInputDouble = Console.getDoubleInput("Enter first number");
+                    userInputDouble2 = Console.getDoubleInput("Enter second number");
+                    findSum(userInputDouble, userInputDouble2);
+                    System.out.println(displayValue);
+                    break;
+                 case 2:
+                     userInputDouble = Console.getDoubleInput("Enter first number");
+                     userInputDouble2 = Console.getDoubleInput("Enter second number");
+                     findDifference(userInputDouble, userInputDouble2);
+                     System.out.println(displayValue);
+                     break;
+                 case 3:
+                     userInputDouble = Console.getDoubleInput("Enter first number");
+                     userInputDouble2 = Console.getDoubleInput("Enter second number");
+                     findProduct(userInputDouble, userInputDouble2);
+                     System.out.println(displayValue);
+                     break;
+                 case 4:
+                     userInputDouble = Console.getDoubleInput("Enter first number");
+                     userInputDouble2 = Console.getDoubleInput("Enter second number");
+                     findQuotient(userInputDouble, userInputDouble2);
+                     System.out.println(displayValue);
+                     break;
                 case 10:
-                    userInputDouble = Console.getDoubleInput("Enter a number as a double");
+                    userInputDouble = Console.getDoubleInput("Enter a number");
                     findFactorial(userInputDouble);
+                    break;
+                case 11:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    getSin(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
+                case 12:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    getCos(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
+                case 13:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    getTan(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
+                case 14:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    getAsin(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
+                case 15:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    getAcos(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
+                case 16:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    getAtan(userInputDouble);
+                    System.out.println(displayValue);
                     break;
                 case 17:
                     switchUnitsMode();
@@ -43,19 +102,39 @@ public class MainApplication {
                     String trigMode = Console.getStringInput("Enter the desired trig units mode");
                     switchUnitsMode(trigMode);
                     break;
+                case 19:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    logarithm(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
+                case 20:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    invLog(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
+                case 21:
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    natLog(userInputDouble);
+                    System.out.println(displayValue);
+                    break;
                 case 22:
-                    clearMemory();
+                    userInputDouble = Console.getDoubleInput("Enter a number");
+                    invNatLog(userInputDouble);
+                    System.out.println(displayValue);
                     break;
                 case 23:
-                    addCurrentValueToMemory();
+                    clearMemory();
                     break;
                 case 24:
-                    recallMemoryValue();
+                    addCurrentValueToMemory();
                     break;
                 case 25:
-                    switchDisplayMode();
+                    recallMemoryValue();
                     break;
                 case 26:
+                    switchDisplayMode();
+                    break;
+                case 27:
                     String mode = Console.getStringInput("Enter the desired mode");
                     switchDisplayMode(mode);
                     break;
@@ -67,6 +146,9 @@ public class MainApplication {
                     startLoop = false;
                     System.out.println("Goodbye");
                     break;
+                case 100:
+                    playGame();
+                    break;
                 default:
                     System.out.println("Invalid choice! Please enter a valid number.");
                     break;
@@ -76,55 +158,71 @@ public class MainApplication {
 
 
     public static double userInputDouble = 0.0;
+    public static double userInputDouble2 = 0;
+
+    public static void clearDisplay(){
+        displayValue = "0.0";
+    }
+
 
     //IM A BASIC B
     public static double findSum(double a, double b) {
         currentValue = a + b;
+        displayValue = String.valueOf(currentValue);
         return currentValue;
     }
 
     public static double findDifference(double a, double b) {
         currentValue = a - b;
+        displayValue = String.valueOf(currentValue);
         return currentValue;
     }
 
     public static double findProduct(double a, double b) {
         currentValue = a * b;
+        displayValue = String.valueOf(currentValue);
         return currentValue;
     }
 
     public static double findQuotient(double a, double b) {
+        if (b != 0){
+        currentValue = a / b;
+        displayValue = String.valueOf(currentValue);
+        } else displayValue = "Err";
         currentValue = a / b;
         return currentValue;
     }
 
     public static double findRemainder(double a, double b) {
         currentValue = a % b;
+        displayValue = String.valueOf(currentValue);
         return currentValue;
     }
-
-
     // MEMORY
     // public static Double acceptUserInput()
 
     public static double getMemoryValue() {
+        displayValue = String.valueOf(memoryValue);
         return memoryValue;
     }
 
     // Set the current value
     public static double setCurrentValue(double input) {
         currentValue = input;
+        displayValue = String.valueOf(currentValue);
         //System.out.println(currentValue);
         return currentValue;
     }
 
     // Return the current value
     public static double returnCurrentValue() {
+        displayValue = String.valueOf(currentValue);
         return currentValue;
     }
 
     // M+ KEY: Recall current value from memory to the display
     public static double recallMemoryValue() {
+        displayValue = String.valueOf(memoryValue);
         System.out.println(memoryValue);
         return memoryValue;
     }
@@ -132,6 +230,7 @@ public class MainApplication {
     // MC KEY: Reset the memory & Clear Display
     public static double clearMemory() {
         memoryValue = 0.0;
+        displayValue = String.valueOf(memoryValue);
         System.out.println(memoryValue);
         return memoryValue;
     }
@@ -141,6 +240,7 @@ public class MainApplication {
     public static double addCurrentValueToMemory() {
         memoryValue = currentValue;
         currentValue = 0.0;
+        displayValue = String.valueOf(currentValue);
         System.out.println(currentValue);
         return currentValue;
     }
@@ -158,6 +258,7 @@ public class MainApplication {
         }
 
         setCurrentValue(userInput);
+        displayValue = String.valueOf(currentValue);
         System.out.println(currentValue);
         return currentValue;
     }
@@ -170,6 +271,7 @@ public class MainApplication {
 
     public static double logarithm(double num1) {
         double newNum = Math.log10(num1);
+        displayValue = String.valueOf(newNum);
         System.out.println(newNum);
         return newNum;
     }
@@ -179,6 +281,7 @@ public class MainApplication {
 
     public static double invLog(double num1) {
         double newNum = Math.pow(10,num1);
+        displayValue = String.valueOf(newNum);
         System.out.println(newNum);
         return newNum;
 
@@ -186,6 +289,7 @@ public class MainApplication {
     //Natural Logs
     public static double natLog(double num1) {
         double newNum = Math.log(num1);
+        displayValue = String.valueOf(newNum);
         System.out.println(newNum);
         return newNum;
     }
@@ -194,6 +298,7 @@ public class MainApplication {
 
     public static double invNatLog(double num1) {
         double newNum = Math.pow(Math.E,num1);
+        displayValue = String.valueOf(newNum);
         System.out.println(newNum);
         return newNum;
     }
@@ -203,6 +308,7 @@ public class MainApplication {
     //DISPLAY CHANGES
 
     public static void getMode() {
+        displayValue = String.valueOf(currentMode);
         System.out.println(currentMode);
     }
     //public void setMode(String newMode){currentMode = newMode;}
@@ -211,17 +317,23 @@ public class MainApplication {
 
         if (currentMode.equals("binary")) {
             currentMode = "octal";
+            displayValue = currentMode;
             System.out.println("octal");
         } else if (currentMode.equals("octal")) {
             currentMode = "decimal";
+            displayValue = currentMode;
             System.out.println("decimal");
         } else if (currentMode.equals("decimal")) {
             currentMode = "hexadecimal";
+            displayValue = currentMode;
             System.out.println("hexadecimal");
         } else if (currentMode.equals("hexadecimal")) {
             currentMode = "binary";
+            displayValue = currentMode;
             System.out.println("binary");
-        } else System.out.println("Err");
+        } else
+            displayValue = "Err";
+            System.out.println("Err");
         return currentMode;
     }
 
@@ -230,13 +342,18 @@ public class MainApplication {
 
         if (mode.equals("binary")) {
             currentMode = "binary";
+            displayValue = currentMode;
         } else if (mode.equals("octal")) {
             currentMode = "octal";
+            displayValue = currentMode;
         } else if (mode.equals("decimal")) {
             currentMode = "decimal";
+            displayValue = currentMode;
         } else if (mode.equals("hexadecimal")) {
             currentMode = "hexadecimal";
+            displayValue = currentMode;
         } else mode = "Err";
+        displayValue = mode;
         System.out.println(mode);
         return mode;
     }
@@ -244,17 +361,22 @@ public class MainApplication {
     //UNIT CHANGES
 
     public static void getUnit() {
+        displayValue = currentMode;
         System.out.println(currentUnit);
     }
 
     public static String switchUnitsMode() {
         if (currentUnit.equals("degrees")) {
             currentUnit = "radians";
+            displayValue = currentUnit;
             System.out.println("radians");
         } else if (currentUnit.equals("radians")) {
             currentUnit = "degrees";
+            displayValue = currentUnit;
             System.out.println("degrees");
-        } else System.out.println("Err");
+        } else
+            System.out.println("Err");
+            displayValue = "Err";
 
         return currentUnit;
     }
@@ -262,9 +384,12 @@ public class MainApplication {
     public static String switchUnitsMode(String mode) {
         if (mode.equals("degrees")) {
             currentUnit = "degrees";
+            displayValue = currentUnit;
         } else if (mode.equals("radians")) {
             currentUnit = "radians";
+            displayValue = currentUnit;
         } else mode = "Err";
+        displayValue = mode;
         System.out.println(mode);
         return mode;
     }
@@ -272,42 +397,153 @@ public class MainApplication {
 
     public static double getSin (double a) {
         double b=Math.toRadians(a);
-        return (Math.sin(b));
+        currentValue = (Math.sin(b));
+        displayValue = String.valueOf(currentValue);
+        return currentValue;
     }
 
 
     public static double getCos(double a) {
         double b=Math.toRadians(a);
-        System.out.println(Math.cos(b));
-        return (Math.cos(b));
+        currentValue = (Math.cos(b));
+        displayValue = String.valueOf(currentValue);
+        return currentValue;
     }
 
     public static double getTan(double a) {
         double b=Math.toRadians(a);
-        return (Math.tan(b));
+        currentValue = (Math.tan(b));
+        displayValue = String.valueOf(currentValue);
+        return currentValue;
     }
 
     public static double getAsinPi(double a) {
-        return (Math.asin(a));
+        currentValue = (Math.asin(a));
+        displayValue = String.valueOf(currentValue);
+        return currentValue;
     }
 
-    public double getAsin(double a) {
+    public static double getAsin(double a) {
         double b=Math.toRadians(a);
-        return (Math.asin(b));
+        currentValue = (Math.asin(b));
+        displayValue = String.valueOf(currentValue);
+        return currentValue;
     }
 
-    public double getAcos (double a){
+    public static double getAcos (double a){
         double b=Math.toRadians(a);
-        return (Math.acos(b));
+        currentValue = (Math.acos(b));
+        displayValue = String.valueOf(currentValue);
+        return currentValue;
     }
 
-    public double getAtan (double a){
-        return (Math.atan(a));
-    }
-
+    public static double getAtan (double a){
+        currentValue = (Math.atan(a));
+        displayValue = String.valueOf(currentValue);
+        return currentValue;
+      
 
     public boolean isStartLoop() {
         return startLoop;
+    }
+
+    //'Rock,Paper,Scissors' game.
+    public static void playGame() {
+        boolean gameOn = true;
+        double userChoice = 0;
+        double continueGame = 0;
+        double score = 0;
+        double gamesPlayed = 0;
+        String computerMove = "";
+        String userMove = "";
+
+
+
+        while(gameOn) {
+            System.out.println("Let's play a game!");
+            System.out.println("0 = Rock, 1 = Paper, 2 = Scissors");
+            userChoice = Console.getDoubleInput("Enter your selection.");
+
+            double computerDub = (Math.random() * 3);
+
+            if ((computerDub >= 0) && (computerDub < 1)) {
+                computerMove = "Rock";
+            } else if ((computerDub >= 1) && (computerDub < 2)) {
+                computerMove = "Paper";
+            } else if ((computerDub >= 2) && (computerDub < 3)) {
+                computerMove = "Scissors";
+            } else {
+                computerMove = "Invalid, choose 0,1,2";
+            }
+
+            if (userChoice == 0) {
+                userMove = "Rock";
+            } else if (userChoice == 1) {
+                userMove = "Paper";
+            } else if (userChoice == 2) {
+                userMove = "Scissors";
+            } else {
+                System.out.println("Invalid, choose 0,1,2"); continue;
+            }
+            //System.out.println(computerDub);
+
+            System.out.println("You play: " + userMove);
+            System.out.println("I play: " + computerMove);
+            int computerInt = (int) computerDub;
+            int userInt = (int) userChoice;
+
+            switch (userInt) {
+                case 0:
+                    if (userInt == computerInt) {
+                        System.out.println("We tied!");
+                    } else if (computerInt == 1) {
+                        System.out.println("Sorry, you lose!");
+                    } else { score++;
+                        System.out.println("Congratulations, you win!");
+                    }
+                    break;
+                case 1:
+                    if (userInt == computerInt) {
+                        System.out.println("We tied!");
+                    } else if (computerInt == 0) {
+                        score++;
+                        System.out.println("Congratulations, you win!");
+                    } else {
+                        System.out.println("Sorry! You lose!");
+                    }
+                    break;
+                case 2:
+                    if (userInt == computerInt) {
+                        System.out.println("We tied");
+                    } else if (computerInt == 0) {
+                        System.out.println("Sorry, you lose!");
+                    } else {
+                        score++;
+                        System.out.println("Congratulations, you win!");
+                    }
+                    break;
+
+            }
+            gamesPlayed++;
+
+            System.out.println("You won " + score + " / " + gamesPlayed + "!");
+            System.out.println("Play again? 1 - Yes or 2 - No");
+            continueGame = Console.getDoubleInput("Enter your selection.");
+
+            boolean validInput = true;
+            while (validInput) {
+                if (continueGame == 1) {
+                    gameOn = true;
+                    break;
+                } else if (continueGame == 2) {
+                    gameOn = false;
+                    break;
+                } else System.out.println("Invalid selection: Please choose 1 - Yes or 2 - No");
+                continueGame = Console.getDoubleInput("");
+            }
+
+        }
+
     }
 }
 

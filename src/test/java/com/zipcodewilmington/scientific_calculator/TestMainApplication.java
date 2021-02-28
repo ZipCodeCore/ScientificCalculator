@@ -98,6 +98,7 @@ public class TestMainApplication {
         assertEquals(0.3678794412, newLog.invNatLog(-1.0), 0.0000001);
         assertEquals(1.105170918, newLog.invNatLog(0.1), 0.0000001);
         assertEquals(0.904837418, newLog.invNatLog(-0.1), 0.0000001);
+    }
 
     }
 
