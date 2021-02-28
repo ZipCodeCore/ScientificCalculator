@@ -14,18 +14,13 @@ public class MainApplication {
 
         Calculator myCalc = new Calculator();
 
-<<<<<<< HEAD
         myCalc.drawScreen(Double.toString(y));
-=======
-        myCalc.drawScreen(y);
->>>>>>> HazelBranch
 
         while(true) {
 
             String op = Console.getStringInput("Please enter the operation you would like to perform:");
             if (op.equalsIgnoreCase("clear")) {
                 ans = 0;
-<<<<<<< HEAD
                 myCalc.drawScreen(Double.toString(ans));
             } else if (op.equalsIgnoreCase("add") || op.equalsIgnoreCase("subtract") || op.equalsIgnoreCase("multiply") || op.equalsIgnoreCase("exponential")) {
                 double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
@@ -46,19 +41,6 @@ public class MainApplication {
                 ans = myCalc.performOperation(op, y);
                 myCalc.drawScreen(Double.toString(ans));
             }
-
-=======
-            } else if (op.equalsIgnoreCase("add") || op.equalsIgnoreCase("subtract") || op.equalsIgnoreCase("multiply") || op.equalsIgnoreCase("divide") || op.equalsIgnoreCase("exponential")) {
-                double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
-                ans = myCalc.performOperation(op, y, secondNum);
-            } else {
-                ans = myCalc.performOperation(op, y);
-            }
-
-            myCalc.drawScreen(ans);
-            y = ans;
-
->>>>>>> HazelBranch
         }
 
 

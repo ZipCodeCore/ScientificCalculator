@@ -100,94 +100,53 @@ public class Calculator {
     }
 
     //two variable operations
-<<<<<<< HEAD
-    private double addition(double x,double y){
-=======
-    public double addition(double x,double y){
->>>>>>> HazelBranch
+    public double addition(double x, double y){
         double ans = x + y;
         return ans;
     }
 
-<<<<<<< HEAD
-    private double subtraction(double x,double y){
-=======
     public double subtraction(double x,double y){
->>>>>>> HazelBranch
         double ans = x - y;
         return ans;
     }
 
-<<<<<<< HEAD
-    private double multiply(double x,double y){
-=======
     public double multiply(double x,double y){
->>>>>>> HazelBranch
         double ans = x * y;
         return ans;
     }
 
-    //NEED TO FIX DIVIDE BY ZERO
-<<<<<<< HEAD
-    private double divide(double x,double y){
-=======
     public double divide(double x,double y){
->>>>>>> HazelBranch
         double ans = x / y;
         return ans;
     }
 
-<<<<<<< HEAD
-    private double exponential(double x,double y){
-=======
     public double exponential(double x,double y){
->>>>>>> HazelBranch
         double ans = Math.pow(x,y);
         return ans;
     }
 
     //one variable operations
-<<<<<<< HEAD
-    private double square(double x){
-        double ans = Math.pow(x,2);
-        return ans;
-    }
-    private double squareRoot(double x){
-=======
     public double square(double x){
         double ans = Math.pow(x,2);
         return ans;
     }
 
     public double squareRoot(double x){
->>>>>>> HazelBranch
         double ans = Math.sqrt(x);
         return ans;
     }
 
-<<<<<<< HEAD
-    private double inverse(double x){
-        double ans = (1 / x);
-        return ans;
-    }
-    private double invert(double x){
-=======
     public double inverse(double x){
         double ans = (1 / x);
         return ans;
     }
 
     public double invert(double x){
->>>>>>> HazelBranch
         double ans = (x * -1);
         return ans;
     }
 
-<<<<<<< HEAD
-    private double sine(double x){
-=======
     public double sine(double x){
->>>>>>> HazelBranch
         double ans = Math.sin(x);
         return ans;
     }
