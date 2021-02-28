@@ -30,6 +30,8 @@ public class MainApplication {
             Console.println("MEMORY FUNCTIONS: 23-Clear memory 24-Add value to memory 25-Recall memory");
             Console.println("DISPLAY CHANGES: 26-Switch Display Mode 27-Choose Display Mode");
             Console.println("99-EXIT CALCULATOR");
+            Console.println("Current Display: " + displayValue);
+
 
             Integer choice = Console.getIntegerInput("Enter the number of the operation you want to perform.");
 
@@ -161,9 +163,9 @@ public class MainApplication {
     public static double userInputDouble2 = 0;
 
     public static void clearDisplay(){
-        displayValue = "0.0";
+        currentValue = 0;
+        displayValue = String.valueOf(currentValue);
     }
-
 
     //IM A BASIC B
     public static double findSum(double a, double b) {
@@ -189,7 +191,7 @@ public class MainApplication {
         currentValue = a / b;
         displayValue = String.valueOf(currentValue);
         } else displayValue = "Err";
-        currentValue = a / b;
+
         return currentValue;
     }
 
@@ -198,6 +200,7 @@ public class MainApplication {
         displayValue = String.valueOf(currentValue);
         return currentValue;
     }
+
     // MEMORY
     // public static Double acceptUserInput()
 
@@ -210,7 +213,6 @@ public class MainApplication {
     public static double setCurrentValue(double input) {
         currentValue = input;
         displayValue = String.valueOf(currentValue);
-        //System.out.println(currentValue);
         return currentValue;
     }
 
@@ -223,7 +225,6 @@ public class MainApplication {
     // M+ KEY: Recall current value from memory to the display
     public static double recallMemoryValue() {
         displayValue = String.valueOf(memoryValue);
-        System.out.println(memoryValue);
         return memoryValue;
     }
 
@@ -231,7 +232,6 @@ public class MainApplication {
     public static double clearMemory() {
         memoryValue = 0.0;
         displayValue = String.valueOf(memoryValue);
-        System.out.println(memoryValue);
         return memoryValue;
     }
 
@@ -241,7 +241,6 @@ public class MainApplication {
         memoryValue = currentValue;
         currentValue = 0.0;
         displayValue = String.valueOf(currentValue);
-        System.out.println(currentValue);
         return currentValue;
     }
 
@@ -272,7 +271,6 @@ public class MainApplication {
     public static double logarithm(double num1) {
         double newNum = Math.log10(num1);
         displayValue = String.valueOf(newNum);
-        System.out.println(newNum);
         return newNum;
     }
 
@@ -282,7 +280,6 @@ public class MainApplication {
     public static double invLog(double num1) {
         double newNum = Math.pow(10,num1);
         displayValue = String.valueOf(newNum);
-        System.out.println(newNum);
         return newNum;
 
     }
@@ -290,7 +287,6 @@ public class MainApplication {
     public static double natLog(double num1) {
         double newNum = Math.log(num1);
         displayValue = String.valueOf(newNum);
-        System.out.println(newNum);
         return newNum;
     }
     //Inverted Natural Logs
@@ -299,7 +295,6 @@ public class MainApplication {
     public static double invNatLog(double num1) {
         double newNum = Math.pow(Math.E,num1);
         displayValue = String.valueOf(newNum);
-        System.out.println(newNum);
         return newNum;
     }
 
@@ -401,12 +396,15 @@ public class MainApplication {
         displayValue = String.valueOf(currentValue);
         return currentValue;
     }
-  
+
+
+
     public static double getSinPi (double a) {
         //double b=Math.toRadians(a);
         System.out.println(Math.sin(a));
         return (Math.sin(a));
     }
+
 
     public static double getCos(double a) {
         double b=Math.toRadians(a);
@@ -415,11 +413,13 @@ public class MainApplication {
         return currentValue;
     }
 
+
     public static double getCosPi (double a) {
         //double b=Math.toRadians(a);
         System.out.println(Math.cos(a));
         return (Math.cos(a));
     }
+
 
     public static double getTan(double a) {
         double b=Math.toRadians(a);
@@ -452,10 +452,6 @@ public class MainApplication {
         currentValue = (Math.atan(a));
         displayValue = String.valueOf(currentValue);
         return currentValue;
-      
-
-    public boolean isStartLoop() {
-        return startLoop;
     }
 
 
@@ -617,6 +613,7 @@ public class MainApplication {
         }
 
     }
+
 
 }
 

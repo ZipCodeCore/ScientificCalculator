@@ -100,7 +100,6 @@ public class TestMainApplication {
         assertEquals(0.904837418, newLog.invNatLog(-0.1), 0.0000001);
     }
 
-    }
 
 
     @Test //Log base 10 method test
