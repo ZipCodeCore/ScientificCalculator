@@ -1,54 +1,83 @@
 package com.zipcodewilmington.scientificcalculator;
-
+import java.util.InputMismatchException;
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
     public static void main(String[] args) {
-        double y;
-        double ans;
-
+        double currentlyDisplayed;
+        boolean isRunning = true;
         Console.println("Welcome to my calculator!");
-
-        y = Console.getDoubleInput("Please enter your first number or enter \"Memory\" for your stored value");
-
-        Calculator myCalc = new Calculator();
-
-        myCalc.drawScreen(Double.toString(y));
-
         while(true) {
-
-            String op = Console.getStringInput("Please enter the operation you would like to perform:");
-            if (op.equalsIgnoreCase("clear")) {
-                ans = 0;
-                myCalc.drawScreen(Double.toString(ans));
-            } else if (op.equalsIgnoreCase("add") || op.equalsIgnoreCase("subtract") || op.equalsIgnoreCase("multiply") || op.equalsIgnoreCase("exponential")) {
-                double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
-                ans = myCalc.performOperation(op, y, secondNum);
-                myCalc.drawScreen(Double.toString(ans));
-            } else if  (op.equalsIgnoreCase("divide")){
-                double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
-                if (secondNum == 0) {
-                    String error = "Can't divide by zero";
-                    myCalc.drawScreen(error);
-                }
-                else {
-                    ans = myCalc.performOperation(op, y, secondNum);
-                    myCalc.drawScreen(Double.toString(ans));
-                }
-            }
-            else {
-                ans = myCalc.performOperation(op, y);
-                myCalc.drawScreen(Double.toString(ans));
+            try {
+                currentlyDisplayed = Console.getDoubleInput("Please enter your first number:");
+                break;
+            } catch (InputMismatchException e) {
+                Console.println("Please enter one number.");
             }
         }
-
-
-
-
-        //Console.println("The user input %s as a string", s);
-        //Console.println("The user input %s as a d", d);
-        //Console.println("The user input %s as a integer", i);
-
+        Calculator myCalc = new Calculator();
+        myCalc.drawScreen(Double.toString(currentlyDisplayed));
+        while(isRunning) {
+            String op = Console.getStringInput("Please enter the operation you would like to perform:");
+            //prompt user for second number if they choose two variable operator then run two variable operator
+            if (op.equalsIgnoreCase("add") || op.equalsIgnoreCase("subtract") || op.equalsIgnoreCase("multiply") || op.equalsIgnoreCase("exponential")) {
+                while(true){
+                    try{
+                        double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
+                        currentlyDisplayed = myCalc.performOperation(op,currentlyDisplayed, secondNum);
+                        myCalc.drawScreen(Double.toString(currentlyDisplayed));
+                        break;
+                    }
+                    catch(InputMismatchException e) {
+                        Console.println("");
+                    }
+                }
+            }
+            //handle division by zero
+            else if  (op.equalsIgnoreCase("divide")){
+                while(true){
+                    try{
+                        double secondNum = Console.getDoubleInput("Please enter your second number or enter \"Memory\" for your stored value");
+                        if (secondNum == 0) {
+                            String error = "Can't divide by zero";
+                            myCalc.drawScreen(error);
+                        }
+                        else {
+                            currentlyDisplayed = myCalc.performOperation(op, currentlyDisplayed, secondNum);
+                            myCalc.drawScreen(Double.toString(currentlyDisplayed));
+                        }
+                        break;
+                    }
+                    catch(InputMismatchException e) {
+                        Console.println("");
+                    }
+                }
+            }
+            //run one variable operator
+            else if (op.equalsIgnoreCase("square") || op.equalsIgnoreCase("square root") || op.equalsIgnoreCase("inverse") || op.equalsIgnoreCase("log")|| op.equalsIgnoreCase("log-1")|| op.equalsIgnoreCase("ln")|| op.equalsIgnoreCase("ln-1")|| op.equalsIgnoreCase("sine")|| op.equalsIgnoreCase("cosine")|| op.equalsIgnoreCase("tangent")|| op.equalsIgnoreCase("factorial")|| op.equalsIgnoreCase("sine-1")|| op.equalsIgnoreCase("cosine-1")|| op.equalsIgnoreCase("tangent-1")|| op.equalsIgnoreCase("invert")|| op.equalsIgnoreCase("ctof")|| op.equalsIgnoreCase("ftoc")|| op.equalsIgnoreCase("lbtokg")|| op.equalsIgnoreCase("kgtolb")){
+                currentlyDisplayed = myCalc.performOperation(op, currentlyDisplayed);
+                myCalc.drawScreen(Double.toString(currentlyDisplayed));
+            }
+            //clear screen
+            else if (op.equalsIgnoreCase("clear")) {
+                currentlyDisplayed = 0;
+                myCalc.drawScreen(Double.toString(currentlyDisplayed));
+            }
+            else if(op.equalsIgnoreCase("set")){
+                double setNum = Console.getDoubleInput("Please enter your number to set");
+                currentlyDisplayed = setNum;
+                myCalc.drawScreen(Double.toString(currentlyDisplayed));
+            }
+            //quit calc
+            else if(op.equalsIgnoreCase("quit")){
+                isRunning = false;
+            }
+            //handle misspelled operator
+            else{
+                String error = "Invalid operator";
+                myCalc.drawScreen(error);
+            }
+        }
     }
 }

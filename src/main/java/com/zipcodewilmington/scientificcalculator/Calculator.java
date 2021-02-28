@@ -133,15 +133,15 @@ public class Calculator {
 
     //store, recall, and clear memory
     public double memoryUsage(String inputStr, double x) {
-        double memory;
-        if (inputStr.equalsIgnoreCase("m+")) {
+        double memory = 0;
+        if (inputStr.equalsIgnoreCase("M+")) {
             memory = this.calcMemory(x);
         } else if (inputStr.equalsIgnoreCase("MC")){
-            memory = null;
-        } else if (inputStr.equalsIgnoreCase("MRC") && memory != null) {
+            memory = 0;
+        } else if (inputStr.equalsIgnoreCase("MRC")) {
             return memory;
         } else {
-            memory = null;
+            memory = 0;
         }
         return memory;
     }
@@ -270,7 +270,7 @@ public class Calculator {
         double fToC = (x - 32) / 1.8;
         return fToC;
     }
-    
+
     public double convertCtoF(double x) {
         double cToF = (x * 1.8) + 32;
         return cToF;
