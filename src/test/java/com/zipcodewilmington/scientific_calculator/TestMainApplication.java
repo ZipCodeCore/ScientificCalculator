@@ -6,21 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import javax.naming.NameNotFoundException;
 import static org.junit.Assert.assertNotEquals;
-import com.zipcodewilmington.scientificcalculator.MainApplication;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
-import com.zipcodewilmington.scientificcalculator.MainApplication;
-import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import com.zipcodewilmington.scientificcalculator.MainApplication;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 /**
  * Created by leon on 2/9/18.
  */
@@ -70,6 +56,7 @@ public class TestMainApplication {
         assertEquals(0.3678794412, newLog.invNatLog(-1.0), 0.0000001);
         assertEquals(1.105170918, newLog.invNatLog(0.1), 0.0000001);
         assertEquals(0.904837418, newLog.invNatLog(-0.1), 0.0000001);
+    }
 
 
     @Test //Log base 10 method test
@@ -179,9 +166,6 @@ public class TestMainApplication {
         assertEquals(0.0,atanTest1.getAtan(0.0), 0.01);
     }
 
-}
-
-
 
     @Test
     public void findFactorial() {
@@ -209,8 +193,6 @@ public class TestMainApplication {
         assertEquals(0, clearMemoryTest.clearMemory(), 1e-15);
         assertNotEquals(5.0, clearMemoryTest.clearMemory(), 1e-15);
     }
-
-
 
 
 
