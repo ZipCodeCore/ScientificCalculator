@@ -1,14 +1,22 @@
 package com.zipcodewilmington.scientific_calculator;
 import com.zipcodewilmington.scientificcalculator.MainApplication;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
+import com.zipcodewilmington.scientificcalculator.MainApplication;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 
 /**
  * Created by leon on 2/9/18.
  */
 
 public class TestMainApplication {
+
 
     //Log base 10 method tests
     @Test
@@ -52,6 +60,34 @@ public class TestMainApplication {
         assertEquals(0.3678794412, newLog.invNatLog(-1.0), 0.0000001);
         assertEquals(1.105170918, newLog.invNatLog(0.1), 0.0000001);
         assertEquals(0.904837418, newLog.invNatLog(-0.1), 0.0000001);
+
+
+    @Test //Log base 10 method test
+    public void getLog10() {
+        MainApplication newLog = new MainApplication();
+        assertEquals(1.0, newLog.logarithm(10.0), 0.0000001);
+    }
+    @Test //Log base 10 method Err test
+    public void getLog101() {
+        MainApplication newLog = new MainApplication();
+        assertEquals(Double. NEGATIVE_INFINITY, newLog.logarithm(0.0), 0.0000001);
+    }
+
+
+    @Test //Inverted log test
+    public void getInvLog10() {
+        MainApplication newLog = new MainApplication();
+        assertEquals(100000.0, newLog.invLog(5.0), 0.0000001);
+    }
+    @Test //Natural Log test
+    public void getNetLog() {
+        MainApplication newLog = new MainApplication();
+        assertEquals(1.609437912, newLog.natLog(5.0), 0.0000001);
+    }
+    @Test //Inverted Natural Log test
+    public void getInvNetLog() {
+        MainApplication newLog = new MainApplication();
+        assertEquals(148.4131591, newLog.invNatLog(5.0), 0.0000001);
     }
 
 
