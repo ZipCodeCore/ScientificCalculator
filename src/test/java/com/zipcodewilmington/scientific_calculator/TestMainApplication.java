@@ -178,36 +178,69 @@ public class TestMainApplication {
         //assertEquals(Float.NaN, sinTest1.getSin(30.0),0.000000001);
     }
     @Test
+    public void sinpiTest(){
+        MainApplication sinpiTest1 = new MainApplication();
+        assertEquals(Float.NaN,sinpiTest1.getSinPi(Double.NaN),0.000001);
+        assertEquals(Float.NaN,sinpiTest1.getSinPi(Double.NEGATIVE_INFINITY),0.000001);
+        assertEquals(Float.NaN,sinpiTest1.getSinPi(Double.POSITIVE_INFINITY),0.000001);}
+    @Test
     public void cosTest() {
         MainApplication cosTest1 = new MainApplication();
         assertEquals(0.866025,cosTest1.getCos(30.0),0.000001);
+        assertEquals(0.5,cosTest1.getCos(60.0),0.1);
+        assertEquals(1.0,cosTest1.getCos(0.0),0.1);
     }
+
+    @Test
+    public void cospiTest(){
+        MainApplication cospiTest1 = new MainApplication();
+        assertEquals(Float.NaN,cospiTest1.getCosPi(Double.NaN),0.000001);
+        assertEquals(Float.NaN,cospiTest1.getCosPi(Double.NEGATIVE_INFINITY),0.000001);
+        assertEquals(Float.NaN,cospiTest1.getCosPi(Double.POSITIVE_INFINITY),0.000001);}
     @Test
     public void tanTest() {
         MainApplication tanTest1 = new MainApplication();
         assertEquals(0,tanTest1.getTan(0.0),0.001);
+        assertEquals(1,tanTest1.getTan(45.0),0.001);
+        assertEquals(1.732,tanTest1.getTan(60.0),0.001);
+
     }
     @Test
     public void asinpiTest(){
         MainApplication asinTest1 = new MainApplication();
         assertEquals(Float.NaN,asinTest1.getAsinPi(Math.PI),0.000001);
         assertEquals(Float.NaN,asinTest1.getAsinPi(Double.NEGATIVE_INFINITY),0.000001);
+        assertEquals(Float.NaN,asinTest1.getAsinPi(Double.POSITIVE_INFINITY),0.000001);
     }
     @Test
     public void asinTest(){
         MainApplication asinTest1 = new MainApplication();
         assertEquals(0.0,asinTest1.getAsin(0.0),0.000001);
+        assertEquals(0.903,asinTest1.getAsin(45),0.001);
+        assertEquals(-0.903,asinTest1.getAsin(-45),0.001);
     }
     @Test
     public void acosTest(){
         MainApplication acosTest1 = new MainApplication();
-        assertEquals(1.5533,acosTest1.getAcos(1.0),0.001);
+        assertEquals(0.2840,acosTest1.getAcos(55),0.0001);
+        assertEquals(1.0197,acosTest1.getAcos(30.0),0.001);
+        assertEquals(1.3953,acosTest1.getAcos(10.0),0.001);
 
     }
+    @Test
+    public void acospiTest(){
+        MainApplication acospiTest1 = new MainApplication();
+        assertEquals(Float.NaN,acospiTest1.getAcosPi(Math.PI),0.000001);
+        assertEquals(Float.NaN,acospiTest1.getAsinPi(Double.NEGATIVE_INFINITY),0.000001);
+        assertEquals(Float.NaN,acospiTest1.getAsinPi(Double.POSITIVE_INFINITY),0.000001);
+    }
+
     @Test
     public void atanTest(){
         MainApplication atanTest1 = new MainApplication();
         assertEquals(0.0,atanTest1.getAtan(0.0), 0.01);
+        assertEquals(1.537,atanTest1.getAtan(30.0), 0.01);
+        assertEquals(1.5541,atanTest1.getAtan(60.0), 0.01);
     }
 
 

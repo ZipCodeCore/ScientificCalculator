@@ -401,13 +401,24 @@ public class MainApplication {
         displayValue = String.valueOf(currentValue);
         return currentValue;
     }
-
+  
+    public static double getSinPi (double a) {
+        //double b=Math.toRadians(a);
+        System.out.println(Math.sin(a));
+        return (Math.sin(a));
+    }
 
     public static double getCos(double a) {
         double b=Math.toRadians(a);
         currentValue = (Math.cos(b));
         displayValue = String.valueOf(currentValue);
         return currentValue;
+    }
+
+    public static double getCosPi (double a) {
+        //double b=Math.toRadians(a);
+        System.out.println(Math.cos(a));
+        return (Math.cos(a));
     }
 
     public static double getTan(double a) {
