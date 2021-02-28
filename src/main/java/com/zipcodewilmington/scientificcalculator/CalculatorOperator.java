@@ -3,7 +3,7 @@ package com.zipcodewilmington.scientificcalculator;
 //comments
 
 public class CalculatorOperator {
-    public static double memory = 0;
+
     public static double addition (double a, double b) {
         double addition = a + b;
         return addition;
@@ -50,21 +50,13 @@ public class CalculatorOperator {
         return additiveInverse;
     }
 
-    //methods for the M key -- Abe.
-    public static double memRecall()
-    {
-        return memory;
-    }
-    public static void memReset()
-    {
-        memory = 0;
-    }
-    public static double memAdd(double a)
+    //necessary methods for the M key, rest handled in main app -- Abe.
+    public static double memAdd(double a, double memory)
     {
         memory+=a;
         return memory;
     }
-    public static double memSubtract(double a)
+    public static double memSub(double a, double memory)
     {
         memory-=a;
         return memory;

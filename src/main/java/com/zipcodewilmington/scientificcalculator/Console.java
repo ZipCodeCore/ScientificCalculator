@@ -77,4 +77,16 @@ unable to display values less then zero.*/
         }else
             println("Invalid command. Please pick binary, octal, decimal, or hexadecimal");
     }
+    public static void helpDoc(){
+        println("q      Will exit the calculator");
+        println("+      Will add two numbers");
+        println("-      Will subtract the first input from the next");
+        println("*      Will multiply the first input from the next");
+        println("/      Will divide the first input from the next");
+        println("sq     Will calculate the square of a number");
+        println("sqrt   Will calculate the square root of a number");
+        println("expo   Will calculate the first input to the power of the second");
+        println("inverse     Will calculate the value of 1 divided by the input");
+        println("negation    Will calculate the input multiplied by -1");
+    }
 }
