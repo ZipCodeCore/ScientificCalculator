@@ -198,4 +198,7 @@ public class TestMainApplication {
         assertEquals(94, myCalc.convertDecimal("136")); //Octal
         assertEquals(94, myCalc.convertDecimal("1011110")); //Binary
     }
+
+    @org.junit.Test
+    public void test
 }

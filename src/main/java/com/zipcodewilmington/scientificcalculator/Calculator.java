@@ -1,22 +1,20 @@
 package com.zipcodewilmington.scientificcalculator;
-
 public class Calculator {
     public Calculator() {
     }
-
     public void drawScreen(String d){
-
         Console.println("");
         Console.println("|------------------------------------------------|");
-        Console.println("|Clear                                    Memory |");
+        Console.println("|Quit      Clear                          Memory |");
         Console.println("|------------------------------------------------|");
-        Console.println("| Current Number:                            %s  |",d);
+        Console.println("| Current Number: %s                             |",d);
         Console.println("|------------------------------------------------|");
         Console.println("| Add      Subtract      Multiply      Divide    |");
         Console.println("| Square   Square Root   Exponential   Inverse   |");
         Console.println("| Log      Log-1         Ln            Ln-1      |");
         Console.println("| Sine     Cosine        Tangent       Factorial |");
         Console.println("| Sine-1   Cosine-1      Tangent-1     Invert    |");
+        Console.println("| cToF     fToC                                  |");
         Console.println("|------------------------------------------------|");
     }
     public double performOperation(String op, double num1, double num2){
@@ -34,13 +32,10 @@ public class Calculator {
         else if(op.equalsIgnoreCase("divide")){
             returnAns = this.divide(num1, num2);
         }
-        else if(op.equalsIgnoreCase("exponential")){
+        else {
             returnAns = this.exponential(num1, num2);
         }
-        //below is placeholder
-        else {
-            returnAns = 69;
-        }
+
         return returnAns;
     }
 
@@ -91,14 +86,17 @@ public class Calculator {
         }
         else if(op.equalsIgnoreCase("ln-1")){
             returnAns = this.inverseNaturalLog(num);
+        } else if(op.equalsIgnoreCase("fToC")){
+            returnAns = this.convertFtoC(num);
         }
-        //below is placeholder
+        //catching convert C to F
         else {
-            returnAns = 69;
+            returnAns = this.convertCtoF(num);
         }
         return returnAns;
     }
 
+    //Conversion conditionals
     public double switchDisplayMode(String convert, double num) {
         double returnans;
         if (convert.equalsIgnoreCase("Switch Display binary")){
@@ -132,6 +130,22 @@ public class Calculator {
             return returnans;
         }
     }
+
+    //store, recall, and clear memory
+    public double memoryUsage(String inputStr, double x) {
+        double memory;
+        if (inputStr.equalsIgnoreCase("m+")) {
+            memory = this.calcMemory(x);
+        } else if (inputStr.equalsIgnoreCase("MC")){
+            memory = null;
+        } else if (inputStr.equalsIgnoreCase("MRC") && memory != null) {
+            return memory;
+        } else {
+            memory = null;
+        }
+        return memory;
+    }
+
 
     //two variable operations
     public double addition(double x, double y){
@@ -252,6 +266,16 @@ public class Calculator {
         return "Err";
     }
 
+    public double convertFtoC(double x) {
+        double fToC = (x - 32) / 1.8;
+        return fToC;
+    }
+    
+    public double convertCtoF(double x) {
+        double cToF = (x * 1.8) + 32;
+        return cToF;
+    }
+
     //Conversions
     public String convertBinary(double x) {
         String ans = double.toBinaryString(x);
@@ -271,5 +295,10 @@ public class Calculator {
     public double convertDecimal(String x) {
         double ans = String.parseInt(x);
         return ans;
+    }
+
+    public double calcMemory(double x) {
+        double memory = x;
+        return memory;
     }
 }
