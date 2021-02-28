@@ -12,12 +12,13 @@ public class MainApplication {
         double i = 0.0;
 //q is calculator quit command, will keep prompting for commands until q is entered
         while (!(s.equalsIgnoreCase("q"))) {
-//initialising second value if it's needed
+//initialising second value if it's needed, result needs to initialize to zero in case of switch or base
             double d;
-            double result;
+            double result=0;
 
             switch (s) {
                 case "switch":
+
                     break;
                 case "":
                     break;
@@ -38,8 +39,8 @@ public class MainApplication {
                 case "+":
                     i = Console.getDoubleInput("Enter a double");
                     d = Console.getDoubleInput("Enter a double.");
-                    result =CalculatorOperator.addition(i, d);
-                    Console.println(Double.toString(CalculatorOperator.addition(i, d)));
+                    result=CalculatorOperator.addition(i, d);
+                    Console.println(Double.toString(result));
                     break;
                 case "-":
                     i = Console.getDoubleInput("Enter a double");
@@ -50,33 +51,40 @@ public class MainApplication {
                 case "*":
                     i = Console.getDoubleInput("Enter a double");
                     d = Console.getDoubleInput("Enter a double.");
-                    Console.println(Double.toString(CalculatorOperator.multiplication(i, d)));
+                    result=CalculatorOperator.multiplication(i, d);
+                    Console.println(Double.toString(result));
                     break;
                 case "/":
                     i = Console.getDoubleInput("Enter a double");
                     d = Console.getDoubleInput("Enter a double.");
-                    Console.println(Double.toString(CalculatorOperator.division(i, d)));
+                    result=CalculatorOperator.division(i, d);
+                    Console.println(Double.toString(result));
                     break;
                 case "sq":
                     i = Console.getDoubleInput("Enter a double");
-                    Console.println(Double.toString(CalculatorOperator.square(i)));
+                    result=CalculatorOperator.square(i);
+                Console.println(Double.toString(result));
                     break;
                 case "sqrt":
                     i = Console.getDoubleInput("Enter a double");
-                    Console.println(Double.toString(CalculatorOperator.squareRoot(i)));
+                    result=CalculatorOperator.squareRoot(i);
+                    Console.println(Double.toString(result));
                     break;
                 case "expo":
                     i = Console.getDoubleInput("Enter a double");
                     d = Console.getDoubleInput("Enter a double.");
-                    Console.println(Double.toString(CalculatorOperator.exponents(i,d)));
+                    result=CalculatorOperator.exponents(i,d);
+                    Console.println(Double.toString(result));
                     break;
                 case "inverse":
                     i = Console.getDoubleInput("Enter a double");
-                    Console.println(Double.toString(CalculatorOperator.multiplicativeInverse(i)));
+                    result=CalculatorOperator.multiplicativeInverse(i);
+                    Console.println(Double.toString(result));
                     break;
                 case "negation":
                     i = Console.getDoubleInput("Enter a double");
-                    Console.println(Double.toString(CalculatorOperator.additiveInverse(i)));
+                    result=CalculatorOperator.additiveInverse(i);
+                    Console.println(Double.toString(result));
                 case "help":
                     Console.helpDoc();
                 default:
