@@ -17,27 +17,30 @@ public class MainApplication {
 
     }
 
-    //Takes a value for num2 for the log equation. num1 is not used in this case
+    //Following methods take a value (num1) for the log equations.
+    //Logarithms
     public static double logarithm(double num1) {
         double newNum = Math.log10(num1);
         System.out.println(newNum);
         return newNum;
     }
+    //Inverted Logs
     public double invLog(double num1) {
         double newNum = Math.pow(10,num1);
         System.out.println(newNum);
         return newNum;
     }
+    //Natural Logs
     public double natLog(double num1) {
         double newNum = Math.log(num1);
         System.out.println(newNum);
         return newNum;
     }
+    //Inverted Natural Logs
     public double invNatLog(double num1) {
         double newNum = Math.pow(Math.E,num1);
         System.out.println(newNum);
         return newNum;
     }
-
 
 }
