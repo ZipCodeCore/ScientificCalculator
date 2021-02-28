@@ -116,55 +116,71 @@ public class TestMainApplication {
     @org.junit.Test
     public void testInverseSine() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.inverseSine(2), 0.00001);
+        assertEquals(Double.valueOf(-1.5708), myCalc.inverseSine(-1), 0.00001);
+        assertEquals(Double.valueOf(0.0), myCalc.inverseSine(0), 0.00001);
+        assertEquals(Double.valueOf(1.5708), myCalc.inverseSine(1), 0.00001);
     }
 
     @org.junit.Test
     public void testInverseCosine() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.inverseCosine(2), 0.00001);
+        assertEquals(Double.valueOf(3.14159), myCalc.inverseCosine(-1), 0.00001);
+        assertEquals(Double.valueOf(1.5708), myCalc.inverseCosine(0), 0.00001);
+        assertEquals(Double.valueOf(0.0), myCalc.inverseCosine(1), 0.00001);
+    }
+
+    @org.junit.Test
+    public void testInverseTangent() {
+        Calculator myCalc = new Calculator();
+        assertEquals(Double.valueOf(-0.7854), myCalc.inverseTangent(-1), 0.00001);
+        assertEquals(Double.valueOf(0.0), myCalc.inverseTangent(0), 0.00001);
+        assertEquals(Double.valueOf(0.7854), myCalc.inverseTangent(1), 0.00001);
     }
 
     @org.junit.Test
     public void testFactorial() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.factorial(2), 0.00001);
+        assertEquals(Double.valueOf(2.0), myCalc.factorial(2), 0.00001);
+        assertEquals(Double.valueOf(6.0), myCalc.factorial(3), 0.00001);
+        assertEquals(Double.valueOf(362880.0), myCalc.factorial(9), 0.00001);
     }
 
     @org.junit.Test
     public void testLog() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.log(2), 0.00001);
+        assertEquals(Double.valueOf(0.0), myCalc.log(1), 0.00001);
+        assertEquals(Double.valueOf(0.30103), myCalc.log(2), 0.00001);
+        assertEquals(Double.valueOf(1.0), myCalc.log(10), 0.00001);
     }
 
     @org.junit.Test
     public void testInverseLog() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.inverseLog(2), 0.00001);
+        assertEquals(Double.valueOf(1.0), myCalc.inverseLog(0), 0.00001);
+        assertEquals(Double.valueOf(2.0), myCalc.inverseLog(0.30103), 0.00001);
+        assertEquals(Double.valueOf(10.0), myCalc.inverseLog(1), 0.00001);
     }
 
     @org.junit.Test
     public void testNaturalLog() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.naturalLog(2), 0.00001);
+        assertEquals(Double.valueOf(0.0), myCalc.naturalLog(1), 0.00001);
+        assertEquals(Double.valueOf(2.30259), myCalc.naturalLog(10), 0.00001);
+        assertEquals(Double.valueOf(0.69315), myCalc.naturalLog(2), 0.00001);
     }
 
     @org.junit.Test
     public void testInverseNaturalLog() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.inverseNaturalLog(2), 0.00001);
+        assertEquals(Double.valueOf(1.0), myCalc.inverseNaturalLog(0), 0.0001);
+        assertEquals(Double.valueOf(10.0), myCalc.inverseNaturalLog(2.30259), 0.0001);
+        assertEquals(Double.valueOf(2.0), myCalc.inverseNaturalLog(0.69315), 0.0001);
     }
 
-    @org.junit.Test
-    public void initial6() {
-        Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.addition(2,2), 0.00001);
-    }
-
-    @org.junit.Test
-    public void initial7() {
-        Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(4.0), myCalc.addition(2,2), 0.00001);
-    }
+    //@org.junit.Test
+    //public void initial6() {
+    //    Calculator myCalc = new Calculator();
+    //    assertEquals(Double.valueOf(4.0), myCalc.addition(2,2), 0.00001);
+    //}
 
 }

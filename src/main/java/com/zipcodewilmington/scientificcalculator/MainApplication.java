@@ -1,16 +1,25 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.InputMismatchException;
+
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
     public static void main(String[] args) {
-        double y;
-        double ans;
+        double y = 0;
+        double ans = 0;
 
         Console.println("Welcome to my calculator!");
+        while(true) {
+            try {
+                y = Console.getDoubleInput("Please enter your first number or enter \"Memory\" for your stored value");
+                break;
+            } catch (InputMismatchException e) {
+                Console.println("Please enter one number.");
+            }
+        }
 
-        y = Console.getDoubleInput("Please enter your first number or enter \"Memory\" for your stored value");
 
         Calculator myCalc = new Calculator();
 
