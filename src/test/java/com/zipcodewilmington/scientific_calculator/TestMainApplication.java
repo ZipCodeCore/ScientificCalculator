@@ -4,6 +4,8 @@ import com.zipcodewilmington.scientificcalculator.MainApplication;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
+
 import javax.naming.NameNotFoundException;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.*;
@@ -13,6 +15,46 @@ import static org.junit.Assert.*;
 
 public class TestMainApplication {
 
+    //Basic functions tests
+    @Test
+    public void getSum() {
+        MainApplication testSum = new MainApplication();
+        assertEquals(10, testSum.findSum(8, 2), 0.0000001);
+        assertEquals(163.987, testSum.findSum(100, 63.987), 0.0000001);
+        assertEquals(420, testSum.findSum(69, 351), 0.0000001);
+    }
+
+    @Test
+    public void getDifference() {
+        MainApplication testDiff = new MainApplication();
+        assertEquals(8, testDiff.findDifference(15, 7), 0.0000001);
+        assertEquals(99.9, testDiff.findDifference(100.9, 1), 0.0000001);
+        assertEquals(69, testDiff.findDifference(420, 351), 0.0000001);
+    }
+
+    @Test
+    public void getProduct() {
+        MainApplication testProduct = new MainApplication();
+        assertEquals(100, testProduct.findProduct(10, 10), 0.0000001);
+        assertEquals(12.5, testProduct.findProduct(2.5, 5), 0.0000001);
+        assertEquals(28980, testProduct.findProduct(69, 420), 0.0000001);
+    }
+
+    @Test
+    public void getQuotient() {
+        MainApplication testQuotient = new MainApplication();
+        assertEquals(10, testQuotient.findQuotient(100, 10), 0.0000001);
+        assertEquals(33.3, testQuotient.findQuotient(99.9, 3), 0.0000001);
+        assertEquals(6.0869565, testQuotient.findQuotient(420, 69), 0.0000001);
+    }
+
+    @Test
+    public void getRemainder() {
+        MainApplication testRemainder = new MainApplication();
+        assertEquals(1, testRemainder.findRemainder(17, 2), 0.0000001);
+        assertEquals(3, testRemainder.findRemainder(23, 5), 0.0000001);
+        assertEquals(0, testRemainder.findRemainder(420, 2), 0.0000001);
+    }
 
     //Log base 10 method tests
     @Test
@@ -92,7 +134,7 @@ public class TestMainApplication {
     @Test
     public void displayTest() {
         MainApplication displaytester = new MainApplication();
-
+        assertEquals("binary", displaytester.switchDisplayMode());
         assertEquals("octal", displaytester.switchDisplayMode());
         assertEquals("decimal", displaytester.switchDisplayMode());
         assertEquals("hexadecimal", displaytester.switchDisplayMode());
@@ -188,11 +230,26 @@ public class TestMainApplication {
     @Test
     public void clearMemory() {
         MainApplication clearMemoryTest = new MainApplication();
+        clearMemoryTest.setCurrentValue(420);
 
+        assertEquals(0, clearMemoryTest.addCurrentValueToMemory(), 1e-15);
+        assertEquals(420, clearMemoryTest.getMemoryValue(), 1e-15);
         assertEquals(0, clearMemoryTest.clearMemory(), 1e-15);
         assertEquals(0, clearMemoryTest.clearMemory(), 1e-15);
         assertNotEquals(5.0, clearMemoryTest.clearMemory(), 1e-15);
     }
+
+    @Test
+    public void testStoredMemory() {
+        MainApplication addMemTest = new MainApplication();
+        addMemTest.setCurrentValue(6.0);
+
+        assertEquals(6.0, addMemTest.returnCurrentValue(), 1e-15);
+        assertEquals(0.0, addMemTest.addCurrentValueToMemory(), 1e-15);
+        assertEquals(6.0, addMemTest.recallMemoryValue(), 1e-15);
+    }
+
+
 
 
 

@@ -74,12 +74,40 @@ public class MainApplication {
         }
     }
 
-    static double userInputDouble = 0.0;
+    public static double userInputDouble = 0.0;
 
+    //IM A BASIC B
+    public static double findSum(double a, double b) {
+        currentValue = a + b;
+        return currentValue;
+    }
 
+    public static double findDifference(double a, double b) {
+        currentValue = a - b;
+        return currentValue;
+    }
+
+    public static double findProduct(double a, double b) {
+        currentValue = a * b;
+        return currentValue;
+    }
+
+    public static double findQuotient(double a, double b) {
+        currentValue = a / b;
+        return currentValue;
+    }
+
+    public static double findRemainder(double a, double b) {
+        currentValue = a % b;
+        return currentValue;
+    }
 
     // MEMORY
     // public static Double acceptUserInput()
+
+    public static double getMemoryValue() {
+        return memoryValue;
+    }
 
     // Set the current value
     public static double setCurrentValue(double input) {
