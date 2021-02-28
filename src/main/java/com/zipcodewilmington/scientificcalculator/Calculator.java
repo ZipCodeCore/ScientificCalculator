@@ -99,6 +99,40 @@ public class Calculator {
         return returnAns;
     }
 
+    public double switchDisplayMode(String convert, double num) {
+        double returnans;
+        if (convert.equalsIgnoreCase("Switch Display binary")){
+            returnans = this.convertBinary(num);
+        } else if (convert.equalsIgnoreCase("switch display hex")) {
+            returnans = this.convertHex(num);
+        } else if (convert.equalsIgnoreCase("switch display octal")) {
+            returnans = this.convertOctal(num);
+        } else if (convert.equalsIgnoreCase("switch display decimal")) {
+            returnans = this.convertDecimal(num);
+        } else {
+            returnans = num;
+        }
+        return returnans;
+    }
+
+    public double rotateDisplaySwitch (String convert, double num) {
+        double returnans;
+        if (convert.equalsIgnoreCase("switch display")) {
+            if (num == this.convertDecimal(num)) {
+                returnans = this.convertBinary(num);
+            } else if (num == this.convertBinary(num)) {
+                returnans = this.convertOctal(num);
+            } else if (num == this.convertOctal(num)) {
+                returnans = this.convertHex(num);
+            } else if (num = this.convertHex(num)) {
+                returnans = this.convertDecimal(num);
+            } else {
+                return returnans = num;
+            }
+            return returnans;
+        }
+    }
+
     //two variable operations
     public double addition(double x, double y){
         double ans = x + y;
@@ -229,5 +263,13 @@ public class Calculator {
         return ans;
     }
 
+    public double convertOctal(double x) {
+        double ans = double.toOctalString(x);
+        return ans;
+    }
 
+    public double convertDecimal(double x) {
+        double ans = double.parseInt(x);
+        return ans;
+    }
 }
