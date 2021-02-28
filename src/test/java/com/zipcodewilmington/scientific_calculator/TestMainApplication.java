@@ -1,4 +1,6 @@
 package com.zipcodewilmington.scientific_calculator;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import com.zipcodewilmington.scientificcalculator.MainApplication;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -9,8 +11,11 @@ import static org.junit.Assert.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-
+import com.zipcodewilmington.scientificcalculator.MainApplication;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 /**
  * Created by leon on 2/9/18.
  */
@@ -125,6 +130,34 @@ public class TestMainApplication {
         assertEquals("radians", unitChanger1.switchUnitsMode("radians"));
         assertEquals("Err", unitChanger1.switchUnitsMode("Break me"));
         assertEquals("degrees", unitChanger1.switchUnitsMode("degrees"));
+    }
+
+
+    @Test
+    public void findFactorial() {
+        MainApplication findFactorialTest = new MainApplication();
+
+        assertEquals(120.0, findFactorialTest.findFactorial(5.0), 1e-15);
+        assertEquals(362880, findFactorialTest.findFactorial(9), 1e-15);
+        assertEquals(6.0, findFactorialTest.findFactorial(3.0), 1e-15);
+    }
+
+    @Test
+    public void setCurrentValue() {
+        MainApplication setCurrentValueTest = new MainApplication();
+
+        assertEquals(10, setCurrentValueTest.setCurrentValue(10), 1e-15);
+        assertEquals(21.1, setCurrentValueTest.setCurrentValue(21.1), 1e-15);
+        assertNotEquals(5.0, setCurrentValueTest.setCurrentValue(5.1), 1e-15);
+    }
+
+    @Test
+    public void clearMemory() {
+        MainApplication clearMemoryTest = new MainApplication();
+
+        assertEquals(0, clearMemoryTest.clearMemory(), 1e-15);
+        assertEquals(0, clearMemoryTest.clearMemory(), 1e-15);
+        assertNotEquals(5.0, clearMemoryTest.clearMemory(), 1e-15);
     }
 
 
