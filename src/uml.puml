@@ -1,17 +1,9 @@
 @startuml
-'https://plantuml.com/class-diagram
-
-'abstract class AbstractList
-'abstract AbstractCollection
-'interface List
-'interface Collection
 
 class MainApplication{
     double currentlyDisplayed
     double memory
     boolean isRunning
-
-
 }
 
 class Console{
@@ -63,16 +55,9 @@ class Calculator{
     hexToDec()
 }
 
-'List <|-- AbstractList
-'Collection <|-- AbstractCollection
-
 MainApplication <|-- Console
 MainApplication <|-- Calculator
 
-'class ArrayList {
-'Object[] elementData
-'size()
-'}
 
 
 
