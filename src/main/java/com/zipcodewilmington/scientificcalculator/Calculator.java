@@ -88,7 +88,20 @@ public class Calculator {
         }
         else if(op.equalsIgnoreCase("ln-1")){
             returnAns = this.inverseNaturalLog(num);
-        } else if(op.equalsIgnoreCase("fToC")){
+
+        else if(op.equalsIgnoreCase("lbToKg")){
+            returnAns = this.convertLBtoKG(num);
+        }
+        else if(op.equalsIgnoreCase("kgtoLb")) {
+            returnAns = this.convertKGtoLB(num);
+        }
+        else if(op.equalsIgnoreCase("radtodeg")) {
+            returnAns = this.toDegrees(num);
+        }
+        else if(op.equalsIgnoreCase("degtorad")) {
+            returnAns = this.toRadians(num);
+        }
+        else if(op.equalsIgnoreCase("fToC")){
             returnAns = this.convertFtoC(num);
         }
         //catching convert C to F
