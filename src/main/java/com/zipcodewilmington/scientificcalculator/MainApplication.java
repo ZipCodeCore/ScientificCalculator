@@ -183,10 +183,6 @@ public class MainApplication {
                     getTime();
                     System.out.println(displayValue);
                     break;
-                case 98:
-                    userInputDouble = Console.getDoubleInput("Enter a number as a double");
-                    setCurrentValue(userInputDouble);
-                    break;
                 case 99:
                     startLoop = false;
                     System.out.println("Goodbye");
