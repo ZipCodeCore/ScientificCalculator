@@ -288,14 +288,9 @@ public class TestMainApplication {
         MainApplication getSignInversion1 = new MainApplication();
         assertEquals(-2.0, getSignInversion1.getSignInversion(2.0), 0.1);
         assertEquals(25.0, getSignInversion1.getSignInversion(-25.0), 0.1);
-        assertEquals(-0.125, getSignInversion1.getSignInversion(0.125), 0.1);
+        assertEquals(0, getSignInversion1.getSignInversion(0), 0.1);
     }
 
-    @Test
-    public void testGetSignInversion0() {
-        MainApplication getSignInversion0 = new MainApplication();
-        assertEquals(0.0, getSignInversion0.getSignInversion0(0.0), 0.1);
-    }
 
     @Test
     public void testGetSquare() {
@@ -326,13 +321,14 @@ public class TestMainApplication {
         assertEquals(0.0, getExponentiation1.getExponentiation(0.0, 1.0), 0.1);
      }
 
-     @Test
+    @Test
     public void testGetInverse() {
         MainApplication getInverse1 = new MainApplication();
         assertEquals(0.25, getInverse1.getInverse(4.0), 0.1);
         assertEquals(-0.25, getInverse1.getInverse(-4.0), 0.1);
-        assertEquals(0.0, getInverse1.getInverse(0.0), 0.1);
+        assertEquals(.01, getInverse1.getInverse(100), 0.1);
 
      }
+
 }
 
