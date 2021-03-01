@@ -194,30 +194,30 @@ public class TestMainApplication {
     /*@org.junit.Test
     public void testDecToBinary() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(10), myCalc.decToBinary(2));
-        assertEquals(Double.valueOf(1), myCalc.decToBinary(1));
-        assertEquals(Double.valueOf(1000), myCalc.decToBinary(8));
+        assertEquals(Double.valueOf(10), myCalc.decimalToBinary(2));
+        assertEquals(Double.valueOf(1), myCalc.decimalToBinary(1));
+        assertEquals(Double.valueOf(1000), myCalc.decimalToBinary(8));
     }
     @org.junit.Test
     public void testDecToOct() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(2), myCalc.decToOct(2));
-        assertEquals(Double.valueOf(10), myCalc.decToOct(8));
-        assertEquals(Double.valueOf(170), myCalc.decToOct(120));
+        assertEquals(Double.valueOf(2), myCalc.decimalToOct(2));
+        assertEquals(Double.valueOf(10), myCalc.decimalToOct(8));
+        assertEquals(Double.valueOf(170), myCalc.decimalToOct(120));
     }
     @org.junit.Test
     public void testDecToHex() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(2), myCalc.decToHex(2));
-        assertEquals(Double.valueOf(14), myCalc.decToHex(20));
-        assertEquals("1f", myCalc.decToHex(31));
+        assertEquals(Double.valueOf(2), myCalc.decimalToHex(2));
+        assertEquals(Double.valueOf(14), myCalc.decimalToHex(20));
+        assertEquals("1f", myCalc.decimalToHex(31));
     }
     @org.junit.Test
     public void testBinaryToDec() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(2), myCalc.binaryToDec(10));
-        assertEquals(Double.valueOf(1), myCalc.binaryToDec(1));
-        assertEquals(Double.valueOf(8), myCalc.binaryToDec(1000));
+        assertEquals(Double.valueOf(2), myCalc.binToDec(10));
+        assertEquals(Double.valueOf(1), myCalc.binToDec(1));
+        assertEquals(Double.valueOf(8), myCalc.binToDec(1000));
     }
     @org.junit.Test
     public void testBinaryToOct() {
@@ -236,23 +236,23 @@ public class TestMainApplication {
     @org.junit.Test
     public void testOctToBinary() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(10), myCalc.octToBinary(2));
-        assertEquals(Double.valueOf(1), myCalc.octToBinary(1));
-        assertEquals(Double.valueOf(1000), myCalc.octToBinary(10));
+        assertEquals(Double.valueOf(10), myCalc.octalToBinary(2));
+        assertEquals(Double.valueOf(1), myCalc.octalToBinary(1));
+        assertEquals(Double.valueOf(1000), myCalc.octalToBinary(10));
     }
     @org.junit.Test
     public void testOctToDec() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(2), myCalc.octToDec(2));
-        assertEquals(Double.valueOf(8), myCalc.octToDec(10));
-        assertEquals(Double.valueOf(120), myCalc.octToDec(170));
+        assertEquals(Double.valueOf(2), myCalc.octalToDecimal(2));
+        assertEquals(Double.valueOf(8), myCalc.octalToDecimal(10));
+        assertEquals(Double.valueOf(120), myCalc.octalToDecimal(170));
     }
     @org.junit.Test
     public void testOctToHex() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(2), myCalc.octToHex(2));
-        assertEquals("e", myCalc.octToHex(16));
-        assertEquals(Double.valueOf(19), myCalc.octToHex(31));
+        assertEquals(Double.valueOf(2), myCalc.octalToHex(2));
+        assertEquals("e", myCalc.octalToHex(16));
+        assertEquals(Double.valueOf(19), myCalc.octalToHex(31));
     }
     @org.junit.Test
     public void testHexToBinary() {
@@ -264,15 +264,15 @@ public class TestMainApplication {
     @org.junit.Test
     public void testHexToOct() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(2), myCalc.hexToOct(2));
-        assertEquals(Double.valueOf(17), myCalc.hexToOct("f"));
-        assertEquals(Double.valueOf(252), myCalc.hexToOct("ab"));
+        assertEquals(Double.valueOf(2), myCalc.hexToOctal(2));
+        assertEquals(Double.valueOf(17), myCalc.hexToOctal("f"));
+        assertEquals(Double.valueOf(252), myCalc.hexToOctal("ab"));
     }
     @org.junit.Test
     public void testHexToDec() {
         Calculator myCalc = new Calculator();
-        assertEquals(Double.valueOf(10), myCalc.hexToDec(2));
-        assertEquals(Double.valueOf(1111), myCalc.hexToDec("f"));
-        assertEquals(Double.valueOf(10101011), myCalc.hexToDec("ab"));
+        assertEquals(Double.valueOf(10), myCalc.hexToDecimal(2));
+        assertEquals(Double.valueOf(1111), myCalc.hexToDecimal("f"));
+        assertEquals(Double.valueOf(10101011), myCalc.hexToDecimal("ab"));
     }*/
 }
