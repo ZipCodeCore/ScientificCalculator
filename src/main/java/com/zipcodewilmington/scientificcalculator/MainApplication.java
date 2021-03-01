@@ -77,7 +77,7 @@ public class MainApplication {
             else if(op.equalsIgnoreCase("mrc")){
                 currentlyDisplayed = myCalc.memRecall();
                 myCalc.drawScreen(Double.toString(currentlyDisplayed));
-                
+
                 //conversions
             } else if (op.equalsIgnoreCase("dectobinary")) {
                 String stringBinary = myCalc.decimalToBinary(currentlyDisplayed);
