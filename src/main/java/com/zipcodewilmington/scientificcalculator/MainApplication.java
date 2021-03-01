@@ -18,11 +18,14 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
+    }
+
+    public static void runCalculator() {
         Console.println("HI! I'M CODEB0T0VER9000!");
         Console.println("I SEE YOU NEED HELP WITH YOUR MATH FRIEND, HOW MAY I BE OF SERVICE?");
 
         while (startLoop) {
-            while (displayValue.equals("Err") ) {
+            while (displayValue.equals("Err")) {
                 userInputDouble = Console.getDoubleInput("Please press 0 to continue");
                 if (userInputDouble == 0) {
                     clearDisplay();
@@ -58,24 +61,24 @@ public class MainApplication {
                     findSum(userInputDouble, userInputDouble2);
                     System.out.println(displayValue);
                     break;
-                 case 2:
-                     userInputDouble = Console.getDoubleInput("Enter first number");
-                     userInputDouble2 = Console.getDoubleInput("Enter second number");
-                     findDifference(userInputDouble, userInputDouble2);
-                     System.out.println(displayValue);
-                     break;
-                 case 3:
-                     userInputDouble = Console.getDoubleInput("Enter first number");
-                     userInputDouble2 = Console.getDoubleInput("Enter second number");
-                     findProduct(userInputDouble, userInputDouble2);
-                     System.out.println(displayValue);
-                     break;
-                 case 4:
-                     userInputDouble = Console.getDoubleInput("Enter first number");
-                     userInputDouble2 = Console.getDoubleInput("Enter second number");
-                     findQuotient(userInputDouble, userInputDouble2);
-                     System.out.println(displayValue);
-                     break;
+                case 2:
+                    userInputDouble = Console.getDoubleInput("Enter first number");
+                    userInputDouble2 = Console.getDoubleInput("Enter second number");
+                    findDifference(userInputDouble, userInputDouble2);
+                    System.out.println(displayValue);
+                    break;
+                case 3:
+                    userInputDouble = Console.getDoubleInput("Enter first number");
+                    userInputDouble2 = Console.getDoubleInput("Enter second number");
+                    findProduct(userInputDouble, userInputDouble2);
+                    System.out.println(displayValue);
+                    break;
+                case 4:
+                    userInputDouble = Console.getDoubleInput("Enter first number");
+                    userInputDouble2 = Console.getDoubleInput("Enter second number");
+                    findQuotient(userInputDouble, userInputDouble2);
+                    System.out.println(displayValue);
+                    break;
                 case 5:
                     userInputDouble = Console.getDoubleInput("Enter a number");
                     getSquare(userInputDouble);

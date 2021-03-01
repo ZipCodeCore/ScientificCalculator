@@ -3,11 +3,11 @@
   <ID>JAVA</ID>
   <OriginalElement>com.zipcodewilmington.scientificcalculator.MainApplication</OriginalElement>
   <nodes>
-    <node x="0.0" y="0.0">com.zipcodewilmington.scientificcalculator.MainApplication</node>
+    <node x="-59.0" y="-267.0">com.zipcodewilmington.scientificcalculator.MainApplication</node>
   </nodes>
   <notes />
   <edges />
-  <settings layout="Hierarchic Group" zoom="0.51105216622458" x="158.0" y="545.5" />
+  <settings layout="Hierarchic Group" zoom="0.5013009540329575" x="99.0" y="299.5" />
   <SelectedNodes>
     <node>com.zipcodewilmington.scientificcalculator.MainApplication</node>
   </SelectedNodes>
