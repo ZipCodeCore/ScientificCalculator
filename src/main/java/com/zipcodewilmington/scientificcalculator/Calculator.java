@@ -2,6 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 public class Calculator {
     public Calculator() {
     }
+    private double memory;
     public void drawScreen(String d){
         Console.println("");
         Console.println("|------------------------------------------------|");
@@ -15,6 +16,10 @@ public class Calculator {
         Console.println("| Sine     Cosine        Tangent       Factorial |");
         Console.println("| Sine-1   Cosine-1      Tangent-1     Invert    |");
         Console.println("| cToF     fToC          LBtoKG        KGtoLB    |");
+        Console.println("| decToBinary       decToOct       decToHex      |");
+        Console.println("| octToBinary       octToDec       octToHex      |");
+        Console.println("| hexToBinary       hexToOct       hextoDec      |");
+        Console.println("| binaryToDec       binaryToOct    binaryToHex   |");
         Console.println("|          radToDeg      degToRad                |");
         Console.println("|------------------------------------------------|");
     }
@@ -97,66 +102,6 @@ public class Calculator {
         return returnAns;
     }
 
-    //Conversion conditionals
-    public double displayMode(double x, String y) {
-        double returnAns;
-        if (y.equalsIgnoreCase("switch display binary")) {
-            returnAns = this.convertBinary(x);
-        } else if (y.equalsIgnoreCase("switch display hexadecimal")) {
-            returnAns = this.convertHex(x);
-        } else if (y.equalsIgnoreCase("switch display octal")) {
-            returnAns = this.convertOctal(x);
-        } else if (y.equalsIgnoreCase("switch display decimal")) {
-            returnAns = x;
-        } else {
-            //catches Switch Display
-            if (x) {
-                returnAns = this.convertBinary(x);
-            } else if (y == this.convertBinary(x)) {
-                returnAns = this.convertOctal(x);
-            } else if (y == this.convertOctal(x)) {
-                returnAns = this.convertHex(x);
-            } else {
-                //catches if it's Hex
-                returnAns = x;
-            }
-            return returnAns;
-        }
-    }
-    /*public double switchDisplayMode(String convert, double num) {
-
-        double returnans;
-        if (convert.equalsIgnoreCase("Switch Display binary")){
-            returnans = this.convertBinary(num);
-        } else if (convert.equalsIgnoreCase("switch display hex")) {
-            returnans = this.convertHex(num);
-        } else if (convert.equalsIgnoreCase("switch display octal")) {
-            returnans = this.convertOctal(num);
-        } else if (convert.equalsIgnoreCase("switch display decimal")) {
-            returnans = this.convertDecimal(num);
-        } else {
-            returnans = num;
-        }
-        return returnans;
-    }
-
-    public double rotateDisplaySwitch (String convert, double num) {
-        double returnans;
-        if (convert.equalsIgnoreCase("switch display")) {
-            if (num == this.convertDecimal(num)) {
-                returnans = this.convertBinary(num);
-            } else if (num == this.convertBinary(num)) {
-                returnans = this.convertOctal(num);
-            } else if (num == this.convertOctal(num)) {
-                returnans = this.convertHex(num);
-            } else if (num = this.convertHex(num)) {
-                returnans = this.convertDecimal(num);
-            } else {
-                return returnans = num;
-            }
-            return returnans;
-        }
-    }*/
 
     //store, recall, and clear memory
     public double memoryUsage(String inputStr, double x) {
@@ -303,30 +248,101 @@ public class Calculator {
         return cToF;
     }
 
-    //Conversions
-
-    public String convertBinary(double x) {
-            String ans = double.toBinaryString(x);
-            return ans;
-    }
-
-    public String convertHex(double x) {
-            String ans = double.toHexString(x);
-            return ans;
-    }
-
-    public String convertOctal(double x) {
-            String ans = double.toOctalString(x);
-            return ans;
-    }
-
-    /*public double convertDecimal(String x, Integer radix) {
-        double ans = Integer.parseInt(x, radix);
-        return ans;
-    }*/
-
     public double calcMemory(double x) {
         double memory = x;
+        return memory;
+    }
+
+    //conversions
+    public String decimalToBinary(double x){
+        int conversionInt = (int)x;
+        String ans = Integer.toString(conversionInt,2);
+        return ans;
+    }
+    public String decimalToHex(double x){
+        int conversionInt = (int)x;
+        String ans = Integer.toString(conversionInt,16);
+        return ans;
+    }
+    public double decimalToOct(double x){
+        String octStr = Integer.toOctalString((int) x);
+        double octNum = Integer.parseInt(octStr);
+        return octNum;
+    }
+    public double octalToHex (double x) {
+        String stringOct = String.valueOf(x);
+        double decNum = Integer.parseInt(stringOct, 8);
+        String hexStr = Integer.toHexString((int)decNum);
+        double hexNum = Integer.parseInt(hexStr);
+        return hexNum;
+    }
+    public double octalToBinary (double x) {
+        String stringOct = String.valueOf(x);
+        double decNum = Integer.parseInt(stringOct, 8);
+        String binStr = Integer.toHexString((int)decNum);
+        double binNum = Integer.parseInt(binStr);
+        return binNum;
+    }
+    public double octalToDecimal (double x) {
+        String stringOct = String.valueOf(x);
+        double decNum = Integer.parseInt(stringOct, 8);
+        return decNum;
+    }
+    public double hexToOctal (double x) {
+        String stringHex = String.valueOf(x);
+        double hexNum = Integer.parseInt(stringHex, 16);
+        String octStr = Integer.toOctalString((int)hexNum);
+        double octNum = Integer.parseInt(octStr);
+        return octNum;
+    }
+    public double hexToBinary (double x) {
+        String stringHex = String.valueOf(x);
+        double hexNum = Integer.parseInt(stringHex, 16);
+        String binStr = Integer.toBinaryString((int)hexNum);
+        double binNum = Integer.parseInt(binStr);
+        return binNum;
+    }
+    public double hexToDecimal (double x) {
+        String stringHex = String.valueOf(x);
+        double decNum = Integer.parseInt(stringHex, 8);
+        return decNum;
+    }
+    public double binToDec (double x) {
+        String stringBin = String.valueOf(x);
+        double decNum = Integer.parseInt(stringBin, 2);
+        return decNum;
+    }
+    public double binaryToOct (double x) {
+        String stringBin = String.valueOf(x);
+        double binNum = Integer.parseInt(stringBin, 2);
+        String octStr = Integer.toBinaryString((int)binNum);
+        double octNum = Integer.parseInt(octStr);
+        return octNum;
+    }
+    public double binaryToHex (double x) {
+        String stringBin = String.valueOf(x);
+        double binNum = Integer.parseInt(stringBin, 2);
+        String hexStr = Integer.toBinaryString((int)binNum);
+        double hexNum = Integer.parseInt(hexStr);
+        return hexNum;
+    }
+    public double convertLBtoKG(double x) {
+        double lbToKg = (x * 0.45359237);
+        return lbToKg;
+    }
+    public double convertKGtoLB(double x){
+        double kgToLb = (x * 2.20462262);
+        return kgToLb ;
+    }
+    public double memAdd(double x){
+        memory = x;
+        return memory;
+    }
+    public double memClear(){
+        memory = 0;
+        return memory;
+    }
+    public double memRecall(){
         return memory;
     }
 }
