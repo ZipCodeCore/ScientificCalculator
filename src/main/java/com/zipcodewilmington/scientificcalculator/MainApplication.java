@@ -1,12 +1,35 @@
 package com.zipcodewilmington.scientificcalculator;
+<<<<<<< HEAD
 import java.util.InputMismatchException;
+=======
+
+import java.util.InputMismatchException;
+
+>>>>>>> 2269485a535b70f06303894d97a1ad9bd96fbc89
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
     public static void main(String[] args) {
+<<<<<<< HEAD
         double currentlyDisplayed = 0;
         boolean isRunning = true;
+=======
+        double y = 0;
+        double ans = 0;
+
+        Console.println("Welcome to my calculator!");
+        while(true) {
+            try {
+                y = Console.getDoubleInput("Please enter your first number or enter \"Memory\" for your stored value");
+                break;
+            } catch (InputMismatchException e) {
+                Console.println("Please enter one number.");
+            }
+        }
+
+
+>>>>>>> 2269485a535b70f06303894d97a1ad9bd96fbc89
         Calculator myCalc = new Calculator();
         myCalc.drawScreen(Double.toString(currentlyDisplayed));
         Console.println("Welcome to my calculator!");
