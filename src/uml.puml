@@ -8,6 +8,7 @@
 
 class MainApplication{
     double currentlyDisplayed
+    double memory
     boolean isRunning
 
 
