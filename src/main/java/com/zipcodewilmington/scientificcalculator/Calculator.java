@@ -47,7 +47,6 @@ public class Calculator {
 
     public double performOperation(String op, double num){
         double returnAns;
-
         if(op.equalsIgnoreCase("square")){
             returnAns = this.square(num);
         }
@@ -92,7 +91,20 @@ public class Calculator {
         }
         else if(op.equalsIgnoreCase("ln-1")){
             returnAns = this.inverseNaturalLog(num);
-        } else if(op.equalsIgnoreCase("fToC")){
+        }
+        else if(op.equalsIgnoreCase("lbToKg")){
+            returnAns = this.convertLBtoKG(num);
+        }
+        else if(op.equalsIgnoreCase("kgtoLb")) {
+            returnAns = this.convertKGtoLB(num);
+        }
+        else if(op.equalsIgnoreCase("radtodeg")) {
+            returnAns = this.toDegrees(num);
+        }
+        else if(op.equalsIgnoreCase("degtorad")) {
+            returnAns = this.toRadians(num);
+        }
+        else if(op.equalsIgnoreCase("fToC")){
             returnAns = this.convertFtoC(num);
         }
         //catching convert C to F
@@ -276,12 +288,11 @@ public class Calculator {
         double hexNum = Integer.parseInt(hexStr);
         return hexNum;
     }
-    public double octalToBinary (double x) {
+    public String octalToBinary (double x) {
         String stringOct = String.valueOf(x);
-        double decNum = Integer.parseInt(stringOct, 8);
-        String binStr = Integer.toHexString((int)decNum);
-        double binNum = Integer.parseInt(binStr);
-        return binNum;
+        int decNum = Integer.parseInt(stringOct, 8);
+        String ans = Integer.toHexString(decNum);
+        return ans;
     }
     public double octalToDecimal (double x) {
         String stringOct = String.valueOf(x);
@@ -307,10 +318,12 @@ public class Calculator {
         double decNum = Integer.parseInt(stringHex, 8);
         return decNum;
     }
-    public double binToDec (double x) {
+    public int binaryToDec (double x) {
         String stringBin = String.valueOf(x);
-        double decNum = Integer.parseInt(stringBin, 2);
-        return decNum;
+        int decInt = Integer.parseInt(stringBin, 2);
+        //String decStr = String.valueOf(decNum);
+        //double decNum = decInt;
+        return decInt;
     }
     public double binaryToOct (double x) {
         String stringBin = String.valueOf(x);

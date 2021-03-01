@@ -96,9 +96,9 @@ public class MainApplication {
                 String stringToHex = String.valueOf(stringOctToHex);
                 myCalc.drawScreen(stringToHex);
             } else if (op.equalsIgnoreCase("octtobinary")) {
-                double numOctToBinary = myCalc.octalToBinary(currentlyDisplayed);
-                String stringToBinary = String.valueOf(numOctToBinary);
-                myCalc.drawScreen(stringToBinary);
+                String numOctToBinary = myCalc.octalToBinary(currentlyDisplayed);
+                //String stringToBinary = String.valueOf(numOctToBinary);
+                myCalc.drawScreen(numOctToBinary);
             } else if (op.equalsIgnoreCase("octtodec")) {
                 double octToDec = myCalc.octalToDecimal(currentlyDisplayed);
                 String stringToDecimal = String.valueOf(octToDec);
@@ -116,7 +116,8 @@ public class MainApplication {
                 String stringToOct = String.valueOf(hexToOct);
                 myCalc.drawScreen(stringToOct);
             } else if (op.equalsIgnoreCase("binaryToDec")) {
-                double binToDec = myCalc.binToDec(currentlyDisplayed);
+                int binToDec;
+                binToDec = myCalc.binaryToDec(currentlyDisplayed);
                 String stringToDec = String.valueOf(binToDec);
                 myCalc.drawScreen(stringToDec);
             } else if (op.equalsIgnoreCase("binaryToOct")) {
