@@ -25,7 +25,6 @@ public class Calculator {
     }
     public double performOperation(String op, double num1, double num2){
         double returnAns;
-
         if(op.equalsIgnoreCase("add")){
             returnAns = this.addition(num1,num2);
         }
@@ -41,10 +40,8 @@ public class Calculator {
         else {
             returnAns = this.exponential(num1, num2);
         }
-
         return returnAns;
     }
-
     public double performOperation(String op, double num){
         double returnAns;
         if(op.equalsIgnoreCase("square")){
@@ -91,20 +88,7 @@ public class Calculator {
         }
         else if(op.equalsIgnoreCase("ln-1")){
             returnAns = this.inverseNaturalLog(num);
-        }
-        else if(op.equalsIgnoreCase("lbToKg")){
-            returnAns = this.convertLBtoKG(num);
-        }
-        else if(op.equalsIgnoreCase("kgtoLb")) {
-            returnAns = this.convertKGtoLB(num);
-        }
-        else if(op.equalsIgnoreCase("radtodeg")) {
-            returnAns = this.toDegrees(num);
-        }
-        else if(op.equalsIgnoreCase("degtorad")) {
-            returnAns = this.toRadians(num);
-        }
-        else if(op.equalsIgnoreCase("fToC")){
+        } else if(op.equalsIgnoreCase("fToC")){
             returnAns = this.convertFtoC(num);
         }
         //catching convert C to F
@@ -113,8 +97,6 @@ public class Calculator {
         }
         return returnAns;
     }
-
-
     //store, recall, and clear memory
     public double memoryUsage(String inputStr, double x) {
         double memory = 0;
@@ -129,95 +111,76 @@ public class Calculator {
         }
         return memory;
     }
-
-
     //two variable operations
     public double addition(double x, double y){
         double ans = x + y;
         return ans;
     }
-
     public double subtraction(double x,double y){
         double ans = x - y;
         return ans;
     }
-
     public double multiply(double x,double y){
         double ans = x * y;
         return ans;
     }
-
     public double divide(double x,double y){
         double ans = x / y;
         return ans;
     }
-
     public double exponential(double x,double y){
         double ans = Math.pow(x,y);
         return ans;
     }
-
     //one variable operations
     public double square(double x){
         double ans = Math.pow(x,2);
         return ans;
     }
-
     public double squareRoot(double x){
         double ans = Math.sqrt(x);
         return ans;
     }
-
     public double inverse(double x){
         double ans = (1 / x);
         return ans;
     }
-
     public double invert(double x){
         double ans = (x * -1);
         return ans;
     }
-
     public double sine(double x){
         double ans = Math.sin(x);
         return ans;
     }
-
     public double cosine(double x){
         double ans = Math.cos(x);
         return ans;
     }
-
     public double tangent(double x){
         double ans = Math.tan(x);
         return ans;
     }
-
     public double inverseSine(double x){
         double ans = Math.asin(x);
         return ans;
     }
-
     public double inverseCosine(double x){
         double ans = Math.acos(x);
         return ans;
     }
-
     public double inverseTangent(double x){
         double ans = Math.atan(x);
         return ans;
     }
-
     public double toRadians(double x){
         double ans = Math.toRadians(x);
         return ans;
     }
-
     public double toDegrees(double x){
         double ans = Math.toDegrees(x);
         return ans;
     }
-
     public double factorial(double x){
         double ans = 1;
         for(int i=1;i<=x;i++){
@@ -225,46 +188,37 @@ public class Calculator {
         }
         return ans;
     }
-
     public double log(double x){
         double ans = Math.log10(x);
         return ans;
     }
-
     public double inverseLog(double x){
         double ans = Math.pow(10,x);
         return ans;
     }
-
     public double naturalLog(double x){
         double ans = Math.log(x);
         return ans;
     }
-
     public double inverseNaturalLog(double x){
         double ans = Math.exp(x);
         return ans;
     }
-
     private String err(){
         return "Err";
     }
-
     public double convertFtoC(double x) {
         double fToC = (x - 32) / 1.8;
         return fToC;
     }
-
     public double convertCtoF(double x) {
         double cToF = (x * 1.8) + 32;
         return cToF;
     }
-
     public double calcMemory(double x) {
         double memory = x;
         return memory;
     }
-
     //conversions
     public String decimalToBinary(double x){
         int conversionInt = (int)x;
@@ -288,11 +242,12 @@ public class Calculator {
         double hexNum = Integer.parseInt(hexStr);
         return hexNum;
     }
-    public String octalToBinary (double x) {
+    public double octalToBinary (double x) {
         String stringOct = String.valueOf(x);
-        int decNum = Integer.parseInt(stringOct, 8);
-        String ans = Integer.toHexString(decNum);
-        return ans;
+        double decNum = Integer.parseInt(stringOct, 8);
+        String binStr = Integer.toHexString((int)decNum);
+        double binNum = Integer.parseInt(binStr);
+        return binNum;
     }
     public double octalToDecimal (double x) {
         String stringOct = String.valueOf(x);
@@ -318,12 +273,10 @@ public class Calculator {
         double decNum = Integer.parseInt(stringHex, 8);
         return decNum;
     }
-    public int binaryToDec (double x) {
+    public double binToDec (double x) {
         String stringBin = String.valueOf(x);
-        int decInt = Integer.parseInt(stringBin, 2);
-        //String decStr = String.valueOf(decNum);
-        //double decNum = decInt;
-        return decInt;
+        double decNum = Integer.parseInt(stringBin, 2);
+        return decNum;
     }
     public double binaryToOct (double x) {
         String stringBin = String.valueOf(x);

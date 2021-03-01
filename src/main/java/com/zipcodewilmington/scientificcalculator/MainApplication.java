@@ -1,35 +1,12 @@
 package com.zipcodewilmington.scientificcalculator;
-<<<<<<< HEAD
 import java.util.InputMismatchException;
-=======
-
-import java.util.InputMismatchException;
-
->>>>>>> 2269485a535b70f06303894d97a1ad9bd96fbc89
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
     public static void main(String[] args) {
-<<<<<<< HEAD
         double currentlyDisplayed = 0;
         boolean isRunning = true;
-=======
-        double y = 0;
-        double ans = 0;
-
-        Console.println("Welcome to my calculator!");
-        while(true) {
-            try {
-                y = Console.getDoubleInput("Please enter your first number or enter \"Memory\" for your stored value");
-                break;
-            } catch (InputMismatchException e) {
-                Console.println("Please enter one number.");
-            }
-        }
-
-
->>>>>>> 2269485a535b70f06303894d97a1ad9bd96fbc89
         Calculator myCalc = new Calculator();
         myCalc.drawScreen(Double.toString(currentlyDisplayed));
         Console.println("Welcome to my calculator!");
@@ -42,7 +19,6 @@ public class MainApplication {
             }
         }
         myCalc.drawScreen(Double.toString(currentlyDisplayed));
-
         while(isRunning) {
             String op = Console.getStringInput("Please enter the operation you would like to perform:");
             //prompt user for second number if they choose two variable operator then run two variable operator
@@ -100,7 +76,6 @@ public class MainApplication {
             else if(op.equalsIgnoreCase("mrc")){
                 currentlyDisplayed = myCalc.memRecall();
                 myCalc.drawScreen(Double.toString(currentlyDisplayed));
-
                 //conversions
             } else if (op.equalsIgnoreCase("dectobinary")) {
                 String stringBinary = myCalc.decimalToBinary(currentlyDisplayed);
@@ -119,9 +94,9 @@ public class MainApplication {
                 String stringToHex = String.valueOf(stringOctToHex);
                 myCalc.drawScreen(stringToHex);
             } else if (op.equalsIgnoreCase("octtobinary")) {
-                String numOctToBinary = myCalc.octalToBinary(currentlyDisplayed);
-                //String stringToBinary = String.valueOf(numOctToBinary);
-                myCalc.drawScreen(numOctToBinary);
+                double numOctToBinary = myCalc.octalToBinary(currentlyDisplayed);
+                String stringToBinary = String.valueOf(numOctToBinary);
+                myCalc.drawScreen(stringToBinary);
             } else if (op.equalsIgnoreCase("octtodec")) {
                 double octToDec = myCalc.octalToDecimal(currentlyDisplayed);
                 String stringToDecimal = String.valueOf(octToDec);
@@ -139,8 +114,7 @@ public class MainApplication {
                 String stringToOct = String.valueOf(hexToOct);
                 myCalc.drawScreen(stringToOct);
             } else if (op.equalsIgnoreCase("binaryToDec")) {
-                int binToDec;
-                binToDec = myCalc.binaryToDec(currentlyDisplayed);
+                double binToDec = myCalc.binToDec(currentlyDisplayed);
                 String stringToDec = String.valueOf(binToDec);
                 myCalc.drawScreen(stringToDec);
             } else if (op.equalsIgnoreCase("binaryToOct")) {
@@ -151,7 +125,6 @@ public class MainApplication {
                 double bitToHex = myCalc.binaryToHex(currentlyDisplayed);
                 String stringToHex = String.valueOf(bitToHex);
                 myCalc.drawScreen(stringToHex);
-
                 //Clear screen
             }else if (op.equalsIgnoreCase("clear")) {
                 currentlyDisplayed = 0;

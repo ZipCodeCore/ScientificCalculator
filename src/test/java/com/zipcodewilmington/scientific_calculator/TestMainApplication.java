@@ -109,10 +109,6 @@ public class TestMainApplication {
         assertEquals(Double.valueOf(1.5708), myCalc.inverseCosine(0), 0.00001);
         assertEquals(Double.valueOf(0.0), myCalc.inverseCosine(1), 0.00001);
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 2269485a535b70f06303894d97a1ad9bd96fbc89
     @org.junit.Test
     public void testInverseTangent() {
         Calculator myCalc = new Calculator();
@@ -154,7 +150,6 @@ public class TestMainApplication {
         assertEquals(Double.valueOf(1.0), myCalc.inverseNaturalLog(0), 0.0001);
         assertEquals(Double.valueOf(10.0), myCalc.inverseNaturalLog(2.30259), 0.0001);
         assertEquals(Double.valueOf(2.0), myCalc.inverseNaturalLog(0.69315), 0.0001);
-<<<<<<< HEAD
     }    @org.junit.Test
     public void testConvertFtoC() {
         Calculator myCalc = new Calculator();
@@ -218,16 +213,6 @@ public class TestMainApplication {
         assertEquals(Double.valueOf(14), myCalc.decToHex(20));
         assertEquals("1f", myCalc.decToHex(31));
     }
-=======
-    }
-
-    //@org.junit.Test
-    //public void initial6() {
-    //    Calculator myCalc = new Calculator();
-    //    assertEquals(Double.valueOf(4.0), myCalc.addition(2,2), 0.00001);
-    //}
-
->>>>>>> 2269485a535b70f06303894d97a1ad9bd96fbc89
     @org.junit.Test
     public void testBinaryToDec() {
         Calculator myCalc = new Calculator();
