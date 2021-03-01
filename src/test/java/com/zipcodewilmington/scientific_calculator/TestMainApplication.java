@@ -108,8 +108,7 @@ public class TestMainApplication {
         assertEquals(Double.valueOf(3.14159), myCalc.inverseCosine(-1), 0.00001);
         assertEquals(Double.valueOf(1.5708), myCalc.inverseCosine(0), 0.00001);
         assertEquals(Double.valueOf(0.0), myCalc.inverseCosine(1), 0.00001);
-    }
-    @org.junit.Test
+    }@org.junit.Test
     public void testInverseTangent() {
         Calculator myCalc = new Calculator();
         assertEquals(Double.valueOf(-0.7854), myCalc.inverseTangent(-1), 0.00001);
