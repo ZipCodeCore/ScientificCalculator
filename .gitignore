@@ -150,6 +150,6 @@ fabric.properties
 .classpath
 .settings
 
-
 #maven build target
 target/
+/bin
