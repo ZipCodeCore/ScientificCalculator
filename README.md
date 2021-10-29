@@ -1,9 +1,14 @@
+=======
+#Team Members
+
+teAM MEMBER
+Keerthana
+
 # ScientificCalculator (maven) ZCW
-# TEAM MEMBERS:
 
 ## Description
 
-In this project your team will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
+In this project your team will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week..
 
 Your team should work on this project in a single repository. Click the `fork` button in the top right corner to create a copy of this repository in one of your github accounts. You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
 
