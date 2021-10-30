@@ -23,7 +23,7 @@ public class Fibonacci {
                 j=next;
             }
 
-            System.out.print(Math.round(next)+" ");
+            System.out.print(Math.round(next)+" ");// Math.round removes decimal point from Double
             c++;
             fib(--num1);
         }

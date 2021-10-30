@@ -27,7 +27,7 @@ public class MainApplication {
             if (choice == 1) { // Option 1 (if statement will execute if value is 1)
 
                 while (true) {  // second while loop to verify valid input
-                    System.out.println("Please select from the options below\n 1) add \n 2) subtract\n 3) multiply \n 4) divison\n");
+                    System.out.println("Please select from the options below\n 1) add \n 2) subtract\n 3) multiply \n 4) divison\n 5) fibonacci\n");
                     choice = scan.nextInt();
 
 
