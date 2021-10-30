@@ -2,59 +2,59 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class BasicCalculator {
 
-    Double currentValue;
+    private Double result;
 
     public BasicCalculator(){
-        currentValue = 0.0;
+        result = 0.0;
     }
 
     public Double add(double num1, double num2){
-        currentValue = num1 + num2;
-        return currentValue ;
+        result = num1 + num2;
+        return result ;
     }
 
     public Double subtract(double num1, double num2){
-        currentValue = num1 - num2;
-        return currentValue ;
+        result = num1 - num2;
+        return result ;
     }
 
     public Double multiply(double num1, double num2){
-        currentValue = num1 * num2;
-        return currentValue ;
+        result = num1 * num2;
+        return result ;
     }
 
     public Double divide(double num1, double num2){
-        currentValue = num1 / num2;
-        return currentValue ;
+        result = num1 / num2;
+        return result ;
     }
 
     public Double squareRoot(Double num1) {
-        currentValue = Math.sqrt(num1);
-        return currentValue ;
+        result = Math.sqrt(num1);
+        return result ;
     }
 
     public Double square(Double num1) {
-        currentValue = Math.pow(num1, 2);
-        return currentValue ;
+        result = Math.pow(num1, 2);
+        return result ;
     }
 
     public Double exponentiation(Double num1, Double num2) {
-        currentValue = Math.pow(num1, num2);
-        return currentValue;
+        result = Math.pow(num1, num2);
+        return result;
     }
 
     public Double inverse(Double num1) {
-        currentValue = 1 / num1;
-        return currentValue;
+        result = 1 / num1;
+        return result;
     }
 
     public Double invertNumber(Double num1) {
-        currentValue = -1 * num1;
-        return currentValue;
+        result = -1 * num1;
+        return result;
     }
 
     public Double percentage(Double num1) {
-        currentValue = num1 / 100;
-        return currentValue;
+        result = num1 / 100;
+        return result;
     }
 }
