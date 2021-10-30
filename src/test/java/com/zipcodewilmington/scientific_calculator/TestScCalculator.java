@@ -1,12 +1,16 @@
 package com.zipcodewilmington.scientific_calculator;
 
 
+=======
+
 import com.zipcodewilmington.scientificcalculator.BasicCalculator;
 import com.zipcodewilmington.scientificcalculator.ScFunction;
 import org.junit.Assert;
+
 import org.junit.Test;
 
 public class TestScCalculator {
+
 
 
 
@@ -253,6 +257,5 @@ public class TestScCalculator {
             Assert.assertEquals(assumed, actual);
         }
     }
-
 
 
