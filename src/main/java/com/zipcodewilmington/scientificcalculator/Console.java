@@ -15,6 +15,10 @@ public class Console {
         print(output + "\n", args);
     }
 
+    public static void displayValue(double currentValue) {
+        Console.println(">>>>>>>>   Display Value: %s <<<<<<<<<< \n", currentValue);
+    }
+
     public static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
         println(prompt);
@@ -22,7 +26,7 @@ public class Console {
         return userInput;
     }
 
-    public static Integer getIntegerInput(String prompt) {
+    public static Integer getIntegerInput(String prompt, int rangeStart, int rangeStop) {
 
         Scanner scanner = new Scanner(System.in);
         println(prompt);
@@ -31,7 +35,13 @@ public class Console {
         while (true) {
             try {
                 inputValue = Integer.valueOf(scanner.nextLine());
-                break;
+                if (inputValue >= rangeStart && inputValue <= rangeStop) {
+                    break;
+                }
+                else {
+                    println("Invalid Choice!");
+                    println(prompt);
+                }
             }
             catch(Exception e) {
                 println("Invalid Integer Number!");
