@@ -28,5 +28,14 @@ public class BasicCalculator {
         result = num1 * num2;
         return result;
     }
+    public Double SquareRoot(Double num1) {
+        result = Math.sqrt(num1);
+        return result;
+    }
+
+    public Double Square(Double num1) {
+        result = Math.pow(num1, 2);
+        return result;
+    }
 
 }
