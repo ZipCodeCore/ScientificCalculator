@@ -113,8 +113,8 @@ public class MainApplication {
                             "16) radian\n" +
                             "17) factorial\n" +
                             "18) fibonacci\n"+
-                            "19) Switch to Scientific Calculator" +
-                            "20) Clear" +
+                            "19) Switch to Scientific Calculator\n" +
+                            "20) Clear\n" +
                             "21) Exit", 1, 21);
                 switch (choice) {
                     case 1:
@@ -147,12 +147,9 @@ public class MainApplication {
                         Console.displayValue(currentValue);
                         break;
                     case 19:
-                        //
-                        break;
-                    case 20:
                         calculatorType = 1;
                         break;
-                    case 21:
+                    case 20:
                         currentValue = 0.0;
                         Console.displayValue(currentValue);
                         currentValue = Console.getDoubleInput("Please enter the number");
@@ -165,5 +162,7 @@ public class MainApplication {
                 }
             }
         }
+
+        Console.println("Exit! Thank you");
     }
 }
