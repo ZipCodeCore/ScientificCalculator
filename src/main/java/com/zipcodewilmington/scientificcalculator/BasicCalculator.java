@@ -1,41 +1,60 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class BasicCalculator {
-    private Double result;
 
+    Double currentValue;
 
     public BasicCalculator(){
-        result = 0.0;
-
+        currentValue = 0.0;
     }
 
     public Double add(double num1, double num2){
-        result = num1 + num2;
-        return result;
+        currentValue = num1 + num2;
+        return currentValue ;
     }
 
     public Double subtract(double num1, double num2){
-        result = num1 - num2;
-        return result;
-    }
-
-    public Double divide(double num1, double num2){
-        result = num1 / num2;
-        return result;
+        currentValue = num1 - num2;
+        return currentValue ;
     }
 
     public Double multiply(double num1, double num2){
-        result = num1 * num2;
-        return result;
-    }
-    public Double SquareRoot(Double num1) {
-        result = Math.sqrt(num1);
-        return result;
+        currentValue = num1 * num2;
+        return currentValue ;
     }
 
-    public Double Square(Double num1) {
-        result = Math.pow(num1, 2);
-        return result;
+    public Double divide(double num1, double num2){
+        currentValue = num1 / num2;
+        return currentValue ;
     }
 
+    public Double squareRoot(Double num1) {
+        currentValue = Math.sqrt(num1);
+        return currentValue ;
+    }
+
+    public Double square(Double num1) {
+        currentValue = Math.pow(num1, 2);
+        return currentValue ;
+    }
+
+    public Double exponentiation(Double num1, Double num2) {
+        currentValue = Math.pow(num1, num2);
+        return currentValue;
+    }
+
+    public Double inverse(Double num1) {
+        currentValue = 1 / num1;
+        return currentValue;
+    }
+
+    public Double invertNumber(Double num1) {
+        currentValue = -1 * num1;
+        return currentValue;
+    }
+
+    public Double percentage(Double num1) {
+        currentValue = num1 / 100;
+        return currentValue;
+    }
 }
