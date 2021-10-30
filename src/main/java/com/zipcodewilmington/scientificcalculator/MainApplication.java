@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -27,12 +28,53 @@ public class MainApplication {
                     System.out.println("Please select from the options below\n 1) add \n 2) subtract\n 3) multiply \n 4) divison\n");
                     choice = scan.nextInt();
 
-                    if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
-                        System.out.println("Enter first number");
-                        Double input1 = scan.nextDouble();
 
-                        System.out.println("Enter second number");
-                        Double input2 = scan.nextDouble();
+                    if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
+
+                        Double input2;
+
+                        Double input1;
+                        while (true) // Checks for valid input(numbers)
+                        {
+                            try
+                            {
+                                System.out.println("Please enter first number");
+                                input1 = scan.nextDouble();
+                                break;
+                            }
+                            catch (Exception e)
+                            {
+                                scan.next();
+                                System.out.print("That’s not "
+                                        + "a Number. Try again: \n");
+                            }
+                        }
+
+                        while (true) // Checks for valid input(numbers)
+                        {
+                            try
+                            {
+                                System.out.println("Please enter second number");
+                                input2 = scan.nextDouble();
+                                break;
+                            }
+                            catch (Exception e)
+                            {
+                                scan.next();
+                                System.out.print("That’s not "
+                                        + "a Number. Try again: \n");
+                            }
+                        }
+                       // System.out.println("Enter first number");
+                       // input1 = scan.nextDouble();
+
+
+                       // System.out.println("Enter second number");
+                       // input2 = scan.nextDouble();
+
+
+
+
                         switch (choice) {
                             case 1:
                                 System.out.println(calc.add(input1, input2));
@@ -45,10 +87,8 @@ public class MainApplication {
                                 break;
                             case 4:
                                 System.out.println(calc.divide(input1, input2));
-
+                                break;
                         }
-
-
 
                         break;
 
@@ -114,12 +154,9 @@ public class MainApplication {
         //INPUT VALIDATION END
 
 
-
-
-
-
-
-
-
     }
+
+
+
+
 }
