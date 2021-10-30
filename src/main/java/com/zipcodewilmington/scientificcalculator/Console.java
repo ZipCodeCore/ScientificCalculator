@@ -21,11 +21,6 @@ public class Console {
         String userInput = scanner.nextLine();
         return userInput;
     }
-
-    public static Integer getIntegerInput(String prompt) {
-        return null;
-    }
-
     public static Double getDoubleInput(String prompt) {
         return null;
     }
