@@ -270,7 +270,46 @@ public class TestScCalculator {
         Assert.assertEquals(assumed, actual);
 
     }
+   @Test
+   public void ConvertToBinary(){
+     String assumed = "10100";
+     String actual = scientificCal.Binary(20.);
+     Assert.assertEquals(assumed, actual);
+   }
 
+    @Test
+    public void ConvertToBinary2(){
+        String assumed = "11111010000";
+        String actual = scientificCal.Binary(2000.);
+        Assert.assertEquals(assumed, actual);
+    }
+
+    @Test
+    public void ConvertToOctal(){
+        String assumed = "12";
+        String actual = scientificCal.Octal(10.);
+        Assert.assertEquals(assumed, actual);
+    }
+
+    @Test
+    public void ConvertToOctal2(){
+        String assumed = "764";
+        String actual = scientificCal.Octal(500.);
+        Assert.assertEquals(assumed, actual);
+    }
+
+    @Test  // Need to Fix this test
+    public void ConvertToHex(){
+        String assumed = "B";
+        String actual = scientificCal.Octal(11.);
+        Assert.assertEquals(assumed, actual);
+    }
+    @Test
+    public void ConvertToHex2(){
+        String assumed = "9e";
+        String actual = scientificCal.Octal(158.0);
+        Assert.assertEquals(assumed, actual);
+    }
     }
 
 

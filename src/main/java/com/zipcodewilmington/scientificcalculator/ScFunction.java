@@ -94,7 +94,7 @@ public class ScFunction {
     // Converts to Octal
     public String Octal(Double num1) {
 
-        return Integer.toHexString((int) Math.round(num1));
+        return Integer.toOctalString((int) Math.round(num1));
     }
     // Converts to Binary
     public String Binary(Double num1) {
