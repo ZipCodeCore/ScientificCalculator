@@ -16,6 +16,9 @@ public class MainApplication {
         Console.println("The user input %s as a string", s);
         Console.println("The user input %s as a integer", i);
         Console.println("The user input %s as a d", d)*/
+
+        // hello
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("select\n 1) add \n 2) subtract\n 3) multiply \n 4) divison\n");
