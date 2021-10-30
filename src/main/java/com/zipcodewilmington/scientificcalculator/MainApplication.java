@@ -11,7 +11,7 @@ public class MainApplication {
     double savedNumber;
     static double currentNumber;
 
-
+//how does git work
 
     public static void main(String[] args) {
         int startingNumber = 0;
@@ -30,7 +30,7 @@ public class MainApplication {
         return userInput;
     }
     public static void printNumber(){
-        
+
     }
 
     }
