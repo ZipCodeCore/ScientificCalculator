@@ -1,31 +1,18 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class Fibonacci {
-    Double c=0.0,
-            i=0.0,
-            j=1.0,
-            next;
-    public Fibonacci(){
 
-    }
-    public void fib(Double num1)
-    {
-
-
-        if(num1>0)
-        {
-            if(c<=1)
-                next=c;
-            else
-            {
-                next=i+j;
-                i=j;
-                j=next;
-            }
-
-            System.out.print(Math.round(next)+" ");// Math.round removes decimal point from Double
-            c++;
-            fib(--num1);
+    public static String fibonacci(Double num1){
+        Double maxNumber = num1;
+        Integer previousNumber = 0;
+        Integer nextNumber = 1;
+        String fiboString = "";
+        for (int i = 1; i <= maxNumber; i++){
+            fiboString += " " + previousNumber;
+            int sum = previousNumber + nextNumber;
+            previousNumber = nextNumber;
+            nextNumber = sum;
         }
+        return fiboString;
     }
 }
