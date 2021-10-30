@@ -10,32 +10,32 @@ public class BasicCalculator {
 
     public Double add(double num1, double num2){
         result = num1 + num2;
-        return result ;
+        return result;
     }
 
     public Double subtract(double num1, double num2){
         result = num1 - num2;
-        return result ;
+        return result;
     }
 
     public Double multiply(double num1, double num2){
         result = num1 * num2;
-        return result ;
+        return result;
     }
 
     public Double divide(double num1, double num2){
         result = num1 / num2;
-        return result ;
+        return result;
     }
 
     public Double squareRoot(Double num1) {
         result = Math.sqrt(num1);
-        return result ;
+        return result;
     }
 
     public Double square(Double num1) {
         result = Math.pow(num1, 2);
-        return result ;
+        return result;
     }
 
     public Double exponentiation(Double num1, Double num2) {
