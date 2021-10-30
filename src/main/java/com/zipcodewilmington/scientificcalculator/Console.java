@@ -23,10 +23,42 @@ public class Console {
     }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Integer inputValue = 0;
+
+        while (true) {
+            try {
+                inputValue = Integer.valueOf(scanner.nextLine());
+                break;
+            }
+            catch(Exception e) {
+                println("Invalid Integer Number!");
+                println(prompt);
+            }
+        }
+
+        return inputValue;
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Double inputValue = 0.0;
+
+        while (true) {
+            try {
+                inputValue = Double.valueOf(scanner.nextLine());
+                break;
+            }
+            catch(Exception e) {
+                println("Invalid Double Number!");
+                println(prompt);
+            }
+        }
+
+        return inputValue;
     }
 }
