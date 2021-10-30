@@ -12,6 +12,8 @@ public class MainApplication {
 
         // hello
         BasicCalculator calc = new BasicCalculator();
+        ScFunction scientificCalc = new ScFunction();
+        Fibonacci fibo = new Fibonacci();
         Scanner scan = new Scanner(System.in);
         Integer choice;
 
@@ -29,7 +31,7 @@ public class MainApplication {
                     choice = scan.nextInt();
 
 
-                    if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
+                    if (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5) {
 
                         Double input2;
 
@@ -65,13 +67,6 @@ public class MainApplication {
                                         + "a Number. Try again: \n");
                             }
                         }
-                       // System.out.println("Enter first number");
-                       // input1 = scan.nextDouble();
-
-
-                       // System.out.println("Enter second number");
-                       // input2 = scan.nextDouble();
-
 
 
 
@@ -88,6 +83,10 @@ public class MainApplication {
                             case 4:
                                 System.out.println(calc.divide(input1, input2));
                                 break;
+                            case 5:
+                                fibo.fib(input1); // testing fibonacci
+                                break;
+
                         }
 
                         break;
