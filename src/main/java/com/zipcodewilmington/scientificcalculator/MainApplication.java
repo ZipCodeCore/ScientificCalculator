@@ -1,17 +1,38 @@
 package com.zipcodewilmington.scientificcalculator;
 
+import java.util.Scanner;
+
 /**
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
-    public static void main(String[] args) {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
 
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
+    double userInput;
+    double savedNumber;
+    static double currentNumber;
+
+
+
+    public static void main(String[] args) {
+        int startingNumber = 0;
+
+        Console.println("Welcome to our calculator!");
+        System.out.println(startingNumber);
+        currentNumber = getUserInput();
+        System.out.println(currentNumber);
+        CoreFeatures.provideOptions();
+
     }
-}
+    public static double getUserInput() {
+        System.out.println("Please input a number");
+        Scanner scanner = new Scanner(System.in);
+        Double userInput = Double.valueOf(scanner.nextLine());
+        return userInput;
+    }
+    public static void printNumber(){
+        
+    }
+
+    }
+
+

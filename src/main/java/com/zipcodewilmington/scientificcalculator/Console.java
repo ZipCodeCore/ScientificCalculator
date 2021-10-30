@@ -2,6 +2,7 @@ package com.zipcodewilmington.scientificcalculator;
 
 import java.util.Scanner;
 
+
 /**
  * Created by leon on 2/9/18.
  */
@@ -23,10 +24,27 @@ public class Console {
     }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Integer userInput = Integer.valueOf(scanner.nextLine());
+        return userInput;
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        println(prompt);
+        Double userInput = Double.valueOf(scanner.nextLine());
+        return userInput;
+
+                /*
+        String s = Console.getStringInput("Enter a string");
+        Integer i = Console.getIntegerInput("Enter an integer");
+        Double d = Console.getDoubleInput("Enter a double.");
+
+        Console.println("The user input %s as a string", s);
+        Console.println("The user input %s as a integer", i);
+        Console.println("The user input %s as a d", d);
+
+         */
     }
 }
