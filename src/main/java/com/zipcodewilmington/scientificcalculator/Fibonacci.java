@@ -7,6 +7,7 @@ public class Fibonacci {
         Integer previousNumber = 0;
         Integer nextNumber = 1;
         String fiboString = "";
+
         for (int i = 1; i <= maxNumber; i++){
             fiboString += " " + previousNumber;
             int sum = previousNumber + nextNumber;

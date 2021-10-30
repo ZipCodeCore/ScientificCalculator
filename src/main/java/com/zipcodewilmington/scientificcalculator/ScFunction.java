@@ -8,13 +8,6 @@ public class ScFunction {
         result = 0.0; // constructor to initialize variable
     }
 
-//    public switchDisplayMode() {
-//
-//    }
-//
-//    public switchDisplayMode(String mode) {
-//
-//    }
 
 
     public double sin(double num1) {
@@ -91,6 +84,7 @@ public class ScFunction {
         else
             return (num1 * factorial(num1 - 1));
     }
+
     // Converts to Octal
     public String Octal(Double num1) {
 
@@ -104,7 +98,7 @@ public class ScFunction {
     // Converts to Hexadecimal
     public String Hexadecimal(Double num1){
 
-        return  Integer.toHexString((int)Math.round(num1));
+        return  Integer.toHexString((int) Math.round(num1));
     }
 
 }

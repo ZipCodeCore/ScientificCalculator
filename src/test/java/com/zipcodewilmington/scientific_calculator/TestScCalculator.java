@@ -300,14 +300,14 @@ public class TestScCalculator {
 
     @Test  // Need to Fix this test
     public void ConvertToHex(){
-        String assumed = "B";
-        String actual = scientificCal.Octal(11.);
+        String assumed = "b";
+        String actual = scientificCal.Hexadecimal(11.);
         Assert.assertEquals(assumed, actual);
     }
     @Test
     public void ConvertToHex2(){
         String assumed = "9e";
-        String actual = scientificCal.Octal(158.0);
+        String actual = scientificCal.Hexadecimal(158.0);
         Assert.assertEquals(assumed, actual);
     }
     }
