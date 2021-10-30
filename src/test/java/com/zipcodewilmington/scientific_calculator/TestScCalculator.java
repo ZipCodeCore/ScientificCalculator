@@ -1,9 +1,8 @@
 package com.zipcodewilmington.scientific_calculator;
 
 
-=======
-
 import com.zipcodewilmington.scientificcalculator.BasicCalculator;
+import com.zipcodewilmington.scientificcalculator.Fibonacci;
 import com.zipcodewilmington.scientificcalculator.ScFunction;
 import org.junit.Assert;
 
@@ -13,7 +12,7 @@ public class TestScCalculator {
 
 
 
-
+        Fibonacci fibo = new Fibonacci();
         ScFunction scientificCal = new ScFunction();
         BasicCalculator basicCalc = new BasicCalculator();
         @Test
@@ -137,19 +136,7 @@ public class TestScCalculator {
             Assert.assertEquals(assumed, actual);
         }
 
-       /* @Test
-        public void ChangeSignFromPositive() {
-            Double assumed = -5.;
-            Double actual = ScFunction.changeSign(5.);
-            Assert.assertEquals(assumed, actual);
-        }
 
-        @Test
-        public void ChangeSignFromNegative() {
-            Double assumed = 5.;
-            Double actual = ScFunction.changeSign(-5.);
-            Assert.assertEquals(assumed, actual);
-        }*/
 
         @Test
         public void SinePositiveNumber() {
@@ -256,6 +243,73 @@ public class TestScCalculator {
             Double actual = basicCalc.exponentiation(0., .0);
             Assert.assertEquals(assumed, actual);
         }
+        @Test
+        public void Factorial(){
+          Double assumed = 120.;
+          Double actual = scientificCal.factorial(5.);
+          Assert.assertEquals(assumed, actual);
+        }
+        @Test
+    public void Fibonacci(){
+            String assumed = " 0 1 1 2 3";
+            String actual = fibo.fibonacci(5.);
+            Assert.assertEquals(assumed, actual);
+
+        }
+        @Test
+    public void Fibonacci2(){
+        String assumed = " 0 1 1 2 3 5 8";
+        String actual = fibo.fibonacci(7.);
+        Assert.assertEquals(assumed, actual);
+
+    }
+    @Test
+    public void Fibonacci3BigNumber(){
+        String assumed = " 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229 832040 1346269";
+        String actual = fibo.fibonacci(32.);
+        Assert.assertEquals(assumed, actual);
+
+    }
+   @Test
+   public void ConvertToBinary(){
+     String assumed = "10100";
+     String actual = scientificCal.Binary(20.);
+     Assert.assertEquals(assumed, actual);
+   }
+
+    @Test
+    public void ConvertToBinary2(){
+        String assumed = "11111010000";
+        String actual = scientificCal.Binary(2000.);
+        Assert.assertEquals(assumed, actual);
+    }
+
+    @Test
+    public void ConvertToOctal(){
+        String assumed = "12";
+        String actual = scientificCal.Octal(10.);
+        Assert.assertEquals(assumed, actual);
+    }
+
+    @Test
+    public void ConvertToOctal2(){
+        String assumed = "764";
+        String actual = scientificCal.Octal(500.);
+        Assert.assertEquals(assumed, actual);
+    }
+
+    @Test  // Need to Fix this test
+    public void ConvertToHex(){
+        String assumed = "b";
+        String actual = scientificCal.Hexadecimal(11.);
+        Assert.assertEquals(assumed, actual);
+    }
+    @Test
+    public void ConvertToHex2(){
+        String assumed = "9e";
+        String actual = scientificCal.Hexadecimal(158.0);
+        Assert.assertEquals(assumed, actual);
+    }
     }
 
 

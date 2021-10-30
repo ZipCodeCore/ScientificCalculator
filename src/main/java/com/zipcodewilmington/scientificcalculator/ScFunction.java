@@ -8,13 +8,6 @@ public class ScFunction {
         result = 0.0; // constructor to initialize variable
     }
 
-//    public switchDisplayMode() {
-//
-//    }
-//
-//    public switchDisplayMode(String mode) {
-//
-//    }
 
 
     public double sin(double num1) {
@@ -81,7 +74,7 @@ public class ScFunction {
 
     }
 
-    //Fibonacci
+    //Fibonacci has own class
 
 
     //Factorial
@@ -92,5 +85,20 @@ public class ScFunction {
             return (num1 * factorial(num1 - 1));
     }
 
+    // Converts to Octal
+    public String Octal(Double num1) {
+
+        return Integer.toOctalString((int) Math.round(num1));
+    }
+    // Converts to Binary
+    public String Binary(Double num1) {
+
+        return Integer.toBinaryString((int) Math.round(num1));
+    }
+    // Converts to Hexadecimal
+    public String Hexadecimal(Double num1){
+
+        return  Integer.toHexString((int) Math.round(num1));
+    }
 
 }

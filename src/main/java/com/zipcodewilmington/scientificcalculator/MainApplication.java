@@ -145,7 +145,7 @@ public class MainApplication {
                         Console.displayValue(currentValue);
                         break;
                     case 18:
-                        fibo.fib(currentValue);
+                        fibo.fibonacci(currentValue);
                         currentValue = Console.getDoubleInput("Please enter the number");
                         Console.displayValue(currentValue);
                         break;
