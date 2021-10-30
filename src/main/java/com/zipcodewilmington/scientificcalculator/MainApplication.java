@@ -50,6 +50,7 @@ public class MainApplication {
                     operandValue = Console.getDoubleInput("Please enter the operand number");
                 }
 
+
                 switch (choice) {
                     case 1:
                         currentValue = basicCalc.add(currentValue, operandValue);
@@ -95,6 +96,8 @@ public class MainApplication {
             else {
 
                 int choice = Console.getIntegerInput("Please select from the options below\n " +
+
+
                             "1) degree\n" +
                             "2) natural log\n" +
                             "3) base log\n" +
