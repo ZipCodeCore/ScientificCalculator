@@ -8,14 +8,6 @@ import java.util.Scanner;
 public class MainApplication {
     public static void main(String[] args) {
 
-       /* Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
-
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d)*/
 
         // hello
 
@@ -101,20 +93,6 @@ public class MainApplication {
 
             }
         } // first loop
-
-
-        /*while (true) {
-            System.out.println("select from teh options below\n 1) add \n 2) subtract\n 3) multiply \n 4) divison\n");
-
-            choice = scan.nextInt();
-            if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
-                break;
-            } else {
-                System.out.println("Please enter a valid option");
-                continue;
-            }
-
-        }*/
 
 
         System.out.println("Enter first number");
