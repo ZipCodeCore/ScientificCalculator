@@ -1,7 +1,6 @@
-import java.lang.Math;
-public class scientificCalc {
+package com.zipcodewilmington.scientificcalculator;
 
-    /*
+  /*
         Scientific Features
         Switch display mode (binary, octal, decimal, hexadecimal)
         switchDisplayMode() should rotate through the options
@@ -19,56 +18,81 @@ public class scientificCalc {
 
 
 //    ex (inverse natural logarithm)
-    */
+*/
+
+import java.util.Scanner;
+
+public class scientificCalc {
+
     public scientificCalc() {
     }
 
-    public static double sine() {
+    public double promptScreen() {
 
-        return Math.sin(i);
+        Scanner prompt = new Scanner(System.in);
+
+        System.out.println("Give the first number:");
+        int first = Integer.valueOf(prompt.nextLine());
+        System.out.println("Give the second number:");
+        int second = Integer.valueOf(prompt.nextLine());
+        System.out.println("Choose your scientific function");
+        System.out.println("SIN, SIN-1, COS, COS-1 TAN, TAN-1,LOG, LOG10, FAC, LNBase");
+        //String selection = String.valueOf(prompt.nextLine());
+        return promptScreen();
     }
+}
 
-    public double cosign() {
-
-        return Math.cos(i);
-    }
-
-    public double tangent() {
-
-        return Math.tan(i);
+   if (selection == "SIN") {
+            return sine();
+   } else if(selection == "SIN=1") {
+            return inverseSine();
+   } else if(selection == "COS") {
+            return cosign();
+   } else if(seleciton == "COS-1") {
+            return inverseCoSine();
+   } else if(selection =="TAN") {
+        return tangent();
+   } else if(selection =="TAN-1") {
+        return inverseTangent();
+   } else if(selection =="LOG") {
+            return logarithm();
+   } else if(selection == "LOG10") {
+            return logarithm10();
+   } else if (selection == "LNBase") {
+            return Math.pow(Math.E, (Math.log(x)));  // needs method
+   } else {
+            return factorial();
+                            }
+   public double sine() {
+            return Math.sin(first + second);
+        }
+        public double inverseSine() {
+        return (int) Math.asin();
+        //will return a int;
+        }
+        public double cosign() {
+        return Math.cos();
+        }
+        public double inverseCoSine() {
+        return (int) Math.acos();
+        }
+        public double tangent() {
+        return Math.tan();
         // will return a double
-    }
-
-    public double inverseSine() {
-
-        return (int) Math.asin(i);
-        //will return a int;
-    }
-
-    public double inverseCoSine() {
-
-        return (int) Math.acos(i);
-        //will return a int;
-    }
-
-    public double inverseTangent() {
-
-        return Math.atan(i);
+        }
+        public double inverseTangent() {
+        return Math.atan();
         // will print double
-    }
-
-    public double logarithm() {
+        }
+        public double logarithm() {
         // natural
-        return Math.log(i);
-    }
-
-    public double logarithm10() {
-
-        return Math.log10(i);
-    }
-
+        return Math.log();
+        }
+        public double logarithm10() {
+        return Math.log10;
+        }
         public long factorial() {
-            long num = i;
+            long num = 0;
             // probably need to incorporate BigInteger;
             int i=1;
             int fact=1;
@@ -76,9 +100,10 @@ public class scientificCalc {
                 fact=fact*i;
                 i++;
             }
-            return(fact);
+            return();
         }
     }
+
 
 
 
