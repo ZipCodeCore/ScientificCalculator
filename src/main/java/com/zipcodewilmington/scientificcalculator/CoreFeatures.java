@@ -32,6 +32,11 @@ public class CoreFeatures {
             exponents();
         }else if(selection.equalsIgnoreCase("invert")) {
             invert();
+        }else if(selection.equalsIgnoreCase("Scientific")){
+            //scientificFunctions.
+        }else{
+            System.out.println("Invalid Choice, Please try again");
+            provideOptions();
         }
 
     }
@@ -40,19 +45,32 @@ public class CoreFeatures {
         Scanner scanner = new Scanner(System.in);
         String selection = String.valueOf(scanner.nextLine());
         if(selection.equals("+")){
-            System.out.println(MainApplication.currentNumber + MainApplication.getUserInput());
+             double output = (MainApplication.currentNumber + MainApplication.getUserInput());
+             MainApplication.printNumber(output);
             provideOptions();
         }else if(selection.equals("-")){
-
+            double output = (MainApplication.currentNumber - MainApplication.getUserInput());
+            MainApplication.printNumber((output));
+            provideOptions();
         }else if(selection.equals("*")){
-
+            double output = (MainApplication.currentNumber * MainApplication.getUserInput());
+            MainApplication.printNumber((output));
+            provideOptions();
         }else if(selection.equals("/")){
-
+            double number2 = MainApplication.getUserInput();
+            double output = (MainApplication.currentNumber / number2);
+            MainApplication.printNumber((output));
+            provideOptions();
+        }else {
+            System.out.println("invalid choice, please choose again");
+            basicoperations();
         }
 
     }
     public static void square(){
-
+        double output = (MainApplication.currentNumber * MainApplication.currentNumber);
+        MainApplication.printNumber(output);
+        provideOptions();
     }
     public static void squareroot(){
 

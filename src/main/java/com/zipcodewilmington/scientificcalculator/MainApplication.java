@@ -10,6 +10,7 @@ public class MainApplication {
     double userInput;
     double savedNumber;
     static double currentNumber;
+    static double output;
 
 //how does git work
 
@@ -19,7 +20,7 @@ public class MainApplication {
         Console.println("Welcome to our calculator!");
         System.out.println(startingNumber);
         currentNumber = getUserInput();
-        System.out.println(currentNumber);
+        printNumber(currentNumber);
         CoreFeatures.provideOptions();
 
     }
@@ -29,7 +30,10 @@ public class MainApplication {
         Double userInput = Double.valueOf(scanner.nextLine());
         return userInput;
     }
-    public static void printNumber(){
+    public static void printNumber(double output){
+
+        System.out.println(output);
+
 
     }
 
