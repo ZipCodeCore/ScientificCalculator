@@ -15,6 +15,7 @@ public class MainApplication {
         Console.println("The user input %s as a d", d);
 
         */
+
         scientificCalc scientificCalcObject = new scientificCalc();
         scientificCalcObject.promptScreen();
     }
