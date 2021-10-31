@@ -7,9 +7,10 @@ public class MainApplication {
 
 
     public static void main(String[] args) {
+        Calculator calc = new Calculator("0");
         Console.println("Welcome to my calculator!");
-        Calculator.startCalc(0);
-
+        calc.startCalc(0);
+        calc.displayOutput("2");
 
     }
 }
