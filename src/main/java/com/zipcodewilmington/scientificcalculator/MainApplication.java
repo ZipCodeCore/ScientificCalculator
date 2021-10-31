@@ -15,8 +15,9 @@ public class MainApplication {
         //THINGS TO ADD STILL: NEGATIVE/POSITIVE; EXCEPTION/ERROR HANDLING FORCING A CLEAR;
         //STANDARDIZE THE PRINTING FORMAT FOR WHEN ANSWERS GET PUMPED OUT
         //Negative (Math.negateExact()?)
-        while(!(s.equals("kill")){
-            String s = Console.getStringInput("What do you want to do?");
+        String s = "";
+        while(!(s.equals("kill"))){
+            s = Console.getStringInput("What do you want to do?");
             //Double d1 = Console.getDoubleInput("Enter a double.");
             //Double d2 = Console.getDoubleInput("Enter another double.");
             //Console.println("The user input %s as a string", s);
@@ -24,54 +25,49 @@ public class MainApplication {
             //Console.println("The user input %s as a d", d2);
             switch (s.toLowerCase()) {
                 case "current number":
+                    Console.println("The current number is: %s",display);
                     //print current number
                     break;
                 case "clear screen":
                     clearScreen();
                     break;
                 case "change current number":
-                    double newnum = 0;
-                    //get user input;
-                    display = newnum;
+                    display = Console.getDoubleInput("Give me a new current number");
+                    Console.println("The new number is %s.",display);
                     break;
                 case "add":
-                    double adder = 0;
-                    //take user input here
-                    add(adder);
+                    double adder = Console.getDoubleInput("Give me the number to add to the display");
+                    Console.println("The sum of %s and %s is %s.",display,adder,add(adder));
                     break;
                 case "subtract":
-                    double subber = 0;
-                    //take user input here
-                    subtract(subber);
+                    double subber = Console.getDoubleInput("Give me the number to subtract from the display");
+                    Console.println("The difference of %s and %s is %s.",display,subber,subtract(subber));
                     break;
                 case "multiply":
-                    double multer = 0;
-                    //take user input here
-                    multiply(multer);
+                    double multer = Console.getDoubleInput("Give me the number to multiply the display by");
+                    Console.println("The product of %s and %s is %s.",display,multer,multiply(multer));
                     break;
                 case "divide":
                     //perfect spot for error testing
-                    double divver = 0;
-                    //take user input here
-                    divide(divver);
+                    double divver = Console.getDoubleInput("Give me the number to divide the display by");
+                    Console.println("The quotient of %s and %s is %s.",display,divver,divide(divver));
                     break;
                 case "square":
-                    display*display;
+                    Console.println("The square of %s is %s.",display,display * display);
                     break;
                 case "square root":
-                    Math.sqrt(display);
+                    Console.println("The square root of %s is %s.",display,Math.sqrt(display));
                     break;
                 case "variable exponent":
-                    double exponent = 0;
-                    //take user input here
-                    Math.pow(display,exponent);
+                    double exponent = Console.getDoubleInput("What power should I raise the display to?");
+                    Console.println("%s to the %sth power is %s",display,exponent,Math.pow(display,exponent));
                     break;
                 case "inverse":
-                    (float) 1/display;
+                    Console.println("The inverse of %s is %s",display,(float) (1/ display));
                     break;
                 case "switch display mode":
-                    //how to have optional input?
-                    switchDisplayMode();
+                    //how to have optional input? (TRYING OVERLOADING)
+                    Console.println("The display mode is now: %s",switchDisplayMode());
                     break;
                 case "binary":
                     switchDisplayMode("binary");
@@ -152,12 +148,47 @@ public class MainApplication {
             }
         }
     }
-    public static void clearScreen() {}
-    public static double add(double adder){return 0;}
-    public static double subtract(double subber){return 0;}
-    public static double multiply(double multer){return 0;}
-    public static double divide(double divver){return 0;}
+    //I have no idea if this will work or not
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+    public static double add(double adder){
+        return display + adder;
+    }
+    public static double subtract(double subber){
+        return display - subber;
+    }
+    public static double multiply(double multer){
+        return display * multer;
+    }
+    public static double divide(double divver){
+        return display / divver;
+    }
     //2 following functions should have OPTIONAL parameters (idk how to do this for now, but im pretty sure its possible)
+    public static String switchDisplayMode(){
+        switch(displayMode){
+            case "decimal":
+                displayMode = "hexadecimal";
+                switchDisplayMode("hexadecimal");
+                return displayMode;
+            case "hexadecimal":
+                displayMode = "binary";
+                switchDisplayMode("binary");
+                return displayMode;
+            case "binary":
+                displayMode = "octal";
+                switchDisplayMode("octal");
+                return displayMode;
+            case "octal":
+                displayMode = "decimal";
+                switchDisplayMode("decimal");
+                return displayMode;
+            default:
+                displayMode = "This should never be returned";
+                return displayMode;
+        }
+    }
     public static String switchDisplayMode(String mode){return null;}
     public static String switchUnitsMode(String mode){return null;}
     //not sure what a factorial function would take as parameter(s)
