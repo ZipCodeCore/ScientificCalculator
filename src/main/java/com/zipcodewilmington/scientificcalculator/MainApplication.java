@@ -16,13 +16,12 @@ public class MainApplication {
         //STANDARDIZE THE PRINTING FORMAT FOR WHEN ANSWERS GET PUMPED OUT
         //Negative (Math.negateExact()?)
         String s = "";
+        //
         while(!(s.equals("kill"))){
             s = Console.getStringInput("What do you want to do?");
             //Double d1 = Console.getDoubleInput("Enter a double.");
             //Double d2 = Console.getDoubleInput("Enter another double.");
             //Console.println("The user input %s as a string", s);
-            //Console.println("The user input %s as a d", d1);
-            //Console.println("The user input %s as a d", d2);
             switch (s.toLowerCase()) {
                 case "current number":
                     Console.println("The current number is: %s",display);
@@ -70,16 +69,16 @@ public class MainApplication {
                     Console.println("The display mode is now: %s",switchDisplayMode());
                     break;
                 case "binary":
-                    switchDisplayMode("binary");
+                    Console.println("The display mode is now: %s",switchDisplayMode("binary"));
                     break;
                 case "decimal":
-                    switchDisplayMode("decimal");
+                    Console.println("The display mode is now: %s",switchDisplayMode("decimal"));
                     break;
                 case "octal":
-                    switchDisplayMode("octal");
+                    Console.println("The display mode is now: %s",switchDisplayMode("octal"));
                     break;
                 case "hexadecimal":
-                    switchDisplayMode("hexadecimal");
+                    Console.println("The display mode is now: %s",switchDisplayMode("hexadecimal"));
                     break;
                 case "add to memory":
                     //have prompts here or in memorize
@@ -143,7 +142,7 @@ public class MainApplication {
                     //Print kill message
                     break;
                 default:
-                    System.println("Cannot compute. Please try again");
+                    Console.println("Cannot compute. Please try again");
                     break;
             }
         }
@@ -165,31 +164,65 @@ public class MainApplication {
     public static double divide(double divver){
         return display / divver;
     }
-    //2 following functions should have OPTIONAL parameters (idk how to do this for now, but im pretty sure its possible)
     public static String switchDisplayMode(){
         switch(displayMode){
             case "decimal":
                 displayMode = "hexadecimal";
-                switchDisplayMode("hexadecimal");
                 return displayMode;
             case "hexadecimal":
                 displayMode = "binary";
-                switchDisplayMode("binary");
                 return displayMode;
             case "binary":
                 displayMode = "octal";
-                switchDisplayMode("octal");
                 return displayMode;
             case "octal":
                 displayMode = "decimal";
-                switchDisplayMode("decimal");
                 return displayMode;
             default:
                 displayMode = "This should never be returned";
                 return displayMode;
         }
     }
-    public static String switchDisplayMode(String mode){return null;}
+    public static String switchDisplayMode(String mode){
+        switch(mode){
+            case "decimal":
+                displayMode = "decimal";
+                return displayMode;
+            case "hexadecimal":
+                displayMode = "hexadecimal";
+                return displayMode;
+            case "binary":
+                displayMode = "binary";
+                return displayMode;
+            case "octal":
+                displayMode = "octal";
+                return displayMode;
+            default:
+                displayMode = "This should never be returned";
+                return displayMode;
+        }
+
+    }
+    public static String displayPrint(String original){
+        switch(displayMode){
+            case "decimal":
+                displayMode = "decimal";
+                return displayMode;
+            case "hexadecimal":
+                displayMode = "hexadecimal";
+                return displayMode;
+            case "binary":
+                displayMode = "binary";
+                return displayMode;
+            case "octal":
+                displayMode = "octal";
+                return displayMode;
+            default:
+                displayMode = "This should never be returned";
+                return displayMode;
+        }
+    }
+
     public static String switchUnitsMode(String mode){return null;}
     //not sure what a factorial function would take as parameter(s)
     public static double factorial(){return 0;}
