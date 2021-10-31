@@ -7,6 +7,12 @@ import java.util.Scanner;
  */
 public class Console {
 
+    private static int displayMode;
+
+    public static void setDisplayMode(int givenDisplayMode) {
+        displayMode = givenDisplayMode;
+    }
+
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
     }
@@ -16,7 +22,11 @@ public class Console {
     }
 
     public static void displayValue(double currentValue) {
-        Console.println(">>>>>>>>   Display Value: %s <<<<<<<<<< \n", currentValue);
+        Console.println(">>>>>>>>   Display Value (in %s): %s <<<<<<<<<< \n", displayMode, applyDisplayMode(currentValue, displayMode));
+    }
+
+    public static void displayValue(double currentValue, String unitMode) {
+        Console.println(">>>>>>>>   Display Value (Mode: %s): %s <<<<<<<<<< \n", unitMode, currentValue);
     }
 
     public static String getStringInput(String prompt) {
@@ -55,20 +65,77 @@ public class Console {
     public static Double getDoubleInput(String prompt) {
 
         Scanner scanner = new Scanner(System.in);
-        println(prompt);
+        println(prompt + " (in %s): ", displayMode);
         Double inputValue = 0.0;
 
         while (true) {
             try {
-                inputValue = Double.valueOf(scanner.nextLine());
+                inputValue = Double.valueOf(applyDisplayMode(scanner.nextLine(), displayMode));
                 break;
             }
             catch(Exception e) {
-                println("Invalid Double Number!");
-                println(prompt);
+                println("Invalid Input!");
+                println(prompt + "( in %s): ", displayMode);
             }
         }
 
         return inputValue;
+    }
+
+    public static String applyDisplayMode(double currentValue, int displayMode) {
+        String output = null;
+        switch (displayMode) {
+            case 1:
+                output = String.valueOf(currentValue);
+                break;
+            case 2:
+                output = Integer.toBinaryString((int) Math.round(currentValue));
+                break;
+            case 3:
+                output = Integer.toOctalString((int) Math.round(currentValue));
+                break;
+            case 4:
+                output = Integer.toHexString((int) Math.round(currentValue));
+                break;
+        }
+        return output;
+    }
+
+    public static Integer applyDisplayMode(String inputValue, int displayMode) {
+        Integer output = null;
+        switch (displayMode) {
+            case 1:
+                output = Integer.parseInt(inputValue, 10);
+                break;
+            case 2:
+                output = Integer.parseInt(inputValue, 2);
+                break;
+            case 3:
+                output = Integer.parseInt(inputValue, 8);
+                break;
+            case 4:
+                output = Integer.parseInt(inputValue, 16);
+                break;
+        }
+        return output;
+    }
+
+    public static String getDisplayMode() {
+        String displayModeValue = null;
+        switch (displayMode) {
+            case 1:
+                displayModeValue = "Decimal";
+                break;
+            case 2:
+                displayModeValue = "Binary";
+                break;
+            case 3:
+                displayModeValue = "Octal";
+                break;
+            case 4:
+                displayModeValue = "HexaDecimal";
+                break;
+        }
+        return displayModeValue;
     }
 }

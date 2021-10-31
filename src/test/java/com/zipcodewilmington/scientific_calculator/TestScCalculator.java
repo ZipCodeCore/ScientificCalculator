@@ -2,6 +2,7 @@ package com.zipcodewilmington.scientific_calculator;
 
 
 import com.zipcodewilmington.scientificcalculator.BasicCalculator;
+import com.zipcodewilmington.scientificcalculator.Console;
 import com.zipcodewilmington.scientificcalculator.Fibonacci;
 import com.zipcodewilmington.scientificcalculator.ScFunction;
 import org.junit.Assert;
@@ -270,44 +271,43 @@ public class TestScCalculator {
         Assert.assertEquals(assumed, actual);
 
     }
-   @Test
-   public void ConvertToBinary(){
+  @Test
+   public void ConvertToBinary() {
      String assumed = "10100";
-     String actual = scientificCal.Binary(20.);
+     String actual = Console.applyDisplayMode(20, 2);
      Assert.assertEquals(assumed, actual);
    }
 
-    @Test
-    public void ConvertToBinary2(){
+   @Test
+   public void ConvertToBinary2(){
         String assumed = "11111010000";
-        String actual = scientificCal.Binary(2000.);
+        String actual = Console.applyDisplayMode(2000, 2);
         Assert.assertEquals(assumed, actual);
     }
 
     @Test
     public void ConvertToOctal(){
         String assumed = "12";
-        String actual = scientificCal.Octal(10.);
+        String actual = Console.applyDisplayMode(10, 3);
         Assert.assertEquals(assumed, actual);
     }
-
     @Test
     public void ConvertToOctal2(){
         String assumed = "764";
-        String actual = scientificCal.Octal(500.);
+        String actual = Console.applyDisplayMode(500, 3);
         Assert.assertEquals(assumed, actual);
     }
 
     @Test  // Need to Fix this test
     public void ConvertToHex(){
         String assumed = "b";
-        String actual = scientificCal.Hexadecimal(11.);
+        String actual = Console.applyDisplayMode(11, 4);
         Assert.assertEquals(assumed, actual);
     }
     @Test
     public void ConvertToHex2(){
         String assumed = "9e";
-        String actual = scientificCal.Hexadecimal(158.0);
+        String actual = Console.applyDisplayMode(158.0, 4);
         Assert.assertEquals(assumed, actual);
     }
     }
