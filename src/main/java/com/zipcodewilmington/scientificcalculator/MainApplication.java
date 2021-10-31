@@ -13,8 +13,7 @@ public class MainApplication {
     public static double memory = 0;
     public static void main(String[] args) {
         Console.println("Welcome to my calculator!");
-        //THINGS TO ADD STILL: NEGATIVE/POSITIVE; EXCEPTION/ERROR HANDLING FORCING A CLEAR;
-        //STANDARDIZE THE PRINTING FORMAT FOR WHEN ANSWERS GET PUMPED OUT
+        //THINGS TO ADD STILL: EXCEPTION/ERROR HANDLING FORCING A CLEAR;
         //Negative (Math.negateExact()?)
         String s = "";
         //
@@ -65,11 +64,13 @@ public class MainApplication {
                 case "inverse":
                     Console.println("The inverse of %s is %s",displayPrint(display), displayPrint((float) (1/ display)));
                     break;
+                case "negate":
+                    display = display * -1;
+                    Console.println("The display number of %s has been negated to %s ",displayPrint(display),displayPrint(display * -1));
                 case "switch display mode":
                     //how to have optional input? (TRYING OVERLOADING)
                     Console.println("The display mode is now: %s",switchDisplayMode());
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
-
                     break;
                 case "binary":
                     Console.println("The display mode is now: %s",switchDisplayMode("binary"));
@@ -137,15 +138,13 @@ public class MainApplication {
                     Console.println("The inv natural log of %s is %s.",displayPrint(display),displayPrint(Math.exp(display)));
                     break;
                 case "factorial":
-                    //there was no readily available factorial function I could find; for now we make our own
-                    factorial();
+                    Console.println("The factorial of %s is %s.",displayPrint(display),displayPrint(factorial()));
                     break;
                 case "absolute value":
                     Console.println("The square of %s is %s.",displayPrint(display),displayPrint(Math.abs(display)));
                     break;
                 case "kill":
-
-                    //Print kill message
+                    Console.println("The calculator will now exit...");
                     break;
                 default:
                     Console.println("Cannot compute. Please try again");
@@ -168,6 +167,9 @@ public class MainApplication {
         return display * multer;
     }
     public static double divide(double divver){
+        if(divver == 0){
+            return  
+        }
         return display / divver;
     }
     public static String switchDisplayMode(){
@@ -282,5 +284,11 @@ public class MainApplication {
         return unitsMode;
     }
     //not sure what a factorial function would take as parameter(s)
-    public static double factorial(){return 0;}
+    public static double factorial(){
+        double factoria = 0;
+        for(int i = 1; i <= display;i++){
+            factoria = factoria * i;
+        }
+        return factoria;
+    }
 }
