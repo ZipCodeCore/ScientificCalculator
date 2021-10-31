@@ -88,43 +88,41 @@ public class MainApplication {
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
                     break;
                 case "add to memory":
-                    //have prompts here or in memorize
-                    double memorize = 0;
-                    //get user input here
-                    memory = memorize;
+                    memory = Console.getDoubleInput("Give me the number to memorize");
+                    Console.println("The new memorized number is %s.",displayPrint(memory));
                     break;
                 case "clear memory":
                     memory = 0;
                     break;
                 case "recall memory":
-                    //print memory here
+                    Console.println("The memorized number is %s.",displayPrint(memory));
                     break;
                 case "sin":
-                    Math.sin(display);
+                    Console.println("The sine of %s is %s", displayPrint(display),displayPrint(Math.sin(unitter(display))));
                     break;
                 case "cos":
-                    Math.cos(display);
+                    Console.println("The cosine of %s is %s", displayPrint(display),displayPrint(Math.cos(unitter(display))));
                     break;
                 case "tan":
-                    Math.tan(display);
+                    Console.println("The tangent of %s is %s", displayPrint(display),displayPrint(Math.tan(unitter(display))));
                     break;
                 case "inv sin":
-                    1 / Math.sin(display);
+                    Console.println("The inverse sine of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.sin(unitter(display))))));
                     break;
                 case "inv cos":
-                    1 / Math.cos(display);
+                    Console.println("The inverse cosine of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.cos(unitter(display))))));
                     break;
                 case "inv tan":
-                    1 / Math.tan(display);
+                    Console.println("The inverse tangent of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.tan(unitter(display))))));
                     break;
                 case "switch units mode":
-                    switchUnitsMode();
+                    Console.println("The units mode is now: %s",switchUnitsMode());
                     break;
                 case "radians":
-                    switchUnitsMode("radians");
+                    Console.println("The units mode is now: %s",switchUnitsMode("radians"));
                     break;
                 case "degrees":
-                    switchUnitsMode("degrees");
+                    Console.println("The units mode is now: %s",switchUnitsMode("degrees"));
                     break;
                 case "log":
                     Math.log10(display);
@@ -208,7 +206,7 @@ public class MainApplication {
                 displayMode = "This should never be returned";
                 return displayMode;
         }
-//must somehow accept doubles, floats and ints
+//must somehow accept doubles, floats
     }
     /**
     public static String displayPrint(int original){
@@ -254,8 +252,34 @@ public class MainApplication {
                 return "This should never be returned";
         }
     }
+    public static double unitter(double angle) {
+        if(unitsMode.equals("degrees")){
+            return Math.toRadians(angle);
+        }
+        else{
+            return angle;
+        }
+    }
+    public static String switchUnitsMode(){
+        if(unitsMode.equals("degrees")){
+            unitsMode = "radians";
+            return unitsMode;
+        }
+        else if (unitsMode.equals("radians")){
+            unitsMode = "degrees";
+        }
+        return unitsMode;
+    }
 
-    public static String switchUnitsMode(String mode){return null;}
+    public static String switchUnitsMode(String mode){
+        if(mode.equals("degrees")){
+            unitsMode = "degrees";
+        }
+        else if (mode.equals("radians")){
+            unitsMode = "radians";
+        }
+        return unitsMode;
+    }
     //not sure what a factorial function would take as parameter(s)
     public static double factorial(){return 0;}
 }
