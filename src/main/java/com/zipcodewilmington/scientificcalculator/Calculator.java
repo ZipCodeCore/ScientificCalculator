@@ -19,13 +19,13 @@ public class Calculator {
         String i = Console.getStringInput("Enter an integer!");
         if (i.equals("1")) {
             Console.println("This calculator does the following:");
-            Console.println( "add, subtract, multiply, divide, calculate the square,");
+            Console.println("add, subtract, multiply, divide, calculate the square,");
             Console.println("take the square root, variable exponentiation, take the inverse, and switch signs.");
             setCalcState(i);
         } else if (i.equals("2")) {
             Console.println("This is where I will return a Scientific Calc.");
             Console.println("This calculator does the following:");
-            Console.println( "switch displays, commit to memory, clear memory, ine, cosine,");
+            Console.println("switch displays, commit to memory, clear memory, ine, cosine,");
             Console.println("tangent, inverse sine, inverse cosine, inverse tangent, switch units,");
             Console.println("log, inverse log, natural log, inverse of natural log, and factorials.");
             setCalcState(i);
