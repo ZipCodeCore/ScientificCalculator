@@ -6,6 +6,7 @@ import java.util.Locale;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
+
     public static double display = 0; //ie current number
     public static String unitsMode = "degrees";
     public static String displayMode = "decimal";
@@ -24,7 +25,7 @@ public class MainApplication {
             //Console.println("The user input %s as a string", s);
             switch (s.toLowerCase()) {
                 case "current number":
-                    Console.println("The current number is: %s",display);
+                    Console.println("The current number is: %s",displayPrint(display));
                     //print current number
                     break;
                 case "clear screen":
@@ -32,53 +33,59 @@ public class MainApplication {
                     break;
                 case "change current number":
                     display = Console.getDoubleInput("Give me a new current number");
-                    Console.println("The new number is %s.",display);
+                    Console.println("The new number is %s.",displayPrint(display));
                     break;
                 case "add":
                     double adder = Console.getDoubleInput("Give me the number to add to the display");
-                    Console.println("The sum of %s and %s is %s.",display,adder,add(adder));
+                    Console.println("The sum of %s and %s is %s.",displayPrint(display),displayPrint(adder),displayPrint(add(adder)));
                     break;
                 case "subtract":
                     double subber = Console.getDoubleInput("Give me the number to subtract from the display");
-                    Console.println("The difference of %s and %s is %s.",display,subber,subtract(subber));
+                    Console.println("The difference of %s and %s is %s.",displayPrint(display),displayPrint(subber),displayPrint(subtract(subber)));
                     break;
                 case "multiply":
                     double multer = Console.getDoubleInput("Give me the number to multiply the display by");
-                    Console.println("The product of %s and %s is %s.",display,multer,multiply(multer));
+                    Console.println("The product of %s and %s is %s.",displayPrint(display),displayPrint(multer),displayPrint(multiply(multer)));
                     break;
                 case "divide":
                     //perfect spot for error testing
                     double divver = Console.getDoubleInput("Give me the number to divide the display by");
-                    Console.println("The quotient of %s and %s is %s.",display,divver,divide(divver));
+                    Console.println("The quotient of %s and %s is %s.",displayPrint(display),displayPrint(divver),displayPrint(divide(divver)));
                     break;
                 case "square":
-                    Console.println("The square of %s is %s.",display,display * display);
+                    Console.println("The square of %s is %s.",displayPrint(display),display * display);
                     break;
                 case "square root":
-                    Console.println("The square root of %s is %s.",display,Math.sqrt(display));
+                    Console.println("The square root of %s is %s.",displayPrint(display),displayPrint(Math.sqrt(display)));
                     break;
                 case "variable exponent":
                     double exponent = Console.getDoubleInput("What power should I raise the display to?");
-                    Console.println("%s to the %sth power is %s",display,exponent,Math.pow(display,exponent));
+                    Console.println("%s to the %sth power is %s",displayPrint(display),displayPrint(exponent),displayPrint(Math.pow(display,exponent)));
                     break;
                 case "inverse":
-                    Console.println("The inverse of %s is %s",display,(float) (1/ display));
+                    Console.println("The inverse of %s is %s",displayPrint(display), displayPrint((float) (1/ display)));
                     break;
                 case "switch display mode":
                     //how to have optional input? (TRYING OVERLOADING)
                     Console.println("The display mode is now: %s",switchDisplayMode());
+                    Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
+
                     break;
                 case "binary":
                     Console.println("The display mode is now: %s",switchDisplayMode("binary"));
+                    Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
                     break;
                 case "decimal":
                     Console.println("The display mode is now: %s",switchDisplayMode("decimal"));
+                    Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
                     break;
                 case "octal":
                     Console.println("The display mode is now: %s",switchDisplayMode("octal"));
+                    Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
                     break;
                 case "hexadecimal":
                     Console.println("The display mode is now: %s",switchDisplayMode("hexadecimal"));
+                    Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
                     break;
                 case "add to memory":
                     //have prompts here or in memorize
@@ -201,25 +208,50 @@ public class MainApplication {
                 displayMode = "This should never be returned";
                 return displayMode;
         }
-
+//must somehow accept doubles, floats and ints
     }
-    public static String displayPrint(String original){
+    /**
+    public static String displayPrint(int original){
         switch(displayMode){
             case "decimal":
-                displayMode = "decimal";
-                return displayMode;
+                return Integer.valueOf(original).toString();
             case "hexadecimal":
-                displayMode = "hexadecimal";
-                return displayMode;
+                return Integer.toHexString(original);
             case "binary":
-                displayMode = "binary";
-                return displayMode;
+                return Integer.toBinaryString(original);
             case "octal":
-                displayMode = "octal";
-                return displayMode;
+                return Integer.toOctalString(original);
+    }
+     */
+    public static String displayPrint(float original){
+        int binoct = Math.toIntExact(Float.valueOf(original).longValue());
+        switch(displayMode){
+            case "decimal":
+                return Float.valueOf(original).toString();
+            case "hexadecimal":
+                return Float.toHexString(original);
+            case "binary":
+                return Integer.toBinaryString(binoct);
+            case "octal":
+                return Integer.toOctalString(binoct);
             default:
-                displayMode = "This should never be returned";
-                return displayMode;
+                return "This should never be returned";
+        }
+    }
+    public static String displayPrint(double original){
+        //LOSS OF DATA IS POSSIBLE HERE
+        int binoct = Math.toIntExact(Double.valueOf(original).longValue());
+        switch(displayMode){
+            case "decimal":
+                return Double.valueOf(original).toString();
+            case "hexadecimal":
+                return Double.toHexString(original);
+            case "binary":
+                return Integer.toBinaryString(binoct);
+            case "octal":
+                return Integer.toOctalString(binoct);
+            default:
+                return "This should never be returned";
         }
     }
 
