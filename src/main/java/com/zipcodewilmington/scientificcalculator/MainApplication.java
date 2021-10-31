@@ -53,7 +53,7 @@ public class MainApplication {
                     Console.println("The quotient of %s and %s is %s.",displayPrint(display),displayPrint(divver),displayPrint(divide(divver)));
                     break;
                 case "square":
-                    Console.println("The square of %s is %s.",displayPrint(display),display * display);
+                    Console.println("The square of %s is %s.",displayPrint(display),displayPrint(display * display));
                     break;
                 case "square root":
                     Console.println("The square root of %s is %s.",displayPrint(display),displayPrint(Math.sqrt(display)));
@@ -125,16 +125,16 @@ public class MainApplication {
                     Console.println("The units mode is now: %s",switchUnitsMode("degrees"));
                     break;
                 case "log":
-                    Math.log10(display);
+                    Console.println("The log of %s is %s.",displayPrint(display),displayPrint(Math.log10(display)));
                     break;
                 case "inv log":
-                    Math.pow(10,display);
+                    Console.println("The inv log of %s is %s.",displayPrint(display),displayPrint(Math.pow(10,display)));
                     break;
                 case "ln":
-                    Math.log(display);
+                    Console.println("The natural log of %s is %s.",displayPrint(display),displayPrint(Math.log(display)));
                     break;
                 case "inv ln":
-                    Math.exp(display);
+                    Console.println("The inv natural log of %s is %s.",displayPrint(display),displayPrint(Math.exp(display)));
                     break;
                 case "factorial":
                     //there was no readily available factorial function I could find; for now we make our own
