@@ -141,9 +141,10 @@ public class MainApplication {
                     factorial();
                     break;
                 case "absolute value":
-                    Math.abs(display);
+                    Console.println("The square of %s is %s.",displayPrint(display),displayPrint(Math.abs(display)));
                     break;
                 case "kill":
+
                     //Print kill message
                     break;
                 default:
