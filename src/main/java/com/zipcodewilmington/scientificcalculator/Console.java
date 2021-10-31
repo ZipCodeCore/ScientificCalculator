@@ -21,8 +21,12 @@ public class Console {
         print(output + "\n", args);
     }
 
+    public static void displayValue(String currentValue) {
+        Console.println(">>>>>>>>   Display Value: %s <<<<<<<<<< \n", currentValue);
+    }
+
     public static void displayValue(double currentValue) {
-        Console.println(">>>>>>>>   Display Value (in %s): %s <<<<<<<<<< \n", displayMode, applyDisplayMode(currentValue, displayMode));
+        Console.println(">>>>>>>>   Display Value (in %s): %s <<<<<<<<<< \n", getDisplayMode(), applyDisplayMode(currentValue, displayMode));
     }
 
     public static void displayValue(double currentValue, String unitMode) {
@@ -65,7 +69,7 @@ public class Console {
     public static Double getDoubleInput(String prompt) {
 
         Scanner scanner = new Scanner(System.in);
-        println(prompt + " (in %s): ", displayMode);
+        println(prompt + " (in %s): ", getDisplayMode());
         Double inputValue = 0.0;
 
         while (true) {
@@ -75,7 +79,7 @@ public class Console {
             }
             catch(Exception e) {
                 println("Invalid Input!");
-                println(prompt + "( in %s): ", displayMode);
+                println(prompt + "( in %s): ", getDisplayMode());
             }
         }
 
