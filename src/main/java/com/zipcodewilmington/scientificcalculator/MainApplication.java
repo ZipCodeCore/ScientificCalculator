@@ -44,11 +44,11 @@ public class MainApplication {
     public static String modeSelection(Long standard){
        int modified = standard.intValue();
 
-        if(scientificFunction.switchDisplayMode.equalsIgnoreCase("binary")){
+        if(scientificFunctions.switchDisplayMode().equalsIgnoreCase("binary")){
             return Integer.toBinaryString(modified);
-        }else if (scientificFunction.switchDisplayMode.equalsIgnoreCase("octal")){
+        }else if (scientificFunctions.switchDisplayMode().equalsIgnoreCase("octal")){
             return Integer.toOctalString(modified);
-        }else if (scientificFunction.switchDisplayMode.equalsIgnoreCase("hexadecimal")){
+        }else if (scientificFunctions.switchDisplayMode().equalsIgnoreCase("hexadecimal")){
             return Integer.toHexString(modified);
         }else{
             return Long.toString(standard);
