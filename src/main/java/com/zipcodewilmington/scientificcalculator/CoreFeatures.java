@@ -33,7 +33,8 @@ public class CoreFeatures {
         }else if(selection.equalsIgnoreCase("invert")) {
             invert();
         }else if(selection.equalsIgnoreCase("Scientific")){
-            //scientificFunctions.();
+
+   scientificFunctions.functions(MainApplication.currentNumber);
         }else if(selection.equalsIgnoreCase("+/-")){
             positivesign();
         } else{

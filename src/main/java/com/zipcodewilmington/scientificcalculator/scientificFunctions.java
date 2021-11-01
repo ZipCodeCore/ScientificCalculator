@@ -3,25 +3,24 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
 
 public class scientificFunctions {
-    private Double logValue;
 
     public static String switchDisplayMode() {
-        String choice = "";
+        String choice = "decimal";
 
         do {
 
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the type of display you would like: binary, octal, decimal, or hexadecimal: ");
-            choice = scanner.nextLine();
+            displayMode = scanner.nextLine();
 
         } while (!choice.equalsIgnoreCase("binary") && !choice.equalsIgnoreCase("octal") &&
                 !choice.equalsIgnoreCase("decimal") && !choice.equalsIgnoreCase("hexadecimal"));
 
-        return choice;
+        return displayMode;
     }
 
-    public static String switchDisplayMode(String mode) {
-        return mode;
+    public static String currentdisplayMode() {
+        return displayMode;
     }
 
     public static Double memoryFunction(Double value) {
@@ -112,6 +111,7 @@ public class scientificFunctions {
 
     public static Double inverseCosin(Double value) {
         double trigValue = Math.acos(value);
+
 
         return trigValue;
     }
