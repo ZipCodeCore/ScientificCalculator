@@ -32,7 +32,8 @@ public class CoreFeatures {
             exponents();
         }else if(selection.equalsIgnoreCase("invert")) {
             invert();
-        } else if(selection.equalsIgnoreCase("+/-")){
+        }else if(selection.equalsIgnoreCase("+/-")){
+
             positivesign();
         } else{
             System.out.println("Invalid Choice, Please try again");
