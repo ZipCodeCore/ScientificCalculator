@@ -23,10 +23,12 @@ public class Console {
     }
 
     public static Integer getIntegerInput(String prompt) {
+
         return null;
     }
 
     public static Double getDoubleInput(String prompt) {
+
         return null;
     }
 }
