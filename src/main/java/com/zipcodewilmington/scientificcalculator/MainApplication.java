@@ -13,6 +13,7 @@ public class MainApplication {
         Calculator calc = new Calculator("0", sc, bc);
         Console.println("Welcome to my calculator!");
         calc.startCalc(0);
+
         //calc.displayOutput("2");
 
 //        BasicCalculator basicCalcObject = new BasicCalculator();

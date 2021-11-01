@@ -1,16 +1,28 @@
 package com.zipcodewilmington.scientificcalculator;
 import java.lang.Math;
-import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class scientificCalcTest {
 
-    @org.junit.Test
+    @Test
     public void sine() {
-        // given
+        // given 30
+        double sine = Math.toRadians(30);
+        scientificCalc sineCalc = new scientificCalc();
+        double actual = sineCalc.sineOf(sine);
+        double expected = 0.5;
+        Assert.assertEquals(expected, actual, 0.00001);
     }
 
-    @org.junit.Test
+    @Test
     public void inverseSine() {
+        double inversesine = 0.2;
+        scientificCalc inversesineCalc = new scientificCalc();
+        double actual = inversesineCalc.inversesineOf(inversesine);
+        double expected = 0.201358;
+        Assert.assertEquals(expected, actual, 0.0001);
     }
 
     @org.junit.Test

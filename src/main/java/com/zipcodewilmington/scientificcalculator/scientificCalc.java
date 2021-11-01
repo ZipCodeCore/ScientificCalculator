@@ -39,8 +39,13 @@ public class scientificCalc {
     public double sine() {  // 1
         System.out.println("Give number:");
         double first = Integer.valueOf(prompt.nextLine());
-        System.out.println(Math.sin(first));
-        return Math.sin(first);
+        double result = sineOf(first);
+        System.out.println(result);
+        return result;
+    }
+
+    public double sineOf(double num1) {
+        return Math.sin(num1);
     }
 
     public double inverseSine() {  // 2
@@ -48,8 +53,11 @@ public class scientificCalc {
         double first = Integer.valueOf(prompt.nextLine());
         System.out.println(Math.asin(first));
         return (int) Math.asin(first);
-
     }
+    public double inversesineOf(double num1) {
+        return Math.asin(num1);
+    }
+
     public double cosign() {  // 3
         System.out.println("Give number:");
         double first = Integer.valueOf(prompt.nextLine());
