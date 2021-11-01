@@ -9,9 +9,9 @@ public class Calculator {
     String calcState;
     Integer retries;
     scientificCalc sc;
-    basicCalculator bc;
+    BasicCalculator bc;
 
-    public Calculator(String op, scientificCalc scienCalc, basicCalculator basicCalc) {
+    public Calculator(String op, scientificCalc scienCalc, BasicCalculator basicCalc) {
         output = op;
         calcState = null;
         retries = 0;
@@ -30,7 +30,6 @@ public class Calculator {
             Console.println("take the inverse, switch signs, average, and counting down/up.");
             setCalcState(i);
         } else if (i.equals("2")) {
-            Console.println("This is where I will return a Scientific Calc.");
             Console.println("This calculator does the following:");
             Console.println("switch displays, commit to memory, clear memory, ine, cosine,");
             Console.println("tangent, inverse sine, inverse cosine, inverse tangent, switch units,");
@@ -53,11 +52,10 @@ public class Calculator {
 
     public void setCalcState(String inputReceived){
         calcState = inputReceived;
-        if (inputReceived == "2");
-        {
+        if (inputReceived == null ? "2" == null : inputReceived.equals("2"))
             sc.promptScreen();
-        } else {
-            bc.promptscreen();
+        else {
+            bc.promptScreen();
         }
 
     }

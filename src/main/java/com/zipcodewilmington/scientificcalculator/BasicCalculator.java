@@ -9,7 +9,7 @@ public class BasicCalculator {
     public void promptScreen() {
         System.out.println("Result: " + state.toString() + "\n\n");
 
-        System.out.println("Choose your scientific function");//
+        System.out.println("Choose your basic function");//
         System.out.println("1. ADD, 2. SUBTRACT, 3. DIVIDE, 4. MULTIPLY 5. SQUARE");
         System.out.println("6. SQUAREROOT, 7. EXPONENTIAL, 8. INVERSE, 9. SWITCHTHESIGN, 10. AVERAGE 11. COUNTDOWN");
 
