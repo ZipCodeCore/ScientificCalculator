@@ -8,23 +8,42 @@ import java.util.Scanner;
  */
 public class MainApplication {
 
-    double userInput;
-    double savedNumber;
+
     static double currentNumber;
-    static double output;
+
+    static String mathToPerform;
 
 //how does git work
 
     public static void main(String[] args) {
-        int startingNumber = 0;
+        int startingNumber;
 
         Console.println("Welcome to our calculator!");
         System.out.println(startingNumber);
         currentNumber = getUserInput();
         printNumber(currentNumber);
-        CoreFeatures.provideOptions();
 
+        System.out.println("Please select a mode you wish to use:");
+        System.out.println("Core Features or Scientific");
+        Scanner scanner = new Scanner(System.in);
+        String selection = String.valueOf(scanner.nextLine());
+         if(selection.equalsIgnoreCase("core features")){
+             CoreFeatures.provideOptions();
+         }else if (selection.equalsIgnoreCase("Scientific"));{
+            scientificFunctions.functions(MainApplication.currentNumber);
+        }
+
+
+        }
+
+        public static Void setMathToPerform(String input){
+            mathToPerform = input;
+            return null;
     }
+    // if(selection = log) {
+    // currentNumber = dothisfunction(currentnumber)
+    //system.out.prntln("currentnumber")
+
     public static double getUserInput() {
         System.out.println("Please input a number");
         Scanner scanner = new Scanner(System.in);
@@ -32,7 +51,7 @@ public class MainApplication {
         return userInput;
     }
     public static void printNumber(double output){
-        MainApplication.currentNumber = output;
+        currentNumber = output;
 
         if (Math.round(output) != output) {
             double roundOff = Math.round(output * 10000.0) / 10000.0;
@@ -53,7 +72,9 @@ public class MainApplication {
         }else{
             return Long.toString(standard);
         }
-    } //scientificFunction.switchDisplayMode.equalsIgnoreCase("");
+    }
+
+
 
 }
 
