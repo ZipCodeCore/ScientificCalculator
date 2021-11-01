@@ -3,8 +3,9 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
 
 public class scientificFunctions {
-
+    static String displayMode = "decimal";
     public static String switchDisplayMode() {
+
         String choice = "decimal";
 
         do {
