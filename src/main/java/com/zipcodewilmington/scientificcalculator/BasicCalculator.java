@@ -11,6 +11,7 @@ public class BasicCalculator {
         num1 = console.nextDouble();
         //System.out.print("\033[H\033[2J");
         //System.out.flush();
+        // a comment from ;
         System.out.print( " Second number is : ");
         num2 = console.nextDouble();
         //double result = num1+ num2;
