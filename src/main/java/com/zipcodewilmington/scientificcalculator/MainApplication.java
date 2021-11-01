@@ -14,18 +14,12 @@ public class MainApplication {
     public static void main(String[] args) {
         Console.println("Welcome to my calculator!");
         //THINGS TO ADD STILL: EXCEPTION/ERROR HANDLING FORCING A CLEAR;
-        //Negative (Math.negateExact()?)
         String s = "";
-        //
         while(!(s.equals("kill"))){
             s = Console.getStringInput("What do you want to do?");
-            //Double d1 = Console.getDoubleInput("Enter a double.");
-            //Double d2 = Console.getDoubleInput("Enter another double.");
-            //Console.println("The user input %s as a string", s);
             switch (s.toLowerCase()) {
                 case "current number":
                     Console.println("The current number is: %s",displayPrint(display));
-                    //print current number
                     break;
                 case "clear screen":
                     clearScreen();
@@ -65,10 +59,8 @@ public class MainApplication {
                     Console.println("The inverse of %s is %s",displayPrint(display), displayPrint((float) (1/ display)));
                     break;
                 case "negate":
-                    display = display * -1;
                     Console.println("The display number of %s has been negated to %s ",displayPrint(display),displayPrint(display * -1));
                 case "switch display mode":
-                    //how to have optional input? (TRYING OVERLOADING)
                     Console.println("The display mode is now: %s",switchDisplayMode());
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
                     break;
@@ -140,9 +132,11 @@ public class MainApplication {
                 case "factorial":
                     Console.println("The factorial of %s is %s.",displayPrint(display),displayPrint(factorial()));
                     break;
+                    //extra function #1
                 case "absolute value":
                     Console.println("The square of %s is %s.",displayPrint(display),displayPrint(Math.abs(display)));
                     break;
+                    //extra function #2
                 case "kill":
                     Console.println("The calculator will now exit...");
                     break;
@@ -154,8 +148,12 @@ public class MainApplication {
     }
     //I have no idea if this will work or not
     public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        try{
+            Runtime.getRuntime().exec("clear");
+        }
+        catch (final Exception e){
+            System.exit(1);
+        }
     }
     public static double add(double adder){
         return display + adder;
@@ -167,9 +165,6 @@ public class MainApplication {
         return display * multer;
     }
     public static double divide(double divver){
-        if(divver == 0){
-            return  
-        }
         return display / divver;
     }
     public static String switchDisplayMode(){
@@ -209,7 +204,6 @@ public class MainApplication {
                 displayMode = "This should never be returned";
                 return displayMode;
         }
-//must somehow accept doubles, floats
     }
     /**
     public static String displayPrint(int original){
