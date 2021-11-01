@@ -8,10 +8,16 @@ public class Calculator {
     String output;
     String calcState;
     Integer retries;
-    public Calculator(String op) {
+    scientificCalc sc;
+    basicCalculator bc;
+
+    public Calculator(String op, scientificCalc scienCalc, basicCalculator basicCalc) {
         output = op;
         calcState = null;
         retries = 0;
+        sc = scienCalc;
+        bc = basicCalc;
+
     }
 
     public void startCalc(Integer retries) {
@@ -20,7 +26,8 @@ public class Calculator {
         if (i.equals("1")) {
             Console.println("This calculator does the following:");
             Console.println("add, subtract, multiply, divide, calculate the square,");
-            Console.println("take the square root, variable exponentiation, take the inverse, and switch signs.");
+            Console.println("take the square root, variable exponentiation,");
+            Console.println("take the inverse, switch signs, average, and counting down/up.");
             setCalcState(i);
         } else if (i.equals("2")) {
             Console.println("This is where I will return a Scientific Calc.");
@@ -39,14 +46,31 @@ public class Calculator {
         }
     }
 
-    public void displayOutput(String outResult) {
-
+    /* public void displayOutput(String outResult) {
         output = outResult;
         //Console.println(outResult);
-    }
+    } */
 
     public void setCalcState(String inputReceived){
         calcState = inputReceived;
+        if (inputReceived == "2");
+        {
+            sc.promptScreen();
+        } else {
+            bc.//promptscreen?
+        }
 
     }
+
+    public void clear() {
+        String clearer = "";
+        for (int i = 0; i < 70; i++) {
+            clearer += "\n";
+        }
+        System.out.println(clearer);
+
+    }
+
+
 }
+
