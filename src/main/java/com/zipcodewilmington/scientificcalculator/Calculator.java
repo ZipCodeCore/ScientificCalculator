@@ -57,7 +57,7 @@ public class Calculator {
         {
             sc.promptScreen();
         } else {
-            bc.//promptscreen?
+            bc.promptscreen();
         }
 
     }
