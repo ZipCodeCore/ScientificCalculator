@@ -19,122 +19,156 @@ public class MainApplication {
             s = Console.getStringInput("What do you want to do?");
             switch (s.toLowerCase()) {
                 case "current number":
-                    Console.println("The current number is: %s",displayPrint(display));
+                    String curNumStr = String.format("The current number is: %s",displayPrint(display));
                     break;
                 case "clear screen":
                     clearScreen();
                     break;
                 case "change current number":
                     display = Console.getDoubleInput("Give me a new current number");
-                    Console.println("The new number is %s.",displayPrint(display));
+                    String changeCurStr = String.format("The new number is %s.",displayPrint(display));
+                    Console.println(changeCurStr);
                     break;
                 case "add":
                     double adder = Console.getDoubleInput("Give me the number to add to the display");
-                    Console.println("The sum of %s and %s is %s.",displayPrint(display),displayPrint(adder),displayPrint(add(adder)));
+                    String addStr = String.format("The sum of %s and %s is %s.",displayPrint(display),displayPrint(adder),displayPrint(add(adder)));
+                    Console.println(addStr);
                     break;
                 case "subtract":
                     double subber = Console.getDoubleInput("Give me the number to subtract from the display");
-                    Console.println("The difference of %s and %s is %s.",displayPrint(display),displayPrint(subber),displayPrint(subtract(subber)));
+                    String subStr = String.format("The difference of %s and %s is %s.",displayPrint(display),displayPrint(subber),displayPrint(subtract(subber)));
+                    Console.println(subStr);
                     break;
                 case "multiply":
                     double multer = Console.getDoubleInput("Give me the number to multiply the display by");
-                    Console.println("The product of %s and %s is %s.",displayPrint(display),displayPrint(multer),displayPrint(multiply(multer)));
+                    String mulStr = String.format("The product of %s and %s is %s.",displayPrint(display),displayPrint(multer),displayPrint(multiply(multer)));
+                    Console.println(mulStr);
                     break;
                 case "divide":
                     //perfect spot for error testing
                     double divver = Console.getDoubleInput("Give me the number to divide the display by");
-                    Console.println("The quotient of %s and %s is %s.",displayPrint(display),displayPrint(divver),displayPrint(divide(divver)));
+                    String divStr = String.format("The quotient of %s and %s is %s.",displayPrint(display),displayPrint(divver),displayPrint(divide(divver)));
+                    Console.println(divStr);
                     break;
                 case "square":
-                    Console.println("The square of %s is %s.",displayPrint(display),displayPrint(display * display));
+                    String squstr = String.format("The square of %s is %s.",displayPrint(display),displayPrint(display * display));
+                    Console.println(squstr);
                     break;
                 case "square root":
-                    Console.println("The square root of %s is %s.",displayPrint(display),displayPrint(Math.sqrt(display)));
+                    String sqrtstr = String.format("The square root of %s is %s.",displayPrint(display),displayPrint(Math.sqrt(display)));
+                    Console.println(sqrtstr);
                     break;
                 case "variable exponent":
                     double exponent = Console.getDoubleInput("What power should I raise the display to?");
-                    Console.println("%s to the %sth power is %s",displayPrint(display),displayPrint(exponent),displayPrint(Math.pow(display,exponent)));
+                    String expstr = String.format("%s to the %sth power is %s",displayPrint(display),displayPrint(exponent),displayPrint(Math.pow(display,exponent)));
+                    Console.println(expstr);
                     break;
                 case "inverse":
-                    Console.println("The inverse of %s is %s",displayPrint(display), displayPrint((float) (1/ display)));
+                    String invstr = String.format("The inverse of %s is %s",displayPrint(display), displayPrint((float) (1/ display)));
+                    Console.println(invstr);
                     break;
                 case "negate":
-                    Console.println("The display number of %s has been negated to %s ",displayPrint(display),displayPrint(display * -1));
+                    String negstr = String.format("The display number of %s has been negated to %s ",displayPrint(display),displayPrint(display * -1));
+                    Console.println(negstr);
+                    break;
                 case "switch display mode":
-                    Console.println("The display mode is now: %s",switchDisplayMode());
+                    String switchdispstr = String.format("The display mode is now: %s",switchDisplayMode());
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
+                    Console.println(switchdispstr);
                     break;
                 case "binary":
-                    Console.println("The display mode is now: %s",switchDisplayMode("binary"));
+                    String binstr = String.format("The display mode is now: %s",switchDisplayMode("binary"));
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
+                    Console.println(binstr);
                     break;
                 case "decimal":
-                    Console.println("The display mode is now: %s",switchDisplayMode("decimal"));
+                    String decistr = String.format("The display mode is now: %s",switchDisplayMode("decimal"));
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
+                    Console.println(decistr);
                     break;
                 case "octal":
-                    Console.println("The display mode is now: %s",switchDisplayMode("octal"));
+                    String octalstr = String.format("The display mode is now: %s",switchDisplayMode("octal"));
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
+                    Console.println(octalstr);
                     break;
                 case "hexadecimal":
-                    Console.println("The display mode is now: %s",switchDisplayMode("hexadecimal"));
+                    String hexstr = String.format("The display mode is now: %s",switchDisplayMode("hexadecimal"));
                     Console.println("Loss of data is possible if you switch display modes, input data must be decimal");
+                    Console.println(hexstr);
                     break;
                 case "add to memory":
                     memory = Console.getDoubleInput("Give me the number to memorize");
-                    Console.println("The new memorized number is %s.",displayPrint(memory));
+                    String addmemstr = String.format("The new memorized number is %s.",displayPrint(memory));
+                    Console.println(addmemstr);
                     break;
                 case "clear memory":
                     memory = 0;
+                    Console.println("Memory has been cleared");
                     break;
                 case "recall memory":
-                    Console.println("The memorized number is %s.",displayPrint(memory));
+                    String recallstr = String.format("The memorized number is %s.",displayPrint(memory));
+                    Console.println(recallstr);
                     break;
                 case "sin":
-                    Console.println("The sine of %s is %s", displayPrint(display),displayPrint(Math.sin(unitter(display))));
+                    String sinstr = String.format("The sine of %s is %s", displayPrint(display),displayPrint(Math.sin(unitter(display))));
+                    Console.println(sinstr);
                     break;
                 case "cos":
-                    Console.println("The cosine of %s is %s", displayPrint(display),displayPrint(Math.cos(unitter(display))));
+                    String cosstr = String.format("The cosine of %s is %s", displayPrint(display),displayPrint(Math.cos(unitter(display))));
+                    Console.println(cosstr);
                     break;
                 case "tan":
-                    Console.println("The tangent of %s is %s", displayPrint(display),displayPrint(Math.tan(unitter(display))));
+                    String tanstr = String.format("The tangent of %s is %s", displayPrint(display),displayPrint(Math.tan(unitter(display))));
+                    Console.println(tanstr);
                     break;
                 case "inv sin":
-                    Console.println("The inverse sine of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.sin(unitter(display))))));
+                    String cscstr = String.format("The inverse sine of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.sin(unitter(display))))));
+                    Console.println(cscstr);
                     break;
                 case "inv cos":
-                    Console.println("The inverse cosine of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.cos(unitter(display))))));
+                    String secstr = String.format("The inverse cosine of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.cos(unitter(display))))));
+                    Console.println(secstr);
                     break;
                 case "inv tan":
-                    Console.println("The inverse tangent of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.tan(unitter(display))))));
+                    String cotstr = String.format("The inverse tangent of %s is %s", displayPrint(display),displayPrint( (float)(1 / (Math.tan(unitter(display))))));
+                    Console.println(cotstr);
                     break;
                 case "switch units mode":
-                    Console.println("The units mode is now: %s",switchUnitsMode());
+                    String switchunitstr = String.format("The units mode is now: %s",switchUnitsMode());
+                    Console.println(switchunitstr);
                     break;
                 case "radians":
-                    Console.println("The units mode is now: %s",switchUnitsMode("radians"));
+                    String radstr = String.format("The units mode is now: %s",switchUnitsMode("radians"));
+                    Console.println(radstr);
                     break;
                 case "degrees":
-                    Console.println("The units mode is now: %s",switchUnitsMode("degrees"));
+                    String degstr = String.format("The units mode is now: %s",switchUnitsMode("degrees"));
+                    Console.println(degstr);
                     break;
                 case "log":
-                    Console.println("The log of %s is %s.",displayPrint(display),displayPrint(Math.log10(display)));
+                    String logstr = String.format("The log of %s is %s.",displayPrint(display),displayPrint(Math.log10(display)));
+                    Console.println(logstr);
                     break;
                 case "inv log":
-                    Console.println("The inv log of %s is %s.",displayPrint(display),displayPrint(Math.pow(10,display)));
+                    String invlogstr = String.format("The inv log of %s is %s.",displayPrint(display),displayPrint(Math.pow(10,display)));
+                    Console.println(invlogstr);
                     break;
                 case "ln":
-                    Console.println("The natural log of %s is %s.",displayPrint(display),displayPrint(Math.log(display)));
+                    String lnstr = String.format("The natural log of %s is %s.",displayPrint(display),displayPrint(Math.log(display)));
+                    Console.println(lnstr);
                     break;
                 case "inv ln":
-                    Console.println("The inv natural log of %s is %s.",displayPrint(display),displayPrint(Math.exp(display)));
+                    String invlnstr = String.format("The inv natural log of %s is %s.",displayPrint(display),displayPrint(Math.exp(display)));
+                    Console.println(invlnstr);
                     break;
                 case "factorial":
-                    Console.println("The factorial of %s is %s.",displayPrint(display),displayPrint(factorial()));
+                    String facstr = String.format("The factorial of %s is %s.",displayPrint(display),displayPrint(factorial()));
+                    Console.println(facstr);
                     break;
                     //extra function #1
                 case "absolute value":
-                    Console.println("The square of %s is %s.",displayPrint(display),displayPrint(Math.abs(display)));
+                    String absstr = String.format("The square of %s is %s.",displayPrint(display),displayPrint(Math.abs(display)));
+                    Console.println(absstr);
                     break;
                     //extra function #2
                 case "kill":
