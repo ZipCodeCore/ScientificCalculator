@@ -17,6 +17,8 @@ public class MainApplication {
         BasicCalculator basicCalcObject = new BasicCalculator();
         while (true) {
             basicCalcObject.promptScreen();
+
+            scientificCalc scientificCalcObject = new scientificCalc();
+            scientificCalcObject.promptScreen();
     }
 }
-
