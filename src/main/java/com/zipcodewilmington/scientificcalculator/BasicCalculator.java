@@ -3,52 +3,75 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
 
 public class BasicCalculator {
+    private Double state = 0.0;
+    static private Scanner prompt = new Scanner(System.in);
 
-    public static void addition ( double num1, double num2) {
-        Scanner console = new Scanner (System.in);
-        System.out.println( " Please, enter two numbers for addition : ");
-        System.out.print( " First number is : ");
-        num1 = console.nextDouble();
-        //System.out.print("\033[H\033[2J");
-        //System.out.flush();
-        // a comment from ;
-        System.out.print( " Second number is : ");
-        num2 = console.nextDouble();
-        //double result = num1+ num2;
-        double result = add(num1, num2);
-        System.out.println("The subtraction between" + num1 + " and " + num2 +
-                " is : " + result) ;
+    public void promptScreen() {
+        System.out.println("Result: " + state.toString() + "\n\n");
+
+        System.out.println("Choose your scientific function");//
+        System.out.println("1. ADD, 2. SUBTRACT, 3. DIVIDE, 4. MULTIPLY 5. SQUARE");
+        System.out.println("6. SQUAREROOT, 7. EXPONENTIAL, 8. INVERSE, 9. SWITCHTHESIGN, 10. AVERAGE 11. COUNTDOWN");
+
+
+       String functionPrompt = prompt.nextLine();
+       while (functionPrompt.length() == 0) {
+           functionPrompt = prompt.nextLine();
+       }
+        int function = Integer.valueOf(functionPrompt);
+
+        if (function == 1) {
+            System.out.print( " Second number is : ");
+            Double num2 = prompt.nextDouble();
+            state = addition(state, num2);
+        } else if (function == 2) {
+            System.out.print( " Second number is : ");
+            Double num2 = prompt.nextDouble();
+            state = subtraction(state, num2);
+//        } else if (function == 3) {
+//            return division();
+//        } else if (function == 4) {
+//            return multiply();
+        } else if (function == 5) {
+            state = square(state);
+        }
+//        } else if (function == 6) {
+//            return squareRoot();
+//        } else if (function == 7) {
+//            return exponential();
+//        } else if (function == 8) {
+//            return inverse();
+//        } else if (function == 9) {
+//            return switchTheSign();
+//        } else if (function == 10){
+//            return average();
+//        } else if (function == 11){
+//            return countdown();
+//        }
+//        return Calculator();
+
     }
 
-    public static double add ( double num1, double num2) {
+    public Double addition(Double num1, Double num2) {
+        return num1 + num2;
+    }
+
+    public double add ( double num1, double num2) {
         return num1 + num2 ;
     }
 
 
-    public static void subtraction ( double num1, double num2) {
-
-        Scanner console = new Scanner (System.in);
-        System.out.println( " Please, enter two numbers for subtraction : ");
-        System.out.print( " First number is : ");
-        num1 = console.nextDouble();
-        //System.out.print("\033[H\033[2J");
-        //System.out.flush();
-        System.out.print( " Second number is : ");
-        num2 = console.nextDouble();
-        //double result = num1 - num2;
-        double result = subst (num1,num2);
-        System.out.println(" The subtraction between" + num1 + " and " + num2 +
-                " is : " + result) ;
-
+    public double subtraction ( double num1, double num2) {
+        return num1 - num2;
     }
 
-    public static double subst ( double num1, double num2) {
+    public double subst ( double num1, double num2) {
         return num1 - num2 ;
     }
 
 
 
-    public static void division ( double num1, double num2) {
+    public void division ( double num1, double num2) {
 
         Scanner console = new Scanner (System.in);
         System.out.println( " Please, enter two numbers for division : ");
@@ -73,13 +96,13 @@ public class BasicCalculator {
     }
 
 
-    public static double div ( double num1, double num2) {
+    public double div ( double num1, double num2) {
         return num1/num2 ;
     }
 
 
 
-    public static void multiply ( double num1, double num2) {
+    public void multiply ( double num1, double num2) {
 
         Scanner console = new Scanner (System.in);
         System.out.println( " Please, enter two numbers for multiplication : ");
@@ -95,33 +118,21 @@ public class BasicCalculator {
                 " is : " + result);
     }
 
-    public static double multi ( double num1, double num2) {
+    public double multi ( double num1, double num2) {
         return num1 * num2 ;
     }
 
-
-
-    public static void square ( double num1) {
-
-        Scanner console = new Scanner (System.in);
-        System.out.println( " Please, enter a number and let's find its square : ");
-        System.out.print( " The chosen number is : ");
-        num1 = console.nextDouble();
-        //System.out.print("\033[H\033[2J");
-        //System.out.flush();
-        //double result = num1 * num1;
+    public Double square ( double num1) {
         double result = sqr(num1);
-        System.out.println("The square of " + num1 +
-                " is : " + result ) ;
-
+        return result;
     }
 
-    public static double sqr ( double num1) {
+    public double sqr ( double num1) {
         return num1 * num1 ;
     }
 
 
-    public static void squareRoot ( double num1) {
+    public void squareRoot ( double num1) {
         Scanner console = new Scanner (System.in);
         System.out.println( " Please, enter a number and let's find its square root: ");
         System.out.print( " The chosen number is : ");
@@ -135,14 +146,14 @@ public class BasicCalculator {
 
     }
 
-    public static double sqroot ( double num1) {
+    public double sqroot ( double num1) {
         return Math.sqrt(num1) ;
     }
 
 
 
 
-    public static void exponential ( double num1, double num2) {
+    public void exponential ( double num1, double num2) {
 
         Scanner console = new Scanner (System.in);
         System.out.println( " Please, enter a number and its power : ");
@@ -158,13 +169,13 @@ public class BasicCalculator {
                 " is : " + result);
     }
 
-    public static double exponent ( double num1, double num2) {
+    public double exponent ( double num1, double num2) {
         return Math.pow( num1, num2) ;
     }
 
 
 
-    public static void inverse ( double value3,double num2) {
+    public void inverse ( double value3,double num2) {
         value3 = 1;
         Scanner console = new Scanner (System.in);
         System.out.println( " Please, enter a number and its inverse : ");
@@ -184,14 +195,14 @@ public class BasicCalculator {
         }
     }
 
-    public static double inv ( double value3, double num2) {
+    public double inv ( double value3, double num2) {
         return (value3/num2) ;
     }
 
 
 
 
-    public static void switchTheSign ( double num1) {
+    public void switchTheSign ( double num1) {
 
         Scanner console = new Scanner(System.in);
         System.out.println(" Please, enter a number and let's switch its sign: ");
@@ -205,13 +216,14 @@ public class BasicCalculator {
                 " is : " + result);
     }
 
-    public static double SignNumb (double num1) {
+    public double SignNumb (double num1) {
+
         return Math.abs(num1) ;
     }
 
 
 
-    public static void average ( double num1, double num2) {
+    public void average ( double num1, double num2) {
         double value1 = 2 ;
         Scanner console = new Scanner (System.in);
         System.out.println( " Please, enter two numbers for multiplication : ");
@@ -234,13 +246,14 @@ public class BasicCalculator {
 
     }
 
-    public static double avg (double num1, double num2, double value1) {
+    public double avg (double num1, double num2, double value1) {
+
         return (num1/num2)/ (value1) ;
     }
 
 
 
-    public static void countdown ( double num1, double increment) {
+    public void countdown ( double num1, double increment) {
         increment = 1 ;
         Scanner console = new Scanner (System.in);
         System.out.println( " Please, enter a number for multiplication : ");
@@ -254,7 +267,7 @@ public class BasicCalculator {
                 " is : " + result);
     }
 
-    public static double countDown (double num1, double increment) {
+    public double countDown (double num1, double increment) {
         return num1 - increment  ;
     }
 
