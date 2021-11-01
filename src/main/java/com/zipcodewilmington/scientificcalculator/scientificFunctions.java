@@ -3,33 +3,6 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
 
 public class scientificFunctions {
-    static String displayMode = "decimal";
-    public static Double functions(Double value) {
-        String choice;
-
-        do {
-
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter what functions you want to use: trig, logarithmic, factorials, or memory: ");
-            choice = scanner.nextLine();
-
-            if (choice.equalsIgnoreCase("trig")) {
-                MainApplication.printNumber(trigFunctions(value));
-            } else if (choice.equalsIgnoreCase("logarithmic")) {
-                System.out.println(logarithmicFunction(value));
-            } else if (choice.equalsIgnoreCase("factorials")) {
-                System.out.println(factorialFunction(value));
-            } else if (choice.equalsIgnoreCase("memory")) {
-                System.out.println(memoryFunction(value));
-            } else {
-                System.out.println("Not one of the given functions.");
-            }
-
-        } while (!choice.equalsIgnoreCase("trig") && !choice.equalsIgnoreCase("logarithmic") &&
-                !choice.equalsIgnoreCase("factorials") && !choice.equalsIgnoreCase("memory"));
-
-        return null;
-    }
 
     public static String switchDisplayMode() {
         String choice = "decimal";
@@ -112,67 +85,65 @@ public class scientificFunctions {
         return degOrRad;
     }
 
-    public static Double trigFunctions(Double value) {
-        double degOrReg = switchUnitsMode(value);
-        double trigValue = 0.0;
-        String choice;
-
-        do {
-
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter which function you want to use: sine, cosine, tangent, inverse sine, inverse cosine, or inverse tangent: ");
-            choice = scanner.nextLine();
-
-            if (choice.equalsIgnoreCase("sine")) {
-                trigValue = Math.sin(degOrReg);
-            } else if (choice.equalsIgnoreCase("cosine")) {
-                trigValue = Math.cos(degOrReg);
-            } else if (choice.equalsIgnoreCase("tangent")) {
-                trigValue = Math.tan(degOrReg);
-            } else if (choice.equalsIgnoreCase("inverse sine")) {
-                trigValue = Math.asin(degOrReg);
-            } else if (choice.equalsIgnoreCase("inverse cosine")) {
-                trigValue = Math.acos(degOrReg);
-            } else if (choice.equalsIgnoreCase("inverse tangent")) {
-                trigValue = Math.atan(degOrReg);
-            } else {
-                System.out.println("Please enter one of the given choices.");
-            }
-
-        } while (!choice.equalsIgnoreCase("sine") && !choice.equalsIgnoreCase("cosine") &&
-                !choice.equalsIgnoreCase("tangent") && !choice.equalsIgnoreCase("inverse sine")
-                && !choice.equalsIgnoreCase("inverse cosine") && !choice.equalsIgnoreCase("inverse tangent"));
+    public static Double sin(Double value) {
+        double trigValue = Math.sin(value);
 
         return trigValue;
     }
 
-    public static Double logarithmicFunction(double value) {
-        double logValue = 0.0;
-        String choice;
+    public static Double cosin(Double value) {
+        double trigValue = Math.cos(value);
 
-        do {
+        return trigValue;
+    }
 
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter which function you want to use: log, inverse logarithm, natural logarithm, inverse natural logarithm: ");
-            choice = scanner.nextLine();
+    public static Double tangent(Double value) {
+        double trigValue = Math.tan(value);
 
-            if (choice.equalsIgnoreCase("log")) {
-                logValue = Math.log10(value);
-                MainApplication.currentNumber =logValue;
-            } else if (choice.equalsIgnoreCase("inverse logarithm")) {
-                logValue = Math.pow(10, value);
-            } else if (choice.equalsIgnoreCase("natural logarithm")) {
-                logValue = Math.log(value);
-            } else if (choice.equalsIgnoreCase("inverse natural logarithm")) {
-                logValue = Math.exp(value);
-            } else {
-                System.out.println("Please enter one of the given choices.");
-            }
+        return trigValue;
+    }
 
-        } while (!choice.equalsIgnoreCase("log") && !choice.equalsIgnoreCase("inverse logarithm")
-                && !choice.equalsIgnoreCase("natural logarithm") && !choice.equalsIgnoreCase("inverse natural logarithm"));
+    public static Double inverseSin(Double value) {
+        double trigValue = Math.asin(value);
 
-        return logValue;
+        return trigValue;
+    }
+
+    public static Double inverseCosin(Double value) {
+        double trigValue = Math.acos(value);
+
+
+        return trigValue;
+    }
+
+    public static Double inverseTangent(Double value) {
+        double trigValue = Math.atan(value);
+
+        return trigValue;
+    }
+
+    public static Double log(Double value) {
+        double logValue = Math.log10(value);
+
+        return  logValue;
+    }
+
+    public static Double inversLog(Double value) {
+        double logValue = Math.pow(10, value);
+
+        return  logValue;
+    }
+
+    public static Double naturalLog(Double value) {
+        double logValue = Math.log(value);
+
+        return  logValue;
+    }
+
+    public static Double inverseNaturalLog(Double value) {
+        double logValue = Math.exp(value);
+
+        return  logValue;
     }
 
     public static Double factorialFunction (Double value) {

@@ -44,11 +44,7 @@ public class MainApplication {
     public static String modeSelection(Long standard){
        int modified = standard.intValue();
 
-        if(scientificFunctions.currentdisplayMode().equalsIgnoreCase("binary")){
-            return Integer.toBinaryString(modified);
-        }else if (scientificFunctions.currentdisplayMode().equalsIgnoreCase("octal")){
-            return Integer.toOctalString(modified);
-        }else if (scientificFunctions.currentdisplayMode().equalsIgnoreCase("hexadecimal")){
+
             return Integer.toHexString(modified);
         }else{
             return Long.toString(standard);
