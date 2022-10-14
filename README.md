@@ -1,5 +1,6 @@
 # ScientificCalculator (maven) ZCW
 
+**THIS IS A GROUP PROJECT. Do Not start it on your own.**
 
 ## Description
 
