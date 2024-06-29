@@ -1,3 +1,5 @@
+package com.zipcodewilmington.scientificcalculator;
+
 //CLASS
 public class Calculator {
 

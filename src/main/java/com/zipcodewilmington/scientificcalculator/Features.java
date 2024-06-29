@@ -1,6 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
-public class Features {
+/* public class Features {
     String operator;
     int answer;
     int value1 = 0;
@@ -52,7 +52,7 @@ public class Features {
         return answer;
     }
 }
-
+*/
 
 
 
