@@ -30,3 +30,7 @@ public class Console {
         return null;
     }
 }
+
+//Jon is in the building
+//Teddy is here
+//Ian is here too

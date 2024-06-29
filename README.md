@@ -2,13 +2,15 @@
 
 **THIS IS A GROUP PROJECT. Do Not start it on your own.**
 
+**Especially made for Java10.1**
+
 ## Description
 
 In this project your team will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
 
 Your team should work on this project in a single repository. Click the `fork` button in the top right corner to create a copy of this repository in one of your github accounts. You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
 
-Then, each of the other team members should clone from the shared repository. You may want to dived the work into various classes, where each person takes responsibility for a whole class. 
+Then, each of the other team members should clone from the shared repository. You may want to divide the work into various classes, where each person takes responsibility for a whole class.  A good way to split up the work can be is 1) base calculator, 2) scientiific calculator, & 3) unit tests of 1 and 2.
 
 ## Requirements
 
@@ -88,4 +90,4 @@ The following functions should take the displayed value (x) and updated it accor
 
 ## Submission
 
-Completed projects should be submitted by submitting a pull request against the [original repository](https://github.com/Zipcoder/ScientificCalculator.Maven). All work should be done in your team's repository.
+Completed projects should be submitted by submitting a pull request against the [original repository](https://github.com/ZCW-J101D51/ScientificCalculator). All work should be done in your team's repository.
