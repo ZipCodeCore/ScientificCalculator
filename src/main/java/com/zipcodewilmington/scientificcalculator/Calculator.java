@@ -62,9 +62,35 @@ public class Calculator {
         return result;
     }
 
+    public double calcSine(double value) {
+        double sineValue = Math.sin(value);
+        return sineValue;
+    }
 
+    public double calcCosine(double value) {
+        double cosineValue = Math.cos(value);
+        return cosineValue;
+    }
 
+    public double calcTangent(double value) {
+        double tangentValue = Math.tan(value);
+        return tangentValue;
+    }
 
+    public double inverseSine(double value) {
+        double inverseSineValue = Math.asin(value);
+        return inverseSineValue;
+    }
+
+    public double inverseCosine(double value) {
+        double inverseCosineValue = Math.acos(value);
+        return inverseCosineValue;
+    }
+
+    public double inverseTangent(double value) {
+        double inverseTangentValue = Math.atan(value);
+        return inverseTangentValue;
+    }
 
 
     // MAIN METHOD
@@ -81,6 +107,14 @@ public class Calculator {
         System.out.println(myCalculator.varExpnt(7,3));
         System.out.println(myCalculator.inverse(5));
         System.out.println(myCalculator.invertSign(-333));
+        System.out.println(myCalculator.calcSine(45));
+        System.out.println(myCalculator.calcCosine(45));
+        System.out.println(myCalculator.calcTangent(45));
+        System.out.println(myCalculator.inverseSine(.77));
+        System.out.println(myCalculator.inverseCosine(.77));
+        System.out.println(myCalculator.inverseTangent(45));
+
+
 
 
 
