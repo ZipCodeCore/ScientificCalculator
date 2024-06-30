@@ -32,11 +32,3 @@ public class Console {
 }
 
 
-
-
-
-
-
-
-
-//Ted wuz here again
