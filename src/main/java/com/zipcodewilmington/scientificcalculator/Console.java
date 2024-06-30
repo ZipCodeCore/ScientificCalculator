@@ -31,13 +31,3 @@ public class Console {
     }
 }
 
-
-
-
-
-
-
-
-
-
-//Jons Here
