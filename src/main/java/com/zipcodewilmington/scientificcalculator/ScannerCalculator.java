@@ -33,4 +33,24 @@ public class ScannerCalculator {
     public static void subtract(double value) {
         displayValue -= value;
     }
-}
+
+    public static void multiply(double value) {
+        displayValue *= value;
+    }
+
+    public static void divide(double value) {
+        displayValue /= value;
+    }
+
+    public static void square(double value) {
+         displayValue = Math.pow(displayValue, 2);
+    }
+
+    public static void squareRoot(double value) {
+        if (displayValue < 0) {
+            displayValue = Double.NaN;  //Indicates error for negative input
+        } else {
+            displayValue = Math.sqrt(displayValue);
+         }
+        }
+    }

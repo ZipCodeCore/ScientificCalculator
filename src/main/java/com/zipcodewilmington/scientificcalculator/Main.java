@@ -21,6 +21,11 @@ public class Main{
             System.out.println("2- Clear display");
             System.out.println("3- Change display value");
             System.out.println("4- Add");
+            System.out.println("5- Subtract");
+            System.out.println("6- Multiply");
+            System.out.println("7- Divide");
+            System.out.println("8- Square^2");
+            System.out.println("9- SquareRt");
             System.out.println("0- Exit");
 
             // a case statement to handle the user's choice as an integer
@@ -41,10 +46,31 @@ public class Main{
                     double addValue = scanner.nextDouble();
                     add(addValue);
                     break;
+                case 5:
+                    double subtractValue = scanner.nextDouble();
+                    subtract(subtractValue);
+                    break;
+                case 6:
+                    double multValue = scanner.nextDouble();
+                    multiply(multValue);
+                    break;
+                case 7:
+                    double divValue = scanner.nextDouble();
+                    divide(divValue);
+                    break;
+                case 8:
+                    double squareValue = scanner.nextDouble();
+                    square(squareValue);
+                    break;
+                case 9:
+                    double squareRtValue = scanner.nextDouble();
+                    squareRoot(squareRtValue);
+                    break;
                 case 0:
                     System.out.println("Exiting the calculator");
                     scanner.close();
                     return;
+
                 default:
                     System.out.println("Invalid please try again");
             }
