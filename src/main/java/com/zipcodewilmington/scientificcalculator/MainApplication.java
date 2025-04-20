@@ -4,14 +4,23 @@ package com.zipcodewilmington.scientificcalculator;
  * Created by leon on 2/9/18.
  */
 public class MainApplication {
-    public static void main(String[] args) {
-        Console.println("Welcome to my calculator!");
-        String s = Console.getStringInput("Enter a string");
-        Integer i = Console.getIntegerInput("Enter an integer");
-        Double d = Console.getDoubleInput("Enter a double.");
 
-        Console.println("The user input %s as a string", s);
-        Console.println("The user input %s as a integer", i);
-        Console.println("The user input %s as a d", d);
+
+    public static void main(String[] args) {
+        scientificCalc sc = new scientificCalc();
+        BasicCalculator bc = new BasicCalculator();
+        //basicCalculator bc = new basicCalculator(); needs Tra's code, make sure to add params if he has them
+        Calculator calc = new Calculator("0", sc, bc);
+        Console.println("Welcome to my calculator!");
+        calc.startCalc(0);
+
+        //calc.displayOutput("2");
+
+//        BasicCalculator basicCalcObject = new BasicCalculator();
+//        while (true) {
+//            basicCalcObject.promptScreen();
+//        }
+//        scientificCalc scientificCalcObject = new scientificCalc();
+//        scientificCalcObject.promptScreen();
     }
 }
